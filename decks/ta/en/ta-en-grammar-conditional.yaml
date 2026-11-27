@@ -1,0 +1,22 @@
+schema: 1
+id: "ta-en-grammar-conditional"
+kind: "layer"
+core: "ta-grammar-conditional"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If: the conditional"
+description: "Every verb the course teaches after if, only if and if not. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "iff": "if"
+    "onlyif": "only if"
+    "ifnot": "if not"
+rules:
+  "ta-rule-conditional":
+    name: "If: -ஆல் (-āl), and only if"
+    explanation: "The conditional is the past stem with -ஆல் (-āl), shortened to -ஆ (-ā) in speech: {1}, to come, gives {2} in speech and {3} in writing, if he comes. The same form with தான் (tāṉ) joined means only if: {4}. The tense of the main clause is told by its own verb, so the same form covers if he came and if he comes. Source: English Wikipedia, Tamil grammar (the conditional is -ā(l) on the past stem)."
+  "ta-rule-conditional-not":
+    name: "If not: -ஆட்டா (-āṭṭā)"
+    explanation: "For if not, add -ஆட்டா (-āṭṭā) to the infinitive in speech, or -ஆவிட்டால் (-āviṭṭāl) in writing: {1}, to come, gives {2} and {3}. Source: English Wikipedia, Tamil grammar (the negative conditional adds -āṭṭ- to the infinitive, then -ā(l))."

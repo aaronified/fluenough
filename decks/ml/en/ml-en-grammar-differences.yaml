@@ -1,0 +1,108 @@
+schema: 1
+id: "ml-en-grammar-differences"
+kind: "layer"
+core: "ml-grammar-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How Malayalam grammar differs from English"
+description: "Before any theme: in, to, a, is and there is, the verb last, one verb form for every person, have, and yes-or-no questions. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ml-0748":
+    native: "in the house; at home"
+    notes:
+      n1: "Malayalam puts in after the noun, as the ending -ഇൽ (-il). The noun വീട് (vīṭ) doubles its last consonant first, giving വീട്ട് (vīṭṭ), so in the house is വീട്ടിൽ (vīṭṭil). Source: English Wiktionary, the declension table of വീട് (vīṭ)."
+    examples:
+      "ഞാൻ വീട്ടിൽ ഉണ്ട്.":
+        native: "I am at home."
+        bases:
+          "ഉണ്ട്": "there is; am"
+      "അമ്മ വീട്ടിൽ ഇല്ല.":
+        native: "Mother is not at home."
+  "ml-0749":
+    native: "to school"
+    notes:
+      n1: "To a place is the ending -ഇലേക്ക് (-ilēkk), which is the in ending -ഇൽ (-il) with -ഏക്ക് (-ēkk) added: സ്കൂൾ (skūḷ) becomes സ്കൂളിലേക്ക് (skūḷilēkk). The last letter of സ്കൂൾ (skūḷ) (the chillu ൾ (ḷ)) turns into a full ള (ḷa) before an ending."
+    examples:
+      "ഞാൻ സ്കൂളിലേക്ക് പോകുന്നു.":
+        native: "I am going to school."
+      "കുട്ടി സ്കൂളിലേക്ക് വരുന്നു.":
+        native: "The child is coming to school."
+  "ml-0750":
+    native: "in Malayalam"
+    notes:
+      n1: "In a language is also the ending -ഇൽ (-il). The name മലയാളം (malayāḷaṁ) ends in -ം (-ṁ), which turns into -ത്ത് (-tt) before an ending: മലയാളം (malayāḷaṁ) becomes മലയാളത്തിൽ (malayāḷattil). Source: English Wikipedia, Malayalam grammar (the declension of മരം (maraṁ), tree, which follows the same pattern)."
+    examples:
+      "ഇത് മലയാളത്തിൽ എന്താണ്?":
+        native: "What is this in Malayalam?"
+        bases:
+          "ഇത്": "this"
+          "മലയാളത്തിൽ": "in Malayalam; from മലയാളം (malayāḷaṁ), Malayalam"
+      "അവൾ മലയാളത്തിൽ പറയുന്നു.":
+        native: "She is speaking in Malayalam."
+        bases:
+          "മലയാളത്തിൽ": "in Malayalam; from മലയാളം (malayāḷaṁ), Malayalam"
+  "ml-0751":
+    native: "a; an; one"
+    notes:
+      n1: "Malayalam has no word for the. ഒരു (oru) means a or one and comes before the noun: ഒരു വീട് (oru vīṭ), a house. A noun on its own can mean the one you both know. Source: English Wiktionary, the entry ഒരു (oru) (one)."
+    examples:
+      "എനിക്ക് ഒരു ചായ വേണം.":
+        native: "I want a tea."
+        bases:
+          "ഒരു": "a; one"
+          "വേണം": "is wanted; need"
+      "വീട്ടിൽ ഒരു കുട്ടി ഉണ്ട്.":
+        native: "There is a child at home."
+        bases:
+          "ഒരു": "a; one"
+          "ഉണ്ട്": "there is"
+  "ml-0752":
+    native: "is; am; are (what someone or something is)"
+    notes:
+      n1: "ആണ് (āṇ) says what something is, for example ഇത് എന്റെ വീട് ആണ് (it enṟe vīṭ āṇ), this is my house. In speech it is joined to the word before it: വീട് (vīṭ) plus ആണ് (āṇ) is വീടാണ് (vīṭāṇ). Its negative is അല്ല (alla), is not. ഉണ്ട് (uṇṭ) is the other verb to be: it says where something is and what someone has. Source: English Wikipedia, Malayalam grammar (the copula)."
+    examples:
+      "ഇത് എന്റെ വീട് ആണ്.":
+        native: "This is my house."
+        bases:
+          "ഇത്": "this"
+          "ആണ്": "is"
+      "അവൾ അധ്യാപിക ആണ്.":
+        native: "She is a teacher."
+        bases:
+          "ആണ്": "is"
+  "ml-0753":
+    native: "there is; is (somewhere); have"
+    notes:
+      n1: "ഉണ്ട് (uṇṭ) says that something is present, where it is, and what someone has. It never changes for the person. To have is said with the owner in the to form: എനിക്ക് ഒരു പുസ്തകം ഉണ്ട് (enikk oru pustakaṁ uṇṭ) is, word for word, to me a book is. Its negative is ഇല്ല (illa), there is not. Source: English Wikipedia, Malayalam grammar (the copula and possession)."
+    examples:
+      "വീട്ടിൽ ചായ ഉണ്ട്.":
+        native: "There is tea at home."
+        bases:
+          "ഉണ്ട്": "there is"
+      "എനിക്ക് ഒരു പുസ്തകം ഉണ്ട്.":
+        native: "I have a book."
+        bases:
+          "ഉണ്ട്": "there is; have"
+  "ml-0754":
+    native: "I eat rice."
+    notes:
+      n1: "The verb comes last: doer, thing, verb. Word for word, I rice eat. The verb കഴിക്കുന്നു (kaḻikkunnu) is the same for I, you, he and she. Source: English Wikipedia, Malayalam grammar (the usual order is subject, object, verb)."
+  "ml-0755":
+    native: "He is a doctor."
+    notes:
+      n1: "When you say what someone is, ആണ് (āṇ) is joined to the word before it: ഡോക്ടർ (ḍōkṭar) plus ആണ് (āṇ) is ഡോക്ടറാണ് (ḍōkṭaṟāṇ), and the chillu ർ (r) turns into a full റ (ṟa). Its negative is അല്ല (alla): ഡോക്ടറല്ല (ḍōkṭaṟalla), is not a doctor."
+  "ml-0756":
+    native: "She is coming."
+    notes:
+      n1: "The verb does not show who does it. വരുന്നു (varunnu) is the form for I, you, he, she, it and they: ഞാൻ വരുന്നു (ñāṉ varunnu), അവൻ വരുന്നു (avaṉ varunnu), അവൾ വരുന്നു (avaḷ varunnu). English changes the verb (come, comes); Malayalam changes only the doer. Source: English Wikipedia, Malayalam grammar (a verb has no ending for number, person or gender)."
+  "ml-0757":
+    native: "I have a book."
+    notes:
+      n1: "Malayalam has no verb for have. The owner takes the ending of to, എനിക്ക് (enikk) (to me, from ഞാൻ (ñāṉ)), and the thing is: word for word, to me a book is."
+  "ml-0758":
+    native: "Is this a house?"
+    bases:
+      "ഇത്": "this"
+    notes:
+      n1: "A yes-or-no question adds -ഓ (-ō) to the verb, with no change of word order: വീടാണ് (vīṭāṇ) becomes വീടാണോ (vīṭāṇō). The answers are അതെ (ate), yes, and അല്ല (alla), no. A question with a question word, such as എന്ത് (ent), has no -ഓ (-ō)."

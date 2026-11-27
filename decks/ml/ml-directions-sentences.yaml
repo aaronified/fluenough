@@ -1,0 +1,104 @@
+schema: 1
+id: "ml-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-3048"
+    target: "ഇടത്തോട്ട് തിരിയൂ."
+    reading: "iṭattōṭṭ tiriyū."
+    ipa: "iʈət̪t̪oːʈʈ t̪iɾijuː"
+    phonetic: "[iɖɐt̪t̪oːʈʈ t̪iɾijuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ഇടത്തോട്ട്", ref: "ml-0240" }, { word: "തിരിയൂ", ref: "ml-0250" }]
+    confusables:
+      - { id: "w1", ref: "ml-0241", kind: "word" }
+      - { id: "w2", ref: "ml-0242", kind: "word" }
+  - id: "ml-3049"
+    target: "നേരെ പോകൂ."
+    reading: "nēre pōkū."
+    ipa: "neːɾe poːkuː"
+    phonetic: "[neːɾe poːɡuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "നേരെ", ref: "ml-0242" }, { word: "പോകൂ", ref: "ml-0112" }]
+    confusables:
+      - { id: "w1", ref: "ml-0240", kind: "word" }
+      - { id: "w2", ref: "ml-0241", kind: "word" }
+  - id: "ml-3050"
+    target: "വഴി എവിടെ?"
+    reading: "vaḻi eviṭe?"
+    ipa: "ʋəɻi eʋiʈe"
+    phonetic: "[ʋɐɻi eʋiɖe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "വഴി", ref: "ml-0243" }, { word: "എവിടെ", ref: "ml-0033" }]
+    confusables:
+      - { id: "w1", ref: "ml-0244", kind: "word" }
+      - { id: "w2", ref: "ml-0249", kind: "word" }
+  - id: "ml-3051"
+    target: "പാലം അടുത്താണ്."
+    reading: "pālaṁ aṭuttāṇ."
+    ipa: "paːlam əʈut̪t̪aːɳ"
+    phonetic: "[paːlɐm ɐɖut̪t̪aːɳ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "പാലം", ref: "ml-0251" }, { word: "അടുത്താണ്", ref: "ml-0143" }]
+    confusables:
+      - { id: "w1", ref: "ml-0144", kind: "word" }
+      - { id: "w2", ref: "ml-0244", kind: "word" }
+  - id: "ml-3052"
+    target: "ഇത് വടക്കാണ്."
+    reading: "it vaṭakkāṇ."
+    ipa: "it̪ ʋəʈəkkaːɳ"
+    phonetic: "[it̪ ʋɐɖɐkkaːɳ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "വടക്കാണ്", ref: "ml-0247" }]
+    confusables:
+      - { id: "w1", ref: "ml-0248", kind: "word" }
+      - { id: "w2", ref: "ml-0246", kind: "word" }
+  - id: "ml-3053"
+    target: "മൂലയിൽ നിൽക്കൂ."
+    reading: "mūlayil nilkkū."
+    ipa: "muːləjil nilkkuː"
+    phonetic: "[muːlɐjil nilkkuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "മൂലയിൽ", ref: "ml-0249" }, { word: "നിൽക്കൂ", ref: "ml-0116" }]
+    confusables:
+      - { id: "w1", ref: "ml-0150", kind: "word" }
+      - { id: "w2", ref: "ml-0151", kind: "word" }
+  - id: "ml-3054"
+    target: "റോഡ് ഇവിടെ ഉണ്ടോ?"
+    reading: "ṟōḍ iviṭe uṇṭō?"
+    ipa: "ɾoːɖ iʋiʈe uɳʈoː"
+    phonetic: "[ɾoːɖ iʋiɖe uɳɖoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "റോഡ്", ref: "ml-0244" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+    confusables:
+      - { id: "w1", ref: "ml-0243", kind: "word" }
+      - { id: "w2", ref: "ml-0251", kind: "word" }
+  - id: "ml-3055"
+    target: "വലത്തോട്ട് തിരിയൂ, പിന്നെ നേരെ പോകൂ."
+    reading: "valattōṭṭ tiriyū, pinne nēre pōkū."
+    ipa: "ʋələt̪t̪oːʈʈ t̪iɾijuː pinne neːɾe poːkuː"
+    phonetic: "[ʋɐlɐt̪t̪oːʈʈ t̪iɾijuː pinne neːɾe poːɡuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "വലത്തോട്ട്", ref: "ml-0241" }, { word: "തിരിയൂ", ref: "ml-0250" }, { word: "പിന്നെ", ref: "ml-0525" }, { word: "നേരെ", ref: "ml-0242" }, { word: "പോകൂ", ref: "ml-0112" }]
+    confusables:
+      - { id: "w1", ref: "ml-0240", kind: "word" }
+      - { id: "w2", ref: "ml-0249", kind: "word" }

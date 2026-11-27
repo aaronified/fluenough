@@ -1,0 +1,125 @@
+schema: 1
+id: "ta-news-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9020"
+    target: "நிருபர் அமைச்சரிடம் கேள்வி கேட்கிறார்."
+    reading: "nirupar amaiccariṭam kēḷvi kēṭkiṟār."
+    ipa: "niɾupaɾ amaitʃtʃaɾiʈam keːɭʋi keːʈkiraːɾ"
+    phonetic: "[n̪iɾubaɾ amaitʃtʃaɾiɖam keːɭʋi keːʈkiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நிருபர்", ref: "ta-7120" }, { word: "அமைச்சரிடம்", base: "அமைச்சர்", reading: "amaiccar" }, { word: "கேள்வி", ref: "ta-1832" }, { word: "கேட்கிறார்", base: "கேள்", reading: "kēḷ" }]
+    confusables:
+      - { id: "w1", ref: "ta-7121", kind: "word" }
+      - { id: "w2", ref: "ta-7125", kind: "word" }
+      - { id: "w3", ref: "ta-7122", kind: "word" }
+  - id: "ta-9021"
+    target: "இந்த வழக்கு நாளை நடக்கிறது."
+    reading: "inta vaḻakku nāḷai naṭakkiṟatu."
+    ipa: "int̪a ʋaɻakku naːɭai naʈakkirat̪u"
+    phonetic: "[in̪d̪a ʋaɻakkɯ n̪aːɭai n̪aɖakkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "வழக்கு", ref: "ta-7150" }, { word: "நாளை", ref: "ta-0133" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+    confusables:
+      - { id: "w1", ref: "ta-7151", kind: "word" }
+      - { id: "w2", ref: "ta-7152", kind: "word" }
+      - { id: "w3", ref: "ta-7153", kind: "word" }
+  - id: "ta-9022"
+    target: "தேர்தல் அடுத்த மாதம் நடக்கிறது."
+    reading: "tērtal aṭutta mātam naṭakkiṟatu."
+    ipa: "t̪eːɾt̪al aʈut̪t̪a maːt̪am naʈakkirat̪u"
+    phonetic: "[t̪eːɾt̪al aɖut̪t̪a maːd̪am n̪aɖakkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "தேர்தல்", ref: "ta-7140" }, { word: "அடுத்த", ref: "ta-1161" }, { word: "மாதம்", ref: "ta-1154" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+    confusables:
+      - { id: "w1", ref: "ta-7141", kind: "word" }
+      - { id: "w2", ref: "ta-7142", kind: "word" }
+      - { id: "w3", ref: "ta-7143", kind: "word" }
+  - id: "ta-9023"
+    target: "நகரத்தில் தீ பரவுகிறது."
+    reading: "nakarattil tī paravukiṟatu."
+    ipa: "nakaɾat̪t̪il t̪iː paɾaʋukirat̪u"
+    phonetic: "[n̪aɡaɾat̪t̪il t̪iː paɾaʋuɡirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நகரத்தில்", base: "நகரம்", reading: "nakaram" }, { word: "தீ", ref: "ta-7132" }, { word: "பரவுகிறது", base: "பரவு", reading: "paravu" }]
+    confusables:
+      - { id: "w1", ref: "ta-7133", kind: "word" }
+      - { id: "w2", ref: "ta-7134", kind: "word" }
+      - { id: "w3", ref: "ta-7135", kind: "word" }
+  - id: "ta-9024"
+    target: "அரசு தேதியை அறிவிக்கிறது."
+    reading: "aracu tētiyai aṟivikkiṟatu."
+    ipa: "aɾasu t̪eːt̪ijai ariʋikkirat̪u"
+    phonetic: "[aɾasɯ t̪eːd̪ijai ariʋikkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அரசு", base: "அரசு", reading: "aracu" }, { word: "தேதியை", base: "தேதி", reading: "tēti" }, { word: "அறிவிக்கிறது", base: "அறிவி", reading: "aṟivi" }]
+    confusables:
+      - { id: "w1", ref: "ta-7176", kind: "word" }
+      - { id: "w2", ref: "ta-7128", kind: "word" }
+  - id: "ta-9025"
+    target: "மக்களை எச்சரிக்கிறார்கள்."
+    reading: "makkaḷai eccarikkiṟārkaḷ."
+    ipa: "makkaɭai etʃtʃaɾikkiraːɾkaɭ"
+    phonetic: "[makkaɭai etʃtʃaɾikkiraːɾkaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "மக்களை", base: "மக்கள்", reading: "makkaḷ" }, { word: "எச்சரிக்கிறார்கள்", base: "எச்சரி", reading: "eccari" }]
+    confusables:
+      - { id: "w1", ref: "ta-7175", kind: "word" }
+      - { id: "w2", ref: "ta-7177", kind: "word" }
+      - { id: "w3", ref: "ta-7178", kind: "word" }
+  - id: "ta-9026"
+    target: "விபத்தில் ஒருவர் காயமடைகிறார்."
+    reading: "vipattil oruvar kāyamaṭaikiṟār."
+    ipa: "ʋipat̪t̪il oɾuʋaɾ kaːjamaʈaikiraːɾ"
+    phonetic: "[ʋibat̪t̪il oɾuʋaɾ kaːjamaɖaiɡiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "விபத்தில்", base: "விபத்து", reading: "vipattu" }, { word: "ஒருவர்", base: "ஒருவர்", reading: "oruvar" }, { word: "காயமடைகிறார்", base: "காயமடை", reading: "kāyamaṭai" }]
+    confusables:
+      - { id: "w1", ref: "ta-7138", kind: "word" }
+      - { id: "w2", ref: "ta-7136", kind: "word" }
+      - { id: "w3", ref: "ta-7137", kind: "word" }
+  - id: "ta-9027"
+    target: "இது வதந்தி, உண்மை இல்லை."
+    reading: "itu vatanti, uṇmai illai."
+    ipa: "it̪u ʋat̪ant̪i uɳmai illai"
+    phonetic: "[id̪ɯ ʋad̪an̪d̪i uɳmai illai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "வதந்தி", ref: "ta-7128" }, { word: "உண்மை", ref: "ta-7129" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-7130", kind: "word" }
+      - { id: "w2", ref: "ta-7168", kind: "word" }
+  - id: "ta-9028"
+    target: "காவல்துறை திருட்டு பற்றி விசாரிக்கிறது."
+    reading: "kāvaltuṟai tiruṭṭu paṟṟi vicārikkiṟatu."
+    ipa: "kaːʋalt̪urai t̪iɾuʈʈu parri ʋisaːɾikkirat̪u"
+    phonetic: "[kaːʋalt̪urai t̪iɾuʈʈɯ pattri ʋisaːɾikkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "காவல்துறை", ref: "ta-7158" }, { word: "திருட்டு", ref: "ta-7155" }, { word: "பற்றி", ref: "ta-0431" }, { word: "விசாரிக்கிறது", base: "விசாரி", reading: "vicāri" }]
+    confusables:
+      - { id: "w1", ref: "ta-7156", kind: "word" }
+      - { id: "w2", ref: "ta-7157", kind: "word" }
+      - { id: "w3", ref: "ta-7159", kind: "word" }
+  - id: "ta-9029"
+    target: "விலை உயர்வு பற்றி விவாதம் நடக்கிறது."
+    reading: "vilai uyarvu paṟṟi vivātam naṭakkiṟatu."
+    ipa: "ʋilai ujaɾʋu parri ʋiʋaːt̪am naʈakkirat̪u"
+    phonetic: "[ʋilai ujaɾʋɯ pattri ʋiʋaːd̪am n̪aɖakkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "விலை", ref: "ta-0225" }, { word: "உயர்வு", ref: "ta-7161" }, { word: "பற்றி", ref: "ta-0431" }, { word: "விவாதம்", ref: "ta-7144" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+    confusables:
+      - { id: "w1", ref: "ta-7162", kind: "word" }
+      - { id: "w2", ref: "ta-7163", kind: "word" }

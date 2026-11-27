@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-phone"
+name: "Reading: text messages"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A few short text messages, using the phone words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-text-messages"
+    title: "Text messages"
+    sentences:
+      - text: "ஹலோ, நீங்கள் எங்கே இருக்கிறீர்கள்?"
+        reading: "halō, nīṅkaḷ eṅkē irukkiṟīrkaḷ?"
+        ipa: "haloː niːŋkaɭ eŋkeː iɾukkiriːɾkaɭ"
+      - text: "நான் பேருந்து நிறுத்தத்தில் இருக்கிறேன்."
+        reading: "nāṉ pēruntu niṟuttattil irukkiṟēṉ."
+        ipa: "naːn peːɾunt̪u nirut̪t̪at̪t̪il iɾukkireːn"
+      - text: "என் போனில் சிக்னல் இல்லை."
+        reading: "eṉ pōṉil cikṉal illai."
+        ipa: "en poːnil siknal illai"
+      - text: "மெசேஜ் அனுப்புங்கள்."
+        reading: "mecēj aṉuppuṅkaḷ."
+        ipa: "meseːdʒ anuppuŋkaɭ"
+      - text: "அப்புறம் பேசலாம்."
+        reading: "appuṟam pēcalām."
+        ipa: "appuram peːsalaːm"
+    questions:
+      - id: "ta-9941"
+        prompt: { en: "Where is the writer?" }
+        options:
+          - { en: "At a bus stop" }
+          - { en: "At home" }
+          - { en: "At school" }
+        answer: 1
+      - id: "ta-9942"
+        prompt: { en: "What is wrong with the phone?" }
+        options:
+          - { en: "It has no signal" }
+          - { en: "It is broken" }
+          - { en: "It is lost" }
+        answer: 1
+      - id: "ta-9943"
+        prompt: { en: "The writer asks for a phone call." }
+        answer: false

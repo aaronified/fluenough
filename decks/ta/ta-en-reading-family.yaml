@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-family"
+name: "Reading: my family"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short text about who is at home in a family and who is not. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-family-tree"
+    title: "My family"
+    sentences:
+      - text: "இது என் குடும்பம்."
+        reading: "itu eṉ kuṭumpam."
+        ipa: "it̪u en kuʈumpam"
+      - text: "என் அம்மா வீட்டில் இருக்கிறார்."
+        reading: "eṉ ammā vīṭṭil irukkiṟār."
+        ipa: "en ammaː ʋiːʈʈil iɾukkiraːɾ"
+      - text: "என் அப்பா வீட்டில் இருக்கிறார்."
+        reading: "eṉ appā vīṭṭil irukkiṟār."
+        ipa: "en appaː ʋiːʈʈil iɾukkiraːɾ"
+      - text: "தங்கை வீட்டில் இருக்கிறாள்."
+        reading: "taṅkai vīṭṭil irukkiṟāḷ."
+        ipa: "t̪aŋkai ʋiːʈʈil iɾukkiraːɭ"
+      - text: "தம்பி வீட்டில் இல்லை."
+        reading: "tampi vīṭṭil illai."
+        ipa: "t̪ampi ʋiːʈʈil illai"
+    questions:
+      - id: "ta-9706"
+        prompt: { en: "Who is missing from the house?" }
+        options:
+          - { en: "The younger sister" }
+          - { en: "The younger brother" }
+          - { en: "The mother" }
+        answer: 2
+      - id: "ta-9707"
+        prompt: { en: "How many people are at home?" }
+        options:
+          - { en: "Two" }
+          - { en: "Three" }
+          - { en: "Four" }
+        answer: 2
+      - id: "ta-9708"
+        prompt: { en: "The younger sister is at home." }
+        answer: true

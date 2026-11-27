@@ -1,0 +1,72 @@
+schema: 1
+id: "ta-en-journey-sentences"
+kind: "layer"
+core: "ta-journey-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel in sentences"
+description: "Sentences for travel: tickets, stations, routes, luggage and trips. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4568":
+    native: "Where is the bus station?"
+    confusables:
+      w1: { why: "நடைமேடை (naṭaimēṭai), platform, is a different word." }
+      w2: { why: "பயணம் (payaṇam), journey; trip, is a different word." }
+  "ta-4569":
+    native: "How much is the ticket?"
+    confusables:
+      w1: { why: "இருக்கை (irukkai), seat, is a different word." }
+      w2: { why: "தாமதம் (tāmatam), delay, is a different word." }
+  "ta-4570":
+    native: "I need two tickets."
+    confusables:
+      w1: { why: "பயணச்சீட்டு (payaṇaccīṭṭu), ticket, is a different word." }
+      w2: { why: "இருக்கை (irukkai), seat, is a different word." }
+  "ta-4571":
+    native: "When does the train leave?"
+    bases:
+      "புறப்படுகிறது": "leaves; from புறப்படு (puṟappaṭu), to set out; to leave"
+    confusables:
+      w1: { why: "வருகை (varukai), arrival; visit, is a different word." }
+      w2: { why: "தாமதம் (tāmatam), delay, is a different word." }
+  "ta-4572":
+    native: "I am going straight."
+    bases:
+      "நேராகச்": "straight; from நேராக (nērāka), straight"
+      "செல்கிறேன்": "am going; from செல் (cel), to go (formal)"
+    confusables:
+      w1: { why: "திசை (ticai), direction, is a different word." }
+      w2: { why: "வரைபடம் (varaipaṭam), map, is a different word." }
+  "ta-4573":
+    native: "I do not know the way."
+    bases:
+      "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+      "தெரியாது": "is not known; from தெரி (teri), to be known; to be seen"
+    confusables:
+      w1: { why: "வரைபடம் (varaipaṭam), map, is a different word." }
+      w2: { why: "திசை (ticai), direction, is a different word." }
+  "ta-4574":
+    native: "How far is it?"
+    confusables:
+      w1: { why: "வேகம் (vēkam), speed, is a different word." }
+      w2: { why: "இடம் (iṭam), place; space, is a different word." }
+  "ta-4575":
+    native: "There is a lot of traffic here."
+    confusables:
+      w1: { why: "விபத்து (vipattu), accident, is a different word." }
+      w2: { why: "சாலை (cālai), road, is a different word." }
+  "ta-4576":
+    native: "Where is my luggage?"
+    bases:
+      "என்": "my; from நான் (nāṉ), I; me"
+    confusables:
+      w1: { why: "பாஸ்போர்ட் (pāspōrṭ), passport, is a different word." }
+      w2: { why: "மூட்டை (mūṭṭai), bundle; bag, is a different word." }
+  "ta-4577":
+    native: "Let's go on a trip."
+    bases:
+      "போகலாம்": "let's go; from போ (pō), to go"
+    confusables:
+      w1: { why: "பயணம் (payaṇam), journey; trip, is a different word." }
+      w2: { why: "வழிகாட்டி (vaḻikāṭṭi), guide, is a different word." }

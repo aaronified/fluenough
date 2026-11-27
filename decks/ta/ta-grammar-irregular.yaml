@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-grammar-irregular"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["I now", "I did", "I will", "you, to a friend", "I will not"]
+  entries:
+    - lemma: "வா"
+      key: "vaa"
+      reading: "vā"
+      ipa: "ʋaː"
+      forms: { "I now": ["வர்றேன்", "வருகிறேன்"], "I did": "வந்தேன்", "I will": "வருவேன்", "you, to a friend": "வா", "I will not": "வரமாட்டேன்" }
+      readings: { "I now": ["varṟēṉ", "varukiṟēṉ"], "I did": "vantēṉ", "I will": "varuvēṉ", "you, to a friend": "vā", "I will not": "varamāṭṭēṉ" }
+      ipas: { "I now": "ʋaɾreːn", "I did": "ʋant̪eːn", "I will": "ʋaɾuʋeːn", "you, to a friend": "ʋaː", "I will not": "ʋaɾamaːʈʈeːn" }
+    - lemma: "போ"
+      key: "po"
+      reading: "pō"
+      ipa: "poː"
+      forms: { "I now": ["போறேன்", "போகிறேன்"], "I did": "போனேன்", "I will": "போவேன்", "you, to a friend": "போ", "I will not": "போகமாட்டேன்" }
+      readings: { "I now": ["pōṟēṉ", "pōkiṟēṉ"], "I did": "pōṉēṉ", "I will": "pōvēṉ", "you, to a friend": "pō", "I will not": "pōkamāṭṭēṉ" }
+      ipas: { "I now": "poːreːn", "I did": "poːneːn", "I will": "poːʋeːn", "you, to a friend": "poː", "I will not": "poːkamaːʈʈeːn" }
+    - lemma: "செய்"
+      key: "cey"
+      reading: "cey"
+      ipa: "sej"
+      forms: { "I now": "செய்கிறேன்", "I did": ["செஞ்சேன்", "செய்தேன்"], "I will": "செய்வேன்", "you, to a friend": "செய்", "I will not": "செய்யமாட்டேன்" }
+      readings: { "I now": "ceykiṟēṉ", "I did": ["ceñcēṉ", "ceytēṉ"], "I will": "ceyvēṉ", "you, to a friend": "cey", "I will not": "ceyyamāṭṭēṉ" }
+      ipas: { "I now": "sejkireːn", "I did": "seɲtʃeːn", "I will": "sejʋeːn", "you, to a friend": "sej", "I will not": "sejjamaːʈʈeːn" }
+    - lemma: "தா"
+      key: "taa"
+      reading: "tā"
+      ipa: "t̪aː"
+      forms: { "I now": ["தர்றேன்", "தருகிறேன்"], "I did": "தந்தேன்", "I will": "தருவேன்", "you, to a friend": "தா", "I will not": "தரமாட்டேன்" }
+      readings: { "I now": ["tarṟēṉ", "tarukiṟēṉ"], "I did": "tantēṉ", "I will": "taruvēṉ", "you, to a friend": "tā", "I will not": "taramāṭṭēṉ" }
+      ipas: { "I now": "t̪aɾreːn", "I did": "t̪ant̪eːn", "I will": "t̪aɾuʋeːn", "you, to a friend": "t̪aː", "I will not": "t̪aɾamaːʈʈeːn" }
+    - lemma: "நில்"
+      key: "nil"
+      reading: "nil"
+      ipa: "nil"
+      forms: { "I now": ["நிக்கிறேன்", "நிற்கிறேன்"], "I did": "நின்றேன்", "I will": "நிற்பேன்", "you, to a friend": "நில்", "I will not": "நிற்கமாட்டேன்" }
+      readings: { "I now": ["nikkiṟēṉ", "niṟkiṟēṉ"], "I did": "niṉṟēṉ", "I will": "niṟpēṉ", "you, to a friend": "nil", "I will not": "niṟkamāṭṭēṉ" }
+      ipas: { "I now": "nikkireːn", "I did": "ninreːn", "I will": "nirpeːn", "you, to a friend": "nil", "I will not": "nirkamaːʈʈeːn" }
+    - lemma: "உட்கார்"
+      key: "utkar"
+      reading: "uṭkār"
+      ipa: "uʈkaːɾ"
+      forms: { "I now": "உட்காருகிறேன்", "I did": "உட்கார்ந்தேன்", "I will": "உட்காருவேன்", "you, to a friend": "உட்கார்", "I will not": "உட்காரமாட்டேன்" }
+      readings: { "I now": "uṭkārukiṟēṉ", "I did": "uṭkārntēṉ", "I will": "uṭkāruvēṉ", "you, to a friend": "uṭkār", "I will not": "uṭkāramāṭṭēṉ" }
+      ipas: { "I now": "uʈkaːɾukireːn", "I did": "uʈkaːɾnt̪eːn", "I will": "uʈkaːɾuʋeːn", "you, to a friend": "uʈkaːɾ", "I will not": "uʈkaːɾamaːʈʈeːn" }
+    - lemma: "கேள்"
+      key: "kel"
+      reading: "kēḷ"
+      ipa: "keːɭ"
+      forms: { "I now": "கேட்கிறேன்", "I did": "கேட்டேன்", "I will": "கேட்பேன்", "you, to a friend": "கேள்", "I will not": "கேட்கமாட்டேன்" }
+      readings: { "I now": "kēṭkiṟēṉ", "I did": "kēṭṭēṉ", "I will": "kēṭpēṉ", "you, to a friend": "kēḷ", "I will not": "kēṭkamāṭṭēṉ" }
+      ipas: { "I now": "keːʈkireːn", "I did": "keːʈʈeːn", "I will": "keːʈpeːn", "you, to a friend": "keːɭ", "I will not": "keːʈkamaːʈʈeːn" }

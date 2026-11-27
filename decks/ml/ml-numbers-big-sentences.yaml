@@ -1,0 +1,104 @@
+schema: 1
+id: "ml-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-3024"
+    target: "നൂറ് രൂപ വേണോ?"
+    reading: "nūṟ rūpa vēṇō?"
+    ipa: "nuːɾ ɾuːpa ʋeːɳoː"
+    phonetic: "[nuːɾ ɾuːbɐ ʋeːɳoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "നൂറ്", ref: "ml-0211" }, { word: "രൂപ", base: "രൂപ", reading: "rūpa" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+    confusables:
+      - { id: "w1", ref: "ml-0212", kind: "word" }
+      - { id: "w2", ref: "ml-0213", kind: "word" }
+  - id: "ml-3025"
+    target: "എനിക്ക് ഇരുനൂറ് രൂപ വേണം."
+    reading: "enikk irunūṟ rūpa vēṇaṁ."
+    ipa: "enikk iɾunuːɾ ɾuːpa ʋeːɳam"
+    phonetic: "[enikk iɾunuːɾ ɾuːbɐ ʋeːɳɐm]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഇരുനൂറ്", ref: "ml-0212" }, { word: "രൂപ", base: "രൂപ", reading: "rūpa" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0211", kind: "word" }
+      - { id: "w2", ref: "ml-0214", kind: "word" }
+  - id: "ml-3026"
+    target: "എത്ര രൂപ?"
+    reading: "etra rūpa?"
+    ipa: "et̪ɾa ɾuːpa"
+    phonetic: "[et̪ɾɐ ɾuːbɐ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "എത്ര", ref: "ml-0038" }, { word: "രൂപ", base: "രൂപ", reading: "rūpa" }]
+    confusables:
+      - { id: "w1", ref: "ml-0032", kind: "word" }
+      - { id: "w2", ref: "ml-0037", kind: "word" }
+  - id: "ml-3027"
+    target: "മുപ്പത്, നാല്പത്, അമ്പത്."
+    reading: "muppat, nālpat, ampat."
+    ipa: "muppat̪ naːlpat̪ əmpat̪"
+    phonetic: "[muppɐt̪ naːlpɐt̪ ɐmbɐt̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "മുപ്പത്", ref: "ml-0204" }, { word: "നാല്പത്", ref: "ml-0205" }, { word: "അമ്പത്", ref: "ml-0206" }]
+    confusables:
+      - { id: "w1", ref: "ml-0207", kind: "word" }
+      - { id: "w2", ref: "ml-0208", kind: "word" }
+  - id: "ml-3028"
+    target: "എൺപത്, തൊണ്ണൂറ്, നൂറ്."
+    reading: "eṇpat, toṇṇūṟ, nūṟ."
+    ipa: "eɳpat̪ t̪oɳɳuːɾ nuːɾ"
+    phonetic: "[eɳbɐt̪ t̪oɳɳuːɾ nuːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "എൺപത്", ref: "ml-0209" }, { word: "തൊണ്ണൂറ്", ref: "ml-0210" }, { word: "നൂറ്", ref: "ml-0211" }]
+    confusables:
+      - { id: "w1", ref: "ml-0207", kind: "word" }
+      - { id: "w2", ref: "ml-0215", kind: "word" }
+  - id: "ml-3029"
+    target: "ഒരു ലക്ഷം രൂപ വേണോ?"
+    reading: "oru lakṣaṁ rūpa vēṇō?"
+    ipa: "oɾu ləkʂam ɾuːpa ʋeːɳoː"
+    phonetic: "[oɾu lɐkʂɐm ɾuːbɐ ʋeːɳoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ലക്ഷം", ref: "ml-0215" }, { word: "രൂപ", base: "രൂപ", reading: "rūpa" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+    confusables:
+      - { id: "w1", ref: "ml-0213", kind: "word" }
+      - { id: "w2", ref: "ml-0216", kind: "word" }
+  - id: "ml-3030"
+    target: "മുത്തശ്ശിക്ക് എഴുപത് വയസ്സ്."
+    reading: "muttaśśikk eḻupat vayass."
+    ipa: "mut̪t̪əʃʃikk eɻupat̪ ʋəjass"
+    phonetic: "[mut̪t̪ɐʃʃikk eɻubɐt̪ ʋɐjɐss]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "മുത്തശ്ശിക്ക്", ref: "ml-0079" }, { word: "എഴുപത്", ref: "ml-0208" }, { word: "വയസ്സ്", ref: "ml-0044" }]
+    confusables:
+      - { id: "w1", ref: "ml-0207", kind: "word" }
+      - { id: "w2", ref: "ml-0209", kind: "word" }
+  - id: "ml-3031"
+    target: "ആയിരം രൂപ ഇവിടെ ഉണ്ട്."
+    reading: "āyiraṁ rūpa iviṭe uṇṭ."
+    ipa: "aːjiɾam ɾuːpa iʋiʈe uɳʈ"
+    phonetic: "[aːjiɾɐm ɾuːbɐ iʋiɖe uɳʈ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ആയിരം", ref: "ml-0213" }, { word: "രൂപ", base: "രൂപ", reading: "rūpa" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0214", kind: "word" }
+      - { id: "w2", ref: "ml-0212", kind: "word" }

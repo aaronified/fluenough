@@ -1,0 +1,538 @@
+schema: 1
+id: "ta-grammar-registers"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+cards:
+  - id: "ta-0470"
+    target: "செல்"
+    reading: "cel"
+    ipa: "sel"
+    phonetic: "[sel]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் அலுவலகத்துக்குச் செல்கிறார்."
+        reading: "avar aluvalakattukkuc celkiṟār."
+        ipa: "aʋaɾ aluʋalakat̪t̪ukkus selkiraːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "அலுவலகத்துக்குச்", base: "அலுவலகம்", reading: "aluvalakam" }, { word: "செல்கிறார்", base: "செல்", reading: "cel" }]
+      - target: "மாணவன் பள்ளிக்குச் செல்கிறான்."
+        reading: "māṇavaṉ paḷḷikkuc celkiṟāṉ."
+        ipa: "maːɳaʋan paɭɭikkus selkiraːn"
+        bases: [{ word: "மாணவன்", ref: "ta-1806" }, { word: "பள்ளிக்குச்", base: "பள்ளி", reading: "paḷḷi" }, { word: "செல்கிறான்", base: "செல்", reading: "cel" }]
+  - id: "ta-0471"
+    target: "உண்"
+    reading: "uṇ"
+    ipa: "uɳ"
+    phonetic: "[uɳ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குழந்தை பால் உண்கிறது."
+        reading: "kuḻantai pāl uṇkiṟatu."
+        ipa: "kuɻant̪ai paːl uɳkirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "பால்", ref: "ta-0036" }, { word: "உண்கிறது", base: "உண்", reading: "uṇ" }]
+      - target: "நாங்கள் உணவு உண்கிறோம்."
+        reading: "nāṅkaḷ uṇavu uṇkiṟōm."
+        ipa: "naːŋkaɭ uɳaʋu uɳkiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "உணவு", base: "உணவு", reading: "uṇavu" }, { word: "உண்கிறோம்", base: "உண்", reading: "uṇ" }]
+  - id: "ta-0472"
+    target: "அருந்து"
+    reading: "aruntu"
+    ipa: "aɾunt̪u"
+    phonetic: "[aɾun̪d̪ɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தேநீர் அருந்துங்கள்."
+        reading: "tēnīr aruntuṅkaḷ."
+        ipa: "t̪eːniːɾ aɾunt̪uŋkaɭ"
+        bases: [{ word: "தேநீர்", ref: "ta-0246" }, { word: "அருந்துங்கள்", base: "அருந்து", reading: "aruntu" }]
+      - target: "அவர் காபி அருந்துகிறார்."
+        reading: "avar kāpi aruntukiṟār."
+        ipa: "aʋaɾ kaːpi aɾunt̪ukiraːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "காபி", ref: "ta-0245" }, { word: "அருந்துகிறார்", base: "அருந்து", reading: "aruntu" }]
+  - id: "ta-0473"
+    target: "கூறு"
+    reading: "kūṟu"
+    ipa: "kuːru"
+    phonetic: "[kuːrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆசிரியர் பதில் கூறுகிறார்."
+        reading: "āciriyar patil kūṟukiṟār."
+        ipa: "aːsiɾijaɾ pat̪il kuːrukiraːɾ"
+        bases: [{ word: "ஆசிரியர்", ref: "ta-0198" }, { word: "பதில்", ref: "ta-1833" }, { word: "கூறுகிறார்", base: "கூறு", reading: "kūṟu" }]
+      - target: "உங்கள் பெயரைக் கூறுங்கள்."
+        reading: "uṅkaḷ peyaraik kūṟuṅkaḷ."
+        ipa: "uŋkaɭ pejaɾaik kuːruŋkaɭ"
+        bases: [{ word: "உங்கள்", base: "நீங்கள்", reading: "nīṅkaḷ" }, { word: "பெயரைக்", base: "பெயர்", reading: "peyar" }, { word: "கூறுங்கள்", base: "கூறு", reading: "kūṟu" }]
+  - id: "ta-0474"
+    target: "தெரிவி"
+    reading: "terivi"
+    ipa: "t̪eɾiʋi"
+    phonetic: "[t̪eɾiʋi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தெரிவியுங்கள்."
+        reading: "eṉakkut teriviyuṅkaḷ."
+        ipa: "enakkut̪ t̪eɾiʋijuŋkaɭ"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தெரிவியுங்கள்", base: "தெரிவி", reading: "terivi" }]
+      - target: "அவர் தகவலைத் தெரிவித்தார்."
+        reading: "avar takavalait terivittār."
+        ipa: "aʋaɾ t̪akaʋalait̪ t̪eɾiʋit̪t̪aːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "தகவலைத்", base: "தகவல்", reading: "takaval" }, { word: "தெரிவித்தார்", base: "தெரிவி", reading: "terivi" }]
+  - id: "ta-0475"
+    target: "உணவு"
+    reading: "uṇavu"
+    ipa: "uɳaʋu"
+    phonetic: "[uɳaʋɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உணவு நல்லது."
+        reading: "uṇavu nallatu."
+        ipa: "uɳaʋu nallat̪u"
+        bases: [{ word: "உணவு", base: "உணவு", reading: "uṇavu" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "எனக்கு உணவு வேண்டும்."
+        reading: "eṉakku uṇavu vēṇṭum."
+        ipa: "enakku uɳaʋu ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உணவு", base: "உணவு", reading: "uṇavu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-0476"
+    target: "நீர்"
+    reading: "nīr"
+    ipa: "niːɾ"
+    phonetic: "[n̪iːɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு நீர் வேண்டும்."
+        reading: "eṉakku nīr vēṇṭum."
+        ipa: "enakku niːɾ ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "நீர்", base: "நீர்", reading: "nīr" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "நீர் குடியுங்கள்."
+        reading: "nīr kuṭiyuṅkaḷ."
+        ipa: "niːɾ kuʈijuŋkaɭ"
+        bases: [{ word: "நீர்", base: "நீர்", reading: "nīr" }, { word: "குடியுங்கள்", base: "குடி", reading: "kuṭi" }]
+  - id: "ta-0477"
+    target: "இல்லம்"
+    reading: "illam"
+    ipa: "illam"
+    phonetic: "[illam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது எங்கள் இல்லம்."
+        reading: "itu eṅkaḷ illam."
+        ipa: "it̪u eŋkaɭ illam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "எங்கள்", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "இல்லம்", base: "இல்லம்", reading: "illam" }]
+      - target: "இல்லத்தில் அம்மா இருக்கிறார்."
+        reading: "illattil ammā irukkiṟār."
+        ipa: "illat̪t̪il ammaː iɾukkiraːɾ"
+        bases: [{ word: "இல்லத்தில்", base: "இல்லம்", reading: "illam" }, { word: "அம்மா", ref: "ta-0072" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-0478"
+    target: "வரவேற்பு"
+    reading: "varavēṟpu"
+    ipa: "ʋaɾaʋeːrpu"
+    phonetic: "[ʋaɾaʋeːrpɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வரவேற்புக்கு நன்றி."
+        reading: "varavēṟpukku naṉṟi."
+        ipa: "ʋaɾaʋeːrpukku nanri"
+        bases: [{ word: "வரவேற்புக்கு", base: "வரவேற்பு", reading: "varavēṟpu" }, { word: "நன்றி", ref: "ta-0013" }]
+      - target: "வரவேற்பில் அவர் இருக்கிறார்."
+        reading: "varavēṟpil avar irukkiṟār."
+        ipa: "ʋaɾaʋeːrpil aʋaɾ iɾukkiraːɾ"
+        bases: [{ word: "வரவேற்பில்", base: "வரவேற்பு", reading: "varavēṟpu" }, { word: "அவர்", ref: "ta-0060" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-0479"
+    target: "வருக"
+    reading: "varuka"
+    ipa: "ʋaɾuka"
+    phonetic: "[ʋaɾuɡa]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எல்லோரும் வருக."
+        reading: "ellōrum varuka."
+        ipa: "elloːɾum ʋaɾuka"
+        bases: [{ word: "எல்லோரும்", ref: "ta-0449" }, { word: "வருக", base: "வருக", reading: "varuka" }]
+      - target: "இங்கே வருக."
+        reading: "iṅkē varuka."
+        ipa: "iŋkeː ʋaɾuka"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "வருக", base: "வருக", reading: "varuka" }]
+  - id: "ta-0480"
+    target: "நுழைவு"
+    reading: "nuḻaivu"
+    ipa: "nuɻaiʋu"
+    phonetic: "[n̪uɻaiʋɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நுழைவு இங்கே."
+        reading: "nuḻaivu iṅkē."
+        ipa: "nuɻaiʋu iŋkeː"
+        bases: [{ word: "நுழைவு", base: "நுழைவு", reading: "nuḻaivu" }, { word: "இங்கே", ref: "ta-0112" }]
+      - target: "நுழைவுக் கட்டணம் இல்லை."
+        reading: "nuḻaivuk kaṭṭaṇam illai."
+        ipa: "nuɻaiʋuk kaʈʈaɳam illai"
+        bases: [{ word: "நுழைவுக்", base: "நுழைவு", reading: "nuḻaivu" }, { word: "கட்டணம்", ref: "ta-1259" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-0481"
+    target: "தடை"
+    reading: "taṭai"
+    ipa: "t̪aʈai"
+    phonetic: "[t̪aɖai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே புகைபிடிக்கத் தடை."
+        reading: "iṅkē pukaipiṭikkat taṭai."
+        ipa: "iŋkeː pukaipiʈikkat̪ t̪aʈai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "புகைபிடிக்கத்", base: "புகைபிடி", reading: "pukaipiṭi" }, { word: "தடை", base: "தடை", reading: "taṭai" }]
+      - target: "நுழையத் தடை."
+        reading: "nuḻaiyat taṭai."
+        ipa: "nuɻaijat̪ t̪aʈai"
+        bases: [{ word: "நுழையத்", base: "நுழை", reading: "nuḻai" }, { word: "தடை", base: "தடை", reading: "taṭai" }]
+  - id: "ta-0482"
+    target: "அனுமதி"
+    reading: "aṉumati"
+    ipa: "anumat̪i"
+    phonetic: "[anumad̪i]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உள்ளே செல்ல அனுமதி இல்லை."
+        reading: "uḷḷē cella aṉumati illai."
+        ipa: "uɭɭeː sella anumat̪i illai"
+        bases: [{ word: "உள்ளே", ref: "ta-0178" }, { word: "செல்ல", base: "செல்", reading: "cel" }, { word: "அனுமதி", base: "அனுமதி", reading: "aṉumati" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "அவர் அனுமதி தந்தார்."
+        reading: "avar aṉumati tantār."
+        ipa: "aʋaɾ anumat̪i t̪ant̪aːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "அனுமதி", base: "அனுமதி", reading: "aṉumati" }, { word: "தந்தார்", base: "தா", reading: "tā" }]
+  - id: "ta-0483"
+    target: "கவனம்"
+    reading: "kavaṉam"
+    ipa: "kaʋanam"
+    phonetic: "[kaʋanam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கவனமாகக் கேளுங்கள்."
+        reading: "kavaṉamākak kēḷuṅkaḷ."
+        ipa: "kaʋanamaːkak keːɭuŋkaɭ"
+        bases: [{ word: "கவனமாகக்", base: "கவனம்", reading: "kavaṉam" }, { word: "கேளுங்கள்", base: "கேள்", reading: "kēḷ" }]
+      - target: "கவனம் வேண்டும்."
+        reading: "kavaṉam vēṇṭum."
+        ipa: "kaʋanam ʋeːɳʈum"
+        bases: [{ word: "கவனம்", base: "கவனம்", reading: "kavaṉam" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-0484"
+    target: "விண்ணப்பம்"
+    reading: "viṇṇappam"
+    ipa: "ʋiɳɳappam"
+    phonetic: "[ʋiɳɳappam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விண்ணப்பம் இங்கே இருக்கிறது."
+        reading: "viṇṇappam iṅkē irukkiṟatu."
+        ipa: "ʋiɳɳappam iŋkeː iɾukkirat̪u"
+        bases: [{ word: "விண்ணப்பம்", base: "விண்ணப்பம்", reading: "viṇṇappam" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "நான் விண்ணப்பம் எழுதுகிறேன்."
+        reading: "nāṉ viṇṇappam eḻutukiṟēṉ."
+        ipa: "naːn ʋiɳɳappam eɻut̪ukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "விண்ணப்பம்", base: "விண்ணப்பம்", reading: "viṇṇappam" }, { word: "எழுதுகிறேன்", base: "எழுது", reading: "eḻutu" }]
+  - id: "ta-0485"
+    target: "கையெழுத்து"
+    reading: "kaiyeḻuttu"
+    ipa: "kaijeɻut̪t̪u"
+    phonetic: "[kaijeɻut̪t̪ɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே கையெழுத்துப் போடுங்கள்."
+        reading: "iṅkē kaiyeḻuttup pōṭuṅkaḷ."
+        ipa: "iŋkeː kaijeɻut̪t̪up poːʈuŋkaɭ"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "கையெழுத்துப்", base: "கையெழுத்து", reading: "kaiyeḻuttu" }, { word: "போடுங்கள்", base: "போடு", reading: "pōṭu" }]
+      - target: "என் கையெழுத்து நல்லது."
+        reading: "eṉ kaiyeḻuttu nallatu."
+        ipa: "en kaijeɻut̪t̪u nallat̪u"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "கையெழுத்து", base: "கையெழுத்து", reading: "kaiyeḻuttu" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0486"
+    target: "சான்றிதழ்"
+    reading: "cāṉṟitaḻ"
+    ipa: "saːnrit̪aɻ"
+    phonetic: "[saːndrid̪aɻ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சான்றிதழ் இங்கே இருக்கிறது."
+        reading: "cāṉṟitaḻ iṅkē irukkiṟatu."
+        ipa: "saːnrit̪aɻ iŋkeː iɾukkirat̪u"
+        bases: [{ word: "சான்றிதழ்", base: "சான்றிதழ்", reading: "cāṉṟitaḻ" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "எனக்குச் சான்றிதழ் வேண்டும்."
+        reading: "eṉakkuc cāṉṟitaḻ vēṇṭum."
+        ipa: "enakkus saːnrit̪aɻ ʋeːɳʈum"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சான்றிதழ்", base: "சான்றிதழ்", reading: "cāṉṟitaḻ" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-0487"
+    target: "கடிதம்"
+    reading: "kaṭitam"
+    ipa: "kaʈit̪am"
+    phonetic: "[kaɖid̪am]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் கடிதம் எழுதுகிறேன்."
+        reading: "nāṉ kaṭitam eḻutukiṟēṉ."
+        ipa: "naːn kaʈit̪am eɻut̪ukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கடிதம்", base: "கடிதம்", reading: "kaṭitam" }, { word: "எழுதுகிறேன்", base: "எழுது", reading: "eḻutu" }]
+      - target: "அம்மாவுக்குக் கடிதம் வந்தது."
+        reading: "ammāvukkuk kaṭitam vantatu."
+        ipa: "ammaːʋukkuk kaʈit̪am ʋant̪at̪u"
+        bases: [{ word: "அம்மாவுக்குக்", base: "அம்மா", reading: "ammā" }, { word: "கடிதம்", base: "கடிதம்", reading: "kaṭitam" }, { word: "வந்தது", base: "வா", reading: "vā" }]
+  - id: "ta-0488"
+    target: "நிறுத்தம்"
+    reading: "niṟuttam"
+    ipa: "nirut̪t̪am"
+    phonetic: "[n̪irut̪t̪am]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பேருந்து நிறுத்தம் இங்கே."
+        reading: "pēruntu niṟuttam iṅkē."
+        ipa: "peːɾunt̪u nirut̪t̪am iŋkeː"
+        bases: [{ word: "பேருந்து", ref: "ta-0238" }, { word: "நிறுத்தம்", base: "நிறுத்தம்", reading: "niṟuttam" }, { word: "இங்கே", ref: "ta-0112" }]
+      - target: "நிறுத்தம் அருகில் இருக்கிறது."
+        reading: "niṟuttam arukil irukkiṟatu."
+        ipa: "nirut̪t̪am aɾukil iɾukkirat̪u"
+        bases: [{ word: "நிறுத்தம்", base: "நிறுத்தம்", reading: "niṟuttam" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0489"
+    target: "பொதுமக்கள்"
+    reading: "potumakkaḷ"
+    ipa: "pot̪umakkaɭ"
+    phonetic: "[pod̪umakkaɭ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பொதுமக்கள் உள்ளே செல்லலாம்."
+        reading: "potumakkaḷ uḷḷē cellalām."
+        ipa: "pot̪umakkaɭ uɭɭeː sellalaːm"
+        bases: [{ word: "பொதுமக்கள்", base: "பொதுமக்கள்", reading: "potumakkaḷ" }, { word: "உள்ளே", ref: "ta-0178" }, { word: "செல்லலாம்", base: "செல்", reading: "cel" }]
+      - target: "பொதுமக்களுக்கு அறிவிப்பு."
+        reading: "potumakkaḷukku aṟivippu."
+        ipa: "pot̪umakkaɭukku ariʋippu"
+        bases: [{ word: "பொதுமக்களுக்கு", base: "பொதுமக்கள்", reading: "potumakkaḷ" }, { word: "அறிவிப்பு", ref: "ta-2117" }]
+  - id: "ta-0490"
+    target: "அலுவலர்"
+    reading: "aluvalar"
+    ipa: "aluʋalaɾ"
+    phonetic: "[aluʋalaɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அலுவலர் இங்கே இருக்கிறார்."
+        reading: "aluvalar iṅkē irukkiṟār."
+        ipa: "aluʋalaɾ iŋkeː iɾukkiraːɾ"
+        bases: [{ word: "அலுவலர்", base: "அலுவலர்", reading: "aluvalar" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "அலுவலரிடம் கேளுங்கள்."
+        reading: "aluvalariṭam kēḷuṅkaḷ."
+        ipa: "aluʋalaɾiʈam keːɭuŋkaɭ"
+        bases: [{ word: "அலுவலரிடம்", base: "அலுவலர்", reading: "aluvalar" }, { word: "கேளுங்கள்", base: "கேள்", reading: "kēḷ" }]
+  - id: "ta-0491"
+    target: "வழி"
+    reading: "vaḻi"
+    ipa: "ʋaɻi"
+    phonetic: "[ʋaɻi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வழி எங்கே?"
+        reading: "vaḻi eṅkē?"
+        ipa: "ʋaɻi eŋkeː"
+        bases: [{ word: "வழி", base: "வழி", reading: "vaḻi" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "வெளியே செல்ல வழி இல்லை."
+        reading: "veḷiyē cella vaḻi illai."
+        ipa: "ʋeɭijeː sella ʋaɻi illai"
+        bases: [{ word: "வெளியே", ref: "ta-0179" }, { word: "செல்ல", base: "செல்", reading: "cel" }, { word: "வழி", base: "வழி", reading: "vaḻi" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-0492"
+    target: "முன்பதிவு"
+    reading: "muṉpativu"
+    ipa: "munpat̪iʋu"
+    phonetic: "[munbad̪iʋɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முன்பதிவு வேண்டும்."
+        reading: "muṉpativu vēṇṭum."
+        ipa: "munpat̪iʋu ʋeːɳʈum"
+        bases: [{ word: "முன்பதிவு", base: "முன்பதிவு", reading: "muṉpativu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "நான் முன்பதிவு செய்கிறேன்."
+        reading: "nāṉ muṉpativu ceykiṟēṉ."
+        ipa: "naːn munpat̪iʋu sejkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "முன்பதிவு", base: "முன்பதிவு", reading: "muṉpativu" }, { word: "செய்கிறேன்", base: "செய்", reading: "cey" }]
+  - id: "ta-0493"
+    target: "தாங்கள்"
+    reading: "tāṅkaḷ"
+    ipa: "t̪aːŋkaɭ"
+    phonetic: "[t̪aːŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தாங்கள் எங்கே போகிறீர்கள்?"
+        reading: "tāṅkaḷ eṅkē pōkiṟīrkaḷ?"
+        ipa: "t̪aːŋkaɭ eŋkeː poːkiriːɾkaɭ"
+        bases: [{ word: "தாங்கள்", base: "தாங்கள்", reading: "tāṅkaḷ" }, { word: "எங்கே", ref: "ta-0043" }, { word: "போகிறீர்கள்", base: "போ", reading: "pō" }]
+      - target: "தாங்கள் வருக."
+        reading: "tāṅkaḷ varuka."
+        ipa: "t̪aːŋkaɭ ʋaɾuka"
+        bases: [{ word: "தாங்கள்", base: "தாங்கள்", reading: "tāṅkaḷ" }, { word: "வருக", base: "வருக", reading: "varuka" }]
+  - id: "ta-0494"
+    target: "உள்ளது"
+    reading: "uḷḷatu"
+    ipa: "uɭɭat̪u"
+    phonetic: "[uɭɭad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அருகில் மருத்துவமனை உள்ளது."
+        reading: "arukil maruttuvamaṉai uḷḷatu."
+        ipa: "aɾukil maɾut̪t̪uʋamanai uɭɭat̪u"
+        bases: [{ word: "அருகில்", ref: "ta-0183" }, { word: "மருத்துவமனை", ref: "ta-0261" }, { word: "உள்ளது", base: "உள்ளது", reading: "uḷḷatu" }]
+      - target: "வீட்டில் தண்ணீர் உள்ளது."
+        reading: "vīṭṭil taṇṇīr uḷḷatu."
+        ipa: "ʋiːʈʈil t̪aɳɳiːɾ uɭɭat̪u"
+        bases: [{ word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "உள்ளது", base: "உள்ளது", reading: "uḷḷatu" }]
+  - id: "ta-0495"
+    target: "அவசியம்"
+    reading: "avaciyam"
+    ipa: "aʋasijam"
+    phonetic: "[aʋasijam]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அது அவசியம்."
+        reading: "atu avaciyam."
+        ipa: "at̪u aʋasijam"
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "அவசியம்", base: "அவசியம்", reading: "avaciyam" }]
+      - target: "முன்பதிவு அவசியம்."
+        reading: "muṉpativu avaciyam."
+        ipa: "munpat̪iʋu aʋasijam"
+        bases: [{ word: "முன்பதிவு", base: "முன்பதிவு", reading: "muṉpativu" }, { word: "அவசியம்", base: "அவசியம்", reading: "avaciyam" }]
+  - id: "ta-0496"
+    target: "கூடாது"
+    reading: "kūṭātu"
+    ipa: "kuːʈaːt̪u"
+    phonetic: "[kuːɖaːd̪ɯ]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே நிற்கக் கூடாது."
+        reading: "iṅkē niṟkak kūṭātu."
+        ipa: "iŋkeː nirkak kuːʈaːt̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "நிற்கக்", base: "நில்", reading: "nil" }, { word: "கூடாது", base: "கூடாது", reading: "kūṭātu" }]
+      - target: "இங்கே பேசக் கூடாது."
+        reading: "iṅkē pēcak kūṭātu."
+        ipa: "iŋkeː peːsak kuːʈaːt̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "பேசக்", base: "பேசு", reading: "pēcu" }, { word: "கூடாது", base: "கூடாது", reading: "kūṭātu" }]

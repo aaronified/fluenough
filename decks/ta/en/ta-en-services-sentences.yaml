@@ -1,0 +1,94 @@
+schema: 1
+id: "ta-en-services-sentences"
+kind: "layer"
+core: "ta-services-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Services in sentences"
+description: "Sentences for the bank, the post office, repairs, the tailor and the laundry. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9050":
+    native: "I need a bank account."
+    bases:
+      "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+    confusables:
+      w1: { why: "காசோலை (kācōlai), cheque, is a different word." }
+      w2: { why: "அட்டை (aṭṭai), card, is a different word." }
+      w3: { why: "சேமிப்பு (cēmippu), savings, is a different word." }
+  "ta-9051":
+    native: "There is no money in my account."
+    bases:
+      "என்": "my; from நான் (nāṉ), I; me"
+      "கணக்கில்": "in the maths; from கணக்கு (kaṇakku), maths; sum; account"
+    confusables:
+      w1: { why: "இருப்பு (iruppu), balance; stock, is a different word." }
+      w2: { why: "வைப்புத்தொகை (vaipputtokai), deposit, is a different word." }
+      w3: { why: "நிலுவை (niluvai), amount due; arrears, is a different word." }
+  "ta-9052":
+    native: "I am going to the post office."
+    bases:
+      "அஞ்சலகத்துக்குப்": "to the post office; for the post office; from அஞ்சலகம் (añcalakam), post office"
+      "போகிறேன்": "am going; from போ (pō), to go"
+    confusables:
+      w1: { why: "தபால் (tapāl), post; mail, is a different word." }
+      w2: { why: "தபால்தலை (tapāltalai), postage stamp, is a different word." }
+      w3: { why: "அஞ்சல்பெட்டி (añcalpeṭṭi), letter box; postbox, is a different word." }
+  "ta-9053":
+    native: "I have to send this parcel."
+    bases:
+      "இந்தப்": "this (before a word starting with p); from இந்த (inta), this"
+      "பார்சலை": "the takeaway; from பார்சல் (pārcal), takeaway; parcel"
+      "அனுப்ப": "to send; from அனுப்பு (aṉuppu), to send"
+    confusables:
+      w1: { why: "அஞ்சல்குறியீடு (añcalkuṟiyīṭu), postal code, is a different word." }
+      w2: { why: "ஒப்படை (oppaṭai), to hand over; to submit, is a different word." }
+  "ta-9054":
+    native: "There is a fault in my phone."
+    bases:
+      "என்": "my; from நான் (nāṉ), I; me"
+      "கைபேசியில்": "in the mobile phone; from கைபேசி (kaipēci), mobile phone"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "ஓட்டை (ōṭṭai), hole, is a different word." }
+      w2: { why: "உத்தரவாதம் (uttaravātam), guarantee; warranty, is a different word." }
+  "ta-9055":
+    native: "The mechanic is repairing the vehicle."
+    bases:
+      "வண்டியைப்": "the vehicle; from வண்டி (vaṇṭi), vehicle; cart"
+      "பழுதுபார்க்கிறார்": "is repairing (respectful); from பழுதுபார் (paḻutupār), to repair"
+    confusables:
+      w1: { why: "சரிசெய் (caricey), to fix; to put right, is a different word." }
+      w2: { why: "பிளம்பர் (piḷampar), plumber, is a different word." }
+      w3: { why: "எலக்ட்ரீஷியன் (elakṭrīṣiyaṉ), electrician, is a different word." }
+  "ta-9056":
+    native: "My shirt got torn."
+    bases:
+      "என்": "my; from நான் (nāṉ), I; me"
+      "கிழிந்தது": "got torn; from கிழி (kiḻi), to tear; to rip"
+    confusables:
+      w1: { why: "உடைந்த (uṭainta), broken; smashed, is a different word." }
+      w2: { why: "பழுதான (paḻutāṉa), faulty; broken, is a different word." }
+  "ta-9057":
+    native: "The tailor is taking measurements."
+    bases:
+      "அளவெடுக்கிறார்": "is taking measurements (respectful); from அளவெடு (aḷaveṭu), to take measurements"
+    confusables:
+      w1: { why: "தையல் (taiyal), stitching; sewing, is a different word." }
+      w2: { why: "சலவை (calavai), laundry; washing, is a different word." }
+  "ta-9058":
+    native: "The washerman takes the clothes."
+    bases:
+      "எடுக்கிறார்": "he takes; he makes (a film); from எடு (eṭu), to take"
+    confusables:
+      w1: { why: "சலூன் (calūṉ), barber's shop; salon, is a different word." }
+      w2: { why: "அழகுநிலையம் (aḻakunilaiyam), beauty parlour, is a different word." }
+  "ta-9059":
+    native: "Take a token and stand in the queue."
+    bases:
+      "வாங்கி": "having taken; from வாங்கு (vāṅku), to buy; to take"
+      "வரிசையில்": "in the queue; from வரிசை (varicai), queue"
+    confusables:
+      w1: { why: "காசாளர் (kācāḷar), cashier, is a different word." }
+      w2: { why: "உதவிமையம் (utavimaiyam), help desk; helpline centre, is a different word." }
+      w3: { why: "சேவை (cēvai), service, is a different word." }

@@ -1,0 +1,122 @@
+schema: 1
+id: "ta-phone-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4558"
+    target: "ஹலோ, யார் பேசுகிறீர்கள்?"
+    reading: "halō, yār pēcukiṟīrkaḷ?"
+    ipa: "haloː jaːɾ peːsukiriːɾkaɭ"
+    phonetic: "[haloː jaːɾ peːsuɡiriːɾkaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ஹலோ", ref: "ta-2113" }, { word: "யார்", ref: "ta-0041" }, { word: "பேசுகிறீர்கள்", base: "பேசு", reading: "pēcu" }]
+    confusables:
+      - { id: "w1", ref: "ta-0043", kind: "word" }
+      - { id: "w2", ref: "ta-0042", kind: "word" }
+  - id: "ta-4559"
+    target: "உன் தொலைபேசி எண் என்ன?"
+    reading: "uṉ tolaipēci eṇ eṉṉa?"
+    ipa: "un t̪olaipeːsi eɳ enna"
+    phonetic: "[un t̪olaibeːsi eɳ enna]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases:
+      - { word: "உன்", base: "நீ", reading: "nī" }
+      - { word: "தொலைபேசி", ref: "ta-2087" }
+      - { word: "எண்", ref: "ta-1851" }
+      - { word: "என்ன", ref: "ta-0042" }
+    confusables:
+      - { id: "w1", ref: "ta-2109", kind: "word" }
+      - { id: "w2", ref: "ta-0110", kind: "word" }
+  - id: "ta-4560"
+    target: "போன் எடு."
+    reading: "pōṉ eṭu."
+    ipa: "poːn eʈu"
+    phonetic: "[poːn eɖɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "போன்", ref: "ta-2090" }, { word: "எடு", ref: "ta-0184" }]
+    confusables:
+      - { id: "w1", ref: "ta-0185", kind: "word" }
+      - { id: "w2", ref: "ta-0125", kind: "word" }
+  - id: "ta-4561"
+    target: "என் மொபைல் எங்கே?"
+    reading: "eṉ mopail eṅkē?"
+    ipa: "en mopail eŋkeː"
+    phonetic: "[en mobail eŋɡeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "மொபைல்", ref: "ta-2089" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-2099", kind: "word" }
+      - { id: "w2", ref: "ta-2100", kind: "word" }
+  - id: "ta-4562"
+    target: "இங்கே சிக்னல் இல்லை."
+    reading: "iṅkē cikṉal illai."
+    ipa: "iŋkeː siknal illai"
+    phonetic: "[iŋɡeː siknal illai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "சிக்னல்", ref: "ta-2104" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-2095", kind: "word" }
+      - { id: "w2", ref: "ta-2114", kind: "word" }
+  - id: "ta-4563"
+    target: "குறுஞ்செய்தி அனுப்பு."
+    reading: "kuṟuñceyti aṉuppu."
+    ipa: "kuruɲtʃejt̪i anuppu"
+    phonetic: "[kuruɲdʒejt̪i anuppɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "குறுஞ்செய்தி", ref: "ta-2092" }, { word: "அனுப்பு", ref: "ta-2029" }]
+    confusables:
+      - { id: "w1", ref: "ta-2094", kind: "word" }
+      - { id: "w2", ref: "ta-2093", kind: "word" }
+  - id: "ta-4564"
+    target: "கடவுச்சொல் என்ன?"
+    reading: "kaṭavuccol eṉṉa?"
+    ipa: "kaʈaʋutʃtʃol enna"
+    phonetic: "[kaɖaʋutʃtʃol enna]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "கடவுச்சொல்", ref: "ta-2098" }, { word: "என்ன", ref: "ta-0042" }]
+    confusables:
+      - { id: "w1", ref: "ta-2109", kind: "word" }
+      - { id: "w2", ref: "ta-2115", kind: "word" }
+  - id: "ta-4565"
+    target: "பேட்டரி குறைவு."
+    reading: "pēṭṭari kuṟaivu."
+    ipa: "peːʈʈaɾi kuraiʋu"
+    phonetic: "[peːʈʈaɾi kuraiʋɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "பேட்டரி", ref: "ta-2100" }, { word: "குறைவு", ref: "ta-0160" }]
+    confusables:
+      - { id: "w1", ref: "ta-2099", kind: "word" }
+      - { id: "w2", ref: "ta-2105", kind: "word" }
+  - id: "ta-4566"
+    target: "என்னைத் தொடர்புகொள்."
+    reading: "eṉṉait toṭarpukoḷ."
+    ipa: "ennait̪ t̪oʈaɾpukoɭ"
+    phonetic: "[ennait̪ t̪oɖaɾpuɡoɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "என்னைத்", base: "நான்", reading: "nāṉ" }, { word: "தொடர்புகொள்", ref: "ta-2127" }]
+    confusables:
+      - { id: "w1", ref: "ta-2031", kind: "word" }
+      - { id: "w2", ref: "ta-2130", kind: "word" }
+  - id: "ta-4567"
+    target: "செயலி பதிவிறக்கு."
+    reading: "ceyali pativiṟakku."
+    ipa: "sejali pat̪iʋirakku"
+    phonetic: "[sejali pad̪iʋirakkɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "செயலி", ref: "ta-2097" }, { word: "பதிவிறக்கு", ref: "ta-2121" }]
+    confusables:
+      - { id: "w1", ref: "ta-2125", kind: "word" }
+      - { id: "w2", ref: "ta-2126", kind: "word" }

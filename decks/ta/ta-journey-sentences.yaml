@@ -1,0 +1,118 @@
+schema: 1
+id: "ta-journey-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4568"
+    target: "பேருந்து நிலையம் எங்கே?"
+    reading: "pēruntu nilaiyam eṅkē?"
+    ipa: "peːɾunt̪u nilaijam eŋkeː"
+    phonetic: "[peːɾun̪d̪ɯ n̪ilaijam eŋɡeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "பேருந்து", ref: "ta-0238" }, { word: "நிலையம்", ref: "ta-2135" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-2136", kind: "word" }
+      - { id: "w2", ref: "ta-2132", kind: "word" }
+  - id: "ta-4569"
+    target: "டிக்கெட் எவ்வளவு?"
+    reading: "ṭikkeṭ evvaḷavu?"
+    ipa: "ʈikkeʈ eʋʋaɭaʋu"
+    phonetic: "[ʈikkeʈ eʋʋaɭaʋɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "டிக்கெட்", ref: "ta-2134" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+    confusables:
+      - { id: "w1", ref: "ta-2154", kind: "word" }
+      - { id: "w2", ref: "ta-2167", kind: "word" }
+  - id: "ta-4570"
+    target: "இரண்டு டிக்கெட் வேண்டும்."
+    reading: "iraṇṭu ṭikkeṭ vēṇṭum."
+    ipa: "iɾaɳʈu ʈikkeʈ ʋeːɳʈum"
+    phonetic: "[iɾaɳɖɯ ʈikkeʈ ʋeːɳɖum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "டிக்கெட்", ref: "ta-2134" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-2133", kind: "word" }
+      - { id: "w2", ref: "ta-2154", kind: "word" }
+  - id: "ta-4571"
+    target: "ரயில் எப்போது புறப்படுகிறது?"
+    reading: "rayil eppōtu puṟappaṭukiṟatu?"
+    ipa: "ɾajil eppoːt̪u purappaʈukirat̪u"
+    phonetic: "[ɾajil eppoːd̪ɯ purappaɖuɡirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ரயில்", ref: "ta-0241" }, { word: "எப்போது", ref: "ta-0044" }, { word: "புறப்படுகிறது", base: "புறப்படு", reading: "puṟappaṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-2166", kind: "word" }
+      - { id: "w2", ref: "ta-2167", kind: "word" }
+  - id: "ta-4572"
+    target: "நான் நேராகச் செல்கிறேன்."
+    reading: "nāṉ nērākac celkiṟēṉ."
+    ipa: "naːn neːɾaːkas selkireːn"
+    phonetic: "[n̪aːn n̪eːɾaːɡas selkireːn]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "நேராகச்", base: "நேராக", reading: "nērāka" }, { word: "செல்கிறேன்", base: "செல்", reading: "cel" }]
+    confusables:
+      - { id: "w1", ref: "ta-2149", kind: "word" }
+      - { id: "w2", ref: "ta-2150", kind: "word" }
+  - id: "ta-4573"
+    target: "எனக்குப் பாதை தெரியாது."
+    reading: "eṉakkup pātai teriyātu."
+    ipa: "enakkup paːt̪ai t̪eɾijaːt̪u"
+    phonetic: "[enakkup paːd̪ai t̪eɾijaːd̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பாதை", ref: "ta-2151" }, { word: "தெரியாது", base: "தெரி", reading: "teri" }]
+    confusables:
+      - { id: "w1", ref: "ta-2150", kind: "word" }
+      - { id: "w2", ref: "ta-2149", kind: "word" }
+  - id: "ta-4574"
+    target: "தூரம் எவ்வளவு?"
+    reading: "tūram evvaḷavu?"
+    ipa: "t̪uːɾam eʋʋaɭaʋu"
+    phonetic: "[t̪uːɾam eʋʋaɭaʋɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "தூரம்", ref: "ta-2147" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+    confusables:
+      - { id: "w1", ref: "ta-2168", kind: "word" }
+      - { id: "w2", ref: "ta-2148", kind: "word" }
+  - id: "ta-4575"
+    target: "இங்கே போக்குவரத்து அதிகம்."
+    reading: "iṅkē pōkkuvarattu atikam."
+    ipa: "iŋkeː poːkkuʋaɾat̪t̪u at̪ikam"
+    phonetic: "[iŋɡeː poːkkuʋaɾat̪t̪ɯ ad̪iɡam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "போக்குவரத்து", ref: "ta-2152" }, { word: "அதிகம்", ref: "ta-0159" }]
+    confusables:
+      - { id: "w1", ref: "ta-2169", kind: "word" }
+      - { id: "w2", ref: "ta-2143", kind: "word" }
+  - id: "ta-4576"
+    target: "என் சாமான் எங்கே?"
+    reading: "eṉ cāmāṉ eṅkē?"
+    ipa: "en saːmaːn eŋkeː"
+    phonetic: "[en saːmaːn eŋɡeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "சாமான்", ref: "ta-1225" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-2157", kind: "word" }
+      - { id: "w2", ref: "ta-2179", kind: "word" }
+  - id: "ta-4577"
+    target: "நாம் சுற்றுலா போகலாம்."
+    reading: "nām cuṟṟulā pōkalām."
+    ipa: "naːm surrulaː poːkalaːm"
+    phonetic: "[n̪aːm suttrulaː poːɡalaːm]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "சுற்றுலா", ref: "ta-2172" }, { word: "போகலாம்", base: "போ", reading: "pō" }]
+    confusables:
+      - { id: "w1", ref: "ta-2132", kind: "word" }
+      - { id: "w2", ref: "ta-2173", kind: "word" }

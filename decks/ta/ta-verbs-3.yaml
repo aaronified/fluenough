@@ -1,0 +1,1343 @@
+schema: 1
+id: "ta-verbs-3"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-3"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-2017"
+    target: "சொல்"
+    reading: "col"
+    ipa: "sol"
+    phonetic: "[sol]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பெயர் சொல்."
+        reading: "peyar col."
+        ipa: "pejaɾ sol"
+        bases: [{ word: "பெயர்", ref: "ta-0110" }, { word: "சொல்", base: "சொல்", reading: "col" }]
+      - target: "நான் சொல்கிறேன்."
+        reading: "nāṉ colkiṟēṉ."
+        ipa: "naːn solkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சொல்கிறேன்", base: "சொல்", reading: "col" }]
+  - id: "ta-2018"
+    target: "இரு"
+    reading: "iru"
+    ipa: "iɾu"
+    phonetic: "[iɾɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே இரு."
+        reading: "iṅkē iru."
+        ipa: "iŋkeː iɾu"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "இரு", base: "இரு", reading: "iru" }]
+      - target: "நான் வீட்டில் இருக்கிறேன்."
+        reading: "nāṉ vīṭṭil irukkiṟēṉ."
+        ipa: "naːn ʋiːʈʈil iɾukkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }]
+  - id: "ta-2019"
+    target: "தெரி"
+    reading: "teri"
+    ipa: "t̪eɾi"
+    phonetic: "[t̪eɾi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தெரியும்."
+        reading: "eṉakkut teriyum."
+        ipa: "enakkut̪ t̪eɾijum"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தெரியும்", base: "தெரி", reading: "teri" }]
+      - target: "எனக்குத் தெரியாது."
+        reading: "eṉakkut teriyātu."
+        ipa: "enakkut̪ t̪eɾijaːt̪u"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தெரியாது", base: "தெரி", reading: "teri" }]
+  - id: "ta-2020"
+    target: "தங்கு"
+    reading: "taṅku"
+    ipa: "t̪aŋku"
+    phonetic: "[t̪aŋɡɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விடுதியில் தங்கு."
+        reading: "viṭutiyil taṅku."
+        ipa: "ʋiʈut̪ijil t̪aŋku"
+        bases: [{ word: "விடுதியில்", base: "விடுதி", reading: "viṭuti" }, { word: "தங்கு", base: "தங்கு", reading: "taṅku" }]
+      - target: "நான் இங்கே தங்குகிறேன்."
+        reading: "nāṉ iṅkē taṅkukiṟēṉ."
+        ipa: "naːn iŋkeː t̪aŋkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இங்கே", ref: "ta-0112" }, { word: "தங்குகிறேன்", base: "தங்கு", reading: "taṅku" }]
+  - id: "ta-2021"
+    target: "வாழ்"
+    reading: "vāḻ"
+    ipa: "ʋaːɻ"
+    phonetic: "[ʋaːɻ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் இங்கே வாழ்கிறேன்."
+        reading: "nāṉ iṅkē vāḻkiṟēṉ."
+        ipa: "naːn iŋkeː ʋaːɻkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இங்கே", ref: "ta-0112" }, { word: "வாழ்கிறேன்", base: "வாழ்", reading: "vāḻ" }]
+      - target: "அவர்கள் கிராமத்தில் வாழ்கிறார்கள்."
+        reading: "avarkaḷ kirāmattil vāḻkiṟārkaḷ."
+        ipa: "aʋaɾkaɭ kiɾaːmat̪t̪il ʋaːɻkiraːɾkaɭ"
+        bases: [{ word: "அவர்கள்", ref: "ta-0065" }, { word: "கிராமத்தில்", base: "கிராமம்", reading: "kirāmam" }, { word: "வாழ்கிறார்கள்", base: "வாழ்", reading: "vāḻ" }]
+  - id: "ta-2022"
+    target: "இறங்கு"
+    reading: "iṟaṅku"
+    ipa: "iraŋku"
+    phonetic: "[iraŋɡɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பேருந்திலிருந்து இறங்கு."
+        reading: "pēruntiliruntu iṟaṅku."
+        ipa: "peːɾunt̪iliɾunt̪u iraŋku"
+        bases: [{ word: "பேருந்திலிருந்து", base: "பேருந்து", reading: "pēruntu" }, { word: "இறங்கு", base: "இறங்கு", reading: "iṟaṅku" }]
+      - target: "நான் இங்கே இறங்குகிறேன்."
+        reading: "nāṉ iṅkē iṟaṅkukiṟēṉ."
+        ipa: "naːn iŋkeː iraŋkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இறங்குகிறேன்", base: "இறங்கு", reading: "iṟaṅku" }]
+  - id: "ta-2023"
+    target: "தோன்று"
+    reading: "tōṉṟu"
+    ipa: "t̪oːnru"
+    phonetic: "[t̪oːndrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தோன்றுகிறது."
+        reading: "eṉakkut tōṉṟukiṟatu."
+        ipa: "enakkut̪ t̪oːnrukirat̪u"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தோன்றுகிறது", base: "தோன்று", reading: "tōṉṟu" }]
+      - target: "ஒரு யோசனை தோன்றுகிறது."
+        reading: "oru yōcaṉai tōṉṟukiṟatu."
+        ipa: "oɾu joːsanai t̪oːnrukirat̪u"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "யோசனை", base: "யோசனை", reading: "yōcaṉai" }, { word: "தோன்றுகிறது", base: "தோன்று", reading: "tōṉṟu" }]
+  - id: "ta-2024"
+    target: "பெறு"
+    reading: "peṟu"
+    ipa: "peru"
+    phonetic: "[perɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பரிசு பெறு."
+        reading: "paricu peṟu."
+        ipa: "paɾisu peru"
+        bases: [{ word: "பரிசு", ref: "ta-1844" }, { word: "பெறு", base: "பெறு", reading: "peṟu" }]
+      - target: "நான் பரிசு பெறுகிறேன்."
+        reading: "nāṉ paricu peṟukiṟēṉ."
+        ipa: "naːn paɾisu perukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பரிசு", ref: "ta-1844" }, { word: "பெறுகிறேன்", base: "பெறு", reading: "peṟu" }]
+  - id: "ta-2025"
+    target: "கிடை"
+    reading: "kiṭai"
+    ipa: "kiʈai"
+    phonetic: "[kiɖai]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பேருந்து கிடைக்கும்."
+        reading: "pēruntu kiṭaikkum."
+        ipa: "peːɾunt̪u kiʈaikkum"
+        bases: [{ word: "பேருந்து", ref: "ta-0238" }, { word: "கிடைக்கும்", base: "கிடை", reading: "kiṭai" }]
+      - target: "இங்கே தண்ணீர் கிடைக்கும்."
+        reading: "iṅkē taṇṇīr kiṭaikkum."
+        ipa: "iŋkeː t̪aɳɳiːɾ kiʈaikkum"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "கிடைக்கும்", base: "கிடை", reading: "kiṭai" }]
+  - id: "ta-2026"
+    target: "கலந்துகொள்"
+    reading: "kalantukoḷ"
+    ipa: "kalant̪ukoɭ"
+    phonetic: "[kalan̪d̪uɡoɭ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் கூட்டத்தில் கலந்துகொள்கிறேன்."
+        reading: "nāṉ kūṭṭattil kalantukoḷkiṟēṉ."
+        ipa: "naːn kuːʈʈat̪t̪il kalant̪ukoɭkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கூட்டத்தில்", base: "கூட்டம்", reading: "kūṭṭam" }, { word: "கலந்துகொள்கிறேன்", base: "கலந்துகொள்", reading: "kalantukoḷ" }]
+      - target: "நீ போட்டியில் கலந்துகொள்."
+        reading: "nī pōṭṭiyil kalantukoḷ."
+        ipa: "niː poːʈʈijil kalant̪ukoɭ"
+        bases: [{ word: "நீ", ref: "ta-0057" }, { word: "போட்டியில்", base: "போட்டி", reading: "pōṭṭi" }, { word: "கலந்துகொள்", base: "கலந்துகொள்", reading: "kalantukoḷ" }]
+  - id: "ta-2027"
+    target: "கவனி"
+    reading: "kavaṉi"
+    ipa: "kaʋani"
+    phonetic: "[kaʋani]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆசிரியரைக் கவனி."
+        reading: "āciriyaraik kavaṉi."
+        ipa: "aːsiɾijaɾaik kaʋani"
+        bases: [{ word: "ஆசிரியரைக்", base: "ஆசிரியர்", reading: "āciriyar" }, { word: "கவனி", base: "கவனி", reading: "kavaṉi" }]
+      - target: "நான் கவனிக்கிறேன்."
+        reading: "nāṉ kavaṉikkiṟēṉ."
+        ipa: "naːn kaʋanikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கவனிக்கிறேன்", base: "கவனி", reading: "kavaṉi" }]
+  - id: "ta-2028"
+    target: "வருந்து"
+    reading: "varuntu"
+    ipa: "ʋaɾunt̪u"
+    phonetic: "[ʋaɾun̪d̪ɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் வருந்துகிறேன்."
+        reading: "nāṉ varuntukiṟēṉ."
+        ipa: "naːn ʋaɾunt̪ukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வருந்துகிறேன்", base: "வருந்து", reading: "varuntu" }]
+      - target: "வருந்தாதே."
+        reading: "varuntātē."
+        ipa: "ʋaɾunt̪aːt̪eː"
+        bases: [{ word: "வருந்தாதே", base: "வருந்து", reading: "varuntu" }]
+  - id: "ta-2029"
+    target: "அனுப்பு"
+    reading: "aṉuppu"
+    ipa: "anuppu"
+    phonetic: "[anuppɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "செய்தி அனுப்பு."
+        reading: "ceyti aṉuppu."
+        ipa: "sejt̪i anuppu"
+        bases: [{ word: "செய்தி", ref: "ta-1873" }, { word: "அனுப்பு", base: "அனுப்பு", reading: "aṉuppu" }]
+      - target: "நான் புத்தகம் அனுப்புகிறேன்."
+        reading: "nāṉ puttakam aṉuppukiṟēṉ."
+        ipa: "naːn put̪t̪akam anuppukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "புத்தகம்", ref: "ta-1813" }, { word: "அனுப்புகிறேன்", base: "அனுப்பு", reading: "aṉuppu" }]
+  - id: "ta-2030"
+    target: "கூப்பிடு"
+    reading: "kūppiṭu"
+    ipa: "kuːppiʈu"
+    phonetic: "[kuːppiɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அம்மாவைக் கூப்பிடு."
+        reading: "ammāvaik kūppiṭu."
+        ipa: "ammaːʋaik kuːppiʈu"
+        bases: [{ word: "அம்மாவைக்", base: "அம்மா", reading: "ammā" }, { word: "கூப்பிடு", base: "கூப்பிடு", reading: "kūppiṭu" }]
+      - target: "நான் கூப்பிடுகிறேன்."
+        reading: "nāṉ kūppiṭukiṟēṉ."
+        ipa: "naːn kuːppiʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கூப்பிடுகிறேன்", base: "கூப்பிடு", reading: "kūppiṭu" }]
+  - id: "ta-2031"
+    target: "அழை"
+    reading: "aḻai"
+    ipa: "aɻai"
+    phonetic: "[aɻai]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நண்பனை அழை."
+        reading: "naṇpaṉai aḻai."
+        ipa: "naɳpanai aɻai"
+        bases: [{ word: "நண்பனை", base: "நண்பன்", reading: "naṇpaṉ" }, { word: "அழை", base: "அழை", reading: "aḻai" }]
+      - target: "நான் அழைக்கிறேன்."
+        reading: "nāṉ aḻaikkiṟēṉ."
+        ipa: "naːn aɻaikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அழைக்கிறேன்", base: "அழை", reading: "aḻai" }]
+  - id: "ta-2032"
+    target: "காத்திரு"
+    reading: "kāttiru"
+    ipa: "kaːt̪t̪iɾu"
+    phonetic: "[kaːt̪t̪iɾɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே காத்திரு."
+        reading: "iṅkē kāttiru."
+        ipa: "iŋkeː kaːt̪t̪iɾu"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "காத்திரு", base: "காத்திரு", reading: "kāttiru" }]
+      - target: "நான் காத்திருக்கிறேன்."
+        reading: "nāṉ kāttirukkiṟēṉ."
+        ipa: "naːn kaːt̪t̪iɾukkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காத்திருக்கிறேன்", base: "காத்திரு", reading: "kāttiru" }]
+  - id: "ta-2033"
+    target: "சந்தி"
+    reading: "canti"
+    ipa: "sant̪i"
+    phonetic: "[san̪d̪i]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாளை சந்திக்கலாம்."
+        reading: "nāḷai cantikkalām."
+        ipa: "naːɭai sant̪ikkalaːm"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "சந்திக்கலாம்", base: "சந்தி", reading: "canti" }]
+      - target: "நான் நண்பனைச் சந்திக்கிறேன்."
+        reading: "nāṉ naṇpaṉaic cantikkiṟēṉ."
+        ipa: "naːn naɳpanais sant̪ikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "நண்பனைச்", base: "நண்பன்", reading: "naṇpaṉ" }, { word: "சந்திக்கிறேன்", base: "சந்தி", reading: "canti" }]
+  - id: "ta-2034"
+    target: "சேர்"
+    reading: "cēr"
+    ipa: "seːɾ"
+    phonetic: "[seːɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சர்க்கரை சேர்."
+        reading: "carkkarai cēr."
+        ipa: "saɾkkaɾai seːɾ"
+        bases: [{ word: "சர்க்கரை", ref: "ta-0218" }, { word: "சேர்", base: "சேர்", reading: "cēr" }]
+      - target: "நான் பள்ளியில் சேர்கிறேன்."
+        reading: "nāṉ paḷḷiyil cērkiṟēṉ."
+        ipa: "naːn paɭɭijil seːɾkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பள்ளியில்", base: "பள்ளி", reading: "paḷḷi" }, { word: "சேர்கிறேன்", base: "சேர்", reading: "cēr" }]
+  - id: "ta-2035"
+    target: "பிரி"
+    reading: "piri"
+    ipa: "piɾi"
+    phonetic: "[piɾi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பாதியாகப் பிரி."
+        reading: "pātiyākap piri."
+        ipa: "paːt̪ijaːkap piɾi"
+        bases: [{ word: "பாதியாகப்", base: "பாதி", reading: "pāti" }, { word: "பிரி", base: "பிரி", reading: "piri" }]
+      - target: "நாம் பிரிகிறோம்."
+        reading: "nām pirikiṟōm."
+        ipa: "naːm piɾikiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "பிரிகிறோம்", base: "பிரி", reading: "piri" }]
+  - id: "ta-2036"
+    target: "நம்பு"
+    reading: "nampu"
+    ipa: "nampu"
+    phonetic: "[n̪ambɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என்னை நம்பு."
+        reading: "eṉṉai nampu."
+        ipa: "ennai nampu"
+        bases: [{ word: "என்னை", base: "நான்", reading: "nāṉ" }, { word: "நம்பு", base: "நம்பு", reading: "nampu" }]
+      - target: "நான் நம்புகிறேன்."
+        reading: "nāṉ nampukiṟēṉ."
+        ipa: "naːn nampukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "நம்புகிறேன்", base: "நம்பு", reading: "nampu" }]
+  - id: "ta-2037"
+    target: "ஒப்புக்கொள்"
+    reading: "oppukkoḷ"
+    ipa: "oppukkoɭ"
+    phonetic: "[oppukkoɭ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் ஒப்புக்கொள்கிறேன்."
+        reading: "nāṉ oppukkoḷkiṟēṉ."
+        ipa: "naːn oppukkoɭkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "ஒப்புக்கொள்கிறேன்", base: "ஒப்புக்கொள்", reading: "oppukkoḷ" }]
+      - target: "அவன் ஒப்புக்கொள்கிறான்."
+        reading: "avaṉ oppukkoḷkiṟāṉ."
+        ipa: "aʋan oppukkoɭkiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "ஒப்புக்கொள்கிறான்", base: "ஒப்புக்கொள்", reading: "oppukkoḷ" }]
+  - id: "ta-2038"
+    target: "பகிர்"
+    reading: "pakir"
+    ipa: "pakiɾ"
+    phonetic: "[paɡiɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாப்பாடு பகிர்."
+        reading: "cāppāṭu pakir."
+        ipa: "saːppaːʈu pakiɾ"
+        bases: [{ word: "சாப்பாடு", ref: "ta-0244" }, { word: "பகிர்", base: "பகிர்", reading: "pakir" }]
+      - target: "நாம் பகிர்கிறோம்."
+        reading: "nām pakirkiṟōm."
+        ipa: "naːm pakiɾkiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "பகிர்கிறோம்", base: "பகிர்", reading: "pakir" }]
+  - id: "ta-2039"
+    target: "ஒட்டு"
+    reading: "oṭṭu"
+    ipa: "oʈʈu"
+    phonetic: "[oʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காகிதம் ஒட்டு."
+        reading: "kākitam oṭṭu."
+        ipa: "kaːkit̪am oʈʈu"
+        bases: [{ word: "காகிதம்", ref: "ta-1839" }, { word: "ஒட்டு", base: "ஒட்டு", reading: "oṭṭu" }]
+      - target: "நான் படம் ஒட்டுகிறேன்."
+        reading: "nāṉ paṭam oṭṭukiṟēṉ."
+        ipa: "naːn paʈam oʈʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "படம்", ref: "ta-1825" }, { word: "ஒட்டுகிறேன்", base: "ஒட்டு", reading: "oṭṭu" }]
+  - id: "ta-2040"
+    target: "கொட்டு"
+    reading: "koṭṭu"
+    ipa: "koʈʈu"
+    phonetic: "[koʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பால் கொட்டாதே."
+        reading: "pāl koṭṭātē."
+        ipa: "paːl koʈʈaːt̪eː"
+        bases: [{ word: "பால்", ref: "ta-1063" }, { word: "கொட்டாதே", base: "கொட்டு", reading: "koṭṭu" }]
+      - target: "தண்ணீர் கொட்டுகிறது."
+        reading: "taṇṇīr koṭṭukiṟatu."
+        ipa: "t̪aɳɳiːɾ koʈʈukirat̪u"
+        bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "கொட்டுகிறது", base: "கொட்டு", reading: "koṭṭu" }]
+  - id: "ta-2041"
+    target: "எரி"
+    reading: "eri"
+    ipa: "eɾi"
+    phonetic: "[eɾi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விளக்கு எரிகிறது."
+        reading: "viḷakku erikiṟatu."
+        ipa: "ʋiɭakku eɾikirat̪u"
+        bases: [{ word: "விளக்கு", ref: "ta-1926" }, { word: "எரிகிறது", base: "எரி", reading: "eri" }]
+      - target: "அடுப்பு எரிகிறது."
+        reading: "aṭuppu erikiṟatu."
+        ipa: "aʈuppu eɾikirat̪u"
+        bases: [{ word: "அடுப்பு", ref: "ta-1939" }, { word: "எரிகிறது", base: "எரி", reading: "eri" }]
+  - id: "ta-2042"
+    target: "உருவாக்கு"
+    reading: "uruvākku"
+    ipa: "uɾuʋaːkku"
+    phonetic: "[uɾuʋaːkkɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "படம் உருவாக்கு."
+        reading: "paṭam uruvākku."
+        ipa: "paʈam uɾuʋaːkku"
+        bases: [{ word: "படம்", ref: "ta-1825" }, { word: "உருவாக்கு", base: "உருவாக்கு", reading: "uruvākku" }]
+      - target: "நான் புதிய குழு உருவாக்குகிறேன்."
+        reading: "nāṉ putiya kuḻu uruvākkukiṟēṉ."
+        ipa: "naːn put̪ija kuɻu uɾuʋaːkkukireːn"
+        bases:
+          - { word: "நான்", ref: "ta-0003" }
+          - { word: "புதிய", ref: "ta-0171" }
+          - { word: "குழு", ref: "ta-1885" }
+          - { word: "உருவாக்குகிறேன்", base: "உருவாக்கு", reading: "uruvākku" }
+  - id: "ta-2043"
+    target: "திருடு"
+    reading: "tiruṭu"
+    ipa: "t̪iɾuʈu"
+    phonetic: "[t̪iɾuɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "திருடாதே."
+        reading: "tiruṭātē."
+        ipa: "t̪iɾuʈaːt̪eː"
+        bases: [{ word: "திருடாதே", base: "திருடு", reading: "tiruṭu" }]
+      - target: "அவன் திருடுகிறான்."
+        reading: "avaṉ tiruṭukiṟāṉ."
+        ipa: "aʋan t̪iɾuʈukiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "திருடுகிறான்", base: "திருடு", reading: "tiruṭu" }]
+  - id: "ta-2044"
+    target: "யோசி"
+    reading: "yōci"
+    ipa: "joːsi"
+    phonetic: "[joːsi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கொஞ்சம் யோசி."
+        reading: "koñcam yōci."
+        ipa: "koɲtʃam joːsi"
+        bases: [{ word: "கொஞ்சம்", ref: "ta-0158" }, { word: "யோசி", base: "யோசி", reading: "yōci" }]
+      - target: "நான் யோசிக்கிறேன்."
+        reading: "nāṉ yōcikkiṟēṉ."
+        ipa: "naːn joːsikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "யோசிக்கிறேன்", base: "யோசி", reading: "yōci" }]
+  - id: "ta-2045"
+    target: "விரும்பு"
+    reading: "virumpu"
+    ipa: "ʋiɾumpu"
+    phonetic: "[ʋiɾumbɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் தேநீர் விரும்புகிறேன்."
+        reading: "nāṉ tēnīr virumpukiṟēṉ."
+        ipa: "naːn t̪eːniːɾ ʋiɾumpukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தேநீர்", ref: "ta-0246" }, { word: "விரும்புகிறேன்", base: "விரும்பு", reading: "virumpu" }]
+      - target: "அவள் இசை விரும்புகிறாள்."
+        reading: "avaḷ icai virumpukiṟāḷ."
+        ipa: "aʋaɭ isai ʋiɾumpukiraːɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "இசை", ref: "ta-1865" }, { word: "விரும்புகிறாள்", base: "விரும்பு", reading: "virumpu" }]
+  - id: "ta-2046"
+    target: "பயப்படு"
+    reading: "payappaṭu"
+    ipa: "pajappaʈu"
+    phonetic: "[pajappaɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பயப்படாதே."
+        reading: "payappaṭātē."
+        ipa: "pajappaʈaːt̪eː"
+        bases: [{ word: "பயப்படாதே", base: "பயப்படு", reading: "payappaṭu" }]
+      - target: "நான் பயப்படுகிறேன்."
+        reading: "nāṉ payappaṭukiṟēṉ."
+        ipa: "naːn pajappaʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பயப்படுகிறேன்", base: "பயப்படு", reading: "payappaṭu" }]
+  - id: "ta-2047"
+    target: "கவலைப்படு"
+    reading: "kavalaippaṭu"
+    ipa: "kaʋalaippaʈu"
+    phonetic: "[kaʋalaippaɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கவலைப்படாதே."
+        reading: "kavalaippaṭātē."
+        ipa: "kaʋalaippaʈaːt̪eː"
+        bases: [{ word: "கவலைப்படாதே", base: "கவலைப்படு", reading: "kavalaippaṭu" }]
+      - target: "நான் கவலைப்படுகிறேன்."
+        reading: "nāṉ kavalaippaṭukiṟēṉ."
+        ipa: "naːn kaʋalaippaʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கவலைப்படுகிறேன்", base: "கவலைப்படு", reading: "kavalaippaṭu" }]
+  - id: "ta-2048"
+    target: "கோபப்படு"
+    reading: "kōpappaṭu"
+    ipa: "koːpappaʈu"
+    phonetic: "[koːbappaɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கோபப்படாதே."
+        reading: "kōpappaṭātē."
+        ipa: "koːpappaʈaːt̪eː"
+        bases: [{ word: "கோபப்படாதே", base: "கோபப்படு", reading: "kōpappaṭu" }]
+      - target: "அவன் கோபப்படுகிறான்."
+        reading: "avaṉ kōpappaṭukiṟāṉ."
+        ipa: "aʋan koːpappaʈukiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "கோபப்படுகிறான்", base: "கோபப்படு", reading: "kōpappaṭu" }]
+  - id: "ta-2049"
+    target: "அழு"
+    reading: "aḻu"
+    ipa: "aɻu"
+    phonetic: "[aɻɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அழாதே."
+        reading: "aḻātē."
+        ipa: "aɻaːt̪eː"
+        bases: [{ word: "அழாதே", base: "அழு", reading: "aḻu" }]
+      - target: "குழந்தை அழுகிறது."
+        reading: "kuḻantai aḻukiṟatu."
+        ipa: "kuɻant̪ai aɻukirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "அழுகிறது", base: "அழு", reading: "aḻu" }]
+  - id: "ta-2050"
+    target: "எண்ணு"
+    reading: "eṇṇu"
+    ipa: "eɳɳu"
+    phonetic: "[eɳɳɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் எண்ணு."
+        reading: "paṇam eṇṇu."
+        ipa: "paɳam eɳɳu"
+        bases: [{ word: "பணம்", ref: "ta-0197" }, { word: "எண்ணு", base: "எண்ணு", reading: "eṇṇu" }]
+      - target: "நான் பணம் எண்ணுகிறேன்."
+        reading: "nāṉ paṇam eṇṇukiṟēṉ."
+        ipa: "naːn paɳam eɳɳukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பணம்", ref: "ta-0197" }, { word: "எண்ணுகிறேன்", base: "எண்ணு", reading: "eṇṇu" }]
+  - id: "ta-2051"
+    target: "நுழை"
+    reading: "nuḻai"
+    ipa: "nuɻai"
+    phonetic: "[n̪uɻai]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உள்ளே நுழை."
+        reading: "uḷḷē nuḻai."
+        ipa: "uɭɭeː nuɻai"
+        bases: [{ word: "உள்ளே", ref: "ta-0178" }, { word: "நுழை", base: "நுழை", reading: "nuḻai" }]
+      - target: "அவன் வகுப்பில் நுழைகிறான்."
+        reading: "avaṉ vakuppil nuḻaikiṟāṉ."
+        ipa: "aʋan ʋakuppil nuɻaikiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "வகுப்பில்", base: "வகுப்பு", reading: "vakuppu" }, { word: "நுழைகிறான்", base: "நுழை", reading: "nuḻai" }]
+  - id: "ta-2052"
+    target: "வெளியேறு"
+    reading: "veḷiyēṟu"
+    ipa: "ʋeɭijeːru"
+    phonetic: "[ʋeɭijeːrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வெளியேறு."
+        reading: "veḷiyēṟu."
+        ipa: "ʋeɭijeːru"
+        bases: [{ word: "வெளியேறு", base: "வெளியேறு", reading: "veḷiyēṟu" }]
+      - target: "நாம் வெளியேறுகிறோம்."
+        reading: "nām veḷiyēṟukiṟōm."
+        ipa: "naːm ʋeɭijeːrukiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "வெளியேறுகிறோம்", base: "வெளியேறு", reading: "veḷiyēṟu" }]
+  - id: "ta-2053"
+    target: "கட"
+    reading: "kaṭa"
+    ipa: "kaʈa"
+    phonetic: "[kaɖa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தெருவைக் கட."
+        reading: "teruvaik kaṭa."
+        ipa: "t̪eɾuʋaik kaʈa"
+        bases: [{ word: "தெருவைக்", base: "தெரு", reading: "teru" }, { word: "கட", base: "கட", reading: "kaṭa" }]
+      - target: "நான் தெருவைக் கடக்கிறேன்."
+        reading: "nāṉ teruvaik kaṭakkiṟēṉ."
+        ipa: "naːn t̪eɾuʋaik kaʈakkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தெருவைக்", base: "தெரு", reading: "teru" }, { word: "கடக்கிறேன்", base: "கட", reading: "kaṭa" }]
+  - id: "ta-2054"
+    target: "சுற்று"
+    reading: "cuṟṟu"
+    ipa: "surru"
+    phonetic: "[suttrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாம் ஊர் சுற்றலாம்."
+        reading: "nām ūr cuṟṟalām."
+        ipa: "naːm uːɾ surralaːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "ஊர்", ref: "ta-0111" }, { word: "சுற்றலாம்", base: "சுற்று", reading: "cuṟṟu" }]
+      - target: "நான் சுற்றுகிறேன்."
+        reading: "nāṉ cuṟṟukiṟēṉ."
+        ipa: "naːn surrukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சுற்றுகிறேன்", base: "சுற்று", reading: "cuṟṟu" }]
+  - id: "ta-2055"
+    target: "அமர்"
+    reading: "amar"
+    ipa: "amaɾ"
+    phonetic: "[amaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே அமர்."
+        reading: "iṅkē amar."
+        ipa: "iŋkeː amaɾ"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "அமர்", base: "அமர்", reading: "amar" }]
+      - target: "நாம் அமர்கிறோம்."
+        reading: "nām amarkiṟōm."
+        ipa: "naːm amaɾkiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "அமர்கிறோம்", base: "அமர்", reading: "amar" }]
+  - id: "ta-2056"
+    target: "நகர்"
+    reading: "nakar"
+    ipa: "nakaɾ"
+    phonetic: "[n̪aɡaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கொஞ்சம் நகர்."
+        reading: "koñcam nakar."
+        ipa: "koɲtʃam nakaɾ"
+        bases: [{ word: "கொஞ்சம்", ref: "ta-0158" }, { word: "நகர்", base: "நகர்", reading: "nakar" }]
+      - target: "நான் நகர்கிறேன்."
+        reading: "nāṉ nakarkiṟēṉ."
+        ipa: "naːn nakaɾkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "நகர்கிறேன்", base: "நகர்", reading: "nakar" }]
+  - id: "ta-2057"
+    target: "தொடு"
+    reading: "toṭu"
+    ipa: "t̪oʈu"
+    phonetic: "[t̪oɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தொடாதே."
+        reading: "toṭātē."
+        ipa: "t̪oʈaːt̪eː"
+        bases: [{ word: "தொடாதே", base: "தொடு", reading: "toṭu" }]
+      - target: "நான் தொடுகிறேன்."
+        reading: "nāṉ toṭukiṟēṉ."
+        ipa: "naːn t̪oʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தொடுகிறேன்", base: "தொடு", reading: "toṭu" }]
+  - id: "ta-2058"
+    target: "எறி"
+    reading: "eṟi"
+    ipa: "eri"
+    phonetic: "[eri]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பந்து எறி."
+        reading: "pantu eṟi."
+        ipa: "pant̪u eri"
+        bases: [{ word: "பந்து", ref: "ta-0275" }, { word: "எறி", base: "எறி", reading: "eṟi" }]
+      - target: "அவன் பந்து எறிகிறான்."
+        reading: "avaṉ pantu eṟikiṟāṉ."
+        ipa: "aʋan pant̪u erikiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "பந்து", ref: "ta-0275" }, { word: "எறிகிறான்", base: "எறி", reading: "eṟi" }]
+  - id: "ta-2059"
+    target: "மாறு"
+    reading: "māṟu"
+    ipa: "maːru"
+    phonetic: "[maːrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நிறம் மாறுகிறது."
+        reading: "niṟam māṟukiṟatu."
+        ipa: "niram maːrukirat̪u"
+        bases: [{ word: "நிறம்", ref: "ta-0290" }, { word: "மாறுகிறது", base: "மாறு", reading: "māṟu" }]
+      - target: "நேரம் மாறுகிறது."
+        reading: "nēram māṟukiṟatu."
+        ipa: "neːɾam maːrukirat̪u"
+        bases: [{ word: "நேரம்", ref: "ta-0155" }, { word: "மாறுகிறது", base: "மாறு", reading: "māṟu" }]
+  - id: "ta-2060"
+    target: "பெருமைப்படு"
+    reading: "perumaippaṭu"
+    ipa: "peɾumaippaʈu"
+    phonetic: "[peɾumaippaɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் பெருமைப்படுகிறேன்."
+        reading: "nāṉ perumaippaṭukiṟēṉ."
+        ipa: "naːn peɾumaippaʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பெருமைப்படுகிறேன்", base: "பெருமைப்படு", reading: "perumaippaṭu" }]
+      - target: "அம்மா பெருமைப்படுகிறார்."
+        reading: "ammā perumaippaṭukiṟār."
+        ipa: "ammaː peɾumaippaʈukiraːɾ"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "பெருமைப்படுகிறார்", base: "பெருமைப்படு", reading: "perumaippaṭu" }]
+  - id: "ta-2061"
+    target: "ஊக்குவி"
+    reading: "ūkkuvi"
+    ipa: "uːkkuʋi"
+    phonetic: "[uːkkuʋi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என்னை ஊக்குவி."
+        reading: "eṉṉai ūkkuvi."
+        ipa: "ennai uːkkuʋi"
+        bases: [{ word: "என்னை", base: "நான்", reading: "nāṉ" }, { word: "ஊக்குவி", base: "ஊக்குவி", reading: "ūkkuvi" }]
+      - target: "ஆசிரியர் ஊக்குவிக்கிறார்."
+        reading: "āciriyar ūkkuvikkiṟār."
+        ipa: "aːsiɾijaɾ uːkkuʋikkiraːɾ"
+        bases: [{ word: "ஆசிரியர்", ref: "ta-0198" }, { word: "ஊக்குவிக்கிறார்", base: "ஊக்குவி", reading: "ūkkuvi" }]
+  - id: "ta-2062"
+    target: "தொடர்"
+    reading: "toṭar"
+    ipa: "t̪oʈaɾ"
+    phonetic: "[t̪oɖaɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "படிப்பு தொடர்."
+        reading: "paṭippu toṭar."
+        ipa: "paʈippu t̪oʈaɾ"
+        bases: [{ word: "படிப்பு", ref: "ta-1842" }, { word: "தொடர்", base: "தொடர்", reading: "toṭar" }]
+      - target: "நாம் தொடர்கிறோம்."
+        reading: "nām toṭarkiṟōm."
+        ipa: "naːm t̪oʈaɾkiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "தொடர்கிறோம்", base: "தொடர்", reading: "toṭar" }]
+  - id: "ta-2063"
+    target: "முயல்"
+    reading: "muyal"
+    ipa: "mujal"
+    phonetic: "[mujal]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மீண்டும் முயல்."
+        reading: "mīṇṭum muyal."
+        ipa: "miːɳʈum mujal"
+        bases: [{ word: "மீண்டும்", ref: "ta-0140" }, { word: "முயல்", base: "முயல்", reading: "muyal" }]
+      - target: "நான் முயல்கிறேன்."
+        reading: "nāṉ muyalkiṟēṉ."
+        ipa: "naːn mujalkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "முயல்கிறேன்", base: "முயல்", reading: "muyal" }]
+  - id: "ta-2064"
+    target: "சேமி"
+    reading: "cēmi"
+    ipa: "seːmi"
+    phonetic: "[seːmi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் சேமி."
+        reading: "paṇam cēmi."
+        ipa: "paɳam seːmi"
+        bases: [{ word: "பணம்", ref: "ta-0197" }, { word: "சேமி", base: "சேமி", reading: "cēmi" }]
+      - target: "நான் பணம் சேமிக்கிறேன்."
+        reading: "nāṉ paṇam cēmikkiṟēṉ."
+        ipa: "naːn paɳam seːmikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பணம்", ref: "ta-0197" }, { word: "சேமிக்கிறேன்", base: "சேமி", reading: "cēmi" }]
+  - id: "ta-2065"
+    target: "செலவழி"
+    reading: "celavaḻi"
+    ipa: "selaʋaɻi"
+    phonetic: "[selaʋaɻi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் செலவழி."
+        reading: "paṇam celavaḻi."
+        ipa: "paɳam selaʋaɻi"
+        bases: [{ word: "பணம்", ref: "ta-0197" }, { word: "செலவழி", base: "செலவழி", reading: "celavaḻi" }]
+      - target: "அதிகம் செலவழிக்காதே."
+        reading: "atikam celavaḻikkātē."
+        ipa: "at̪ikam selaʋaɻikkaːt̪eː"
+        bases: [{ word: "அதிகம்", ref: "ta-0159" }, { word: "செலவழிக்காதே", base: "செலவழி", reading: "celavaḻi" }]
+  - id: "ta-2066"
+    target: "எழுப்பு"
+    reading: "eḻuppu"
+    ipa: "eɻuppu"
+    phonetic: "[eɻuppɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என்னை எழுப்பு."
+        reading: "eṉṉai eḻuppu."
+        ipa: "ennai eɻuppu"
+        bases: [{ word: "என்னை", base: "நான்", reading: "nāṉ" }, { word: "எழுப்பு", base: "எழுப்பு", reading: "eḻuppu" }]
+      - target: "அம்மா எழுப்புகிறார்."
+        reading: "ammā eḻuppukiṟār."
+        ipa: "ammaː eɻuppukiraːɾ"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "எழுப்புகிறார்", base: "எழுப்பு", reading: "eḻuppu" }]
+  - id: "ta-2067"
+    target: "விழி"
+    reading: "viḻi"
+    ipa: "ʋiɻi"
+    phonetic: "[ʋiɻi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காலையில் விழி."
+        reading: "kālaiyil viḻi."
+        ipa: "kaːlaijil ʋiɻi"
+        bases: [{ word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "விழி", base: "விழி", reading: "viḻi" }]
+      - target: "நான் விழிக்கிறேன்."
+        reading: "nāṉ viḻikkiṟēṉ."
+        ipa: "naːn ʋiɻikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "விழிக்கிறேன்", base: "விழி", reading: "viḻi" }]
+  - id: "ta-2068"
+    target: "விழு"
+    reading: "viḻu"
+    ipa: "ʋiɻu"
+    phonetic: "[ʋiɻɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பந்து விழுகிறது."
+        reading: "pantu viḻukiṟatu."
+        ipa: "pant̪u ʋiɻukirat̪u"
+        bases: [{ word: "பந்து", ref: "ta-0275" }, { word: "விழுகிறது", base: "விழு", reading: "viḻu" }]
+      - target: "கீழே விழாதே."
+        reading: "kīḻē viḻātē."
+        ipa: "kiːɻeː ʋiɻaːt̪eː"
+        bases: [{ word: "கீழே", ref: "ta-0177" }, { word: "விழாதே", base: "விழு", reading: "viḻu" }]
+  - id: "ta-2069"
+    target: "தேர்ந்தெடு"
+    reading: "tērnteṭu"
+    ipa: "t̪eːɾnt̪eʈu"
+    phonetic: "[t̪eːɾn̪d̪eɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒன்று தேர்ந்தெடு."
+        reading: "oṉṟu tērnteṭu."
+        ipa: "onru t̪eːɾnt̪eʈu"
+        bases: [{ word: "ஒன்று", ref: "ta-0007" }, { word: "தேர்ந்தெடு", base: "தேர்ந்தெடு", reading: "tērnteṭu" }]
+      - target: "நான் தேர்ந்தெடுக்கிறேன்."
+        reading: "nāṉ tērnteṭukkiṟēṉ."
+        ipa: "naːn t̪eːɾnt̪eʈukkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தேர்ந்தெடுக்கிறேன்", base: "தேர்ந்தெடு", reading: "tērnteṭu" }]
+  - id: "ta-2070"
+    target: "காட்டு"
+    reading: "kāṭṭu"
+    ipa: "kaːʈʈu"
+    phonetic: "[kaːʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "படம் காட்டு."
+        reading: "paṭam kāṭṭu."
+        ipa: "paʈam kaːʈʈu"
+        bases: [{ word: "படம்", ref: "ta-1825" }, { word: "காட்டு", base: "காட்டு", reading: "kāṭṭu" }]
+      - target: "நான் காட்டுகிறேன்."
+        reading: "nāṉ kāṭṭukiṟēṉ."
+        ipa: "naːn kaːʈʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காட்டுகிறேன்", base: "காட்டு", reading: "kāṭṭu" }]
+  - id: "ta-2071"
+    target: "குனி"
+    reading: "kuṉi"
+    ipa: "kuni"
+    phonetic: "[kuni]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கீழே குனி."
+        reading: "kīḻē kuṉi."
+        ipa: "kiːɻeː kuni"
+        bases: [{ word: "கீழே", ref: "ta-0177" }, { word: "குனி", base: "குனி", reading: "kuṉi" }]
+      - target: "அவன் குனிகிறான்."
+        reading: "avaṉ kuṉikiṟāṉ."
+        ipa: "aʋan kunikiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "குனிகிறான்", base: "குனி", reading: "kuṉi" }]
+  - id: "ta-2072"
+    target: "சாய்"
+    reading: "cāy"
+    ipa: "saːj"
+    phonetic: "[saːj]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சுவரில் சாய்."
+        reading: "cuvaril cāy."
+        ipa: "suʋaɾil saːj"
+        bases: [{ word: "சுவரில்", base: "சுவர்", reading: "cuvar" }, { word: "சாய்", base: "சாய்", reading: "cāy" }]
+      - target: "நான் சாய்கிறேன்."
+        reading: "nāṉ cāykiṟēṉ."
+        ipa: "naːn saːjkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சாய்கிறேன்", base: "சாய்", reading: "cāy" }]
+  - id: "ta-2073"
+    target: "கண்டுபிடி"
+    reading: "kaṇṭupiṭi"
+    ipa: "kaɳʈupiʈi"
+    phonetic: "[kaɳɖubiɖi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாவி கண்டுபிடி."
+        reading: "cāvi kaṇṭupiṭi."
+        ipa: "saːʋi kaɳʈupiʈi"
+        bases: [{ word: "சாவி", ref: "ta-0273" }, { word: "கண்டுபிடி", base: "கண்டுபிடி", reading: "kaṇṭupiṭi" }]
+      - target: "நான் கண்டுபிடிக்கிறேன்."
+        reading: "nāṉ kaṇṭupiṭikkiṟēṉ."
+        ipa: "naːn kaɳʈupiʈikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கண்டுபிடிக்கிறேன்", base: "கண்டுபிடி", reading: "kaṇṭupiṭi" }]
+  - id: "ta-2074"
+    target: "சம்பாதி"
+    reading: "campāti"
+    ipa: "sampaːt̪i"
+    phonetic: "[sambaːd̪i]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் சம்பாதி."
+        reading: "paṇam campāti."
+        ipa: "paɳam sampaːt̪i"
+        bases: [{ word: "பணம்", ref: "ta-0197" }, { word: "சம்பாதி", base: "சம்பாதி", reading: "campāti" }]
+      - target: "அவன் சம்பாதிக்கிறான்."
+        reading: "avaṉ campātikkiṟāṉ."
+        ipa: "aʋan sampaːt̪ikkiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "சம்பாதிக்கிறான்", base: "சம்பாதி", reading: "campāti" }]
+  - id: "ta-2075"
+    target: "பழகு"
+    reading: "paḻaku"
+    ipa: "paɻaku"
+    phonetic: "[paɻaɡɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தமிழ் பழகு."
+        reading: "tamiḻ paḻaku."
+        ipa: "t̪amiɻ paɻaku"
+        bases: [{ word: "தமிழ்", ref: "ta-1820" }, { word: "பழகு", base: "பழகு", reading: "paḻaku" }]
+      - target: "நான் பழகுகிறேன்."
+        reading: "nāṉ paḻakukiṟēṉ."
+        ipa: "naːn paɻakukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பழகுகிறேன்", base: "பழகு", reading: "paḻaku" }]
+  - id: "ta-2076"
+    target: "திட்டு"
+    reading: "tiṭṭu"
+    ipa: "t̪iʈʈu"
+    phonetic: "[t̪iʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "திட்டாதே."
+        reading: "tiṭṭātē."
+        ipa: "t̪iʈʈaːt̪eː"
+        bases: [{ word: "திட்டாதே", base: "திட்டு", reading: "tiṭṭu" }]
+      - target: "அம்மா திட்டுகிறார்."
+        reading: "ammā tiṭṭukiṟār."
+        ipa: "ammaː t̪iʈʈukiraːɾ"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "திட்டுகிறார்", base: "திட்டு", reading: "tiṭṭu" }]
+  - id: "ta-2077"
+    target: "பாராட்டு"
+    reading: "pārāṭṭu"
+    ipa: "paːɾaːʈʈu"
+    phonetic: "[paːɾaːʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவனைப் பாராட்டு."
+        reading: "avaṉaip pārāṭṭu."
+        ipa: "aʋanaip paːɾaːʈʈu"
+        bases: [{ word: "அவனைப்", base: "அவன்", reading: "avaṉ" }, { word: "பாராட்டு", base: "பாராட்டு", reading: "pārāṭṭu" }]
+      - target: "நான் பாராட்டுகிறேன்."
+        reading: "nāṉ pārāṭṭukiṟēṉ."
+        ipa: "naːn paːɾaːʈʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பாராட்டுகிறேன்", base: "பாராட்டு", reading: "pārāṭṭu" }]
+  - id: "ta-2078"
+    target: "நடி"
+    reading: "naṭi"
+    ipa: "naʈi"
+    phonetic: "[n̪aɖi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாடகத்தில் நடி."
+        reading: "nāṭakattil naṭi."
+        ipa: "naːʈakat̪t̪il naʈi"
+        bases: [{ word: "நாடகத்தில்", base: "நாடகம்", reading: "nāṭakam" }, { word: "நடி", base: "நடி", reading: "naṭi" }]
+      - target: "அவன் நடிக்கிறான்."
+        reading: "avaṉ naṭikkiṟāṉ."
+        ipa: "aʋan naʈikkiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "நடிக்கிறான்", base: "நடி", reading: "naṭi" }]
+  - id: "ta-2079"
+    target: "ஆடு"
+    reading: "āṭu"
+    ipa: "aːʈu"
+    phonetic: "[aːɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஊஞ்சல் ஆடு."
+        reading: "ūñcal āṭu."
+        ipa: "uːɲtʃal aːʈu"
+        bases: [{ word: "ஊஞ்சல்", ref: "ta-1895" }, { word: "ஆடு", base: "ஆடு", reading: "āṭu" }]
+      - target: "அவள் ஆடுகிறாள்."
+        reading: "avaḷ āṭukiṟāḷ."
+        ipa: "aʋaɭ aːʈukiraːɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "ஆடுகிறாள்", base: "ஆடு", reading: "āṭu" }]
+  - id: "ta-2080"
+    target: "குறை"
+    reading: "kuṟai"
+    ipa: "kurai"
+    phonetic: "[kurai]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விலை குறைகிறது."
+        reading: "vilai kuṟaikiṟatu."
+        ipa: "ʋilai kuraikirat̪u"
+        bases: [{ word: "விலை", ref: "ta-0225" }, { word: "குறைகிறது", base: "குறை", reading: "kuṟai" }]
+      - target: "எடை குறைகிறது."
+        reading: "eṭai kuṟaikiṟatu."
+        ipa: "eʈai kuraikirat̪u"
+        bases: [{ word: "எடை", ref: "ta-0229" }, { word: "குறைகிறது", base: "குறை", reading: "kuṟai" }]
+  - id: "ta-2081"
+    target: "அதிகரி"
+    reading: "atikari"
+    ipa: "at̪ikaɾi"
+    phonetic: "[ad̪iɡaɾi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விலை அதிகரிக்கிறது."
+        reading: "vilai atikarikkiṟatu."
+        ipa: "ʋilai at̪ikaɾikkirat̪u"
+        bases: [{ word: "விலை", ref: "ta-0225" }, { word: "அதிகரிக்கிறது", base: "அதிகரி", reading: "atikari" }]
+      - target: "எடை அதிகரிக்கிறது."
+        reading: "eṭai atikarikkiṟatu."
+        ipa: "eʈai at̪ikaɾikkirat̪u"
+        bases: [{ word: "எடை", ref: "ta-0229" }, { word: "அதிகரிக்கிறது", base: "அதிகரி", reading: "atikari" }]
+  - id: "ta-2082"
+    target: "நிரூபி"
+    reading: "nirūpi"
+    ipa: "niɾuːpi"
+    phonetic: "[n̪iɾuːbi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உண்மை நிரூபி."
+        reading: "uṇmai nirūpi."
+        ipa: "uɳmai niɾuːpi"
+        bases: [{ word: "உண்மை", base: "உண்மை", reading: "uṇmai" }, { word: "நிரூபி", base: "நிரூபி", reading: "nirūpi" }]
+      - target: "நான் நிரூபிக்கிறேன்."
+        reading: "nāṉ nirūpikkiṟēṉ."
+        ipa: "naːn niɾuːpikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "நிரூபிக்கிறேன்", base: "நிரூபி", reading: "nirūpi" }]
+  - id: "ta-2083"
+    target: "மன்னி"
+    reading: "maṉṉi"
+    ipa: "manni"
+    phonetic: "[manni]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என்னை மன்னி."
+        reading: "eṉṉai maṉṉi."
+        ipa: "ennai manni"
+        bases: [{ word: "என்னை", base: "நான்", reading: "nāṉ" }, { word: "மன்னி", base: "மன்னி", reading: "maṉṉi" }]
+      - target: "நான் மன்னிக்கிறேன்."
+        reading: "nāṉ maṉṉikkiṟēṉ."
+        ipa: "naːn mannikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மன்னிக்கிறேன்", base: "மன்னி", reading: "maṉṉi" }]
+  - id: "ta-2084"
+    target: "ஏமாற்று"
+    reading: "ēmāṟṟu"
+    ipa: "eːmaːrru"
+    phonetic: "[eːmaːttrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஏமாற்றாதே."
+        reading: "ēmāṟṟātē."
+        ipa: "eːmaːrraːt̪eː"
+        bases: [{ word: "ஏமாற்றாதே", base: "ஏமாற்று", reading: "ēmāṟṟu" }]
+      - target: "அவன் ஏமாற்றுகிறான்."
+        reading: "avaṉ ēmāṟṟukiṟāṉ."
+        ipa: "aʋan eːmaːrrukiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "ஏமாற்றுகிறான்", base: "ஏமாற்று", reading: "ēmāṟṟu" }]
+  - id: "ta-2085"
+    target: "பயன்படுத்து"
+    reading: "payaṉpaṭuttu"
+    ipa: "pajanpaʈut̪t̪u"
+    phonetic: "[pajanbaɖut̪t̪ɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கணினி பயன்படுத்து."
+        reading: "kaṇiṉi payaṉpaṭuttu."
+        ipa: "kaɳini pajanpaʈut̪t̪u"
+        bases: [{ word: "கணினி", ref: "ta-0196" }, { word: "பயன்படுத்து", base: "பயன்படுத்து", reading: "payaṉpaṭuttu" }]
+      - target: "நான் பயன்படுத்துகிறேன்."
+        reading: "nāṉ payaṉpaṭuttukiṟēṉ."
+        ipa: "naːn pajanpaʈut̪t̪ukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பயன்படுத்துகிறேன்", base: "பயன்படுத்து", reading: "payaṉpaṭuttu" }]
+  - id: "ta-2086"
+    target: "சரிபார்"
+    reading: "caripār"
+    ipa: "saɾipaːɾ"
+    phonetic: "[saɾibaːɾ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் சரிபார்."
+        reading: "paṇam caripār."
+        ipa: "paɳam saɾipaːɾ"
+        bases: [{ word: "பணம்", ref: "ta-0197" }, { word: "சரிபார்", base: "சரிபார்", reading: "caripār" }]
+      - target: "நான் சரிபார்க்கிறேன்."
+        reading: "nāṉ caripārkkiṟēṉ."
+        ipa: "naːn saɾipaːɾkkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சரிபார்க்கிறேன்", base: "சரிபார்", reading: "caripār" }]

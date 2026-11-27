@@ -1,0 +1,118 @@
+schema: 1
+id: "ta-nature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4578"
+    target: "இது பெரிய நதி."
+    reading: "itu periya nati."
+    ipa: "it̪u peɾija nat̪i"
+    phonetic: "[id̪ɯ peɾija n̪ad̪i]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "நதி", ref: "ta-2192" }]
+    confusables:
+      - { id: "w1", ref: "ta-2193", kind: "word" }
+      - { id: "w2", ref: "ta-2194", kind: "word" }
+  - id: "ta-4579"
+    target: "நாம் கடற்கரை போகலாம்."
+    reading: "nām kaṭaṟkarai pōkalām."
+    ipa: "naːm kaʈarkaɾai poːkalaːm"
+    phonetic: "[n̪aːm kaɖarkaɾai poːɡalaːm]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "கடற்கரை", ref: "ta-2195" }, { word: "போகலாம்", base: "போ", reading: "pō" }]
+    confusables:
+      - { id: "w1", ref: "ta-2196", kind: "word" }
+      - { id: "w2", ref: "ta-2201", kind: "word" }
+  - id: "ta-4580"
+    target: "தாமரை அழகு."
+    reading: "tāmarai aḻaku."
+    ipa: "t̪aːmaɾai aɻaku"
+    phonetic: "[t̪aːmaɾai aɻaɡɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "தாமரை", ref: "ta-2209" }, { word: "அழகு", ref: "ta-1980" }]
+    confusables:
+      - { id: "w1", ref: "ta-2210", kind: "word" }
+      - { id: "w2", ref: "ta-2211", kind: "word" }
+  - id: "ta-4581"
+    target: "மயில் அழகு."
+    reading: "mayil aḻaku."
+    ipa: "majil aɻaku"
+    phonetic: "[majil aɻaɡɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "மயில்", ref: "ta-2227" }, { word: "அழகு", ref: "ta-1980" }]
+    confusables:
+      - { id: "w1", ref: "ta-2228", kind: "word" }
+      - { id: "w2", ref: "ta-2229", kind: "word" }
+  - id: "ta-4582"
+    target: "புலி வருகிறது."
+    reading: "puli varukiṟatu."
+    ipa: "puli ʋaɾukirat̪u"
+    phonetic: "[puli ʋaɾuɡirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "புலி", ref: "ta-2214" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-2215", kind: "word" }
+      - { id: "w2", ref: "ta-2216", kind: "word" }
+  - id: "ta-4583"
+    target: "தேனீ பறக்கிறது."
+    reading: "tēṉī paṟakkiṟatu."
+    ipa: "t̪eːniː parakkirat̪u"
+    phonetic: "[t̪eːniː parakkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "தேனீ", ref: "ta-2224" }, { word: "பறக்கிறது", base: "பற", reading: "paṟa" }]
+    confusables:
+      - { id: "w1", ref: "ta-2223", kind: "word" }
+      - { id: "w2", ref: "ta-2225", kind: "word" }
+  - id: "ta-4584"
+    target: "விதை முளைக்கிறது."
+    reading: "vitai muḷaikkiṟatu."
+    ipa: "ʋit̪ai muɭaikkirat̪u"
+    phonetic: "[ʋid̪ai muɭaikkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "விதை", ref: "ta-2206" }, { word: "முளைக்கிறது", base: "முளை", reading: "muḷai" }]
+    confusables:
+      - { id: "w1", ref: "ta-2207", kind: "word" }
+      - { id: "w2", ref: "ta-2208", kind: "word" }
+  - id: "ta-4585"
+    target: "எனக்கு இயற்கை பிடிக்கும்."
+    reading: "eṉakku iyaṟkai piṭikkum."
+    ipa: "enakku ijarkai piʈikkum"
+    phonetic: "[enakkɯ ijarkai piɖikkum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "இயற்கை", ref: "ta-2232" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+    confusables:
+      - { id: "w1", ref: "ta-2233", kind: "word" }
+      - { id: "w2", ref: "ta-2234", kind: "word" }
+  - id: "ta-4586"
+    target: "வயல் பச்சை."
+    reading: "vayal paccai."
+    ipa: "ʋajal patʃtʃai"
+    phonetic: "[ʋajal patʃtʃai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "வயல்", ref: "ta-2238" }, { word: "பச்சை", ref: "ta-0293" }]
+    confusables:
+      - { id: "w1", ref: "ta-2237", kind: "word" }
+      - { id: "w2", ref: "ta-2204", kind: "word" }
+  - id: "ta-4587"
+    target: "தண்ணீர் உறைகிறது."
+    reading: "taṇṇīr uṟaikiṟatu."
+    ipa: "t̪aɳɳiːɾ uraikirat̪u"
+    phonetic: "[t̪aɳɳiːɾ uraiɡirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "உறைகிறது", base: "உறை", reading: "uṟai" }]
+    confusables:
+      - { id: "w1", ref: "ta-2244", kind: "word" }
+      - { id: "w2", ref: "ta-2246", kind: "word" }

@@ -1,0 +1,23 @@
+schema: 1
+id: "ml-en-grammar-pronouns"
+kind: "layer"
+core: "ml-grammar-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns: one and more than one"
+description: "I, you, he, she and it, for one and for more than one. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "number"
+  slots:
+    "one": "one"
+    "more": "more than one"
+  entries:
+    "njaan": "I"
+    "nee": "you, to a friend or a child"
+    "ningal": "you, polite"
+    "avan": "he"
+    "aval": "she"
+    "athu": "it, that"
+  notes: "Malayalam has two plurals of ഞാൻ (ñāṉ): ഞങ്ങൾ (ñaṅṅaḷ) leaves out the person you speak to and നമ്മൾ (nammaḷ) includes them. നിങ്ങൾ (niṅṅaḷ) is you for several people and also, with respect, for one person; നീ (nī) is for a friend or a child. അവൻ (avaṉ) is a man and അവൾ (avaḷ) a woman; both have the plural അവർ (avar), which is also respectful for one person. A thing or an animal is അത് (at), and several are അവ (ava). Source: English Wikipedia, Malayalam grammar (the personal pronouns)."

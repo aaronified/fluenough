@@ -1,0 +1,79 @@
+schema: 1
+id: "sat-questions"
+part: "core"
+kind: "vocab"
+language: { code: "sat", iso639_3: "sat", name: "Santali", script: "ol_chiki", icon: "ᱥ" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sat-1300"
+    target: "ᱛᱤᱱᱨᱮ"
+    reading: "tinre"
+    ipa: "tinre"
+    phonetic: "[tinre]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ᱛᱤᱱᱨᱮ", base: "ᱛᱤᱱ", reading: "tin" }]
+  - id: "sat-1301"
+    target: "ᱪᱮᱠᱟᱛᱮ"
+    reading: "cekate"
+    ipa: "tʃekate"
+    phonetic: "[cekate]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "sat-1302"
+    target: "ᱚᱠᱚᱭᱠᱚ"
+    reading: "o̠ko̠yko̠"
+    ipa: "ɔkɔjkɔ"
+    phonetic: "[ɔkɔjkɔ]"
+    phonetic_source: "rules"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "ᱚᱠᱚᱭᱠᱚ", base: "ᱚᱠᱚᱭ", reading: "o̠ko̠y" }]
+  - id: "sat-1303"
+    target: "ᱥᱮ"
+    reading: "se"
+    ipa: "se"
+    phonetic: "[se]"
+    phonetic_source: "rules"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1304"
+    target: "ᱚᱦᱚ"
+    reading: "o̠ho̠"
+    ipa: "ɔhɔ"
+    phonetic: "[ɔhɔ]"
+    phonetic_source: "rules"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "sat-1305"
+    target: "ᱵᱟ"
+    reading: "ba"
+    ipa: "ba"
+    phonetic: "[ba]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1306"
+    target: "ᱠᱩᱞᱤ"
+    reading: "kuli"
+    ipa: "kuli"
+    phonetic: "[kuli]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"

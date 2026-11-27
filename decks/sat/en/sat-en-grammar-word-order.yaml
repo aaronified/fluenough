@@ -1,0 +1,68 @@
+schema: 1
+id: "sat-en-grammar-word-order"
+kind: "layer"
+core: "sat-grammar-word-order"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Word order: the verb comes last"
+description: "Six short sentences from Wiktionary's examples that show where Santali puts the doer, the thing acted on, the verb, no and the question word. Not yet checked by a Santali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "sat-0500":
+    native: "Go now."
+    notes:
+      "n1": "A command. The time word ᱱᱤᱛᱚᱜ (nito̠k'), now, comes first, then the verb ᱪᱟᱞᱟᱜ (calak'), go, and the little word ᱢᱮ (me) that makes it a command comes last. Wiktionary: ᱢᱮ (me) marks the imperative mood."
+      "n2": "The sentence is Wiktionary's own example for the word now."
+    bases:
+      "ᱱᱤᱛᱚᱜ": "now"
+      "ᱪᱟᱞᱟᱜ": "to go"
+      "ᱢᱮ": "marks a command"
+  "sat-0501":
+    native: "Rain is needed."
+    notes:
+      "n1": "Santali is head-last: the word that says something about the subject comes after it, and the endings close the sentence. Here the subject ᱫᱟᱜ (dak'), rain, comes first, then ᱞᱟᱹᱠᱛᱤ (lākti), need, and ᱠᱟᱱᱟ (kana), is."
+      "n2": "Wiktionary gives this sentence as an example of the word for need."
+    bases:
+      "ᱫᱟᱜ": "rain; water"
+      "ᱞᱟᱹᱠᱛᱤ": "to need; should"
+      "ᱠᱟᱱᱟ": "is"
+  "sat-0502":
+    native: "She made coffee."
+    notes:
+      "n1": "The usual order is subject, thing acted on, verb: ᱩᱱᱤ (uni), she, ᱠᱚᱯᱷᱤ (ko̠phi), coffee, ᱛᱮᱭᱟᱨ (teyar), make, with its ending last. Nothing marks who did what: only the order does."
+      "n2": "Skrefsrud (1873) lists the order of a full sentence: owner words and adverbs and adjectives first, then the thing acted on, then a negative, and the verb root with its endings last."
+      "n3": "The sentence is Wiktionary's example for the verb make."
+    bases:
+      "ᱩᱱᱤ": "he; she"
+      "ᱠᱚᱯᱷᱤ": "coffee"
+      "ᱛᱮᱭᱟᱨ": "to make"
+      "ᱠᱮᱜᱼᱟᱭ": "past ending: he or she did it"
+  "sat-0503":
+    native: "Nothing happened."
+    notes:
+      "n1": "The no word ᱵᱟᱝ (baṅ) stands just before the verb. The first three words, ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ (cet' hõ̠ baṅ), are what, too and no, and together they mean nothing (Wiktionary lists them as one phrase)."
+    bases:
+      "ᱪᱮᱫ": "what"
+      "ᱦᱚᱸ": "too; as well"
+      "ᱵᱟᱝ": "not"
+      "ᱦᱩᱭᱞᱮᱱᱟ": "happened"
+  "sat-0504":
+    native: "Can you climb the tree?"
+    notes:
+      "n1": "Subject, thing, verb, as in a statement, and then ᱥᱮ (se) closes the sentence and turns it into a yes-or-no question. Wiktionary: ᱥᱮ (se) indicates a question."
+      "n2": "The verb ending -ᱢ (-m) on ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ (daṛeyak'am) is the doer you, one person. This is Wiktionary's example for ᱫᱟᱲᱮᱭᱟᱜᱼᱟ (daṛeyak'a), can."
+    bases:
+      "ᱟᱢ": "you"
+      "ᱫᱟᱨᱮ": "tree; plant"
+      "ᱫᱮᱡ": "to climb"
+      "ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ": "can; ending: you"
+      "ᱥᱮ": "marks a question"
+  "sat-0505":
+    native: "This tree is big."
+    notes:
+      "n1": "No word for is is needed: ᱢᱟᱨᱟᱝ (maraṅ), big, comes after the noun it describes and takes the ending itself. Wikipedia: Santali words that name a quality can be the predicate, with the same endings as a verb."
+      "n2": "The pointing word ᱱᱚᱶᱟ (no̠w̃a), this, comes first. This is Wiktionary's example for ᱢᱟᱨᱟᱝ (maraṅ)."
+    bases:
+      "ᱱᱚᱶᱟ": "this"
+      "ᱫᱟᱨᱮ": "tree; plant"
+      "ᱢᱟᱨᱟᱝ": "big"

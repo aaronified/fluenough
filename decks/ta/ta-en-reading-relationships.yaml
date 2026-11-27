@@ -1,0 +1,51 @@
+schema: 1
+id: "ta-en-reading-relationships"
+name: "Tamil reading: relationships"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short thank-you note to a friend, using the words of relationships. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-thank-you-note"
+    title: "A thank-you note"
+    sentences:
+      - text: "அன்புள்ள சிநேகிதிக்கு, நன்றி."
+        reading: "aṉpuḷḷa cinēkitikku, naṉṟi."
+        ipa: "anpuɭɭa sineːkit̪ikku nanri"
+      - text: "உன் உதவிக்கு நன்றி."
+        reading: "uṉ utavikku naṉṟi."
+        ipa: "un ut̪aʋikku nanri"
+      - text: "உன் அக்கறை எனக்குத் தெரியும்."
+        reading: "uṉ akkaṟai eṉakkut teriyum."
+        ipa: "un akkarai enakkut̪ t̪eɾijum"
+      - text: "நல்ல நட்பு பெரிய பரிசு."
+        reading: "nalla naṭpu periya paricu."
+        ipa: "nalla naʈpu peɾija paɾisu"
+      - text: "அடுத்த வாரம் வீட்டுக்கு வா, விருந்து உண்டு."
+        reading: "aṭutta vāram vīṭṭukku vā, viruntu uṇṭu."
+        ipa: "aʈut̪t̪a ʋaːɾam ʋiːʈʈukku ʋaː ʋiɾunt̪u uɳʈu"
+    questions:
+      - id: "ta-5258"
+        prompt: { "en": "Who is the note written to?" }
+        options:
+          - { "en": "A female friend" }
+          - { "en": "A neighbour" }
+          - { "en": "A teacher" }
+        answer: 1
+      - id: "ta-5259"
+        prompt: { "en": "What does the writer thank her for?" }
+        options:
+          - { "en": "Her help" }
+          - { "en": "A gift of money" }
+          - { "en": "A wedding card" }
+        answer: 1
+      - id: "ta-5260"
+        prompt: { "en": "What is the invitation?" }
+        options:
+          - { "en": "Come home next week for a meal" }
+          - { "en": "Come tomorrow to a film" }
+          - { "en": "Come to a wedding hall" }
+        answer: 1

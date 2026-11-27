@@ -1,0 +1,28 @@
+# How every reading in decks/vsn is written: Vedic Sanskrit in IAST, as the
+# Vedic engine (tools/transcribe.py) writes it from the letters alone. Based on
+# wiki/Readings-ISO-15919.md and wiki/Plan-Vedic-Engine.md, sections 2.3 and 2.5.
+schema: 1
+kind: romanisation
+id: vsn-romanisation
+language: vsn
+scheme: "IAST, the standard for Sanskrit's letters, as the Vedic engine writes it: the long vowels ā ī ū; ṛ for ऋ and ṝ for ॠ; ḷ for ळ; ṃ for the anusvara, the nasal before a stop in its own row (ṅ ñ ṇ n m) the nasalised vowel before y, r, l, v, ś, ṣ, s and h, and word-finally; ḥ for visarga; ś and ṣ for the two sibilants with the sound sh; ṭ ṭh ḍ ḍh ṇ for the retroflex row and t th d dh n for the row on the teeth; e and o written without macron (the engine says them long); ai and au for ऐ and औ. The inherent a is said in every word, word-final included, and no inherent a is deleted anywhere else. Vedic accent marks are never in a reading or in the IPA: the engine reports where each accent is in its notes. A typed answer needs none of the marks."
+standard: "IAST"
+# How a reading's letters are typed, read from the left, longest first:
+# each reading is spelled so before an answer is compared with it.
+typed:
+  - ["ṭh", "th"]
+  - ["ḍh", "dh"]
+  - ["ṭ", "t"]
+  - ["ḍ", "d"]
+  - ["ṇ", "n"]
+  - ["ś", "sh"]
+  - ["ṣ", "sh"]
+  - ["ṛ", "ri"]
+  - ["ṃ", "m"]
+  - ["ḥ", "h"]
+  - ["ḷ", "l"]
+equivalents:
+  - ["ri", "ru"]
+  - ["a", "aa"]
+  - ["i", "ii"]
+  - ["u", "uu"]

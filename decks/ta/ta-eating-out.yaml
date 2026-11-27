@@ -1,0 +1,289 @@
+schema: 1
+id: "ta-eating-out"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "eating-out"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1313"
+    target: "மெனு"
+    reading: "meṉu"
+    ipa: "menu"
+    phonetic: "[menɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மெனு கொடு."
+        reading: "meṉu koṭu."
+        ipa: "menu koʈu"
+        bases: [{ word: "மெனு", base: "மெனு", reading: "meṉu" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "மெனு இங்கே இருக்கிறது."
+        reading: "meṉu iṅkē irukkiṟatu."
+        ipa: "menu iŋkeː iɾukkirat̪u"
+        bases: [{ word: "மெனு", base: "மெனு", reading: "meṉu" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1314"
+    target: "பசி"
+    reading: "paci"
+    ipa: "pasi"
+    phonetic: "[pasi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு பசி."
+        reading: "eṉakku paci."
+        ipa: "enakku pasi"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "பசி", base: "பசி", reading: "paci" }]
+      - target: "ரொம்ப பசி."
+        reading: "rompa paci."
+        ipa: "ɾompa pasi"
+        bases: [{ word: "ரொம்ப", ref: "ta-0166" }, { word: "பசி", base: "பசி", reading: "paci" }]
+  - id: "ta-1315"
+    target: "காரம்"
+    reading: "kāram"
+    ipa: "kaːɾam"
+    phonetic: "[kaːɾam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காரம் கொஞ்சம்."
+        reading: "kāram koñcam."
+        ipa: "kaːɾam koɲtʃam"
+        bases: [{ word: "காரம்", base: "காரம்", reading: "kāram" }, { word: "கொஞ்சம்", ref: "ta-0158" }]
+      - target: "காரம் அதிகம்."
+        reading: "kāram atikam."
+        ipa: "kaːɾam at̪ikam"
+        bases: [{ word: "காரம்", base: "காரம்", reading: "kāram" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-1316"
+    target: "புளிப்பு"
+    reading: "puḷippu"
+    ipa: "puɭippu"
+    phonetic: "[puɭippɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புளிப்பு அதிகம்."
+        reading: "puḷippu atikam."
+        ipa: "puɭippu at̪ikam"
+        bases: [{ word: "புளிப்பு", base: "புளிப்பு", reading: "puḷippu" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "ரசம் புளிப்பு."
+        reading: "racam puḷippu."
+        ipa: "ɾasam puɭippu"
+        bases: [{ word: "ரசம்", ref: "ta-0251" }, { word: "புளிப்பு", base: "புளிப்பு", reading: "puḷippu" }]
+  - id: "ta-1317"
+    target: "பரிமாறு"
+    reading: "parimāṟu"
+    ipa: "paɾimaːru"
+    phonetic: "[paɾimaːrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாம்பார் பரிமாறு."
+        reading: "cāmpār parimāṟu."
+        ipa: "saːmpaːɾ paɾimaːru"
+        bases: [{ word: "சாம்பார்", ref: "ta-0250" }, { word: "பரிமாறு", base: "பரிமாறு", reading: "parimāṟu" }]
+      - target: "அம்மா சாதம் பரிமாறுகிறார்."
+        reading: "ammā cātam parimāṟukiṟār."
+        ipa: "ammaː saːt̪am paɾimaːrukiraːɾ"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "சாதம்", ref: "ta-0247" }, { word: "பரிமாறுகிறார்", base: "பரிமாறு", reading: "parimāṟu" }]
+  - id: "ta-1318"
+    target: "டிப்ஸ்"
+    reading: "ṭips"
+    ipa: "ʈips"
+    phonetic: "[ʈips]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "டிப்ஸ் கொடு."
+        reading: "ṭips koṭu."
+        ipa: "ʈips koʈu"
+        bases: [{ word: "டிப்ஸ்", base: "டிப்ஸ்", reading: "ṭips" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "டிப்ஸ் வேண்டாம்."
+        reading: "ṭips vēṇṭām."
+        ipa: "ʈips ʋeːɳʈaːm"
+        bases: [{ word: "டிப்ஸ்", base: "டிப்ஸ்", reading: "ṭips" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+  - id: "ta-1319"
+    target: "பார்சல்"
+    reading: "pārcal"
+    ipa: "paːɾsal"
+    phonetic: "[paːɾsal]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பார்சல் வேண்டும்."
+        reading: "pārcal vēṇṭum."
+        ipa: "paːɾsal ʋeːɳʈum"
+        bases: [{ word: "பார்சல்", base: "பார்சல்", reading: "pārcal" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "இரண்டு பார்சல் கொடு."
+        reading: "iraṇṭu pārcal koṭu."
+        ipa: "iɾaɳʈu paːɾsal koʈu"
+        bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "பார்சல்", base: "பார்சல்", reading: "pārcal" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-1320"
+    target: "மீல்ஸ்"
+    reading: "mīls"
+    ipa: "miːls"
+    phonetic: "[miːls]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு மீல்ஸ் கொடு."
+        reading: "oru mīls koṭu."
+        ipa: "oɾu miːls koʈu"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "மீல்ஸ்", base: "மீல்ஸ்", reading: "mīls" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "மீல்ஸ் எவ்வளவு?"
+        reading: "mīls evvaḷavu?"
+        ipa: "miːls eʋʋaɭaʋu"
+        bases: [{ word: "மீல்ஸ்", base: "மீல்ஸ்", reading: "mīls" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+  - id: "ta-1321"
+    target: "சர்வர்"
+    reading: "carvar"
+    ipa: "saɾʋaɾ"
+    phonetic: "[saɾʋaɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சர்வர் இங்கே இருக்கிறார்."
+        reading: "carvar iṅkē irukkiṟār."
+        ipa: "saɾʋaɾ iŋkeː iɾukkiraːɾ"
+        bases: [{ word: "சர்வர்", base: "சர்வர்", reading: "carvar" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "சர்வர் வருகிறார்."
+        reading: "carvar varukiṟār."
+        ipa: "saɾʋaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "சர்வர்", base: "சர்வர்", reading: "carvar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-6415"
+    target: "இரண்டு பேருக்கு மேசை வேண்டும்."
+    reading: "iraṇṭu pērukku mēcai vēṇṭum."
+    ipa: "iɾaɳʈu peːɾukku meːsai ʋeːɳʈum"
+    phonetic: "[iɾaɳɖɯ peːɾukkɯ meːsai ʋeːɳɖum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "இரண்டு", ref: "ta-0089" }
+      - { word: "பேருக்கு", base: "பேர்", reading: "pēr" }
+      - { word: "மேசை", ref: "ta-0280" }
+      - { word: "வேண்டும்", ref: "ta-0409" }
+  - id: "ta-6416"
+    target: "மெனு கொடுங்கள்."
+    reading: "meṉu koṭuṅkaḷ."
+    ipa: "menu koʈuŋkaɭ"
+    phonetic: "[menɯ koɖuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "மெனு", ref: "ta-1313" }
+      - { word: "கொடுங்கள்", base: "கொடு", reading: "koṭu" }
+  - id: "ta-6417"
+    target: "தண்ணீர் கொடுங்கள்."
+    reading: "taṇṇīr koṭuṅkaḷ."
+    ipa: "t̪aɳɳiːɾ koʈuŋkaɭ"
+    phonetic: "[t̪aɳɳiːɾ koɖuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "தண்ணீர்", ref: "ta-0005" }
+      - { word: "கொடுங்கள்", base: "கொடு", reading: "koṭu" }
+  - id: "ta-6418"
+    target: "காரம் குறைவாகப் போடுங்கள்."
+    reading: "kāram kuṟaivākap pōṭuṅkaḷ."
+    ipa: "kaːɾam kuraiʋaːkap poːʈuŋkaɭ"
+    phonetic: "[kaːɾam kuraiʋaːɡap poːɖuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "காரம்", ref: "ta-1315" }
+      - { word: "குறைவாகப்", base: "குறைவு", reading: "kuṟaivu" }
+      - { word: "போடுங்கள்", base: "போடு", reading: "pōṭu" }
+  - id: "ta-6419"
+    target: "இது சைவமா?"
+    reading: "itu caivamā?"
+    ipa: "it̪u saiʋamaː"
+    phonetic: "[id̪ɯ saiʋamaː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "இது", ref: "ta-0066" }
+      - { word: "சைவமா", base: "சைவம்", reading: "caivam" }
+  - id: "ta-6420"
+    target: "பில் கொண்டு வாருங்கள்."
+    reading: "pil koṇṭu vāruṅkaḷ."
+    ipa: "pil koɳʈu ʋaːɾuŋkaɭ"
+    phonetic: "[pil koɳɖɯ ʋaːɾuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "பில்", ref: "ta-1213" }
+      - { word: "கொண்டு", base: "கொண்டு", reading: "koṇṭu" }
+      - { word: "வாருங்கள்", base: "வா", reading: "vā" }
+  - id: "ta-6421"
+    target: "சாப்பாடு நன்றாக இருந்தது."
+    reading: "cāppāṭu naṉṟāka iruntatu."
+    ipa: "saːppaːʈu nanraːka iɾunt̪at̪u"
+    phonetic: "[saːppaːɖɯ n̪andraːɡa iɾun̪d̪ad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "சாப்பாடு", ref: "ta-0244" }
+      - { word: "நன்றாக", base: "நன்று", reading: "naṉṟu" }
+      - { word: "இருந்தது", base: "இரு", reading: "iru" }
+  - id: "ta-6422"
+    target: "பார்சல் வேண்டும்."
+    reading: "pārcal vēṇṭum."
+    ipa: "paːɾsal ʋeːɳʈum"
+    phonetic: "[paːɾsal ʋeːɳɖum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "பார்சல்", ref: "ta-1319" }
+      - { word: "வேண்டும்", ref: "ta-0409" }

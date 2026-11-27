@@ -1,0 +1,28 @@
+schema: 1
+id: "ml-en-verbs-sentences"
+kind: "layer"
+core: "ml-verbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Commands in sentences"
+description: "Short sentences with commands: sit, read, write, open, sleep, come tomorrow and drink tea. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0708":
+    native: "Sit here."
+  "ml-0709":
+    native: "Read the book."
+  "ml-0710":
+    native: "Write, please."
+  "ml-0711":
+    native: "Open the door."
+  "ml-0712":
+    native: "Sleep, come tomorrow."
+  "ml-0713":
+    native: "Look, this is it."
+    bases:
+      "ഇതാണ്": "this is"
+  "ml-0714":
+    native: "Listen now."
+  "ml-0715":
+    native: "Drink tea."

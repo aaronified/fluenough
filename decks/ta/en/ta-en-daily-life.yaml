@@ -1,0 +1,154 @@
+schema: 1
+id: "ta-en-daily-life"
+kind: "layer"
+core: "ta-daily-life"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "A day"
+description: "Words for the day: day, bathe, brush, walk, return, tiffin, every day and start. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1100":
+    native: "day"
+    notes:
+      n1: "நாள் (nāḷ) is a day, and also a date; the plural is நாட்கள் (nāṭkaḷ)."
+    examples:
+      "இன்று நல்ல நாள்.":
+        native: "Today is a good day."
+        bases:
+          "நாள்": "day"
+      "ஒரு நாள் போதும்.":
+        native: "One day is enough."
+        bases:
+          "நாள்": "day"
+  "ta-1101":
+    native: "to bathe"
+    notes:
+      n1: "The dictionary form. The present is குளிக்கிறேன் (kuḷikkiṟēṉ), I bathe."
+    examples:
+      "நான் காலையில் குளிக்கிறேன்.":
+        native: "I bathe in the morning."
+        bases:
+          "காலையில்": "in the morning; from காலை (kālai), morning"
+          "குளிக்கிறேன்": "bathe; from குளி (kuḷi), to bathe"
+      "நாங்கள் மாலையில் குளிக்கிறோம்.":
+        native: "We bathe in the evening."
+        bases:
+          "மாலையில்": "in the evening; from மாலை (mālai), evening"
+          "குளிக்கிறோம்": "bathe; from குளி (kuḷi), to bathe"
+  "ta-1102":
+    native: "to brush; to scrub"
+    notes:
+      n1: "It goes with பல் (pal): பல் துலக்கு (pal tulakku), brush the teeth. The present is துலக்குகிறேன் (tulakkukiṟēṉ), I brush."
+    examples:
+      "நான் பல் துலக்குகிறேன்.":
+        native: "I brush my teeth."
+        bases:
+          "துலக்குகிறேன்": "brush; from துலக்கு (tulakku), to brush"
+      "பல் துலக்கு.":
+        native: "Brush your teeth."
+        bases:
+          "துலக்கு": "to brush; to scrub"
+  "ta-1103":
+    native: "to walk"
+    notes:
+      n1: "நடந்து போ (naṭantu pō) means to go on foot: நடந்து (naṭantu) is the form that links walking to the next verb."
+    examples:
+      "நான் தினமும் நடக்கிறேன்.":
+        native: "I walk every day."
+        bases:
+          "நடக்கிறேன்": "walk; from நட (naṭa), to walk"
+      "நான் பள்ளிக்கு நடந்து போகிறேன்.":
+        native: "I go to school on foot."
+        bases:
+          "நடந்து": "having walked, on foot; from நட (naṭa), to walk"
+          "போகிறேன்": "go; from போ (pō), to go"
+  "ta-1104":
+    native: "to return; to turn"
+    notes:
+      n1: "It means come back, and also turn: the place goes before it, as in வீட்டுக்குத் திரும்பு (vīṭṭukkut tirumpu), return home."
+    examples:
+      "நான் மாலையில் வீட்டுக்குத் திரும்புகிறேன்.":
+        native: "I return home in the evening."
+        bases:
+          "மாலையில்": "in the evening; from மாலை (mālai), evening"
+          "வீட்டுக்குத்": "to the house; from வீடு (vīṭu), house"
+          "திரும்புகிறேன்": "return; from திரும்பு (tirumpu), to return"
+      "அப்பா வீட்டுக்குத் திரும்புகிறார்.":
+        native: "Father returns home."
+        bases:
+          "வீட்டுக்குத்": "to the house; from வீடு (vīṭu), house"
+          "திரும்புகிறார்": "returns (respectful); from திரும்பு (tirumpu), to return"
+  "ta-1105":
+    native: "tiffin; a light meal such as breakfast"
+    notes:
+      n1: "டிபன் (ṭipaṉ) comes from English tiffin; at home it is a light meal such as idli or dosa, often at breakfast."
+    examples:
+      "காலை டிபன் தயார்.":
+        native: "Breakfast is ready."
+        bases:
+          "டிபன்": "tiffin; a light meal such as breakfast"
+          "தயார்": "ready"
+      "நான் டிபன் சாப்பிடுகிறேன்.":
+        native: "I am eating tiffin."
+        bases:
+          "டிபன்": "tiffin; a light meal such as breakfast"
+          "சாப்பிடுகிறேன்": "eating; from சாப்பிடு (cāppiṭu), to eat"
+  "ta-1106":
+    native: "every day; daily"
+    notes:
+      n1: "தினமும் (tiṉamum) goes before the verb, as in தினமும் நடக்கிறேன் (tiṉamum naṭakkiṟēṉ), I walk every day."
+    examples:
+      "நான் தினமும் வேலைக்குப் போகிறேன்.":
+        native: "I go to work every day."
+        bases:
+          "தினமும்": "every day; daily"
+          "வேலைக்குப்": "to work; from வேலை (vēlai), work"
+          "போகிறேன்": "go; from போ (pō), to go"
+      "தினமும் காபி குடிக்கிறேன்.":
+        native: "I drink coffee every day."
+        bases:
+          "தினமும்": "every day; daily"
+          "குடிக்கிறேன்": "drink; from குடி (kuṭi), to drink"
+  "ta-1107":
+    native: "to begin; to start"
+    notes:
+      n1: "தொடங்கலாம் (toṭaṅkalām) means we may start or let us start."
+    examples:
+      "வேலை தொடங்குகிறது.":
+        native: "The work starts."
+        bases:
+          "தொடங்குகிறது": "starts; from தொடங்கு (toṭaṅku), to start"
+      "நாம் இப்போது தொடங்கலாம்.":
+        native: "We can start now."
+        bases:
+          "தொடங்கலாம்": "may start; from தொடங்கு (toṭaṅku), to start"
+  "ta-6452":
+    native: "Good morning."
+    notes:
+      "n1": "காலை (kālai) means 'morning'. The greeting is said until about noon."
+  "ta-6453":
+    native: "Good evening."
+    notes:
+      "n1": "மாலை (mālai) means 'evening'. The greeting is used from late afternoon."
+  "ta-6454":
+    native: "How are you?"
+    notes:
+      "n1": "நீங்கள் (nīṅkaḷ) is the polite 'you'. With a friend you would say நீ (nī) and இருக்கிறாய் (irukkiṟāy)."
+    bases:
+      "இருக்கிறீர்கள்": "to be"
+  "ta-6455":
+    native: "I am well."
+    notes:
+      "n1": "நலமாக (nalamāka) is நலம் (nalam), 'well-being', with -ஆக (āka), 'in a way'."
+    bases:
+      "நலமாக": "well-being"
+      "இருக்கிறேன்": "to be"
+  "ta-6456":
+    native: "Nice to meet you."
+    notes:
+      "n1": "சந்தித்ததில் (cantittatil) means 'in having met'; மகிழ்ச்சி (makiḻcci) means 'happiness'."
+    bases:
+      "உங்களைச்": "you (polite)"
+      "சந்தித்ததில்": "to meet"
+      "மகிழ்ச்சி": "happiness; joy"

@@ -1,0 +1,719 @@
+schema: 1
+id: "ta-en-services"
+kind: "layer"
+core: "ta-services"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Services: bank, post, repair and tailor"
+description: "Everyday services: the bank and loans, the post office and parcels, repairs and fixing things, the tailor, laundry and the salon, and the verbs of repairing, measuring and handing over. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-7290":
+    native: "bank account"
+    notes:
+      n1: "வங்கி (vaṅki) (bank) plus கணக்கு (kaṇakku) (account); the two words are written together."
+    examples:
+      "எனக்கு வங்கிக்கணக்கு வேண்டும்.":
+        native: "I need a bank account."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "வங்கிக்கணக்கு": "bank account"
+      "என் வங்கிக்கணக்கு இங்கே இருக்கிறது.":
+        native: "My bank account is here."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "வங்கிக்கணக்கு": "bank account"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7291":
+    native: "savings"
+    notes:
+      n1: "The noun of சேமி (cēmi) (to save)."
+    examples:
+      "என் சேமிப்பு குறைவு.":
+        native: "My savings are small."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "சேமிப்பு": "savings"
+      "சேமிப்பு முக்கியம்.":
+        native: "Saving is important."
+        bases:
+          "சேமிப்பு": "savings"
+          "முக்கியம்": "important"
+  "ta-7292":
+    native: "interest (on money)"
+    notes:
+      n1: "The interest paid on a loan or a deposit."
+    examples:
+      "வட்டி அதிகம்.":
+        native: "The interest is high."
+        bases:
+          "வட்டி": "interest (on money)"
+      "வங்கியில் வட்டி எவ்வளவு?":
+        native: "How much interest is there at the bank?"
+        bases:
+          "வங்கியில்": "in the bank; from வங்கி (vaṅki), bank"
+          "வட்டி": "interest (on money)"
+  "ta-7293":
+    native: "cheque"
+    notes:
+      n1: "Tamil writes (எழுது (eḻutu)) and gives (கொடு (koṭu)) a cheque."
+    examples:
+      "காசோலை கொடு.":
+        native: "Give a cheque."
+        bases:
+          "காசோலை": "cheque"
+      "காசோலை எழுதுகிறேன்.":
+        native: "I am writing a cheque."
+        bases:
+          "காசோலை": "cheque"
+          "எழுதுகிறேன்": "am writing; from எழுது (eḻutu), to write"
+  "ta-7294":
+    native: "money transfer"
+    notes:
+      n1: "பணம் (paṇam) (money) plus பரிமாற்றம் (parimāṟṟam) (exchange); you do (செய் (cey)) a transfer."
+    examples:
+      "பணப்பரிமாற்றம் செய்கிறேன்.":
+        native: "I am making a money transfer."
+        bases:
+          "பணப்பரிமாற்றம்": "money transfer"
+          "செய்கிறேன்": "do; from செய் (cey), to do"
+      "பணப்பரிமாற்றம் வேண்டும்.":
+        native: "A money transfer is needed."
+        bases:
+          "பணப்பரிமாற்றம்": "money transfer"
+  "ta-7295":
+    native: "card"
+    notes:
+      n1: "Any plastic or paper card; ஏடிஎம் (ēṭiem) அட்டை (aṭṭai) is a cash card."
+    examples:
+      "என் அட்டை எங்கே?":
+        native: "Where is my card?"
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "அட்டை": "card"
+      "இது வங்கி அட்டை.":
+        native: "This is a bank card."
+        bases:
+          "அட்டை": "card"
+  "ta-7296":
+    native: "credit card"
+    notes:
+      n1: "கடன் (kaṭaṉ) (loan) plus அட்டை (aṭṭai) (card); the two parts are written as one word."
+    examples:
+      "என் கடனட்டை இங்கே இருக்கிறது.":
+        native: "My credit card is here."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "கடனட்டை": "credit card"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "கடனட்டை வேண்டும்.":
+        native: "I need a credit card."
+        bases:
+          "கடனட்டை": "credit card"
+  "ta-7297":
+    native: "balance; stock"
+    notes:
+      n1: "What is left in an account or in a shop's stock."
+    examples:
+      "கணக்கில் இருப்பு இல்லை.":
+        native: "There is no balance in the account."
+        bases:
+          "கணக்கில்": "in the maths; from கணக்கு (kaṇakku), maths; sum; account"
+          "இருப்பு": "balance; stock"
+      "என் இருப்பு குறைவு.":
+        native: "My balance is low."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "இருப்பு": "balance; stock"
+  "ta-7298":
+    native: "deposit"
+    notes:
+      n1: "வைப்பு (vaippu) (placing) plus தொகை (tokai) (sum); the money you put in or the deposit for a rented room."
+    examples:
+      "வைப்புத்தொகை எவ்வளவு?":
+        native: "How much is the deposit?"
+        bases:
+          "வைப்புத்தொகை": "deposit"
+      "வைப்புத்தொகை வேண்டும்.":
+        native: "A deposit is needed."
+        bases:
+          "வைப்புத்தொகை": "deposit"
+  "ta-7299":
+    native: "passbook"
+    notes:
+      n1: "A loanword from English, said as it is."
+    examples:
+      "என் பாஸ்புக் எங்கே?":
+        native: "Where is my passbook?"
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "பாஸ்புக்": "passbook"
+      "பாஸ்புக் கொண்டுவா.":
+        native: "Bring the passbook."
+        bases:
+          "பாஸ்புக்": "passbook"
+          "கொண்டுவா": "bring"
+  "ta-7300":
+    native: "instalment"
+    notes:
+      n1: "You 'pay' (கட்டு (kaṭṭu)) an instalment, as you pay a fee."
+    examples:
+      "மாதம் ஒரு தவணை.":
+        native: "One instalment a month."
+        bases:
+          "தவணை": "instalment"
+      "தவணை கட்டு.":
+        native: "Pay the instalment."
+        bases:
+          "தவணை": "instalment"
+  "ta-7301":
+    native: "advance payment"
+    notes:
+      n1: "முன் (muṉ) (before) plus பணம் (paṇam) (money)."
+    examples:
+      "முன்பணம் கொடு.":
+        native: "Give an advance."
+        bases:
+          "முன்பணம்": "advance payment"
+      "முன்பணம் எவ்வளவு?":
+        native: "How much is the advance?"
+        bases:
+          "முன்பணம்": "advance payment"
+  "ta-7302":
+    native: "amount due; arrears"
+    notes:
+      n1: "Money still owed, such as a bill or a loan."
+    examples:
+      "நிலுவை இருக்கிறது.":
+        native: "There is an amount due."
+        bases:
+          "நிலுவை": "amount due; arrears"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நிலுவை கட்டு.":
+        native: "Pay the dues."
+        bases:
+          "நிலுவை": "amount due; arrears"
+  "ta-7303":
+    native: "post office"
+    notes:
+      n1: "அஞ்சல் (añcal) (post) plus அகம் (akam) (place); the spoken word is போஸ்ட் (pōsṭ) ஆபிஸ் (āpis) (post office)."
+    examples:
+      "அஞ்சலகம் எங்கே?":
+        native: "Where is the post office?"
+        bases:
+          "அஞ்சலகம்": "post office"
+      "நான் அஞ்சலகத்துக்குப் போகிறேன்.":
+        native: "I am going to the post office."
+        bases:
+          "அஞ்சலகத்துக்குப்": "to the post office; for the post office; from அஞ்சலகம் (añcalakam), post office"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-7304":
+    native: "post; mail"
+    notes:
+      n1: "Everyday word for mail and letters; the written word is அஞ்சல் (añcal)."
+    examples:
+      "தபால் வந்தது.":
+        native: "The post came."
+        bases:
+          "தபால்": "post; mail"
+          "வந்தது": "came; from வா (vā), to come"
+      "தபால் அனுப்பு.":
+        native: "Send the post."
+        bases:
+          "தபால்": "post; mail"
+  "ta-7305":
+    native: "postage stamp"
+    notes:
+      n1: "Literally post head; தபால் (tapāl) (post) plus தலை (talai) (head)."
+    examples:
+      "தபால்தலை வேண்டும்.":
+        native: "I need a stamp."
+        bases:
+          "தபால்தலை": "postage stamp"
+      "தபால்தலை ஒட்டு.":
+        native: "Stick on a stamp."
+        bases:
+          "தபால்தலை": "postage stamp"
+  "ta-7306":
+    native: "letter box; postbox"
+    notes:
+      n1: "அஞ்சல் (añcal) (post) plus பெட்டி (peṭṭi) (box); written as one word."
+    examples:
+      "அஞ்சல்பெட்டி எங்கே?":
+        native: "Where is the postbox?"
+        bases:
+          "அஞ்சல்பெட்டி": "letter box; postbox"
+      "அஞ்சல்பெட்டி சிவப்பு.":
+        native: "The postbox is red."
+        bases:
+          "அஞ்சல்பெட்டி": "letter box; postbox"
+  "ta-7307":
+    native: "postal code"
+    notes:
+      n1: "அஞ்சல் (añcal) (post) plus குறியீடு (kuṟiyīṭu) (code)."
+    examples:
+      "உன் அஞ்சல்குறியீடு என்ன?":
+        native: "What is your postal code?"
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "அஞ்சல்குறியீடு": "postal code"
+      "அஞ்சல்குறியீடு எழுது.":
+        native: "Write the postal code."
+        bases:
+          "அஞ்சல்குறியீடு": "postal code"
+  "ta-7308":
+    native: "fault; breakdown; damage"
+    notes:
+      n1: "A breakdown in a machine or a fault in a thing; the repairer of it is a மெக்கானிக் (mekkāṉik)."
+    examples:
+      "இதில் பழுது இருக்கிறது.":
+        native: "There is a fault in this."
+        bases:
+          "இதில்": "in this; from இது (itu), this"
+          "பழுது": "fault; breakdown; damage"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "பழுது இல்லை.":
+        native: "There is no fault."
+        bases:
+          "பழுது": "fault; breakdown; damage"
+  "ta-7309":
+    native: "stitching; sewing"
+    notes:
+      n1: "Both the work of sewing and the stitch itself; a person who sews is a தையல்காரர் (taiyalkārar)."
+    examples:
+      "தையல் நல்லது.":
+        native: "The stitching is good."
+        bases:
+          "தையல்": "stitching; sewing"
+      "எனக்குத் தையல் தெரியும்.":
+        native: "I know sewing."
+        bases:
+          "எனக்குத்": "to me; for me; from நான் (nāṉ), I; me"
+          "தையல்": "stitching; sewing"
+          "தெரியும்": "is known; from தெரி (teri), to be known; to be seen"
+  "ta-7310":
+    native: "tailor's shop"
+    notes:
+      n1: "தையல் (taiyal) (sewing) plus கடை (kaṭai) (shop); the two parts are written as one word."
+    examples:
+      "தையல்கடை எங்கே?":
+        native: "Where is the tailor's shop?"
+        bases:
+          "தையல்கடை": "tailor's shop"
+      "தையல்கடை மூடியிருக்கிறது.":
+        native: "The tailor's shop is closed."
+        bases:
+          "தையல்கடை": "tailor's shop"
+          "மூடியிருக்கிறது": "is closed; from மூடு (mūṭu), to close"
+  "ta-7311":
+    native: "laundry; washing"
+    notes:
+      n1: "Used for laundry sent to a washerman or shop; the person is a சலவைக்காரர் (calavaikkārar)."
+    examples:
+      "சலவை வேண்டும்.":
+        native: "The washing is needed."
+        bases:
+          "சலவை": "laundry; washing"
+      "சலவை தயார்.":
+        native: "The laundry is ready."
+        bases:
+          "சலவை": "laundry; washing"
+          "தயார்": "ready"
+  "ta-7312":
+    native: "washerman; launderer"
+    notes:
+      n1: "சலவை (calavai) (laundry) plus காரர் (kārar) (the one who does), like தையல்காரர் (taiyalkārar)."
+    examples:
+      "சலவைக்காரர் வருகிறார்.":
+        native: "The washerman is coming."
+        bases:
+          "சலவைக்காரர்": "washerman; launderer"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "சலவைக்காரர் துணி எடுக்கிறார்.":
+        native: "The washerman takes the clothes."
+        bases:
+          "சலவைக்காரர்": "washerman; launderer"
+          "எடுக்கிறார்": "he takes; he makes (a film); from எடு (eṭu), to take"
+  "ta-7313":
+    native: "barber's shop; salon"
+    notes:
+      n1: "A loanword for the barber's shop; the written phrase is முடிதிருத்தும் (muṭitiruttum) நிலையம் (nilaiyam)."
+    examples:
+      "சலூன் எங்கே?":
+        native: "Where is the salon?"
+        bases:
+          "சலூன்": "barber's shop; salon"
+      "நான் சலூனுக்குப் போகிறேன்.":
+        native: "I am going to the salon."
+        bases:
+          "சலூனுக்குப்": "to the barber's shop; for the barber's shop; from சலூன் (calūṉ), barber's shop; salon"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-7314":
+    native: "beauty parlour"
+    notes:
+      n1: "அழகு (aḻaku) (beauty) plus நிலையம் (nilaiyam) (place)."
+    examples:
+      "அழகுநிலையம் எங்கே?":
+        native: "Where is the beauty parlour?"
+        bases:
+          "அழகுநிலையம்": "beauty parlour"
+      "அம்மா அழகுநிலையத்துக்குப் போகிறார்.":
+        native: "Mother is going to the beauty parlour."
+        bases:
+          "அழகுநிலையத்துக்குப்": "to the beauty parlour; for the beauty parlour; from அழகுநிலையம் (aḻakunilaiyam), beauty parlour"
+          "போகிறார்": "is going; from போ (pō), to go"
+  "ta-7315":
+    native: "mechanic"
+    notes:
+      n1: "A loanword from English; used for men and women alike."
+    examples:
+      "மெக்கானிக் எங்கே?":
+        native: "Where is the mechanic?"
+        bases:
+          "மெக்கானிக்": "mechanic"
+      "மெக்கானிக் வருகிறார்.":
+        native: "The mechanic is coming."
+        bases:
+          "மெக்கானிக்": "mechanic"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+  "ta-7316":
+    native: "plumber"
+    notes:
+      n1: "A loanword from English; the written word is குழாய் (kuḻāy) (pipe) work."
+    examples:
+      "பிளம்பர் வருகிறார்.":
+        native: "The plumber is coming."
+        bases:
+          "பிளம்பர்": "plumber"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "பிளம்பர் வேண்டும்.":
+        native: "A plumber is needed."
+        bases:
+          "பிளம்பர்": "plumber"
+  "ta-7317":
+    native: "electrician"
+    notes:
+      n1: "A loanword from English; people also say மின் (miṉ) (electric) worker in writing."
+    examples:
+      "எலக்ட்ரீஷியன் வருகிறார்.":
+        native: "The electrician is coming."
+        bases:
+          "எலக்ட்ரீஷியன்": "electrician"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "எலக்ட்ரீஷியன் எங்கே?":
+        native: "Where is the electrician?"
+        bases:
+          "எலக்ட்ரீஷியன்": "electrician"
+  "ta-7318":
+    native: "cashier"
+    notes:
+      n1: "காசு (kācu) (money) plus ஆளர் (āḷar) (one who handles); used for men and women alike."
+    examples:
+      "காசாளர் இங்கே இருக்கிறார்.":
+        native: "The cashier is here."
+        bases:
+          "காசாளர்": "cashier"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "காசாளரிடம் பணம் கொடு.":
+        native: "Give the money to the cashier."
+        bases:
+          "காசாளரிடம்": "to the cashier; from the cashier; with the cashier; from காசாளர் (kācāḷar), cashier"
+  "ta-7319":
+    native: "agent"
+    notes:
+      n1: "An agent for travel, insurance or property."
+    examples:
+      "அவர் முகவர்.":
+        native: "He is an agent."
+        bases:
+          "அவர்": "he or she (polite)"
+          "முகவர்": "agent"
+      "முகவர் வருகிறார்.":
+        native: "The agent is coming."
+        bases:
+          "முகவர்": "agent"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+  "ta-7320":
+    native: "service"
+    notes:
+      n1: "Used for service in a shop and for public service; the person who serves is not named by this word."
+    examples:
+      "இங்கே நல்ல சேவை.":
+        native: "Good service here."
+        bases:
+          "சேவை": "service"
+      "சேவை கட்டணம் இல்லை.":
+        native: "There is no service charge."
+        bases:
+          "சேவை": "service"
+  "ta-7321":
+    native: "guarantee; warranty"
+    notes:
+      n1: "Used for a product's warranty and for a promise."
+    examples:
+      "இதற்கு உத்தரவாதம் இருக்கிறது.":
+        native: "This has a guarantee."
+        bases:
+          "இதற்கு": "to this; for this; from இது (itu), this; it"
+          "உத்தரவாதம்": "guarantee; warranty"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "உத்தரவாதம் ஒரு வருடம்.":
+        native: "The warranty is one year."
+        bases:
+          "உத்தரவாதம்": "guarantee; warranty"
+  "ta-7322":
+    native: "token; queue number"
+    notes:
+      n1: "A loanword from English; in banks and offices you take a token and wait for your number."
+    examples:
+      "டோக்கன் வாங்கு.":
+        native: "Take a token."
+        bases:
+          "டோக்கன்": "token; queue number"
+      "என் டோக்கன் எண் பத்து.":
+        native: "My token number is ten."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "டோக்கன்": "token; queue number"
+  "ta-7323":
+    native: "help desk; helpline centre"
+    notes:
+      n1: "உதவி (utavi) (help) plus மையம் (maiyam) (centre)."
+    examples:
+      "உதவிமையம் எங்கே?":
+        native: "Where is the help desk?"
+        bases:
+          "உதவிமையம்": "help desk; helpline centre"
+      "உதவிமையம் அங்கே இருக்கிறது.":
+        native: "The help desk is there."
+        bases:
+          "உதவிமையம்": "help desk; helpline centre"
+          "அங்கே": "there"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7324":
+    native: "original (document)"
+    notes:
+      n1: "The opposite of a copy; offices ask for the அசல் (acal) (original) of a document."
+    examples:
+      "அசல் வேண்டும்.":
+        native: "The original is needed."
+        bases:
+          "அசல்": "original (document)"
+      "அசல் கொண்டுவா.":
+        native: "Bring the original."
+        bases:
+          "அசல்": "original (document)"
+          "கொண்டுவா": "bring"
+  "ta-7325":
+    native: "stamp; seal"
+    notes:
+      n1: "An office stamp or seal; it is different from a postage stamp, which is தபால்தலை (tapāltalai)."
+    examples:
+      "முத்திரை போடு.":
+        native: "Put the stamp."
+        bases:
+          "முத்திரை": "stamp; seal"
+      "முத்திரை இங்கே.":
+        native: "The seal is here."
+        bases:
+          "முத்திரை": "stamp; seal"
+  "ta-7326":
+    native: "bank loan"
+    notes:
+      n1: "வங்கி (vaṅki) (bank) plus கடன் (kaṭaṉ) (loan)."
+    examples:
+      "எனக்கு வங்கிக்கடன் வேண்டும்.":
+        native: "I need a bank loan."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "வங்கிக்கடன்": "bank loan"
+      "வங்கிக்கடன் கிடைக்கிறது.":
+        native: "The bank loan is granted."
+        bases:
+          "வங்கிக்கடன்": "bank loan"
+          "கிடைக்கிறது": "is received; is available; from கிடை (kiṭai), to be obtained"
+  "ta-7327":
+    native: "hole"
+    notes:
+      n1: "A hole that should not be there, as in clothes or a bucket."
+    examples:
+      "துணியில் ஓட்டை.":
+        native: "A hole in the cloth."
+        bases:
+          "துணியில்": "in the cloth; from துணி (tuṇi), cloth"
+          "ஓட்டை": "hole"
+      "பையில் ஓட்டை இருக்கிறது.":
+        native: "There is a hole in the bag."
+        bases:
+          "பையில்": "in the bag; from பை (pai), bag"
+          "ஓட்டை": "hole"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7328":
+    native: "to repair"
+    notes:
+      n1: "Literally to look at a fault; பழுது (paḻutu) (fault) plus பார் (pār) (see)."
+    examples:
+      "வண்டியைப் பழுதுபார்.":
+        native: "Repair the vehicle."
+        bases:
+          "வண்டியைப்": "the vehicle; from வண்டி (vaṇṭi), vehicle; cart"
+          "பழுதுபார்": "to repair"
+      "மெக்கானிக் பழுதுபார்க்கிறார்.":
+        native: "The mechanic is repairing."
+        bases:
+          "பழுதுபார்க்கிறார்": "is repairing (respectful); from பழுதுபார் (paḻutupār), to repair"
+  "ta-7329":
+    native: "to fix; to put right"
+    notes:
+      n1: "Literally to make right; சரி (cari) (right) plus செய் (cey) (do)."
+    examples:
+      "இதைச் சரிசெய்.":
+        native: "Fix this."
+        bases:
+          "இதைச்": "this (object); from இது (itu), this; it"
+          "சரிசெய்": "to fix; to put right"
+      "நான் சரிசெய்கிறேன்.":
+        native: "I am fixing it."
+        bases:
+          "சரிசெய்கிறேன்": "am fixing; from சரிசெய் (caricey), to fix; to put right"
+  "ta-7330":
+    native: "to take measurements"
+    notes:
+      n1: "Literally to take size; you take (எடு (eṭu)) an அளவு (aḷavu) (size)."
+    examples:
+      "சட்டைக்கு அளவெடு.":
+        native: "Take measurements for the shirt."
+        bases:
+          "சட்டைக்கு": "to the shirt; for the shirt; from சட்டை (caṭṭai), shirt"
+          "அளவெடு": "to take measurements"
+      "தையல்காரர் அளவெடுக்கிறார்.":
+        native: "The tailor is taking measurements."
+        bases:
+          "அளவெடுக்கிறார்": "is taking measurements (respectful); from அளவெடு (aḷaveṭu), to take measurements"
+  "ta-7331":
+    native: "to hand over; to submit"
+    notes:
+      n1: "A formal verb for handing in or handing over something."
+    examples:
+      "நான் படிவத்தை ஒப்படைக்கிறேன்.":
+        native: "I am handing in the form."
+        bases:
+          "படிவத்தை": "the form; from படிவம் (paṭivam), form"
+          "ஒப்படைக்கிறேன்": "am handing over; from ஒப்படை (oppaṭai), to hand over; to submit"
+      "சாவியை ஒப்படைக்கிறார்.":
+        native: "He hands over the key."
+        bases:
+          "சாவியை": "the key; from சாவி (cāvi), key"
+          "ஒப்படைக்கிறார்": "is handing over (respectful); from ஒப்படை (oppaṭai), to hand over; to submit"
+  "ta-7332":
+    native: "to provide; to issue; to give out"
+    notes:
+      n1: "A formal verb for what a bank, office or shop gives or issues."
+    examples:
+      "வங்கி கடன் வழங்குகிறது.":
+        native: "The bank gives a loan."
+        bases:
+          "வழங்குகிறது": "is providing; from வழங்கு (vaḻaṅku), to provide; to issue; to give out"
+      "அலுவலகம் சான்றிதழ் வழங்குகிறது.":
+        native: "The office issues a certificate."
+        bases:
+          "வழங்குகிறது": "is providing; from வழங்கு (vaḻaṅku), to provide; to issue; to give out"
+  "ta-7333":
+    native: "to give back; to return"
+    notes:
+      n1: "திருப்பி (tiruppi) (back) plus கொடு (koṭu) (give); written as one word."
+    examples:
+      "பணத்தைத் திருப்பிக்கொடு.":
+        native: "Give the money back."
+        bases:
+          "பணத்தைத்": "the money; from பணம் (paṇam), money"
+          "திருப்பிக்கொடு": "to give back; to return"
+      "புத்தகத்தைத் திருப்பிக்கொடுக்கிறேன்.":
+        native: "I am giving the book back."
+        bases:
+          "புத்தகத்தைத்": "the book; from புத்தகம் (puttakam), book"
+          "திருப்பிக்கொடுக்கிறேன்": "am giving back; from திருப்பிக்கொடு (tiruppikkoṭu), to give back; to return"
+  "ta-7334":
+    native: "faulty; broken"
+    notes:
+      n1: "The -ஆன (-āṉa) form of பழுது (paḻutu), used before a noun."
+    examples:
+      "பழுதான வண்டி.":
+        native: "A faulty vehicle."
+        bases:
+          "பழுதான": "faulty; broken"
+      "பழுதான இயந்திரம்.":
+        native: "A broken machine."
+        bases:
+          "பழுதான": "faulty; broken"
+          "இயந்திரம்": "machine"
+  "ta-7335":
+    native: "broken; smashed"
+    notes:
+      n1: "A describing word for what has broken into pieces; பழுதான (paḻutāṉa) is for something that does not work."
+    examples:
+      "உடைந்த கண்ணாடி.":
+        native: "Broken glass."
+        bases:
+          "உடைந்த": "broken; smashed"
+      "உடைந்த கதவு.":
+        native: "A broken door."
+        bases:
+          "உடைந்த": "broken; smashed"
+  "ta-7336":
+    native: "torn"
+    notes:
+      n1: "A describing word used for cloth and paper."
+    examples:
+      "கிழிந்த சட்டை.":
+        native: "A torn shirt."
+        bases:
+          "கிழிந்த": "torn"
+      "கிழிந்த நோட்டு.":
+        native: "A torn note."
+        bases:
+          "கிழிந்த": "torn"
+  "ta-6445":
+    native: "I need to send this letter."
+    notes:
+      "n1": "கடிதத்தை (kaṭitattai) is கடிதம் (kaṭitam) with a changed stem and -ஐ (ai): கடிதம் (kaṭitam) becomes கடிதத் (kaṭitat)- before an ending."
+    bases:
+      "இந்தக்": "this"
+      "கடிதத்தை": "letter"
+      "அனுப்ப": "to send"
+  "ta-6446":
+    native: "Where is the post office?"
+    notes:
+      "n1": "இருக்கிறது (irukkiṟatu) is 'is' for a place or a thing."
+    bases:
+      "இருக்கிறது": "to be; to have"
+  "ta-6447":
+    native: "I need a stamp."
+    notes:
+      "n1": "தபால்தலை (tapāltalai) is a postage stamp."
+  "ta-6448":
+    native: "I want to open a bank account."
+    notes:
+      "n1": "திறக்க (tiṟakka) is the 'to' form of திற (tiṟa), 'to open'. வங்கிக்கணக்கை (vaṅkikkaṇakkai) is the account with -ஐ (ai)."
+    bases:
+      "வங்கிக்கணக்கைத்": "bank account"
+      "திறக்க": "to open"
+  "ta-6449":
+    native: "I need to take out some money."
+    notes:
+      "n1": "எடுக்க (eṭukka) is the 'to' form of எடு (eṭu), 'to take'."
+    bases:
+      "எடுக்க": "to take"
+  "ta-6450":
+    native: "Where is the ATM?"
+    notes:
+      "n1": "ஏடிஎம் (ēṭiem) is the English 'ATM', said letter by letter."
+    bases:
+      "இருக்கிறது": "to be; to have"
+  "ta-6451":
+    native: "I need to pay in some money."
+    notes:
+      "n1": "பணம் (paṇam) changes its stem to பணத் (paṇat)- before an ending, so பணத்தை (paṇattai) has -ஐ (ai). போட (pōṭa) is the 'to' form of போடு (pōṭu), here 'to put in'."
+    bases:
+      "பணத்தைப்": "money"
+      "போட": "to put in"

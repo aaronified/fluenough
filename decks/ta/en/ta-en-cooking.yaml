@@ -1,0 +1,679 @@
+schema: 1
+id: "ta-en-cooking"
+kind: "layer"
+core: "ta-cooking"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cooking"
+description: "Ingredients, spices and kitchen vessels, the verbs of cooking, and the words for taste, smell and doneness. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1322":
+    native: "onion"
+    notes:
+      n1: "வெங்காயம் (veṅkāyam) is the onion; சின்ன வெங்காயம் (ciṉṉa veṅkāyam) is the small shallot."
+    examples:
+      "வெங்காயம் நறுக்கு.":
+        native: "Chop the onion."
+        bases:
+          "வெங்காயம்": "onion"
+      "வெங்காயம் இல்லை.":
+        native: "There is no onion."
+        bases:
+          "வெங்காயம்": "onion"
+  "ta-1323":
+    native: "tomato"
+    notes:
+      n1: "தக்காளி (takkāḷi) is the tomato, used in sambar and rasam."
+    examples:
+      "தக்காளி நறுக்கு.":
+        native: "Chop the tomato."
+        bases:
+          "தக்காளி": "tomato"
+      "தக்காளி வேண்டும்.":
+        native: "Tomatoes are needed."
+        bases:
+          "தக்காளி": "tomato"
+  "ta-1324":
+    native: "garlic"
+    notes:
+      n1: "பூண்டு (pūṇṭu) is garlic; one clove is பூண்டு பல் (pūṇṭu pal)."
+    examples:
+      "பூண்டு வேண்டும்.":
+        native: "Garlic is needed."
+        bases:
+          "பூண்டு": "garlic"
+      "பூண்டு போடு.":
+        native: "Add the garlic."
+        bases:
+          "பூண்டு": "garlic"
+  "ta-1325":
+    native: "ginger"
+    notes:
+      n1: "இஞ்சி (iñci) is fresh ginger; ginger tea is இஞ்சி தேநீர் (iñci tēnīr)."
+    examples:
+      "இஞ்சி வேண்டும்.":
+        native: "Ginger is needed."
+        bases:
+          "இஞ்சி": "ginger"
+      "இஞ்சி கொஞ்சம் போடு.":
+        native: "Add a little ginger."
+        bases:
+          "இஞ்சி": "ginger"
+  "ta-1326":
+    native: "mustard seeds"
+    notes:
+      n1: "கடுகு (kaṭuku) are the tiny seeds that go into hot oil first; this step is the தாளிப்பு (tāḷippu)."
+    examples:
+      "கடுகு போடு.":
+        native: "Add the mustard seeds."
+        bases:
+          "கடுகு": "mustard seeds"
+      "எண்ணெயில் கடுகு.":
+        native: "Mustard seeds in the oil."
+        bases:
+          "எண்ணெயில்": "in the oil; from எண்ணெய் (eṇṇey), oil"
+          "கடுகு": "mustard seeds"
+  "ta-1327":
+    native: "chilli"
+    notes:
+      n1: "மிளகாய் (miḷakāy) is a chilli; பச்சை மிளகாய் (paccai miḷakāy) is a green chilli."
+    examples:
+      "மிளகாய் காரம்.":
+        native: "Chillies are hot."
+        bases:
+          "மிளகாய்": "chilli"
+      "இரண்டு மிளகாய் போடு.":
+        native: "Add two chillies."
+        bases:
+          "மிளகாய்": "chilli"
+  "ta-1328":
+    native: "spice mix"
+    notes:
+      n1: "மசாலா (macālā) is a ground mix of spices; the word is borrowed."
+    examples:
+      "மசாலா வேண்டும்.":
+        native: "Spice mix is needed."
+        bases:
+          "மசாலா": "spice mix"
+      "மசாலா கொஞ்சம் போடு.":
+        native: "Add a little spice mix."
+        bases:
+          "மசாலா": "spice mix"
+  "ta-1329":
+    native: "tamarind"
+    notes:
+      n1: "புளி (puḷi) is tamarind; the taste புளிப்பு (puḷippu), sour, is made from it."
+    examples:
+      "புளி புளிப்பு.":
+        native: "Tamarind is sour."
+        bases:
+          "புளி": "tamarind"
+      "புளி தண்ணீரில் போடு.":
+        native: "Put the tamarind in water."
+        bases:
+          "புளி": "tamarind"
+          "தண்ணீரில்": "in water; from தண்ணீர் (taṇṇīr), water"
+  "ta-1330":
+    native: "potato"
+    notes:
+      n1: "It is made of உருளை (uruḷai), round, and கிழங்கு (kiḻaṅku), tuber."
+    examples:
+      "உருளைக்கிழங்கு நறுக்கு.":
+        native: "Chop the potato."
+        bases:
+          "உருளைக்கிழங்கு": "potato"
+      "உருளைக்கிழங்கு வேண்டும்.":
+        native: "Potatoes are needed."
+        bases:
+          "உருளைக்கிழங்கு": "potato"
+  "ta-1331":
+    native: "brinjal; aubergine"
+    notes:
+      n1: "கத்தரிக்காய் (kattarikkāy) ends in காய் (kāy), which marks a vegetable."
+    examples:
+      "கத்தரிக்காய் நறுக்கு.":
+        native: "Chop the brinjal."
+        bases:
+          "கத்தரிக்காய்": "brinjal; aubergine"
+      "கத்தரிக்காய் சாம்பார்.":
+        native: "Brinjal sambar."
+        bases:
+          "கத்தரிக்காய்": "brinjal; aubergine"
+  "ta-1332":
+    native: "coriander leaves"
+    notes:
+      n1: "கொத்தமல்லி (kottamalli) is fresh coriander, added at the end for its smell."
+    examples:
+      "கொத்தமல்லி போடு.":
+        native: "Add the coriander leaves."
+        bases:
+          "கொத்தமல்லி": "coriander leaves"
+      "கொத்தமல்லி இல்லை.":
+        native: "There is no coriander."
+        bases:
+          "கொத்தமல்லி": "coriander leaves"
+  "ta-1333":
+    native: "curry leaves"
+    notes:
+      n1: "கறிவேப்பிலை (kaṟivēppilai) goes into the oil with the mustard seeds."
+    examples:
+      "கறிவேப்பிலை போடு.":
+        native: "Add the curry leaves."
+        bases:
+          "கறிவேப்பிலை": "curry leaves"
+      "கறிவேப்பிலை வாசனை.":
+        native: "Curry leaves smell good."
+        bases:
+          "கறிவேப்பிலை": "curry leaves"
+  "ta-1334":
+    native: "ghee"
+    notes:
+      n1: "The final letter doubles before an ending: நெய் (ney) becomes நெய்யில் (neyyil), in ghee."
+    examples:
+      "நெய் கொஞ்சம்.":
+        native: "A little ghee."
+        bases:
+          "நெய்": "ghee"
+      "நெய்யில் வறு.":
+        native: "Roast in ghee."
+        bases:
+          "நெய்யில்": "in ghee; from நெய் (ney), ghee"
+  "ta-1335":
+    native: "curd; yoghurt"
+    notes:
+      n1: "தயிர் சாதம் (tayir cātam) is rice mixed with curd."
+    examples:
+      "தயிர் சாதம்.":
+        native: "Curd rice."
+        bases:
+          "தயிர்": "curd; yoghurt"
+      "தயிர் வேண்டும்.":
+        native: "Curd is needed."
+        bases:
+          "தயிர்": "curd; yoghurt"
+  "ta-1336":
+    native: "buttermilk"
+    notes:
+      n1: "மோர் (mōr) is buttermilk, thinner than தயிர் (tayir), curd."
+    examples:
+      "மோர் குடி.":
+        native: "Drink buttermilk."
+        bases:
+          "மோர்": "buttermilk"
+      "மோர் இல்லை.":
+        native: "There is no buttermilk."
+        bases:
+          "மோர்": "buttermilk"
+  "ta-1337":
+    native: "jaggery"
+    notes:
+      n1: "வெல்லம் (vellam) is jaggery; it goes into பொங்கல் (poṅkal)."
+    examples:
+      "வெல்லம் இனிப்பு.":
+        native: "Jaggery is sweet."
+        bases:
+          "வெல்லம்": "jaggery"
+      "வெல்லம் போடு.":
+        native: "Add the jaggery."
+        bases:
+          "வெல்லம்": "jaggery"
+  "ta-1338":
+    native: "flour; batter"
+    notes:
+      n1: "மாவு (māvu) is flour or batter; தோசை மாவு (tōcai māvu) is the batter for dosa."
+    examples:
+      "தோசை மாவு.":
+        native: "Dosa batter."
+        bases:
+          "மாவு": "flour; batter"
+      "மாவு இல்லை.":
+        native: "There is no flour."
+        bases:
+          "மாவு": "flour; batter"
+  "ta-1339":
+    native: "black pepper"
+    notes:
+      n1: "மிளகு (miḷaku), pepper, and மிளகாய் (miḷakāy), chilli, differ by one ending."
+    examples:
+      "மிளகு போடு.":
+        native: "Add pepper."
+        bases:
+          "மிளகு": "black pepper"
+      "ரசத்தில் மிளகு.":
+        native: "Pepper in the rasam."
+        bases:
+          "ரசத்தில்": "in the rasam; from ரசம் (racam), rasam"
+          "மிளகு": "black pepper"
+  "ta-1340":
+    native: "cumin"
+    notes:
+      n1: "சீரகம் (cīrakam) is the cumin seed."
+    examples:
+      "சீரகம் போடு.":
+        native: "Add cumin."
+        bases:
+          "சீரகம்": "cumin"
+      "சீரகம் வாசனை.":
+        native: "Cumin smells good."
+        bases:
+          "சீரகம்": "cumin"
+  "ta-1341":
+    native: "leafy greens"
+    notes:
+      n1: "கீரை (kīrai) is leafy greens of any kind."
+    examples:
+      "கீரை கழுவு.":
+        native: "Wash the greens."
+        bases:
+          "கீரை": "leafy greens"
+      "இன்று கீரை.":
+        native: "Today it is greens."
+        bases:
+          "கீரை": "leafy greens"
+  "ta-1342":
+    native: "pressure cooker"
+    notes:
+      n1: "குக்கர் (kukkar) is borrowed from English cooker; rice is often cooked in it."
+    examples:
+      "குக்கர் அடுப்பில் இருக்கிறது.":
+        native: "The cooker is on the stove."
+        bases:
+          "குக்கர்": "pressure cooker"
+          "அடுப்பில்": "on the stove; from அடுப்பு (aṭuppu), stove"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "குக்கர் மூடு.":
+        native: "Close the cooker."
+        bases:
+          "குக்கர்": "pressure cooker"
+  "ta-1343":
+    native: "pan (for frying)"
+    notes:
+      n1: "கடாய் (kaṭāy) is a wide pan for frying."
+    examples:
+      "கடாய் அடுப்பில் வை.":
+        native: "Put the pan on the stove."
+        bases:
+          "கடாய்": "pan (for frying)"
+          "அடுப்பில்": "on the stove; from அடுப்பு (aṭuppu), stove"
+      "கடாய் கழுவு.":
+        native: "Wash the pan."
+        bases:
+          "கடாய்": "pan (for frying)"
+  "ta-1344":
+    native: "pot"
+    notes:
+      n1: "சட்டி (caṭṭi) is a round pot, of clay or metal."
+    examples:
+      "சட்டி அடுப்பில் இருக்கிறது.":
+        native: "The pot is on the stove."
+        bases:
+          "சட்டி": "pot"
+          "அடுப்பில்": "on the stove; from அடுப்பு (aṭuppu), stove"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "சட்டி எங்கே?":
+        native: "Where is the pot?"
+        bases:
+          "சட்டி": "pot"
+  "ta-1345":
+    native: "mixer-grinder"
+    notes:
+      n1: "மிக்ஸி (miksi) is the electric mixer-grinder used in most kitchens."
+    examples:
+      "மிக்ஸி இங்கே இருக்கிறது.":
+        native: "The mixer is here."
+        bases:
+          "மிக்ஸி": "mixer-grinder"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "மிக்ஸியில் மசாலா அரைக்கிறேன்.":
+        native: "I grind spices in the mixer."
+        bases:
+          "மிக்ஸியில்": "in the mixer; from மிக்ஸி (miksi), mixer"
+          "அரைக்கிறேன்": "grind; from அரை (arai), to grind"
+  "ta-1346":
+    native: "to roast; to fry dry"
+    notes:
+      n1: "வறு (vaṟu) is to roast or fry in a dry pan; a fried dish is a வறுவல் (vaṟuval)."
+    examples:
+      "பருப்பு வறு.":
+        native: "Roast the lentils."
+        bases:
+          "வறு": "to roast; to fry dry"
+      "மிளகாய் வறு.":
+        native: "Roast the chillies."
+        bases:
+          "வறு": "to roast; to fry dry"
+  "ta-1347":
+    native: "to sauté"
+    notes:
+      n1: "வதக்கு (vatakku) is to fry gently in a little oil until soft."
+    examples:
+      "வெங்காயம் வதக்கு.":
+        native: "Sauté the onion."
+        bases:
+          "வதக்கு": "to sauté"
+      "தக்காளி வதக்கு.":
+        native: "Sauté the tomato."
+        bases:
+          "வதக்கு": "to sauté"
+  "ta-1348":
+    native: "to boil"
+    notes:
+      n1: "கொதி (koti) is to boil; the liquid is the subject: தண்ணீர் கொதிக்கிறது (taṇṇīr kotikkiṟatu)."
+    examples:
+      "தண்ணீர் கொதிக்கிறது.":
+        native: "The water is boiling."
+        bases:
+          "கொதிக்கிறது": "boils; from கொதி (koti), to boil"
+      "பால் கொதிக்கிறது.":
+        native: "The milk is boiling."
+        bases:
+          "கொதிக்கிறது": "boils; from கொதி (koti), to boil"
+  "ta-1349":
+    native: "to chop"
+    notes:
+      n1: "The thing chopped comes before the verb; the tool takes an ending: கத்தியால் (kattiyāl), with the knife."
+    examples:
+      "காய்கறி நறுக்கு.":
+        native: "Chop the vegetables."
+        bases:
+          "நறுக்கு": "to chop"
+      "கத்தியால் நறுக்கு.":
+        native: "Chop with the knife."
+        bases:
+          "கத்தியால்": "with the knife; from கத்தி (katti), knife"
+          "நறுக்கு": "to chop"
+  "ta-1350":
+    native: "to stir"
+    notes:
+      n1: "கிளறு (kiḷaṟu) is to stir; the tool takes an ending: கரண்டியால் (karaṇṭiyāl), with the spoon."
+    examples:
+      "கரண்டியால் கிளறு.":
+        native: "Stir with the spoon."
+        bases:
+          "கரண்டியால்": "with the spoon; from கரண்டி (karaṇṭi), spoon"
+          "கிளறு": "to stir"
+      "பால் கிளறு.":
+        native: "Stir the milk."
+        bases:
+          "கிளறு": "to stir"
+  "ta-1351":
+    native: "to cook; to be cooked"
+    notes:
+      n1: "வேகு (vēku) is for the food, which cooks by itself; the cook uses சமை (camai)."
+    examples:
+      "சாதம் வேகிறது.":
+        native: "The rice is cooking."
+        bases:
+          "வேகிறது": "is cooking; from வேகு (vēku), to cook (of food)"
+      "பருப்பு வேகிறது.":
+        native: "The lentils are cooking."
+        bases:
+          "வேகிறது": "is cooking; from வேகு (vēku), to cook (of food)"
+  "ta-1352":
+    native: "to fry in oil"
+    notes:
+      n1: "பொரி (pori) is to deep-fry in oil; it is also the word for puffed rice."
+    examples:
+      "மீன் பொரி.":
+        native: "Fry the fish."
+        bases:
+          "பொரி": "to fry in oil"
+      "எண்ணெயில் பொரி.":
+        native: "Fry in oil."
+        bases:
+          "எண்ணெயில்": "in the oil; from எண்ணெய் (eṇṇey), oil"
+          "பொரி": "to fry in oil"
+  "ta-1353":
+    native: "to steam; to boil"
+    notes:
+      n1: "அவி (avi) is to cook in steam or water with no oil; idli is steamed."
+    examples:
+      "முட்டை அவி.":
+        native: "Boil the egg."
+        bases:
+          "அவி": "to steam; to boil"
+      "இட்லி அவிக்கிறேன்.":
+        native: "I am steaming idli."
+        bases:
+          "அவிக்கிறேன்": "am steaming; from அவி (avi), to steam"
+  "ta-1354":
+    native: "to bake; to cook on a hot pan"
+    notes:
+      n1: "You do not cook a dosa, you சுடு (cuṭu) it: தோசை சுடு (tōcai cuṭu); சுடு (cuṭu) also means to heat."
+    examples:
+      "தோசை சுடு.":
+        native: "Make the dosa."
+        bases:
+          "சுடு": "to bake; to cook on a hot pan"
+      "அம்மா தோசை சுடுகிறார்.":
+        native: "Mother is making dosa."
+        bases:
+          "சுடுகிறார்": "makes on a pan (respectful); from சுடு (cuṭu), to bake; to cook on a hot pan"
+  "ta-1355":
+    native: "to temper"
+    notes:
+      n1: "தாளி (tāḷi) is to fry spices in hot oil and pour them over a dish; the noun is தாளிப்பு (tāḷippu)."
+    examples:
+      "சாம்பாரில் தாளி.":
+        native: "Temper the sambar."
+        bases:
+          "சாம்பாரில்": "in the sambar; from சாம்பார் (cāmpār), sambar"
+          "தாளி": "to temper"
+      "கடுகு போட்டுத் தாளி.":
+        native: "Put in mustard seeds and temper."
+        bases:
+          "போட்டுத்": "putting in; from போடு (pōṭu), to put"
+          "தாளி": "to temper"
+  "ta-1356":
+    native: "to knead; to mash"
+    notes:
+      n1: "பிசை (picai) is to knead or mash with the hand."
+    examples:
+      "மாவு பிசை.":
+        native: "Knead the dough."
+        bases:
+          "பிசை": "to knead; to mash"
+      "சாதம் பிசை.":
+        native: "Mash the rice."
+        bases:
+          "பிசை": "to knead; to mash"
+  "ta-1357":
+    native: "to peel"
+    notes:
+      n1: "உரி (uri) is to peel off a skin."
+    examples:
+      "வெங்காயம் உரி.":
+        native: "Peel the onion."
+        bases:
+          "உரி": "to peel"
+      "பூண்டு உரி.":
+        native: "Peel the garlic."
+        bases:
+          "உரி": "to peel"
+  "ta-1358":
+    native: "to grate"
+    notes:
+      n1: "துருவு (turuvu) is to grate; the thing grated comes before it."
+    examples:
+      "தேங்காய் துருவு.":
+        native: "Grate the coconut."
+        bases:
+          "துருவு": "to grate"
+      "காய்கறி துருவு.":
+        native: "Grate the vegetable."
+        bases:
+          "துருவு": "to grate"
+  "ta-1359":
+    native: "taste"
+    notes:
+      n1: "சுவை (cuvai) is taste; ருசி (ruci) is the spoken word."
+    examples:
+      "சுவை நல்லது.":
+        native: "The taste is good."
+        bases:
+          "சுவை": "taste"
+      "சுவை எப்படி?":
+        native: "How is the taste?"
+        bases:
+          "சுவை": "taste"
+  "ta-1360":
+    native: "taste; relish"
+    notes:
+      n1: "ருசி பார் (ruci pār) is to taste a dish to check it."
+    examples:
+      "ருசி ரொம்ப நல்லது.":
+        native: "The taste is very good."
+        bases:
+          "ருசி": "taste; relish"
+      "ருசி பார்.":
+        native: "Taste it."
+        bases:
+          "ருசி": "taste; relish"
+  "ta-1361":
+    native: "smell; fragrance"
+    notes:
+      n1: "வாசனை (vācaṉai) is a smell, usually a pleasant one."
+    examples:
+      "வாசனை நல்லது.":
+        native: "The smell is good."
+        bases:
+          "வாசனை": "smell; fragrance"
+      "மசாலா வாசனை.":
+        native: "The smell of spice mix."
+        bases:
+          "வாசனை": "smell; fragrance"
+  "ta-1362":
+    native: "heat; warmth"
+    notes:
+      n1: "சூடு (cūṭu) is heat or warmth; the adjective hot, taught earlier, is சூடான (cūṭāṉa)."
+    examples:
+      "சூடு குறைவு.":
+        native: "The heat is low."
+        bases:
+          "சூடு": "heat; warmth"
+      "சாப்பாடு சூடு.":
+        native: "The food is hot."
+        bases:
+          "சூடு": "heat; warmth"
+  "ta-1363":
+    native: "cooked"
+    notes:
+      n1: "வெந்த (venta) is the cooked form of வேகு (vēku)."
+    examples:
+      "வெந்த சாதம்.":
+        native: "Cooked rice."
+        bases:
+          "வெந்த": "cooked"
+      "பருப்பு வெந்தது.":
+        native: "The lentils are cooked."
+        bases:
+          "வெந்தது": "got cooked; from வேகு (vēku), to cook (of food)"
+  "ta-1364":
+    native: "golden brown"
+    notes:
+      n1: "பொன்னிறமாக வறு (poṉṉiṟamāka vaṟu) is roast until golden: பொன் (poṉ) is gold and நிறம் (niṟam) is colour."
+    examples:
+      "பொன்னிறமான தோசை.":
+        native: "A golden-brown dosa."
+        bases:
+          "பொன்னிறமான": "golden brown"
+      "பொன்னிறமாக வறு.":
+        native: "Roast until golden brown."
+        bases:
+          "பொன்னிறமாக": "golden brown (adverb form); from பொன்னிறமான (poṉṉiṟamāṉa), golden brown"
+  "ta-1365":
+    native: "soft"
+    notes:
+      n1: "மிருதுவான (mirutuvāṉa) goes before a noun; after it say மிருதுவாக இருக்கிறது (mirutuvāka irukkiṟatu)."
+    examples:
+      "மிருதுவான இட்லி.":
+        native: "A soft idli."
+        bases:
+          "மிருதுவான": "soft"
+      "இட்லி மிருதுவாக இருக்கிறது.":
+        native: "The idli is soft."
+        bases:
+          "மிருதுவாக": "soft (adverb form); from மிருதுவான (mirutuvāṉa), soft"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1366":
+    native: "crisp"
+    notes:
+      n1: "மொறுமொறுப்பான (moṟumoṟuppāṉa) goes before a noun; after it say மொறுமொறுப்பாக இருக்கிறது (moṟumoṟuppāka irukkiṟatu)."
+    examples:
+      "மொறுமொறுப்பான தோசை.":
+        native: "A crisp dosa."
+        bases:
+          "மொறுமொறுப்பான": "crisp"
+      "தோசை மொறுமொறுப்பாக இருக்கிறது.":
+        native: "The dosa is crisp."
+        bases:
+          "மொறுமொறுப்பாக": "crisp (adverb form); from மொறுமொறுப்பான (moṟumoṟuppāṉa), crisp"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1367":
+    native: "thick (of liquid or batter)"
+    notes:
+      n1: "கெட்டியான (keṭṭiyāṉa) is thick, not runny: கெட்டியான தயிர் (keṭṭiyāṉa tayir); after the noun say கெட்டியாக இருக்கிறது (keṭṭiyāka irukkiṟatu)."
+    examples:
+      "கெட்டியான தயிர்.":
+        native: "Thick curd."
+        bases:
+          "கெட்டியான": "thick (of liquid or batter)"
+      "சாம்பார் கெட்டியாக இருக்கிறது.":
+        native: "The sambar is thick."
+        bases:
+          "கெட்டியாக": "thick (adverb form); from கெட்டியான (keṭṭiyāṉa), thick"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1368":
+    native: "recipe; method"
+    notes:
+      n1: "It is made of செய் (cey), do, and முறை (muṟai), way: the way of making."
+    examples:
+      "செய்முறை எழுது.":
+        native: "Write the recipe."
+        bases:
+          "செய்முறை": "recipe; method"
+      "இது தோசை செய்முறை.":
+        native: "This is the dosa recipe."
+        bases:
+          "செய்முறை": "recipe; method"
+  "ta-1369":
+    native: "right state of doneness"
+    notes:
+      n1: "பதம் (patam) is the right state of a food, neither raw nor overdone."
+    examples:
+      "பதம் சரி.":
+        native: "The consistency is right."
+        bases:
+          "பதம்": "right state of doneness"
+      "சாதம் பதம் பார்.":
+        native: "Check that the rice is done."
+        bases:
+          "பதம்": "right state of doneness"
+  "ta-1370":
+    native: "tempering"
+    notes:
+      n1: "தாளிப்பு (tāḷippu) is the noun; the verb is தாளி (tāḷi)."
+    examples:
+      "தாளிப்பு தயார்.":
+        native: "The tempering is ready."
+        bases:
+          "தாளிப்பு": "tempering"
+          "தயார்": "ready"
+      "தாளிப்பு வாசனை.":
+        native: "The smell of tempering."
+        bases:
+          "தாளிப்பு": "tempering"
+  "ta-1371":
+    native: "piece; slice"
+    notes:
+      n1: "துண்டு (tuṇṭu) is a piece or a slice, and also a towel."
+    examples:
+      "ஒரு துண்டு கொடு.":
+        native: "Give one piece."
+        bases:
+          "துண்டு": "piece; slice"
+      "சின்ன துண்டு போதும்.":
+        native: "A small piece is enough."
+        bases:
+          "துண்டு": "piece; slice"

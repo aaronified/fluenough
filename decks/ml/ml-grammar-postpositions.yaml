@@ -1,0 +1,46 @@
+schema: 1
+id: "ml-grammar-postpositions"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ml-0759"
+    target: "വരെ"
+    reading: "vare"
+    ipa: "ʋəɾe"
+    phonetic: "[ʋɐɾe]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ നാളെ വരെ ഇവിടെ ഉണ്ട്."
+        reading: "ñāṉ nāḷe vare iviṭe uṇṭ."
+        ipa: "ɲaːn naːɭe ʋəɾe iʋiʈe uɳʈ"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "നാളെ", ref: "ml-0128" }, { word: "വരെ", base: "വരെ", reading: "vare" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+      - target: "വീട് വരെ നടക്കാം."
+        reading: "vīṭ vare naṭakkāṁ."
+        ipa: "ʋiːʈ ʋəɾe nəʈəkkaːm"
+        bases: [{ word: "വീട്", ref: "ml-0009" }, { word: "വരെ", base: "വരെ", reading: "vare" }, { word: "നടക്കാം", ref: "ml-0166" }]
+  - id: "ml-0760"
+    target: "കൂടെ"
+    reading: "kūṭe"
+    ipa: "kuːʈe"
+    phonetic: "[kuːɖe]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ അമ്മയുടെ കൂടെ പോകുന്നു."
+        reading: "ñāṉ ammayuṭe kūṭe pōkunnu."
+        ipa: "ɲaːn əmməjuʈe kuːʈe poːkunnu"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "അമ്മയുടെ", ref: "ml-0071" }, { word: "കൂടെ", base: "കൂടെ", reading: "kūṭe" }, { word: "പോകുന്നു", ref: "ml-0112" }]
+      - target: "എന്റെ കൂടെ വരൂ."
+        reading: "enṟe kūṭe varū."
+        ipa: "ent̪ɾe kuːʈe ʋəɾuː"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "കൂടെ", base: "കൂടെ", reading: "kūṭe" }, { word: "വരൂ", ref: "ml-0010" }]

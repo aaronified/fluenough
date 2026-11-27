@@ -1,0 +1,179 @@
+schema: 1
+id: "ta-grammar-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+cards:
+  - id: "ta-0450"
+    target: "விடு"
+    reading: "viṭu"
+    ipa: "ʋiʈu"
+    phonetic: "[ʋiɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் சாப்பிட்டுவிட்டேன்."
+        reading: "nāṉ cāppiṭṭuviṭṭēṉ."
+        ipa: "naːn saːppiʈʈuʋiʈʈeːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சாப்பிட்டுவிட்டேன்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+      - target: "என்னை விடுங்கள்."
+        reading: "eṉṉai viṭuṅkaḷ."
+        ipa: "ennai ʋiʈuŋkaɭ"
+        bases: [{ word: "என்னை", base: "நான்", reading: "nāṉ" }, { word: "விடுங்கள்", base: "விடு", reading: "viṭu" }]
+  - id: "ta-0451"
+    target: "கொள்"
+    reading: "koḷ"
+    ipa: "koɭ"
+    phonetic: "[koɭ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இதை எடுத்துக்கொள்ளுங்கள்."
+        reading: "itai eṭuttukkoḷḷuṅkaḷ."
+        ipa: "it̪ai eʈut̪t̪ukkoɭɭuŋkaɭ"
+        bases: [{ word: "இதை", base: "இது", reading: "itu" }, { word: "எடுத்துக்கொள்ளுங்கள்", base: "எடு", reading: "eṭu" }]
+      - target: "நான் இதை வைத்துக்கொள்கிறேன்."
+        reading: "nāṉ itai vaittukkoḷkiṟēṉ."
+        ipa: "naːn it̪ai ʋait̪t̪ukkoɭkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இதை", base: "இது", reading: "itu" }, { word: "வைத்துக்கொள்கிறேன்", base: "வை", reading: "vai" }]
+  - id: "ta-0452"
+    target: "போடு"
+    reading: "pōṭu"
+    ipa: "poːʈu"
+    phonetic: "[poːɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அம்மா காபியில் சர்க்கரை போடுகிறார்."
+        reading: "ammā kāpiyil carkkarai pōṭukiṟār."
+        ipa: "ammaː kaːpijil saɾkkaɾai poːʈukiraːɾ"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "காபியில்", base: "காபி", reading: "kāpi" }, { word: "சர்க்கரை", ref: "ta-0218" }, { word: "போடுகிறார்", base: "போடு", reading: "pōṭu" }]
+      - target: "நான் சட்டை போடுகிறேன்."
+        reading: "nāṉ caṭṭai pōṭukiṟēṉ."
+        ipa: "naːn saʈʈai poːʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சட்டை", ref: "ta-0284" }, { word: "போடுகிறேன்", base: "போடு", reading: "pōṭu" }]
+  - id: "ta-0453"
+    target: "தா"
+    reading: "tā"
+    ipa: "t̪aː"
+    phonetic: "[t̪aː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தண்ணீர் தாருங்கள்."
+        reading: "eṉakkut taṇṇīr tāruṅkaḷ."
+        ipa: "enakkut̪ t̪aɳɳiːɾ t̪aːɾuŋkaɭ"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "தாருங்கள்", base: "தா", reading: "tā" }]
+      - target: "அவன் எனக்குப் பணம் தந்தான்."
+        reading: "avaṉ eṉakkup paṇam tantāṉ."
+        ipa: "aʋan enakkup paɳam t̪ant̪aːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பணம்", ref: "ta-0197" }, { word: "தந்தான்", base: "தா", reading: "tā" }]
+  - id: "ta-0454"
+    target: "நிறுத்து"
+    reading: "niṟuttu"
+    ipa: "nirut̪t̪u"
+    phonetic: "[n̪irut̪t̪ɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "இங்கே நிறுத்துங்கள்."
+        reading: "iṅkē niṟuttuṅkaḷ."
+        ipa: "iŋkeː nirut̪t̪uŋkaɭ"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "நிறுத்துங்கள்", base: "நிறுத்து", reading: "niṟuttu" }]
+      - target: "அவர் காரை நிறுத்தினார்."
+        reading: "avar kārai niṟuttiṉār."
+        ipa: "aʋaɾ kaːɾai nirut̪t̪inaːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "காரை", base: "கார்", reading: "kār" }, { word: "நிறுத்தினார்", base: "நிறுத்து", reading: "niṟuttu" }]
+  - id: "ta-0455"
+    target: "தள்ளு"
+    reading: "taḷḷu"
+    ipa: "t̪aɭɭu"
+    phonetic: "[t̪aɭɭɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கதவைத் தள்ளுங்கள்."
+        reading: "katavait taḷḷuṅkaḷ."
+        ipa: "kat̪aʋait̪ t̪aɭɭuŋkaɭ"
+        bases: [{ word: "கதவைத்", base: "கதவு", reading: "katavu" }, { word: "தள்ளுங்கள்", base: "தள்ளு", reading: "taḷḷu" }]
+      - target: "குழந்தை பந்தைத் தள்ளுகிறது."
+        reading: "kuḻantai pantait taḷḷukiṟatu."
+        ipa: "kuɻant̪ai pant̪ait̪ t̪aɭɭukirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "பந்தைத்", base: "பந்து", reading: "pantu" }, { word: "தள்ளுகிறது", base: "தள்ளு", reading: "taḷḷu" }]
+  - id: "ta-0456"
+    target: "பிடி"
+    reading: "piṭi"
+    ipa: "piʈi"
+    phonetic: "[piɖi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் பேருந்தைப் பிடிக்கிறேன்."
+        reading: "nāṉ pēruntaip piṭikkiṟēṉ."
+        ipa: "naːn peːɾunt̪aip piʈikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பேருந்தைப்", base: "பேருந்து", reading: "pēruntu" }, { word: "பிடிக்கிறேன்", base: "பிடி", reading: "piṭi" }]
+      - target: "குழந்தை என் கையைப் பிடிக்கிறது."
+        reading: "kuḻantai eṉ kaiyaip piṭikkiṟatu."
+        ipa: "kuɻant̪ai en kaijaip piʈikkirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "கையைப்", base: "கை", reading: "kai" }, { word: "பிடிக்கிறது", base: "பிடி", reading: "piṭi" }]
+  - id: "ta-0457"
+    target: "வீசு"
+    reading: "vīcu"
+    ipa: "ʋiːsu"
+    phonetic: "[ʋiːsɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குழந்தை பந்தை வீசுகிறது."
+        reading: "kuḻantai pantai vīcukiṟatu."
+        ipa: "kuɻant̪ai pant̪ai ʋiːsukirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "பந்தை", base: "பந்து", reading: "pantu" }, { word: "வீசுகிறது", base: "வீசு", reading: "vīcu" }]
+      - target: "காற்று வீசுகிறது."
+        reading: "kāṟṟu vīcukiṟatu."
+        ipa: "kaːrru ʋiːsukirat̪u"
+        bases: [{ word: "காற்று", base: "காற்று", reading: "kāṟṟu" }, { word: "வீசுகிறது", base: "வீசு", reading: "vīcu" }]
+  - id: "ta-0458"
+    target: "தூக்கு"
+    reading: "tūkku"
+    ipa: "t̪uːkku"
+    phonetic: "[t̪uːkkɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அப்பா பையைத் தூக்குகிறார்."
+        reading: "appā paiyait tūkkukiṟār."
+        ipa: "appaː paijait̪ t̪uːkkukiraːɾ"
+        bases: [{ word: "அப்பா", ref: "ta-0073" }, { word: "பையைத்", base: "பை", reading: "pai" }, { word: "தூக்குகிறார்", base: "தூக்கு", reading: "tūkku" }]
+      - target: "குழந்தையைத் தூக்குங்கள்."
+        reading: "kuḻantaiyait tūkkuṅkaḷ."
+        ipa: "kuɻant̪aijait̪ t̪uːkkuŋkaɭ"
+        bases: [{ word: "குழந்தையைத்", base: "குழந்தை", reading: "kuḻantai" }, { word: "தூக்குங்கள்", base: "தூக்கு", reading: "tūkku" }]

@@ -1,0 +1,178 @@
+schema: 1
+id: "ta-en-grammar-gender-number"
+kind: "layer"
+core: "ta-grammar-gender-number"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Gender and number"
+description: "Man and woman, boy, people, men and women, and the plurals they and these: how the verb follows a man, a woman, a thing and the plural. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ta-0440":
+    native: "man; male"
+    alt_native: ["male person"]
+    notes:
+      "n1": "The word for a male person, and also for a male animal. A man is in the class of people, உயர்திணை (uyartiṇai), and his verb ends in -ஆன் (-āṉ); an animal is in the class of things, அஃறிணை (aḵṟiṇai). The plural is ஆண்கள் (āṇkaḷ). Source: English Wikipedia, Tamil grammar (gender and verb endings)."
+    examples:
+      "அந்த ஆண் என் நண்பன்.":
+        native: "That man is my friend."
+        bases:
+          "அந்த": "that"
+          "ஆண்": "man"
+          "என்": "my; from நான் (nāṉ), I"
+      "ஓர் ஆண் வருகிறான்.":
+        native: "A man is coming."
+        bases:
+          "ஓர்": "a; from ஒரு (oru), a; one"
+          "ஆண்": "man"
+          "வருகிறான்": "is coming; from வா (vā), to come"
+  "ta-0441":
+    native: "woman; female"
+    alt_native: ["girl"]
+    notes:
+      "n1": "The word for a female person, in the class of people: its verb ends in -ஆள் (-āḷ). The final ண் (ṇ) doubles before an ending: பெண்ணை (peṇṇai). The plural is பெண்கள் (peṇkaḷ)."
+    examples:
+      "அந்தப் பெண் என் நண்பி.":
+        native: "That woman is my friend."
+        bases:
+          "அந்தப்": "that; from அந்த (anta), that, before a noun"
+          "பெண்": "woman"
+          "என்": "my; from நான் (nāṉ), I"
+      "ஒரு பெண் வருகிறாள்.":
+        native: "A woman is coming."
+        bases:
+          "ஒரு": "a; one"
+          "பெண்": "woman"
+          "வருகிறாள்": "is coming; from வா (vā), to come"
+  "ta-0442":
+    native: "boy"
+    alt_native: ["lad"]
+    notes:
+      "n1": "A boy takes the verb ending of a man, -ஆன் (-āṉ). The word for a girl is பெண் (peṇ)."
+    examples:
+      "அந்தப் பையன் சாப்பிடுகிறான்.":
+        native: "That boy is eating."
+        bases:
+          "அந்தப்": "that; from அந்த (anta), that, before a noun"
+          "பையன்": "boy"
+          "சாப்பிடுகிறான்": "is eating; from சாப்பிடு (cāppiṭu), to eat"
+      "ஒரு பையன் பள்ளிக்குப் போகிறான்.":
+        native: "A boy is going to school."
+        bases:
+          "ஒரு": "a; one"
+          "பையன்": "boy"
+          "பள்ளிக்குப்": "to school; from பள்ளி (paḷḷi), school"
+          "போகிறான்": "is going; from போ (pō), to go"
+  "ta-0443":
+    native: "man; human being"
+    alt_native: ["person"]
+    notes:
+      "n1": "A man or a human being, with the verb ending -ஆன் (-āṉ). The respectful and general word is மனிதர் (maṉitar)."
+    examples:
+      "அவன் நல்ல மனிதன்.":
+        native: "He is a good man."
+        bases:
+          "மனிதன்": "man"
+      "இங்கே ஒரு மனிதன் இருக்கிறான்.":
+        native: "A man is here."
+        bases:
+          "ஒரு": "a; one"
+          "மனிதன்": "man"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+  "ta-0444":
+    native: "people"
+    notes:
+      "n1": "A plural noun for people: it has no singular, and its verb takes the plural ending of people, -ஆர்கள் (-ārkaḷ). It is already plural, so it takes no -கள் (-kaḷ) again."
+    examples:
+      "இங்கே நிறைய மக்கள் இருக்கிறார்கள்.":
+        native: "There are many people here."
+        bases:
+          "மக்கள்": "people"
+          "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+      "மக்கள் வீட்டுக்குப் போகிறார்கள்.":
+        native: "The people are going home."
+        bases:
+          "மக்கள்": "people"
+          "வீட்டுக்குப்": "to the house; home; from வீடு (vīṭu), house"
+          "போகிறார்கள்": "are going; from போ (pō), to go"
+  "ta-0445":
+    native: "men; males"
+    notes:
+      "n1": "The plural of ஆண் (āṇ): -கள் (-kaḷ) goes straight on the noun. Its verb ends in -ஆர்கள் (-ārkaḷ), as the plural of people does."
+    examples:
+      "ஆண்கள் விளையாடுகிறார்கள்.":
+        native: "The men are playing."
+        bases:
+          "ஆண்கள்": "men"
+          "விளையாடுகிறார்கள்": "are playing; from விளையாடு (viḷaiyāṭu), to play"
+      "அந்த ஆண்கள் என் நண்பர்கள்.":
+        native: "Those men are my friends."
+        bases:
+          "அந்த": "that"
+          "ஆண்கள்": "men"
+          "என்": "my; from நான் (nāṉ), I"
+          "நண்பர்கள்": "friends; from நண்பன் (naṇpaṉ), male friend"
+  "ta-0446":
+    native: "women; females"
+    notes:
+      "n1": "The plural of பெண் (peṇ). A woman and a man take the same plural verb ending, -ஆர்கள் (-ārkaḷ): the plural does not tell the sex."
+    examples:
+      "பெண்கள் சாப்பிடுகிறார்கள்.":
+        native: "The women are eating."
+        bases:
+          "பெண்கள்": "women"
+          "சாப்பிடுகிறார்கள்": "are eating; from சாப்பிடு (cāppiṭu), to eat"
+      "அந்தப் பெண்கள் என் நண்பிகள்.":
+        native: "Those women are my friends."
+        bases:
+          "அந்தப்": "that; from அந்த (anta), that, before a noun"
+          "பெண்கள்": "women"
+          "என்": "my; from நான் (nāṉ), I"
+          "நண்பிகள்": "friends; from நண்பி (naṇpi), female friend"
+  "ta-0447":
+    native: "they; those (things)"
+    notes:
+      "n1": "The plural of அது (atu) for things and animals; people use அவர்கள் (avarkaḷ). Its verb ends in -அன (-aṉa): அவை இருக்கின்றன (avai irukkiṉṟaṉa), they are."
+    examples:
+      "அவை நாய்கள்.":
+        native: "Those are dogs."
+        bases:
+          "அவை": "those"
+          "நாய்கள்": "dogs; from நாய் (nāy), dog"
+      "அவை எங்கே இருக்கின்றன?":
+        native: "Where are they?"
+        bases:
+          "அவை": "they"
+          "இருக்கின்றன": "are; from இரு (iru), to be"
+  "ta-0448":
+    native: "these (things)"
+    notes:
+      "n1": "The plural of இது (itu), this, for things and animals. Its verb ends in -அன (-aṉa), as அவை (avai) does."
+    examples:
+      "இவை பேனாக்கள்.":
+        native: "These are pens."
+        bases:
+          "இவை": "these"
+          "பேனாக்கள்": "pens; from பேனா (pēṉā), pen"
+      "இவை நல்லவை.":
+        native: "These are good ones."
+        bases:
+          "இவை": "these"
+          "நல்லவை": "good ones; from நல்ல (nalla), good"
+  "ta-0449":
+    native: "everyone; everybody"
+    alt_native: ["all of them"]
+    notes:
+      "n1": "A word for all the people: it is plural, so its verb takes -ஆர்கள் (-ārkaḷ). It is built from எல்லோர் (ellōr), all people, and -உம் (-um), also. For things, use எல்லாம் (ellām)."
+    examples:
+      "எல்லோரும் வீட்டில் இருக்கிறார்கள்.":
+        native: "Everyone is at home."
+        bases:
+          "எல்லோரும்": "everyone"
+          "வீட்டில்": "at home; from வீடு (vīṭu), house"
+          "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+      "எல்லோரும் சாப்பிடுகிறார்கள்.":
+        native: "Everyone is eating."
+        bases:
+          "எல்லோரும்": "everyone"
+          "சாப்பிடுகிறார்கள்": "are eating; from சாப்பிடு (cāppiṭu), to eat"

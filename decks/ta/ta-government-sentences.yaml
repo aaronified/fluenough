@@ -1,0 +1,123 @@
+schema: 1
+id: "ta-government-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9060"
+    target: "இது அரசாங்க அலுவலகம்."
+    reading: "itu aracāṅka aluvalakam."
+    ipa: "it̪u aɾasaːŋka aluʋalakam"
+    phonetic: "[id̪ɯ aɾasaːŋɡa aluʋalaɡam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "அரசாங்க", base: "அரசாங்கம்", reading: "aracāṅkam" }, { word: "அலுவலகம்", ref: "ta-0193" }]
+    confusables:
+      - { id: "w1", ref: "ta-7338", kind: "word" }
+      - { id: "w2", ref: "ta-7348", kind: "word" }
+      - { id: "w3", ref: "ta-7356", kind: "word" }
+  - id: "ta-9061"
+    target: "நான் புதிய உரிமத்துக்கு விண்ணப்பிக்கிறேன்."
+    reading: "nāṉ putiya urimattukku viṇṇappikkiṟēṉ."
+    ipa: "naːn put̪ija uɾimat̪t̪ukku ʋiɳɳappikkireːn"
+    phonetic: "[n̪aːn pud̪ija uɾimat̪t̪ukkɯ ʋiɳɳappikkireːn]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "புதிய", ref: "ta-0171" }, { word: "உரிமத்துக்கு", base: "உரிமம்", reading: "urimam" }, { word: "விண்ணப்பிக்கிறேன்", base: "விண்ணப்பி", reading: "viṇṇappi" }]
+    confusables:
+      - { id: "w1", ref: "ta-7366", kind: "word" }
+      - { id: "w2", ref: "ta-7379", kind: "word" }
+      - { id: "w3", ref: "ta-7378", kind: "word" }
+  - id: "ta-9062"
+    target: "இந்தப் படிவத்தில் கையொப்பம் போடுங்கள்."
+    reading: "intap paṭivattil kaiyoppam pōṭuṅkaḷ."
+    ipa: "int̪ap paʈiʋat̪t̪il kaijoppam poːʈuŋkaɭ"
+    phonetic: "[in̪d̪ap paɖiʋat̪t̪il kaijoppam poːɖuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இந்தப்", base: "இந்த", reading: "inta" }, { word: "படிவத்தில்", base: "படிவம்", reading: "paṭivam" }, { word: "கையொப்பம்", ref: "ta-2327" }, { word: "போடுங்கள்", base: "போடு", reading: "pōṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-7364", kind: "word" }
+      - { id: "w2", ref: "ta-7365", kind: "word" }
+  - id: "ta-9063"
+    target: "எனக்குப் பிறப்புச்சான்றிதழ் வேண்டும்."
+    reading: "eṉakkup piṟappuccāṉṟitaḻ vēṇṭum."
+    ipa: "enakkup pirapputʃtʃaːnrit̪aɻ ʋeːɳʈum"
+    phonetic: "[enakkup pirapputʃtʃaːndrid̪aɻ ʋeːɳɖum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பிறப்புச்சான்றிதழ்", ref: "ta-7346" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-7345", kind: "word" }
+      - { id: "w2", ref: "ta-7363", kind: "word" }
+  - id: "ta-9064"
+    target: "இது சட்டத்துக்கு எதிரானது."
+    reading: "itu caṭṭattukku etirāṉatu."
+    ipa: "it̪u saʈʈat̪t̪ukku et̪iɾaːnat̪u"
+    phonetic: "[id̪ɯ saʈʈat̪t̪ukkɯ ed̪iɾaːnad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "சட்டத்துக்கு", base: "சட்டம்", reading: "caṭṭam" }, { word: "எதிரானது", base: "எதிர்", reading: "etir" }]
+    confusables:
+      - { id: "w1", ref: "ta-7349", kind: "word" }
+      - { id: "w2", ref: "ta-7375", kind: "word" }
+      - { id: "w3", ref: "ta-7376", kind: "word" }
+  - id: "ta-9065"
+    target: "எல்லா மக்களுக்கும் உரிமை உண்டு."
+    reading: "ellā makkaḷukkum urimai uṇṭu."
+    ipa: "ellaː makkaɭukkum uɾimai uɳʈu"
+    phonetic: "[ellaː makkaɭukkum uɾimai uɳɖɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எல்லா", base: "எல்லா", reading: "ellā" }, { word: "மக்களுக்கும்", base: "மக்கள்", reading: "makkaḷ" }, { word: "உரிமை", ref: "ta-7340" }, { word: "உண்டு", base: "உண்டு", reading: "uṇṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-7341", kind: "word" }
+      - { id: "w2", ref: "ta-7343", kind: "word" }
+      - { id: "w3", ref: "ta-7371", kind: "word" }
+  - id: "ta-9066"
+    target: "இன்று வாக்குச்சாவடியில் வாக்குப்பதிவு."
+    reading: "iṉṟu vākkuccāvaṭiyil vākkuppativu."
+    ipa: "inru ʋaːkkutʃtʃaːʋaʈijil ʋaːkkuppat̪iʋu"
+    phonetic: "[indrɯ ʋaːkkutʃtʃaːʋaɖijil ʋaːkkuppad̪iʋɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வாக்குச்சாவடியில்", base: "வாக்குச்சாவடி", reading: "vākkuccāvaṭi" }, { word: "வாக்குப்பதிவு", ref: "ta-7362" }]
+    confusables:
+      - { id: "w1", ref: "ta-7344", kind: "word" }
+      - { id: "w2", ref: "ta-7372", kind: "word" }
+  - id: "ta-9067"
+    target: "அரசு சட்டத்தை அமல்படுத்துகிறது."
+    reading: "aracu caṭṭattai amalpaṭuttukiṟatu."
+    ipa: "aɾasu saʈʈat̪t̪ai amalpaʈut̪t̪ukirat̪u"
+    phonetic: "[aɾasɯ saʈʈat̪t̪ai amalpaɖut̪t̪uɡirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அரசு", base: "அரசு", reading: "aracu" }, { word: "சட்டத்தை", base: "சட்டம்", reading: "caṭṭam" }, { word: "அமல்படுத்துகிறது", base: "அமல்படுத்து", reading: "amalpaṭuttu" }]
+    confusables:
+      - { id: "w1", ref: "ta-7380", kind: "word" }
+      - { id: "w2", ref: "ta-7382", kind: "word" }
+  - id: "ta-9068"
+    target: "அரசு விவசாயிகளுக்கு மானியம் கொடுக்கிறது."
+    reading: "aracu vivacāyikaḷukku māṉiyam koṭukkiṟatu."
+    ipa: "aɾasu ʋiʋasaːjikaɭukku maːnijam koʈukkirat̪u"
+    phonetic: "[aɾasɯ ʋiʋasaːjiɡaɭukkɯ maːnijam koɖukkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அரசு", base: "அரசு", reading: "aracu" }, { word: "விவசாயிகளுக்கு", base: "விவசாயி", reading: "vivacāyi" }, { word: "மானியம்", ref: "ta-7358" }, { word: "கொடுக்கிறது", base: "கொடு", reading: "koṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-7359", kind: "word" }
+      - { id: "w2", ref: "ta-7360", kind: "word" }
+  - id: "ta-9069"
+    target: "எனக்கு ஒரு விளக்கம் வேண்டும்."
+    reading: "eṉakku oru viḷakkam vēṇṭum."
+    ipa: "enakku oɾu ʋiɭakkam ʋeːɳʈum"
+    phonetic: "[enakkɯ oɾɯ ʋiɭakkam ʋeːɳɖum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஒரு", ref: "ta-0419" }, { word: "விளக்கம்", ref: "ta-7131" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-7368", kind: "word" }
+      - { id: "w2", ref: "ta-7369", kind: "word" }
+      - { id: "w3", ref: "ta-7370", kind: "word" }

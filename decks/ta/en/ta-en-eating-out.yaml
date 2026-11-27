@@ -1,0 +1,180 @@
+schema: 1
+id: "ta-en-eating-out"
+kind: "layer"
+core: "ta-eating-out"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Eating out"
+description: "Words for a restaurant meal: menu, waiter, hunger, spicy and sour, serving, takeaway and tip. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1313":
+    native: "menu"
+    notes:
+      n1: "மெனு (meṉu) is borrowed from English menu."
+    examples:
+      "மெனு கொடு.":
+        native: "Give the menu."
+        bases:
+          "மெனு": "menu"
+      "மெனு இங்கே இருக்கிறது.":
+        native: "The menu is here."
+        bases:
+          "மெனு": "menu"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1314":
+    native: "hunger"
+    notes:
+      n1: "Hunger is felt by someone: எனக்கு பசி (eṉakku paci); the verb form is பசிக்கிறது (pacikkiṟatu), I feel hungry."
+    examples:
+      "எனக்கு பசி.":
+        native: "I am hungry."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "பசி": "hunger"
+      "ரொம்ப பசி.":
+        native: "I am very hungry."
+        bases:
+          "பசி": "hunger"
+  "ta-1315":
+    native: "spiciness; hot spice"
+    notes:
+      n1: "காரம் (kāram) is the heat of chilli; as a taste it is the opposite of இனிப்பு (iṉippu), sweet."
+    examples:
+      "காரம் கொஞ்சம்.":
+        native: "A little spice."
+        bases:
+          "காரம்": "spiciness; hot spice"
+      "காரம் அதிகம்.":
+        native: "It is very spicy."
+        bases:
+          "காரம்": "spiciness; hot spice"
+  "ta-1316":
+    native: "sourness"
+    notes:
+      n1: "புளிப்பு (puḷippu) is the sour taste, as of tamarind in rasam."
+    examples:
+      "புளிப்பு அதிகம்.":
+        native: "It is very sour."
+        bases:
+          "புளிப்பு": "sourness"
+      "ரசம் புளிப்பு.":
+        native: "The rasam is sour."
+        bases:
+          "புளிப்பு": "sourness"
+  "ta-1317":
+    native: "to serve (food)"
+    notes:
+      n1: "பரிமாறு (parimāṟu) is to serve food to others at the table."
+    examples:
+      "சாம்பார் பரிமாறு.":
+        native: "Serve the sambar."
+        bases:
+          "பரிமாறு": "to serve (food)"
+      "அம்மா சாதம் பரிமாறுகிறார்.":
+        native: "Mother serves the rice."
+        bases:
+          "பரிமாறுகிறார்": "serves (respectful); from பரிமாறு (parimāṟu), to serve"
+  "ta-1318":
+    native: "tip (money)"
+    notes:
+      n1: "டிப்ஸ் (ṭips) is borrowed from English tips."
+    examples:
+      "டிப்ஸ் கொடு.":
+        native: "Give a tip."
+        bases:
+          "டிப்ஸ்": "tip (money)"
+      "டிப்ஸ் வேண்டாம்.":
+        native: "No tip, please."
+        bases:
+          "டிப்ஸ்": "tip (money)"
+  "ta-1319":
+    native: "takeaway; parcel"
+    notes:
+      n1: "பார்சல் (pārcal) is what you call food packed to take away: பார்சல் வேண்டும் (pārcal vēṇṭum)."
+    examples:
+      "பார்சல் வேண்டும்.":
+        native: "I want it to take away."
+        bases:
+          "பார்சல்": "takeaway; parcel"
+      "இரண்டு பார்சல் கொடு.":
+        native: "Give two takeaways."
+        bases:
+          "பார்சல்": "takeaway; parcel"
+  "ta-1320":
+    native: "meals (a full rice meal)"
+    notes:
+      n1: "மீல்ஸ் (mīls) is the name of a full rice meal with sambar, rasam and curries; you order it by number: ஒரு மீல்ஸ் (oru mīls)."
+    examples:
+      "ஒரு மீல்ஸ் கொடு.":
+        native: "Give one meals."
+        bases:
+          "மீல்ஸ்": "meals (a full rice meal)"
+      "மீல்ஸ் எவ்வளவு?":
+        native: "How much is the meals?"
+        bases:
+          "மீல்ஸ்": "meals (a full rice meal)"
+  "ta-1321":
+    native: "waiter"
+    notes:
+      n1: "சர்வர் (carvar) is borrowed from English server; the verb is respectful: சர்வர் வருகிறார் (carvar varukiṟār)."
+    examples:
+      "சர்வர் இங்கே இருக்கிறார்.":
+        native: "The waiter is here."
+        bases:
+          "சர்வர்": "waiter"
+          "இருக்கிறார்": "is (respectful); from இரு (iru), to be"
+      "சர்வர் வருகிறார்.":
+        native: "The waiter is coming."
+        bases:
+          "சர்வர்": "waiter"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+  "ta-6415":
+    native: "I need a table for two people."
+    notes:
+      "n1": "பேர் (pēr) counts people; பேருக்கு (pērukku) means 'for people'. The number comes before it."
+    bases:
+      "பேருக்கு": "person"
+  "ta-6416":
+    native: "Please give me the menu."
+    notes:
+      "n1": "கொடுங்கள் (koṭuṅkaḷ) is the polite request form of கொடு (koṭu), 'to give'."
+    bases:
+      "கொடுங்கள்": "to give"
+  "ta-6417":
+    native: "Please give me water."
+    notes:
+      "n1": "Asking for தண்ணீர் (taṇṇīr) is one of the first things to say at a table."
+    bases:
+      "கொடுங்கள்": "to give"
+  "ta-6418":
+    native: "Please make it less spicy."
+    notes:
+      "n1": "குறைவாக (kuṟaivāka) is குறைவு (kuṟaivu) with -ஆக (āka), 'less'. போடுங்கள் (pōṭuṅkaḷ) is the polite request form of போடு (pōṭu), 'to put in'."
+    bases:
+      "குறைவாகப்": "less; little"
+      "போடுங்கள்": "to put in"
+  "ta-6419":
+    native: "Is this vegetarian?"
+    notes:
+      "n1": "சைவம் (caivam) means vegetarian food; the ending -ஆ (ā) makes it a yes-or-no question, and ஆ (ā) joins the word as சைவமா (caivamā)."
+    bases:
+      "சைவமா": "vegetarian food"
+  "ta-6420":
+    native: "Please bring the bill."
+    notes:
+      "n1": "கொண்டு வாருங்கள் (koṇṭu vāruṅkaḷ) means 'bring': கொண்டு (koṇṭu) with வா (vā), 'to come'. The polite request form ends in -ங்கள் (ṅkaḷ)."
+    bases:
+      "கொண்டு": "having taken"
+      "வாருங்கள்": "to come"
+  "ta-6421":
+    native: "The food was good."
+    notes:
+      "n1": "நன்றாக (naṉṟāka) is 'well' and இருந்தது (iruntatu) is the past 'was', from இரு (iru). Saying this to the cook is polite."
+    bases:
+      "நன்றாக": "well; good"
+      "இருந்தது": "to be"
+  "ta-6422":
+    native: "I want it as a takeaway."
+    notes:
+      "n1": "பார்சல் (pārcal) is the English word 'parcel', used for food to take away."

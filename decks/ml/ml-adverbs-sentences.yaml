@@ -1,0 +1,104 @@
+schema: 1
+id: "ml-adverbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-3064"
+    target: "എപ്പോഴും വെള്ളം കുടിക്കൂ."
+    reading: "eppōḻuṁ veḷḷaṁ kuṭikkū."
+    ipa: "eppoːɻum ʋeɭɭam kuʈikkuː"
+    phonetic: "[eppoːɻum ʋeɭɭɐm kuɖikkuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "എപ്പോഴും", ref: "ml-0509" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+    confusables:
+      - { id: "w1", ref: "ml-0510", kind: "word" }
+      - { id: "w2", ref: "ml-0511", kind: "word" }
+  - id: "ml-3065"
+    target: "നന്നായി ഇരിക്കൂ."
+    reading: "nannāyi irikkū."
+    ipa: "nənnaːji iɾikkuː"
+    phonetic: "[nɐnnaːji iɾikkuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "നന്നായി", ref: "ml-0519" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+    confusables:
+      - { id: "w1", ref: "ml-0520", kind: "word" }
+      - { id: "w2", ref: "ml-0521", kind: "word" }
+  - id: "ml-3066"
+    target: "വേഗം വരൂ."
+    reading: "vēgaṁ varū."
+    ipa: "ʋeːɡam ʋəɾuː"
+    phonetic: "[ʋeːɡɐm ʋɐɾuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "വേഗം", ref: "ml-0521" }, { word: "വരൂ", ref: "ml-0010" }]
+    confusables:
+      - { id: "w1", ref: "ml-0522", kind: "word" }
+      - { id: "w2", ref: "ml-0526", kind: "word" }
+  - id: "ml-3067"
+    target: "സാവധാനം കഴിക്കൂ."
+    reading: "sāvadhānaṁ kaḻikkū."
+    ipa: "saːʋəd̪ʱaːnam kəɻikkuː"
+    phonetic: "[saːʋɐd̪ʱaːnɐm kɐɻikkuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "സാവധാനം", ref: "ml-0522" }, { word: "കഴിക്കൂ", ref: "ml-0113" }]
+    confusables:
+      - { id: "w1", ref: "ml-0521", kind: "word" }
+      - { id: "w2", ref: "ml-0519", kind: "word" }
+  - id: "ml-3068"
+    target: "അച്ഛൻ ഇടയ്ക്ക് വരുന്നു."
+    reading: "acchaṉ iṭaykk varunnu."
+    ipa: "ətʃtʃan iʈajkk ʋəɾunnu"
+    phonetic: "[ɐtʃtʃɐn iɖɐjkk ʋɐɾunnu]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "അച്ഛൻ", ref: "ml-0070" }, { word: "ഇടയ്ക്ക്", ref: "ml-0508" }, { word: "വരുന്നു", base: "വരുന്നു", reading: "varunnu" }]
+    confusables:
+      - { id: "w1", ref: "ml-0511", kind: "word" }
+      - { id: "w2", ref: "ml-0509", kind: "word" }
+  - id: "ml-3069"
+    target: "ഇപ്പോഴും വെള്ളം ഉണ്ട്."
+    reading: "ippōḻuṁ veḷḷaṁ uṇṭ."
+    ipa: "ippoːɻum ʋeɭɭam uɳʈ"
+    phonetic: "[ippoːɻum ʋeɭɭɐm uɳʈ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ഇപ്പോഴും", ref: "ml-0514" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0515", kind: "word" }
+      - { id: "w2", ref: "ml-0516", kind: "word" }
+  - id: "ml-3070"
+    target: "ഒറ്റയ്ക്ക് ഇരിക്കൂ."
+    reading: "oṟṟaykk irikkū."
+    ipa: "ottajkk iɾikkuː"
+    phonetic: "[ottɐjkk iɾikkuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ഒറ്റയ്ക്ക്", ref: "ml-0518" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+    confusables:
+      - { id: "w1", ref: "ml-0517", kind: "word" }
+      - { id: "w2", ref: "ml-0513", kind: "word" }
+  - id: "ml-3071"
+    target: "ഒരുമിച്ച് വരൂ."
+    reading: "orumicc varū."
+    ipa: "oɾumitʃtʃ ʋəɾuː"
+    phonetic: "[oɾumitʃtʃ ʋɐɾuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ഒരുമിച്ച്", ref: "ml-0517" }, { word: "വരൂ", ref: "ml-0010" }]
+    confusables:
+      - { id: "w1", ref: "ml-0518", kind: "word" }
+      - { id: "w2", ref: "ml-0523", kind: "word" }

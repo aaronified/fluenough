@@ -1,0 +1,901 @@
+schema: 1
+id: "ta-housing"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "housing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-8310"
+    target: "நீர்த்தொட்டி"
+    reading: "nīrttoṭṭi"
+    ipa: "niːɾt̪t̪oʈʈi"
+    phonetic: "[n̪iːɾt̪t̪oʈʈi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நீர்த்தொட்டி மொட்டைமாடியில் இருக்கிறது."
+        reading: "nīrttoṭṭi moṭṭaimāṭiyil irukkiṟatu."
+        ipa: "niːɾt̪t̪oʈʈi moʈʈaimaːʈijil iɾukkirat̪u"
+        bases: [{ word: "நீர்த்தொட்டி", base: "நீர்த்தொட்டி", reading: "nīrttoṭṭi" }, { word: "மொட்டைமாடியில்", base: "மொட்டைமாடி", reading: "moṭṭaimāṭi" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "நீர்த்தொட்டி பெரியது."
+        reading: "nīrttoṭṭi periyatu."
+        ipa: "niːɾt̪t̪oʈʈi peɾijat̪u"
+        bases: [{ word: "நீர்த்தொட்டி", base: "நீர்த்தொட்டி", reading: "nīrttoṭṭi" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-8311"
+    target: "உரிமையாளர்"
+    reading: "urimaiyāḷar"
+    ipa: "uɾimaijaːɭaɾ"
+    phonetic: "[uɾimaijaːɭaɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் வீட்டு உரிமையாளர்."
+        reading: "avar vīṭṭu urimaiyāḷar."
+        ipa: "aʋaɾ ʋiːʈʈu uɾimaijaːɭaɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "வீட்டு", base: "வீடு", reading: "vīṭu" }, { word: "உரிமையாளர்", base: "உரிமையாளர்", reading: "urimaiyāḷar" }]
+      - target: "உரிமையாளர் இங்கே இல்லை."
+        reading: "urimaiyāḷar iṅkē illai."
+        ipa: "uɾimaijaːɭaɾ iŋkeː illai"
+        bases: [{ word: "உரிமையாளர்", base: "உரிமையாளர்", reading: "urimaiyāḷar" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-8312"
+    target: "குடியிருப்பு"
+    reading: "kuṭiyiruppu"
+    ipa: "kuʈijiɾuppu"
+    phonetic: "[kuɖijiɾuppɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது புதிய குடியிருப்பு."
+        reading: "itu putiya kuṭiyiruppu."
+        ipa: "it̪u put̪ija kuʈijiɾuppu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புதிய", ref: "ta-0171" }, { word: "குடியிருப்பு", base: "குடியிருப்பு", reading: "kuṭiyiruppu" }]
+      - target: "குடியிருப்பு எங்கே இருக்கிறது?"
+        reading: "kuṭiyiruppu eṅkē irukkiṟatu?"
+        ipa: "kuʈijiɾuppu eŋkeː iɾukkirat̪u"
+        bases: [{ word: "குடியிருப்பு", base: "குடியிருப்பு", reading: "kuṭiyiruppu" }, { word: "எங்கே", ref: "ta-0043" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8313"
+    target: "அடுக்குமாடி"
+    reading: "aṭukkumāṭi"
+    ipa: "aʈukkumaːʈi"
+    phonetic: "[aɖukkumaːɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது அடுக்குமாடி கட்டிடம்."
+        reading: "itu aṭukkumāṭi kaṭṭiṭam."
+        ipa: "it̪u aʈukkumaːʈi kaʈʈiʈam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "அடுக்குமாடி", base: "அடுக்குமாடி", reading: "aṭukkumāṭi" }, { word: "கட்டிடம்", ref: "ta-8336" }]
+      - target: "அடுக்குமாடியில் நாங்கள் இருக்கிறோம்."
+        reading: "aṭukkumāṭiyil nāṅkaḷ irukkiṟōm."
+        ipa: "aʈukkumaːʈijil naːŋkaɭ iɾukkiroːm"
+        bases: [{ word: "அடுக்குமாடியில்", base: "அடுக்குமாடி", reading: "aṭukkumāṭi" }, { word: "நாங்கள்", ref: "ta-0064" }, { word: "இருக்கிறோம்", base: "இரு", reading: "iru" }]
+  - id: "ta-8314"
+    target: "வாடகைதாரர்"
+    reading: "vāṭakaitārar"
+    ipa: "ʋaːʈakait̪aːɾaɾ"
+    phonetic: "[ʋaːɖaɡaid̪aːɾaɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் வாடகைதாரர்."
+        reading: "avar vāṭakaitārar."
+        ipa: "aʋaɾ ʋaːʈakait̪aːɾaɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "வாடகைதாரர்", base: "வாடகைதாரர்", reading: "vāṭakaitārar" }]
+      - target: "வாடகைதாரர் வீட்டில் இருக்கிறார்."
+        reading: "vāṭakaitārar vīṭṭil irukkiṟār."
+        ipa: "ʋaːʈakait̪aːɾaɾ ʋiːʈʈil iɾukkiraːɾ"
+        bases: [{ word: "வாடகைதாரர்", base: "வாடகைதாரர்", reading: "vāṭakaitārar" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-8315"
+    target: "திண்ணை"
+    reading: "tiṇṇai"
+    ipa: "t̪iɳɳai"
+    phonetic: "[t̪iɳɳai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "திண்ணையில் பெரியவர் இருக்கிறார்."
+        reading: "tiṇṇaiyil periyavar irukkiṟār."
+        ipa: "t̪iɳɳaijil peɾijaʋaɾ iɾukkiraːɾ"
+        bases: [{ word: "திண்ணையில்", base: "திண்ணை", reading: "tiṇṇai" }, { word: "பெரியவர்", base: "பெரியவர்", reading: "periyavar" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "வீட்டில் திண்ணை இருக்கிறது."
+        reading: "vīṭṭil tiṇṇai irukkiṟatu."
+        ipa: "ʋiːʈʈil t̪iɳɳai iɾukkirat̪u"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "திண்ணை", base: "திண்ணை", reading: "tiṇṇai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8316"
+    target: "படுக்கையறை"
+    reading: "paṭukkaiyaṟai"
+    ipa: "paʈukkaijarai"
+    phonetic: "[paɖukkaijarai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இந்த வீட்டில் இரண்டு படுக்கையறை இருக்கிறது."
+        reading: "inta vīṭṭil iraṇṭu paṭukkaiyaṟai irukkiṟatu."
+        ipa: "int̪a ʋiːʈʈil iɾaɳʈu paʈukkaijarai iɾukkirat̪u"
+        bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "இரண்டு", ref: "ta-0089" }, { word: "படுக்கையறை", base: "படுக்கையறை", reading: "paṭukkaiyaṟai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "படுக்கையறை பெரியது."
+        reading: "paṭukkaiyaṟai periyatu."
+        ipa: "paʈukkaijarai peɾijat̪u"
+        bases: [{ word: "படுக்கையறை", base: "படுக்கையறை", reading: "paṭukkaiyaṟai" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-8317"
+    target: "பராமரிப்பு"
+    reading: "parāmarippu"
+    ipa: "paɾaːmaɾippu"
+    phonetic: "[paɾaːmaɾippɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டுப் பராமரிப்பு முக்கியம்."
+        reading: "vīṭṭup parāmarippu mukkiyam."
+        ipa: "ʋiːʈʈup paɾaːmaɾippu mukkijam"
+        bases: [{ word: "வீட்டுப்", base: "வீடு", reading: "vīṭu" }, { word: "பராமரிப்பு", base: "பராமரிப்பு", reading: "parāmarippu" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+      - target: "பராமரிப்பு நடக்கிறது."
+        reading: "parāmarippu naṭakkiṟatu."
+        ipa: "paɾaːmaɾippu naʈakkirat̪u"
+        bases: [{ word: "பராமரிப்பு", base: "பராமரிப்பு", reading: "parāmarippu" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+  - id: "ta-8318"
+    target: "குடியிருப்போர்"
+    reading: "kuṭiyiruppōr"
+    ipa: "kuʈijiɾuppoːɾ"
+    phonetic: "[kuɖijiɾuppoːɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குடியிருப்போர் இங்கே இருக்கிறார்கள்."
+        reading: "kuṭiyiruppōr iṅkē irukkiṟārkaḷ."
+        ipa: "kuʈijiɾuppoːɾ iŋkeː iɾukkiraːɾkaɭ"
+        bases: [{ word: "குடியிருப்போர்", base: "குடியிருப்போர்", reading: "kuṭiyiruppōr" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்கள்", base: "இரு", reading: "iru" }]
+      - target: "குடியிருப்போர் கூட்டம் இன்று."
+        reading: "kuṭiyiruppōr kūṭṭam iṉṟu."
+        ipa: "kuʈijiɾuppoːɾ kuːʈʈam inru"
+        bases: [{ word: "குடியிருப்போர்", base: "குடியிருப்போர்", reading: "kuṭiyiruppōr" }, { word: "கூட்டம்", ref: "ta-0195" }, { word: "இன்று", ref: "ta-0144" }]
+  - id: "ta-8319"
+    target: "மாடி"
+    reading: "māṭi"
+    ipa: "maːʈi"
+    phonetic: "[maːɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாங்கள் மாடியில் இருக்கிறோம்."
+        reading: "nāṅkaḷ māṭiyil irukkiṟōm."
+        ipa: "naːŋkaɭ maːʈijil iɾukkiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "மாடியில்", base: "மாடி", reading: "māṭi" }, { word: "இருக்கிறோம்", base: "இரு", reading: "iru" }]
+      - target: "மாடி வீடு பெரியது."
+        reading: "māṭi vīṭu periyatu."
+        ipa: "maːʈi ʋiːʈu peɾijat̪u"
+        bases: [{ word: "மாடி", base: "மாடி", reading: "māṭi" }, { word: "வீடு", ref: "ta-0009" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-8320"
+    target: "மொட்டைமாடி"
+    reading: "moṭṭaimāṭi"
+    ipa: "moʈʈaimaːʈi"
+    phonetic: "[moʈʈaimaːɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மொட்டைமாடி பெரியது."
+        reading: "moṭṭaimāṭi periyatu."
+        ipa: "moʈʈaimaːʈi peɾijat̪u"
+        bases: [{ word: "மொட்டைமாடி", base: "மொட்டைமாடி", reading: "moṭṭaimāṭi" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+      - target: "குழந்தை மொட்டைமாடியில் விளையாடுகிறது."
+        reading: "kuḻantai moṭṭaimāṭiyil viḷaiyāṭukiṟatu."
+        ipa: "kuɻant̪ai moʈʈaimaːʈijil ʋiɭaijaːʈukirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "மொட்டைமாடியில்", base: "மொட்டைமாடி", reading: "moṭṭaimāṭi" }, { word: "விளையாடுகிறது", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+  - id: "ta-8321"
+    target: "கூரை"
+    reading: "kūrai"
+    ipa: "kuːɾai"
+    phonetic: "[kuːɾai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டுக் கூரை பழையது."
+        reading: "vīṭṭuk kūrai paḻaiyatu."
+        ipa: "ʋiːʈʈuk kuːɾai paɻaijat̪u"
+        bases: [{ word: "வீட்டுக்", base: "வீடு", reading: "vīṭu" }, { word: "கூரை", base: "கூரை", reading: "kūrai" }, { word: "பழையது", base: "பழைய", reading: "paḻaiya" }]
+      - target: "கூரையில் ஓட்டை இருக்கிறது."
+        reading: "kūraiyil ōṭṭai irukkiṟatu."
+        ipa: "kuːɾaijil oːʈʈai iɾukkirat̪u"
+        bases: [{ word: "கூரையில்", base: "கூரை", reading: "kūrai" }, { word: "ஓட்டை", ref: "ta-7327" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8322"
+    target: "படிக்கட்டு"
+    reading: "paṭikkaṭṭu"
+    ipa: "paʈikkaʈʈu"
+    phonetic: "[paɖikkaʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "படிக்கட்டு எங்கே?"
+        reading: "paṭikkaṭṭu eṅkē?"
+        ipa: "paʈikkaʈʈu eŋkeː"
+        bases: [{ word: "படிக்கட்டு", base: "படிக்கட்டு", reading: "paṭikkaṭṭu" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "படிக்கட்டு அகலமானது."
+        reading: "paṭikkaṭṭu akalamāṉatu."
+        ipa: "paʈikkaʈʈu akalamaːnat̪u"
+        bases: [{ word: "படிக்கட்டு", base: "படிக்கட்டு", reading: "paṭikkaṭṭu" }, { word: "அகலமானது", base: "அகலமான", reading: "akalamāṉa" }]
+  - id: "ta-8323"
+    target: "வீட்டுவரி"
+    reading: "vīṭṭuvari"
+    ipa: "ʋiːʈʈuʋaɾi"
+    phonetic: "[ʋiːʈʈuʋaɾi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டுவரி எவ்வளவு?"
+        reading: "vīṭṭuvari evvaḷavu?"
+        ipa: "ʋiːʈʈuʋaɾi eʋʋaɭaʋu"
+        bases: [{ word: "வீட்டுவரி", base: "வீட்டுவரி", reading: "vīṭṭuvari" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+      - target: "நான் வீட்டுவரி கட்டுகிறேன்."
+        reading: "nāṉ vīṭṭuvari kaṭṭukiṟēṉ."
+        ipa: "naːn ʋiːʈʈuʋaɾi kaʈʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வீட்டுவரி", base: "வீட்டுவரி", reading: "vīṭṭuvari" }, { word: "கட்டுகிறேன்", base: "கட்டு", reading: "kaṭṭu" }]
+  - id: "ta-8324"
+    target: "நிறுத்துமிடம்"
+    reading: "niṟuttumiṭam"
+    ipa: "nirut̪t̪umiʈam"
+    phonetic: "[n̪irut̪t̪umiɖam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நிறுத்துமிடம் எங்கே?"
+        reading: "niṟuttumiṭam eṅkē?"
+        ipa: "nirut̪t̪umiʈam eŋkeː"
+        bases: [{ word: "நிறுத்துமிடம்", base: "நிறுத்துமிடம்", reading: "niṟuttumiṭam" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "நிறுத்துமிடம் பெரியது."
+        reading: "niṟuttumiṭam periyatu."
+        ipa: "nirut̪t̪umiʈam peɾijat̪u"
+        bases: [{ word: "நிறுத்துமிடம்", base: "நிறுத்துமிடம்", reading: "niṟuttumiṭam" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-8325"
+    target: "பகுதி"
+    reading: "pakuti"
+    ipa: "pakut̪i"
+    phonetic: "[paɡud̪i]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல பகுதி."
+        reading: "itu nalla pakuti."
+        ipa: "it̪u nalla pakut̪i"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "பகுதி", base: "பகுதி", reading: "pakuti" }]
+      - target: "இந்தப் பகுதி அமைதியானது."
+        reading: "intap pakuti amaitiyāṉatu."
+        ipa: "int̪ap pakut̪i amait̪ijaːnat̪u"
+        bases: [{ word: "இந்தப்", base: "இந்த", reading: "inta" }, { word: "பகுதி", base: "பகுதி", reading: "pakuti" }, { word: "அமைதியானது", base: "அமைதியான", reading: "amaitiyāṉa" }]
+  - id: "ta-8326"
+    target: "தளபாடம்"
+    reading: "taḷapāṭam"
+    ipa: "t̪aɭapaːʈam"
+    phonetic: "[t̪aɭabaːɖam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தளபாடம் புதியது."
+        reading: "taḷapāṭam putiyatu."
+        ipa: "t̪aɭapaːʈam put̪ijat̪u"
+        bases: [{ word: "தளபாடம்", base: "தளபாடம்", reading: "taḷapāṭam" }, { word: "புதியது", base: "புதிய", reading: "putiya" }]
+      - target: "வீட்டில் தளபாடம் இருக்கிறது."
+        reading: "vīṭṭil taḷapāṭam irukkiṟatu."
+        ipa: "ʋiːʈʈil t̪aɭapaːʈam iɾukkirat̪u"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "தளபாடம்", base: "தளபாடம்", reading: "taḷapāṭam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8327"
+    target: "மின்கட்டணம்"
+    reading: "miṉkaṭṭaṇam"
+    ipa: "minkaʈʈaɳam"
+    phonetic: "[minɡaʈʈaɳam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மின்கட்டணம் அதிகம்."
+        reading: "miṉkaṭṭaṇam atikam."
+        ipa: "minkaʈʈaɳam at̪ikam"
+        bases: [{ word: "மின்கட்டணம்", base: "மின்கட்டணம்", reading: "miṉkaṭṭaṇam" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "மின்கட்டணம் எவ்வளவு?"
+        reading: "miṉkaṭṭaṇam evvaḷavu?"
+        ipa: "minkaʈʈaɳam eʋʋaɭaʋu"
+        bases: [{ word: "மின்கட்டணம்", base: "மின்கட்டணம்", reading: "miṉkaṭṭaṇam" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+  - id: "ta-8328"
+    target: "கழிவுநீர்"
+    reading: "kaḻivunīr"
+    ipa: "kaɻiʋuniːɾ"
+    phonetic: "[kaɻiʋuniːɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கழிவுநீர் வெளியே போகிறது."
+        reading: "kaḻivunīr veḷiyē pōkiṟatu."
+        ipa: "kaɻiʋuniːɾ ʋeɭijeː poːkirat̪u"
+        bases: [{ word: "கழிவுநீர்", base: "கழிவுநீர்", reading: "kaḻivunīr" }, { word: "வெளியே", ref: "ta-0179" }, { word: "போகிறது", base: "போ", reading: "pō" }]
+      - target: "கழிவுநீர் குழாய் உடைந்தது."
+        reading: "kaḻivunīr kuḻāy uṭaintatu."
+        ipa: "kaɻiʋuniːɾ kuɻaːj uʈaint̪at̪u"
+        bases: [{ word: "கழிவுநீர்", base: "கழிவுநீர்", reading: "kaḻivunīr" }, { word: "குழாய்", ref: "ta-1938" }, { word: "உடைந்தது", base: "உடை", reading: "uṭai" }]
+  - id: "ta-8329"
+    target: "பால்கனி"
+    reading: "pālkaṉi"
+    ipa: "paːlkani"
+    phonetic: "[paːlkani]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பால்கனி சிறியது."
+        reading: "pālkaṉi ciṟiyatu."
+        ipa: "paːlkani sirijat̪u"
+        bases: [{ word: "பால்கனி", base: "பால்கனி", reading: "pālkaṉi" }, { word: "சிறியது", base: "சிறிய", reading: "ciṟiya" }]
+      - target: "குழந்தை பால்கனியில் இருக்கிறது."
+        reading: "kuḻantai pālkaṉiyil irukkiṟatu."
+        ipa: "kuɻant̪ai paːlkanijil iɾukkirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "பால்கனியில்", base: "பால்கனி", reading: "pālkaṉi" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8330"
+    target: "அடித்தளம்"
+    reading: "aṭittaḷam"
+    ipa: "aʈit̪t̪aɭam"
+    phonetic: "[aɖit̪t̪aɭam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கட்டிடத்துக்கு அடித்தளம் வேண்டும்."
+        reading: "kaṭṭiṭattukku aṭittaḷam vēṇṭum."
+        ipa: "kaʈʈiʈat̪t̪ukku aʈit̪t̪aɭam ʋeːɳʈum"
+        bases: [{ word: "கட்டிடத்துக்கு", base: "கட்டிடம்", reading: "kaṭṭiṭam" }, { word: "அடித்தளம்", base: "அடித்தளம்", reading: "aṭittaḷam" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "அடித்தளம் பெரியது."
+        reading: "aṭittaḷam periyatu."
+        ipa: "aʈit̪t̪aɭam peɾijat̪u"
+        bases: [{ word: "அடித்தளம்", base: "அடித்தளம்", reading: "aṭittaḷam" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-8331"
+    target: "பாதுகாப்பு"
+    reading: "pātukāppu"
+    ipa: "paːt̪ukaːppu"
+    phonetic: "[paːd̪uɡaːppɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே பாதுகாப்பு இருக்கிறது."
+        reading: "iṅkē pātukāppu irukkiṟatu."
+        ipa: "iŋkeː paːt̪ukaːppu iɾukkirat̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "பாதுகாப்பு", base: "பாதுகாப்பு", reading: "pātukāppu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "பாதுகாப்பு முக்கியம்."
+        reading: "pātukāppu mukkiyam."
+        ipa: "paːt̪ukaːppu mukkijam"
+        bases: [{ word: "பாதுகாப்பு", base: "பாதுகாப்பு", reading: "pātukāppu" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+  - id: "ta-8332"
+    target: "காவலாளி"
+    reading: "kāvalāḷi"
+    ipa: "kaːʋalaːɭi"
+    phonetic: "[kaːʋalaːɭi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காவலாளி வாசலில் இருக்கிறார்."
+        reading: "kāvalāḷi vācalil irukkiṟār."
+        ipa: "kaːʋalaːɭi ʋaːsalil iɾukkiraːɾ"
+        bases: [{ word: "காவலாளி", base: "காவலாளி", reading: "kāvalāḷi" }, { word: "வாசலில்", base: "வாசல்", reading: "vācal" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "காவலாளி நல்லவர்."
+        reading: "kāvalāḷi nallavar."
+        ipa: "kaːʋalaːɭi nallaʋaɾ"
+        bases: [{ word: "காவலாளி", base: "காவலாளி", reading: "kāvalāḷi" }, { word: "நல்லவர்", base: "நல்ல", reading: "nalla" }]
+  - id: "ta-8333"
+    target: "தரகர்"
+    reading: "tarakar"
+    ipa: "t̪aɾakaɾ"
+    phonetic: "[t̪aɾaɡaɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தரகர் இங்கே இருக்கிறார்."
+        reading: "tarakar iṅkē irukkiṟār."
+        ipa: "t̪aɾakaɾ iŋkeː iɾukkiraːɾ"
+        bases: [{ word: "தரகர்", base: "தரகர்", reading: "tarakar" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "தரகர் வீடு காட்டுகிறார்."
+        reading: "tarakar vīṭu kāṭṭukiṟār."
+        ipa: "t̪aɾakaɾ ʋiːʈu kaːʈʈukiraːɾ"
+        bases: [{ word: "தரகர்", base: "தரகர்", reading: "tarakar" }, { word: "வீடு", ref: "ta-0009" }, { word: "காட்டுகிறார்", base: "காட்டு", reading: "kāṭṭu" }]
+  - id: "ta-8334"
+    target: "வாசல்"
+    reading: "vācal"
+    ipa: "ʋaːsal"
+    phonetic: "[ʋaːsal]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வாசலில் யார் இருக்கிறார்?"
+        reading: "vācalil yār irukkiṟār?"
+        ipa: "ʋaːsalil jaːɾ iɾukkiraːɾ"
+        bases: [{ word: "வாசலில்", base: "வாசல்", reading: "vācal" }, { word: "யார்", ref: "ta-0041" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "வாசல் பெரியது."
+        reading: "vācal periyatu."
+        ipa: "ʋaːsal peɾijat̪u"
+        bases: [{ word: "வாசல்", base: "வாசல்", reading: "vācal" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-8335"
+    target: "முற்றம்"
+    reading: "muṟṟam"
+    ipa: "murram"
+    phonetic: "[muttram]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முற்றம் பெரியது."
+        reading: "muṟṟam periyatu."
+        ipa: "murram peɾijat̪u"
+        bases: [{ word: "முற்றம்", base: "முற்றம்", reading: "muṟṟam" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+      - target: "முற்றத்தில் மழை பெய்கிறது."
+        reading: "muṟṟattil maḻai peykiṟatu."
+        ipa: "murrat̪t̪il maɻai pejkirat̪u"
+        bases: [{ word: "முற்றத்தில்", base: "முற்றம்", reading: "muṟṟam" }, { word: "மழை", ref: "ta-1109" }, { word: "பெய்கிறது", base: "பெய்", reading: "pey" }]
+  - id: "ta-8336"
+    target: "கட்டிடம்"
+    reading: "kaṭṭiṭam"
+    ipa: "kaʈʈiʈam"
+    phonetic: "[kaʈʈiɖam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பெரிய கட்டிடம்."
+        reading: "itu periya kaṭṭiṭam."
+        ipa: "it̪u peɾija kaʈʈiʈam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "கட்டிடம்", base: "கட்டிடம்", reading: "kaṭṭiṭam" }]
+      - target: "கட்டிடம் புதியது."
+        reading: "kaṭṭiṭam putiyatu."
+        ipa: "kaʈʈiʈam put̪ijat̪u"
+        bases: [{ word: "கட்டிடம்", base: "கட்டிடம்", reading: "kaṭṭiṭam" }, { word: "புதியது", base: "புதிய", reading: "putiya" }]
+  - id: "ta-8337"
+    target: "கட்டுமானம்"
+    reading: "kaṭṭumāṉam"
+    ipa: "kaʈʈumaːnam"
+    phonetic: "[kaʈʈumaːnam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே கட்டுமானம் நடக்கிறது."
+        reading: "iṅkē kaṭṭumāṉam naṭakkiṟatu."
+        ipa: "iŋkeː kaʈʈumaːnam naʈakkirat̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "கட்டுமானம்", base: "கட்டுமானம்", reading: "kaṭṭumāṉam" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+      - target: "கட்டுமானம் பெரியது."
+        reading: "kaṭṭumāṉam periyatu."
+        ipa: "kaʈʈumaːnam peɾijat̪u"
+        bases: [{ word: "கட்டுமானம்", base: "கட்டுமானம்", reading: "kaṭṭumāṉam" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-8338"
+    target: "கட்டில்"
+    reading: "kaṭṭil"
+    ipa: "kaʈʈil"
+    phonetic: "[kaʈʈil]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கட்டில் அறையில் இருக்கிறது."
+        reading: "kaṭṭil aṟaiyil irukkiṟatu."
+        ipa: "kaʈʈil araijil iɾukkirat̪u"
+        bases: [{ word: "கட்டில்", base: "கட்டில்", reading: "kaṭṭil" }, { word: "அறையில்", base: "அறை", reading: "aṟai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இது புதிய கட்டில்."
+        reading: "itu putiya kaṭṭil."
+        ipa: "it̪u put̪ija kaʈʈil"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புதிய", ref: "ta-0171" }, { word: "கட்டில்", base: "கட்டில்", reading: "kaṭṭil" }]
+  - id: "ta-8339"
+    target: "குளிர்சாதனப்பெட்டி"
+    reading: "kuḷircātaṉappeṭṭi"
+    ipa: "kuɭiɾsaːt̪anappeʈʈi"
+    phonetic: "[kuɭiɾsaːd̪anappeʈʈi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குளிர்சாதனப்பெட்டி சமையலறையில் இருக்கிறது."
+        reading: "kuḷircātaṉappeṭṭi camaiyalaṟaiyil irukkiṟatu."
+        ipa: "kuɭiɾsaːt̪anappeʈʈi samaijalaraijil iɾukkirat̪u"
+        bases: [{ word: "குளிர்சாதனப்பெட்டி", base: "குளிர்சாதனப்பெட்டி", reading: "kuḷircātaṉappeṭṭi" }, { word: "சமையலறையில்", base: "சமையலறை", reading: "camaiyalaṟai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "குளிர்சாதனப்பெட்டி வேலை செய்கிறது."
+        reading: "kuḷircātaṉappeṭṭi vēlai ceykiṟatu."
+        ipa: "kuɭiɾsaːt̪anappeʈʈi ʋeːlai sejkirat̪u"
+        bases: [{ word: "குளிர்சாதனப்பெட்டி", base: "குளிர்சாதனப்பெட்டி", reading: "kuḷircātaṉappeṭṭi" }, { word: "வேலை", ref: "ta-0192" }, { word: "செய்கிறது", base: "செய்", reading: "cey" }]
+  - id: "ta-8340"
+    target: "எரிவாயு"
+    reading: "erivāyu"
+    ipa: "eɾiʋaːju"
+    phonetic: "[eɾiʋaːjɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எரிவாயு இல்லை."
+        reading: "erivāyu illai."
+        ipa: "eɾiʋaːju illai"
+        bases: [{ word: "எரிவாயு", base: "எரிவாயு", reading: "erivāyu" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "எரிவாயு விலை அதிகம்."
+        reading: "erivāyu vilai atikam."
+        ipa: "eɾiʋaːju ʋilai at̪ikam"
+        bases: [{ word: "எரிவாயு", base: "எரிவாயு", reading: "erivāyu" }, { word: "விலை", ref: "ta-0225" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-8341"
+    target: "அகலம்"
+    reading: "akalam"
+    ipa: "akalam"
+    phonetic: "[aɡalam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வாசலின் அகலம் என்ன?"
+        reading: "vācaliṉ akalam eṉṉa?"
+        ipa: "ʋaːsalin akalam enna"
+        bases: [{ word: "வாசலின்", base: "வாசல்", reading: "vācal" }, { word: "அகலம்", base: "அகலம்", reading: "akalam" }, { word: "என்ன", ref: "ta-0042" }]
+      - target: "அகலம் அதிகம்."
+        reading: "akalam atikam."
+        ipa: "akalam at̪ikam"
+        bases: [{ word: "அகலம்", base: "அகலம்", reading: "akalam" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-8342"
+    target: "இடவசதி"
+    reading: "iṭavacati"
+    ipa: "iʈaʋasat̪i"
+    phonetic: "[iɖaʋasad̪i]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே இடவசதி அதிகம்."
+        reading: "iṅkē iṭavacati atikam."
+        ipa: "iŋkeː iʈaʋasat̪i at̪ikam"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "இடவசதி", base: "இடவசதி", reading: "iṭavacati" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "இடவசதி குறைவு."
+        reading: "iṭavacati kuṟaivu."
+        ipa: "iʈaʋasat̪i kuraiʋu"
+        bases: [{ word: "இடவசதி", base: "இடவசதி", reading: "iṭavacati" }, { word: "குறைவு", ref: "ta-0160" }]
+  - id: "ta-8343"
+    target: "பத்திரம்"
+    reading: "pattiram"
+    ipa: "pat̪t̪iɾam"
+    phonetic: "[pat̪t̪iɾam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது வீட்டுப் பத்திரம்."
+        reading: "itu vīṭṭup pattiram."
+        ipa: "it̪u ʋiːʈʈup pat̪t̪iɾam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வீட்டுப்", base: "வீடு", reading: "vīṭu" }, { word: "பத்திரம்", base: "பத்திரம்", reading: "pattiram" }]
+      - target: "பத்திரம் எங்கே?"
+        reading: "pattiram eṅkē?"
+        ipa: "pat̪t̪iɾam eŋkeː"
+        bases: [{ word: "பத்திரம்", base: "பத்திரம்", reading: "pattiram" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8344"
+    target: "மின்இணைப்பு"
+    reading: "miṉiṇaippu"
+    ipa: "miniɳaippu"
+    phonetic: "[miniɳaippɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டில் மின்இணைப்பு இல்லை."
+        reading: "vīṭṭil miṉiṇaippu illai."
+        ipa: "ʋiːʈʈil miniɳaippu illai"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "மின்இணைப்பு", base: "மின்இணைப்பு", reading: "miṉiṇaippu" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "மின்இணைப்பு எங்கே?"
+        reading: "miṉiṇaippu eṅkē?"
+        ipa: "miniɳaippu eŋkeː"
+        bases: [{ word: "மின்இணைப்பு", base: "மின்இணைப்பு", reading: "miṉiṇaippu" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8345"
+    target: "வீட்டுமனை"
+    reading: "vīṭṭumaṉai"
+    ipa: "ʋiːʈʈumanai"
+    phonetic: "[ʋiːʈʈumanai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது வீட்டுமனை."
+        reading: "itu vīṭṭumaṉai."
+        ipa: "it̪u ʋiːʈʈumanai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வீட்டுமனை", base: "வீட்டுமனை", reading: "vīṭṭumaṉai" }]
+      - target: "வீட்டுமனை பெரியது."
+        reading: "vīṭṭumaṉai periyatu."
+        ipa: "ʋiːʈʈumanai peɾijat̪u"
+        bases: [{ word: "வீட்டுமனை", base: "வீட்டுமனை", reading: "vīṭṭumaṉai" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-8346"
+    target: "தளம்"
+    reading: "taḷam"
+    ipa: "t̪aɭam"
+    phonetic: "[t̪aɭam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முதல் தளம் எங்கே?"
+        reading: "mutal taḷam eṅkē?"
+        ipa: "mut̪al t̪aɭam eŋkeː"
+        bases: [{ word: "முதல்", base: "முதல்", reading: "mutal" }, { word: "தளம்", base: "தளம்", reading: "taḷam" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "எங்கள் வீடு இரண்டாம் தளத்தில் இருக்கிறது."
+        reading: "eṅkaḷ vīṭu iraṇṭām taḷattil irukkiṟatu."
+        ipa: "eŋkaɭ ʋiːʈu iɾaɳʈaːm t̪aɭat̪t̪il iɾukkirat̪u"
+        bases: [{ word: "எங்கள்", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "வீடு", ref: "ta-0009" }, { word: "இரண்டாம்", base: "இரண்டாம்", reading: "iraṇṭām" }, { word: "தளத்தில்", base: "தளம்", reading: "taḷam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8347"
+    target: "வெள்ளையடி"
+    reading: "veḷḷaiyaṭi"
+    ipa: "ʋeɭɭaijaʈi"
+    phonetic: "[ʋeɭɭaijaɖi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சுவரை வெள்ளையடி."
+        reading: "cuvarai veḷḷaiyaṭi."
+        ipa: "suʋaɾai ʋeɭɭaijaʈi"
+        bases: [{ word: "சுவரை", base: "சுவர்", reading: "cuvar" }, { word: "வெள்ளையடி", base: "வெள்ளையடி", reading: "veḷḷaiyaṭi" }]
+      - target: "அவர்கள் வீட்டை வெள்ளையடிக்கிறார்கள்."
+        reading: "avarkaḷ vīṭṭai veḷḷaiyaṭikkiṟārkaḷ."
+        ipa: "aʋaɾkaɭ ʋiːʈʈai ʋeɭɭaijaʈikkiraːɾkaɭ"
+        bases: [{ word: "அவர்கள்", ref: "ta-0065" }, { word: "வீட்டை", base: "வீடு", reading: "vīṭu" }, { word: "வெள்ளையடிக்கிறார்கள்", base: "வெள்ளையடி", reading: "veḷḷaiyaṭi" }]
+  - id: "ta-8348"
+    target: "குடியேறு"
+    reading: "kuṭiyēṟu"
+    ipa: "kuʈijeːru"
+    phonetic: "[kuɖijeːrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புதிய வீட்டில் குடியேறு."
+        reading: "putiya vīṭṭil kuṭiyēṟu."
+        ipa: "put̪ija ʋiːʈʈil kuʈijeːru"
+        bases: [{ word: "புதிய", ref: "ta-0171" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "குடியேறு", base: "குடியேறு", reading: "kuṭiyēṟu" }]
+      - target: "நாங்கள் புதிய வீட்டில் குடியேறுகிறோம்."
+        reading: "nāṅkaḷ putiya vīṭṭil kuṭiyēṟukiṟōm."
+        ipa: "naːŋkaɭ put̪ija ʋiːʈʈil kuʈijeːrukiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "புதிய", ref: "ta-0171" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "குடியேறுகிறோம்", base: "குடியேறு", reading: "kuṭiyēṟu" }]
+  - id: "ta-8349"
+    target: "காலிசெய்"
+    reading: "kālicey"
+    ipa: "kaːlisej"
+    phonetic: "[kaːlisej]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டைக் காலிசெய்."
+        reading: "vīṭṭaik kālicey."
+        ipa: "ʋiːʈʈaik kaːlisej"
+        bases: [{ word: "வீட்டைக்", base: "வீடு", reading: "vīṭu" }, { word: "காலிசெய்", base: "காலிசெய்", reading: "kālicey" }]
+      - target: "நாங்கள் வீட்டைக் காலிசெய்கிறோம்."
+        reading: "nāṅkaḷ vīṭṭaik kāliceykiṟōm."
+        ipa: "naːŋkaɭ ʋiːʈʈaik kaːlisejkiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "வீட்டைக்", base: "வீடு", reading: "vīṭu" }, { word: "காலிசெய்கிறோம்", base: "காலிசெய்", reading: "kālicey" }]
+  - id: "ta-8350"
+    target: "குடிபோ"
+    reading: "kuṭipō"
+    ipa: "kuʈipoː"
+    phonetic: "[kuɖiboː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புதிய வீட்டுக்குக் குடிபோ."
+        reading: "putiya vīṭṭukkuk kuṭipō."
+        ipa: "put̪ija ʋiːʈʈukkuk kuʈipoː"
+        bases: [{ word: "புதிய", ref: "ta-0171" }, { word: "வீட்டுக்குக்", base: "வீடு", reading: "vīṭu" }, { word: "குடிபோ", base: "குடிபோ", reading: "kuṭipō" }]
+      - target: "நாங்கள் நாளை குடிபோகிறோம்."
+        reading: "nāṅkaḷ nāḷai kuṭipōkiṟōm."
+        ipa: "naːŋkaɭ naːɭai kuʈipoːkiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "நாளை", ref: "ta-0133" }, { word: "குடிபோகிறோம்", base: "குடிபோ", reading: "kuṭipō" }]
+  - id: "ta-8351"
+    target: "சொந்த"
+    reading: "conta"
+    ipa: "sont̪a"
+    phonetic: "[son̪d̪a]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என் சொந்த வீடு."
+        reading: "itu eṉ conta vīṭu."
+        ipa: "it̪u en sont̪a ʋiːʈu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "சொந்த", base: "சொந்த", reading: "conta" }, { word: "வீடு", ref: "ta-0009" }]
+      - target: "எனக்குச் சொந்த வீடு இல்லை."
+        reading: "eṉakkuc conta vīṭu illai."
+        ipa: "enakkus sont̪a ʋiːʈu illai"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சொந்த", base: "சொந்த", reading: "conta" }, { word: "வீடு", ref: "ta-0009" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-8352"
+    target: "தனி"
+    reading: "taṉi"
+    ipa: "t̪ani"
+    phonetic: "[t̪ani]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது தனி வீடு."
+        reading: "itu taṉi vīṭu."
+        ipa: "it̪u t̪ani ʋiːʈu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தனி", base: "தனி", reading: "taṉi" }, { word: "வீடு", ref: "ta-0009" }]
+      - target: "எனக்குத் தனி அறை வேண்டும்."
+        reading: "eṉakkut taṉi aṟai vēṇṭum."
+        ipa: "enakkut̪ t̪ani arai ʋeːɳʈum"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தனி", base: "தனி", reading: "taṉi" }, { word: "அறை", ref: "ta-0276" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-8353"
+    target: "விசாலமான"
+    reading: "vicālamāṉa"
+    ipa: "ʋisaːlamaːna"
+    phonetic: "[ʋisaːlamaːna]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது விசாலமான வீடு."
+        reading: "itu vicālamāṉa vīṭu."
+        ipa: "it̪u ʋisaːlamaːna ʋiːʈu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "விசாலமான", base: "விசாலமான", reading: "vicālamāṉa" }, { word: "வீடு", ref: "ta-0009" }]
+      - target: "அறை விசாலமானது."
+        reading: "aṟai vicālamāṉatu."
+        ipa: "arai ʋisaːlamaːnat̪u"
+        bases: [{ word: "அறை", ref: "ta-0276" }, { word: "விசாலமானது", base: "விசாலமான", reading: "vicālamāṉa" }]
+  - id: "ta-8354"
+    target: "காற்றோட்டமான"
+    reading: "kāṟṟōṭṭamāṉa"
+    ipa: "kaːrroːʈʈamaːna"
+    phonetic: "[kaːttroːʈʈamaːna]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது காற்றோட்டமான அறை."
+        reading: "itu kāṟṟōṭṭamāṉa aṟai."
+        ipa: "it̪u kaːrroːʈʈamaːna arai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "காற்றோட்டமான", base: "காற்றோட்டமான", reading: "kāṟṟōṭṭamāṉa" }, { word: "அறை", ref: "ta-0276" }]
+      - target: "வீடு காற்றோட்டமானது."
+        reading: "vīṭu kāṟṟōṭṭamāṉatu."
+        ipa: "ʋiːʈu kaːrroːʈʈamaːnat̪u"
+        bases: [{ word: "வீடு", ref: "ta-0009" }, { word: "காற்றோட்டமானது", base: "காற்றோட்டமான", reading: "kāṟṟōṭṭamāṉa" }]

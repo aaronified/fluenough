@@ -1,0 +1,68 @@
+schema: 1
+id: "ml-en-directions-sentences"
+kind: "layer"
+core: "ml-directions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions in sentences"
+description: "Short sentences for giving directions: left, right, straight on, the corner, the road and the bridge. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3048":
+    native: "Turn left."
+    notes:
+      n1: "ഇടത്തോട്ട് (iṭattōṭṭ), toward the left, is ഇടത് (iṭat), left, with the ending -ഓട്ട് (-ōṭṭ), which marks the direction toward. It comes before the order തിരിയൂ (tiriyū), turn."
+    confusables:
+      w1: { why: "വലത് (valat) is right, the other side." }
+      w2: { why: "നേരെ (nēre) is straight on, not a turn." }
+  "ml-3049":
+    native: "Go straight on."
+    notes:
+      n1: "നേരെ (nēre) says the way: straight on, before the order പോകൂ (pōkū), go."
+    confusables:
+      w1: { why: "ഇടത് (iṭat) is a turn to the left, not straight on." }
+      w2: { why: "വലത് (valat) is a turn to the right, not straight on." }
+  "ml-3050":
+    native: "Where is the way?"
+    notes:
+      n1: "വഴി (vaḻi) is the route you take, and എവിടെ (eviṭe) asks where it is."
+    confusables:
+      w1: { why: "റോഡ് (ṟōḍ) is a road, one kind of way." }
+      w2: { why: "മൂല (mūla) is a corner, a place and not a route." }
+  "ml-3051":
+    native: "The bridge is near."
+    notes:
+      n1: "അടുത്ത് (aṭutt) takes ആണ് (āṇ) as a suffix and runs on: അടുത്താണ് (aṭuttāṇ), is near."
+    confusables:
+      w1: { why: "അകലെ (akale) is far, the opposite." }
+      w2: { why: "റോഡ് (ṟōḍ) is a road, not a bridge." }
+  "ml-3052":
+    native: "This is north."
+    bases:
+      "ഇത്": "this"
+    notes:
+      n1: "The final ക് (k) of വടക്ക് (vaṭakk), north, goes before ആണ് (āṇ): വടക്കാണ് (vaṭakkāṇ), is north."
+    confusables:
+      w1: { why: "തെക്ക് (tekk) is south, the opposite direction." }
+      w2: { why: "പടിഞ്ഞാറ് (paṭiññāṟ) is west, another direction." }
+  "ml-3053":
+    native: "Stand in the corner."
+    notes:
+      n1: "മൂല (mūla), corner, takes ഇൽ (il), in: മൂലയിൽ (mūlayil), in the corner."
+    confusables:
+      w1: { why: "കോണിൽ (kōṇil) is in the corner of a room." }
+      w2: { why: "നടുവിൽ (naṭuvil) is in the middle, a different place." }
+  "ml-3054":
+    native: "Is there a road here?"
+    notes:
+      n1: "ഇവിടെ (iviṭe) says here, the place near the speaker; the question asks whether the road is there."
+    confusables:
+      w1: { why: "വഴി (vaḻi) is a route, not a road." }
+      w2: { why: "പാലം (pālaṁ) is a bridge, a different thing on a road." }
+  "ml-3055":
+    native: "Turn right, then go straight on."
+    notes:
+      n1: "വലത്തോട്ട് (valattōṭṭ), toward the right, is വലത് (valat), right, with the ending -ഓട്ട് (-ōṭṭ), which marks the direction toward. പിന്നെ (pinne), then, joins the two orders in order: first the turn, then straight on."
+    confusables:
+      w1: { why: "ഇടത് (iṭat) is the wrong side, left." }
+      w2: { why: "മൂല (mūla) is a corner, not a route." }

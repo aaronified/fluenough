@@ -1,0 +1,69 @@
+schema: 1
+id: "sat-transport"
+part: "core"
+kind: "vocab"
+language: { code: "sat", iso639_3: "sat", name: "Santali", script: "ol_chiki", icon: "ᱥ" }
+license: "CC-BY-SA-4.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sat-2208"
+    target: "ᱡᱟᱦᱟᱡᱽ"
+    reading: "jahaj"
+    ipa: "dʒahadʒ"
+    phonetic: "[ɟahaɟ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-2209"
+    target: "ᱞᱟᱹᱣᱠᱟᱹ"
+    reading: "lāwkā"
+    ipa: "laːwkaː"
+    phonetic: "[ləwkə]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-2210"
+    target: "ᱥᱟᱜᱟᱲ"
+    reading: "sagaṛ"
+    ipa: "saɡaɽ"
+    phonetic: "[saɡaɽ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-2211"
+    target: "ᱨᱮᱞ ᱜᱟᱹᱰᱤ"
+    reading: "rel gāḍi"
+    ipa: "rel ɡaːɖi"
+    phonetic: "[rel ɡəɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ᱨᱮᱞ", base: "ᱨᱮᱞ", reading: "rel" }, { word: "ᱜᱟᱹᱰᱤ", base: "ᱜᱟᱹᱰᱤ", reading: "gāḍi" }]
+  - id: "sat-2212"
+    target: "ᱵᱷᱟᱯ ᱤᱧᱡᱤᱱ"
+    reading: "bhap iñjin"
+    ipa: "bʱap iɲdʒin"
+    phonetic: "[bʱap iɲɟin]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ᱵᱷᱟᱯ", base: "ᱵᱷᱟᱯ", reading: "bhap" }, { word: "ᱤᱧᱡᱤᱱ", base: "ᱤᱧᱡᱤᱱ", reading: "iñjin" }]
+  - id: "sat-2213"
+    target: "ᱪᱚᱠ"
+    reading: "co̠k"
+    ipa: "tʃɔk"
+    phonetic: "[cɔk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"

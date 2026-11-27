@@ -1,0 +1,158 @@
+schema: 1
+id: "ml-en-questions"
+kind: "layer"
+core: "ml-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions"
+description: "Who, what, where, when, why, how, which and how many, with the particles that make a question. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0031":
+    native: "who"
+    notes:
+      n1: "A question word for a person."
+    examples:
+      "നിങ്ങൾ ആര്?":
+        native: "Who are you?"
+      "ഇത് ആര്?":
+        native: "Who is this?"
+        bases:
+          "ഇത്": "this"
+          "ആര്": "who"
+  "ml-0032":
+    native: "what"
+    notes:
+      n1: "A question word for a thing. It is used with the word for needed, as in what is needed."
+    examples:
+      "ഇത് എന്ത്?":
+        native: "What is this?"
+        bases:
+          "ഇത്": "this"
+          "എന്ത്": "what"
+      "എന്ത് വേണം?":
+        native: "What do you need?"
+        bases:
+          "എന്ത്": "what"
+          "വേണം": "needed"
+  "ml-0033":
+    native: "where"
+    notes:
+      n1: "A question word for a place."
+    examples:
+      "വീട് എവിടെ?":
+        native: "Where is the house?"
+      "അവർ എവിടെ?":
+        native: "Where are they?"
+        bases:
+          "അവർ": "they"
+          "എവിടെ": "where"
+  "ml-0034":
+    native: "when"
+    notes:
+      n1: "A question word for a time."
+    examples:
+      "എപ്പോൾ വരും?":
+        native: "When will you come?"
+        bases:
+          "എപ്പോൾ": "when"
+          "വരും": "will come"
+      "എപ്പോൾ പോകാം?":
+        native: "When can we go?"
+        bases:
+          "എപ്പോൾ": "when"
+          "പോകാം": "can go"
+  "ml-0035":
+    native: "why"
+    notes:
+      n1: "A question word for a reason. It is said with a short pause before the answer."
+    examples:
+      "എന്തുകൊണ്ട്? വെള്ളം ഇല്ല.":
+        native: "Why? There is no water."
+        bases:
+          "എന്തുകൊണ്ട്": "why"
+      "നിങ്ങൾ എന്തുകൊണ്ട് വരുന്നില്ല?":
+        native: "Why are you not coming?"
+        bases:
+          "എന്തുകൊണ്ട്": "why"
+          "വരുന്നില്ല": "are not coming"
+  "ml-0036":
+    native: "how"
+    notes:
+      n1: "A question word for a way or a manner."
+    examples:
+      "ഇത് എങ്ങനെ?":
+        native: "How is this?"
+        bases:
+          "എങ്ങനെ": "how"
+      "എങ്ങനെ പോകാം?":
+        native: "How can we go?"
+        bases:
+          "എങ്ങനെ": "how"
+          "പോകാം": "can go"
+  "ml-0037":
+    native: "which"
+    notes:
+      n1: "A question word that asks for one of a known set."
+    examples:
+      "ഏത് വീട്?":
+        native: "Which house?"
+        bases:
+          "ഏത്": "which"
+      "ഏത് വെള്ളം?":
+        native: "Which water?"
+        bases:
+          "ഏത്": "which"
+  "ml-0038":
+    native: "how many; how much"
+    notes:
+      n1: "A question word for an amount. Countable things take a count, as in how many people."
+    examples:
+      "എത്ര വെള്ളം?":
+        native: "How much water?"
+        bases:
+          "എത്ര": "how much"
+      "എത്ര ആളുകൾ?":
+        native: "How many people?"
+        bases:
+          "എത്ര": "how many"
+          "ആളുകൾ": "people"
+  "ml-0039":
+    native: "(question particle)"
+    notes:
+      n1: "Added to a noun or an adjective to make a yes or no question: is it?"
+    examples:
+      "ഇത് വീടാണോ?":
+        native: "Is this a house?"
+        bases:
+          "ഇത്": "this"
+      "നല്ലതാണോ?":
+        native: "Is it good?"
+  "ml-0040":
+    native: "is there; do you have"
+    notes:
+      n1: "Asks whether something exists or is had. It is said with the thing it asks about."
+    examples:
+      "വെള്ളം ഉണ്ടോ?":
+        native: "Is there water?"
+        bases:
+          "ഉണ്ടോ": "is there"
+      "നിങ്ങൾക്ക് സമയം ഉണ്ടോ?":
+        native: "Do you have time?"
+        bases:
+          "സമയം": "time"
+          "ഉണ്ടോ": "have"
+  "ml-0041":
+    native: "isn't it; is there not"
+    notes:
+      n1: "A tag question: it asks the listener to agree, as isn't it does in English."
+    examples:
+      "വെള്ളം ഇല്ലേ?":
+        native: "Isn't there water?"
+      "നിങ്ങൾക്ക് സമയം ഇല്ലേ?":
+        native: "Don't you have time?"
+        bases:
+          "സമയം": "time"
+  "ml-0094":
+    native: "Question words: eight"
+    explanation: "The eight question words: who, what, where, when, why, how, which and how many."

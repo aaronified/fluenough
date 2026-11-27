@@ -1,0 +1,100 @@
+schema: 1
+id: "ta-en-housing-sentences"
+kind: "layer"
+core: "ta-housing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing and renting in sentences"
+description: "Sentences about renting a house, the rent, the rooms, repairs and moving. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9560":
+    native: "I want a house for rent."
+    bases:
+      "எனக்கு": "to me; from நான் (nāṉ), I"
+      "வாடகைக்கு": "for rent; from வாடகை (vāṭakai), rent"
+    notes:
+      n1: "The thing something is for takes -க்கு (-kku): வாடகைக்கு (vāṭakaikku) means for rent."
+    confusables:
+      w1: { why: "குடியிருப்பு (kuṭiyiruppu), residence; apartment; colony, is a different word." }
+      w2: { why: "அடுக்குமாடி (aṭukkumāṭi), multi-storey building; apartment block, is a different word." }
+      w3: { why: "வீட்டுமனை (vīṭṭumaṉai), house plot; building plot, is a different word." }
+  "ta-9561":
+    native: "How much is the monthly rent?"
+    bases:
+      "மாத": "monthly; from மாதம் (mātam), month"
+    confusables:
+      w1: { why: "முன்பணம் (muṉpaṇam), advance payment, is a different word." }
+      w2: { why: "மின்கட்டணம் (miṉkaṭṭaṇam), electricity bill, is a different word." }
+      w3: { why: "ஒப்பந்தம் (oppantam), contract; agreement, is a different word." }
+  "ta-9562":
+    native: "The landlord gives us the key."
+    bases:
+      "எங்களுக்குச்": "to us; for us; from நாங்கள் (nāṅkaḷ), we (not including you)"
+      "கொடுக்கிறார்": "is giving; from கொடு (koṭu), to give"
+    notes:
+      n1: "The one who receives takes -க்கு (-kku): எங்களுக்குச் சாவி கொடுக்கிறார் (eṅkaḷukkuc cāvi koṭukkiṟār)."
+    confusables:
+      w1: { why: "தரகர் (tarakar), broker; agent, is a different word." }
+      w2: { why: "வாடகைதாரர் (vāṭakaitārar), tenant, is a different word." }
+      w3: { why: "காவலாளி (kāvalāḷi), watchman; security guard, is a different word." }
+  "ta-9563":
+    native: "Water did not come in the bathroom."
+    bases:
+      "குளியலறையில்": "in the bathroom; from குளியலறை (kuḷiyalaṟai), bathroom"
+      "வரவில்லை": "did not come; from வா (vā), to come"
+    confusables:
+      w1: { why: "கழிவுநீர் (kaḻivunīr), waste water; sewage, is a different word." }
+      w2: { why: "பழுது (paḻutu), fault; breakdown; damage, is a different word." }
+      w3: { why: "மின்கட்டணம் (miṉkaṭṭaṇam), electricity bill, is a different word." }
+  "ta-9564":
+    native: "This house has every facility."
+    bases:
+      "இந்த": "this (before a noun)"
+      "எல்லா": "all; every"
+      "வசதியும்": "facility too; from வசதி (vacati), facility"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "இடவசதி (iṭavacati), space; room available, is a different word." }
+      w2: { why: "பாதுகாப்பு (pātukāppu), safety; security; protection, is a different word." }
+      w3: { why: "தளபாடம் (taḷapāṭam), furniture, is a different word." }
+  "ta-9565":
+    native: "The lift does not work today."
+    bases:
+      "செய்யவில்லை": "does not do; from செய் (cey), to do"
+    confusables:
+      w1: { why: "படிக்கட்டு (paṭikkaṭṭu), staircase; steps, is a different word." }
+      w2: { why: "மாடி (māṭi), upper floor; storey, is a different word." }
+      w3: { why: "பழுது (paḻutu), fault; breakdown; damage, is a different word." }
+  "ta-9566":
+    native: "There is a watchman in our apartment complex."
+    bases:
+      "எங்கள்": "our; from நாங்கள் (nāṅkaḷ), we"
+      "குடியிருப்பில்": "in the apartment complex; from குடியிருப்பு (kuṭiyiruppu), apartment"
+      "இருக்கிறார்": "is; from இரு (iru), to be"
+    notes:
+      n1: "The final -உ (-u) drops before -இல் (-il): குடியிருப்பு (kuṭiyiruppu) becomes குடியிருப்பில் (kuṭiyiruppil)."
+    confusables:
+      w1: { why: "தரகர் (tarakar), broker; agent, is a different word." }
+      w2: { why: "உரிமையாளர் (urimaiyāḷar), owner; landlord, is a different word." }
+      w3: { why: "பாதுகாப்பு (pātukāppu), safety; security; protection, is a different word." }
+  "ta-9567":
+    native: "There is a parking place in front of the house."
+    bases:
+      "வீட்டுக்கு": "to the house; from வீடு (vīṭu), house"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "முற்றம் (muṟṟam), courtyard, is a different word." }
+      w2: { why: "வாசல் (vācal), doorway; entrance; front yard, is a different word." }
+      w3: { why: "கட்டிடம் (kaṭṭiṭam), building, is a different word." }
+  "ta-9568":
+    native: "We sign the contract."
+    bases:
+      "ஒப்பந்தத்தில்": "in the contract; from ஒப்பந்தம் (oppantam), contract"
+      "போடுகிறோம்": "we put; from போடு (pōṭu), to put; to throw"
+    notes:
+      n1: "To sign is கையெழுத்து போடு (kaiyeḻuttu pōṭu), to put a signature."
+    confusables:
+      w1: { why: "பத்திரம் (pattiram), document; deed; safe keeping, is a different word." }
+      w2: { why: "பதிவு (pativu), registration; booking; record, is a different word." }
+      w3: { why: "முன்பணம் (muṉpaṇam), advance payment, is a different word." }

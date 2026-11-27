@@ -1,0 +1,112 @@
+schema: 1
+id: "ta-law-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9580"
+    target: "வழக்கறிஞர் நீதிமன்றத்தில் வாதாடுகிறார்."
+    reading: "vaḻakkaṟiñar nītimaṉṟattil vātāṭukiṟār."
+    ipa: "ʋaɻakkariɲaɾ niːt̪imanrat̪t̪il ʋaːt̪aːʈukiraːɾ"
+    phonetic: "[ʋaɻakkariɲaɾ n̪iːd̪imandrat̪t̪il ʋaːd̪aːɖuɡiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "வழக்கறிஞர்", ref: "ta-2312" }, { word: "நீதிமன்றத்தில்", base: "நீதிமன்றம்", reading: "nītimaṉṟam" }, { word: "வாதாடுகிறார்", base: "வாதாடு", reading: "vātāṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-7349", kind: "word" }
+      - { id: "w2", ref: "ta-8414", kind: "word" }
+      - { id: "w3", ref: "ta-8423", kind: "word" }
+  - id: "ta-9581"
+    target: "அவனுக்கு ஆயிரம் ரூபாய் அபராதம்."
+    reading: "avaṉukku āyiram rūpāy aparātam."
+    ipa: "aʋanukku aːjiɾam ɾuːpaːj apaɾaːt̪am"
+    phonetic: "[aʋanukkɯ aːjiɾam ɾuːbaːj abaɾaːd̪am]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அவனுக்கு", base: "அவன்", reading: "avaṉ" }, { word: "ஆயிரம்", ref: "ta-0212" }, { word: "ரூபாய்", ref: "ta-0226" }, { word: "அபராதம்", ref: "ta-7376" }]
+    confusables:
+      - { id: "w1", ref: "ta-7375", kind: "word" }
+      - { id: "w2", ref: "ta-8413", kind: "word" }
+      - { id: "w3", ref: "ta-7377", kind: "word" }
+  - id: "ta-9582"
+    target: "எல்லோரும் சட்டத்தைப் பின்பற்ற வேண்டும்."
+    reading: "ellōrum caṭṭattaip piṉpaṟṟa vēṇṭum."
+    ipa: "elloːɾum saʈʈat̪t̪aip pinparra ʋeːɳʈum"
+    phonetic: "[elloːɾum saʈʈat̪t̪aip pinbattra ʋeːɳɖum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எல்லோரும்", ref: "ta-0449" }, { word: "சட்டத்தைப்", base: "சட்டம்", reading: "caṭṭam" }, { word: "பின்பற்ற", base: "பின்பற்று", reading: "piṉpaṟṟu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-7340", kind: "word" }
+      - { id: "w2", ref: "ta-8408", kind: "word" }
+      - { id: "w3", ref: "ta-8419", kind: "word" }
+  - id: "ta-9583"
+    target: "அவனுக்கு உடனே பிணை கிடைக்கவில்லை."
+    reading: "avaṉukku uṭaṉē piṇai kiṭaikkavillai."
+    ipa: "aʋanukku uʈaneː piɳai kiʈaikkaʋillai"
+    phonetic: "[aʋanukkɯ uɖaneː piɳai kiɖaikkaʋillai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அவனுக்கு", base: "அவன்", reading: "avaṉ" }, { word: "உடனே", base: "உடனே", reading: "uṭaṉē" }, { word: "பிணை", ref: "ta-8413" }, { word: "கிடைக்கவில்லை", base: "கிடை", reading: "kiṭai" }]
+    confusables:
+      - { id: "w1", ref: "ta-8421", kind: "word" }
+      - { id: "w2", ref: "ta-7379", kind: "word" }
+      - { id: "w3", ref: "ta-8416", kind: "word" }
+  - id: "ta-9584"
+    target: "அவன் நீதிமன்றத்தில் உண்மையைச் சொல்கிறான்."
+    reading: "avaṉ nītimaṉṟattil uṇmaiyaic colkiṟāṉ."
+    ipa: "aʋan niːt̪imanrat̪t̪il uɳmaijais solkiraːn"
+    phonetic: "[aʋan n̪iːd̪imandrat̪t̪il uɳmaijais solkiraːn]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "நீதிமன்றத்தில்", base: "நீதிமன்றம்", reading: "nītimaṉṟam" }, { word: "உண்மையைச்", base: "உண்மை", reading: "uṇmai" }, { word: "சொல்கிறான்", base: "சொல்", reading: "col" }]
+    confusables:
+      - { id: "w1", ref: "ta-8423", kind: "word" }
+      - { id: "w2", ref: "ta-8424", kind: "word" }
+      - { id: "w3", ref: "ta-7367", kind: "word" }
+  - id: "ta-9585"
+    target: "இது ஒவ்வொரு குடிமகனின் உரிமை."
+    reading: "itu ovvoru kuṭimakaṉiṉ urimai."
+    ipa: "it̪u oʋʋoɾu kuʈimakanin uɾimai"
+    phonetic: "[id̪ɯ oʋʋoɾɯ kuɖimaɡanin uɾimai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஒவ்வொரு", ref: "ta-0165" }, { word: "குடிமகனின்", base: "குடிமகன்", reading: "kuṭimakaṉ" }, { word: "உரிமை", ref: "ta-7340" }]
+    confusables:
+      - { id: "w1", ref: "ta-7343", kind: "word" }
+      - { id: "w2", ref: "ta-8418", kind: "word" }
+      - { id: "w3", ref: "ta-8412", kind: "word" }
+  - id: "ta-9586"
+    target: "நிரபராதிக்குத் தண்டனை கூடாது."
+    reading: "niraparātikkut taṇṭaṉai kūṭātu."
+    ipa: "niɾapaɾaːt̪ikkut̪ t̪aɳʈanai kuːʈaːt̪u"
+    phonetic: "[n̪iɾabaɾaːd̪ikkut̪ t̪aɳɖanai kuːɖaːd̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நிரபராதிக்குத்", base: "நிரபராதி", reading: "niraparāti" }, { word: "தண்டனை", ref: "ta-7375" }, { word: "கூடாது", ref: "ta-0496" }]
+    confusables:
+      - { id: "w1", ref: "ta-8415", kind: "word" }
+      - { id: "w2", ref: "ta-7376", kind: "word" }
+      - { id: "w3", ref: "ta-7377", kind: "word" }
+  - id: "ta-9587"
+    target: "சட்டவிரோதமான வேலை செய்யாதே."
+    reading: "caṭṭavirōtamāṉa vēlai ceyyātē."
+    ipa: "saʈʈaʋiɾoːt̪amaːna ʋeːlai sejjaːt̪eː"
+    phonetic: "[saʈʈaʋiɾoːd̪amaːna ʋeːlai sejjaːd̪eː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "சட்டவிரோதமான", ref: "ta-8437" }, { word: "வேலை", ref: "ta-0192" }, { word: "செய்யாதே", base: "செய்", reading: "cey" }]
+    confusables:
+      - { id: "w1", ref: "ta-8408", kind: "word" }
+      - { id: "w2", ref: "ta-8425", kind: "word" }
+      - { id: "w3", ref: "ta-7366", kind: "word" }

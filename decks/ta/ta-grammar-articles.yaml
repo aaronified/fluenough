@@ -1,0 +1,52 @@
+schema: 1
+id: "ta-grammar-articles"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["a, an (ஒரு)", "the (a bare noun)"]
+  entries:
+    - lemma: "வீடு"
+      key: "veedu"
+      reading: "vīṭu"
+      ipa: "ʋiːʈu"
+      forms: { "a, an (ஒரு)": "ஒரு வீடு", "the (a bare noun)": "வீடு" }
+      readings: { "a, an (ஒரு)": "oru vīṭu", "the (a bare noun)": "vīṭu" }
+      ipas: { "a, an (ஒரு)": "oɾu ʋiːʈu", "the (a bare noun)": "ʋiːʈu" }
+    - lemma: "கார்"
+      key: "kaar"
+      reading: "kār"
+      ipa: "kaːɾ"
+      forms: { "a, an (ஒரு)": "ஒரு கார்", "the (a bare noun)": "கார்" }
+      readings: { "a, an (ஒரு)": "oru kār", "the (a bare noun)": "kār" }
+      ipas: { "a, an (ஒரு)": "oɾu kaːɾ", "the (a bare noun)": "kaːɾ" }
+    - lemma: "பேனா"
+      key: "pena"
+      reading: "pēṉā"
+      ipa: "peːnaː"
+      forms: { "a, an (ஒரு)": "ஒரு பேனா", "the (a bare noun)": "பேனா" }
+      readings: { "a, an (ஒரு)": "oru pēṉā", "the (a bare noun)": "pēṉā" }
+      ipas: { "a, an (ஒரு)": "oɾu peːnaː", "the (a bare noun)": "peːnaː" }
+    - lemma: "நாய்"
+      key: "naay"
+      reading: "nāy"
+      ipa: "naːj"
+      forms: { "a, an (ஒரு)": "ஒரு நாய்", "the (a bare noun)": "நாய்" }
+      readings: { "a, an (ஒரு)": "oru nāy", "the (a bare noun)": "nāy" }
+      ipas: { "a, an (ஒரு)": "oɾu naːj", "the (a bare noun)": "naːj" }
+    - lemma: "அறை"
+      key: "arai"
+      reading: "aṟai"
+      ipa: "arai"
+      forms: { "a, an (ஒரு)": "ஓர் அறை", "the (a bare noun)": "அறை" }
+      readings: { "a, an (ஒரு)": "ōr aṟai", "the (a bare noun)": "aṟai" }
+      ipas: { "a, an (ஒரு)": "oːɾ arai", "the (a bare noun)": "arai" }
+    - lemma: "ஆசிரியர்"
+      key: "aasiriyar"
+      reading: "āciriyar"
+      ipa: "aːsiɾijaɾ"
+      forms: { "a, an (ஒரு)": "ஓர் ஆசிரியர்", "the (a bare noun)": "ஆசிரியர்" }
+      readings: { "a, an (ஒரு)": "ōr āciriyar", "the (a bare noun)": "āciriyar" }
+      ipas: { "a, an (ஒரு)": "oːɾ aːsiɾijaɾ", "the (a bare noun)": "aːsiɾijaɾ" }

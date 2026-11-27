@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-journey"
+name: "Reading: a train timetable"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A train timetable with a notice, using the journey words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-train-timetable"
+    title: "A train timetable"
+    sentences:
+      - text: "சென்னை ரயில் காலை ஆறு மணிக்கு புறப்படுகிறது."
+        reading: "ceṉṉai rayil kālai āṟu maṇikku puṟappaṭukiṟatu."
+        ipa: "sennai ɾajil kaːlai aːru maɳikku purappaʈukirat̪u"
+      - text: "அடுத்த ரயில் மதியம் ஒரு மணிக்கு புறப்படுகிறது."
+        reading: "aṭutta rayil matiyam oru maṇikku puṟappaṭukiṟatu."
+        ipa: "aʈut̪t̪a ɾajil mat̪ijam oɾu maɳikku purappaʈukirat̪u"
+      - text: "நடைமேடை இரண்டு."
+        reading: "naṭaimēṭai iraṇṭu."
+        ipa: "naʈaimeːʈai iɾaɳʈu"
+      - text: "இன்று ரயில் தாமதம்."
+        reading: "iṉṟu rayil tāmatam."
+        ipa: "inru ɾajil t̪aːmat̪am"
+      - text: "பயணச்சீட்டு வாங்குங்கள்."
+        reading: "payaṇaccīṭṭu vāṅkuṅkaḷ."
+        ipa: "pajaɳatʃtʃiːʈʈu ʋaːŋkuŋkaɭ"
+    questions:
+      - id: "ta-9944"
+        prompt: { en: "At what time does the Chennai train leave?" }
+        options:
+          - { en: "At six in the morning" }
+          - { en: "At one in the afternoon" }
+          - { en: "At six in the evening" }
+        answer: 1
+      - id: "ta-9945"
+        prompt: { en: "At what time does the next train leave?" }
+        options:
+          - { en: "At one in the afternoon" }
+          - { en: "At six in the morning" }
+          - { en: "At two in the afternoon" }
+        answer: 1
+      - id: "ta-9946"
+        prompt: { en: "The train is on time today." }
+        answer: false

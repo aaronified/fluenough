@@ -1,0 +1,100 @@
+schema: 1
+id: "ta-daily-life-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4000"
+    target: "நான் ஆறு மணிக்கு எழுகிறேன்."
+    reading: "nāṉ āṟu maṇikku eḻukiṟēṉ."
+    ipa: "naːn aːru maɳikku eɻukireːn"
+    phonetic: "[n̪aːn aːrɯ maɳikkɯ eɻuɡireːn]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "ஆறு", ref: "ta-0093" }, { word: "மணிக்கு", base: "மணி", reading: "maṇi" }, { word: "எழுகிறேன்", base: "எழு", reading: "eḻu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1101", kind: "word" }
+      - { id: "w2", ref: "ta-0126", kind: "word" }
+  - id: "ta-4001"
+    target: "அவன் காலை டிபன் சாப்பிடுகிறான்."
+    reading: "avaṉ kālai ṭipaṉ cāppiṭukiṟāṉ."
+    ipa: "aʋan kaːlai ʈipan saːppiʈukiraːn"
+    phonetic: "[aʋan kaːlai ʈiban saːppiɖuɡiraːn]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "காலை", ref: "ta-0152" }, { word: "டிபன்", ref: "ta-1105" }, { word: "சாப்பிடுகிறான்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-0244", kind: "word" }
+      - { id: "w2", ref: "ta-0246", kind: "word" }
+  - id: "ta-4002"
+    target: "அவள் தினமும் நடக்கிறாள்."
+    reading: "avaḷ tiṉamum naṭakkiṟāḷ."
+    ipa: "aʋaɭ t̪inamum naʈakkiraːɭ"
+    phonetic: "[aʋaɭ t̪inamum n̪aɖakkiraːɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "தினமும்", ref: "ta-1106" }, { word: "நடக்கிறாள்", base: "நட", reading: "naṭa" }]
+    confusables:
+      - { id: "w1", ref: "ta-0118", kind: "word" }
+      - { id: "w2", ref: "ta-0010", kind: "word" }
+  - id: "ta-4003"
+    target: "அம்மா மாலையில் திரும்புகிறார்."
+    reading: "ammā mālaiyil tirumpukiṟār."
+    ipa: "ammaː maːlaijil t̪iɾumpukiraːɾ"
+    phonetic: "[ammaː maːlaijil t̪iɾumbuɡiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "மாலையில்", base: "மாலை", reading: "mālai" }, { word: "திரும்புகிறார்", base: "திரும்பு", reading: "tirumpu" }]
+    confusables:
+      - { id: "w1", ref: "ta-0010", kind: "word" }
+      - { id: "w2", ref: "ta-0118", kind: "word" }
+  - id: "ta-4004"
+    target: "இது நல்ல நாள்."
+    reading: "itu nalla nāḷ."
+    ipa: "it̪u nalla naːɭ"
+    phonetic: "[id̪ɯ n̪alla n̪aːɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "நாள்", ref: "ta-1100" }]
+    confusables:
+      - { id: "w1", ref: "ta-0144", kind: "word" }
+      - { id: "w2", ref: "ta-0134", kind: "word" }
+  - id: "ta-4005"
+    target: "நாங்கள் எட்டு மணிக்கு வேலை தொடங்குகிறோம்."
+    reading: "nāṅkaḷ eṭṭu maṇikku vēlai toṭaṅkukiṟōm."
+    ipa: "naːŋkaɭ eʈʈu maɳikku ʋeːlai t̪oʈaŋkukiroːm"
+    phonetic: "[n̪aːŋɡaɭ eʈʈɯ maɳikkɯ ʋeːlai t̪oɖaŋɡuɡiroːm]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "எட்டு", ref: "ta-0094" }, { word: "மணிக்கு", base: "மணி", reading: "maṇi" }, { word: "வேலை", ref: "ta-0192" }, { word: "தொடங்குகிறோம்", base: "தொடங்கு", reading: "toṭaṅku" }]
+    confusables:
+      - { id: "w1", ref: "ta-0093", kind: "word" }
+      - { id: "w2", ref: "ta-0037", kind: "word" }
+  - id: "ta-4006"
+    target: "நீங்கள் எப்போது திரும்புகிறீர்கள்?"
+    reading: "nīṅkaḷ eppōtu tirumpukiṟīrkaḷ?"
+    ipa: "niːŋkaɭ eppoːt̪u t̪iɾumpukiriːɾkaɭ"
+    phonetic: "[n̪iːŋɡaɭ eppoːd̪ɯ t̪iɾumbuɡiriːɾkaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "எப்போது", ref: "ta-0044" }, { word: "திரும்புகிறீர்கள்", base: "திரும்பு", reading: "tirumpu" }]
+    confusables:
+      - { id: "w1", ref: "ta-0043", kind: "word" }
+      - { id: "w2", ref: "ta-0132", kind: "word" }
+  - id: "ta-4007"
+    target: "நான் இரவு தூங்குகிறேன்."
+    reading: "nāṉ iravu tūṅkukiṟēṉ."
+    ipa: "naːn iɾaʋu t̪uːŋkukireːn"
+    phonetic: "[n̪aːn iɾaʋɯ t̪uːŋɡuɡireːn]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இரவு", ref: "ta-0154" }, { word: "தூங்குகிறேன்", base: "தூங்கு", reading: "tūṅku" }]
+    confusables:
+      - { id: "w1", ref: "ta-0038", kind: "word" }
+      - { id: "w2", ref: "ta-1101", kind: "word" }

@@ -1,0 +1,769 @@
+schema: 1
+id: "ml-things"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "things"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0356"
+    target: "പുസ്തകം"
+    reading: "pustakaṁ"
+    ipa: "pust̪əkam"
+    phonetic: "[pust̪ɐɡɐm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഈ പുസ്തകം എന്റേതാണ്."
+        reading: "ī pustakaṁ enṟētāṇ."
+        ipa: "iː pust̪əkam ent̪ɾeːt̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "പുസ്തകം", base: "പുസ്തകം", reading: "pustakaṁ" }, { word: "എന്റേതാണ്", base: "എന്റേതാണ്", reading: "enṟētāṇ" }]
+      - target: "പുസ്തകം മേശയുടെ മുകളിൽ."
+        reading: "pustakaṁ mēśayuṭe mukaḷil."
+        ipa: "pust̪əkam meːʃəjuʈe mukəɭil"
+        bases: [{ word: "പുസ്തകം", base: "പുസ്തകം", reading: "pustakaṁ" }, { word: "മേശയുടെ", ref: "ml-0359" }, { word: "മുകളിൽ", ref: "ml-0139" }]
+  - id: "ml-0357"
+    target: "പേന"
+    reading: "pēna"
+    ipa: "peːna"
+    phonetic: "[peːnɐ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പേന എടുക്കൂ."
+        reading: "pēna eṭukkū."
+        ipa: "peːna eʈukkuː"
+        bases: [{ word: "പേന", base: "പേന", reading: "pēna" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+      - target: "ഈ പേന നല്ലതാണ്."
+        reading: "ī pēna nallatāṇ."
+        ipa: "iː peːna nəllət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "പേന", base: "പേന", reading: "pēna" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0358"
+    target: "പെൻസിൽ"
+    reading: "peṉsil"
+    ipa: "pensil"
+    phonetic: "[pensil]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പെൻസിൽ ഇവിടെ ഉണ്ട്."
+        reading: "peṉsil iviṭe uṇṭ."
+        ipa: "pensil iʋiʈe uɳʈ"
+        bases: [{ word: "പെൻസിൽ", base: "പെൻസിൽ", reading: "peṉsil" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "എഴുതാൻ പെൻസിൽ വേണം."
+        reading: "eḻutāṉ peṉsil vēṇaṁ."
+        ipa: "eɻut̪aːn pensil ʋeːɳam"
+        bases: [{ word: "എഴുതാൻ", ref: "ml-0119" }, { word: "പെൻസിൽ", base: "പെൻസിൽ", reading: "peṉsil" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0359"
+    target: "മേശ"
+    reading: "mēśa"
+    ipa: "meːʃa"
+    phonetic: "[meːʃɐ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മേശ വലിയതാണ്"
+        reading: "mēśa valiyatāṇ"
+        ipa: "meːʃa ʋəlijət̪aːɳ"
+        bases: [{ word: "മേശ", base: "മേശ", reading: "mēśa" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+      - target: "മേശയുടെ താഴെ."
+        reading: "mēśayuṭe tāḻe."
+        ipa: "meːʃəjuʈe t̪aːɻe"
+        bases: [{ word: "മേശയുടെ", base: "മേശ", reading: "mēśa" }, { word: "താഴെ", ref: "ml-0140" }]
+  - id: "ml-0360"
+    target: "കസേര"
+    reading: "kasēra"
+    ipa: "kəseːɾa"
+    phonetic: "[kɐseːɾɐ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കസേരയിൽ ഇരിക്കൂ."
+        reading: "kasērayil irikkū."
+        ipa: "kəseːɾəjil iɾikkuː"
+        bases: [{ word: "കസേരയിൽ", base: "കസേര", reading: "kasēra" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+      - target: "ഈ കസേര ചെറുതാണ്."
+        reading: "ī kasēra ceṟutāṇ."
+        ipa: "iː kəseːɾa tʃeɾut̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "കസേര", base: "കസേര", reading: "kasēra" }, { word: "ചെറുതാണ്", base: "ചെറുതാണ്", reading: "ceṟutāṇ" }]
+  - id: "ml-0361"
+    target: "ബാഗ്"
+    reading: "bāg"
+    ipa: "baːɡ"
+    phonetic: "[baːɡ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബാഗ് എവിടെ?"
+        reading: "bāg eviṭe?"
+        ipa: "baːɡ eʋiʈe"
+        bases: [{ word: "ബാഗ്", base: "ബാഗ്", reading: "bāg" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ബാഗ് കൊണ്ടുവരൂ."
+        reading: "bāg koṇṭuvarū."
+        ipa: "baːɡ koɳʈuʋəɾuː"
+        bases: [{ word: "ബാഗ്", base: "ബാഗ്", reading: "bāg" }, { word: "കൊണ്ടുവരൂ", ref: "ml-0153" }]
+  - id: "ml-0362"
+    target: "താക്കോൽ"
+    reading: "tākkōl"
+    ipa: "t̪aːkkoːl"
+    phonetic: "[t̪aːkkoːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "താക്കോൽ എവിടെ?"
+        reading: "tākkōl eviṭe?"
+        ipa: "t̪aːkkoːl eʋiʈe"
+        bases: [{ word: "താക്കോൽ", base: "താക്കോൽ", reading: "tākkōl" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "താക്കോൽ എടുക്കൂ."
+        reading: "tākkōl eṭukkū."
+        ipa: "t̪aːkkoːl eʈukkuː"
+        bases: [{ word: "താക്കോൽ", base: "താക്കോൽ", reading: "tākkōl" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+  - id: "ml-0363"
+    target: "ഫോൺ"
+    reading: "phōṇ"
+    ipa: "pʰoːɳ"
+    phonetic: "[pʰoːɳ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഫോൺ ഇവിടെ ഉണ്ടോ?"
+        reading: "phōṇ iviṭe uṇṭō?"
+        ipa: "pʰoːɳ iʋiʈe uɳʈoː"
+        bases: [{ word: "ഫോൺ", base: "ഫോൺ", reading: "phōṇ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+      - target: "എന്റെ ഫോൺ കാണുന്നില്ല."
+        reading: "enṟe phōṇ kāṇunnilla."
+        ipa: "ent̪ɾe pʰoːɳ kaːɳunnilla"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "ഫോൺ", base: "ഫോൺ", reading: "phōṇ" }, { word: "കാണുന്നില്ല", base: "കാണുന്നില്ല", reading: "kāṇunnilla" }]
+  - id: "ml-0364"
+    target: "വാച്ച്"
+    reading: "vācc"
+    ipa: "ʋaːtʃtʃ"
+    phonetic: "[ʋaːtʃtʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വാച്ച് എത്ര മണി?"
+        reading: "vācc etra maṇi?"
+        ipa: "ʋaːtʃtʃ et̪ɾa məɳi"
+        bases: [{ word: "വാച്ച്", base: "വാച്ച്", reading: "vācc" }, { word: "എത്ര", ref: "ml-0038" }, { word: "മണി", ref: "ml-0135" }]
+      - target: "വാച്ച് നല്ലതാണ്."
+        reading: "vācc nallatāṇ."
+        ipa: "ʋaːtʃtʃ nəllət̪aːɳ"
+        bases: [{ word: "വാച്ച്", base: "വാച്ച്", reading: "vācc" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0365"
+    target: "കണ്ണട"
+    reading: "kaṇṇaṭa"
+    ipa: "kəɳɳəʈa"
+    phonetic: "[kɐɳɳɐɖɐ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കണ്ണട വെക്കൂ."
+        reading: "kaṇṇaṭa vekkū."
+        ipa: "kəɳɳəʈa ʋekkuː"
+        bases: [{ word: "കണ്ണട", base: "കണ്ണട", reading: "kaṇṇaṭa" }, { word: "വെക്കൂ", base: "വെക്കൂ", reading: "vekkū" }]
+      - target: "കണ്ണട എവിടെ?"
+        reading: "kaṇṇaṭa eviṭe?"
+        ipa: "kəɳɳəʈa eʋiʈe"
+        bases: [{ word: "കണ്ണട", base: "കണ്ണട", reading: "kaṇṇaṭa" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0366"
+    target: "കുട"
+    reading: "kuṭa"
+    ipa: "kuʈa"
+    phonetic: "[kuɖɐ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുട എടുക്കൂ."
+        reading: "kuṭa eṭukkū."
+        ipa: "kuʈa eʈukkuː"
+        bases: [{ word: "കുട", base: "കുട", reading: "kuṭa" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+      - target: "മഴയുണ്ട്, കുട വേണം."
+        reading: "maḻayuṇṭ, kuṭa vēṇaṁ."
+        ipa: "məɻəjuɳʈ kuʈa ʋeːɳam"
+        bases: [{ word: "മഴയുണ്ട്", base: "മഴയുണ്ട്", reading: "maḻayuṇṭ" }, { word: "കുട", base: "കുട", reading: "kuṭa" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0367"
+    target: "കുപ്പി"
+    reading: "kuppi"
+    ipa: "kuppi"
+    phonetic: "[kuppi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുപ്പി ഇവിടെ ഉണ്ട്."
+        reading: "kuppi iviṭe uṇṭ."
+        ipa: "kuppi iʋiʈe uɳʈ"
+        bases: [{ word: "കുപ്പി", base: "കുപ്പി", reading: "kuppi" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "കുപ്പി കഴുകൂ."
+        reading: "kuppi kaḻukū."
+        ipa: "kuppi kəɻukuː"
+        bases: [{ word: "കുപ്പി", base: "കുപ്പി", reading: "kuppi" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0368"
+    target: "കപ്പ്"
+    reading: "kapp"
+    ipa: "kapp"
+    phonetic: "[kɐpp]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരു കപ്പ് ചായ."
+        reading: "oru kapp cāya."
+        ipa: "oɾu kapp tʃaːja"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "കപ്പ്", base: "കപ്പ്", reading: "kapp" }, { word: "ചായ", ref: "ml-0270" }]
+      - target: "കപ്പ് ഇവിടെ."
+        reading: "kapp iviṭe."
+        ipa: "kapp iʋiʈe"
+        bases: [{ word: "കപ്പ്", base: "കപ്പ്", reading: "kapp" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0369"
+    target: "പ്ലേറ്റ്"
+    reading: "plēṟṟ"
+    ipa: "pleːtt"
+    phonetic: "[pleːtt]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പ്ലേറ്റ് കഴുകൂ."
+        reading: "plēṟṟ kaḻukū."
+        ipa: "pleːtt kəɻukuː"
+        bases: [{ word: "പ്ലേറ്റ്", base: "പ്ലേറ്റ്", reading: "plēṟṟ" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+      - target: "പ്ലേറ്റ് മേശയിൽ"
+        reading: "plēṟṟ mēśayil"
+        ipa: "pleːtt meːʃəjil"
+        bases: [{ word: "പ്ലേറ്റ്", base: "പ്ലേറ്റ്", reading: "plēṟṟ" }, { word: "മേശയിൽ", ref: "ml-0359" }]
+  - id: "ml-0370"
+    target: "സ്പൂൺ"
+    reading: "spūṇ"
+    ipa: "spuːɳ"
+    phonetic: "[spuːɳ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സ്പൂൺ എടുക്കൂ."
+        reading: "spūṇ eṭukkū."
+        ipa: "spuːɳ eʈukkuː"
+        bases: [{ word: "സ്പൂൺ", base: "സ്പൂൺ", reading: "spūṇ" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+      - target: "എനിക്ക് സ്പൂൺ വേണം."
+        reading: "enikk spūṇ vēṇaṁ."
+        ipa: "enikk spuːɳ ʋeːɳam"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "സ്പൂൺ", base: "സ്പൂൺ", reading: "spūṇ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0371"
+    target: "പെട്ടി"
+    reading: "peṭṭi"
+    ipa: "peʈʈi"
+    phonetic: "[peʈʈi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പെട്ടി എവിടെ?"
+        reading: "peṭṭi eviṭe?"
+        ipa: "peʈʈi eʋiʈe"
+        bases: [{ word: "പെട്ടി", base: "പെട്ടി", reading: "peṭṭi" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പെട്ടിയുടെ അകത്ത്."
+        reading: "peṭṭiyuṭe akatt."
+        ipa: "peʈʈijuʈe əkat̪t̪"
+        bases: [{ word: "പെട്ടിയുടെ", base: "പെട്ടി", reading: "peṭṭi" }, { word: "അകത്ത്", ref: "ml-0141" }]
+  - id: "ml-0372"
+    target: "തുണി"
+    reading: "tuṇi"
+    ipa: "t̪uɳi"
+    phonetic: "[t̪uɳi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "തുണി കഴുകൂ."
+        reading: "tuṇi kaḻukū."
+        ipa: "t̪uɳi kəɻukuː"
+        bases: [{ word: "തുണി", base: "തുണി", reading: "tuṇi" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+      - target: "ഈ തുണി നല്ലതാണ്."
+        reading: "ī tuṇi nallatāṇ."
+        ipa: "iː t̪uɳi nəllət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "തുണി", base: "തുണി", reading: "tuṇi" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0373"
+    target: "കണ്ണാടി"
+    reading: "kaṇṇāṭi"
+    ipa: "kəɳɳaːʈi"
+    phonetic: "[kɐɳɳaːɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കണ്ണാടി എവിടെ?"
+        reading: "kaṇṇāṭi eviṭe?"
+        ipa: "kəɳɳaːʈi eʋiʈe"
+        bases: [{ word: "കണ്ണാടി", base: "കണ്ണാടി", reading: "kaṇṇāṭi" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "കണ്ണാടിയിൽ നോക്കൂ."
+        reading: "kaṇṇāṭiyil nōkkū."
+        ipa: "kəɳɳaːʈijil noːkkuː"
+        bases: [{ word: "കണ്ണാടിയിൽ", base: "കണ്ണാടി", reading: "kaṇṇāṭi" }, { word: "നോക്കൂ", ref: "ml-0124" }]
+  - id: "ml-0374"
+    target: "കിടക്ക"
+    reading: "kiṭakka"
+    ipa: "kiʈəkka"
+    phonetic: "[kiɖɐkkɐ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കിടക്ക വലിയതാണ്"
+        reading: "kiṭakka valiyatāṇ"
+        ipa: "kiʈəkka ʋəlijət̪aːɳ"
+        bases: [{ word: "കിടക്ക", base: "കിടക്ക", reading: "kiṭakka" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+      - target: "കിടക്കയിൽ കിടക്കൂ."
+        reading: "kiṭakkayil kiṭakkū."
+        ipa: "kiʈəkkəjil kiʈəkkuː"
+        bases: [{ word: "കിടക്കയിൽ", base: "കിടക്ക", reading: "kiṭakka" }, { word: "കിടക്കൂ", ref: "ml-0167" }]
+  - id: "ml-0375"
+    target: "വാതിൽ"
+    reading: "vātil"
+    ipa: "ʋaːt̪il"
+    phonetic: "[ʋaːd̪il]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വാതിൽ തുറക്കൂ."
+        reading: "vātil tuṟakkū."
+        ipa: "ʋaːt̪il t̪uɾəkkuː"
+        bases: [{ word: "വാതിൽ", base: "വാതിൽ", reading: "vātil" }, { word: "തുറക്കൂ", ref: "ml-0125" }]
+      - target: "വാതിൽ അടയ്ക്കൂ."
+        reading: "vātil aṭaykkū."
+        ipa: "ʋaːt̪il əʈəjkkuː"
+        bases: [{ word: "വാതിൽ", base: "വാതിൽ", reading: "vātil" }, { word: "അടയ്ക്കൂ", ref: "ml-0179" }]
+  - id: "ml-0376"
+    target: "ജനൽ"
+    reading: "janal"
+    ipa: "dʒənal"
+    phonetic: "[dʒɐnɐl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ജനൽ തുറക്കൂ."
+        reading: "janal tuṟakkū."
+        ipa: "dʒənal t̪uɾəkkuː"
+        bases: [{ word: "ജനൽ", base: "ജനൽ", reading: "janal" }, { word: "തുറക്കൂ", ref: "ml-0125" }]
+      - target: "ജനൽ അടയ്ക്കൂ."
+        reading: "janal aṭaykkū."
+        ipa: "dʒənal əʈəjkkuː"
+        bases: [{ word: "ജനൽ", base: "ജനൽ", reading: "janal" }, { word: "അടയ്ക്കൂ", ref: "ml-0179" }]
+  - id: "ml-0377"
+    target: "ടിവി"
+    reading: "ṭivi"
+    ipa: "ʈiʋi"
+    phonetic: "[ʈiʋi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ടിവി കാണൂ."
+        reading: "ṭivi kāṇū."
+        ipa: "ʈiʋi kaːɳuː"
+        bases: [{ word: "ടിവി", base: "ടിവി", reading: "ṭivi" }, { word: "കാണൂ", ref: "ml-0117" }]
+      - target: "ടിവി ഓഫ് ചെയ്യൂ."
+        reading: "ṭivi ōph ceyyū."
+        ipa: "ʈiʋi oːpʰ tʃejjuː"
+        bases: [{ word: "ടിവി", base: "ടിവി", reading: "ṭivi" }, { word: "ഓഫ്", base: "ഓഫ്", reading: "ōph" }, { word: "ചെയ്യൂ", ref: "ml-0176" }]
+  - id: "ml-0378"
+    target: "ഫാൻ"
+    reading: "phāṉ"
+    ipa: "pʰaːn"
+    phonetic: "[pʰaːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഫാൻ ഓൺ ചെയ്യൂ."
+        reading: "phāṉ ōṇ ceyyū."
+        ipa: "pʰaːn oːɳ tʃejjuː"
+        bases: [{ word: "ഫാൻ", base: "ഫാൻ", reading: "phāṉ" }, { word: "ഓൺ", base: "ഓൺ", reading: "ōṇ" }, { word: "ചെയ്യൂ", ref: "ml-0176" }]
+      - target: "ഫാൻ വേണോ?"
+        reading: "phāṉ vēṇō?"
+        ipa: "pʰaːn ʋeːɳoː"
+        bases: [{ word: "ഫാൻ", base: "ഫാൻ", reading: "phāṉ" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+  - id: "ml-0379"
+    target: "ലൈറ്റ്"
+    reading: "laiṟṟ"
+    ipa: "laitt"
+    phonetic: "[laitt]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ലൈറ്റ് ഓഫ് ചെയ്യൂ."
+        reading: "laiṟṟ ōph ceyyū."
+        ipa: "laitt oːpʰ tʃejjuː"
+        bases: [{ word: "ലൈറ്റ്", base: "ലൈറ്റ്", reading: "laiṟṟ" }, { word: "ഓഫ്", base: "ഓഫ്", reading: "ōph" }, { word: "ചെയ്യൂ", ref: "ml-0176" }]
+      - target: "ലൈറ്റ് എവിടെ?"
+        reading: "laiṟṟ eviṭe?"
+        ipa: "laitt eʋiʈe"
+        bases: [{ word: "ലൈറ്റ്", base: "ലൈറ്റ്", reading: "laiṟṟ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0380"
+    target: "പേപ്പർ"
+    reading: "pēppar"
+    ipa: "peːppaɾ"
+    phonetic: "[peːppɐɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പേപ്പർ ഇവിടെ."
+        reading: "pēppar iviṭe."
+        ipa: "peːppaɾ iʋiʈe"
+        bases: [{ word: "പേപ്പർ", base: "പേപ്പർ", reading: "pēppar" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "പേപ്പറിൽ എഴുതൂ."
+        reading: "pēppaṟil eḻutū."
+        ipa: "peːppəɾil eɻut̪uː"
+        bases: [{ word: "പേപ്പറിൽ", base: "പേപ്പർ", reading: "pēppar" }, { word: "എഴുതൂ", ref: "ml-0119" }]
+  - id: "ml-0381"
+    target: "ചീപ്പ്"
+    reading: "cīpp"
+    ipa: "tʃiːpp"
+    phonetic: "[tʃiːpp]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചീപ്പ് എടുക്കൂ."
+        reading: "cīpp eṭukkū."
+        ipa: "tʃiːpp eʈukkuː"
+        bases: [{ word: "ചീപ്പ്", base: "ചീപ്പ്", reading: "cīpp" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+      - target: "ചീപ്പ് വേണം."
+        reading: "cīpp vēṇaṁ."
+        ipa: "tʃiːpp ʋeːɳam"
+        bases: [{ word: "ചീപ്പ്", base: "ചീപ്പ്", reading: "cīpp" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0382"
+    target: "ബ്രഷ്"
+    reading: "braṣ"
+    ipa: "bɾaʂ"
+    phonetic: "[bɾɐʂ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പല്ല് തേക്കാൻ ബ്രഷ് വേണം."
+        reading: "pall tēkkāṉ braṣ vēṇaṁ."
+        ipa: "pall t̪eːkkaːn bɾaʂ ʋeːɳam"
+        bases: [{ word: "പല്ല്", ref: "ml-0313" }, { word: "തേക്കാൻ", base: "തേക്കാൻ", reading: "tēkkāṉ" }, { word: "ബ്രഷ്", base: "ബ്രഷ്", reading: "braṣ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ബ്രഷ് എവിടെ?"
+        reading: "braṣ eviṭe?"
+        ipa: "bɾaʂ eʋiʈe"
+        bases: [{ word: "ബ്രഷ്", base: "ബ്രഷ്", reading: "braṣ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0383"
+    target: "കത്തി"
+    reading: "katti"
+    ipa: "kət̪t̪i"
+    phonetic: "[kɐt̪t̪i]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കത്തി കൊണ്ടുവരൂ."
+        reading: "katti koṇṭuvarū."
+        ipa: "kət̪t̪i koɳʈuʋəɾuː"
+        bases: [{ word: "കത്തി", base: "കത്തി", reading: "katti" }, { word: "കൊണ്ടുവരൂ", ref: "ml-0153" }]
+      - target: "കത്തി സൂക്ഷിക്കൂ."
+        reading: "katti sūkṣikkū."
+        ipa: "kət̪t̪i suːkʂikkuː"
+        bases: [{ word: "കത്തി", base: "കത്തി", reading: "katti" }, { word: "സൂക്ഷിക്കൂ", ref: "ml-0157" }]
+  - id: "ml-0384"
+    target: "ചട്ടി"
+    reading: "caṭṭi"
+    ipa: "tʃəʈʈi"
+    phonetic: "[tʃɐʈʈi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചട്ടി ഇവിടെ."
+        reading: "caṭṭi iviṭe."
+        ipa: "tʃəʈʈi iʋiʈe"
+        bases: [{ word: "ചട്ടി", base: "ചട്ടി", reading: "caṭṭi" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "ചട്ടി കഴുകൂ."
+        reading: "caṭṭi kaḻukū."
+        ipa: "tʃəʈʈi kəɻukuː"
+        bases: [{ word: "ചട്ടി", base: "ചട്ടി", reading: "caṭṭi" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0385"
+    target: "സാധനം"
+    reading: "sādhanaṁ"
+    ipa: "saːd̪ʱənam"
+    phonetic: "[saːd̪ʱɐnɐm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഈ സാധനം എന്ത്?"
+        reading: "ī sādhanaṁ ent?"
+        ipa: "iː saːd̪ʱənam ent̪"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "സാധനം", base: "സാധനം", reading: "sādhanaṁ" }, { word: "എന്ത്", ref: "ml-0032" }]
+      - target: "സാധനം എവിടെ?"
+        reading: "sādhanaṁ eviṭe?"
+        ipa: "saːd̪ʱənam eʋiʈe"
+        bases: [{ word: "സാധനം", base: "സാധനം", reading: "sādhanaṁ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-1541"
+    target: "ഫോർക്ക്"
+    reading: "phōrkk"
+    ipa: "pʰoːɾkk"
+    phonetic: "[pʰoːɾkk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഫോർക്ക് എവിടെ?"
+        reading: "phōrkk eviṭe?"
+        ipa: "pʰoːɾkk eʋiʈe"
+        bases: [{ word: "ഫോർക്ക്", base: "ഫോർക്ക്", reading: "phōrkk" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ഫോർക്ക് തരൂ."
+        reading: "phōrkk tarū."
+        ipa: "pʰoːɾkk t̪əɾuː"
+        bases: [{ word: "ഫോർക്ക്", base: "ഫോർക്ക്", reading: "phōrkk" }, { word: "തരൂ", ref: "ml-0123" }]
+  - id: "ml-1542"
+    target: "പാത്രം"
+    reading: "pātraṁ"
+    ipa: "paːt̪ɾam"
+    phonetic: "[paːt̪ɾɐm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പാത്രം എവിടെ?"
+        reading: "pātraṁ eviṭe?"
+        ipa: "paːt̪ɾam eʋiʈe"
+        bases: [{ word: "പാത്രം", base: "പാത്രം", reading: "pātraṁ" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "വലിയ പാത്രം ഇവിടെ ഉണ്ട്."
+        reading: "valiya pātraṁ iviṭe uṇṭ."
+        ipa: "ʋəlija paːt̪ɾam iʋiʈe uɳʈ"
+        bases: [{ word: "വലിയ", ref: "ml-0008" }, { word: "പാത്രം", base: "പാത്രം", reading: "pātraṁ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-1543"
+    target: "പൂട്ട്"
+    reading: "pūṭṭ"
+    ipa: "puːʈʈ"
+    phonetic: "[puːʈʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പൂട്ട് എവിടെ?"
+        reading: "pūṭṭ eviṭe?"
+        ipa: "puːʈʈ eʋiʈe"
+        bases: [{ word: "പൂട്ട്", base: "പൂട്ട്", reading: "pūṭṭ" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പൂട്ട് ഇവിടെ ഉണ്ടോ?"
+        reading: "pūṭṭ iviṭe uṇṭō?"
+        ipa: "puːʈʈ iʋiʈe uɳʈoː"
+        bases: [{ word: "പൂട്ട്", base: "പൂട്ട്", reading: "pūṭṭ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+  - id: "ml-1544"
+    target: "കമ്പ്യൂട്ടർ"
+    reading: "kampyūṭṭar"
+    ipa: "kəmpjuːʈʈaɾ"
+    phonetic: "[kɐmpjuːʈʈɐɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കമ്പ്യൂട്ടർ എവിടെ?"
+        reading: "kampyūṭṭar eviṭe?"
+        ipa: "kəmpjuːʈʈaɾ eʋiʈe"
+        bases: [{ word: "കമ്പ്യൂട്ടർ", base: "കമ്പ്യൂട്ടർ", reading: "kampyūṭṭar" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പുതിയ കമ്പ്യൂട്ടർ ഇവിടെ ഉണ്ട്."
+        reading: "putiya kampyūṭṭar iviṭe uṇṭ."
+        ipa: "put̪ija kəmpjuːʈʈaɾ iʋiʈe uɳʈ"
+        bases: [{ word: "പുതിയ", ref: "ml-0477" }, { word: "കമ്പ്യൂട്ടർ", base: "കമ്പ്യൂട്ടർ", reading: "kampyūṭṭar" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-1545"
+    target: "ക്യാമറ"
+    reading: "kyāmaṟa"
+    ipa: "kjaːməɾa"
+    phonetic: "[kjaːmɐɾɐ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ക്യാമറ എവിടെ?"
+        reading: "kyāmaṟa eviṭe?"
+        ipa: "kjaːməɾa eʋiʈe"
+        bases: [{ word: "ക്യാമറ", base: "ക്യാമറ", reading: "kyāmaṟa" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "എനിക്ക് ക്യാമറ തരൂ."
+        reading: "enikk kyāmaṟa tarū."
+        ipa: "enikk kjaːməɾa t̪əɾuː"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ക്യാമറ", base: "ക്യാമറ", reading: "kyāmaṟa" }, { word: "തരൂ", ref: "ml-0123" }]
+  - id: "ml-1546"
+    target: "വിളക്ക്"
+    reading: "viḷakk"
+    ipa: "ʋiɭakk"
+    phonetic: "[ʋiɭɐkk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വിളക്ക് എവിടെ?"
+        reading: "viḷakk eviṭe?"
+        ipa: "ʋiɭakk eʋiʈe"
+        bases: [{ word: "വിളക്ക്", base: "വിളക്ക്", reading: "viḷakk" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ചെറിയ വിളക്ക് ഇവിടെ ഉണ്ട്."
+        reading: "ceṟiya viḷakk iviṭe uṇṭ."
+        ipa: "tʃeɾija ʋiɭakk iʋiʈe uɳʈ"
+        bases: [{ word: "ചെറിയ", ref: "ml-0489" }, { word: "വിളക്ക്", base: "വിളക്ക്", reading: "viḷakk" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-1547"
+    target: "സൂചി"
+    reading: "sūci"
+    ipa: "suːtʃi"
+    phonetic: "[suːdʒi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സൂചി എവിടെ?"
+        reading: "sūci eviṭe?"
+        ipa: "suːtʃi eʋiʈe"
+        bases: [{ word: "സൂചി", base: "സൂചി", reading: "sūci" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "സൂചി ഇവിടെ ഉണ്ടോ?"
+        reading: "sūci iviṭe uṇṭō?"
+        ipa: "suːtʃi iʋiʈe uɳʈoː"
+        bases: [{ word: "സൂചി", base: "സൂചി", reading: "sūci" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+  - id: "ml-1548"
+    target: "കയർ"
+    reading: "kayar"
+    ipa: "kəjaɾ"
+    phonetic: "[kɐjɐɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കയർ എവിടെ?"
+        reading: "kayar eviṭe?"
+        ipa: "kəjaɾ eʋiʈe"
+        bases: [{ word: "കയർ", base: "കയർ", reading: "kayar" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "എനിക്ക് കയർ വേണം."
+        reading: "enikk kayar vēṇaṁ."
+        ipa: "enikk kəjaɾ ʋeːɳam"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "കയർ", base: "കയർ", reading: "kayar" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]

@@ -1,0 +1,73 @@
+schema: 1
+id: "ta-grammar-emphasis"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["pronoun"]
+    except: ["ta-0041", "ta-0042", "ta-0047", "ta-0163", "ta-0449"]
+  slots: ["tan", "ee", "also", "only"]
+  rows:
+    - word: "ta-0003"
+      forms: { "tan": "நான்தான்", "ee": "நானே", "also": "நான்கூட", "only": "நான் மட்டும்" }
+      readings: { "tan": "nāṉtāṉ", "ee": "nāṉē", "also": "nāṉkūṭa", "only": "nāṉ maṭṭum" }
+    - word: "ta-0004"
+      forms: { "tan": "நீங்கள்தான்", "ee": "நீங்களே", "also": "நீங்கள்கூட", "only": "நீங்கள் மட்டும்" }
+      readings: { "tan": "nīṅkaḷtāṉ", "ee": "nīṅkaḷē", "also": "nīṅkaḷkūṭa", "only": "nīṅkaḷ maṭṭum" }
+    - word: "ta-0057"
+      forms: { "tan": "நீதான்", "ee": "நீயே", "also": "நீகூட", "only": "நீ மட்டும்" }
+      readings: { "tan": "nītāṉ", "ee": "nīyē", "also": "nīkūṭa", "only": "nī maṭṭum" }
+    - word: "ta-0058"
+      forms: { "tan": "அவன்தான்", "ee": "அவனே", "also": "அவன்கூட", "only": "அவன் மட்டும்" }
+      readings: { "tan": "avaṉtāṉ", "ee": "avaṉē", "also": "avaṉkūṭa", "only": "avaṉ maṭṭum" }
+    - word: "ta-0059"
+      forms: { "tan": "அவள்தான்", "ee": "அவளே", "also": "அவள்கூட", "only": "அவள் மட்டும்" }
+      readings: { "tan": "avaḷtāṉ", "ee": "avaḷē", "also": "avaḷkūṭa", "only": "avaḷ maṭṭum" }
+    - word: "ta-0060"
+      forms: { "tan": "அவர்தான்", "ee": "அவரே", "also": "அவர்கூட", "only": "அவர் மட்டும்" }
+      readings: { "tan": "avartāṉ", "ee": "avarē", "also": "avarkūṭa", "only": "avar maṭṭum" }
+    - word: "ta-0061"
+      forms: { "tan": "அதுதான்", "ee": "அதுவே", "also": "அதுகூட", "only": "அது மட்டும்" }
+      readings: { "tan": "atutāṉ", "ee": "atuvē", "also": "atukūṭa", "only": "atu maṭṭum" }
+    - word: "ta-0062"
+      forms: { "tan": "இவர்தான்", "ee": "இவரே", "also": "இவர்கூட", "only": "இவர் மட்டும்" }
+      readings: { "tan": "ivartāṉ", "ee": "ivarē", "also": "ivarkūṭa", "only": "ivar maṭṭum" }
+    - word: "ta-0063"
+      forms: { "tan": "நாம்தான்", "ee": "நாமே", "also": "நாம்கூட", "only": "நாம் மட்டும்" }
+      readings: { "tan": "nāmtāṉ", "ee": "nāmē", "also": "nāmkūṭa", "only": "nām maṭṭum" }
+    - word: "ta-0064"
+      forms: { "tan": "நாங்கள்தான்", "ee": "நாங்களே", "also": "நாங்கள்கூட", "only": "நாங்கள் மட்டும்" }
+      readings: { "tan": "nāṅkaḷtāṉ", "ee": "nāṅkaḷē", "also": "nāṅkaḷkūṭa", "only": "nāṅkaḷ maṭṭum" }
+    - word: "ta-0065"
+      forms: { "tan": "அவர்கள்தான்", "ee": "அவர்களே", "also": "அவர்கள்கூட", "only": "அவர்கள் மட்டும்" }
+      readings: { "tan": "avarkaḷtāṉ", "ee": "avarkaḷē", "also": "avarkaḷkūṭa", "only": "avarkaḷ maṭṭum" }
+    - word: "ta-0066"
+      forms: { "tan": "இதுதான்", "ee": "இதுவே", "also": "இதுகூட", "only": "இது மட்டும்" }
+      readings: { "tan": "itutāṉ", "ee": "ituvē", "also": "itukūṭa", "only": "itu maṭṭum" }
+    - word: "ta-0493"
+      forms: { "tan": "தாங்கள்தான்", "ee": "தாங்களே", "also": "தாங்கள்கூட", "only": "தாங்கள் மட்டும்" }
+      readings: { "tan": "tāṅkaḷtāṉ", "ee": "tāṅkaḷē", "also": "tāṅkaḷkūṭa", "only": "tāṅkaḷ maṭṭum" }
+    - word: "ta-0447"
+      forms: { "tan": "அவைதான்", "ee": "அவையே", "also": "அவைகூட", "only": "அவை மட்டும்" }
+      readings: { "tan": "avaitāṉ", "ee": "avaiyē", "also": "avaikūṭa", "only": "avai maṭṭum" }
+    - word: "ta-0448"
+      forms: { "tan": "இவைதான்", "ee": "இவையே", "also": "இவைகூட", "only": "இவை மட்டும்" }
+      readings: { "tan": "ivaitāṉ", "ee": "ivaiyē", "also": "ivaikūṭa", "only": "ivai maṭṭum" }
+rules:
+  - id: "ta-rule-emphasis"
+    slots: ["tan"]
+    words: [{ word: "நான்", reading: "nāṉ" }, { word: "நான்தான்", reading: "nāṉtāṉ" }, { word: "அவன்தான்", reading: "avaṉtāṉ" }]
+  - id: "ta-rule-emphasis-ee"
+    slots: ["ee"]
+    words: [{ word: "நான்", reading: "nāṉ" }, { word: "நானே", reading: "nāṉē" }, { word: "நீ", reading: "nī" }, { word: "நீயே", reading: "nīyē" }, { word: "அது", reading: "atu" }, { word: "அதுவே", reading: "atuvē" }]
+  - id: "ta-rule-emphasis-also"
+    slots: ["also"]
+    words: [{ word: "நான்", reading: "nāṉ" }, { word: "நான்கூட", reading: "nāṉkūṭa" }]
+  - id: "ta-rule-emphasis-only"
+    slots: ["only"]
+    words: [{ word: "நான்", reading: "nāṉ" }, { word: "நான் மட்டும்", reading: "nāṉ maṭṭum" }]

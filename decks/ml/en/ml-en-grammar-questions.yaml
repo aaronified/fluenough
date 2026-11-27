@@ -1,0 +1,25 @@
+schema: 1
+id: "ml-en-grammar-questions"
+kind: "layer"
+core: "ml-grammar-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions: yes or no"
+description: "Turning a statement into a yes-or-no question with the ending -ഓ (-ō). Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Yes-or-no questions"
+  slot_name: "form"
+  slots:
+    "statement": "a statement"
+    "question": "a yes-or-no question (-ഓ (-ō))"
+  entries:
+    "varum": "you will come"
+    "pokum": "he will go"
+    "nallathanu": "this is good"
+    "veedanu": "this is your house"
+    "kadayundu": "there is a shop here"
+    "venam": "you want tea"
+    "ariyam": "you know"
+    "varunnilla": "he is not coming"
+  notes: "A yes-or-no question needs no change of word order: add -ഓ (-ō) to the verb, or to the word you ask about. It joins the word: വരും (varuṁ) becomes വരുമോ (varumō), and ആണ് (āṇ) and ഉണ്ട് (uṇṭ) become ആണോ (āṇō) and ഉണ്ടോ (uṇṭō). A sentence with -ഇല്ല (-illa) takes -ഏ (-ē) instead: വരുന്നില്ല (varunnilla) becomes വരുന്നില്ലേ (varunnillē). In speech -ഓ (-ō) can also be said -ആ (-ā). The answers are അതെ (ate), yes, and ഇല്ല (illa) or അല്ല (alla), no. A question with a question word, such as ആര് (ār), who, has no -ഓ (-ō). In speech എന്താണ് (entāṇ), what is it, is said എന്താ (entā). Source: English Wiktionary, the entries -ഓ (-ō) (interrogative marker; for negative sentences -ഏ (-ē); colloquial -ആ (-ā)) and എന്താണ് (entāṇ)."

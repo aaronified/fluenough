@@ -1,0 +1,1342 @@
+schema: 1
+id: "ta-grammar-relative-participle"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["past", "present", "future", "negative"]
+  rows:
+    - word: "ta-0010"
+      forms: { "past": "வந்த", "present": ["வர்ற", "வருகிற"], "future": "வரும்", "negative": "வராத" }
+      readings: { "past": "vanta", "present": ["varṟa", "varukiṟa"], "future": "varum", "negative": "varāta" }
+    - word: "ta-0038"
+      forms: { "past": "எழுந்த", "present": "எழுகிற", "future": "எழும்", "negative": "எழாத" }
+      readings: { "past": "eḻunta", "present": "eḻukiṟa", "future": "eḻum", "negative": "eḻāta" }
+    - word: "ta-0115"
+      forms: { "past": ["படிச்ச", "படித்த"], "present": "படிக்கிற", "future": "படிக்கும்", "negative": "படிக்காத" }
+      readings: { "past": ["paṭicca", "paṭitta"], "present": "paṭikkiṟa", "future": "paṭikkum", "negative": "paṭikkāta" }
+    - word: "ta-0118"
+      forms: { "past": "போன", "present": ["போற", "போகிற"], "future": "போகும்", "negative": "போகாத" }
+      readings: { "past": "pōṉa", "present": ["pōṟa", "pōkiṟa"], "future": "pōkum", "negative": "pōkāta" }
+    - word: "ta-0119"
+      forms: { "past": "சாப்பிட்ட", "present": ["சாப்பிடுற", "சாப்பிடுகிற"], "future": "சாப்பிடும்", "negative": "சாப்பிடாத" }
+      readings: { "past": "cāppiṭṭa", "present": ["cāppiṭuṟa", "cāppiṭukiṟa"], "future": "cāppiṭum", "negative": "cāppiṭāta" }
+    - word: "ta-0120"
+      forms: { "past": ["குடிச்ச", "குடித்த"], "present": "குடிக்கிற", "future": "குடிக்கும்", "negative": "குடிக்காத" }
+      readings: { "past": ["kuṭicca", "kuṭitta"], "present": "kuṭikkiṟa", "future": "kuṭikkum", "negative": "kuṭikkāta" }
+    - word: "ta-0121"
+      forms: { "past": ["பாத்த", "பார்த்த"], "present": "பார்க்கிற", "future": "பார்க்கும்", "negative": "பார்க்காத" }
+      readings: { "past": ["pātta", "pārtta"], "present": "pārkkiṟa", "future": "pārkkum", "negative": "pārkkāta" }
+    - word: "ta-0122"
+      forms: { "past": "கேட்ட", "present": "கேட்கிற", "future": "கேட்கும்", "negative": "கேட்காத" }
+      readings: { "past": "kēṭṭa", "present": "kēṭkiṟa", "future": "kēṭkum", "negative": "kēṭkāta" }
+    - word: "ta-0123"
+      forms: { "past": "பேசின", "present": ["பேசுற", "பேசுகிற"], "future": "பேசும்", "negative": "பேசாத" }
+      readings: { "past": "pēciṉa", "present": ["pēcuṟa", "pēcukiṟa"], "future": "pēcum", "negative": "pēcāta" }
+    - word: "ta-0124"
+      forms: { "past": "எழுதின", "present": ["எழுதுற", "எழுதுகிற"], "future": "எழுதும்", "negative": "எழுதாத" }
+      readings: { "past": "eḻutiṉa", "present": ["eḻutuṟa", "eḻutukiṟa"], "future": "eḻutum", "negative": "eḻutāta" }
+    - word: "ta-0125"
+      forms: { "past": "கொடுத்த", "present": "கொடுக்கிற", "future": "கொடுக்கும்", "negative": "கொடுக்காத" }
+      readings: { "past": "koṭutta", "present": "koṭukkiṟa", "future": "koṭukkum", "negative": "koṭukkāta" }
+    - word: "ta-0126"
+      forms: { "past": "தூங்கின", "present": ["தூங்குற", "தூங்குகிற"], "future": "தூங்கும்", "negative": "தூங்காத" }
+      readings: { "past": "tūṅkiṉa", "present": ["tūṅkuṟa", "tūṅkukiṟa"], "future": "tūṅkum", "negative": "tūṅkāta" }
+    - word: "ta-0127"
+      forms: { "past": ["செஞ்ச", "செய்த"], "present": "செய்கிற", "future": "செய்யும்", "negative": "செய்யாத" }
+      readings: { "past": ["ceñca", "ceyta"], "present": "ceykiṟa", "future": "ceyyum", "negative": "ceyyāta" }
+    - word: "ta-0128"
+      forms: { "past": ["சமைச்ச", "சமைத்த"], "present": "சமைக்கிற", "future": "சமைக்கும்", "negative": "சமைக்காத" }
+      readings: { "past": ["camaicca", "camaitta"], "present": "camaikkiṟa", "future": "camaikkum", "negative": "camaikkāta" }
+    - word: "ta-0129"
+      forms: { "past": "வாங்கின", "present": ["வாங்குற", "வாங்குகிற"], "future": "வாங்கும்", "negative": "வாங்காத" }
+      readings: { "past": "vāṅkiṉa", "present": ["vāṅkuṟa", "vāṅkukiṟa"], "future": "vāṅkum", "negative": "vāṅkāta" }
+    - word: "ta-0184"
+      forms: { "past": "எடுத்த", "present": "எடுக்கிற", "future": "எடுக்கும்", "negative": "எடுக்காத" }
+      readings: { "past": "eṭutta", "present": "eṭukkiṟa", "future": "eṭukkum", "negative": "eṭukkāta" }
+    - word: "ta-0185"
+      forms: { "past": ["வச்ச", "வைத்த"], "present": "வைக்கிற", "future": "வைக்கும்", "negative": "வைக்காத" }
+      readings: { "past": ["vacca", "vaitta"], "present": "vaikkiṟa", "future": "vaikkum", "negative": "vaikkāta" }
+    - word: "ta-0186"
+      forms: { "past": "திறந்த", "present": "திறக்கிற", "future": "திறக்கும்", "negative": "திறக்காத" }
+      readings: { "past": "tiṟanta", "present": "tiṟakkiṟa", "future": "tiṟakkum", "negative": "tiṟakkāta" }
+    - word: "ta-0187"
+      forms: { "past": "மூடின", "present": ["மூடுற", "மூடுகிற"], "future": "மூடும்", "negative": "மூடாத" }
+      readings: { "past": "mūṭiṉa", "present": ["mūṭuṟa", "mūṭukiṟa"], "future": "mūṭum", "negative": "mūṭāta" }
+    - word: "ta-0188"
+      forms: { "past": "உட்கார்ந்த", "present": "உட்காருகிற", "future": "உட்காரும்", "negative": "உட்காராத" }
+      readings: { "past": "uṭkārnta", "present": "uṭkārukiṟa", "future": "uṭkārum", "negative": "uṭkārāta" }
+    - word: "ta-0189"
+      forms: { "past": "நின்ற", "present": "நிற்கிற", "future": "நிற்கும்", "negative": "நிற்காத" }
+      readings: { "past": "niṉṟa", "present": "niṟkiṟa", "future": "niṟkum", "negative": "niṟkāta" }
+    - word: "ta-0190"
+      forms: { "past": "கழுவின", "present": ["கழுவுற", "கழுவுகிற"], "future": "கழுவும்", "negative": "கழுவாத" }
+      readings: { "past": "kaḻuviṉa", "present": ["kaḻuvuṟa", "kaḻuvukiṟa"], "future": "kaḻuvum", "negative": "kaḻuvāta" }
+    - word: "ta-0191"
+      forms: { "past": "விளையாடின", "present": ["விளையாடுற", "விளையாடுகிற"], "future": "விளையாடும்", "negative": "விளையாடாத" }
+      readings: { "past": "viḷaiyāṭiṉa", "present": ["viḷaiyāṭuṟa", "viḷaiyāṭukiṟa"], "future": "viḷaiyāṭum", "negative": "viḷaiyāṭāta" }
+    - word: "ta-1101"
+      forms: { "past": ["குளிச்ச", "குளித்த"], "present": "குளிக்கிற", "future": "குளிக்கும்", "negative": "குளிக்காத" }
+      readings: { "past": ["kuḷicca", "kuḷitta"], "present": "kuḷikkiṟa", "future": "kuḷikkum", "negative": "kuḷikkāta" }
+    - word: "ta-1102"
+      forms: { "past": "துலக்கின", "present": "துலக்குகிற", "future": "துலக்கும்", "negative": "துலக்காத" }
+      readings: { "past": "tulakkiṉa", "present": "tulakkukiṟa", "future": "tulakkum", "negative": "tulakkāta" }
+    - word: "ta-1103"
+      forms: { "past": "நடந்த", "present": "நடக்கிற", "future": "நடக்கும்", "negative": "நடக்காத" }
+      readings: { "past": "naṭanta", "present": "naṭakkiṟa", "future": "naṭakkum", "negative": "naṭakkāta" }
+    - word: "ta-1104"
+      forms: { "past": "திரும்பின", "present": "திரும்புகிற", "future": "திரும்பும்", "negative": "திரும்பாத" }
+      readings: { "past": "tirumpiṉa", "present": "tirumpukiṟa", "future": "tirumpum", "negative": "tirumpāta" }
+    - word: "ta-1107"
+      forms: { "past": "தொடங்கின", "present": "தொடங்குகிற", "future": "தொடங்கும்", "negative": "தொடங்காத" }
+      readings: { "past": "toṭaṅkiṉa", "present": "toṭaṅkukiṟa", "future": "toṭaṅkum", "negative": "toṭaṅkāta" }
+    - word: "ta-1801"
+      forms: { "past": "உதவின", "present": "உதவுகிற", "future": "உதவும்", "negative": "உதவாத" }
+      readings: { "past": "utaviṉa", "present": "utavukiṟa", "future": "utavum", "negative": "utavāta" }
+    - word: "ta-0450"
+      forms: { "past": "விட்ட", "present": "விடுகிற", "future": "விடும்", "negative": "விடாத" }
+      readings: { "past": "viṭṭa", "present": "viṭukiṟa", "future": "viṭum", "negative": "viṭāta" }
+    - word: "ta-0451"
+      forms: { "past": "கொண்ட", "present": "கொள்கிற", "future": "கொள்ளும்", "negative": "கொள்ளாத" }
+      readings: { "past": "koṇṭa", "present": "koḷkiṟa", "future": "koḷḷum", "negative": "koḷḷāta" }
+    - word: "ta-0452"
+      forms: { "past": "போட்ட", "present": "போடுகிற", "future": "போடும்", "negative": "போடாத" }
+      readings: { "past": "pōṭṭa", "present": "pōṭukiṟa", "future": "pōṭum", "negative": "pōṭāta" }
+    - word: "ta-0453"
+      forms: { "past": "தந்த", "present": "தருகிற", "future": "தரும்", "negative": "தராத" }
+      readings: { "past": "tanta", "present": "tarukiṟa", "future": "tarum", "negative": "tarāta" }
+    - word: "ta-0454"
+      forms: { "past": "நிறுத்தின", "present": "நிறுத்துகிற", "future": "நிறுத்தும்", "negative": "நிறுத்தாத" }
+      readings: { "past": "niṟuttiṉa", "present": "niṟuttukiṟa", "future": "niṟuttum", "negative": "niṟuttāta" }
+    - word: "ta-0455"
+      forms: { "past": "தள்ளின", "present": "தள்ளுகிற", "future": "தள்ளும்", "negative": "தள்ளாத" }
+      readings: { "past": "taḷḷiṉa", "present": "taḷḷukiṟa", "future": "taḷḷum", "negative": "taḷḷāta" }
+    - word: "ta-0456"
+      forms: { "past": ["பிடிச்ச", "பிடித்த"], "present": "பிடிக்கிற", "future": "பிடிக்கும்", "negative": "பிடிக்காத" }
+      readings: { "past": ["piṭicca", "piṭitta"], "present": "piṭikkiṟa", "future": "piṭikkum", "negative": "piṭikkāta" }
+    - word: "ta-0457"
+      forms: { "past": "வீசின", "present": "வீசுகிற", "future": "வீசும்", "negative": "வீசாத" }
+      readings: { "past": "vīciṉa", "present": "vīcukiṟa", "future": "vīcum", "negative": "vīcāta" }
+    - word: "ta-0458"
+      forms: { "past": "தூக்கின", "present": "தூக்குகிற", "future": "தூக்கும்", "negative": "தூக்காத" }
+      readings: { "past": "tūkkiṉa", "present": "tūkkukiṟa", "future": "tūkkum", "negative": "tūkkāta" }
+    - word: "ta-0460"
+      forms: { "past": "பண்ணின", "present": "பண்ணுகிற", "future": "பண்ணும்", "negative": "பண்ணாத" }
+      readings: { "past": "paṇṇiṉa", "present": "paṇṇukiṟa", "future": "paṇṇum", "negative": "paṇṇāta" }
+    - word: "ta-0462"
+      forms: { "past": "பட்ட", "present": "படுகிற", "future": "படும்", "negative": "படாத" }
+      readings: { "past": "paṭṭa", "present": "paṭukiṟa", "future": "paṭum", "negative": "paṭāta" }
+    - word: "ta-0470"
+      forms: { "past": "சென்ற", "present": "செல்கிற", "future": "செல்லும்", "negative": "செல்லாத" }
+      readings: { "past": "ceṉṟa", "present": "celkiṟa", "future": "cellum", "negative": "cellāta" }
+    - word: "ta-0471"
+      forms: { "past": "உண்ட", "present": "உண்கிற", "future": "உண்ணும்", "negative": "உண்ணாத" }
+      readings: { "past": "uṇṭa", "present": "uṇkiṟa", "future": "uṇṇum", "negative": "uṇṇāta" }
+    - word: "ta-0472"
+      forms: { "past": "அருந்தின", "present": "அருந்துகிற", "future": "அருந்தும்", "negative": "அருந்தாத" }
+      readings: { "past": "aruntiṉa", "present": "aruntukiṟa", "future": "aruntum", "negative": "aruntāta" }
+    - word: "ta-0473"
+      forms: { "past": "கூறின", "present": "கூறுகிற", "future": "கூறும்", "negative": "கூறாத" }
+      readings: { "past": "kūṟiṉa", "present": "kūṟukiṟa", "future": "kūṟum", "negative": "kūṟāta" }
+    - word: "ta-0474"
+      forms: { "past": "தெரிவித்த", "present": "தெரிவிக்கிற", "future": "தெரிவிக்கும்", "negative": "தெரிவிக்காத" }
+      readings: { "past": "terivitta", "present": "terivikkiṟa", "future": "terivikkum", "negative": "terivikkāta" }
+    - word: "ta-2003"
+      forms: { "past": "உடுத்தின", "present": "உடுத்துகிற", "future": "உடுத்தும்", "negative": "உடுத்தாத" }
+      readings: { "past": "uṭuttiṉa", "present": "uṭuttukiṟa", "future": "uṭuttum", "negative": "uṭuttāta" }
+    - word: "ta-2004"
+      forms: { "past": "கழற்றின", "present": "கழற்றுகிற", "future": "கழற்றும்", "negative": "கழற்றாத" }
+      readings: { "past": "kaḻaṟṟiṉa", "present": "kaḻaṟṟukiṟa", "future": "kaḻaṟṟum", "negative": "kaḻaṟṟāta" }
+    - word: "ta-2005"
+      forms: { "past": "கட்டின", "present": "கட்டுகிற", "future": "கட்டும்", "negative": "கட்டாத" }
+      readings: { "past": "kaṭṭiṉa", "present": "kaṭṭukiṟa", "future": "kaṭṭum", "negative": "kaṭṭāta" }
+    - word: "ta-2006"
+      forms: { "past": "சீவின", "present": "சீவுகிற", "future": "சீவும்", "negative": "சீவாத" }
+      readings: { "past": "cīviṉa", "present": "cīvukiṟa", "future": "cīvum", "negative": "cīvāta" }
+    - word: "ta-2007"
+      forms: { "past": "அலங்கரித்த", "present": "அலங்கரிக்கிற", "future": "அலங்கரிக்கும்", "negative": "அலங்கரிக்காத" }
+      readings: { "past": "alaṅkaritta", "present": "alaṅkarikkiṟa", "future": "alaṅkarikkum", "negative": "alaṅkarikkāta" }
+    - word: "ta-2008"
+      forms: { "past": "வளர்ந்த", "present": "வளர்கிற", "future": "வளரும்", "negative": "வளராத" }
+      readings: { "past": "vaḷarnta", "present": "vaḷarkiṟa", "future": "vaḷarum", "negative": "vaḷarāta" }
+    - word: "ta-2009"
+      forms: { "past": "பூசின", "present": "பூசுகிற", "future": "பூசும்", "negative": "பூசாத" }
+      readings: { "past": "pūciṉa", "present": "pūcukiṟa", "future": "pūcum", "negative": "pūcāta" }
+    - word: "ta-1945"
+      forms: { "past": "பெருக்கின", "present": "பெருக்குகிற", "future": "பெருக்கும்", "negative": "பெருக்காத" }
+      readings: { "past": "perukkiṉa", "present": "perukkukiṟa", "future": "perukkum", "negative": "perukkāta" }
+    - word: "ta-1946"
+      forms: { "past": "துடைத்த", "present": "துடைக்கிற", "future": "துடைக்கும்", "negative": "துடைக்காத" }
+      readings: { "past": "tuṭaitta", "present": "tuṭaikkiṟa", "future": "tuṭaikkum", "negative": "tuṭaikkāta" }
+    - word: "ta-1947"
+      forms: { "past": "துவைத்த", "present": "துவைக்கிற", "future": "துவைக்கும்", "negative": "துவைக்காத" }
+      readings: { "past": "tuvaitta", "present": "tuvaikkiṟa", "future": "tuvaikkum", "negative": "tuvaikkāta" }
+    - word: "ta-1948"
+      forms: { "past": "மடித்த", "present": "மடிக்கிற", "future": "மடிக்கும்", "negative": "மடிக்காத" }
+      readings: { "past": "maṭitta", "present": "maṭikkiṟa", "future": "maṭikkum", "negative": "maṭikkāta" }
+    - word: "ta-1949"
+      forms: { "past": "இழுத்த", "present": "இழுகிற", "future": "இழுக்கும்", "negative": "இழுக்காத" }
+      readings: { "past": "iḻutta", "present": "iḻukiṟa", "future": "iḻukkum", "negative": "iḻukkāta" }
+    - word: "ta-1951"
+      forms: { "past": "நிரப்பின", "present": "நிரப்புகிற", "future": "நிரப்பும்", "negative": "நிரப்பாத" }
+      readings: { "past": "nirappiṉa", "present": "nirappukiṟa", "future": "nirappum", "negative": "nirappāta" }
+    - word: "ta-1952"
+      forms: { "past": "ஊற்றின", "present": "ஊற்றுகிற", "future": "ஊற்றும்", "negative": "ஊற்றாத" }
+      readings: { "past": "ūṟṟiṉa", "present": "ūṟṟukiṟa", "future": "ūṟṟum", "negative": "ūṟṟāta" }
+    - word: "ta-1953"
+      forms: { "past": "அணைத்த", "present": "அணைக்கிற", "future": "அணைக்கும்", "negative": "அணைக்காத" }
+      readings: { "past": "aṇaitta", "present": "aṇaikkiṟa", "future": "aṇaikkum", "negative": "aṇaikkāta" }
+    - word: "ta-1954"
+      forms: { "past": "ஏற்றின", "present": "ஏற்றுகிற", "future": "ஏற்றும்", "negative": "ஏற்றாத" }
+      readings: { "past": "ēṟṟiṉa", "present": "ēṟṟukiṟa", "future": "ēṟṟum", "negative": "ēṟṟāta" }
+    - word: "ta-1955"
+      forms: { "past": "உலர்த்தின", "present": "உலர்த்துகிற", "future": "உலர்த்தும்", "negative": "உலர்த்தாத" }
+      readings: { "past": "ularttiṉa", "present": "ularttukiṟa", "future": "ularttum", "negative": "ularttāta" }
+    - word: "ta-1956"
+      forms: { "past": "வெட்டின", "present": "வெட்டுகிற", "future": "வெட்டும்", "negative": "வெட்டாத" }
+      readings: { "past": "veṭṭiṉa", "present": "veṭṭukiṟa", "future": "veṭṭum", "negative": "veṭṭāta" }
+    - word: "ta-1957"
+      forms: { "past": "கலக்கின", "present": "கலக்குகிற", "future": "கலக்கும்", "negative": "கலக்காத" }
+      readings: { "past": "kalakkiṉa", "present": "kalakkukiṟa", "future": "kalakkum", "negative": "kalakkāta" }
+    - word: "ta-1958"
+      forms: { "past": "தேடின", "present": "தேடுகிற", "future": "தேடும்", "negative": "தேடாத" }
+      readings: { "past": "tēṭiṉa", "present": "tēṭukiṟa", "future": "tēṭum", "negative": "tēṭāta" }
+    - word: "ta-1959"
+      forms: { "past": "அடுக்கின", "present": "அடுக்குகிற", "future": "அடுக்கும்", "negative": "அடுக்காத" }
+      readings: { "past": "aṭukkiṉa", "present": "aṭukkukiṟa", "future": "aṭukkum", "negative": "aṭukkāta" }
+    - word: "ta-1961"
+      forms: { "past": "மாற்றின", "present": "மாற்றுகிற", "future": "மாற்றும்", "negative": "மாற்றாத" }
+      readings: { "past": "māṟṟiṉa", "present": "māṟṟukiṟa", "future": "māṟṟum", "negative": "māṟṟāta" }
+    - word: "ta-1183"
+      forms: { "past": "பொங்கின", "present": "பொங்குகிற", "future": "பொங்கும்", "negative": "பொங்காத" }
+      readings: { "past": "poṅkiṉa", "present": "poṅkukiṟa", "future": "poṅkum", "negative": "poṅkāta" }
+    - word: "ta-1192"
+      forms: { "past": "கொண்டாடின", "present": "கொண்டாடுகிற", "future": "கொண்டாடும்", "negative": "கொண்டாடாத" }
+      readings: { "past": "koṇṭāṭiṉa", "present": "koṇṭāṭukiṟa", "future": "koṇṭāṭum", "negative": "koṇṭāṭāta" }
+    - word: "ta-1202"
+      forms: { "past": "வணங்கின", "present": "வணங்குகிற", "future": "வணங்கும்", "negative": "வணங்காத" }
+      readings: { "past": "vaṇaṅkiṉa", "present": "vaṇaṅkukiṟa", "future": "vaṇaṅkum", "negative": "vaṇaṅkāta" }
+    - word: "ta-1905"
+      forms: { "past": "பாடின", "present": "பாடுகிற", "future": "பாடும்", "negative": "பாடாத" }
+      readings: { "past": "pāṭiṉa", "present": "pāṭukiṟa", "future": "pāṭum", "negative": "pāṭāta" }
+    - word: "ta-1907"
+      forms: { "past": "தீட்டின", "present": "தீட்டுகிற", "future": "தீட்டும்", "negative": "தீட்டாத" }
+      readings: { "past": "tīṭṭiṉa", "present": "tīṭṭukiṟa", "future": "tīṭṭum", "negative": "tīṭṭāta" }
+    - word: "ta-1908"
+      forms: { "past": "ஓடின", "present": "ஓடுகிற", "future": "ஓடும்", "negative": "ஓடாத" }
+      readings: { "past": "ōṭiṉa", "present": "ōṭukiṟa", "future": "ōṭum", "negative": "ōṭāta" }
+    - word: "ta-1909"
+      forms: { "past": "பறந்த", "present": "பறக்கிற", "future": "பறக்கும்", "negative": "பறக்காத" }
+      readings: { "past": "paṟanta", "present": "paṟakkiṟa", "future": "paṟakkum", "negative": "paṟakkāta" }
+    - word: "ta-1910"
+      forms: { "past": "நீந்தின", "present": "நீந்துகிற", "future": "நீந்தும்", "negative": "நீந்தாத" }
+      readings: { "past": "nīntiṉa", "present": "nīntukiṟa", "future": "nīntum", "negative": "nīntāta" }
+    - word: "ta-1911"
+      forms: { "past": "குதித்த", "present": "குதிக்கிற", "future": "குதிக்கும்", "negative": "குதிக்காத" }
+      readings: { "past": "kutitta", "present": "kutikkiṟa", "future": "kutikkum", "negative": "kutikkāta" }
+    - word: "ta-1912"
+      forms: { "past": "ஏறின", "present": "ஏறுகிற", "future": "ஏறும்", "negative": "ஏறாத" }
+      readings: { "past": "ēṟiṉa", "present": "ēṟukiṟa", "future": "ēṟum", "negative": "ēṟāta" }
+    - word: "ta-1913"
+      forms: { "past": "சேகரித்த", "present": "சேகரிக்கிற", "future": "சேகரிக்கும்", "negative": "சேகரிக்காத" }
+      readings: { "past": "cēkaritta", "present": "cēkarikkiṟa", "future": "cēkarikkum", "negative": "cēkarikkāta" }
+    - word: "ta-1914"
+      forms: { "past": "சிரித்த", "present": "சிரிக்கிற", "future": "சிரிக்கும்", "negative": "சிரிக்காத" }
+      readings: { "past": "ciritta", "present": "cirikkiṟa", "future": "cirikkum", "negative": "cirikkāta" }
+    - word: "ta-1915"
+      forms: { "past": "ரசித்த", "present": "ரசிக்கிற", "future": "ரசிக்கும்", "negative": "ரசிக்காத" }
+      readings: { "past": "racitta", "present": "racikkiṟa", "future": "racikkum", "negative": "racikkāta" }
+    - word: "ta-1916"
+      forms: { "past": "வென்ற", "present": "வெல்கிற", "future": "வெல்லும்", "negative": "வெல்லாத" }
+      readings: { "past": "veṉṟa", "present": "velkiṟa", "future": "vellum", "negative": "vellāta" }
+    - word: "ta-2180"
+      forms: { "past": "ஓட்டின", "present": "ஓட்டுகிற", "future": "ஓட்டும்", "negative": "ஓட்டாத" }
+      readings: { "past": "ōṭṭiṉa", "present": "ōṭṭukiṟa", "future": "ōṭṭum", "negative": "ōṭṭāta" }
+    - word: "ta-2182"
+      forms: { "past": "அடைந்த", "present": "அடைகிற", "future": "அடையும்", "negative": "அடையாத" }
+      readings: { "past": "aṭainta", "present": "aṭaikiṟa", "future": "aṭaiyum", "negative": "aṭaiyāta" }
+    - word: "ta-2183"
+      forms: { "past": "இறக்கின", "present": "இறக்குகிற", "future": "இறக்கும்", "negative": "இறக்காத" }
+      readings: { "past": "iṟakkiṉa", "present": "iṟakkukiṟa", "future": "iṟakkum", "negative": "iṟakkāta" }
+    - word: "ta-2186"
+      forms: { "past": "இயங்கின", "present": "இயங்குகிற", "future": "இயங்கும்", "negative": "இயங்காத" }
+      readings: { "past": "iyaṅkiṉa", "present": "iyaṅkukiṟa", "future": "iyaṅkum", "negative": "iyaṅkāta" }
+    - word: "ta-2191"
+      forms: { "past": "பரிசோதித்த", "present": "பரிசோதிக்கிற", "future": "பரிசோதிக்கும்", "negative": "பரிசோதிக்காத" }
+      readings: { "past": "paricōtitta", "present": "paricōtikkiṟa", "future": "paricōtikkum", "negative": "paricōtikkāta" }
+    - word: "ta-2241"
+      forms: { "past": "மலர்ந்த", "present": "மலர்கிற", "future": "மலரும்", "negative": "மலராத" }
+      readings: { "past": "malarnta", "present": "malarkiṟa", "future": "malarum", "negative": "malarāta" }
+    - word: "ta-2242"
+      forms: { "past": "உதிர்ந்த", "present": "உதிர்கிற", "future": "உதிரும்", "negative": "உதிராத" }
+      readings: { "past": "utirnta", "present": "utirkiṟa", "future": "utirum", "negative": "utirāta" }
+    - word: "ta-2243"
+      forms: { "past": "முளைத்த", "present": "முளைக்கிற", "future": "முளைக்கும்", "negative": "முளைக்காத" }
+      readings: { "past": "muḷaitta", "present": "muḷaikkiṟa", "future": "muḷaikkum", "negative": "muḷaikkāta" }
+    - word: "ta-2244"
+      forms: { "past": "உருகின", "present": "உருகுகிற", "future": "உருகும்", "negative": "உருகாத" }
+      readings: { "past": "urukiṉa", "present": "urukukiṟa", "future": "urukum", "negative": "urukāta" }
+    - word: "ta-2245"
+      forms: { "past": "உறைந்த", "present": "உறைகிற", "future": "உறையும்", "negative": "உறையாத" }
+      readings: { "past": "uṟainta", "present": "uṟaikiṟa", "future": "uṟaiyum", "negative": "uṟaiyāta" }
+    - word: "ta-2246"
+      forms: { "past": "ஒழுகின", "present": "ஒழுகுகிற", "future": "ஒழுகும்", "negative": "ஒழுகாத" }
+      readings: { "past": "oḻukiṉa", "present": "oḻukukiṟa", "future": "oḻukum", "negative": "oḻukāta" }
+    - word: "ta-2122"
+      forms: { "past": "இணைத்த", "present": "இணைக்கிற", "future": "இணைக்கும்", "negative": "இணைக்காத" }
+      readings: { "past": "iṇaitta", "present": "iṇaikkiṟa", "future": "iṇaikkum", "negative": "iṇaikkāta" }
+    - word: "ta-2123"
+      forms: { "past": "துண்டித்த", "present": "துண்டிக்கிற", "future": "துண்டிக்கும்", "negative": "துண்டிக்காத" }
+      readings: { "past": "tuṇṭitta", "present": "tuṇṭikkiṟa", "future": "tuṇṭikkum", "negative": "tuṇṭikkāta" }
+    - word: "ta-2124"
+      forms: { "past": "நீக்கின", "present": "நீக்குகிற", "future": "நீக்கும்", "negative": "நீக்காத" }
+      readings: { "past": "nīkkiṉa", "present": "nīkkukiṟa", "future": "nīkkum", "negative": "nīkkāta" }
+    - word: "ta-2125"
+      forms: { "past": "புதுப்பித்த", "present": "புதுப்பிக்கிற", "future": "புதுப்பிக்கும்", "negative": "புதுப்பிக்காத" }
+      readings: { "past": "putuppitta", "present": "putuppikkiṟa", "future": "putuppikkum", "negative": "putuppikkāta" }
+    - word: "ta-2126"
+      forms: { "past": "நிறுவின", "present": "நிறுவுகிற", "future": "நிறுவும்", "negative": "நிறுவாத" }
+      readings: { "past": "niṟuviṉa", "present": "niṟuvukiṟa", "future": "niṟuvum", "negative": "niṟuvāta" }
+    - word: "ta-2128"
+      forms: { "past": "அழுத்தின", "present": "அழுத்துகிற", "future": "அழுத்தும்", "negative": "அழுத்தாத" }
+      readings: { "past": "aḻuttiṉa", "present": "aḻuttukiṟa", "future": "aḻuttum", "negative": "aḻuttāta" }
+    - word: "ta-1857"
+      forms: { "past": "புரிந்த", "present": "புரிகிற", "future": "புரியும்", "negative": "புரியாத" }
+      readings: { "past": "purinta", "present": "purikiṟa", "future": "puriyum", "negative": "puriyāta" }
+    - word: "ta-1858"
+      forms: { "past": "மறந்த", "present": "மறக்கிற", "future": "மறக்கும்", "negative": "மறக்காத" }
+      readings: { "past": "maṟanta", "present": "maṟakkiṟa", "future": "maṟakkum", "negative": "maṟakkāta" }
+    - word: "ta-1859"
+      forms: { "past": "நினைத்த", "present": "நினைக்கிற", "future": "நினைக்கும்", "negative": "நினைக்காத" }
+      readings: { "past": "niṉaitta", "present": "niṉaikkiṟa", "future": "niṉaikkum", "negative": "niṉaikkāta" }
+    - word: "ta-1242"
+      forms: { "past": "செலுத்தின", "present": "செலுத்துகிற", "future": "செலுத்தும்", "negative": "செலுத்தாத" }
+      readings: { "past": "celuttiṉa", "present": "celuttukiṟa", "future": "celuttum", "negative": "celuttāta" }
+    - word: "ta-1243"
+      forms: { "past": "ஒப்பிட்ட", "present": "ஒப்பிடுகிற", "future": "ஒப்பிடும்", "negative": "ஒப்பிடாத" }
+      readings: { "past": "oppiṭṭa", "present": "oppiṭukiṟa", "future": "oppiṭum", "negative": "oppiṭāta" }
+    - word: "ta-1244"
+      forms: { "past": "விசாரித்த", "present": "விசாரிக்கிற", "future": "விசாரிக்கும்", "negative": "விசாரிக்காத" }
+      readings: { "past": "vicāritta", "present": "vicārikkiṟa", "future": "vicārikkum", "negative": "vicārikkāta" }
+    - word: "ta-1245"
+      forms: { "past": "கூட்டின", "present": "கூட்டுகிற", "future": "கூட்டும்", "negative": "கூட்டாத" }
+      readings: { "past": "kūṭṭiṉa", "present": "kūṭṭukiṟa", "future": "kūṭṭum", "negative": "kūṭṭāta" }
+    - word: "ta-1246"
+      forms: { "past": "வசூலித்த", "present": "வசூலிக்கிற", "future": "வசூலிக்கும்", "negative": "வசூலிக்காத" }
+      readings: { "past": "vacūlitta", "present": "vacūlikkiṟa", "future": "vacūlikkum", "negative": "vacūlikkāta" }
+    - word: "ta-2017"
+      forms: { "past": "சொன்ன", "present": "சொல்கிற", "future": "சொல்லும்", "negative": "சொல்லாத" }
+      readings: { "past": "coṉṉa", "present": "colkiṟa", "future": "collum", "negative": "collāta" }
+    - word: "ta-2018"
+      forms: { "past": "இருந்த", "present": "இருகிற", "future": "இருக்கும்", "negative": "இருக்காத" }
+      readings: { "past": "irunta", "present": "irukiṟa", "future": "irukkum", "negative": "irukkāta" }
+    - word: "ta-2019"
+      forms: { "past": "தெரிந்த", "present": "தெரிகிற", "future": "தெரியும்", "negative": "தெரியாத" }
+      readings: { "past": "terinta", "present": "terikiṟa", "future": "teriyum", "negative": "teriyāta" }
+    - word: "ta-2020"
+      forms: { "past": "தங்கின", "present": "தங்குகிற", "future": "தங்கும்", "negative": "தங்காத" }
+      readings: { "past": "taṅkiṉa", "present": "taṅkukiṟa", "future": "taṅkum", "negative": "taṅkāta" }
+    - word: "ta-2021"
+      forms: { "past": "வாழ்ந்த", "present": "வாழ்கிற", "future": "வாழும்", "negative": "வாழாத" }
+      readings: { "past": "vāḻnta", "present": "vāḻkiṟa", "future": "vāḻum", "negative": "vāḻāta" }
+    - word: "ta-2022"
+      forms: { "past": "இறங்கின", "present": "இறங்குகிற", "future": "இறங்கும்", "negative": "இறங்காத" }
+      readings: { "past": "iṟaṅkiṉa", "present": "iṟaṅkukiṟa", "future": "iṟaṅkum", "negative": "iṟaṅkāta" }
+    - word: "ta-2024"
+      forms: { "past": "பெற்ற", "present": "பெறுகிற", "future": "பெறும்", "negative": "பெறாத" }
+      readings: { "past": "peṟṟa", "present": "peṟukiṟa", "future": "peṟum", "negative": "peṟāta" }
+    - word: "ta-2025"
+      forms: { "past": "கிடைத்த", "present": "கிடைக்கிற", "future": "கிடைக்கும்", "negative": "கிடைக்காத" }
+      readings: { "past": "kiṭaitta", "present": "kiṭaikkiṟa", "future": "kiṭaikkum", "negative": "kiṭaikkāta" }
+    - word: "ta-2029"
+      forms: { "past": "அனுப்பின", "present": "அனுப்புகிற", "future": "அனுப்பும்", "negative": "அனுப்பாத" }
+      readings: { "past": "aṉuppiṉa", "present": "aṉuppukiṟa", "future": "aṉuppum", "negative": "aṉuppāta" }
+    - word: "ta-2030"
+      forms: { "past": "கூப்பிட்ட", "present": "கூப்பிடுகிற", "future": "கூப்பிடும்", "negative": "கூப்பிடாத" }
+      readings: { "past": "kūppiṭṭa", "present": "kūppiṭukiṟa", "future": "kūppiṭum", "negative": "kūppiṭāta" }
+    - word: "ta-2031"
+      forms: { "past": "அழைத்த", "present": "அழைக்கிற", "future": "அழைக்கும்", "negative": "அழைக்காத" }
+      readings: { "past": "aḻaitta", "present": "aḻaikkiṟa", "future": "aḻaikkum", "negative": "aḻaikkāta" }
+    - word: "ta-2033"
+      forms: { "past": "சந்தித்த", "present": "சந்திக்கிற", "future": "சந்திக்கும்", "negative": "சந்திக்காத" }
+      readings: { "past": "cantitta", "present": "cantikkiṟa", "future": "cantikkum", "negative": "cantikkāta" }
+    - word: "ta-2034"
+      forms: { "past": "சேர்ந்த", "present": "சேர்கிற", "future": "சேரும்", "negative": "சேராத" }
+      readings: { "past": "cērnta", "present": "cērkiṟa", "future": "cērum", "negative": "cērāta" }
+    - word: "ta-2035"
+      forms: { "past": "பிரிந்த", "present": "பிரிகிற", "future": "பிரியும்", "negative": "பிரியாத" }
+      readings: { "past": "pirinta", "present": "pirikiṟa", "future": "piriyum", "negative": "piriyāta" }
+    - word: "ta-2036"
+      forms: { "past": "நம்பின", "present": "நம்புகிற", "future": "நம்பும்", "negative": "நம்பாத" }
+      readings: { "past": "nampiṉa", "present": "nampukiṟa", "future": "nampum", "negative": "nampāta" }
+    - word: "ta-2038"
+      forms: { "past": "பகிர்ந்த", "present": "பகிர்கிற", "future": "பகிரும்", "negative": "பகிராத" }
+      readings: { "past": "pakirnta", "present": "pakirkiṟa", "future": "pakirum", "negative": "pakirāta" }
+    - word: "ta-2039"
+      forms: { "past": "ஒட்டின", "present": "ஒட்டுகிற", "future": "ஒட்டும்", "negative": "ஒட்டாத" }
+      readings: { "past": "oṭṭiṉa", "present": "oṭṭukiṟa", "future": "oṭṭum", "negative": "oṭṭāta" }
+    - word: "ta-2040"
+      forms: { "past": "கொட்டின", "present": "கொட்டுகிற", "future": "கொட்டும்", "negative": "கொட்டாத" }
+      readings: { "past": "koṭṭiṉa", "present": "koṭṭukiṟa", "future": "koṭṭum", "negative": "koṭṭāta" }
+    - word: "ta-2041"
+      forms: { "past": "எரிந்த", "present": "எரிகிற", "future": "எரியும்", "negative": "எரியாத" }
+      readings: { "past": "erinta", "present": "erikiṟa", "future": "eriyum", "negative": "eriyāta" }
+    - word: "ta-2042"
+      forms: { "past": "உருவாக்கின", "present": "உருவாக்குகிற", "future": "உருவாக்கும்", "negative": "உருவாக்காத" }
+      readings: { "past": "uruvākkiṉa", "present": "uruvākkukiṟa", "future": "uruvākkum", "negative": "uruvākkāta" }
+    - word: "ta-2043"
+      forms: { "past": "திருடின", "present": "திருடுகிற", "future": "திருடும்", "negative": "திருடாத" }
+      readings: { "past": "tiruṭiṉa", "present": "tiruṭukiṟa", "future": "tiruṭum", "negative": "tiruṭāta" }
+    - word: "ta-2044"
+      forms: { "past": "யோசித்த", "present": "யோசிக்கிற", "future": "யோசிக்கும்", "negative": "யோசிக்காத" }
+      readings: { "past": "yōcitta", "present": "yōcikkiṟa", "future": "yōcikkum", "negative": "yōcikkāta" }
+    - word: "ta-2045"
+      forms: { "past": "விரும்பின", "present": "விரும்புகிற", "future": "விரும்பும்", "negative": "விரும்பாத" }
+      readings: { "past": "virumpiṉa", "present": "virumpukiṟa", "future": "virumpum", "negative": "virumpāta" }
+    - word: "ta-2049"
+      forms: { "past": "அழுத", "present": "அழுகிற", "future": "அழும்", "negative": "அழாத" }
+      readings: { "past": "aḻuta", "present": "aḻukiṟa", "future": "aḻum", "negative": "aḻāta" }
+    - word: "ta-2050"
+      forms: { "past": "எண்ணின", "present": "எண்ணுகிற", "future": "எண்ணும்", "negative": "எண்ணாத" }
+      readings: { "past": "eṇṇiṉa", "present": "eṇṇukiṟa", "future": "eṇṇum", "negative": "eṇṇāta" }
+    - word: "ta-2051"
+      forms: { "past": "நுழைந்த", "present": "நுழைகிற", "future": "நுழையும்", "negative": "நுழையாத" }
+      readings: { "past": "nuḻainta", "present": "nuḻaikiṟa", "future": "nuḻaiyum", "negative": "nuḻaiyāta" }
+    - word: "ta-2052"
+      forms: { "past": "வெளியேறின", "present": "வெளியேறுகிற", "future": "வெளியேறும்", "negative": "வெளியேறாத" }
+      readings: { "past": "veḷiyēṟiṉa", "present": "veḷiyēṟukiṟa", "future": "veḷiyēṟum", "negative": "veḷiyēṟāta" }
+    - word: "ta-2053"
+      forms: { "past": "கடந்த", "present": "கடக்கிற", "future": "கடக்கும்", "negative": "கடக்காத" }
+      readings: { "past": "kaṭanta", "present": "kaṭakkiṟa", "future": "kaṭakkum", "negative": "kaṭakkāta" }
+    - word: "ta-2054"
+      forms: { "past": "சுற்றின", "present": "சுற்றுகிற", "future": "சுற்றும்", "negative": "சுற்றாத" }
+      readings: { "past": "cuṟṟiṉa", "present": "cuṟṟukiṟa", "future": "cuṟṟum", "negative": "cuṟṟāta" }
+    - word: "ta-2055"
+      forms: { "past": "அமர்ந்த", "present": "அமர்கிற", "future": "அமரும்", "negative": "அமராத" }
+      readings: { "past": "amarnta", "present": "amarkiṟa", "future": "amarum", "negative": "amarāta" }
+    - word: "ta-2056"
+      forms: { "past": "நகர்ந்த", "present": "நகர்கிற", "future": "நகரும்", "negative": "நகராத" }
+      readings: { "past": "nakarnta", "present": "nakarkiṟa", "future": "nakarum", "negative": "nakarāta" }
+    - word: "ta-2057"
+      forms: { "past": "தொட்ட", "present": "தொடுகிற", "future": "தொடும்", "negative": "தொடாத" }
+      readings: { "past": "toṭṭa", "present": "toṭukiṟa", "future": "toṭum", "negative": "toṭāta" }
+    - word: "ta-2058"
+      forms: { "past": "எறிந்த", "present": "எறிகிற", "future": "எறியும்", "negative": "எறியாத" }
+      readings: { "past": "eṟinta", "present": "eṟikiṟa", "future": "eṟiyum", "negative": "eṟiyāta" }
+    - word: "ta-2059"
+      forms: { "past": "மாறின", "present": "மாறுகிற", "future": "மாறும்", "negative": "மாறாத" }
+      readings: { "past": "māṟiṉa", "present": "māṟukiṟa", "future": "māṟum", "negative": "māṟāta" }
+    - word: "ta-2062"
+      forms: { "past": "தொடர்ந்த", "present": "தொடர்கிற", "future": "தொடரும்", "negative": "தொடராத" }
+      readings: { "past": "toṭarnta", "present": "toṭarkiṟa", "future": "toṭarum", "negative": "toṭarāta" }
+    - word: "ta-2063"
+      forms: { "past": "முயன்ற", "present": "முயல்கிற", "future": "முயலும்", "negative": "முயலாத" }
+      readings: { "past": "muyaṉṟa", "present": "muyalkiṟa", "future": "muyalum", "negative": "muyalāta" }
+    - word: "ta-2064"
+      forms: { "past": "சேமித்த", "present": "சேமிக்கிற", "future": "சேமிக்கும்", "negative": "சேமிக்காத" }
+      readings: { "past": "cēmitta", "present": "cēmikkiṟa", "future": "cēmikkum", "negative": "cēmikkāta" }
+    - word: "ta-2065"
+      forms: { "past": "செலவழித்த", "present": "செலவழிக்கிற", "future": "செலவழிக்கும்", "negative": "செலவழிக்காத" }
+      readings: { "past": "celavaḻitta", "present": "celavaḻikkiṟa", "future": "celavaḻikkum", "negative": "celavaḻikkāta" }
+    - word: "ta-2066"
+      forms: { "past": "எழுப்பின", "present": "எழுப்புகிற", "future": "எழுப்பும்", "negative": "எழுப்பாத" }
+      readings: { "past": "eḻuppiṉa", "present": "eḻuppukiṟa", "future": "eḻuppum", "negative": "eḻuppāta" }
+    - word: "ta-2067"
+      forms: { "past": "விழித்த", "present": "விழிக்கிற", "future": "விழிக்கும்", "negative": "விழிக்காத" }
+      readings: { "past": "viḻitta", "present": "viḻikkiṟa", "future": "viḻikkum", "negative": "viḻikkāta" }
+    - word: "ta-2068"
+      forms: { "past": "விழுந்த", "present": "விழுகிற", "future": "விழும்", "negative": "விழாத" }
+      readings: { "past": "viḻunta", "present": "viḻukiṟa", "future": "viḻum", "negative": "viḻāta" }
+    - word: "ta-2070"
+      forms: { "past": "காட்டின", "present": "காட்டுகிற", "future": "காட்டும்", "negative": "காட்டாத" }
+      readings: { "past": "kāṭṭiṉa", "present": "kāṭṭukiṟa", "future": "kāṭṭum", "negative": "kāṭṭāta" }
+    - word: "ta-2071"
+      forms: { "past": "குனிந்த", "present": "குனிகிற", "future": "குனியும்", "negative": "குனியாத" }
+      readings: { "past": "kuṉinta", "present": "kuṉikiṟa", "future": "kuṉiyum", "negative": "kuṉiyāta" }
+    - word: "ta-2072"
+      forms: { "past": "சாய்ந்த", "present": "சாய்கிற", "future": "சாயும்", "negative": "சாயாத" }
+      readings: { "past": "cāynta", "present": "cāykiṟa", "future": "cāyum", "negative": "cāyāta" }
+    - word: "ta-2074"
+      forms: { "past": "சம்பாதித்த", "present": "சம்பாதிக்கிற", "future": "சம்பாதிக்கும்", "negative": "சம்பாதிக்காத" }
+      readings: { "past": "campātitta", "present": "campātikkiṟa", "future": "campātikkum", "negative": "campātikkāta" }
+    - word: "ta-2075"
+      forms: { "past": "பழகின", "present": "பழகுகிற", "future": "பழகும்", "negative": "பழகாத" }
+      readings: { "past": "paḻakiṉa", "present": "paḻakukiṟa", "future": "paḻakum", "negative": "paḻakāta" }
+    - word: "ta-2076"
+      forms: { "past": "திட்டின", "present": "திட்டுகிற", "future": "திட்டும்", "negative": "திட்டாத" }
+      readings: { "past": "tiṭṭiṉa", "present": "tiṭṭukiṟa", "future": "tiṭṭum", "negative": "tiṭṭāta" }
+    - word: "ta-2077"
+      forms: { "past": "பாராட்டின", "present": "பாராட்டுகிற", "future": "பாராட்டும்", "negative": "பாராட்டாத" }
+      readings: { "past": "pārāṭṭiṉa", "present": "pārāṭṭukiṟa", "future": "pārāṭṭum", "negative": "pārāṭṭāta" }
+    - word: "ta-2078"
+      forms: { "past": "நடித்த", "present": "நடிக்கிற", "future": "நடிக்கும்", "negative": "நடிக்காத" }
+      readings: { "past": "naṭitta", "present": "naṭikkiṟa", "future": "naṭikkum", "negative": "naṭikkāta" }
+    - word: "ta-2079"
+      forms: { "past": "ஆடின", "present": "ஆடுகிற", "future": "ஆடும்", "negative": "ஆடாத" }
+      readings: { "past": "āṭiṉa", "present": "āṭukiṟa", "future": "āṭum", "negative": "āṭāta" }
+    - word: "ta-2080"
+      forms: { "past": "குறைந்த", "present": "குறைகிற", "future": "குறையும்", "negative": "குறையாத" }
+      readings: { "past": "kuṟainta", "present": "kuṟaikiṟa", "future": "kuṟaiyum", "negative": "kuṟaiyāta" }
+    - word: "ta-2081"
+      forms: { "past": "அதிகரித்த", "present": "அதிகரிக்கிற", "future": "அதிகரிக்கும்", "negative": "அதிகரிக்காத" }
+      readings: { "past": "atikaritta", "present": "atikarikkiṟa", "future": "atikarikkum", "negative": "atikarikkāta" }
+    - word: "ta-2083"
+      forms: { "past": "மன்னித்த", "present": "மன்னிக்கிற", "future": "மன்னிக்கும்", "negative": "மன்னிக்காத" }
+      readings: { "past": "maṉṉitta", "present": "maṉṉikkiṟa", "future": "maṉṉikkum", "negative": "maṉṉikkāta" }
+    - word: "ta-2084"
+      forms: { "past": "ஏமாற்றின", "present": "ஏமாற்றுகிற", "future": "ஏமாற்றும்", "negative": "ஏமாற்றாத" }
+      readings: { "past": "ēmāṟṟiṉa", "present": "ēmāṟṟukiṟa", "future": "ēmāṟṟum", "negative": "ēmāṟṟāta" }
+    - word: "ta-2085"
+      forms: { "past": "பயன்படுத்தின", "present": "பயன்படுத்துகிற", "future": "பயன்படுத்தும்", "negative": "பயன்படுத்தாத" }
+      readings: { "past": "payaṉpaṭuttiṉa", "present": "payaṉpaṭuttukiṟa", "future": "payaṉpaṭuttum", "negative": "payaṉpaṭuttāta" }
+    - word: "ta-1141"
+      forms: { "past": "பெய்த", "present": "பெய்கிற", "future": "பெய்யும்", "negative": "பெய்யாத" }
+      readings: { "past": "peyta", "present": "peykiṟa", "future": "peyyum", "negative": "peyyāta" }
+    - word: "ta-1143"
+      forms: { "past": "அடித்த", "present": "அடிக்கிற", "future": "அடிக்கும்", "negative": "அடிக்காத" }
+      readings: { "past": "aṭitta", "present": "aṭikkiṟa", "future": "aṭikkum", "negative": "aṭikkāta" }
+    - word: "ta-1144"
+      forms: { "past": "நனைந்த", "present": "நனைகிற", "future": "நனையும்", "negative": "நனையாத" }
+      readings: { "past": "naṉainta", "present": "naṉaikiṟa", "future": "naṉaiyum", "negative": "naṉaiyāta" }
+    - word: "ta-1145"
+      forms: { "past": "காய்ந்த", "present": "காய்கிற", "future": "காயும்", "negative": "காயாத" }
+      readings: { "past": "kāynta", "present": "kāykiṟa", "future": "kāyum", "negative": "kāyāta" }
+    - word: "ta-2023"
+      forms: { "past": "தோன்றின", "present": "தோன்றுகிற", "future": "தோன்றும்", "negative": "தோன்றாத" }
+      readings: { "past": "tōṉṟiṉa", "present": "tōṉṟukiṟa", "future": "tōṉṟum", "negative": "tōṉṟāta" }
+    - word: "ta-2027"
+      forms: { "past": "கவனித்த", "present": "கவனிக்கிற", "future": "கவனிக்கும்", "negative": "கவனிக்காத" }
+      readings: { "past": "kavaṉitta", "present": "kavaṉikkiṟa", "future": "kavaṉikkum", "negative": "kavaṉikkāta" }
+    - word: "ta-2028"
+      forms: { "past": "வருந்தின", "present": "வருந்துகிற", "future": "வருந்தும்", "negative": "வருந்தாத" }
+      readings: { "past": "varuntiṉa", "present": "varuntukiṟa", "future": "varuntum", "negative": "varuntāta" }
+    - word: "ta-2061"
+      forms: { "past": "ஊக்குவித்த", "present": "ஊக்குவிக்கிற", "future": "ஊக்குவிக்கும்", "negative": "ஊக்குவிக்காத" }
+      readings: { "past": "ūkkuvitta", "present": "ūkkuvikkiṟa", "future": "ūkkuvikkum", "negative": "ūkkuvikkāta" }
+    - word: "ta-2082"
+      forms: { "past": "நிரூபித்த", "present": "நிரூபிக்கிற", "future": "நிரூபிக்கும்", "negative": "நிரூபிக்காத" }
+      readings: { "past": "nirūpitta", "present": "nirūpikkiṟa", "future": "nirūpikkum", "negative": "nirūpikkāta" }
+    - word: "ta-1142"
+      forms: { "past": "மறைந்த", "present": "மறைகிற", "future": "மறையும்", "negative": "மறையாத" }
+      readings: { "past": "maṟainta", "present": "maṟaikiṟa", "future": "maṟaiyum", "negative": "maṟaiyāta" }
+    - word: "ta-1950"
+      forms: { "past": "அலசின", "present": "அலசுகிற", "future": "அலசும்", "negative": "அலசாத" }
+      readings: { "past": "alaciṉa", "present": "alacukiṟa", "future": "alacum", "negative": "alacāta" }
+    - word: "ta-1960"
+      forms: { "past": "பரப்பின", "present": "பரப்புகிற", "future": "பரப்பும்", "negative": "பரப்பாத" }
+      readings: { "past": "parappiṉa", "present": "parappukiṟa", "future": "parappum", "negative": "parappāta" }
+    - word: "ta-1146"
+      forms: { "past": "மின்னின", "present": "மின்னுகிற", "future": "மின்னும்", "negative": "மின்னாத" }
+      readings: { "past": "miṉṉiṉa", "present": "miṉṉukiṟa", "future": "miṉṉum", "negative": "miṉṉāta" }
+    - word: "ta-1297"
+      forms: { "past": "இருமின", "present": "இருமுகிற", "future": "இருமும்", "negative": "இருமாத" }
+      readings: { "past": "irumiṉa", "present": "irumukiṟa", "future": "irumum", "negative": "irumāta" }
+    - word: "ta-1298"
+      forms: { "past": "தும்மின", "present": "தும்முகிற", "future": "தும்மும்", "negative": "தும்மாத" }
+      readings: { "past": "tummiṉa", "present": "tummukiṟa", "future": "tummum", "negative": "tummāta" }
+    - word: "ta-1300"
+      forms: { "past": "மயங்கின", "present": "மயங்குகிற", "future": "மயங்கும்", "negative": "மயங்காத" }
+      readings: { "past": "mayaṅkiṉa", "present": "mayaṅkukiṟa", "future": "mayaṅkum", "negative": "mayaṅkāta" }
+    - word: "ta-1303"
+      forms: { "past": "வீங்கின", "present": "வீங்குகிற", "future": "வீங்கும்", "negative": "வீங்காத" }
+      readings: { "past": "vīṅkiṉa", "present": "vīṅkukiṟa", "future": "vīṅkum", "negative": "vīṅkāta" }
+    - word: "ta-1304"
+      forms: { "past": "நடுங்கின", "present": "நடுங்குகிற", "future": "நடுங்கும்", "negative": "நடுங்காத" }
+      readings: { "past": "naṭuṅkiṉa", "present": "naṭuṅkukiṟa", "future": "naṭuṅkum", "negative": "naṭuṅkāta" }
+    - word: "ta-1305"
+      forms: { "past": "வியர்த்த", "present": "வியர்க்கிற", "future": "வியர்க்கும்", "negative": "வியர்க்காத" }
+      readings: { "past": "viyartta", "present": "viyarkkiṟa", "future": "viyarkkum", "negative": "viyarkkāta" }
+    - word: "ta-1317"
+      forms: { "past": "பரிமாறின", "present": "பரிமாறுகிற", "future": "பரிமாறும்", "negative": "பரிமாறாத" }
+      readings: { "past": "parimāṟiṉa", "present": "parimāṟukiṟa", "future": "parimāṟum", "negative": "parimāṟāta" }
+    - word: "ta-1346"
+      forms: { "past": "வறுத்த", "present": "வறுகிற", "future": "வறுக்கும்", "negative": "வறுக்காத" }
+      readings: { "past": "vaṟutta", "present": "vaṟukiṟa", "future": "vaṟukkum", "negative": "vaṟukkāta" }
+    - word: "ta-1347"
+      forms: { "past": "வதக்கின", "present": "வதக்குகிற", "future": "வதக்கும்", "negative": "வதக்காத" }
+      readings: { "past": "vatakkiṉa", "present": "vatakkukiṟa", "future": "vatakkum", "negative": "vatakkāta" }
+    - word: "ta-1348"
+      forms: { "past": "கொதித்த", "present": "கொதிக்கிற", "future": "கொதிக்கும்", "negative": "கொதிக்காத" }
+      readings: { "past": "kotitta", "present": "kotikkiṟa", "future": "kotikkum", "negative": "kotikkāta" }
+    - word: "ta-1349"
+      forms: { "past": "நறுக்கின", "present": "நறுக்குகிற", "future": "நறுக்கும்", "negative": "நறுக்காத" }
+      readings: { "past": "naṟukkiṉa", "present": "naṟukkukiṟa", "future": "naṟukkum", "negative": "naṟukkāta" }
+    - word: "ta-1350"
+      forms: { "past": "கிளறின", "present": "கிளறுகிற", "future": "கிளறும்", "negative": "கிளறாத" }
+      readings: { "past": "kiḷaṟiṉa", "present": "kiḷaṟukiṟa", "future": "kiḷaṟum", "negative": "kiḷaṟāta" }
+    - word: "ta-1351"
+      forms: { "past": "வெந்த", "present": "வேகுகிற", "future": "வேகும்", "negative": "வேகாத" }
+      readings: { "past": "venta", "present": "vēkukiṟa", "future": "vēkum", "negative": "vēkāta" }
+    - word: "ta-1352"
+      forms: { "past": "பொரித்த", "present": "பொரிக்கிற", "future": "பொரிக்கும்", "negative": "பொரிக்காத" }
+      readings: { "past": "poritta", "present": "porikkiṟa", "future": "porikkum", "negative": "porikkāta" }
+    - word: "ta-1353"
+      forms: { "past": "அவித்த", "present": "அவிக்கிற", "future": "அவிக்கும்", "negative": "அவிக்காத" }
+      readings: { "past": "avitta", "present": "avikkiṟa", "future": "avikkum", "negative": "avikkāta" }
+    - word: "ta-1354"
+      forms: { "past": "சுட்ட", "present": "சுடுகிற", "future": "சுடும்", "negative": "சுடாத" }
+      readings: { "past": "cuṭṭa", "present": "cuṭukiṟa", "future": "cuṭum", "negative": "cuṭāta" }
+    - word: "ta-1355"
+      forms: { "past": "தாளித்த", "present": "தாளிக்கிற", "future": "தாளிக்கும்", "negative": "தாளிக்காத" }
+      readings: { "past": "tāḷitta", "present": "tāḷikkiṟa", "future": "tāḷikkum", "negative": "tāḷikkāta" }
+    - word: "ta-1356"
+      forms: { "past": "பிசைந்த", "present": "பிசைகிற", "future": "பிசையும்", "negative": "பிசையாத" }
+      readings: { "past": "picainta", "present": "picaikiṟa", "future": "picaiyum", "negative": "picaiyāta" }
+    - word: "ta-1357"
+      forms: { "past": "உரித்த", "present": "உரிக்கிற", "future": "உரிக்கும்", "negative": "உரிக்காத" }
+      readings: { "past": "uritta", "present": "urikkiṟa", "future": "urikkum", "negative": "urikkāta" }
+    - word: "ta-1358"
+      forms: { "past": "துருவின", "present": "துருவுகிற", "future": "துருவும்", "negative": "துருவாத" }
+      readings: { "past": "turuviṉa", "present": "turuvukiṟa", "future": "turuvum", "negative": "turuvāta" }
+    - word: "ta-2347"
+      forms: { "past": "நடத்தின", "present": "நடத்துகிற", "future": "நடத்தும்", "negative": "நடத்தாத" }
+      readings: { "past": "naṭattiṉa", "present": "naṭattukiṟa", "future": "naṭattum", "negative": "naṭattāta" }
+    - word: "ta-2348"
+      forms: { "past": "நிர்வகித்த", "present": "நிர்வகிக்கிற", "future": "நிர்வகிக்கும்", "negative": "நிர்வகிக்காத" }
+      readings: { "past": "nirvakitta", "present": "nirvakikkiṟa", "future": "nirvakikkum", "negative": "nirvakikkāta" }
+    - word: "ta-2349"
+      forms: { "past": "விண்ணப்பித்த", "present": "விண்ணப்பிக்கிற", "future": "விண்ணப்பிக்கும்", "negative": "விண்ணப்பிக்காத" }
+      readings: { "past": "viṇṇappitta", "present": "viṇṇappikkiṟa", "future": "viṇṇappikkum", "negative": "viṇṇappikkāta" }
+    - word: "ta-2356"
+      forms: { "past": "ஒத்துழைத்த", "present": "ஒத்துழைக்கிற", "future": "ஒத்துழைக்கும்", "negative": "ஒத்துழைக்காத" }
+      readings: { "past": "ottuḻaitta", "present": "ottuḻaikkiṟa", "future": "ottuḻaikkum", "negative": "ottuḻaikkāta" }
+    - word: "ta-2026"
+      forms: { "past": "கலந்துகொண்ட", "present": "கலந்துகொள்கிற", "future": "கலந்துகொள்ளும்", "negative": "கலந்துகொள்ளாத" }
+      readings: { "past": "kalantukoṇṭa", "present": "kalantukoḷkiṟa", "future": "kalantukoḷḷum", "negative": "kalantukoḷḷāta" }
+    - word: "ta-2060"
+      forms: { "past": "பெருமைப்பட்ட", "present": "பெருமைப்படுகிற", "future": "பெருமைப்படும்", "negative": "பெருமைப்படாத" }
+      readings: { "past": "perumaippaṭṭa", "present": "perumaippaṭukiṟa", "future": "perumaippaṭum", "negative": "perumaippaṭāta" }
+    - word: "ta-2185"
+      forms: { "past": "சுற்றித்திரிந்த", "present": "சுற்றித்திரிகிற", "future": "சுற்றித்திரியும்", "negative": "சுற்றித்திரியாத" }
+      readings: { "past": "cuṟṟittirinta", "present": "cuṟṟittirikiṟa", "future": "cuṟṟittiriyum", "negative": "cuṟṟittiriyāta" }
+    - word: "ta-1906"
+      forms: { "past": "நடனமாடின", "present": "நடனமாடுகிற", "future": "நடனமாடும்", "negative": "நடனமாடாத" }
+      readings: { "past": "naṭaṉamāṭiṉa", "present": "naṭaṉamāṭukiṟa", "future": "naṭaṉamāṭum", "negative": "naṭaṉamāṭāta" }
+    - word: "ta-2181"
+      forms: { "past": "புறப்பட்ட", "present": "புறப்படுகிற", "future": "புறப்படும்", "negative": "புறப்படாத" }
+      readings: { "past": "puṟappaṭṭa", "present": "puṟappaṭukiṟa", "future": "puṟappaṭum", "negative": "puṟappaṭāta" }
+    - word: "ta-2184"
+      forms: { "past": "வழிதவறின", "present": "வழிதவறுகிற", "future": "வழிதவறும்", "negative": "வழிதவறாத" }
+      readings: { "past": "vaḻitavaṟiṉa", "present": "vaḻitavaṟukiṟa", "future": "vaḻitavaṟum", "negative": "vaḻitavaṟāta" }
+    - word: "ta-2187"
+      forms: { "past": "வழியனுப்பின", "present": "வழியனுப்புகிற", "future": "வழியனுப்பும்", "negative": "வழியனுப்பாத" }
+      readings: { "past": "vaḻiyaṉuppiṉa", "present": "vaḻiyaṉuppukiṟa", "future": "vaḻiyaṉuppum", "negative": "vaḻiyaṉuppāta" }
+    - word: "ta-2188"
+      forms: { "past": "திட்டமிட்ட", "present": "திட்டமிடுகிற", "future": "திட்டமிடும்", "negative": "திட்டமிடாத" }
+      readings: { "past": "tiṭṭamiṭṭa", "present": "tiṭṭamiṭukiṟa", "future": "tiṭṭamiṭum", "negative": "tiṭṭamiṭāta" }
+    - word: "ta-2189"
+      forms: { "past": "எடுத்துச்சென்ற", "present": "எடுத்துச்செல்கிற", "future": "எடுத்துச்செல்லும்", "negative": "எடுத்துச்செல்லாத" }
+      readings: { "past": "eṭuttucceṉṟa", "present": "eṭuttuccelkiṟa", "future": "eṭuttuccellum", "negative": "eṭuttuccellāta" }
+    - word: "ta-2190"
+      forms: { "past": ["சுற்றிப்பாத்த", "சுற்றிப்பார்த்த"], "present": "சுற்றிப்பார்க்கிற", "future": "சுற்றிப்பார்க்கும்", "negative": "சுற்றிப்பார்க்காத" }
+      readings: { "past": ["cuṟṟippātta", "cuṟṟippārtta"], "present": "cuṟṟippārkkiṟa", "future": "cuṟṟippārkkum", "negative": "cuṟṟippārkkāta" }
+    - word: "ta-2121"
+      forms: { "past": "பதிவிறக்கின", "present": "பதிவிறக்குகிற", "future": "பதிவிறக்கும்", "negative": "பதிவிறக்காத" }
+      readings: { "past": "pativiṟakkiṉa", "present": "pativiṟakkukiṟa", "future": "pativiṟakkum", "negative": "pativiṟakkāta" }
+    - word: "ta-2127"
+      forms: { "past": "தொடர்புகொண்ட", "present": "தொடர்புகொள்கிற", "future": "தொடர்புகொள்ளும்", "negative": "தொடர்புகொள்ளாத" }
+      readings: { "past": "toṭarpukoṇṭa", "present": "toṭarpukoḷkiṟa", "future": "toṭarpukoḷḷum", "negative": "toṭarpukoḷḷāta" }
+    - word: "ta-2129"
+      forms: { "past": "தவறவிட்ட", "present": "தவறவிடுகிற", "future": "தவறவிடும்", "negative": "தவறவிடாத" }
+      readings: { "past": "tavaṟaviṭṭa", "present": "tavaṟaviṭukiṟa", "future": "tavaṟaviṭum", "negative": "tavaṟaviṭāta" }
+    - word: "ta-2130"
+      forms: { "past": "பதிலளித்த", "present": "பதிலளிக்கிற", "future": "பதிலளிக்கும்", "negative": "பதிலளிக்காத" }
+      readings: { "past": "patilaḷitta", "present": "patilaḷikkiṟa", "future": "patilaḷikkum", "negative": "patilaḷikkāta" }
+    - word: "ta-2131"
+      forms: { "past": "பதிவேற்றின", "present": "பதிவேற்றுகிற", "future": "பதிவேற்றும்", "negative": "பதிவேற்றாத" }
+      readings: { "past": "pativēṟṟiṉa", "present": "pativēṟṟukiṟa", "future": "pativēṟṟum", "negative": "pativēṟṟāta" }
+    - word: "ta-1860"
+      forms: { "past": "கற்றுக்கொண்ட", "present": "கற்றுக்கொள்கிற", "future": "கற்றுக்கொள்ளும்", "negative": "கற்றுக்கொள்ளாத" }
+      readings: { "past": "kaṟṟukkoṇṭa", "present": "kaṟṟukkoḷkiṟa", "future": "kaṟṟukkoḷḷum", "negative": "kaṟṟukkoḷḷāta" }
+    - word: "ta-1861"
+      forms: { "past": "சொல்லிக்கொடுத்த", "present": "சொல்லிக்கொடுக்கிற", "future": "சொல்லிக்கொடுக்கும்", "negative": "சொல்லிக்கொடுக்காத" }
+      readings: { "past": "collikkoṭutta", "present": "collikkoṭukkiṟa", "future": "collikkoṭukkum", "negative": "collikkoṭukkāta" }
+    - word: "ta-2032"
+      forms: { "past": "காத்திருந்த", "present": "காத்திருகிற", "future": "காத்திருக்கும்", "negative": "காத்திருக்காத" }
+      readings: { "past": "kāttirunta", "present": "kāttirukiṟa", "future": "kāttirukkum", "negative": "kāttirukkāta" }
+    - word: "ta-2037"
+      forms: { "past": "ஒப்புக்கொண்ட", "present": "ஒப்புக்கொள்கிற", "future": "ஒப்புக்கொள்ளும்", "negative": "ஒப்புக்கொள்ளாத" }
+      readings: { "past": "oppukkoṇṭa", "present": "oppukkoḷkiṟa", "future": "oppukkoḷḷum", "negative": "oppukkoḷḷāta" }
+    - word: "ta-2046"
+      forms: { "past": "பயப்பட்ட", "present": "பயப்படுகிற", "future": "பயப்படும்", "negative": "பயப்படாத" }
+      readings: { "past": "payappaṭṭa", "present": "payappaṭukiṟa", "future": "payappaṭum", "negative": "payappaṭāta" }
+    - word: "ta-2047"
+      forms: { "past": "கவலைப்பட்ட", "present": "கவலைப்படுகிற", "future": "கவலைப்படும்", "negative": "கவலைப்படாத" }
+      readings: { "past": "kavalaippaṭṭa", "present": "kavalaippaṭukiṟa", "future": "kavalaippaṭum", "negative": "kavalaippaṭāta" }
+    - word: "ta-2048"
+      forms: { "past": "கோபப்பட்ட", "present": "கோபப்படுகிற", "future": "கோபப்படும்", "negative": "கோபப்படாத" }
+      readings: { "past": "kōpappaṭṭa", "present": "kōpappaṭukiṟa", "future": "kōpappaṭum", "negative": "kōpappaṭāta" }
+    - word: "ta-2069"
+      forms: { "past": "தேர்ந்தெடுத்த", "present": "தேர்ந்தெடுக்கிற", "future": "தேர்ந்தெடுக்கும்", "negative": "தேர்ந்தெடுக்காத" }
+      readings: { "past": "tērnteṭutta", "present": "tērnteṭukkiṟa", "future": "tērnteṭukkum", "negative": "tērnteṭukkāta" }
+    - word: "ta-2073"
+      forms: { "past": ["கண்டுபிடிச்ச", "கண்டுபிடித்த"], "present": "கண்டுபிடிக்கிற", "future": "கண்டுபிடிக்கும்", "negative": "கண்டுபிடிக்காத" }
+      readings: { "past": ["kaṇṭupiṭicca", "kaṇṭupiṭitta"], "present": "kaṇṭupiṭikkiṟa", "future": "kaṇṭupiṭikkum", "negative": "kaṇṭupiṭikkāta" }
+    - word: "ta-2086"
+      forms: { "past": ["சரிபாத்த", "சரிபார்த்த"], "present": "சரிபார்க்கிற", "future": "சரிபார்க்கும்", "negative": "சரிபார்க்காத" }
+      readings: { "past": ["caripātta", "caripārtta"], "present": "caripārkkiṟa", "future": "caripārkkum", "negative": "caripārkkāta" }
+    - word: "ta-2350"
+      forms: { "past": "கையெழுத்திட்ட", "present": "கையெழுத்திடுகிற", "future": "கையெழுத்திடும்", "negative": "கையெழுத்திடாத" }
+      readings: { "past": "kaiyeḻuttiṭṭa", "present": "kaiyeḻuttiṭukiṟa", "future": "kaiyeḻuttiṭum", "negative": "kaiyeḻuttiṭāta" }
+    - word: "ta-2351"
+      forms: { "past": "ஈடுபட்ட", "present": "ஈடுபடுகிற", "future": "ஈடுபடும்", "negative": "ஈடுபடாத" }
+      readings: { "past": "īṭupaṭṭa", "present": "īṭupaṭukiṟa", "future": "īṭupaṭum", "negative": "īṭupaṭāta" }
+    - word: "ta-2352"
+      forms: { "past": "முடிவெடுத்த", "present": "முடிவெடுக்கிற", "future": "முடிவெடுக்கும்", "negative": "முடிவெடுக்காத" }
+      readings: { "past": "muṭiveṭutta", "present": "muṭiveṭukkiṟa", "future": "muṭiveṭukkum", "negative": "muṭiveṭukkāta" }
+    - word: "ta-2353"
+      forms: { "past": "அச்சிட்ட", "present": "அச்சிடுகிற", "future": "அச்சிடும்", "negative": "அச்சிடாத" }
+      readings: { "past": "acciṭṭa", "present": "acciṭukiṟa", "future": "acciṭum", "negative": "acciṭāta" }
+    - word: "ta-2354"
+      forms: { "past": "நகலெடுத்த", "present": "நகலெடுக்கிற", "future": "நகலெடுக்கும்", "negative": "நகலெடுக்காத" }
+      readings: { "past": "nakaleṭutta", "present": "nakaleṭukkiṟa", "future": "nakaleṭukkum", "negative": "nakaleṭukkāta" }
+    - word: "ta-2355"
+      forms: { "past": "கணக்கிட்ட", "present": "கணக்கிடுகிற", "future": "கணக்கிடும்", "negative": "கணக்கிடாத" }
+      readings: { "past": "kaṇakkiṭṭa", "present": "kaṇakkiṭukiṟa", "future": "kaṇakkiṭum", "negative": "kaṇakkiṭāta" }
+    - word: "ta-0461"
+      forms: { "past": "ஆன", "present": "ஆகிற", "future": "ஆகும்", "negative": "ஆகாத" }
+      readings: { "past": "āṉa", "present": "ākiṟa", "future": "ākum", "negative": "ākāta" }
+    - word: "ta-1299"
+      forms: { "past": "குணமான", "present": "குணமாகிற", "future": "குணமாகும்", "negative": "குணமாகாத" }
+      readings: { "past": "kuṇamāṉa", "present": "kuṇamākiṟa", "future": "kuṇamākum", "negative": "kuṇamākāta" }
+    - word: "ta-7012"
+      forms: { "past": "குணப்படுத்தின", "present": "குணப்படுத்துகிற", "future": "குணப்படுத்தும்", "negative": "குணப்படுத்தாத" }
+      readings: { "past": "kuṇappaṭuttiṉa", "present": "kuṇappaṭuttukiṟa", "future": "kuṇappaṭuttum", "negative": "kuṇappaṭuttāta" }
+    - word: "ta-7013"
+      forms: { "past": "பரவின", "present": "பரவுகிற", "future": "பரவும்", "negative": "பரவாத" }
+      readings: { "past": "paraviṉa", "present": "paravukiṟa", "future": "paravum", "negative": "paravāta" }
+    - word: "ta-7014"
+      forms: { "past": "தடுத்த", "present": "தடுக்கிற", "future": "தடுக்கும்", "negative": "தடுக்காத" }
+      readings: { "past": "taṭutta", "present": "taṭukkiṟa", "future": "taṭukkum", "negative": "taṭukkāta" }
+    - word: "ta-7015"
+      forms: { "past": "தவிர்த்த", "present": "தவிர்க்கிற", "future": "தவிர்க்கும்", "negative": "தவிர்க்காத" }
+      readings: { "past": "tavirtta", "present": "tavirkkiṟa", "future": "tavirkkum", "negative": "tavirkkāta" }
+    - word: "ta-7016"
+      forms: { "past": "மெலிந்த", "present": "மெலிகிற", "future": "மெலியும்", "negative": "மெலியாத" }
+      readings: { "past": "melinta", "present": "melikiṟa", "future": "meliyum", "negative": "meliyāta" }
+    - word: "ta-7030"
+      forms: { "past": "புகைபிடித்த", "present": "புகைபிடிக்கிற", "future": "புகைபிடிக்கும்", "negative": "புகைபிடிக்காத" }
+      readings: { "past": "pukaipiṭitta", "present": "pukaipiṭikkiṟa", "future": "pukaipiṭikkum", "negative": "pukaipiṭikkāta" }
+    - word: "ta-7104"
+      forms: { "past": "மகிழ்ந்த", "present": "மகிழ்கிற", "future": "மகிழும்", "negative": "மகிழாத" }
+      readings: { "past": "makiḻnta", "present": "makiḻkiṟa", "future": "makiḻum", "negative": "makiḻāta" }
+    - word: "ta-7105"
+      forms: { "past": "வெறுத்த", "present": "வெறுக்கிற", "future": "வெறுக்கும்", "negative": "வெறுக்காத" }
+      readings: { "past": "veṟutta", "present": "veṟukkiṟa", "future": "veṟukkum", "negative": "veṟukkāta" }
+    - word: "ta-7106"
+      forms: { "past": "ஆசைப்பட்ட", "present": "ஆசைப்படுகிற", "future": "ஆசைப்படும்", "negative": "ஆசைப்படாத" }
+      readings: { "past": "ācaippaṭṭa", "present": "ācaippaṭukiṟa", "future": "ācaippaṭum", "negative": "ācaippaṭāta" }
+    - word: "ta-7107"
+      forms: { "past": "எதிர்பார்த்த", "present": "எதிர்பார்க்கிற", "future": "எதிர்பார்க்கும்", "negative": "எதிர்பார்க்காத" }
+      readings: { "past": "etirpārtta", "present": "etirpārkkiṟa", "future": "etirpārkkum", "negative": "etirpārkkāta" }
+    - word: "ta-7108"
+      forms: { "past": "உணர்ந்த", "present": "உணர்கிற", "future": "உணரும்", "negative": "உணராத" }
+      readings: { "past": "uṇarnta", "present": "uṇarkiṟa", "future": "uṇarum", "negative": "uṇarāta" }
+    - word: "ta-7109"
+      forms: { "past": "வெட்கப்பட்ட", "present": "வெட்கப்படுகிற", "future": "வெட்கப்படும்", "negative": "வெட்கப்படாத" }
+      readings: { "past": "veṭkappaṭṭa", "present": "veṭkappaṭukiṟa", "future": "veṭkappaṭum", "negative": "veṭkappaṭāta" }
+    - word: "ta-7110"
+      forms: { "past": "ஏமாந்த", "present": "ஏமாறுகிற", "future": "ஏமாறும்", "negative": "ஏமாறாத" }
+      readings: { "past": "ēmānta", "present": "ēmāṟukiṟa", "future": "ēmāṟum", "negative": "ēmāṟāta" }
+    - word: "ta-7175"
+      forms: { "past": "அறிவித்த", "present": "அறிவிக்கிற", "future": "அறிவிக்கும்", "negative": "அறிவிக்காத" }
+      readings: { "past": "aṟivitta", "present": "aṟivikkiṟa", "future": "aṟivikkum", "negative": "aṟivikkāta" }
+    - word: "ta-7176"
+      forms: { "past": "எச்சரித்த", "present": "எச்சரிக்கிற", "future": "எச்சரிக்கும்", "negative": "எச்சரிக்காத" }
+      readings: { "past": "eccaritta", "present": "eccarikkiṟa", "future": "eccarikkum", "negative": "eccarikkāta" }
+    - word: "ta-7177"
+      forms: { "past": "காயமடைந்த", "present": "காயமடைகிற", "future": "காயமடையும்", "negative": "காயமடையாத" }
+      readings: { "past": "kāyamaṭainta", "present": "kāyamaṭaikiṟa", "future": "kāyamaṭaiyum", "negative": "kāyamaṭaiyāta" }
+    - word: "ta-7178"
+      forms: { "past": "தீப்பிடித்த", "present": "தீப்பிடிக்கிற", "future": "தீப்பிடிக்கும்", "negative": "தீப்பிடிக்காத" }
+      readings: { "past": "tīppiṭitta", "present": "tīppiṭikkiṟa", "future": "tīppiṭikkum", "negative": "tīppiṭikkāta" }
+    - word: "ta-7223"
+      forms: { "past": "ஏற்றுக்கொண்ட", "present": "ஏற்றுக்கொள்கிற", "future": "ஏற்றுக்கொள்ளும்", "negative": "ஏற்றுக்கொள்ளாத" }
+      readings: { "past": "ēṟṟukkoṇṭa", "present": "ēṟṟukkoḷkiṟa", "future": "ēṟṟukkoḷḷum", "negative": "ēṟṟukkoḷḷāta" }
+    - word: "ta-7224"
+      forms: { "past": "மறுத்த", "present": "மறுக்கிற", "future": "மறுக்கும்", "negative": "மறுக்காத" }
+      readings: { "past": "maṟutta", "present": "maṟukkiṟa", "future": "maṟukkum", "negative": "maṟukkāta" }
+    - word: "ta-7225"
+      forms: { "past": "ஆதரித்த", "present": "ஆதரிக்கிற", "future": "ஆதரிக்கும்", "negative": "ஆதரிக்காத" }
+      readings: { "past": "ātaritta", "present": "ātarikkiṟa", "future": "ātarikkum", "negative": "ātarikkāta" }
+    - word: "ta-7226"
+      forms: { "past": "எதிர்த்த", "present": "எதிர்க்கிற", "future": "எதிர்க்கும்", "negative": "எதிர்க்காத" }
+      readings: { "past": "etirtta", "present": "etirkkiṟa", "future": "etirkkum", "negative": "etirkkāta" }
+    - word: "ta-7227"
+      forms: { "past": "ஒத்துக்கொண்ட", "present": "ஒத்துக்கொள்கிற", "future": "ஒத்துக்கொள்ளும்", "negative": "ஒத்துக்கொள்ளாத" }
+      readings: { "past": "ottukkoṇṭa", "present": "ottukkoḷkiṟa", "future": "ottukkoḷḷum", "negative": "ottukkoḷḷāta" }
+    - word: "ta-7228"
+      forms: { "past": "சம்மதித்த", "present": "சம்மதிக்கிற", "future": "சம்மதிக்கும்", "negative": "சம்மதிக்காத" }
+      readings: { "past": "cammatitta", "present": "cammatikkiṟa", "future": "cammatikkum", "negative": "cammatikkāta" }
+    - word: "ta-7229"
+      forms: { "past": "கருதின", "present": "கருதுகிற", "future": "கருதும்", "negative": "கருதாத" }
+      readings: { "past": "karutiṉa", "present": "karutukiṟa", "future": "karutum", "negative": "karutāta" }
+    - word: "ta-7230"
+      forms: { "past": "வாதாடின", "present": "வாதாடுகிற", "future": "வாதாடும்", "negative": "வாதாடாத" }
+      readings: { "past": "vātāṭiṉa", "present": "vātāṭukiṟa", "future": "vātāṭum", "negative": "vātāṭāta" }
+    - word: "ta-7231"
+      forms: { "past": "விவாதித்த", "present": "விவாதிக்கிற", "future": "விவாதிக்கும்", "negative": "விவாதிக்காத" }
+      readings: { "past": "vivātitta", "present": "vivātikkiṟa", "future": "vivātikkum", "negative": "vivātikkāta" }
+    - word: "ta-7232"
+      forms: { "past": "நிராகரித்த", "present": "நிராகரிக்கிற", "future": "நிராகரிக்கும்", "negative": "நிராகரிக்காத" }
+      readings: { "past": "nirākaritta", "present": "nirākarikkiṟa", "future": "nirākarikkum", "negative": "nirākarikkāta" }
+    - word: "ta-7284"
+      forms: { "past": "ஒத்திவைத்த", "present": "ஒத்திவைக்கிற", "future": "ஒத்திவைக்கும்", "negative": "ஒத்திவைக்காத" }
+      readings: { "past": "ottivaitta", "present": "ottivaikkiṟa", "future": "ottivaikkum", "negative": "ottivaikkāta" }
+    - word: "ta-7285"
+      forms: { "past": "பார்வையிட்ட", "present": "பார்வையிடுகிற", "future": "பார்வையிடும்", "negative": "பார்வையிடாத" }
+      readings: { "past": "pārvaiyiṭṭa", "present": "pārvaiyiṭukiṟa", "future": "pārvaiyiṭum", "negative": "pārvaiyiṭāta" }
+    - word: "ta-7286"
+      forms: { "past": "வந்தடைந்த", "present": "வந்தடைகிற", "future": "வந்தடையும்", "negative": "வந்தடையாத" }
+      readings: { "past": "vantaṭainta", "present": "vantaṭaikiṟa", "future": "vantaṭaiyum", "negative": "vantaṭaiyāta" }
+    - word: "ta-7287"
+      forms: { "past": "சென்றடைந்த", "present": "சென்றடைகிற", "future": "சென்றடையும்", "negative": "சென்றடையாத" }
+      readings: { "past": "ceṉṟaṭainta", "present": "ceṉṟaṭaikiṟa", "future": "ceṉṟaṭaiyum", "negative": "ceṉṟaṭaiyāta" }
+    - word: "ta-7288"
+      forms: { "past": "இடமாற்றின", "present": "இடமாற்றுகிற", "future": "இடமாற்றும்", "negative": "இடமாற்றாத" }
+      readings: { "past": "iṭamāṟṟiṉa", "present": "iṭamāṟṟukiṟa", "future": "iṭamāṟṟum", "negative": "iṭamāṟṟāta" }
+    - word: "ta-7328"
+      forms: { "past": "பழுதுபார்த்த", "present": "பழுதுபார்க்கிற", "future": "பழுதுபார்க்கும்", "negative": "பழுதுபார்க்காத" }
+      readings: { "past": "paḻutupārtta", "present": "paḻutupārkkiṟa", "future": "paḻutupārkkum", "negative": "paḻutupārkkāta" }
+    - word: "ta-7329"
+      forms: { "past": "சரிசெய்த", "present": "சரிசெய்கிற", "future": "சரிசெய்யும்", "negative": "சரிசெய்யாத" }
+      readings: { "past": "cariceyta", "present": "cariceykiṟa", "future": "cariceyyum", "negative": "cariceyyāta" }
+    - word: "ta-7330"
+      forms: { "past": "அளவெடுத்த", "present": "அளவெடுக்கிற", "future": "அளவெடுக்கும்", "negative": "அளவெடுக்காத" }
+      readings: { "past": "aḷaveṭutta", "present": "aḷaveṭukkiṟa", "future": "aḷaveṭukkum", "negative": "aḷaveṭukkāta" }
+    - word: "ta-7331"
+      forms: { "past": "ஒப்படைத்த", "present": "ஒப்படைக்கிற", "future": "ஒப்படைக்கும்", "negative": "ஒப்படைக்காத" }
+      readings: { "past": "oppaṭaitta", "present": "oppaṭaikkiṟa", "future": "oppaṭaikkum", "negative": "oppaṭaikkāta" }
+    - word: "ta-7332"
+      forms: { "past": "வழங்கின", "present": "வழங்குகிற", "future": "வழங்கும்", "negative": "வழங்காத" }
+      readings: { "past": "vaḻaṅkiṉa", "present": "vaḻaṅkukiṟa", "future": "vaḻaṅkum", "negative": "vaḻaṅkāta" }
+    - word: "ta-7333"
+      forms: { "past": "திருப்பிக்கொடுத்த", "present": "திருப்பிக்கொடுக்கிற", "future": "திருப்பிக்கொடுக்கும்", "negative": "திருப்பிக்கொடுக்காத" }
+      readings: { "past": "tiruppikkoṭutta", "present": "tiruppikkoṭukkiṟa", "future": "tiruppikkoṭukkum", "negative": "tiruppikkoṭukkāta" }
+    - word: "ta-7380"
+      forms: { "past": "நிறைவேற்றின", "present": "நிறைவேற்றுகிற", "future": "நிறைவேற்றும்", "negative": "நிறைவேற்றாத" }
+      readings: { "past": "niṟaivēṟṟiṉa", "present": "niṟaivēṟṟukiṟa", "future": "niṟaivēṟṟum", "negative": "niṟaivēṟṟāta" }
+    - word: "ta-7381"
+      forms: { "past": "அமல்படுத்தின", "present": "அமல்படுத்துகிற", "future": "அமல்படுத்தும்", "negative": "அமல்படுத்தாத" }
+      readings: { "past": "amalpaṭuttiṉa", "present": "amalpaṭuttukiṟa", "future": "amalpaṭuttum", "negative": "amalpaṭuttāta" }
+    - word: "ta-7382"
+      forms: { "past": "நியமித்த", "present": "நியமிக்கிற", "future": "நியமிக்கும்", "negative": "நியமிக்காத" }
+      readings: { "past": "niyamitta", "present": "niyamikkiṟa", "future": "niyamikkum", "negative": "niyamikkāta" }
+    - word: "ta-7427"
+      forms: { "past": "சொடுக்கின", "present": "சொடுக்குகிற", "future": "சொடுக்கும்", "negative": "சொடுக்காத" }
+      readings: { "past": "coṭukkiṉa", "present": "coṭukkukiṟa", "future": "coṭukkum", "negative": "coṭukkāta" }
+    - word: "ta-7428"
+      forms: { "past": "உள்நுழைந்த", "present": "உள்நுழைகிற", "future": "உள்நுழையும்", "negative": "உள்நுழையாத" }
+      readings: { "past": "uḷnuḻainta", "present": "uḷnuḻaikiṟa", "future": "uḷnuḻaiyum", "negative": "uḷnuḻaiyāta" }
+    - word: "ta-7429"
+      forms: { "past": "பின்தொடர்ந்த", "present": "பின்தொடர்கிற", "future": "பின்தொடரும்", "negative": "பின்தொடராத" }
+      readings: { "past": "piṉtoṭarnta", "present": "piṉtoṭarkiṟa", "future": "piṉtoṭarum", "negative": "piṉtoṭarāta" }
+    - word: "ta-7430"
+      forms: { "past": "முடக்கின", "present": "முடக்குகிற", "future": "முடக்கும்", "negative": "முடக்காத" }
+      readings: { "past": "muṭakkiṉa", "present": "muṭakkukiṟa", "future": "muṭakkum", "negative": "muṭakkāta" }
+    - word: "ta-7431"
+      forms: { "past": "வடிவமைத்த", "present": "வடிவமைக்கிற", "future": "வடிவமைக்கும்", "negative": "வடிவமைக்காத" }
+      readings: { "past": "vaṭivamaitta", "present": "vaṭivamaikkiṟa", "future": "vaṭivamaikkum", "negative": "vaṭivamaikkāta" }
+    - word: "ta-7432"
+      forms: { "past": "தீர்ந்த", "present": "தீர்கிற", "future": "தீரும்", "negative": "தீராத" }
+      readings: { "past": "tīrnta", "present": "tīrkiṟa", "future": "tīrum", "negative": "tīrāta" }
+    - word: "ta-7486"
+      forms: { "past": "பணியாற்றின", "present": "பணியாற்றுகிற", "future": "பணியாற்றும்", "negative": "பணியாற்றாத" }
+      readings: { "past": "paṇiyāṟṟiṉa", "present": "paṇiyāṟṟukiṟa", "future": "paṇiyāṟṟum", "negative": "paṇiyāṟṟāta" }
+    - word: "ta-7487"
+      forms: { "past": "பணிபுரிந்த", "present": "பணிபுரிகிற", "future": "பணிபுரியும்", "negative": "பணிபுரியாத" }
+      readings: { "past": "paṇipurinta", "present": "paṇipurikiṟa", "future": "paṇipuriyum", "negative": "paṇipuriyāta" }
+    - word: "ta-7488"
+      forms: { "past": "முன்னேறின", "present": "முன்னேறுகிற", "future": "முன்னேறும்", "negative": "முன்னேறாத" }
+      readings: { "past": "muṉṉēṟiṉa", "present": "muṉṉēṟukiṟa", "future": "muṉṉēṟum", "negative": "muṉṉēṟāta" }
+    - word: "ta-7489"
+      forms: { "past": "உழைத்த", "present": "உழைக்கிற", "future": "உழைக்கும்", "negative": "உழைக்காத" }
+      readings: { "past": "uḻaitta", "present": "uḻaikkiṟa", "future": "uḻaikkum", "negative": "uḻaikkāta" }
+    - word: "ta-7543"
+      forms: { "past": "பாதுகாத்த", "present": "பாதுகாக்கிற", "future": "பாதுகாக்கும்", "negative": "பாதுகாக்காத" }
+      readings: { "past": "pātukātta", "present": "pātukākkiṟa", "future": "pātukākkum", "negative": "pātukākkāta" }
+    - word: "ta-7544"
+      forms: { "past": "வீணாக்கின", "present": "வீணாக்குகிற", "future": "வீணாக்கும்", "negative": "வீணாக்காத" }
+      readings: { "past": "vīṇākkiṉa", "present": "vīṇākkukiṟa", "future": "vīṇākkum", "negative": "vīṇākkāta" }
+    - word: "ta-7545"
+      forms: { "past": "நட்ட", "present": "நடுகிற", "future": "நடும்", "negative": "நடாத" }
+      readings: { "past": "naṭṭa", "present": "naṭukiṟa", "future": "naṭum", "negative": "naṭāta" }
+    - word: "ta-7546"
+      forms: { "past": "தூய்மைப்படுத்தின", "present": "தூய்மைப்படுத்துகிற", "future": "தூய்மைப்படுத்தும்", "negative": "தூய்மைப்படுத்தாத" }
+      readings: { "past": "tūymaippaṭuttiṉa", "present": "tūymaippaṭuttukiṟa", "future": "tūymaippaṭuttum", "negative": "tūymaippaṭuttāta" }
+    - word: "ta-7547"
+      forms: { "past": "மாசுபட்ட", "present": "மாசுபடுகிற", "future": "மாசுபடும்", "negative": "மாசுபடாத" }
+      readings: { "past": "mācupaṭṭa", "present": "mācupaṭukiṟa", "future": "mācupaṭum", "negative": "mācupaṭāta" }
+    - word: "ta-7548"
+      forms: { "past": "கட்டுப்படுத்தின", "present": "கட்டுப்படுத்துகிற", "future": "கட்டுப்படுத்தும்", "negative": "கட்டுப்படுத்தாத" }
+      readings: { "past": "kaṭṭuppaṭuttiṉa", "present": "kaṭṭuppaṭuttukiṟa", "future": "kaṭṭuppaṭuttum", "negative": "kaṭṭuppaṭuttāta" }
+    - word: "ta-7596"
+      forms: { "past": "உழுத", "present": "உழுகிற", "future": "உழும்", "negative": "உழாத" }
+      readings: { "past": "uḻuta", "present": "uḻukiṟa", "future": "uḻum", "negative": "uḻāta" }
+    - word: "ta-7597"
+      forms: { "past": "அறுத்த", "present": "அறுக்கிற", "future": "அறுக்கும்", "negative": "அறுக்காத" }
+      readings: { "past": "aṟutta", "present": "aṟukkiṟa", "future": "aṟukkum", "negative": "aṟukkāta" }
+    - word: "ta-7598"
+      forms: { "past": "களையெடுத்த", "present": "களையெடுக்கிற", "future": "களையெடுக்கும்", "negative": "களையெடுக்காத" }
+      readings: { "past": "kaḷaiyeṭutta", "present": "kaḷaiyeṭukkiṟa", "future": "kaḷaiyeṭukkum", "negative": "kaḷaiyeṭukkāta" }
+    - word: "ta-7599"
+      forms: { "past": "விளைந்த", "present": "விளைகிற", "future": "விளையும்", "negative": "விளையாத" }
+      readings: { "past": "viḷainta", "present": "viḷaikiṟa", "future": "viḷaiyum", "negative": "viḷaiyāta" }
+    - word: "ta-7600"
+      forms: { "past": "தூற்றின", "present": "தூற்றுகிற", "future": "தூற்றும்", "negative": "தூற்றாத" }
+      readings: { "past": "tūṟṟiṉa", "present": "tūṟṟukiṟa", "future": "tūṟṟum", "negative": "tūṟṟāta" }
+    - word: "ta-7601"
+      forms: { "past": "மேய்ந்த", "present": "மேய்கிற", "future": "மேயும்", "negative": "மேயாத" }
+      readings: { "past": "mēynta", "present": "mēykiṟa", "future": "mēyum", "negative": "mēyāta" }
+    - word: "ta-7602"
+      forms: { "past": "கறந்த", "present": "கறக்கிற", "future": "கறக்கும்", "negative": "கறக்காத" }
+      readings: { "past": "kaṟanta", "present": "kaṟakkiṟa", "future": "kaṟakkum", "negative": "kaṟakkāta" }
+    - word: "ta-8049"
+      forms: { "past": "இயக்கின", "present": "இயக்குகிற", "future": "இயக்கும்", "negative": "இயக்காத" }
+      readings: { "past": "iyakkiṉa", "present": "iyakkukiṟa", "future": "iyakkum", "negative": "iyakkāta" }
+    - word: "ta-8050"
+      forms: { "past": "தயாரித்த", "present": "தயாரிக்கிற", "future": "தயாரிக்கும்", "negative": "தயாரிக்காத" }
+      readings: { "past": "tayāritta", "present": "tayārikkiṟa", "future": "tayārikkum", "negative": "tayārikkāta" }
+    - word: "ta-8051"
+      forms: { "past": "வெளியிட்ட", "present": "வெளியிடுகிற", "future": "வெளியிடும்", "negative": "வெளியிடாத" }
+      readings: { "past": "veḷiyiṭṭa", "present": "veḷiyiṭukiṟa", "future": "veḷiyiṭum", "negative": "veḷiyiṭāta" }
+    - word: "ta-8052"
+      forms: { "past": "விமர்சித்த", "present": "விமர்சிக்கிற", "future": "விமர்சிக்கும்", "negative": "விமர்சிக்காத" }
+      readings: { "past": "vimarcitta", "present": "vimarcikkiṟa", "future": "vimarcikkum", "negative": "vimarcikkāta" }
+    - word: "ta-8053"
+      forms: { "past": "கைதட்டின", "present": "கைதட்டுகிற", "future": "கைதட்டும்", "negative": "கைதட்டாத" }
+      readings: { "past": "kaitaṭṭiṉa", "present": "kaitaṭṭukiṟa", "future": "kaitaṭṭum", "negative": "kaitaṭṭāta" }
+    - word: "ta-8054"
+      forms: { "past": "பயமுறுத்தின", "present": "பயமுறுத்துகிற", "future": "பயமுறுத்தும்", "negative": "பயமுறுத்தாத" }
+      readings: { "past": "payamuṟuttiṉa", "present": "payamuṟuttukiṟa", "future": "payamuṟuttum", "negative": "payamuṟuttāta" }
+    - word: "ta-8055"
+      forms: { "past": "கத்தின", "present": "கத்துகிற", "future": "கத்தும்", "negative": "கத்தாத" }
+      readings: { "past": "kattiṉa", "present": "kattukiṟa", "future": "kattum", "negative": "kattāta" }
+    - word: "ta-8056"
+      forms: { "past": "வெளியான", "present": "வெளியாகிற", "future": "வெளியாகும்", "negative": "வெளியாகாத" }
+      readings: { "past": "veḷiyāṉa", "present": "veḷiyākiṟa", "future": "veḷiyākum", "negative": "veḷiyākāta" }
+    - word: "ta-8100"
+      forms: { "past": "செதுக்கின", "present": "செதுக்குகிற", "future": "செதுக்கும்", "negative": "செதுக்காத" }
+      readings: { "past": "cetukkiṉa", "present": "cetukkukiṟa", "future": "cetukkum", "negative": "cetukkāta" }
+    - word: "ta-8101"
+      forms: { "past": "வாசித்த", "present": "வாசிக்கிற", "future": "வாசிக்கும்", "negative": "வாசிக்காத" }
+      readings: { "past": "vācitta", "present": "vācikkiṟa", "future": "vācikkum", "negative": "vācikkāta" }
+    - word: "ta-8102"
+      forms: { "past": "மீட்டின", "present": "மீட்டுகிற", "future": "மீட்டும்", "negative": "மீட்டாத" }
+      readings: { "past": "mīṭṭiṉa", "present": "mīṭṭukiṟa", "future": "mīṭṭum", "negative": "mīṭṭāta" }
+    - word: "ta-8103"
+      forms: { "past": "படைத்த", "present": "படைக்கிற", "future": "படைக்கும்", "negative": "படைக்காத" }
+      readings: { "past": "paṭaitta", "present": "paṭaikkiṟa", "future": "paṭaikkum", "negative": "paṭaikkāta" }
+    - word: "ta-8104"
+      forms: { "past": "அரங்கேறின", "present": "அரங்கேறுகிற", "future": "அரங்கேறும்", "negative": "அரங்கேறாத" }
+      readings: { "past": "araṅkēṟiṉa", "present": "araṅkēṟukiṟa", "future": "araṅkēṟum", "negative": "araṅkēṟāta" }
+    - word: "ta-8105"
+      forms: { "past": "கற்பித்த", "present": "கற்பிக்கிற", "future": "கற்பிக்கும்", "negative": "கற்பிக்காத" }
+      readings: { "past": "kaṟpitta", "present": "kaṟpikkiṟa", "future": "kaṟpikkum", "negative": "kaṟpikkāta" }
+    - word: "ta-8149"
+      forms: { "past": "ஆண்ட", "present": "ஆள்கிற", "future": "ஆளும்", "negative": "ஆளாத" }
+      readings: { "past": "āṇṭa", "present": "āḷkiṟa", "future": "āḷum", "negative": "āḷāta" }
+    - word: "ta-8150"
+      forms: { "past": "போரிட்ட", "present": "போரிடுகிற", "future": "போரிடும்", "negative": "போரிடாத" }
+      readings: { "past": "pōriṭṭa", "present": "pōriṭukiṟa", "future": "pōriṭum", "negative": "pōriṭāta" }
+    - word: "ta-8151"
+      forms: { "past": "தோற்கடித்த", "present": "தோற்கடிக்கிற", "future": "தோற்கடிக்கும்", "negative": "தோற்கடிக்காத" }
+      readings: { "past": "tōṟkaṭitta", "present": "tōṟkaṭikkiṟa", "future": "tōṟkaṭikkum", "negative": "tōṟkaṭikkāta" }
+    - word: "ta-8152"
+      forms: { "past": "அழித்த", "present": "அழிக்கிற", "future": "அழிக்கும்", "negative": "அழிக்காத" }
+      readings: { "past": "aḻitta", "present": "aḻikkiṟa", "future": "aḻikkum", "negative": "aḻikkāta" }
+    - word: "ta-8153"
+      forms: { "past": "தாக்கின", "present": "தாக்குகிற", "future": "தாக்கும்", "negative": "தாக்காத" }
+      readings: { "past": "tākkiṉa", "present": "tākkukiṟa", "future": "tākkum", "negative": "tākkāta" }
+    - word: "ta-8154"
+      forms: { "past": "முற்றுகையிட்ட", "present": "முற்றுகையிடுகிற", "future": "முற்றுகையிடும்", "negative": "முற்றுகையிடாத" }
+      readings: { "past": "muṟṟukaiyiṭṭa", "present": "muṟṟukaiyiṭukiṟa", "future": "muṟṟukaiyiṭum", "negative": "muṟṟukaiyiṭāta" }
+    - word: "ta-8155"
+      forms: { "past": "ஆக்கிரமித்த", "present": "ஆக்கிரமிக்கிற", "future": "ஆக்கிரமிக்கும்", "negative": "ஆக்கிரமிக்காத" }
+      readings: { "past": "ākkiramitta", "present": "ākkiramikkiṟa", "future": "ākkiramikkum", "negative": "ākkiramikkāta" }
+    - word: "ta-8201"
+      forms: { "past": "ஆசீர்வதித்த", "present": "ஆசீர்வதிக்கிற", "future": "ஆசீர்வதிக்கும்", "negative": "ஆசீர்வதிக்காத" }
+      readings: { "past": "ācīrvatitta", "present": "ācīrvatikkiṟa", "future": "ācīrvatikkum", "negative": "ācīrvatikkāta" }
+    - word: "ta-8202"
+      forms: { "past": "வரவேற்ற", "present": "வரவேற்கிற", "future": "வரவேற்கும்", "negative": "வரவேற்காத" }
+      readings: { "past": "varavēṟṟa", "present": "varavēṟkiṟa", "future": "varavēṟkum", "negative": "varavēṟkāta" }
+    - word: "ta-8203"
+      forms: { "past": "நிச்சயித்த", "present": "நிச்சயிக்கிற", "future": "நிச்சயிக்கும்", "negative": "நிச்சயிக்காத" }
+      readings: { "past": "niccayitta", "present": "niccayikkiṟa", "future": "niccayikkum", "negative": "niccayikkāta" }
+    - word: "ta-8204"
+      forms: { "past": "தூவின", "present": "தூவுகிற", "future": "தூவும்", "negative": "தூவாத" }
+      readings: { "past": "tūviṉa", "present": "tūvukiṟa", "future": "tūvum", "negative": "tūvāta" }
+    - word: "ta-8205"
+      forms: { "past": "அணிந்த", "present": "அணிகிற", "future": "அணியும்", "negative": "அணியாத" }
+      readings: { "past": "aṇinta", "present": "aṇikiṟa", "future": "aṇiyum", "negative": "aṇiyāta" }
+    - word: "ta-8246"
+      forms: { "past": "உதைத்த", "present": "உதைக்கிற", "future": "உதைக்கும்", "negative": "உதைக்காத" }
+      readings: { "past": "utaitta", "present": "utaikkiṟa", "future": "utaikkum", "negative": "utaikkāta" }
+    - word: "ta-8247"
+      forms: { "past": "துரத்தின", "present": "துரத்துகிற", "future": "துரத்தும்", "negative": "துரத்தாத" }
+      readings: { "past": "turattiṉa", "present": "turattukiṟa", "future": "turattum", "negative": "turattāta" }
+    - word: "ta-8248"
+      forms: { "past": "தாண்டின", "present": "தாண்டுகிற", "future": "தாண்டும்", "negative": "தாண்டாத" }
+      readings: { "past": "tāṇṭiṉa", "present": "tāṇṭukiṟa", "future": "tāṇṭum", "negative": "tāṇṭāta" }
+    - word: "ta-8249"
+      forms: { "past": "ஜெயித்த", "present": "ஜெயிக்கிற", "future": "ஜெயிக்கும்", "negative": "ஜெயிக்காத" }
+      readings: { "past": "jeyitta", "present": "jeyikkiṟa", "future": "jeyikkum", "negative": "jeyikkāta" }
+    - word: "ta-8250"
+      forms: { "past": "போட்டியிட்ட", "present": "போட்டியிடுகிற", "future": "போட்டியிடும்", "negative": "போட்டியிடாத" }
+      readings: { "past": "pōṭṭiyiṭṭa", "present": "pōṭṭiyiṭukiṟa", "future": "pōṭṭiyiṭum", "negative": "pōṭṭiyiṭāta" }
+    - word: "ta-8251"
+      forms: { "past": "தோற்ற", "present": "தோற்கிற", "future": "தோற்கும்", "negative": "தோற்காத" }
+      readings: { "past": "tōṟṟa", "present": "tōṟkiṟa", "future": "tōṟkum", "negative": "tōṟkāta" }
+    - word: "ta-8295"
+      forms: { "past": "விட்டுக்கொடுத்த", "present": "விட்டுக்கொடுக்கிற", "future": "விட்டுக்கொடுக்கும்", "negative": "விட்டுக்கொடுக்காத" }
+      readings: { "past": "viṭṭukkoṭutta", "present": "viṭṭukkoṭukkiṟa", "future": "viṭṭukkoṭukkum", "negative": "viṭṭukkoṭukkāta" }
+    - word: "ta-8296"
+      forms: { "past": "பொறுத்த", "present": "பொறுக்கிற", "future": "பொறுக்கும்", "negative": "பொறுக்காத" }
+      readings: { "past": "poṟutta", "present": "poṟukkiṟa", "future": "poṟukkum", "negative": "poṟukkāta" }
+    - word: "ta-8297"
+      forms: { "past": "அறிமுகப்படுத்தின", "present": "அறிமுகப்படுத்துகிற", "future": "அறிமுகப்படுத்தும்", "negative": "அறிமுகப்படுத்தாத" }
+      readings: { "past": "aṟimukappaṭuttiṉa", "present": "aṟimukappaṭuttukiṟa", "future": "aṟimukappaṭuttum", "negative": "aṟimukappaṭuttāta" }
+    - word: "ta-8299"
+      forms: { "past": "சமாளித்த", "present": "சமாளிக்கிற", "future": "சமாளிக்கும்", "negative": "சமாளிக்காத" }
+      readings: { "past": "camāḷitta", "present": "camāḷikkiṟa", "future": "camāḷikkum", "negative": "camāḷikkāta" }
+    - word: "ta-8300"
+      forms: { "past": "சமாதானப்படுத்தின", "present": "சமாதானப்படுத்துகிற", "future": "சமாதானப்படுத்தும்", "negative": "சமாதானப்படுத்தாத" }
+      readings: { "past": "camātāṉappaṭuttiṉa", "present": "camātāṉappaṭuttukiṟa", "future": "camātāṉappaṭuttum", "negative": "camātāṉappaṭuttāta" }
+    - word: "ta-8301"
+      forms: { "past": "மதித்த", "present": "மதிக்கிற", "future": "மதிக்கும்", "negative": "மதிக்காத" }
+      readings: { "past": "matitta", "present": "matikkiṟa", "future": "matikkum", "negative": "matikkāta" }
+    - word: "ta-8302"
+      forms: { "past": "புரிந்துகொண்ட", "present": "புரிந்துகொள்கிற", "future": "புரிந்துகொள்ளும்", "negative": "புரிந்துகொள்ளாத" }
+      readings: { "past": "purintukoṇṭa", "present": "purintukoḷkiṟa", "future": "purintukoḷḷum", "negative": "purintukoḷḷāta" }
+    - word: "ta-8347"
+      forms: { "past": "வெள்ளையடித்த", "present": "வெள்ளையடிக்கிற", "future": "வெள்ளையடிக்கும்", "negative": "வெள்ளையடிக்காத" }
+      readings: { "past": "veḷḷaiyaṭitta", "present": "veḷḷaiyaṭikkiṟa", "future": "veḷḷaiyaṭikkum", "negative": "veḷḷaiyaṭikkāta" }
+    - word: "ta-8348"
+      forms: { "past": "குடியேறின", "present": "குடியேறுகிற", "future": "குடியேறும்", "negative": "குடியேறாத" }
+      readings: { "past": "kuṭiyēṟiṉa", "present": "kuṭiyēṟukiṟa", "future": "kuṭiyēṟum", "negative": "kuṭiyēṟāta" }
+    - word: "ta-8349"
+      forms: { "past": "காலிசெய்த", "present": "காலிசெய்கிற", "future": "காலிசெய்யும்", "negative": "காலிசெய்யாத" }
+      readings: { "past": "kāliceyta", "present": "kāliceykiṟa", "future": "kāliceyyum", "negative": "kāliceyyāta" }
+    - word: "ta-8350"
+      forms: { "past": "குடிபோன", "present": "குடிபோகிற", "future": "குடிபோகும்", "negative": "குடிபோகாத" }
+      readings: { "past": "kuṭipōṉa", "present": "kuṭipōkiṟa", "future": "kuṭipōkum", "negative": "kuṭipōkāta" }
+    - word: "ta-8383"
+      forms: { "past": "தப்பின", "present": "தப்புகிற", "future": "தப்பும்", "negative": "தப்பாத" }
+      readings: { "past": "tappiṉa", "present": "tappukiṟa", "future": "tappum", "negative": "tappāta" }
+    - word: "ta-8384"
+      forms: { "past": "காப்பாற்றின", "present": "காப்பாற்றுகிற", "future": "காப்பாற்றும்", "negative": "காப்பாற்றாத" }
+      readings: { "past": "kāppāṟṟiṉa", "present": "kāppāṟṟukiṟa", "future": "kāppāṟṟum", "negative": "kāppāṟṟāta" }
+    - word: "ta-8385"
+      forms: { "past": "அலறின", "present": "அலறுகிற", "future": "அலறும்", "negative": "அலறாத" }
+      readings: { "past": "alaṟiṉa", "present": "alaṟukiṟa", "future": "alaṟum", "negative": "alaṟāta" }
+    - word: "ta-8386"
+      forms: { "past": "மோதின", "present": "மோதுகிற", "future": "மோதும்", "negative": "மோதாத" }
+      readings: { "past": "mōtiṉa", "present": "mōtukiṟa", "future": "mōtum", "negative": "mōtāta" }
+    - word: "ta-8387"
+      forms: { "past": "சிக்கின", "present": "சிக்குகிற", "future": "சிக்கும்", "negative": "சிக்காத" }
+      readings: { "past": "cikkiṉa", "present": "cikkukiṟa", "future": "cikkum", "negative": "cikkāta" }
+    - word: "ta-8388"
+      forms: { "past": "பதறின", "present": "பதறுகிற", "future": "பதறும்", "negative": "பதறாத" }
+      readings: { "past": "pataṟiṉa", "present": "pataṟukiṟa", "future": "pataṟum", "negative": "pataṟāta" }
+    - word: "ta-8389"
+      forms: { "past": "தொலைந்த", "present": "தொலைகிற", "future": "தொலையும்", "negative": "தொலையாத" }
+      readings: { "past": "tolainta", "present": "tolaikiṟa", "future": "tolaiyum", "negative": "tolaiyāta" }
+    - word: "ta-8390"
+      forms: { "past": "உடைந்த", "present": "உடைகிற", "future": "உடையும்", "negative": "உடையாத" }
+      readings: { "past": "uṭainta", "present": "uṭaikiṟa", "future": "uṭaiyum", "negative": "uṭaiyāta" }
+    - word: "ta-8391"
+      forms: { "past": "கசிந்த", "present": "கசிகிற", "future": "கசியும்", "negative": "கசியாத" }
+      readings: { "past": "kacinta", "present": "kacikiṟa", "future": "kaciyum", "negative": "kaciyāta" }
+    - word: "ta-8392"
+      forms: { "past": "கவிழ்ந்த", "present": "கவிழ்கிற", "future": "கவிழும்", "negative": "கவிழாத" }
+      readings: { "past": "kaviḻnta", "present": "kaviḻkiṟa", "future": "kaviḻum", "negative": "kaviḻāta" }
+    - word: "ta-8393"
+      forms: { "past": "பறித்த", "present": "பறிக்கிற", "future": "பறிக்கும்", "negative": "பறிக்காத" }
+      readings: { "past": "paṟitta", "present": "paṟikkiṟa", "future": "paṟikkum", "negative": "paṟikkāta" }
+    - word: "ta-8394"
+      forms: { "past": "மூழ்கின", "present": "மூழ்குகிற", "future": "மூழ்கும்", "negative": "மூழ்காத" }
+      readings: { "past": "mūḻkiṉa", "present": "mūḻkukiṟa", "future": "mūḻkum", "negative": "mūḻkāta" }
+    - word: "ta-8429"
+      forms: { "past": "கைதுசெய்த", "present": "கைதுசெய்கிற", "future": "கைதுசெய்யும்", "negative": "கைதுசெய்யாத" }
+      readings: { "past": "kaituceyta", "present": "kaituceykiṟa", "future": "kaituceyyum", "negative": "kaituceyyāta" }
+    - word: "ta-8430"
+      forms: { "past": "தண்டித்த", "present": "தண்டிக்கிற", "future": "தண்டிக்கும்", "negative": "தண்டிக்காத" }
+      readings: { "past": "taṇṭitta", "present": "taṇṭikkiṟa", "future": "taṇṭikkum", "negative": "taṇṭikkāta" }
+    - word: "ta-8431"
+      forms: { "past": "தீர்ப்பளித்த", "present": "தீர்ப்பளிக்கிற", "future": "தீர்ப்பளிக்கும்", "negative": "தீர்ப்பளிக்காத" }
+      readings: { "past": "tīrppaḷitta", "present": "tīrppaḷikkiṟa", "future": "tīrppaḷikkum", "negative": "tīrppaḷikkāta" }
+    - word: "ta-8432"
+      forms: { "past": "பின்பற்றின", "present": "பின்பற்றுகிற", "future": "பின்பற்றும்", "negative": "பின்பற்றாத" }
+      readings: { "past": "piṉpaṟṟiṉa", "present": "piṉpaṟṟukiṟa", "future": "piṉpaṟṟum", "negative": "piṉpaṟṟāta" }
+    - word: "ta-8433"
+      forms: { "past": "மீறின", "present": "மீறுகிற", "future": "மீறும்", "negative": "மீறாத" }
+      readings: { "past": "mīṟiṉa", "present": "mīṟukiṟa", "future": "mīṟum", "negative": "mīṟāta" }
+    - word: "ta-8434"
+      forms: { "past": "கடைப்பிடித்த", "present": "கடைப்பிடிக்கிற", "future": "கடைப்பிடிக்கும்", "negative": "கடைப்பிடிக்காத" }
+      readings: { "past": "kaṭaippiṭitta", "present": "kaṭaippiṭikkiṟa", "future": "kaṭaippiṭikkum", "negative": "kaṭaippiṭikkāta" }
+    - word: "ta-8435"
+      forms: { "past": "குற்றம்சாட்டின", "present": "குற்றம்சாட்டுகிற", "future": "குற்றம்சாட்டும்", "negative": "குற்றம்சாட்டாத" }
+      readings: { "past": "kuṟṟamcāṭṭiṉa", "present": "kuṟṟamcāṭṭukiṟa", "future": "kuṟṟamcāṭṭum", "negative": "kuṟṟamcāṭṭāta" }
+    - word: "ta-8436"
+      forms: { "past": "விடுதலைசெய்த", "present": "விடுதலைசெய்கிற", "future": "விடுதலைசெய்யும்", "negative": "விடுதலைசெய்யாத" }
+      readings: { "past": "viṭutalaiceyta", "present": "viṭutalaiceykiṟa", "future": "viṭutalaiceyyum", "negative": "viṭutalaiceyyāta" }
+    - word: "ta-8440"
+      forms: { "past": "ஆரம்பித்த", "present": "ஆரம்பிக்கிற", "future": "ஆரம்பிக்கும்", "negative": "ஆரம்பிக்காத" }
+      readings: { "past": "ārampitta", "present": "ārampikkiṟa", "future": "ārampikkum", "negative": "ārampikkāta" }
+    - word: "ta-8441"
+      forms: { "past": "ஒளிந்துகொண்ட", "present": "ஒளிந்துகொள்கிற", "future": "ஒளிந்துகொள்ளும்", "negative": "ஒளிந்துகொள்ளாத" }
+      readings: { "past": "oḷintukoṇṭa", "present": "oḷintukoḷkiṟa", "future": "oḷintukoḷḷum", "negative": "oḷintukoḷḷāta" }
+    - word: "ta-8442"
+      forms: { "past": "விலகின", "present": "விலகுகிற", "future": "விலகும்", "negative": "விலகாத" }
+      readings: { "past": "vilakiṉa", "present": "vilakukiṟa", "future": "vilakum", "negative": "vilakāta" }
+    - word: "ta-8443"
+      forms: { "past": "நெருங்கின", "present": "நெருங்குகிற", "future": "நெருங்கும்", "negative": "நெருங்காத" }
+      readings: { "past": "neruṅkiṉa", "present": "neruṅkukiṟa", "future": "neruṅkum", "negative": "neruṅkāta" }
+    - word: "ta-8444"
+      forms: { "past": "கொண்டுவந்த", "present": "கொண்டுவருகிற", "future": "கொண்டுவரும்", "negative": "கொண்டுவராத" }
+      readings: { "past": "koṇṭuvanta", "present": "koṇṭuvarukiṟa", "future": "koṇṭuvarum", "negative": "koṇṭuvarāta" }
+    - word: "ta-8445"
+      forms: { "past": "கொண்டுபோன", "present": "கொண்டுபோகிற", "future": "கொண்டுபோகும்", "negative": "கொண்டுபோகாத" }
+      readings: { "past": "koṇṭupōṉa", "present": "koṇṭupōkiṟa", "future": "koṇṭupōkum", "negative": "koṇṭupōkāta" }
+    - word: "ta-8446"
+      forms: { "past": "தோண்டின", "present": "தோண்டுகிற", "future": "தோண்டும்", "negative": "தோண்டாத" }
+      readings: { "past": "tōṇṭiṉa", "present": "tōṇṭukiṟa", "future": "tōṇṭum", "negative": "tōṇṭāta" }
+    - word: "ta-8447"
+      forms: { "past": "புதைத்த", "present": "புதைக்கிற", "future": "புதைக்கும்", "negative": "புதைக்காத" }
+      readings: { "past": "putaitta", "present": "putaikkiṟa", "future": "putaikkum", "negative": "putaikkāta" }
+    - word: "ta-8448"
+      forms: { "past": "கூவின", "present": "கூவுகிற", "future": "கூவும்", "negative": "கூவாத" }
+      readings: { "past": "kūviṉa", "present": "kūvukiṟa", "future": "kūvum", "negative": "kūvāta" }
+    - word: "ta-8449"
+      forms: { "past": "முணுமுணுத்த", "present": "முணுமுணுக்கிற", "future": "முணுமுணுக்கும்", "negative": "முணுமுணுக்காத" }
+      readings: { "past": "muṇumuṇutta", "present": "muṇumuṇukkiṟa", "future": "muṇumuṇukkum", "negative": "muṇumuṇukkāta" }
+    - word: "ta-8450"
+      forms: { "past": "விவரித்த", "present": "விவரிக்கிற", "future": "விவரிக்கும்", "negative": "விவரிக்காத" }
+      readings: { "past": "vivaritta", "present": "vivarikkiṟa", "future": "vivarikkum", "negative": "vivarikkāta" }
+    - word: "ta-8451"
+      forms: { "past": "வருணித்த", "present": "வருணிக்கிற", "future": "வருணிக்கும்", "negative": "வருணிக்காத" }
+      readings: { "past": "varuṇitta", "present": "varuṇikkiṟa", "future": "varuṇikkum", "negative": "varuṇikkāta" }
+    - word: "ta-8452"
+      forms: { "past": "நிகழ்ந்த", "present": "நிகழ்கிற", "future": "நிகழும்", "negative": "நிகழாத" }
+      readings: { "past": "nikaḻnta", "present": "nikaḻkiṟa", "future": "nikaḻum", "negative": "nikaḻāta" }
+    - word: "ta-8453"
+      forms: { "past": "இறந்த", "present": "இறக்கிற", "future": "இறக்கும்", "negative": "இறக்காத" }
+      readings: { "past": "iṟanta", "present": "iṟakkiṟa", "future": "iṟakkum", "negative": "iṟakkāta" }
+    - word: "ta-8454"
+      forms: { "past": "பிறந்த", "present": "பிறக்கிற", "future": "பிறக்கும்", "negative": "பிறக்காத" }
+      readings: { "past": "piṟanta", "present": "piṟakkiṟa", "future": "piṟakkum", "negative": "piṟakkāta" }
+    - word: "ta-8455"
+      forms: { "past": "இழந்த", "present": "இழக்கிற", "future": "இழக்கும்", "negative": "இழக்காத" }
+      readings: { "past": "iḻanta", "present": "iḻakkiṟa", "future": "iḻakkum", "negative": "iḻakkāta" }
+    - word: "ta-8456"
+      forms: { "past": "கண்டறிந்த", "present": "கண்டறிகிற", "future": "கண்டறியும்", "negative": "கண்டறியாத" }
+      readings: { "past": "kaṇṭaṟinta", "present": "kaṇṭaṟikiṟa", "future": "kaṇṭaṟiyum", "negative": "kaṇṭaṟiyāta" }
+    - word: "ta-8457"
+      forms: { "past": "மறந்துபோன", "present": "மறந்துபோகிற", "future": "மறந்துபோகும்", "negative": "மறந்துபோகாத" }
+      readings: { "past": "maṟantupōṉa", "present": "maṟantupōkiṟa", "future": "maṟantupōkum", "negative": "maṟantupōkāta" }
+    - word: "ta-8458"
+      forms: { "past": "சந்தேகித்த", "present": "சந்தேகிக்கிற", "future": "சந்தேகிக்கும்", "negative": "சந்தேகிக்காத" }
+      readings: { "past": "cantēkitta", "present": "cantēkikkiṟa", "future": "cantēkikkum", "negative": "cantēkikkāta" }
+    - word: "ta-8459"
+      forms: { "past": "உருண்ட", "present": "உருள்கிற", "future": "உருளும்", "negative": "உருளாத" }
+      readings: { "past": "uruṇṭa", "present": "uruḷkiṟa", "future": "uruḷum", "negative": "uruḷāta" }
+    - word: "ta-8460"
+      forms: { "past": "சறுக்கின", "present": "சறுக்குகிற", "future": "சறுக்கும்", "negative": "சறுக்காத" }
+      readings: { "past": "caṟukkiṉa", "present": "caṟukkukiṟa", "future": "caṟukkum", "negative": "caṟukkāta" }
+    - word: "ta-8461"
+      forms: { "past": "தடுமாறின", "present": "தடுமாறுகிற", "future": "தடுமாறும்", "negative": "தடுமாறாத" }
+      readings: { "past": "taṭumāṟiṉa", "present": "taṭumāṟukiṟa", "future": "taṭumāṟum", "negative": "taṭumāṟāta" }
+    - word: "ta-8462"
+      forms: { "past": "நிமிர்ந்த", "present": "நிமிர்கிற", "future": "நிமிரும்", "negative": "நிமிராத" }
+      readings: { "past": "nimirnta", "present": "nimirkiṟa", "future": "nimirum", "negative": "nimirāta" }
+    - word: "ta-8463"
+      forms: { "past": "சீறின", "present": "சீறுகிற", "future": "சீறும்", "negative": "சீறாத" }
+      readings: { "past": "cīṟiṉa", "present": "cīṟukiṟa", "future": "cīṟum", "negative": "cīṟāta" }
+    - word: "ta-8464"
+      forms: { "past": "தணிந்த", "present": "தணிகிற", "future": "தணியும்", "negative": "தணியாத" }
+      readings: { "past": "taṇinta", "present": "taṇikiṟa", "future": "taṇiyum", "negative": "taṇiyāta" }
+    - word: "ta-8465"
+      forms: { "past": "கெஞ்சின", "present": "கெஞ்சுகிற", "future": "கெஞ்சும்", "negative": "கெஞ்சாத" }
+      readings: { "past": "keñciṉa", "present": "keñcukiṟa", "future": "keñcum", "negative": "keñcāta" }
+    - word: "ta-8466"
+      forms: { "past": "மிரட்டின", "present": "மிரட்டுகிற", "future": "மிரட்டும்", "negative": "மிரட்டாத" }
+      readings: { "past": "miraṭṭiṉa", "present": "miraṭṭukiṟa", "future": "miraṭṭum", "negative": "miraṭṭāta" }
+    - word: "ta-8467"
+      forms: { "past": "பழிவாங்கின", "present": "பழிவாங்குகிற", "future": "பழிவாங்கும்", "negative": "பழிவாங்காத" }
+      readings: { "past": "paḻivāṅkiṉa", "present": "paḻivāṅkukiṟa", "future": "paḻivāṅkum", "negative": "paḻivāṅkāta" }
+    - word: "ta-8468"
+      forms: { "past": "போராடின", "present": "போராடுகிற", "future": "போராடும்", "negative": "போராடாத" }
+      readings: { "past": "pōrāṭiṉa", "present": "pōrāṭukiṟa", "future": "pōrāṭum", "negative": "pōrāṭāta" }
+    - word: "ta-8469"
+      forms: { "past": "எதிர்கொண்ட", "present": "எதிர்கொள்கிற", "future": "எதிர்கொள்ளும்", "negative": "எதிர்கொள்ளாத" }
+      readings: { "past": "etirkoṇṭa", "present": "etirkoḷkiṟa", "future": "etirkoḷḷum", "negative": "etirkoḷḷāta" }
+    - word: "ta-8470"
+      forms: { "past": "வழிகாட்டின", "present": "வழிகாட்டுகிற", "future": "வழிகாட்டும்", "negative": "வழிகாட்டாத" }
+      readings: { "past": "vaḻikāṭṭiṉa", "present": "vaḻikāṭṭukiṟa", "future": "vaḻikāṭṭum", "negative": "vaḻikāṭṭāta" }
+    - word: "ta-8471"
+      forms: { "past": "திருப்பின", "present": "திருப்புகிற", "future": "திருப்பும்", "negative": "திருப்பாத" }
+      readings: { "past": "tiruppiṉa", "present": "tiruppukiṟa", "future": "tiruppum", "negative": "tiruppāta" }
+    - word: "ta-8472"
+      forms: { "past": "குவித்த", "present": "குவிக்கிற", "future": "குவிக்கும்", "negative": "குவிக்காத" }
+      readings: { "past": "kuvitta", "present": "kuvikkiṟa", "future": "kuvikkum", "negative": "kuvikkāta" }
+    - word: "ta-8473"
+      forms: { "past": "தொங்கின", "present": "தொங்குகிற", "future": "தொங்கும்", "negative": "தொங்காத" }
+      readings: { "past": "toṅkiṉa", "present": "toṅkukiṟa", "future": "toṅkum", "negative": "toṅkāta" }
+    - word: "ta-8474"
+      forms: { "past": "தாங்கின", "present": "தாங்குகிற", "future": "தாங்கும்", "negative": "தாங்காத" }
+      readings: { "past": "tāṅkiṉa", "present": "tāṅkukiṟa", "future": "tāṅkum", "negative": "tāṅkāta" }
+    - word: "ta-8475"
+      forms: { "past": "சுமந்த", "present": "சுமக்கிற", "future": "சுமக்கும்", "negative": "சுமக்காத" }
+      readings: { "past": "cumanta", "present": "cumakkiṟa", "future": "cumakkum", "negative": "cumakkāta" }
+    - word: "ta-8476"
+      forms: { "past": "அள்ளின", "present": "அள்ளுகிற", "future": "அள்ளும்", "negative": "அள்ளாத" }
+      readings: { "past": "aḷḷiṉa", "present": "aḷḷukiṟa", "future": "aḷḷum", "negative": "aḷḷāta" }
+    - word: "ta-8477"
+      forms: { "past": "அலைந்துதிரிந்த", "present": "அலைந்துதிரிகிற", "future": "அலைந்துதிரியும்", "negative": "அலைந்துதிரியாத" }
+      readings: { "past": "alaintutirinta", "present": "alaintutirikiṟa", "future": "alaintutiriyum", "negative": "alaintutiriyāta" }
+    - word: "ta-8478"
+      forms: { "past": "நடந்துபோன", "present": "நடந்துபோகிற", "future": "நடந்துபோகும்", "negative": "நடந்துபோகாத" }
+      readings: { "past": "naṭantupōṉa", "present": "naṭantupōkiṟa", "future": "naṭantupōkum", "negative": "naṭantupōkāta" }
+    - word: "ta-8479"
+      forms: { "past": "ஓய்வெடுத்த", "present": "ஓய்வெடுக்கிற", "future": "ஓய்வெடுக்கும்", "negative": "ஓய்வெடுக்காத" }
+      readings: { "past": "ōyveṭutta", "present": "ōyveṭukkiṟa", "future": "ōyveṭukkum", "negative": "ōyveṭukkāta" }
+    - word: "ta-8480"
+      forms: { "past": "ஊதின", "present": "ஊதுகிற", "future": "ஊதும்", "negative": "ஊதாத" }
+      readings: { "past": "ūtiṉa", "present": "ūtukiṟa", "future": "ūtum", "negative": "ūtāta" }
+    - word: "ta-8481"
+      forms: { "past": "வீழ்ந்த", "present": "வீழ்கிற", "future": "வீழும்", "negative": "வீழாத" }
+      readings: { "past": "vīḻnta", "present": "vīḻkiṟa", "future": "vīḻum", "negative": "vīḻāta" }
+    - word: "ta-8482"
+      forms: { "past": "சாய்ந்துகொண்ட", "present": "சாய்ந்துகொள்கிற", "future": "சாய்ந்துகொள்ளும்", "negative": "சாய்ந்துகொள்ளாத" }
+      readings: { "past": "cāyntukoṇṭa", "present": "cāyntukoḷkiṟa", "future": "cāyntukoḷḷum", "negative": "cāyntukoḷḷāta" }
+    - word: "ta-8483"
+      forms: { "past": "தள்ளாடின", "present": "தள்ளாடுகிற", "future": "தள்ளாடும்", "negative": "தள்ளாடாத" }
+      readings: { "past": "taḷḷāṭiṉa", "present": "taḷḷāṭukiṟa", "future": "taḷḷāṭum", "negative": "taḷḷāṭāta" }
+    - word: "ta-8484"
+      forms: { "past": "தத்தளித்த", "present": "தத்தளிக்கிற", "future": "தத்தளிக்கும்", "negative": "தத்தளிக்காத" }
+      readings: { "past": "tattaḷitta", "present": "tattaḷikkiṟa", "future": "tattaḷikkum", "negative": "tattaḷikkāta" }
+    - word: "ta-8485"
+      forms: { "past": "பதுங்கின", "present": "பதுங்குகிற", "future": "பதுங்கும்", "negative": "பதுங்காத" }
+      readings: { "past": "patuṅkiṉa", "present": "patuṅkukiṟa", "future": "patuṅkum", "negative": "patuṅkāta" }
+    - word: "ta-8486"
+      forms: { "past": "எய்த", "present": "எய்கிற", "future": "எய்யும்", "negative": "எய்யாத" }
+      readings: { "past": "eyta", "present": "eykiṟa", "future": "eyyum", "negative": "eyyāta" }
+    - word: "ta-8487"
+      forms: { "past": "தாவின", "present": "தாவுகிற", "future": "தாவும்", "negative": "தாவாத" }
+      readings: { "past": "tāviṉa", "present": "tāvukiṟa", "future": "tāvum", "negative": "tāvāta" }
+    - word: "ta-8488"
+      forms: { "past": "கொன்ற", "present": "கொல்கிற", "future": "கொல்லும்", "negative": "கொல்லாத" }
+      readings: { "past": "koṉṟa", "present": "kolkiṟa", "future": "kollum", "negative": "kollāta" }
+    - word: "ta-8489"
+      forms: { "past": "குத்தின", "present": "குத்துகிற", "future": "குத்தும்", "negative": "குத்தாத" }
+      readings: { "past": "kuttiṉa", "present": "kuttukiṟa", "future": "kuttum", "negative": "kuttāta" }
+    - word: "ta-8490"
+      forms: { "past": "தப்பிச்சென்ற", "present": "தப்பிச்செல்கிற", "future": "தப்பிச்செல்லும்", "negative": "தப்பிச்செல்லாத" }
+      readings: { "past": "tappicceṉṟa", "present": "tappiccelkiṟa", "future": "tappiccellum", "negative": "tappiccellāta" }
+    - word: "ta-8491"
+      forms: { "past": "ஒட்டிக்கொண்ட", "present": "ஒட்டிக்கொள்கிற", "future": "ஒட்டிக்கொள்ளும்", "negative": "ஒட்டிக்கொள்ளாத" }
+      readings: { "past": "oṭṭikkoṇṭa", "present": "oṭṭikkoḷkiṟa", "future": "oṭṭikkoḷḷum", "negative": "oṭṭikkoḷḷāta" }
+    - word: "ta-8492"
+      forms: { "past": "பிரிந்துசென்ற", "present": "பிரிந்துசெல்கிற", "future": "பிரிந்துசெல்லும்", "negative": "பிரிந்துசெல்லாத" }
+      readings: { "past": "pirintuceṉṟa", "present": "pirintucelkiṟa", "future": "pirintucellum", "negative": "pirintucellāta" }
+    - word: "ta-8493"
+      forms: { "past": "சேர்ந்துகொண்ட", "present": "சேர்ந்துகொள்கிற", "future": "சேர்ந்துகொள்ளும்", "negative": "சேர்ந்துகொள்ளாத" }
+      readings: { "past": "cērntukoṇṭa", "present": "cērntukoḷkiṟa", "future": "cērntukoḷḷum", "negative": "cērntukoḷḷāta" }
+    - word: "ta-8494"
+      forms: { "past": "பொழிந்த", "present": "பொழிகிற", "future": "பொழியும்", "negative": "பொழியாத" }
+      readings: { "past": "poḻinta", "present": "poḻikiṟa", "future": "poḻiyum", "negative": "poḻiyāta" }
+    - word: "ta-8495"
+      forms: { "past": "தேய்ந்த", "present": "தேய்கிற", "future": "தேயும்", "negative": "தேயாத" }
+      readings: { "past": "tēynta", "present": "tēykiṟa", "future": "tēyum", "negative": "tēyāta" }
+    - word: "ta-8496"
+      forms: { "past": "விரிந்த", "present": "விரிகிற", "future": "விரியும்", "negative": "விரியாத" }
+      readings: { "past": "virinta", "present": "virikiṟa", "future": "viriyum", "negative": "viriyāta" }
+    - word: "ta-8497"
+      forms: { "past": "சுருங்கின", "present": "சுருங்குகிற", "future": "சுருங்கும்", "negative": "சுருங்காத" }
+      readings: { "past": "curuṅkiṉa", "present": "curuṅkukiṟa", "future": "curuṅkum", "negative": "curuṅkāta" }
+    - word: "ta-8498"
+      forms: { "past": "எட்டிப்பார்த்த", "present": "எட்டிப்பார்க்கிற", "future": "எட்டிப்பார்க்கும்", "negative": "எட்டிப்பார்க்காத" }
+      readings: { "past": "eṭṭippārtta", "present": "eṭṭippārkkiṟa", "future": "eṭṭippārkkum", "negative": "eṭṭippārkkāta" }
+    - word: "ta-8499"
+      forms: { "past": "ஆச்சரியப்பட்ட", "present": "ஆச்சரியப்படுகிற", "future": "ஆச்சரியப்படும்", "negative": "ஆச்சரியப்படாத" }
+      readings: { "past": "āccariyappaṭṭa", "present": "āccariyappaṭukiṟa", "future": "āccariyappaṭum", "negative": "āccariyappaṭāta" }
+    - word: "ta-8500"
+      forms: { "past": "வியப்படைந்த", "present": "வியப்படைகிற", "future": "வியப்படையும்", "negative": "வியப்படையாத" }
+      readings: { "past": "viyappaṭainta", "present": "viyappaṭaikiṟa", "future": "viyappaṭaiyum", "negative": "viyappaṭaiyāta" }
+    - word: "ta-8501"
+      forms: { "past": "திடுக்கிட்ட", "present": "திடுக்கிடுகிற", "future": "திடுக்கிடும்", "negative": "திடுக்கிடாத" }
+      readings: { "past": "tiṭukkiṭṭa", "present": "tiṭukkiṭukiṟa", "future": "tiṭukkiṭum", "negative": "tiṭukkiṭāta" }
+    - word: "ta-8502"
+      forms: { "past": "ஏங்கின", "present": "ஏங்குகிற", "future": "ஏங்கும்", "negative": "ஏங்காத" }
+      readings: { "past": "ēṅkiṉa", "present": "ēṅkukiṟa", "future": "ēṅkum", "negative": "ēṅkāta" }
+    - word: "ta-8503"
+      forms: { "past": "தவித்த", "present": "தவிக்கிற", "future": "தவிக்கும்", "negative": "தவிக்காத" }
+      readings: { "past": "tavitta", "present": "tavikkiṟa", "future": "tavikkum", "negative": "tavikkāta" }
+    - word: "ta-8504"
+      forms: { "past": "துடித்த", "present": "துடிக்கிற", "future": "துடிக்கும்", "negative": "துடிக்காத" }
+      readings: { "past": "tuṭitta", "present": "tuṭikkiṟa", "future": "tuṭikkum", "negative": "tuṭikkāta" }
+    - word: "ta-8505"
+      forms: { "past": "புலம்பின", "present": "புலம்புகிற", "future": "புலம்பும்", "negative": "புலம்பாத" }
+      readings: { "past": "pulampiṉa", "present": "pulampukiṟa", "future": "pulampum", "negative": "pulampāta" }
+    - word: "ta-8506"
+      forms: { "past": "முறையிட்ட", "present": "முறையிடுகிற", "future": "முறையிடும்", "negative": "முறையிடாத" }
+      readings: { "past": "muṟaiyiṭṭa", "present": "muṟaiyiṭukiṟa", "future": "muṟaiyiṭum", "negative": "muṟaiyiṭāta" }
+    - word: "ta-8507"
+      forms: { "past": "ஏற்பட்ட", "present": "ஏற்படுகிற", "future": "ஏற்படும்", "negative": "ஏற்படாத" }
+      readings: { "past": "ēṟpaṭṭa", "present": "ēṟpaṭukiṟa", "future": "ēṟpaṭum", "negative": "ēṟpaṭāta" }
+    - word: "ta-8508"
+      forms: { "past": "முடிவுசெய்த", "present": "முடிவுசெய்கிற", "future": "முடிவுசெய்யும்", "negative": "முடிவுசெய்யாத" }
+      readings: { "past": "muṭivuceyta", "present": "muṭivuceykiṟa", "future": "muṭivuceyyum", "negative": "muṭivuceyyāta" }
+    - word: "ta-8509"
+      forms: { "past": "ஆலோசித்த", "present": "ஆலோசிக்கிற", "future": "ஆலோசிக்கும்", "negative": "ஆலோசிக்காத" }
+      readings: { "past": "ālōcitta", "present": "ālōcikkiṟa", "future": "ālōcikkum", "negative": "ālōcikkāta" }
+    - word: "ta-8557"
+      forms: { "past": "சிந்தித்த", "present": "சிந்திக்கிற", "future": "சிந்திக்கும்", "negative": "சிந்திக்காத" }
+      readings: { "past": "cintitta", "present": "cintikkiṟa", "future": "cintikkum", "negative": "cintikkāta" }
+    - word: "ta-8558"
+      forms: { "past": "பொறாமைப்பட்ட", "present": "பொறாமைப்படுகிற", "future": "பொறாமைப்படும்", "negative": "பொறாமைப்படாத" }
+      readings: { "past": "poṟāmaippaṭṭa", "present": "poṟāmaippaṭukiṟa", "future": "poṟāmaippaṭum", "negative": "poṟāmaippaṭāta" }
+    - word: "ta-8559"
+      forms: { "past": "அனுபவித்த", "present": "அனுபவிக்கிற", "future": "அனுபவிக்கும்", "negative": "அனுபவிக்காத" }
+      readings: { "past": "aṉupavitta", "present": "aṉupavikkiṟa", "future": "aṉupavikkum", "negative": "aṉupavikkāta" }
+    - word: "ta-8560"
+      forms: { "past": "நேசித்த", "present": "நேசிக்கிற", "future": "நேசிக்கும்", "negative": "நேசிக்காத" }
+      readings: { "past": "nēcitta", "present": "nēcikkiṟa", "future": "nēcikkum", "negative": "nēcikkāta" }
+    - word: "ta-8561"
+      forms: { "past": "சாதித்த", "present": "சாதிக்கிற", "future": "சாதிக்கும்", "negative": "சாதிக்காத" }
+      readings: { "past": "cātitta", "present": "cātikkiṟa", "future": "cātikkum", "negative": "cātikkāta" }
+    - word: "ta-8562"
+      forms: { "past": "பெருகின", "present": "பெருகுகிற", "future": "பெருகும்", "negative": "பெருகாத" }
+      readings: { "past": "perukiṉa", "present": "perukukiṟa", "future": "perukum", "negative": "perukāta" }
+    - word: "ta-8563"
+      forms: { "past": "மதிப்பிட்ட", "present": "மதிப்பிடுகிற", "future": "மதிப்பிடும்", "negative": "மதிப்பிடாத" }
+      readings: { "past": "matippiṭṭa", "present": "matippiṭukiṟa", "future": "matippiṭum", "negative": "matippiṭāta" }
+    - word: "ta-8564"
+      forms: { "past": "தீர்மானித்த", "present": "தீர்மானிக்கிற", "future": "தீர்மானிக்கும்", "negative": "தீர்மானிக்காத" }
+      readings: { "past": "tīrmāṉitta", "present": "tīrmāṉikkiṟa", "future": "tīrmāṉikkum", "negative": "tīrmāṉikkāta" }
+    - word: "ta-8565"
+      forms: { "past": "வலியுறுத்தின", "present": "வலியுறுத்துகிற", "future": "வலியுறுத்தும்", "negative": "வலியுறுத்தாத" }
+      readings: { "past": "valiyuṟuttiṉa", "present": "valiyuṟuttukiṟa", "future": "valiyuṟuttum", "negative": "valiyuṟuttāta" }
+    - word: "ta-8566"
+      forms: { "past": "கைவிட்ட", "present": "கைவிடுகிற", "future": "கைவிடும்", "negative": "கைவிடாத" }
+      readings: { "past": "kaiviṭṭa", "present": "kaiviṭukiṟa", "future": "kaiviṭum", "negative": "kaiviṭāta" }
+rules:
+  - id: "ta-rule-relative-participle"
+    slots: ["past"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வந்த", reading: "vanta" }, { word: "வந்த நண்பன்", reading: "vanta naṇpaṉ" }, { word: "படி", reading: "paṭi" }, { word: "படிச்ச", reading: "paṭicca" }, { word: "படித்த", reading: "paṭitta" }]
+  - id: "ta-rule-relative-participle-present"
+    slots: ["present"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வர்ற", reading: "varṟa" }, { word: "வருகிற", reading: "varukiṟa" }, { word: "வர்ற நண்பன்", reading: "varṟa naṇpaṉ" }, { word: "படி", reading: "paṭi" }, { word: "படிக்கிற", reading: "paṭikkiṟa" }]
+  - id: "ta-rule-relative-participle-future"
+    slots: ["future"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வரும்", reading: "varum" }, { word: "படி", reading: "paṭi" }, { word: "படிக்கும்", reading: "paṭikkum" }, { word: "வரும் நண்பன்", reading: "varum naṇpaṉ" }, { word: "வரும்போது", reading: "varumpōtu" }]
+  - id: "ta-rule-relative-participle-negative"
+    slots: ["negative"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வராத", reading: "varāta" }, { word: "படி", reading: "paṭi" }, { word: "படிக்காத", reading: "paṭikkāta" }, { word: "வராத நண்பன்", reading: "varāta naṇpaṉ" }]

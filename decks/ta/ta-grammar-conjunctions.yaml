@@ -1,0 +1,164 @@
+schema: 1
+id: "ta-grammar-conjunctions"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ta-0400"
+    target: "ஆனால்"
+    reading: "āṉāl"
+    ipa: "aːnaːl"
+    phonetic: "[aːnaːl]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் வருகிறேன், ஆனால் நேரம் இல்லை."
+        reading: "nāṉ varukiṟēṉ, āṉāl nēram illai."
+        ipa: "naːn ʋaɾukireːn aːnaːl neːɾam illai"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }, { word: "ஆனால்", base: "ஆனால்", reading: "āṉāl" }, { word: "நேரம்", ref: "ta-0155" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "இது நல்லது, ஆனால் விலை அதிகம்."
+        reading: "itu nallatu, āṉāl vilai atikam."
+        ipa: "it̪u nallat̪u aːnaːl ʋilai at̪ikam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்லது", ref: "ta-0006" }, { word: "ஆனால்", base: "ஆனால்", reading: "āṉāl" }, { word: "விலை", ref: "ta-0225" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-0401"
+    target: "அல்லது"
+    reading: "allatu"
+    ipa: "allat̪u"
+    phonetic: "[allad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தேநீர் அல்லது காபி வேண்டும்."
+        reading: "tēnīr allatu kāpi vēṇṭum."
+        ipa: "t̪eːniːɾ allat̪u kaːpi ʋeːɳʈum"
+        bases: [{ word: "தேநீர்", ref: "ta-0246" }, { word: "அல்லது", base: "அல்லது", reading: "allatu" }, { word: "காபி", ref: "ta-0245" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+      - target: "இன்று அல்லது நாளை போகலாம்."
+        reading: "iṉṟu allatu nāḷai pōkalām."
+        ipa: "inru allat̪u naːɭai poːkalaːm"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "அல்லது", base: "அல்லது", reading: "allatu" }, { word: "நாளை", ref: "ta-0133" }, { word: "போகலாம்", base: "போ", reading: "pō" }]
+  - id: "ta-0402"
+    target: "மற்றும்"
+    reading: "maṟṟum"
+    ipa: "marrum"
+    phonetic: "[mattrum]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "அரிசி மற்றும் பருப்பு வேண்டும்."
+        reading: "arici maṟṟum paruppu vēṇṭum."
+        ipa: "aɾisi marrum paɾuppu ʋeːɳʈum"
+        bases: [{ word: "அரிசி", ref: "ta-0215" }, { word: "மற்றும்", base: "மற்றும்", reading: "maṟṟum" }, { word: "பருப்பு", ref: "ta-0216" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+      - target: "என் அம்மா மற்றும் அப்பா வீட்டில் இருக்கிறார்கள்."
+        reading: "eṉ ammā maṟṟum appā vīṭṭil irukkiṟārkaḷ."
+        ipa: "en ammaː marrum appaː ʋiːʈʈil iɾukkiraːɾkaɭ"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "அம்மா", ref: "ta-0072" }, { word: "மற்றும்", base: "மற்றும்", reading: "maṟṟum" }, { word: "அப்பா", ref: "ta-0073" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறார்கள்", base: "இரு", reading: "iru" }]
+  - id: "ta-0403"
+    target: "அதனால்"
+    reading: "ataṉāl"
+    ipa: "at̪anaːl"
+    phonetic: "[ad̪anaːl]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று நேரம் இல்லை, அதனால் நாளை வருகிறேன்."
+        reading: "iṉṟu nēram illai, ataṉāl nāḷai varukiṟēṉ."
+        ipa: "inru neːɾam illai at̪anaːl naːɭai ʋaɾukireːn"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "நேரம்", ref: "ta-0155" }, { word: "இல்லை", ref: "ta-0002" }, { word: "அதனால்", base: "அதனால்", reading: "ataṉāl" }, { word: "நாளை", ref: "ta-0133" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+      - target: "குழந்தை தூங்குகிறது, அதனால் மெதுவாகப் பேசுங்கள்."
+        reading: "kuḻantai tūṅkukiṟatu, ataṉāl metuvākap pēcuṅkaḷ."
+        ipa: "kuɻant̪ai t̪uːŋkukirat̪u at̪anaːl met̪uʋaːkap peːsuŋkaɭ"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "தூங்குகிறது", base: "தூங்கு", reading: "tūṅku" }, { word: "அதனால்", base: "அதனால்", reading: "ataṉāl" }, { word: "மெதுவாகப்", base: "மெதுவாக", reading: "metuvāka" }, { word: "பேசுங்கள்", base: "பேசு", reading: "pēcu" }]
+  - id: "ta-0404"
+    target: "ஏனென்றால்"
+    reading: "ēṉeṉṟāl"
+    ipa: "eːnenraːl"
+    phonetic: "[eːnendraːl]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "நான் சந்தைக்குப் போகிறேன், ஏனென்றால் காய்கறி வேண்டும்."
+        reading: "nāṉ cantaikkup pōkiṟēṉ, ēṉeṉṟāl kāykaṟi vēṇṭum."
+        ipa: "naːn sant̪aikkup poːkireːn eːnenraːl kaːjkari ʋeːɳʈum"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சந்தைக்குப்", base: "சந்தை", reading: "cantai" }, { word: "போகிறேன்", base: "போ", reading: "pō" }, { word: "ஏனென்றால்", base: "ஏனென்றால்", reading: "ēṉeṉṟāl" }, { word: "காய்கறி", ref: "ta-0221" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+      - target: "நான் வீட்டில் இருக்கிறேன், ஏனென்றால் இன்று ஓய்வு."
+        reading: "nāṉ vīṭṭil irukkiṟēṉ, ēṉeṉṟāl iṉṟu ōyvu."
+        ipa: "naːn ʋiːʈʈil iɾukkireːn eːnenraːl inru oːjʋu"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }, { word: "ஏனென்றால்", base: "ஏனென்றால்", reading: "ēṉeṉṟāl" }, { word: "இன்று", ref: "ta-0144" }, { word: "ஓய்வு", ref: "ta-0200" }]
+  - id: "ta-0405"
+    target: "அப்புறம்"
+    reading: "appuṟam"
+    ipa: "appuram"
+    phonetic: "[appuram]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாங்கள் சாப்பிடுகிறோம், அப்புறம் போகிறோம்."
+        reading: "nāṅkaḷ cāppiṭukiṟōm, appuṟam pōkiṟōm."
+        ipa: "naːŋkaɭ saːppiʈukiroːm appuram poːkiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "சாப்பிடுகிறோம்", base: "சாப்பிடு", reading: "cāppiṭu" }, { word: "அப்புறம்", base: "அப்புறம்", reading: "appuṟam" }, { word: "போகிறோம்", base: "போ", reading: "pō" }]
+      - target: "அப்புறம் பேசலாம்."
+        reading: "appuṟam pēcalām."
+        ipa: "appuram peːsalaːm"
+        bases: [{ word: "அப்புறம்", base: "அப்புறம்", reading: "appuṟam" }, { word: "பேசலாம்", base: "பேசு", reading: "pēcu" }]
+  - id: "ta-0406"
+    target: "அதாவது"
+    reading: "atāvatu"
+    ipa: "at̪aːʋat̪u"
+    phonetic: "[ad̪aːʋad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாங்கள் மூன்று பேர், அதாவது அம்மா, அப்பா, நான்."
+        reading: "nāṅkaḷ mūṉṟu pēr, atāvatu ammā, appā, nāṉ."
+        ipa: "naːŋkaɭ muːnru peːɾ at̪aːʋat̪u ammaː appaː naːn"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "மூன்று", ref: "ta-0090" }, { word: "பேர்", base: "பேர்", reading: "pēr" }, { word: "அதாவது", base: "அதாவது", reading: "atāvatu" }, { word: "அம்மா", ref: "ta-0072" }, { word: "அப்பா", ref: "ta-0073" }, { word: "நான்", ref: "ta-0003" }]
+      - target: "ஒரு லட்சம், அதாவது நூறு ஆயிரம்."
+        reading: "oru laṭcam, atāvatu nūṟu āyiram."
+        ipa: "oɾu laʈtʃam at̪aːʋat̪u nuːru aːjiɾam"
+        bases: [{ word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "லட்சம்", ref: "ta-0213" }, { word: "அதாவது", base: "அதாவது", reading: "atāvatu" }, { word: "நூறு", ref: "ta-0209" }, { word: "ஆயிரம்", ref: "ta-0212" }]
+  - id: "ta-0407"
+    target: "ஆனாலும்"
+    reading: "āṉālum"
+    ipa: "aːnaːlum"
+    phonetic: "[aːnaːlum]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீடு சின்னது, ஆனாலும் அழகானது."
+        reading: "vīṭu ciṉṉatu, āṉālum aḻakāṉatu."
+        ipa: "ʋiːʈu sinnat̪u aːnaːlum aɻakaːnat̪u"
+        bases: [{ word: "வீடு", ref: "ta-0009" }, { word: "சின்னது", base: "சின்ன", reading: "ciṉṉa" }, { word: "ஆனாலும்", base: "ஆனாலும்", reading: "āṉālum" }, { word: "அழகானது", base: "அழகான", reading: "aḻakāṉa" }]
+      - target: "நேரம் இல்லை, ஆனாலும் வருகிறேன்."
+        reading: "nēram illai, āṉālum varukiṟēṉ."
+        ipa: "neːɾam illai aːnaːlum ʋaɾukireːn"
+        bases: [{ word: "நேரம்", ref: "ta-0155" }, { word: "இல்லை", ref: "ta-0002" }, { word: "ஆனாலும்", base: "ஆனாலும்", reading: "āṉālum" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+
+  - id: "ta-0408"
+    kind: "set"
+    members: [{ ref: "ta-0400" }, { ref: "ta-0401" }, { ref: "ta-0402" }, { ref: "ta-0403" }, { ref: "ta-0404" }, { ref: "ta-0405" }, { ref: "ta-0406" }, { ref: "ta-0407" }]

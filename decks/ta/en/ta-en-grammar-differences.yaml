@@ -1,0 +1,132 @@
+schema: 1
+id: "ta-en-grammar-differences"
+kind: "layer"
+core: "ta-grammar-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How Tamil grammar differs from English"
+description: "Before any theme: the verb last, no is, endings for in, to and with, a verb for he and for she and for it, two yous, no articles, how Tamil says have and questions. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ta-0414":
+    native: "in the house; at home"
+    notes:
+      "n1": "Tamil puts in after the noun, as the ending -இல் (-il). The noun வீடு (vīṭu), house, doubles its last consonant first, giving வீட்டு (vīṭṭu), so in the house is வீட்டில் (vīṭṭil)."
+    examples:
+      "நான் வீட்டில் இருக்கிறேன்.":
+        native: "I am at home."
+        bases:
+          "வீட்டில்": "at home"
+          "இருக்கிறேன்": "am; from இரு (iru), to be"
+      "அம்மா வீட்டில் இல்லை.":
+        native: "Mother is not at home."
+        bases:
+          "வீட்டில்": "at home"
+  "ta-0415":
+    native: "to school"
+    notes:
+      "n1": "To is the ending -க்கு (-kku) after a noun ending in -இ (-i): பள்ளி (paḷḷi), school, becomes பள்ளிக்கு (paḷḷikku). Before a verb it adds a doubled sound, as in பள்ளிக்குப் போகிறேன் (paḷḷikkup pōkiṟēṉ)."
+    examples:
+      "நான் பள்ளிக்குப் போகிறேன்.":
+        native: "I am going to school."
+        bases:
+          "பள்ளிக்குப்": "to school; from பள்ளி (paḷḷi), school"
+          "போகிறேன்": "am going; from போ (pō), to go"
+      "குழந்தை பள்ளிக்குப் போகிறது.":
+        native: "The child is going to school."
+        bases:
+          "பள்ளிக்குப்": "to school; from பள்ளி (paḷḷi), school"
+          "போகிறது": "is going; from போ (pō), to go"
+  "ta-0416":
+    native: "with mother"
+    notes:
+      "n1": "With is the ending -ஓடு (-ōṭu): அம்மா (ammā), mother, takes a glide, அம்மாவோடு (ammāvōṭu). The ending -உடன் (-uṭaṉ) is used mostly in writing. Source: English Wikipedia, Tamil grammar (the sociative)."
+    examples:
+      "நான் அம்மாவோடு போகிறேன்.":
+        native: "I am going with mother."
+        bases:
+          "அம்மாவோடு": "with mother"
+          "போகிறேன்": "am going; from போ (pō), to go"
+      "அவள் அம்மாவோடு இருக்கிறாள்.":
+        native: "She is with her mother."
+        bases:
+          "அம்மாவோடு": "with mother"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+  "ta-0417":
+    native: "in Tamil"
+    notes:
+      "n1": "In a language is also the ending -இல் (-il): தமிழ் (tamiḻ), Tamil, becomes தமிழில் (tamiḻil)."
+    examples:
+      "தமிழில் பேசுங்கள்.":
+        native: "Please speak in Tamil."
+        bases:
+          "தமிழில்": "in Tamil"
+          "பேசுங்கள்": "please speak; from பேசு (pēcu), to speak"
+      "இது தமிழில் என்ன?":
+        native: "What is this in Tamil?"
+        bases:
+          "தமிழில்": "in Tamil"
+  "ta-0418":
+    native: "please come; welcome"
+    notes:
+      "n1": "Tamil has two yous, so two commands: வா (vā) to a friend or a child, and வாருங்கள் (vāruṅkaḷ) to someone you respect and to several people. The same ending -உங்கள் (-uṅkaḷ) makes any polite request, as in பேசுங்கள் (pēcuṅkaḷ)."
+    examples:
+      "இங்கே வாருங்கள்.":
+        native: "Please come here."
+        bases:
+          "வாருங்கள்": "please come; from வா (vā), to come"
+      "நீங்கள் நாளை வாருங்கள்.":
+        native: "Please come tomorrow."
+        bases:
+          "வாருங்கள்": "please come; from வா (vā), to come"
+  "ta-0419":
+    native: "a; an; one"
+    notes:
+      "n1": "Tamil has no word for the. ஒரு (oru) means a or one and comes before the noun: ஒரு வீடு (oru vīṭu), a house. Before a vowel it is ஓர் (ōr): ஓர் அறை (ōr aṟai), a room. A noun on its own can mean the one you both know. Source: English Wikipedia, Tamil grammar (no articles)."
+    examples:
+      "எனக்கு ஒரு தேநீர் வேண்டும்.":
+        native: "I want a tea."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "ஒரு": "a; one"
+          "வேண்டும்": "is wanted"
+      "ஒரு குழந்தை வீட்டில் இருக்கிறது.":
+        native: "A child is at home."
+        bases:
+          "ஒரு": "a; one"
+          "வீட்டில்": "at home"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-0420":
+    native: "I eat rice."
+    bases: { "சாப்பிடுகிறேன்": "eat; from சாப்பிடு (cāppiṭu), to eat" }
+    notes:
+      "n1": "The verb comes last: doer, thing, verb. Word for word, 'I rice eat'."
+  "ta-0421":
+    native: "He is a doctor."
+    notes:
+      "n1": "There is no 'is' when you say what someone is: 'he doctor'. Source: English Wikipedia, Tamil grammar (equational sentences)."
+  "ta-0422":
+    native: "He came."
+    bases: { "வந்தான்": "came; from வா (vā), to come" }
+    notes:
+      "n1": "The verb shows who did it: -ஆன் (-āṉ) is a man. The verb வா (vā), to come, changes its stem in the past: the present is வருகிறான் (varukiṟāṉ) and the past is வந்தான் (vantāṉ)."
+  "ta-0423":
+    native: "She came."
+    bases: { "வந்தாள்": "came; from வா (vā), to come" }
+    notes:
+      "n1": "A woman takes -ஆள் (-āḷ). For respect, either sex takes -ஆர் (-ār): அவர் வந்தார் (avar vantār)."
+  "ta-0424":
+    native: "It came."
+    bases: { "வந்தது": "came; from வா (vā), to come" }
+    notes:
+      "n1": "A thing or an animal takes -அது (-atu), where a man and a woman have their own endings."
+  "ta-0425":
+    native: "I have a car."
+    bases: { "எனக்குக்": "to me; from நான் (nāṉ), I", "இருக்கிறது": "is; from இரு (iru), to be" }
+    notes:
+      "n1": "Tamil has no verb for have: the owner takes -உக்கு (-ukku), and the thing is, so literally 'to me a car is'. Source: English Wikipedia, Tamil grammar ('there is a horse to me')."
+  "ta-0426":
+    native: "Is this a house?"
+    bases: { "வீடா": "a house?; from வீடு (vīṭu), house" }
+    notes:
+      "n1": "A yes-or-no question adds -ஆ (-ā) to the word asked about, with no change of word order: வீடு (vīṭu) becomes வீடா (vīṭā)."

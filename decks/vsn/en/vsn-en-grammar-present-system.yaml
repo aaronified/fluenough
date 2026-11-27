@@ -1,0 +1,54 @@
+"schema": 1
+"id": "vsn-en-grammar-present-system"
+"kind": "layer"
+"core": "vsn-grammar-present-system"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "The present tense of the a-class verbs"
+"description": "The present indicative of a verb of the a-class, in the active and the middle, as Whitney prints it for भू (bhū), 'be' (§735a): three persons in three numbers. The present system is the most prominent part of the verb: in the Veda its personal forms are about three times as frequent as those of all other systems together (Whitney §600a). The other tenses and the moods are taught later. Not yet checked by a Vedicist: please report any mistake."
+"license": "CC-BY-SA-4.0"
+"tags":
+- "grammar"
+- "unreviewed"
+"table":
+  "slot_name": "voice, person and number"
+  "slots":
+    "act-1sg": "active, first person singular (one)"
+    "act-1du": "active, first person dual (two)"
+    "act-1pl": "active, first person plural (many)"
+    "act-2sg": "active, second person singular (one)"
+    "act-2du": "active, second person dual (two)"
+    "act-2pl": "active, second person plural (many)"
+    "act-3sg": "active, third person singular (one)"
+    "act-3du": "active, third person dual (two)"
+    "act-3pl": "active, third person plural (many)"
+    "mid-1sg": "middle, first person singular (one)"
+    "mid-1du": "middle, first person dual (two)"
+    "mid-1pl": "middle, first person plural (many)"
+    "mid-2sg": "middle, second person singular (one)"
+    "mid-2du": "middle, second person dual (two)"
+    "mid-2pl": "middle, second person plural (many)"
+    "mid-3sg": "middle, third person singular (one)"
+    "mid-3du": "middle, third person dual (two)"
+    "mid-3pl": "middle, third person plural (many)"
+"rules":
+  "vsn-rule-present-active-singular":
+    "name": "Active singular: -āmi, -asi, -ati"
+    "explanation": "The present tense is made by adding the primary endings to the present stem. In the a-class (the first or bhū-class) the stem is the root with an a added, the root taking the accent and, where possible, being strengthened by guṇa: the root {4} gives the stem {5} (Whitney §606, §734). The active primary endings of the singular are mi, si, ti (§543a, §544a, §545a), and the stem-final a becomes ā before the m of the first person (§733): {1}, {2}, {3}. Whitney lists other stems of the same class: {6} from the root ji, {7} from vad and {8} from nī (§734, §606); the verbs जयति (jayati), वदति (vadati) and नयति (nayati) of this course are made on them."
+  "vsn-rule-present-active-dual":
+    "name": "Active dual: -āvaḥ, -athaḥ, -ataḥ"
+    "explanation": "The active primary endings of the dual are vas, thas, tas; the first person is like the plural with v for the m (Whitney §546, §547a). The stem-final a is made long before the v (§733): {1}, {2}, {3}. Whitney writes the endings with a final s; before a pause it becomes visarga (§170a), so both spellings are accepted."
+  "vsn-rule-present-active-plural":
+    "name": "Active plural: -āmaḥ, -atha, -anti"
+    "explanation": "The active primary endings of the plural are mas (in the oldest language masi is more frequent, in the Rigveda as five to one), tha and anti (Whitney §548a, §549a, §550a). The a of anti disappears after the final a of the stem, so bhava and anti make bhavanti (§733, §550a): {1}, {2}, {3}."
+  "vsn-rule-present-middle-singular":
+    "name": "Middle singular: -e, -ase, -ate"
+    "explanation": "The Indian grammarians call an active form parasmaipadam, 'a word for another', and a middle form ātmane padam, 'a word for one's self'; in the recorded language the difference between transitive and reflexive is much blurred (Whitney §529). The primary middle endings of the singular are e, se, te (§543b, §544b, §545b): {1}, {2}, {3}."
+  "vsn-rule-present-middle-dual":
+    "name": "Middle dual: -āvahe, -ethe, -ete"
+    "explanation": "The primary middle endings of the dual are vahe, āthe, āte (Whitney §546, §547b). The long ā of the second and third persons, with the final a of the stem, becomes e (§547b, §733): {1}, {2}, {3}."
+  "vsn-rule-present-middle-plural":
+    "name": "Middle plural: -āmahe, -adhve, -ante"
+    "explanation": "The primary middle endings of the plural are mahe, dhve, ante (Whitney §548b, §549b, §550a). The a-class uses the full ending ante in the third person (§733), the a of which disappears after the stem-final: {1}, {2}, {3}."

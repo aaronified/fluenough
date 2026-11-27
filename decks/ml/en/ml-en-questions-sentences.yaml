@@ -1,0 +1,70 @@
+schema: 1
+id: "ml-en-questions-sentences"
+kind: "layer"
+core: "ml-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions in sentences"
+description: "Short questions with who, what, where, how many and which, and the answers yes and no. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3093":
+    native: "Where are you?"
+    notes:
+      n1: "എവിടെ (eviṭe), where, comes after the person it asks about and needs no verb."
+    confusables:
+      w1: { why: "എപ്പോൾ (eppōḷ) asks a time, not a place." }
+      w2: { why: "എന്ത് (ent) asks for a thing." }
+  "ml-3094":
+    native: "Where is the water?"
+    notes:
+      n1: "എവിടെ (eviṭe) asks where the thing is, with no verb."
+    confusables:
+      w1: { why: "ഏത് (ēt) chooses one from some." }
+      w2: { why: "എത്ര (etra) asks an amount." }
+  "ml-3095":
+    native: "Who are you?"
+    notes:
+      n1: "ആര് (ār), who, takes ആണ് (āṇ) as a suffix: ആരാണ് (ārāṇ), who is."
+    confusables:
+      w1: { why: "എന്ത് (ent) asks for a thing, not a person." }
+      w2: { why: "എവിടെ (eviṭe) asks a place." }
+  "ml-3096":
+    native: "Which house?"
+    notes:
+      n1: "ഏത് (ēt), which, comes before the thing to choose from."
+    confusables:
+      w1: { why: "എന്ത് (ent) asks for a thing with no choice." }
+      w2: { why: "എത്ര (etra) asks a number." }
+  "ml-3097":
+    native: "How much water is there?"
+    bases:
+      "ഉണ്ട്": "is there"
+    notes:
+      n1: "എത്ര (etra), how much, comes before the thing measured: വെള്ളം (veḷḷaṁ), water."
+    confusables:
+      w1: { why: "എങ്ങനെ (eṅṅane) asks how, the way, not an amount." }
+      w2: { why: "എന്ത് (ent) asks for a thing." }
+  "ml-3098":
+    native: "Is there good water?"
+    notes:
+      n1: "ഉണ്ടോ (uṇṭō) asks whether a thing is there."
+    confusables:
+      w1: { why: "വലിയ (valiya) is big, a different describing word." }
+      w2: { why: "ഇല്ലേ (illē) asks as if no is expected." }
+  "ml-3099":
+    native: "Yes, there is water."
+    bases:
+      "ഉണ്ട്": "there is"
+    notes:
+      n1: "അതെ (ate), yes, answers the question; ഉണ്ട് (uṇṭ) says there is water."
+    confusables:
+      w1: { why: "ഇല്ല (illa) is no, the answer that is the opposite." }
+      w2: { why: "ഇല്ലേ (illē) is a question, is there not." }
+  "ml-3100":
+    native: "Where is the big house?"
+    notes:
+      n1: "വലിയ (valiya), big, comes before the thing it describes."
+    confusables:
+      w1: { why: "നല്ല (nalla) is good, a different describing word." }
+      w2: { why: "ഏത് (ēt) asks which one." }

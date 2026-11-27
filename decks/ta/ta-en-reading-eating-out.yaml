@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-eating-out"
+name: "Reading: a restaurant bill"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A small restaurant bill, using the eating-out words and the numbers taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-restaurant-bill"
+    title: "A restaurant bill"
+    sentences:
+      - text: "ஒரு மீல்ஸ் ஐம்பது ரூபாய்."
+        reading: "oru mīls aimpatu rūpāy."
+        ipa: "oɾu miːls aimpat̪u ɾuːpaːj"
+      - text: "ஒரு தோசை முப்பது ரூபாய்."
+        reading: "oru tōcai muppatu rūpāy."
+        ipa: "oɾu t̪oːsai muppat̪u ɾuːpaːj"
+      - text: "ஒரு தேநீர் பத்து ரூபாய்."
+        reading: "oru tēnīr pattu rūpāy."
+        ipa: "oɾu t̪eːniːɾ pat̪t̪u ɾuːpaːj"
+      - text: "மொத்தம் தொண்ணூறு ரூபாய்."
+        reading: "mottam toṇṇūṟu rūpāy."
+        ipa: "mot̪t̪am t̪oɳɳuːru ɾuːpaːj"
+      - text: "நன்றி."
+        reading: "naṉṟi."
+        ipa: "nanri"
+    questions:
+      - id: "ta-9918"
+        prompt: { en: "How much is the whole bill?" }
+        options:
+          - { en: "Ninety rupees" }
+          - { en: "Eighty rupees" }
+          - { en: "One hundred rupees" }
+        answer: 1
+      - id: "ta-9919"
+        prompt: { en: "Which item costs thirty rupees?" }
+        options:
+          - { en: "The meal" }
+          - { en: "The dosa" }
+          - { en: "The tea" }
+        answer: 2
+      - id: "ta-9920"
+        prompt: { en: "The tea costs fifty rupees." }
+        answer: false

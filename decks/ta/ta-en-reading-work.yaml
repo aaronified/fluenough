@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-work"
+name: "Reading: name tags at a meeting"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Name tags at a meeting: who is who, and what work each person does. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-name-tags"
+    title: "Name tags"
+    sentences:
+      - text: "இவர் அருண். இவர் மருத்துவர்."
+        reading: "ivar aruṇ. ivar maruttuvar."
+        ipa: "iʋaɾ aɾuɳ iʋaɾ maɾut̪t̪uʋaɾ"
+      - text: "இவர் மீனா. இவர் ஆசிரியர்."
+        reading: "ivar mīṉā. ivar āciriyar."
+        ipa: "iʋaɾ miːnaː iʋaɾ aːsiɾijaɾ"
+      - text: "அவன் தொழிலாளி."
+        reading: "avaṉ toḻilāḷi."
+        ipa: "aʋan t̪oɻilaːɭi"
+      - text: "இன்று கூட்டம் இருக்கிறது."
+        reading: "iṉṟu kūṭṭam irukkiṟatu."
+        ipa: "inru kuːʈʈam iɾukkirat̪u"
+    questions:
+      - id: "ta-9735"
+        prompt: { en: "What is Meena?" }
+        options:
+          - { en: "A doctor" }
+          - { en: "A teacher" }
+          - { en: "A worker" }
+        answer: 2
+      - id: "ta-9736"
+        prompt: { en: "Who is the doctor?" }
+        options:
+          - { en: "Arun" }
+          - { en: "Meena" }
+          - { en: "Nobody" }
+        answer: 1
+      - id: "ta-9737"
+        prompt: { en: "There is no meeting today." }
+        answer: false

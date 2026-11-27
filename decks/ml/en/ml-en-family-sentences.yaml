@@ -1,0 +1,73 @@
+schema: 1
+id: "ml-en-family-sentences"
+kind: "layer"
+core: "ml-family-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Family in sentences"
+description: "Short sentences about the family: mother, father, sister, brother, child, and who is at home. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3072":
+    native: "Is Mother there?"
+    notes:
+      n1: "അമ്മ (amma), mother, and ഉണ്ടോ (uṇṭō), is there, ask whether she is at home."
+    confusables:
+      w1: { why: "അച്ഛൻ (acchaṉ) is the other parent, father." }
+      w2: { why: "കുട്ടി (kuṭṭi) is a child, a different person." }
+  "ml-3073":
+    native: "Father is there."
+    bases:
+      "ഉണ്ട്": "is there"
+    notes:
+      n1: "ഉണ്ട് (uṇṭ), is there, says the person is at home."
+    confusables:
+      w1: { why: "അമ്മ (amma) is the other parent, mother." }
+      w2: { why: "ചേട്ടൻ (cēṭṭaṉ) is an older brother, a different person." }
+  "ml-3074":
+    native: "Mother, come."
+    notes:
+      n1: "അമ്മേ (ammē) is അമ്മ (amma), mother, said to call her: the last vowel changes to ഏ (ē)."
+    confusables:
+      w1: { why: "അച്ഛൻ (acchaṉ) is father, a different person to call." }
+      w2: { why: "ചേച്ചി (cēcci) is an older sister, a different person." }
+  "ml-3075":
+    native: "Do you have an older sister?"
+    notes:
+      n1: "നിനക്ക് (ninakk) is the form of നീ (nī) before the dative ending ക്ക് (kk); the stem changes to നിന (nina)."
+    confusables:
+      w1: { why: "അനിയൻ (aniyaṉ) is a younger brother." }
+      w2: { why: "മകൻ (makaṉ) is a son, a child of the speaker." }
+  "ml-3076":
+    native: "I have a younger sister."
+    bases:
+      "ഉണ്ട്": "have"
+    notes:
+      n1: "എനിക്ക് (enikk) is the form of ഞാൻ (ñāṉ) before the dative ending ക്ക് (kk); the stem changes to എന (ena)."
+    confusables:
+      w1: { why: "ചേച്ചി (cēcci) is an older sister." }
+      w2: { why: "മകൾ (makaḷ) is a daughter, a child and not a sister." }
+  "ml-3077":
+    native: "His mother is coming."
+    bases:
+      "വരുന്നു": "is coming"
+    notes:
+      n1: "അവൻ (avaṉ) becomes അവന്റെ (avanṟe) with the genitive ന്റെ (nṟe), his."
+      n2: "വരുന്നു (varunnu) is the present of വരിക (varika), to come."
+    confusables:
+      w1: { why: "മകൾ (makaḷ) is a daughter, the wrong relation." }
+      w2: { why: "മുത്തശ്ശി (muttaśśi) is a grandmother, one generation up." }
+  "ml-3078":
+    native: "Child, come."
+    notes:
+      n1: "കുട്ടി (kuṭṭi), child, is a call to a child, and the order വരൂ (varū) follows."
+    confusables:
+      w1: { why: "മകൻ (makaṉ) is a son, not a child in general." }
+      w2: { why: "അമ്മാവൻ (ammāvaṉ) is a maternal uncle, an adult." }
+  "ml-3079":
+    native: "Where is the family?"
+    notes:
+      n1: "കുടുംബം (kuṭuṁbaṁ) is the family, and എവിടെ (eviṭe) asks where they are."
+    confusables:
+      w1: { why: "എന്ത് (ent) asks for a thing, not a place." }
+      w2: { why: "എപ്പോൾ (eppōḷ) asks a time." }

@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-chores"
+name: "Reading: a chore list"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A weekly list of chores, using the chore words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-chore-list"
+    title: "The chore list"
+    sentences:
+      - text: "திங்கள் தரை பெருக்கு."
+        reading: "tiṅkaḷ tarai perukku."
+        ipa: "t̪iŋkaɭ t̪aɾai peɾukku"
+      - text: "புதன் துணி துவை."
+        reading: "putaṉ tuṇi tuvai."
+        ipa: "put̪an t̪uɳi t̪uʋai"
+      - text: "வெள்ளி பாத்திரம் கழுவு."
+        reading: "veḷḷi pāttiram kaḻuvu."
+        ipa: "ʋeɭɭi paːt̪t̪iɾam kaɻuʋu"
+      - text: "ஞாயிறு அலமாரி அடுக்கு."
+        reading: "ñāyiṟu alamāri aṭukku."
+        ipa: "ɲaːjiru alamaːɾi aʈukku"
+    questions:
+      - id: "ta-9932"
+        prompt: { en: "What is done on Wednesday?" }
+        options:
+          - { en: "The clothes are washed" }
+          - { en: "The floor is swept" }
+          - { en: "The cupboard is tidied" }
+        answer: 1
+      - id: "ta-9933"
+        prompt: { en: "On which day is the floor swept?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Friday" }
+          - { en: "Sunday" }
+        answer: 1
+      - id: "ta-9934"
+        prompt: { en: "The dishes are washed on Friday." }
+        answer: true

@@ -1,0 +1,756 @@
+schema: 1
+id: "ta-en-school"
+kind: "layer"
+core: "ta-school"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School and study"
+description: "Students and teachers, classes and lessons, books, exams and holidays, and the verbs of learning. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1806":
+    native: "student (boy)"
+    notes:
+      n1: "மாணவன் (māṇavaṉ) is a boy or man who studies; a girl is மாணவி (māṇavi), and மாணவர் (māṇavar) is the general or respectful word."
+    examples:
+      "அவன் மாணவன்.":
+        native: "He is a student."
+        bases:
+          "மாணவன்": "student (boy)"
+      "நான் மாணவன்.":
+        native: "I am a student."
+        bases:
+          "மாணவன்": "student (boy)"
+  "ta-1807":
+    native: "student (girl)"
+    notes:
+      n1: "Said of a girl or woman who studies; the boy is மாணவன் (māṇavaṉ)."
+    examples:
+      "அவள் மாணவி.":
+        native: "She is a student."
+        bases:
+          "மாணவி": "student (girl)"
+      "நீ மாணவியா?":
+        native: "Are you a student?"
+        bases:
+          "மாணவியா": "a student, as a question; from மாணவி (māṇavi), student (girl)"
+  "ta-1808":
+    native: "teacher (woman)"
+    notes:
+      n1: "ஆசிரியர் (āciriyar) is the general word for a teacher; ஆசிரியை (āciriyai) is said of a woman."
+    examples:
+      "அவர் ஆசிரியை.":
+        native: "She is a teacher."
+        bases:
+          "ஆசிரியை": "teacher (woman)"
+      "ஆசிரியை வருகிறார்.":
+        native: "The teacher is coming."
+        bases:
+          "ஆசிரியை": "teacher (woman)"
+          "வருகிறார்": "is coming; from வா (vā), come"
+  "ta-1809":
+    native: "head teacher"
+    notes:
+      n1: "Made of தலைமை (talaimai) (talaimai, lead) and ஆசிரியர் (āciriyar); the head of a school."
+    examples:
+      "அவர் தலைமையாசிரியர்.":
+        native: "He is the head teacher."
+        bases:
+          "தலைமையாசிரியர்": "head teacher"
+      "தலைமையாசிரியர் எங்கே?":
+        native: "Where is the head teacher?"
+        bases:
+          "தலைமையாசிரியர்": "head teacher"
+  "ta-1810":
+    native: "class"
+    notes:
+      n1: "A class, as a group of pupils or a lesson. With the ending -க்கு (-kku) the last sound doubles: வகுப்புக்கு (vakuppukku) is to class."
+    examples:
+      "வகுப்புக்குப் போ.":
+        native: "Go to class."
+        bases:
+          "வகுப்புக்குப்": "to class; from வகுப்பு (vakuppu), class"
+      "வகுப்பு எப்போது?":
+        native: "When is the class?"
+        bases:
+          "வகுப்பு": "class"
+  "ta-1811":
+    native: "classroom"
+    notes:
+      n1: "Made of வகுப்பு (vakuppu) (class) and அறை (aṟai) (room)."
+    examples:
+      "வகுப்பறை எங்கே?":
+        native: "Where is the classroom?"
+        bases:
+          "வகுப்பறை": "classroom"
+      "இது என் வகுப்பறை.":
+        native: "This is my classroom."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "வகுப்பறை": "classroom"
+  "ta-1812":
+    native: "lesson; subject"
+    notes:
+      n1: "A lesson, or a school subject."
+    examples:
+      "பாடம் படி.":
+        native: "Study the lesson."
+        bases:
+          "பாடம்": "lesson; subject"
+      "இது நல்ல பாடம்.":
+        native: "This is a good lesson."
+        bases:
+          "பாடம்": "lesson; subject"
+  "ta-1813":
+    native: "book"
+    notes:
+      n1: "Spoken Tamil often says the English loan புக் (puk) for a school book; புத்தகம் (puttakam) is the standard word."
+    examples:
+      "புத்தகம் எடு.":
+        native: "Take the book."
+        bases:
+          "புத்தகம்": "book"
+      "இது என் புத்தகம்.":
+        native: "This is my book."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "புத்தகம்": "book"
+  "ta-1814":
+    native: "notebook"
+    notes:
+      n1: "Short for நோட்டுப் புத்தகம் (nōṭṭup puttakam), notebook. It also means a banknote."
+    examples:
+      "நோட்டு எங்கே?":
+        native: "Where is the notebook?"
+        bases:
+          "நோட்டு": "notebook"
+      "நோட்டில் எழுது.":
+        native: "Write in the notebook."
+        bases:
+          "நோட்டில்": "in the notebook; from நோட்டு (nōṭṭu), notebook"
+  "ta-1815":
+    native: "exam; test"
+    notes:
+      n1: "Spoken Tamil also says பரீட்சை (parīṭcai), from Sanskrit; both are common."
+    examples:
+      "நாளை தேர்வு.":
+        native: "The exam is tomorrow."
+        bases:
+          "தேர்வு": "exam; test"
+      "தேர்வு எப்போது?":
+        native: "When is the exam?"
+        bases:
+          "தேர்வு": "exam; test"
+  "ta-1816":
+    native: "mark; score"
+    notes:
+      n1: "Marks in an exam. Spoken Tamil also says the English loan மார்க் (mārk)."
+    examples:
+      "நல்ல மதிப்பெண்.":
+        native: "Good marks."
+        bases:
+          "மதிப்பெண்": "mark; score"
+      "என் மதிப்பெண் என்ன?":
+        native: "What is my score?"
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "மதிப்பெண்": "mark; score"
+  "ta-1817":
+    native: "holiday; leave"
+    notes:
+      n1: "A day off school or work. Spoken Tamil also uses the English loan லீவு (līvu), leave."
+    examples:
+      "இன்று விடுமுறை.":
+        native: "Today is a holiday."
+        bases:
+          "விடுமுறை": "holiday; leave"
+      "நாளை விடுமுறை இல்லை.":
+        native: "There is no holiday tomorrow."
+        bases:
+          "விடுமுறை": "holiday; leave"
+  "ta-1818":
+    native: "homework"
+    notes:
+      n1: "Made of வீடு (vīṭu) (house) and பாடம் (pāṭam) (lesson). The stem வீடு (vīṭu) becomes வீட்டு (vīṭṭu) before another word."
+    examples:
+      "வீட்டுப்பாடம் செய்.":
+        native: "Do the homework."
+        bases:
+          "வீட்டுப்பாடம்": "homework"
+      "வீட்டுப்பாடம் இல்லை.":
+        native: "There is no homework."
+        bases:
+          "வீட்டுப்பாடம்": "homework"
+  "ta-1819":
+    native: "blackboard"
+    notes:
+      n1: "Literally a black board; the board a teacher writes on. The ending -இல் (-il) gives கரும்பலகையில் (karumpalakaiyil), on the blackboard."
+    examples:
+      "கரும்பலகையில் எழுது.":
+        native: "Write on the blackboard."
+        bases:
+          "கரும்பலகையில்": "on the blackboard; from கரும்பலகை (karumpalakai), blackboard"
+      "கரும்பலகை எங்கே?":
+        native: "Where is the blackboard?"
+        bases:
+          "கரும்பலகை": "blackboard"
+  "ta-1820":
+    native: "Tamil (language)"
+    notes:
+      n1: "The name of the language. It is also the usual way to say a thing is in Tamil: தமிழில் (tamiḻil) is in Tamil."
+    examples:
+      "நான் தமிழ் படிக்கிறேன்.":
+        native: "I am studying Tamil."
+        bases:
+          "தமிழ்": "Tamil (language)"
+          "படிக்கிறேன்": "am studying; from படி (paṭi), to study"
+      "தமிழ் நல்ல மொழி.":
+        native: "Tamil is a good language."
+        bases:
+          "தமிழ்": "Tamil (language)"
+  "ta-1821":
+    native: "English (language)"
+    notes:
+      n1: "The standard word. Spoken Tamil often says the English loan இங்கிலீஷ் (iṅkilīṣ)."
+    examples:
+      "நான் ஆங்கிலம் பேசுகிறேன்.":
+        native: "I speak English."
+        bases:
+          "ஆங்கிலம்": "English (language)"
+          "பேசுகிறேன்": "speak; from பேசு (pēcu), to speak"
+      "ஆங்கிலம் படி.":
+        native: "Study English."
+        bases:
+          "ஆங்கிலம்": "English (language)"
+  "ta-1822":
+    native: "maths; sum; account"
+    notes:
+      n1: "At school it means maths; elsewhere it is a calculation or an account."
+    examples:
+      "கணக்கு வகுப்பு எப்போது?":
+        native: "When is the maths class?"
+        bases:
+          "கணக்கு": "maths; sum; account"
+      "கணக்கு செய்.":
+        native: "Do the sum."
+        bases:
+          "கணக்கு": "maths; sum; account"
+  "ta-1823":
+    native: "science"
+    notes:
+      n1: "The school subject science."
+    examples:
+      "நான் அறிவியல் படிக்கிறேன்.":
+        native: "I am studying science."
+        bases:
+          "அறிவியல்": "science"
+          "படிக்கிறேன்": "am studying; from படி (paṭi), to study"
+      "அறிவியல் வகுப்பு எங்கே?":
+        native: "Where is the science class?"
+        bases:
+          "அறிவியல்": "science"
+  "ta-1824":
+    native: "history"
+    notes:
+      n1: "The school subject, or the history of a thing."
+    examples:
+      "வரலாறு படி.":
+        native: "Study history."
+        bases:
+          "வரலாறு": "history"
+      "வரலாறு நல்ல பாடம்.":
+        native: "History is a good subject."
+        bases:
+          "வரலாறு": "history"
+  "ta-1825":
+    native: "picture; film"
+    notes:
+      n1: "A picture or drawing. Spoken Tamil also uses it for a film."
+    examples:
+      "படம் பார்.":
+        native: "Look at the picture."
+        bases:
+          "படம்": "picture; film"
+      "இது நல்ல படம்.":
+        native: "This is a good picture."
+        bases:
+          "படம்": "picture; film"
+  "ta-1826":
+    native: "uniform"
+    notes:
+      n1: "The uniform worn at school."
+    examples:
+      "இது என் சீருடை.":
+        native: "This is my uniform."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "சீருடை": "uniform"
+      "சீருடை எங்கே?":
+        native: "Where is the uniform?"
+        bases:
+          "சீருடை": "uniform"
+  "ta-1827":
+    native: "school (building)"
+    notes:
+      n1: "The spoken word for the school building; பள்ளி (paḷḷi) is shorter. The last sound changes before an ending: பள்ளிக்கூடத்தில் (paḷḷikkūṭattil) is at school."
+    examples:
+      "பள்ளிக்கூடம் எங்கே?":
+        native: "Where is the school?"
+        bases:
+          "பள்ளிக்கூடம்": "school (building)"
+      "பள்ளிக்கூடத்துக்குப் போகிறேன்.":
+        native: "I am going to school."
+        bases:
+          "பள்ளிக்கூடத்துக்குப்": "to school; from பள்ளிக்கூடம் (paḷḷikkūṭam), school (building)"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-1828":
+    native: "college"
+    notes:
+      n1: "A college, after school."
+    examples:
+      "நான் கல்லூரிக்குப் போகிறேன்.":
+        native: "I am going to college."
+        bases:
+          "கல்லூரிக்குப்": "to college; from கல்லூரி (kallūri), college"
+          "போகிறேன்": "am going; from போ (pō), to go"
+      "கல்லூரி எங்கே?":
+        native: "Where is the college?"
+        bases:
+          "கல்லூரி": "college"
+  "ta-1829":
+    native: "library"
+    notes:
+      n1: "The last sound changes before an ending: நூலகத்தில் (nūlakattil) is in the library."
+    examples:
+      "நூலகம் எங்கே?":
+        native: "Where is the library?"
+        bases:
+          "நூலகம்": "library"
+      "நான் நூலகத்தில் படிக்கிறேன்.":
+        native: "I study in the library."
+        bases:
+          "நூலகத்தில்": "in the library; from நூலகம் (nūlakam), library"
+          "படிக்கிறேன்": "am studying; from படி (paṭi), to study"
+  "ta-1830":
+    native: "playground; field"
+    notes:
+      n1: "An open field for play or sport. The last sound changes before an ending: மைதானத்தில் (maitāṉattil) is on the field."
+    examples:
+      "மைதானம் எங்கே?":
+        native: "Where is the playground?"
+        bases:
+          "மைதானம்": "playground; field"
+      "மைதானத்தில் விளையாடு.":
+        native: "Play on the field."
+        bases:
+          "மைதானத்தில்": "on the field; from மைதானம் (maitāṉam), playground; field"
+  "ta-1831":
+    native: "break; interval"
+    notes:
+      n1: "A break between classes, or the interval in a film."
+    examples:
+      "இடைவேளை எப்போது?":
+        native: "When is the break?"
+        bases:
+          "இடைவேளை": "break; interval"
+      "இப்போது இடைவேளை.":
+        native: "It is break now."
+        bases:
+          "இடைவேளை": "break; interval"
+  "ta-1832":
+    native: "question"
+    notes:
+      n1: "கேள்வி கேள் (kēḷvi kēḷ) is ask a question; the verb கேள் (kēḷ) is also to listen."
+    examples:
+      "கேள்வி கேள்.":
+        native: "Ask a question."
+        bases:
+          "கேள்வி": "question"
+      "இது நல்ல கேள்வி.":
+        native: "This is a good question."
+        bases:
+          "கேள்வி": "question"
+  "ta-1833":
+    native: "answer"
+    notes:
+      n1: "The answer to a question."
+    examples:
+      "பதில் என்ன?":
+        native: "What is the answer?"
+        bases:
+          "பதில்": "answer"
+      "பதில் இல்லை.":
+        native: "There is no answer."
+        bases:
+          "பதில்": "answer"
+  "ta-1834":
+    native: "word"
+    notes:
+      n1: "A spoken word. The written word is also சொல் (col)."
+    examples:
+      "இது என்ன வார்த்தை?":
+        native: "What word is this?"
+        bases:
+          "வார்த்தை": "word"
+      "இது புதிய வார்த்தை.":
+        native: "This is a new word."
+        bases:
+          "வார்த்தை": "word"
+  "ta-1835":
+    native: "letter; writing"
+    notes:
+      n1: "A letter of the alphabet, or writing as a skill."
+    examples:
+      "இது தமிழ் எழுத்து.":
+        native: "This is a Tamil letter."
+        bases:
+          "எழுத்து": "letter; writing"
+      "என் எழுத்து நல்லது.":
+        native: "My writing is good."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "எழுத்து": "letter; writing"
+  "ta-1836":
+    native: "sentence"
+    notes:
+      n1: "A sentence of words."
+    examples:
+      "வாக்கியம் எழுது.":
+        native: "Write a sentence."
+        bases:
+          "வாக்கியம்": "sentence"
+      "இது நல்ல வாக்கியம்.":
+        native: "This is a good sentence."
+        bases:
+          "வாக்கியம்": "sentence"
+  "ta-1837":
+    native: "dictionary"
+    notes:
+      n1: "A dictionary."
+    examples:
+      "அகராதி எங்கே?":
+        native: "Where is the dictionary?"
+        bases:
+          "அகராதி": "dictionary"
+      "அகராதி எடு.":
+        native: "Take the dictionary."
+        bases:
+          "அகராதி": "dictionary"
+  "ta-1838":
+    native: "page; side"
+    notes:
+      n1: "A page of a book, and also a side. The last sound changes before an ending: பக்கத்தில் (pakkattil) is nearby."
+    examples:
+      "பக்கம் திற.":
+        native: "Open the page."
+        bases:
+          "பக்கம்": "page; side"
+      "பக்கம் ஐந்து.":
+        native: "Page five."
+        bases:
+          "பக்கம்": "page; side"
+  "ta-1839":
+    native: "paper"
+    notes:
+      n1: "Paper for writing; a sheet is also called தாள் (tāḷ)."
+    examples:
+      "காகிதம் கொடு.":
+        native: "Give me paper."
+        bases:
+          "காகிதம்": "paper"
+      "காகிதம் வேண்டும்.":
+        native: "Paper is needed."
+        bases:
+          "காகிதம்": "paper"
+  "ta-1840":
+    native: "eraser"
+    notes:
+      n1: "A rubber for erasing pencil marks."
+    examples:
+      "அழிப்பான் எங்கே?":
+        native: "Where is the eraser?"
+        bases:
+          "அழிப்பான்": "eraser"
+      "இது புதிய அழிப்பான்.":
+        native: "This is a new eraser."
+        bases:
+          "அழிப்பான்": "eraser"
+  "ta-1841":
+    native: "ruler"
+    notes:
+      n1: "A ruler for measuring and drawing lines."
+    examples:
+      "அளவுகோல் கொடு.":
+        native: "Give me the ruler."
+        bases:
+          "அளவுகோல்": "ruler"
+      "இது என் அளவுகோல்.":
+        native: "This is my ruler."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "அளவுகோல்": "ruler"
+  "ta-1842":
+    native: "study; education"
+    notes:
+      n1: "The noun of the verb படி (paṭi) (to study)."
+    examples:
+      "படிப்பு நல்லது.":
+        native: "Study is good."
+        bases:
+          "படிப்பு": "study; education"
+      "நல்ல படிப்பு.":
+        native: "A good education."
+        bases:
+          "படிப்பு": "study; education"
+  "ta-1843":
+    native: "education"
+    notes:
+      n1: "The formal word, as in a school system."
+    examples:
+      "கல்வி முக்கியம்.":
+        native: "Education is important."
+        bases:
+          "கல்வி": "education"
+          "முக்கியம்": "important"
+      "கல்வி வேண்டும்.":
+        native: "Education is needed."
+        bases:
+          "கல்வி": "education"
+  "ta-1844":
+    native: "prize; gift"
+    notes:
+      n1: "A prize at school, or a gift."
+    examples:
+      "பரிசு கொடு.":
+        native: "Give a prize."
+        bases:
+          "பரிசு": "prize; gift"
+      "இது பரிசு.":
+        native: "This is a prize."
+        bases:
+          "பரிசு": "prize; gift"
+  "ta-1845":
+    native: "success; victory"
+    notes:
+      n1: "Success in a match or an exam."
+    examples:
+      "நல்ல வெற்றி.":
+        native: "A good success."
+        bases:
+          "வெற்றி": "success; victory"
+      "வெற்றி இல்லை.":
+        native: "There is no success."
+        bases:
+          "வெற்றி": "success; victory"
+  "ta-1846":
+    native: "failure; defeat"
+    notes:
+      n1: "The opposite of வெற்றி (veṟṟi)."
+    examples:
+      "தோல்வி இல்லை.":
+        native: "There is no failure."
+        bases:
+          "தோல்வி": "failure; defeat"
+      "இது தோல்வி.":
+        native: "This is a failure."
+        bases:
+          "தோல்வி": "failure; defeat"
+  "ta-1847":
+    native: "mistake; wrong"
+    notes:
+      n1: "A mistake, or something wrong."
+    examples:
+      "இது தவறு.":
+        native: "This is wrong."
+        bases:
+          "தவறு": "mistake; wrong"
+      "என் தவறு.":
+        native: "My mistake."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "தவறு": "mistake; wrong"
+  "ta-1848":
+    native: "practice; exercise"
+    notes:
+      n1: "Practice or training, as in an exercise at school."
+    examples:
+      "பயிற்சி செய்.":
+        native: "Practise."
+        bases:
+          "பயிற்சி": "practice; exercise"
+      "நாளை பயிற்சி.":
+        native: "Practice is tomorrow."
+        bases:
+          "பயிற்சி": "practice; exercise"
+  "ta-1849":
+    native: "note; hint"
+    notes:
+      n1: "A short note or a hint."
+    examples:
+      "குறிப்பு எழுது.":
+        native: "Write a note."
+        bases:
+          "குறிப்பு": "note; hint"
+      "குறிப்பு கொடு.":
+        native: "Give a hint."
+        bases:
+          "குறிப்பு": "note; hint"
+  "ta-1850":
+    native: "timetable; table"
+    notes:
+      n1: "A timetable, or any table of figures."
+    examples:
+      "அட்டவணை பார்.":
+        native: "Look at the timetable."
+        bases:
+          "அட்டவணை": "timetable; table"
+      "அட்டவணை எங்கே?":
+        native: "Where is the timetable?"
+        bases:
+          "அட்டவணை": "timetable; table"
+  "ta-1851":
+    native: "number; digit"
+    notes:
+      n1: "A number or digit. The ending -ஐ (-ai) gives எண்ணை (eṇṇai)."
+    examples:
+      "எண் எழுது.":
+        native: "Write the number."
+        bases:
+          "எண்": "number; digit"
+      "இது என்ன எண்?":
+        native: "What number is this?"
+        bases:
+          "எண்": "number; digit"
+  "ta-1852":
+    native: "story"
+    notes:
+      n1: "A story, told or written."
+    examples:
+      "கதை கேள்.":
+        native: "Listen to a story."
+        bases:
+          "கதை": "story"
+      "இது நல்ல கதை.":
+        native: "This is a good story."
+        bases:
+          "கதை": "story"
+  "ta-1853":
+    native: "poem"
+    notes:
+      n1: "A poem."
+    examples:
+      "கவிதை படி.":
+        native: "Read a poem."
+        bases:
+          "கவிதை": "poem"
+      "நல்ல கவிதை.":
+        native: "A good poem."
+        bases:
+          "கவிதை": "poem"
+  "ta-1854":
+    native: "bench"
+    notes:
+      n1: "A school bench; the English loan."
+    examples:
+      "பெஞ்சில் உட்கார்.":
+        native: "Sit on the bench."
+        bases:
+          "பெஞ்சில்": "on the bench; from பெஞ்சு (peñcu), bench"
+      "பெஞ்சு எங்கே?":
+        native: "Where is the bench?"
+        bases:
+          "பெஞ்சு": "bench"
+  "ta-1855":
+    native: "chalk"
+    notes:
+      n1: "The English loan for chalk."
+    examples:
+      "சாக்பீஸ் கொடு.":
+        native: "Give me the chalk."
+        bases:
+          "சாக்பீஸ்": "chalk"
+      "சாக்பீஸ் இல்லை.":
+        native: "There is no chalk."
+        bases:
+          "சாக்பீஸ்": "chalk"
+  "ta-1856":
+    native: "language"
+    notes:
+      n1: "A language, such as தமிழ் (tamiḻ) or ஆங்கிலம் (āṅkilam)."
+    examples:
+      "இது என்ன மொழி?":
+        native: "What language is this?"
+        bases:
+          "மொழி": "language"
+      "இது புதிய மொழி.":
+        native: "This is a new language."
+        bases:
+          "மொழி": "language"
+  "ta-1857":
+    native: "to understand"
+    notes:
+      n1: "Tamil says it with the dative: எனக்குப் புரிகிறது (eṉakkup purikiṟatu) is to me it is clear, I understand. The spoken present is புரியுது (puriyutu)."
+    examples:
+      "எனக்குப் புரிகிறது.":
+        native: "I understand."
+        bases:
+          "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+          "புரிகிறது": "is understood; from புரி (puri), to understand"
+      "எனக்குப் புரியவில்லை.":
+        native: "I do not understand."
+        bases:
+          "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+          "புரியவில்லை": "is not understood; from புரி (puri), to understand"
+  "ta-1858":
+    native: "to forget"
+    notes:
+      n1: "The dictionary form. A forgotten thing is usually said in the past: மறந்துவிட்டேன் (maṟantuviṭṭēṉ), I have forgotten."
+    examples:
+      "மறக்காதே.":
+        native: "Do not forget."
+        bases:
+          "மறக்காதே": "do not forget; from மற (maṟa), to forget"
+      "நான் மறந்துவிட்டேன்.":
+        native: "I have forgotten."
+        bases:
+          "மறந்துவிட்டேன்": "have forgotten; from மற (maṟa), to forget"
+  "ta-1859":
+    native: "to think; to remember"
+    notes:
+      n1: "நினைக்கிறேன் (niṉaikkiṟēṉ) means I think; it is the soft way to give an opinion."
+    examples:
+      "நான் நினைக்கிறேன்.":
+        native: "I think so."
+        bases:
+          "நினைக்கிறேன்": "I think; from நினை (niṉai), to think; to remember"
+      "நீ என்ன நினைக்கிறாய்?":
+        native: "What do you think?"
+        bases:
+          "நினைக்கிறாய்": "do you think; from நினை (niṉai), to think; to remember"
+  "ta-1860":
+    native: "to learn"
+    notes:
+      n1: "The written, standard form. Spoken Tamil says கத்துக்கோ (kattukkō) for learn."
+    examples:
+      "நான் தமிழ் கற்றுக்கொள்கிறேன்.":
+        native: "I am learning Tamil."
+        bases:
+          "கற்றுக்கொள்கிறேன்": "am learning; from கற்றுக்கொள் (kaṟṟukkoḷ), to learn"
+      "நாம் கற்றுக்கொள்ளலாம்.":
+        native: "Let's learn."
+        bases:
+          "கற்றுக்கொள்ளலாம்": "let's learn; from கற்றுக்கொள் (kaṟṟukkoḷ), to learn"
+  "ta-1861":
+    native: "to teach"
+    notes:
+      n1: "Literally to say and give. The teacher is the one who teaches: ஆசிரியர் (āciriyar)."
+    examples:
+      "ஆசிரியர் சொல்லிக்கொடுக்கிறார்.":
+        native: "The teacher is teaching."
+        bases:
+          "சொல்லிக்கொடுக்கிறார்": "is teaching; from சொல்லிக்கொடு (collikkoṭu), to teach"
+      "எனக்குச் சொல்லிக்கொடு.":
+        native: "Teach me."
+        bases:
+          "எனக்குச்": "to me; for me; from நான் (nāṉ), I; me"
+          "சொல்லிக்கொடு": "to teach"

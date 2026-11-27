@@ -1,0 +1,110 @@
+schema: 1
+id: "ta-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-3042"
+    target: "விலை எவ்வளவு?"
+    reading: "vilai evvaḷavu?"
+    ipa: "ʋilai eʋʋaɭaʋu"
+    phonetic: "[ʋilai eʋʋaɭaʋɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "விலை", ref: "ta-0225" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+    confusables:
+      - { id: "w1", ref: "ta-0048", kind: "word" }
+      - { id: "w2", ref: "ta-0229", kind: "word" }
+  - id: "ta-3043"
+    target: "நூறு ரூபாய்."
+    reading: "nūṟu rūpāy."
+    ipa: "nuːru ɾuːpaːj"
+    phonetic: "[n̪uːrɯ ɾuːbaːj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "நூறு", ref: "ta-0209" }, { word: "ரூபாய்", ref: "ta-0226" }]
+    confusables:
+      - { id: "w1", ref: "ta-0212", kind: "word" }
+      - { id: "w2", ref: "ta-0210", kind: "word" }
+  - id: "ta-3044"
+    target: "பை எங்கே?"
+    reading: "pai eṅkē?"
+    ipa: "pai eŋkeː"
+    phonetic: "[pai eŋɡeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "பை", ref: "ta-0228" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-0197", kind: "word" }
+      - { id: "w2", ref: "ta-0044", kind: "word" }
+  - id: "ta-3045"
+    target: "தள்ளுபடி இருக்கிறதா?"
+    reading: "taḷḷupaṭi irukkiṟatā?"
+    ipa: "t̪aɭɭupaʈi iɾukkirat̪aː"
+    phonetic: "[t̪aɭɭubaɖi iɾukkirad̪aː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "தள்ளுபடி", ref: "ta-0227" }
+      - { word: "இருக்கிறதா", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0225", kind: "word" }
+      - { id: "w2", ref: "ta-0224", kind: "word" }
+  - id: "ta-3046"
+    target: "சந்தை பெரியது."
+    reading: "cantai periyatu."
+    ipa: "sant̪ai peɾijat̪u"
+    phonetic: "[san̪d̪ai peɾijad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "சந்தை", ref: "ta-0224" }, { word: "பெரியது", ref: "ta-0008" }]
+    confusables:
+      - { id: "w1", ref: "ta-0168", kind: "word" }
+      - { id: "w2", ref: "ta-0172", kind: "word" }
+  - id: "ta-3047"
+    target: "பத்து ரூபாய் தள்ளுபடி."
+    reading: "pattu rūpāy taḷḷupaṭi."
+    ipa: "pat̪t̪u ɾuːpaːj t̪aɭɭupaʈi"
+    phonetic: "[pat̪t̪ɯ ɾuːbaːj t̪aɭɭubaɖi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "பத்து", ref: "ta-0096" }, { word: "ரூபாய்", ref: "ta-0226" }, { word: "தள்ளுபடி", ref: "ta-0227" }]
+    confusables:
+      - { id: "w1", ref: "ta-0225", kind: "word" }
+      - { id: "w2", ref: "ta-0228", kind: "word" }
+  - id: "ta-3048"
+    target: "விலை நல்லது."
+    reading: "vilai nallatu."
+    ipa: "ʋilai nallat̪u"
+    phonetic: "[ʋilai n̪allad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "விலை", ref: "ta-0225" }, { word: "நல்லது", ref: "ta-0006" }]
+    confusables:
+      - { id: "w1", ref: "ta-0229", kind: "word" }
+      - { id: "w2", ref: "ta-0227", kind: "word" }
+  - id: "ta-3049"
+    target: "ஐம்பது ரூபாய் போதும்."
+    reading: "aimpatu rūpāy pōtum."
+    ipa: "aimpat̪u ɾuːpaːj poːt̪um"
+    phonetic: "[aimbad̪ɯ ɾuːbaːj poːd̪um]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "ஐம்பது", ref: "ta-0204" }, { word: "ரூபாய்", ref: "ta-0226" }, { word: "போதும்", ref: "ta-0161" }]
+    confusables:
+      - { id: "w1", ref: "ta-0209", kind: "word" }
+      - { id: "w2", ref: "ta-0203", kind: "word" }

@@ -1,0 +1,33 @@
+schema: 1
+id: "sat-en-market"
+kind: "layer"
+core: "sat-market"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Market"
+description: "A shop, money, paper money and tax. Not yet checked by a Santali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sat-1978":
+    native: "shop"
+    wiktionary: true
+    notes:
+      "n1": "Borrowed from Indo-Aryan, from Classical Persian dukan, from Arabic."
+  "sat-1979":
+    native: "money"
+    wiktionary: true
+    notes:
+      "n1": "Borrowed from Hindi kauṛī, meaning a cowrie shell used as money, from Sanskrit kapardikā."
+  "sat-1980":
+    native: "paper money"
+    wiktionary: true
+    notes:
+      "n1": "Made of ᱠᱟᱜᱚᱡᱽ (kago̠j), paper, and ᱠᱟᱹᱣᱰᱤ (kāwḍi), money."
+    bases:
+      "ᱠᱟᱜᱚᱡᱽ": "paper"
+      "ᱠᱟᱹᱣᱰᱤ": "money"
+  "sat-1981":
+    native: "tax"
+    wiktionary: true
+    notes:
+      "n1": "Borrowed from Bengali khajna, which meant revenue, rent or tax, from Classical Persian xizāna, meaning treasury."

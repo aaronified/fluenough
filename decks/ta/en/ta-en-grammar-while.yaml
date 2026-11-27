@@ -1,0 +1,25 @@
+schema: 1
+id: "ta-en-grammar-while"
+kind: "layer"
+core: "ta-grammar-while"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While and until"
+description: "Every verb the course teaches while another action goes on, and until it happens. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "keep": "while doing"
+    "during": "while he is in the middle of doing"
+    "until": "until it happens"
+rules:
+  "ta-rule-while":
+    name: "While doing: the participle and கொண்டே (koṇṭē)"
+    explanation: "To say two things go on together, take the verbal participle, taught earlier, and add கொண்டே (koṇṭē), shortened to -கிட்டே (-kiṭṭē) in speech: {1}, to study, gives {2} in speech and {3} in writing, while studying. The last verb of the sentence says who and when. A hard consonant doubles after some participles, as in {4}, which is why a க் (k) appears before கொண்டே (koṇṭē). The speech forms with -கிட்டே (-kiṭṭē) are spoken only and their spelling varies; the written forms are the standard ones."
+  "ta-rule-while-during":
+    name: "While he is doing: -கொண்டிருக்கும்போது (-koṇṭirukkumpōtu)"
+    explanation: "To say when something was in the middle of happening, put கொண்டிருக்கும்போது (koṇṭirukkumpōtu), literally when he is being in the doing, after the participle: {1}, to study, gives {2} in speech and {3} in writing. It is the progressive form of the continuous unit with போது (pōtu), when, taught earlier."
+  "ta-rule-while-until":
+    name: "Until: the future form and வரை (varai)"
+    explanation: "For until, put வரை (varai), until, after the future form of the verb, taught earlier: {1}, to come, gives {2}, until he comes. The verb in the main clause says what goes on in the meantime."

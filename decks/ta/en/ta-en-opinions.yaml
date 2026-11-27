@@ -1,0 +1,802 @@
+schema: 1
+id: "ta-en-opinions"
+kind: "layer"
+core: "ta-opinions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions: agreeing and disagreeing"
+description: "Giving and asking for opinions: views, agreement and disagreement, praise and criticism, good and bad, useful and unnecessary, and the verbs of agreeing, supporting and refusing. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-7179":
+    native: "opinion; view; comment"
+    notes:
+      n1: "உன் (uṉ) கருத்து (karuttu) என்ன (eṉṉa) is the natural way to ask what someone thinks; with a respected person use உங்கள் (uṅkaḷ) (your)."
+    examples:
+      "உன் கருத்து என்ன?":
+        native: "What is your opinion?"
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "கருத்து": "opinion; view; comment"
+      "என் கருத்து வேறு.":
+        native: "My opinion is different."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "கருத்து": "opinion; view; comment"
+          "வேறு": "different; other"
+  "ta-7180":
+    native: "thought; idea; intention"
+    notes:
+      n1: "A thought or idea in the mind; the words for 'opinion' and 'thought' overlap, with கருத்து (karuttu) the one for a view you share."
+    examples:
+      "இது என் எண்ணம்.":
+        native: "This is my thought."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "எண்ணம்": "thought; idea; intention"
+      "உன் எண்ணம் நல்லது.":
+        native: "Your idea is good."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "எண்ணம்": "thought; idea; intention"
+  "ta-7181":
+    native: "view; outlook; sight"
+    notes:
+      n1: "The same word is also eyesight and a look; the meaning follows the sentence."
+    examples:
+      "இது என் பார்வை.":
+        native: "This is my view."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "பார்வை": "view; outlook; sight"
+      "அவன் பார்வை வேறு.":
+        native: "His outlook is different."
+        bases:
+          "அவன்": "his"
+          "பார்வை": "view; outlook; sight"
+          "வேறு": "different; other"
+  "ta-7182":
+    native: "approval; consent"
+    notes:
+      n1: "The noun of ஒப்புக்கொள் (oppukkoḷ) (to agree); it is the word used for formal approval."
+    examples:
+      "எனக்கு ஒப்புதல் இல்லை.":
+        native: "I do not approve."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "ஒப்புதல்": "approval; consent"
+      "அவர் ஒப்புதல் வேண்டும்.":
+        native: "His approval is needed."
+        bases:
+          "அவர்": "he or she (polite)"
+          "ஒப்புதல்": "approval; consent"
+  "ta-7183":
+    native: "agreement; accord"
+    notes:
+      n1: "Saying you have no உடன்பாடு (uṭaṉpāṭu) is a polite way to disagree."
+    examples:
+      "நமக்கு உடன்பாடு இருக்கிறது.":
+        native: "We are in agreement."
+        bases:
+          "நமக்கு": "to us; for us; from நாம் (nām), we (including you)"
+          "உடன்பாடு": "agreement; accord"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "எனக்கு உடன்பாடு இல்லை.":
+        native: "I do not agree."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "உடன்பாடு": "agreement; accord"
+  "ta-7184":
+    native: "denial; refusal; objection"
+    notes:
+      n1: "The noun of மறு (maṟu) (to refuse)."
+    examples:
+      "இது என் மறுப்பு.":
+        native: "This is my objection."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "மறுப்பு": "denial; refusal; objection"
+      "மறுப்பு வேண்டாம்.":
+        native: "No objections, please."
+        bases:
+          "மறுப்பு": "denial; refusal; objection"
+  "ta-7185":
+    native: "fairness; justice; reason"
+    notes:
+      n1: "Used for what is fair; it also means a reason that holds good."
+    examples:
+      "இது நியாயம்.":
+        native: "This is fair."
+        bases:
+          "நியாயம்": "fairness; justice; reason"
+      "உன் நியாயம் சரி.":
+        native: "Your reasoning is right."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "நியாயம்": "fairness; justice; reason"
+  "ta-7186":
+    native: "injustice; unfairness"
+    notes:
+      n1: "Made from நியாயம் (niyāyam) by adding a negative prefix; people say it with feeling about something unfair."
+    examples:
+      "இது அநியாயம்!":
+        native: "This is unfair!"
+        bases:
+          "அநியாயம்": "injustice; unfairness"
+      "அநியாயம் வேண்டாம்.":
+        native: "No injustice, please."
+        bases:
+          "அநியாயம்": "injustice; unfairness"
+  "ta-7187":
+    native: "support; backing"
+    notes:
+      n1: "Both moral support and help given to a cause; the verb is ஆதரி (ātari)."
+    examples:
+      "எனக்கு உன் ஆதரவு வேண்டும்.":
+        native: "I need your support."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "ஆதரவு": "support; backing"
+      "என் ஆதரவு இருக்கிறது.":
+        native: "I have given my support."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "ஆதரவு": "support; backing"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7188":
+    native: "opposition; resistance"
+    notes:
+      n1: "The noun of எதிர் (etir) (to oppose)."
+    examples:
+      "எனக்கு எதிர்ப்பு இல்லை.":
+        native: "I have no objection."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "எதிர்ப்பு": "opposition; resistance"
+      "எதிர்ப்பு அதிகம்.":
+        native: "The opposition is strong."
+        bases:
+          "எதிர்ப்பு": "opposition; resistance"
+  "ta-7189":
+    native: "consent; agreement"
+    notes:
+      n1: "சம்மதம் (cammatam) on its own is a friendly 'agreed' or 'fine by me'."
+    examples:
+      "எனக்குச் சம்மதம்.":
+        native: "I agree."
+        bases:
+          "எனக்குச்": "to me; for me; from நான் (nāṉ), I; me"
+          "சம்மதம்": "consent; agreement"
+      "அம்மா சம்மதம் சொல்கிறார்.":
+        native: "Mother gives her consent."
+        bases:
+          "சம்மதம்": "consent; agreement"
+          "சொல்கிறார்": "is saying (respectful); from சொல் (col), to say; to tell"
+  "ta-7190":
+    native: "argument; debate"
+    notes:
+      n1: "Used for a reasoned argument; a quarrel is not a வாதம் (vātam)."
+    examples:
+      "இது என் வாதம்.":
+        native: "This is my argument."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "வாதம்": "argument; debate"
+      "வாதம் நடக்கிறது.":
+        native: "An argument is going on."
+        bases:
+          "வாதம்": "argument; debate"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-7191":
+    native: "wonder; marvel"
+    notes:
+      n1: "A strong word of praise, used for something marvellous."
+    examples:
+      "இது அற்புதம்!":
+        native: "This is a marvel!"
+        bases:
+          "அற்புதம்": "wonder; marvel"
+      "அற்புதம் நடக்கிறது.":
+        native: "A wonder is happening."
+        bases:
+          "அற்புதம்": "wonder; marvel"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-7192":
+    native: "peace; reconciliation"
+    notes:
+      n1: "Used to end a quarrel, as in 'let us make peace'."
+    examples:
+      "எனக்குச் சமாதானம் வேண்டும்.":
+        native: "I want peace."
+        bases:
+          "எனக்குச்": "to me; for me; from நான் (nāṉ), I; me"
+          "சமாதானம்": "peace; reconciliation"
+      "நம்மிடையே சமாதானம்.":
+        native: "Peace between us."
+        bases:
+          "நம்மிடையே": "between us; from நாம் (nām), we (including you)"
+          "சமாதானம்": "peace; reconciliation"
+  "ta-7193":
+    native: "certainty; decision"
+    notes:
+      n1: "Related to நிச்சயமாக (niccayamāka) (certainly), the adverb that adds -ஆக (-āka)."
+    examples:
+      "இது நிச்சயம்.":
+        native: "This is certain."
+        bases:
+          "நிச்சயம்": "certainty; decision"
+      "நிச்சயம் இல்லை.":
+        native: "It is not certain."
+        bases:
+          "நிச்சயம்": "certainty; decision"
+  "ta-7194":
+    native: "uniqueness; individuality"
+    notes:
+      n1: "A written word for what makes someone or something stand out."
+    examples:
+      "அவன் தனித்துவம் நல்லது.":
+        native: "His uniqueness is good."
+        bases:
+          "அவன்": "his"
+          "தனித்துவம்": "uniqueness; individuality"
+      "இதில் தனித்துவம் இருக்கிறது.":
+        native: "There is something unique in this."
+        bases:
+          "இதில்": "in this; from இது (itu), this"
+          "தனித்துவம்": "uniqueness; individuality"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7195":
+    native: "splendour; excellence"
+    notes:
+      n1: "A spoken word of strong praise, said on its own: 'wonderful!'."
+    examples:
+      "இது பிரமாதம்.":
+        native: "This is superb."
+        bases:
+          "பிரமாதம்": "splendour; excellence"
+      "பிரமாதம், நன்றி.":
+        native: "Superb, thank you."
+        bases:
+          "பிரமாதம்": "splendour; excellence"
+  "ta-7196":
+    native: "good; benefit"
+    notes:
+      n1: "The opposite of தீமை (tīmai) (harm); both are written words."
+    examples:
+      "இதில் நன்மை இருக்கிறது.":
+        native: "There is benefit in this."
+        bases:
+          "இதில்": "in this; from இது (itu), this"
+          "நன்மை": "good; benefit"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நன்மை வேண்டும்.":
+        native: "Good is wanted."
+        bases:
+          "நன்மை": "good; benefit"
+  "ta-7197":
+    native: "harm; evil"
+    notes:
+      n1: "The opposite of நன்மை (naṉmai) (good)."
+    examples:
+      "இதில் தீமை இல்லை.":
+        native: "There is no harm in this."
+        bases:
+          "இதில்": "in this; from இது (itu), this"
+          "தீமை": "harm; evil"
+      "தீமை வேண்டாம்.":
+        native: "No harm, please."
+        bases:
+          "தீமை": "harm; evil"
+  "ta-7198":
+    native: "use; benefit"
+    notes:
+      n1: "பயன் (payaṉ) இல்லை (illai) means 'it is no use', a common way to criticise a plan."
+    examples:
+      "இதில் பயன் இல்லை.":
+        native: "There is no use in this."
+        bases:
+          "இதில்": "in this; from இது (itu), this"
+          "பயன்": "use; benefit"
+      "பயன் அதிகம்.":
+        native: "The benefit is great."
+        bases:
+          "பயன்": "use; benefit"
+  "ta-7199":
+    native: "value; respect; worth"
+    notes:
+      n1: "Used for the worth of a thing and for the respect a person has."
+    examples:
+      "இதன் மதிப்பு அதிகம்.":
+        native: "Its value is high."
+        bases:
+          "இதன்": "its; from இது (itu), this; it"
+          "மதிப்பு": "value; respect; worth"
+      "அவருக்கு மதிப்பு உண்டு.":
+        native: "He is respected."
+        bases:
+          "அவருக்கு": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "மதிப்பு": "value; respect; worth"
+          "உண்டு": "there is; has"
+  "ta-7200":
+    native: "recommendation; suggestion"
+    notes:
+      n1: "A formal recommendation, such as from a doctor or an expert."
+    examples:
+      "இது என் பரிந்துரை.":
+        native: "This is my recommendation."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "பரிந்துரை": "recommendation; suggestion"
+      "உன் பரிந்துரை நல்லது.":
+        native: "Your suggestion is good."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "பரிந்துரை": "recommendation; suggestion"
+  "ta-7201":
+    native: "request; demand"
+    notes:
+      n1: "A formal request or demand made to an office or leader."
+    examples:
+      "இது என் கோரிக்கை.":
+        native: "This is my request."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "கோரிக்கை": "request; demand"
+      "கோரிக்கை எழுது.":
+        native: "Write a request."
+        bases:
+          "கோரிக்கை": "request; demand"
+  "ta-7202":
+    native: "advice; counsel"
+    notes:
+      n1: "Advice given by an elder; Tamil 'gives' (கொடு (koṭu)) advice."
+    examples:
+      "உன் அறிவுரை வேண்டும்.":
+        native: "I need your advice."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "அறிவுரை": "advice; counsel"
+      "அவர் அறிவுரை கொடுக்கிறார்.":
+        native: "He gives advice."
+        bases:
+          "அவர்": "he or she (polite)"
+          "அறிவுரை": "advice; counsel"
+          "கொடுக்கிறார்": "is giving; from கொடு (koṭu), to give"
+  "ta-7203":
+    native: "wonderful; marvellous"
+    notes:
+      n1: "The -ஆன (-āṉa) form of அற்புதம் (aṟputam), used before a noun."
+    examples:
+      "அற்புதமான படம்.":
+        native: "A marvellous film."
+        bases:
+          "அற்புதமான": "wonderful; marvellous"
+      "அற்புதமான நாள்.":
+        native: "A wonderful day."
+        bases:
+          "அற்புதமான": "wonderful; marvellous"
+  "ta-7204":
+    native: "best; excellent"
+    notes:
+      n1: "This describing word has no -ஆன (-āṉa) ending; it comes before the noun."
+    examples:
+      "இது சிறந்த புத்தகம்.":
+        native: "This is an excellent book."
+        bases:
+          "சிறந்த": "best; excellent"
+      "அவர் சிறந்த ஆசிரியர்.":
+        native: "He is an excellent teacher."
+        bases:
+          "அவர்": "he or she (polite)"
+          "சிறந்த": "best; excellent"
+  "ta-7205":
+    native: "special; excellent"
+    notes:
+      n1: "The -ஆன (-āṉa) form of சிறப்பு (ciṟappu) (speciality), used before a noun."
+    examples:
+      "சிறப்பான வேலை.":
+        native: "Excellent work."
+        bases:
+          "சிறப்பான": "special; excellent"
+      "சிறப்பான உணவு.":
+        native: "Special food."
+        bases:
+          "சிறப்பான": "special; excellent"
+  "ta-7206":
+    native: "useful"
+    notes:
+      n1: "Built from பயன் (payaṉ) (use) with -உள்ள (-uḷḷa), 'having'; its opposite is பயனற்ற (payaṉaṟṟa)."
+    examples:
+      "பயனுள்ள புத்தகம்.":
+        native: "A useful book."
+        bases:
+          "பயனுள்ள": "useful"
+      "இது பயனுள்ள செயலி.":
+        native: "This is a useful app."
+        bases:
+          "பயனுள்ள": "useful"
+  "ta-7207":
+    native: "useless"
+    notes:
+      n1: "Built from பயன் (payaṉ) (use) with -அற்ற (-aṟṟa), 'without'; its opposite is பயனுள்ள (payaṉuḷḷa)."
+    examples:
+      "பயனற்ற வேலை.":
+        native: "Useless work."
+        bases:
+          "பயனற்ற": "useless"
+      "இது பயனற்ற செயலி.":
+        native: "This is a useless app."
+        bases:
+          "பயனற்ற": "useless"
+  "ta-7208":
+    native: "fair; reasonable"
+    notes:
+      n1: "The -ஆன (-āṉa) form of நியாயம் (niyāyam), used before a noun."
+    examples:
+      "நியாயமான விலை.":
+        native: "A fair price."
+        bases:
+          "நியாயமான": "fair; reasonable"
+      "நியாயமான கருத்து.":
+        native: "A fair opinion."
+        bases:
+          "நியாயமான": "fair; reasonable"
+  "ta-7209":
+    native: "funny; amusing"
+    notes:
+      n1: "The -ஆன (-āṉa) form of வேடிக்கை (vēṭikkai) (fun), used before a noun."
+    examples:
+      "வேடிக்கையான படம்.":
+        native: "A funny film."
+        bases:
+          "வேடிக்கையான": "funny; amusing"
+      "வேடிக்கையான பையன்.":
+        native: "An amusing boy."
+        bases:
+          "வேடிக்கையான": "funny; amusing"
+  "ta-7210":
+    native: "disappointing"
+    notes:
+      n1: "The -ஆன (-āṉa) form of ஏமாற்றம் (ēmāṟṟam), used for what disappoints."
+    examples:
+      "ஏமாற்றமான முடிவு.":
+        native: "A disappointing result."
+        bases:
+          "ஏமாற்றமான": "disappointing"
+          "முடிவு": "end; decision; result"
+      "ஏமாற்றமான படம்.":
+        native: "A disappointing film."
+        bases:
+          "ஏமாற்றமான": "disappointing"
+  "ta-7211":
+    native: "necessary; needed"
+    notes:
+      n1: "The -ஆன (-āṉa) form of தேவை (tēvai) (need); its opposite is தேவையற்ற (tēvaiyaṟṟa)."
+    examples:
+      "தேவையான மருந்து.":
+        native: "The needed medicine."
+        bases:
+          "தேவையான": "necessary; needed"
+      "இது தேவையான பொருள்.":
+        native: "This is a necessary thing."
+        bases:
+          "தேவையான": "necessary; needed"
+  "ta-7212":
+    native: "unnecessary"
+    notes:
+      n1: "தேவை (tēvai) (need) plus -அற்ற (-aṟṟa), 'without'; its opposite is தேவையான (tēvaiyāṉa)."
+    examples:
+      "தேவையற்ற செலவு.":
+        native: "An unnecessary expense."
+        bases:
+          "தேவையற்ற": "unnecessary"
+      "தேவையற்ற கேள்வி.":
+        native: "An unnecessary question."
+        bases:
+          "தேவையற்ற": "unnecessary"
+  "ta-7213":
+    native: "suitable; fitting"
+    notes:
+      n1: "The -ஆன (-āṉa) form of பொருத்தம் (poruttam) (fit), used before a noun."
+    examples:
+      "பொருத்தமான பெயர்.":
+        native: "A suitable name."
+        bases:
+          "பொருத்தமான": "suitable; fitting"
+      "பொருத்தமான நேரம்.":
+        native: "A suitable time."
+        bases:
+          "பொருத்தமான": "suitable; fitting"
+  "ta-7214":
+    native: "natural; normal"
+    notes:
+      n1: "The -ஆன (-āṉa) form of இயல்பு (iyalpu) (nature), used before a noun."
+    examples:
+      "இயல்பான பேச்சு.":
+        native: "Natural speech."
+        bases:
+          "இயல்பான": "natural; normal"
+          "பேச்சு": "speech; talk"
+      "இயல்பான முறை.":
+        native: "The normal way."
+        bases:
+          "இயல்பான": "natural; normal"
+          "முறை": "time; turn"
+  "ta-7215":
+    native: "in truth; really"
+    notes:
+      n1: "உண்மை (uṇmai) (truth) plus the -இல் (-il) ending, 'in truth'; it starts a sentence."
+    examples:
+      "உண்மையில் இது நல்லது.":
+        native: "Really, this is good."
+        bases:
+          "உண்மையில்": "in truth; really"
+      "உண்மையில் எனக்குத் தெரியாது.":
+        native: "Honestly, I do not know."
+        bases:
+          "உண்மையில்": "in truth; really"
+          "எனக்குத்": "to me; for me; from நான் (nāṉ), I; me"
+          "தெரியாது": "is not known; from தெரி (teri), to be known; to be seen"
+  "ta-7216":
+    native: "certainly; definitely"
+    notes:
+      n1: "நிச்சயம் (niccayam) (certainty) plus -ஆக (-āka), the ending that makes an adverb."
+    examples:
+      "நிச்சயமாக வருகிறேன்.":
+        native: "I will certainly come."
+        bases:
+          "நிச்சயமாக": "certainly; definitely"
+          "வருகிறேன்": "am coming; from வா (vā), to come"
+      "நிச்சயமாக இது சரி.":
+        native: "This is certainly right."
+        bases:
+          "நிச்சயமாக": "certainly; definitely"
+  "ta-7217":
+    native: "definitely; strictly"
+    notes:
+      n1: "In speech people shorten it to கண்டிப்பா (kaṇṭippā), losing the final -க (-ka)."
+    examples:
+      "கண்டிப்பாக வருகிறேன்.":
+        native: "I will definitely come."
+        bases:
+          "கண்டிப்பாக": "definitely; strictly"
+          "வருகிறேன்": "am coming; from வா (vā), to come"
+      "கண்டிப்பாக வேண்டும்.":
+        native: "It is definitely needed."
+        bases:
+          "கண்டிப்பாக": "definitely; strictly"
+  "ta-7218":
+    native: "perhaps; maybe"
+    notes:
+      n1: "Written as one word; it goes before the verb and means 'maybe'."
+    examples:
+      "ஒருவேளை நாளை வருவேன்.":
+        native: "Perhaps I will come tomorrow."
+        bases:
+          "ஒருவேளை": "perhaps; maybe"
+          "வருவேன்": "I will come; from வா (vā), to come"
+      "ஒருவேளை இது சரி.":
+        native: "Perhaps this is right."
+        bases:
+          "ஒருவேளை": "perhaps; maybe"
+  "ta-7219":
+    native: "surely; compulsorily"
+    notes:
+      n1: "Said as 'definitely' in speech; also a noun meaning compulsion."
+    examples:
+      "கட்டாயம் வருகிறேன்.":
+        native: "I will surely come."
+        bases:
+          "கட்டாயம்": "surely; compulsorily"
+          "வருகிறேன்": "am coming; from வா (vā), to come"
+      "கட்டாயம் வேண்டும்.":
+        native: "It is a must."
+        bases:
+          "கட்டாயம்": "surely; compulsorily"
+  "ta-7220":
+    native: "on the contrary; instead"
+    notes:
+      n1: "மாறு (māṟu) (to change) plus -ஆக (-āka); it begins a sentence that turns the earlier one around."
+    examples:
+      "மாறாக இது சரி.":
+        native: "On the contrary, this is right."
+        bases:
+          "மாறாக": "on the contrary; instead"
+      "மாறாக நான் வருகிறேன்.":
+        native: "Instead, I will come."
+        bases:
+          "மாறாக": "on the contrary; instead"
+          "வருகிறேன்": "am coming; from வா (vā), to come"
+  "ta-7221":
+    native: "truly; really"
+    notes:
+      n1: "உண்மையாக (uṇmaiyāka) (truly) plus the stress -ஏ (-ē); it adds emphasis."
+    examples:
+      "உண்மையாகவே நல்லது.":
+        native: "It is truly good."
+        bases:
+          "உண்மையாகவே": "truly; really"
+      "உண்மையாகவே எனக்குத் தெரியாது.":
+        native: "I truly do not know."
+        bases:
+          "உண்மையாகவே": "truly; really"
+          "எனக்குத்": "to me; for me; from நான் (nāṉ), I; me"
+          "தெரியாது": "is not known; from தெரி (teri), to be known; to be seen"
+  "ta-7222":
+    native: "that is right; fair enough"
+    notes:
+      n1: "சரி (cari) (right) plus -தான் (-tāṉ), 'just', which makes it emphatic; it is how you agree in a chat."
+    examples:
+      "நீ சொல்வது சரிதான்.":
+        native: "What you say is right."
+        bases:
+          "சொல்வது": "what is said; saying; from சொல் (col), to say"
+          "சரிதான்": "that is right; fair enough"
+      "சரிதான், நான் வருகிறேன்.":
+        native: "Fine, I am coming."
+        bases:
+          "சரிதான்": "that is right; fair enough"
+          "வருகிறேன்": "am coming; from வா (vā), to come"
+  "ta-7223":
+    native: "to accept"
+    notes:
+      n1: "Written as one word; it means to accept an idea, an offer or a fact."
+    examples:
+      "நான் இதை ஏற்றுக்கொள்கிறேன்.":
+        native: "I accept this."
+        bases:
+          "இதை": "this (object); from இது (itu), this; it"
+          "ஏற்றுக்கொள்கிறேன்": "am accepting; from ஏற்றுக்கொள் (ēṟṟukkoḷ), to accept"
+      "அவன் ஏற்றுக்கொள்கிறான்.":
+        native: "He accepts."
+        bases:
+          "அவன்": "his"
+          "ஏற்றுக்கொள்கிறான்": "is accepting (he); from ஏற்றுக்கொள் (ēṟṟukkoḷ), to accept"
+  "ta-7224":
+    native: "to refuse; to deny"
+    notes:
+      n1: "Used for refusing and denying; in speech people say முடியாது (muṭiyātu) (cannot) instead."
+    examples:
+      "அவன் மறுக்கிறான்.":
+        native: "He refuses."
+        bases:
+          "அவன்": "his"
+          "மறுக்கிறான்": "is refusing (he); from மறு (maṟu), to refuse; to deny"
+      "நான் இதை மறுக்கிறேன்.":
+        native: "I deny this."
+        bases:
+          "இதை": "this (object); from இது (itu), this; it"
+          "மறுக்கிறேன்": "am refusing; from மறு (maṟu), to refuse; to deny"
+  "ta-7225":
+    native: "to support; to back"
+    notes:
+      n1: "The verb of ஆதரவு (ātaravu) (support); the one supported takes the -ஐ (-ai) ending."
+    examples:
+      "நான் உன்னை ஆதரிக்கிறேன்.":
+        native: "I support you."
+        bases:
+          "உன்னை": "you (object); from நீ (nī), you (to a friend or child)"
+          "ஆதரிக்கிறேன்": "am supporting; from ஆதரி (ātari), to support; to back"
+      "அவர்கள் இதை ஆதரிக்கிறார்கள்.":
+        native: "They support this."
+        bases:
+          "அவர்கள்": "their"
+          "இதை": "this (object); from இது (itu), this; it"
+          "ஆதரிக்கிறார்கள்": "are supporting (they, respectful); from ஆதரி (ātari), to support; to back"
+  "ta-7226":
+    native: "to oppose; to face"
+    notes:
+      n1: "As a noun எதிர் (etir) means opposite or front; as a verb it means to oppose."
+    examples:
+      "நான் இதை எதிர்க்கிறேன்.":
+        native: "I oppose this."
+        bases:
+          "இதை": "this (object); from இது (itu), this; it"
+          "எதிர்க்கிறேன்": "am opposing; from எதிர் (etir), to oppose; to face"
+      "அவர்கள் எதிர்க்கிறார்கள்.":
+        native: "They oppose."
+        bases:
+          "அவர்கள்": "their"
+          "எதிர்க்கிறார்கள்": "are opposing (they, respectful); from எதிர் (etir), to oppose; to face"
+  "ta-7227":
+    native: "to agree; to admit"
+    notes:
+      n1: "The spoken word for 'agree'; the written one is ஒப்புக்கொள் (oppukkoḷ)."
+    examples:
+      "நான் ஒத்துக்கொள்கிறேன்.":
+        native: "I agree."
+        bases:
+          "ஒத்துக்கொள்கிறேன்": "am agreeing; from ஒத்துக்கொள் (ottukkoḷ), to agree; to admit"
+      "அவன் ஒத்துக்கொள்கிறான்.":
+        native: "He agrees."
+        bases:
+          "அவன்": "his"
+          "ஒத்துக்கொள்கிறான்": "is agreeing (he); from ஒத்துக்கொள் (ottukkoḷ), to agree; to admit"
+  "ta-7228":
+    native: "to consent"
+    notes:
+      n1: "The verb of சம்மதம் (cammatam) (consent); it takes no object."
+    examples:
+      "அம்மா சம்மதிக்கிறார்.":
+        native: "Mother consents."
+        bases:
+          "சம்மதிக்கிறார்": "is consenting (respectful); from சம்மதி (cammati), to consent"
+      "நான் சம்மதிக்கிறேன்.":
+        native: "I consent."
+        bases:
+          "சம்மதிக்கிறேன்": "am consenting; from சம்மதி (cammati), to consent"
+  "ta-7229":
+    native: "to consider; to think"
+    notes:
+      n1: "A formal verb for holding a view; in speech people say நினை (niṉai) (think)."
+    examples:
+      "நான் இப்படிக் கருதுகிறேன்.":
+        native: "I think so."
+        bases:
+          "இப்படிக்": "like this; so; from இப்படி (ippaṭi), like this; so"
+          "கருதுகிறேன்": "am considering; from கருது (karutu), to consider; to think"
+      "அவர் இதை நல்லது என்று கருதுகிறார்.":
+        native: "He considers this good."
+        bases:
+          "அவர்": "he or she (polite)"
+          "இதை": "this (object); from இது (itu), this; it"
+          "என்று": "that (marks what was said or thought)"
+          "கருதுகிறார்": "is considering (respectful); from கருது (karutu), to consider; to think"
+  "ta-7230":
+    native: "to argue; to plead"
+    notes:
+      n1: "Used for arguing a point and for a lawyer arguing a case."
+    examples:
+      "அவன் வாதாடுகிறான்.":
+        native: "He argues."
+        bases:
+          "அவன்": "his"
+          "வாதாடுகிறான்": "is arguing (he); from வாதாடு (vātāṭu), to argue; to plead"
+      "வழக்கறிஞர் வாதாடுகிறார்.":
+        native: "The lawyer pleads."
+        bases:
+          "வாதாடுகிறார்": "is arguing (respectful); from வாதாடு (vātāṭu), to argue; to plead"
+  "ta-7231":
+    native: "to debate; to discuss"
+    notes:
+      n1: "The verb of விவாதம் (vivātam) (debate); the matter debated takes the -ஐ (-ai) ending."
+    examples:
+      "நாம் இதை விவாதிக்கிறோம்.":
+        native: "We discuss this."
+        bases:
+          "இதை": "this (object); from இது (itu), this; it"
+          "விவாதிக்கிறோம்": "are debating (we); from விவாதி (vivāti), to debate; to discuss"
+      "அவர்கள் விவாதிக்கிறார்கள்.":
+        native: "They are debating."
+        bases:
+          "அவர்கள்": "their"
+          "விவாதிக்கிறார்கள்": "are debating (they, respectful); from விவாதி (vivāti), to debate; to discuss"
+  "ta-7232":
+    native: "to reject"
+    notes:
+      n1: "Used for rejecting an offer, an application or a view."
+    examples:
+      "நான் இதை நிராகரிக்கிறேன்.":
+        native: "I reject this."
+        bases:
+          "இதை": "this (object); from இது (itu), this; it"
+          "நிராகரிக்கிறேன்": "am rejecting; from நிராகரி (nirākari), to reject"
+      "அவர்கள் நிராகரிக்கிறார்கள்.":
+        native: "They reject it."
+        bases:
+          "அவர்கள்": "their"
+          "நிராகரிக்கிறார்கள்": "are rejecting (they, respectful); from நிராகரி (nirākari), to reject"
+  "ta-8601":
+    native: "certainty; firmness"
+    notes:
+      n1: "Means certainty and also firmness; with இல்லை (illai) it says that something is not certain."
+    examples:
+      "உறுதி இல்லை.":
+        native: "There is no certainty."
+        bases:
+          "உறுதி": "certainty; firmness"
+      "இது உறுதி.":
+        native: "This is certain."
+        bases:
+          "உறுதி": "certainty; firmness"

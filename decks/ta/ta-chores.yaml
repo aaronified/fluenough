@@ -1,0 +1,892 @@
+schema: 1
+id: "ta-chores"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "chores"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1917"
+    target: "சுத்தம்"
+    reading: "cuttam"
+    ipa: "sut̪t̪am"
+    phonetic: "[sut̪t̪am]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீடு சுத்தம்."
+        reading: "vīṭu cuttam."
+        ipa: "ʋiːʈu sut̪t̪am"
+        bases: [{ word: "வீடு", ref: "ta-0009" }, { word: "சுத்தம்", base: "சுத்தம்", reading: "cuttam" }]
+      - target: "வீட்டைச் சுத்தம் செய்."
+        reading: "vīṭṭaic cuttam cey."
+        ipa: "ʋiːʈʈais sut̪t̪am sej"
+        bases: [{ word: "வீட்டைச்", base: "வீடு", reading: "vīṭu" }, { word: "சுத்தம்", base: "சுத்தம்", reading: "cuttam" }, { word: "செய்", ref: "ta-0127" }]
+  - id: "ta-1918"
+    target: "பாத்திரம்"
+    reading: "pāttiram"
+    ipa: "paːt̪t̪iɾam"
+    phonetic: "[paːt̪t̪iɾam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பாத்திரம் கழுவு."
+        reading: "pāttiram kaḻuvu."
+        ipa: "paːt̪t̪iɾam kaɻuʋu"
+        bases: [{ word: "பாத்திரம்", base: "பாத்திரம்", reading: "pāttiram" }, { word: "கழுவு", ref: "ta-0190" }]
+      - target: "பாத்திரம் எங்கே?"
+        reading: "pāttiram eṅkē?"
+        ipa: "paːt̪t̪iɾam eŋkeː"
+        bases: [{ word: "பாத்திரம்", base: "பாத்திரம்", reading: "pāttiram" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1919"
+    target: "துடைப்பம்"
+    reading: "tuṭaippam"
+    ipa: "t̪uʈaippam"
+    phonetic: "[t̪uɖaippam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துடைப்பம் எங்கே?"
+        reading: "tuṭaippam eṅkē?"
+        ipa: "t̪uʈaippam eŋkeː"
+        bases: [{ word: "துடைப்பம்", base: "துடைப்பம்", reading: "tuṭaippam" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "துடைப்பம் கொடு."
+        reading: "tuṭaippam koṭu."
+        ipa: "t̪uʈaippam koʈu"
+        bases: [{ word: "துடைப்பம்", base: "துடைப்பம்", reading: "tuṭaippam" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-1920"
+    target: "குப்பை"
+    reading: "kuppai"
+    ipa: "kuppai"
+    phonetic: "[kuppai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குப்பை எங்கே?"
+        reading: "kuppai eṅkē?"
+        ipa: "kuppai eŋkeː"
+        bases: [{ word: "குப்பை", base: "குப்பை", reading: "kuppai" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "இங்கே குப்பை இல்லை."
+        reading: "iṅkē kuppai illai."
+        ipa: "iŋkeː kuppai illai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "குப்பை", base: "குப்பை", reading: "kuppai" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1921"
+    target: "குப்பைத்தொட்டி"
+    reading: "kuppaittoṭṭi"
+    ipa: "kuppait̪t̪oʈʈi"
+    phonetic: "[kuppait̪t̪oʈʈi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது குப்பைத்தொட்டி."
+        reading: "itu kuppaittoṭṭi."
+        ipa: "it̪u kuppait̪t̪oʈʈi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "குப்பைத்தொட்டி", base: "குப்பைத்தொட்டி", reading: "kuppaittoṭṭi" }]
+      - target: "குப்பைத்தொட்டி எங்கே?"
+        reading: "kuppaittoṭṭi eṅkē?"
+        ipa: "kuppait̪t̪oʈʈi eŋkeː"
+        bases: [{ word: "குப்பைத்தொட்டி", base: "குப்பைத்தொட்டி", reading: "kuppaittoṭṭi" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1922"
+    target: "தரை"
+    reading: "tarai"
+    ipa: "t̪aɾai"
+    phonetic: "[t̪aɾai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தரை சுத்தம்."
+        reading: "tarai cuttam."
+        ipa: "t̪aɾai sut̪t̪am"
+        bases: [{ word: "தரை", base: "தரை", reading: "tarai" }, { word: "சுத்தம்", ref: "ta-1917" }]
+      - target: "தரையைப் பெருக்கு."
+        reading: "taraiyaip perukku."
+        ipa: "t̪aɾaijaip peɾukku"
+        bases: [{ word: "தரையைப்", base: "தரை", reading: "tarai" }, { word: "பெருக்கு", ref: "ta-1945" }]
+  - id: "ta-1923"
+    target: "சுவர்"
+    reading: "cuvar"
+    ipa: "suʋaɾ"
+    phonetic: "[suʋaɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சுவர் வெள்ளை."
+        reading: "cuvar veḷḷai."
+        ipa: "suʋaɾ ʋeɭɭai"
+        bases: [{ word: "சுவர்", base: "சுவர்", reading: "cuvar" }, { word: "வெள்ளை", ref: "ta-0295" }]
+      - target: "சுவரில் படம்."
+        reading: "cuvaril paṭam."
+        ipa: "suʋaɾil paʈam"
+        bases: [{ word: "சுவரில்", base: "சுவர்", reading: "cuvar" }, { word: "படம்", ref: "ta-1825" }]
+  - id: "ta-1924"
+    target: "கதவு"
+    reading: "katavu"
+    ipa: "kat̪aʋu"
+    phonetic: "[kad̪aʋɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கதவு திற."
+        reading: "katavu tiṟa."
+        ipa: "kat̪aʋu t̪ira"
+        bases: [{ word: "கதவு", base: "கதவு", reading: "katavu" }, { word: "திற", ref: "ta-0186" }]
+      - target: "கதவு மூடு."
+        reading: "katavu mūṭu."
+        ipa: "kat̪aʋu muːʈu"
+        bases: [{ word: "கதவு", base: "கதவு", reading: "katavu" }, { word: "மூடு", ref: "ta-0187" }]
+  - id: "ta-1925"
+    target: "மின்விசிறி"
+    reading: "miṉviciṟi"
+    ipa: "minʋisiri"
+    phonetic: "[minʋisiri]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மின்விசிறி போடு."
+        reading: "miṉviciṟi pōṭu."
+        ipa: "minʋisiri poːʈu"
+        bases: [{ word: "மின்விசிறி", base: "மின்விசிறி", reading: "miṉviciṟi" }, { word: "போடு", ref: "ta-0452" }]
+      - target: "மின்விசிறி எங்கே?"
+        reading: "miṉviciṟi eṅkē?"
+        ipa: "minʋisiri eŋkeː"
+        bases: [{ word: "மின்விசிறி", base: "மின்விசிறி", reading: "miṉviciṟi" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1926"
+    target: "விளக்கு"
+    reading: "viḷakku"
+    ipa: "ʋiɭakku"
+    phonetic: "[ʋiɭakkɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விளக்கு ஏற்று."
+        reading: "viḷakku ēṟṟu."
+        ipa: "ʋiɭakku eːrru"
+        bases: [{ word: "விளக்கு", base: "விளக்கு", reading: "viḷakku" }, { word: "ஏற்று", ref: "ta-1954" }]
+      - target: "விளக்கு எங்கே?"
+        reading: "viḷakku eṅkē?"
+        ipa: "ʋiɭakku eŋkeː"
+        bases: [{ word: "விளக்கு", base: "விளக்கு", reading: "viḷakku" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1927"
+    target: "மின்சாரம்"
+    reading: "miṉcāram"
+    ipa: "mintʃaːɾam"
+    phonetic: "[mindʒaːɾam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மின்சாரம் இல்லை."
+        reading: "miṉcāram illai."
+        ipa: "mintʃaːɾam illai"
+        bases: [{ word: "மின்சாரம்", base: "மின்சாரம்", reading: "miṉcāram" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "மின்சாரம் வேண்டும்."
+        reading: "miṉcāram vēṇṭum."
+        ipa: "mintʃaːɾam ʋeːɳʈum"
+        bases: [{ word: "மின்சாரம்", base: "மின்சாரம்", reading: "miṉcāram" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1928"
+    target: "சோப்பு"
+    reading: "cōppu"
+    ipa: "soːppu"
+    phonetic: "[soːppɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சோப்பு கொடு."
+        reading: "cōppu koṭu."
+        ipa: "soːppu koʈu"
+        bases: [{ word: "சோப்பு", base: "சோப்பு", reading: "cōppu" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "சோப்பு இல்லை."
+        reading: "cōppu illai."
+        ipa: "soːppu illai"
+        bases: [{ word: "சோப்பு", base: "சோப்பு", reading: "cōppu" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1929"
+    target: "வாளி"
+    reading: "vāḷi"
+    ipa: "ʋaːɭi"
+    phonetic: "[ʋaːɭi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வாளி எங்கே?"
+        reading: "vāḷi eṅkē?"
+        ipa: "ʋaːɭi eŋkeː"
+        bases: [{ word: "வாளி", base: "வாளி", reading: "vāḷi" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "வாளியில் தண்ணீர்."
+        reading: "vāḷiyil taṇṇīr."
+        ipa: "ʋaːɭijil t̪aɳɳiːɾ"
+        bases: [{ word: "வாளியில்", base: "வாளி", reading: "vāḷi" }, { word: "தண்ணீர்", ref: "ta-0005" }]
+  - id: "ta-1930"
+    target: "இஸ்திரி"
+    reading: "istiri"
+    ipa: "ist̪iɾi"
+    phonetic: "[ist̪iɾi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துணி இஸ்திரி."
+        reading: "tuṇi istiri."
+        ipa: "t̪uɳi ist̪iɾi"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "இஸ்திரி", base: "இஸ்திரி", reading: "istiri" }]
+      - target: "இஸ்திரி போடு."
+        reading: "istiri pōṭu."
+        ipa: "ist̪iɾi poːʈu"
+        bases: [{ word: "இஸ்திரி", base: "இஸ்திரி", reading: "istiri" }, { word: "போடு", ref: "ta-0452" }]
+  - id: "ta-1931"
+    target: "பெட்டி"
+    reading: "peṭṭi"
+    ipa: "peʈʈi"
+    phonetic: "[peʈʈi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பெட்டி திற."
+        reading: "peṭṭi tiṟa."
+        ipa: "peʈʈi t̪ira"
+        bases: [{ word: "பெட்டி", base: "பெட்டி", reading: "peṭṭi" }, { word: "திற", ref: "ta-0186" }]
+      - target: "இது பெரிய பெட்டி."
+        reading: "itu periya peṭṭi."
+        ipa: "it̪u peɾija peʈʈi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "பெட்டி", base: "பெட்டி", reading: "peṭṭi" }]
+  - id: "ta-1932"
+    target: "பாய்"
+    reading: "pāy"
+    ipa: "paːj"
+    phonetic: "[paːj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பாய் போடு."
+        reading: "pāy pōṭu."
+        ipa: "paːj poːʈu"
+        bases: [{ word: "பாய்", base: "பாய்", reading: "pāy" }, { word: "போடு", ref: "ta-0452" }]
+      - target: "பாய் எங்கே?"
+        reading: "pāy eṅkē?"
+        ipa: "paːj eŋkeː"
+        bases: [{ word: "பாய்", base: "பாய்", reading: "pāy" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1933"
+    target: "தலையணை"
+    reading: "talaiyaṇai"
+    ipa: "t̪alaijaɳai"
+    phonetic: "[t̪alaijaɳai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தலையணை எங்கே?"
+        reading: "talaiyaṇai eṅkē?"
+        ipa: "t̪alaijaɳai eŋkeː"
+        bases: [{ word: "தலையணை", base: "தலையணை", reading: "talaiyaṇai" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "தலையணை கொடு."
+        reading: "talaiyaṇai koṭu."
+        ipa: "t̪alaijaɳai koʈu"
+        bases: [{ word: "தலையணை", base: "தலையணை", reading: "talaiyaṇai" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-1934"
+    target: "போர்வை"
+    reading: "pōrvai"
+    ipa: "poːɾʋai"
+    phonetic: "[poːɾʋai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "போர்வை மடி."
+        reading: "pōrvai maṭi."
+        ipa: "poːɾʋai maʈi"
+        bases: [{ word: "போர்வை", base: "போர்வை", reading: "pōrvai" }, { word: "மடி", ref: "ta-1948" }]
+      - target: "போர்வை வேண்டும்."
+        reading: "pōrvai vēṇṭum."
+        ipa: "poːɾʋai ʋeːɳʈum"
+        bases: [{ word: "போர்வை", base: "போர்வை", reading: "pōrvai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1935"
+    target: "அலமாரி"
+    reading: "alamāri"
+    ipa: "alamaːɾi"
+    phonetic: "[alamaːɾi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அலமாரி திற."
+        reading: "alamāri tiṟa."
+        ipa: "alamaːɾi t̪ira"
+        bases: [{ word: "அலமாரி", base: "அலமாரி", reading: "alamāri" }, { word: "திற", ref: "ta-0186" }]
+      - target: "துணி அலமாரியில்."
+        reading: "tuṇi alamāriyil."
+        ipa: "t̪uɳi alamaːɾijil"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "அலமாரியில்", base: "அலமாரி", reading: "alamāri" }]
+  - id: "ta-1936"
+    target: "தூசி"
+    reading: "tūci"
+    ipa: "t̪uːsi"
+    phonetic: "[t̪uːsi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தூசி துடை."
+        reading: "tūci tuṭai."
+        ipa: "t̪uːsi t̪uʈai"
+        bases: [{ word: "தூசி", base: "தூசி", reading: "tūci" }, { word: "துடை", ref: "ta-1946" }]
+      - target: "தூசி இல்லை."
+        reading: "tūci illai."
+        ipa: "t̪uːsi illai"
+        bases: [{ word: "தூசி", base: "தூசி", reading: "tūci" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1937"
+    target: "அழுக்கு"
+    reading: "aḻukku"
+    ipa: "aɻukku"
+    phonetic: "[aɻukkɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அழுக்கு துணி."
+        reading: "aḻukku tuṇi."
+        ipa: "aɻukku t̪uɳi"
+        bases: [{ word: "அழுக்கு", base: "அழுக்கு", reading: "aḻukku" }, { word: "துணி", ref: "ta-0272" }]
+      - target: "இது அழுக்கு."
+        reading: "itu aḻukku."
+        ipa: "it̪u aɻukku"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "அழுக்கு", base: "அழுக்கு", reading: "aḻukku" }]
+  - id: "ta-1938"
+    target: "குழாய்"
+    reading: "kuḻāy"
+    ipa: "kuɻaːj"
+    phonetic: "[kuɻaːj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குழாய் மூடு."
+        reading: "kuḻāy mūṭu."
+        ipa: "kuɻaːj muːʈu"
+        bases: [{ word: "குழாய்", base: "குழாய்", reading: "kuḻāy" }, { word: "மூடு", ref: "ta-0187" }]
+      - target: "குழாய் எங்கே?"
+        reading: "kuḻāy eṅkē?"
+        ipa: "kuɻaːj eŋkeː"
+        bases: [{ word: "குழாய்", base: "குழாய்", reading: "kuḻāy" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1939"
+    target: "அடுப்பு"
+    reading: "aṭuppu"
+    ipa: "aʈuppu"
+    phonetic: "[aɖuppɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அடுப்பு எங்கே?"
+        reading: "aṭuppu eṅkē?"
+        ipa: "aʈuppu eŋkeː"
+        bases: [{ word: "அடுப்பு", base: "அடுப்பு", reading: "aṭuppu" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "அடுப்பு அணை."
+        reading: "aṭuppu aṇai."
+        ipa: "aʈuppu aɳai"
+        bases: [{ word: "அடுப்பு", base: "அடுப்பு", reading: "aṭuppu" }, { word: "அணை", ref: "ta-1953" }]
+  - id: "ta-1940"
+    target: "தட்டு"
+    reading: "taṭṭu"
+    ipa: "t̪aʈʈu"
+    phonetic: "[t̪aʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தட்டு கழுவு."
+        reading: "taṭṭu kaḻuvu."
+        ipa: "t̪aʈʈu kaɻuʋu"
+        bases: [{ word: "தட்டு", base: "தட்டு", reading: "taṭṭu" }, { word: "கழுவு", ref: "ta-0190" }]
+      - target: "தட்டு கொடு."
+        reading: "taṭṭu koṭu."
+        ipa: "t̪aʈʈu koʈu"
+        bases: [{ word: "தட்டு", base: "தட்டு", reading: "taṭṭu" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-1941"
+    target: "கரண்டி"
+    reading: "karaṇṭi"
+    ipa: "kaɾaɳʈi"
+    phonetic: "[kaɾaɳɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கரண்டி கொடு."
+        reading: "karaṇṭi koṭu."
+        ipa: "kaɾaɳʈi koʈu"
+        bases: [{ word: "கரண்டி", base: "கரண்டி", reading: "karaṇṭi" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "கரண்டி எங்கே?"
+        reading: "karaṇṭi eṅkē?"
+        ipa: "kaɾaɳʈi eŋkeː"
+        bases: [{ word: "கரண்டி", base: "கரண்டி", reading: "karaṇṭi" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1942"
+    target: "டம்ளர்"
+    reading: "ṭamḷar"
+    ipa: "ʈamɭaɾ"
+    phonetic: "[ʈamɭaɾ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "டம்ளர் எங்கே?"
+        reading: "ṭamḷar eṅkē?"
+        ipa: "ʈamɭaɾ eŋkeː"
+        bases: [{ word: "டம்ளர்", base: "டம்ளர்", reading: "ṭamḷar" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "டம்ளர் நிரப்பு."
+        reading: "ṭamḷar nirappu."
+        ipa: "ʈamɭaɾ niɾappu"
+        bases: [{ word: "டம்ளர்", base: "டம்ளர்", reading: "ṭamḷar" }, { word: "நிரப்பு", ref: "ta-1951" }]
+  - id: "ta-1943"
+    target: "செடி"
+    reading: "ceṭi"
+    ipa: "seʈi"
+    phonetic: "[seɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "செடிக்குத் தண்ணீர் ஊற்று."
+        reading: "ceṭikkut taṇṇīr ūṟṟu."
+        ipa: "seʈikkut̪ t̪aɳɳiːɾ uːrru"
+        bases: [{ word: "செடிக்குத்", base: "செடி", reading: "ceṭi" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "ஊற்று", ref: "ta-1952" }]
+      - target: "செடி பச்சை."
+        reading: "ceṭi paccai."
+        ipa: "seʈi patʃtʃai"
+        bases: [{ word: "செடி", base: "செடி", reading: "ceṭi" }, { word: "பச்சை", ref: "ta-0293" }]
+  - id: "ta-1944"
+    target: "பூட்டு"
+    reading: "pūṭṭu"
+    ipa: "puːʈʈu"
+    phonetic: "[puːʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது புதிய பூட்டு."
+        reading: "itu putiya pūṭṭu."
+        ipa: "it̪u put̪ija puːʈʈu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புதிய", ref: "ta-0171" }, { word: "பூட்டு", base: "பூட்டு", reading: "pūṭṭu" }]
+      - target: "பூட்டு எங்கே?"
+        reading: "pūṭṭu eṅkē?"
+        ipa: "puːʈʈu eŋkeː"
+        bases: [{ word: "பூட்டு", base: "பூட்டு", reading: "pūṭṭu" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1945"
+    target: "பெருக்கு"
+    reading: "perukku"
+    ipa: "peɾukku"
+    phonetic: "[peɾukkɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தரை பெருக்கு."
+        reading: "tarai perukku."
+        ipa: "t̪aɾai peɾukku"
+        bases: [{ word: "தரை", ref: "ta-1922" }, { word: "பெருக்கு", base: "பெருக்கு", reading: "perukku" }]
+      - target: "நான் பெருக்குகிறேன்."
+        reading: "nāṉ perukkukiṟēṉ."
+        ipa: "naːn peɾukkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பெருக்குகிறேன்", base: "பெருக்கு", reading: "perukku" }]
+  - id: "ta-1946"
+    target: "துடை"
+    reading: "tuṭai"
+    ipa: "t̪uʈai"
+    phonetic: "[t̪uɖai]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மேசை துடை."
+        reading: "mēcai tuṭai."
+        ipa: "meːsai t̪uʈai"
+        bases: [{ word: "மேசை", ref: "ta-0280" }, { word: "துடை", base: "துடை", reading: "tuṭai" }]
+      - target: "நான் துடைக்கிறேன்."
+        reading: "nāṉ tuṭaikkiṟēṉ."
+        ipa: "naːn t̪uʈaikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "துடைக்கிறேன்", base: "துடை", reading: "tuṭai" }]
+  - id: "ta-1947"
+    target: "துவை"
+    reading: "tuvai"
+    ipa: "t̪uʋai"
+    phonetic: "[t̪uʋai]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துணி துவை."
+        reading: "tuṇi tuvai."
+        ipa: "t̪uɳi t̪uʋai"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "துவை", base: "துவை", reading: "tuvai" }]
+      - target: "நான் துணி துவைக்கிறேன்."
+        reading: "nāṉ tuṇi tuvaikkiṟēṉ."
+        ipa: "naːn t̪uɳi t̪uʋaikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "துணி", ref: "ta-0272" }, { word: "துவைக்கிறேன்", base: "துவை", reading: "tuvai" }]
+  - id: "ta-1948"
+    target: "மடி"
+    reading: "maṭi"
+    ipa: "maʈi"
+    phonetic: "[maɖi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துணி மடி."
+        reading: "tuṇi maṭi."
+        ipa: "t̪uɳi maʈi"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "மடி", base: "மடி", reading: "maṭi" }]
+      - target: "போர்வை மடி."
+        reading: "pōrvai maṭi."
+        ipa: "poːɾʋai maʈi"
+        bases: [{ word: "போர்வை", ref: "ta-1934" }, { word: "மடி", base: "மடி", reading: "maṭi" }]
+  - id: "ta-1949"
+    target: "இழு"
+    reading: "iḻu"
+    ipa: "iɻu"
+    phonetic: "[iɻɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கதவு இழு."
+        reading: "katavu iḻu."
+        ipa: "kat̪aʋu iɻu"
+        bases: [{ word: "கதவு", ref: "ta-1924" }, { word: "இழு", base: "இழு", reading: "iḻu" }]
+      - target: "நான் இழுக்கிறேன்."
+        reading: "nāṉ iḻukkiṟēṉ."
+        ipa: "naːn iɻukkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இழுக்கிறேன்", base: "இழு", reading: "iḻu" }]
+  - id: "ta-1950"
+    target: "அலசு"
+    reading: "alacu"
+    ipa: "alasu"
+    phonetic: "[alasɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துணி அலசு."
+        reading: "tuṇi alacu."
+        ipa: "t̪uɳi alasu"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "அலசு", base: "அலசு", reading: "alacu" }]
+      - target: "நான் அலசுகிறேன்."
+        reading: "nāṉ alacukiṟēṉ."
+        ipa: "naːn alasukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அலசுகிறேன்", base: "அலசு", reading: "alacu" }]
+  - id: "ta-1951"
+    target: "நிரப்பு"
+    reading: "nirappu"
+    ipa: "niɾappu"
+    phonetic: "[n̪iɾappɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "டம்ளர் நிரப்பு."
+        reading: "ṭamḷar nirappu."
+        ipa: "ʈamɭaɾ niɾappu"
+        bases: [{ word: "டம்ளர்", ref: "ta-1942" }, { word: "நிரப்பு", base: "நிரப்பு", reading: "nirappu" }]
+      - target: "வாளி நிரப்பு."
+        reading: "vāḷi nirappu."
+        ipa: "ʋaːɭi niɾappu"
+        bases: [{ word: "வாளி", ref: "ta-1929" }, { word: "நிரப்பு", base: "நிரப்பு", reading: "nirappu" }]
+  - id: "ta-1952"
+    target: "ஊற்று"
+    reading: "ūṟṟu"
+    ipa: "uːrru"
+    phonetic: "[uːttrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தண்ணீர் ஊற்று."
+        reading: "taṇṇīr ūṟṟu."
+        ipa: "t̪aɳɳiːɾ uːrru"
+        bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "ஊற்று", base: "ஊற்று", reading: "ūṟṟu" }]
+      - target: "பால் ஊற்று."
+        reading: "pāl ūṟṟu."
+        ipa: "paːl uːrru"
+        bases: [{ word: "பால்", ref: "ta-1063" }, { word: "ஊற்று", base: "ஊற்று", reading: "ūṟṟu" }]
+  - id: "ta-1953"
+    target: "அணை"
+    reading: "aṇai"
+    ipa: "aɳai"
+    phonetic: "[aɳai]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மின்விசிறி அணை."
+        reading: "miṉviciṟi aṇai."
+        ipa: "minʋisiri aɳai"
+        bases: [{ word: "மின்விசிறி", ref: "ta-1925" }, { word: "அணை", base: "அணை", reading: "aṇai" }]
+      - target: "நான் அணைக்கிறேன்."
+        reading: "nāṉ aṇaikkiṟēṉ."
+        ipa: "naːn aɳaikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அணைக்கிறேன்", base: "அணை", reading: "aṇai" }]
+  - id: "ta-1954"
+    target: "ஏற்று"
+    reading: "ēṟṟu"
+    ipa: "eːrru"
+    phonetic: "[eːttrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விளக்கு ஏற்று."
+        reading: "viḷakku ēṟṟu."
+        ipa: "ʋiɭakku eːrru"
+        bases: [{ word: "விளக்கு", ref: "ta-1926" }, { word: "ஏற்று", base: "ஏற்று", reading: "ēṟṟu" }]
+      - target: "நான் ஏற்றுகிறேன்."
+        reading: "nāṉ ēṟṟukiṟēṉ."
+        ipa: "naːn eːrrukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "ஏற்றுகிறேன்", base: "ஏற்று", reading: "ēṟṟu" }]
+  - id: "ta-1955"
+    target: "உலர்த்து"
+    reading: "ularttu"
+    ipa: "ulaɾt̪t̪u"
+    phonetic: "[ulaɾt̪t̪ɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துணி உலர்த்து."
+        reading: "tuṇi ularttu."
+        ipa: "t̪uɳi ulaɾt̪t̪u"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "உலர்த்து", base: "உலர்த்து", reading: "ularttu" }]
+      - target: "நான் துணி உலர்த்துகிறேன்."
+        reading: "nāṉ tuṇi ularttukiṟēṉ."
+        ipa: "naːn t̪uɳi ulaɾt̪t̪ukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "துணி", ref: "ta-0272" }, { word: "உலர்த்துகிறேன்", base: "உலர்த்து", reading: "ularttu" }]
+  - id: "ta-1956"
+    target: "வெட்டு"
+    reading: "veṭṭu"
+    ipa: "ʋeʈʈu"
+    phonetic: "[ʋeʈʈɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காய்கறி வெட்டு."
+        reading: "kāykaṟi veṭṭu."
+        ipa: "kaːjkari ʋeʈʈu"
+        bases: [{ word: "காய்கறி", ref: "ta-0221" }, { word: "வெட்டு", base: "வெட்டு", reading: "veṭṭu" }]
+      - target: "நான் பழம் வெட்டுகிறேன்."
+        reading: "nāṉ paḻam veṭṭukiṟēṉ."
+        ipa: "naːn paɻam ʋeʈʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பழம்", ref: "ta-0222" }, { word: "வெட்டுகிறேன்", base: "வெட்டு", reading: "veṭṭu" }]
+  - id: "ta-1957"
+    target: "கலக்கு"
+    reading: "kalakku"
+    ipa: "kalakku"
+    phonetic: "[kalakkɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சர்க்கரை கலக்கு."
+        reading: "carkkarai kalakku."
+        ipa: "saɾkkaɾai kalakku"
+        bases: [{ word: "சர்க்கரை", ref: "ta-0218" }, { word: "கலக்கு", base: "கலக்கு", reading: "kalakku" }]
+      - target: "நான் பால் கலக்குகிறேன்."
+        reading: "nāṉ pāl kalakkukiṟēṉ."
+        ipa: "naːn paːl kalakkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பால்", ref: "ta-1063" }, { word: "கலக்குகிறேன்", base: "கலக்கு", reading: "kalakku" }]
+  - id: "ta-1958"
+    target: "தேடு"
+    reading: "tēṭu"
+    ipa: "t̪eːʈu"
+    phonetic: "[t̪eːɖɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாவி தேடு."
+        reading: "cāvi tēṭu."
+        ipa: "saːʋi t̪eːʈu"
+        bases: [{ word: "சாவி", ref: "ta-0273" }, { word: "தேடு", base: "தேடு", reading: "tēṭu" }]
+      - target: "நான் சாவி தேடுகிறேன்."
+        reading: "nāṉ cāvi tēṭukiṟēṉ."
+        ipa: "naːn saːʋi t̪eːʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சாவி", ref: "ta-0273" }, { word: "தேடுகிறேன்", base: "தேடு", reading: "tēṭu" }]
+  - id: "ta-1959"
+    target: "அடுக்கு"
+    reading: "aṭukku"
+    ipa: "aʈukku"
+    phonetic: "[aɖukkɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புத்தகம் அடுக்கு."
+        reading: "puttakam aṭukku."
+        ipa: "put̪t̪akam aʈukku"
+        bases: [{ word: "புத்தகம்", ref: "ta-1813" }, { word: "அடுக்கு", base: "அடுக்கு", reading: "aṭukku" }]
+      - target: "நான் துணி அடுக்குகிறேன்."
+        reading: "nāṉ tuṇi aṭukkukiṟēṉ."
+        ipa: "naːn t̪uɳi aʈukkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "துணி", ref: "ta-0272" }, { word: "அடுக்குகிறேன்", base: "அடுக்கு", reading: "aṭukku" }]
+  - id: "ta-1960"
+    target: "பரப்பு"
+    reading: "parappu"
+    ipa: "paɾappu"
+    phonetic: "[paɾappɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பாய் பரப்பு."
+        reading: "pāy parappu."
+        ipa: "paːj paɾappu"
+        bases: [{ word: "பாய்", ref: "ta-1932" }, { word: "பரப்பு", base: "பரப்பு", reading: "parappu" }]
+      - target: "நான் துணி பரப்புகிறேன்."
+        reading: "nāṉ tuṇi parappukiṟēṉ."
+        ipa: "naːn t̪uɳi paɾappukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "துணி", ref: "ta-0272" }, { word: "பரப்புகிறேன்", base: "பரப்பு", reading: "parappu" }]
+  - id: "ta-1961"
+    target: "மாற்று"
+    reading: "māṟṟu"
+    ipa: "maːrru"
+    phonetic: "[maːttrɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துணி மாற்று."
+        reading: "tuṇi māṟṟu."
+        ipa: "t̪uɳi maːrru"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "மாற்று", base: "மாற்று", reading: "māṟṟu" }]
+      - target: "நான் மாற்றுகிறேன்."
+        reading: "nāṉ māṟṟukiṟēṉ."
+        ipa: "naːn maːrrukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மாற்றுகிறேன்", base: "மாற்று", reading: "māṟṟu" }]

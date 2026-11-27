@@ -1,0 +1,54 @@
+schema: 1
+id: "ml-en-script-chillu"
+kind: "layer"
+core: "ml-script-chillu"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam chillu letters"
+description: "The chillu letters: a consonant at the end of a word with no vowel after it, as in വിരൽ (viral), പഴങ്ങൾ (paḻaṅṅaḷ), അവൻ (avaṉ) and ഡോക്ടർ (ḍōkṭar). Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed", "script"]
+cards:
+  "ml-0649":
+    native: "l (chillu), at the end of a word"
+    notes:
+      n1: "The chillu for ല (la). At the end of a word the consonant is said alone, with no vowel."
+    examples:
+      "ഈ വിരൽ വേദനിക്കുന്നു.":
+        native: "This finger hurts."
+        bases: {"വേദനിക്കുന്നു": "hurts"}
+      "കാൽ കഴുകൂ.":
+        native: "Wash your feet."
+        bases: {}
+  "ml-0650":
+    native: "ḷ (chillu), at the end of a word"
+    notes:
+      n1: "The chillu for ള (ḷa) at the end of a word."
+    examples:
+      "പഴങ്ങൾ വേണം.":
+        native: "I need fruits."
+        bases: {"വേണം": "need"}
+      "കുട്ടികൾ ഇവിടെ.":
+        native: "The children are here."
+        bases: {}
+  "ml-0651":
+    native: "ṉ (chillu), at the end of a word"
+    notes:
+      n1: "The chillu for ന (na) at the end of a word. അവൻ (avaṉ, he) and അച്ഛൻ (acchaṉ, father) end in it."
+    examples:
+      "അവൻ ഇവിടെ.":
+        native: "He is here."
+        bases: {}
+      "ചേട്ടൻ വരുന്നു.":
+        native: "The older brother is coming."
+        bases: {"വരുന്നു": "is coming"}
+  "ml-0652":
+    native: "r (chillu), at the end of a word"
+    notes:
+      n1: "The chillu for ര (ra) at the end of a word, as in ഡോക്ടർ (ḍoktar, doctor)."
+    examples:
+      "ഡോക്ടർക്ക് രക്തം വേണം.":
+        native: "The doctor needs blood."
+        bases: {"വേണം": "needs"}
+      "എഞ്ചിനീയർ ഇവിടെ.":
+        native: "The engineer is here."
+        bases: {}

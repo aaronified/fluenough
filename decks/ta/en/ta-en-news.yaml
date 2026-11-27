@@ -1,0 +1,875 @@
+schema: 1
+id: "ta-en-news"
+kind: "layer"
+core: "ta-news"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News and the media"
+description: "Newspapers, radio and television news: reporters and reports, accidents and disasters, elections and parties, courts and crime, and the verbs of announcing and warning. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-7120":
+    native: "reporter"
+    notes:
+      n1: "A reporter for a paper or channel; used for men and women alike."
+    examples:
+      "நிருபர் வருகிறார்.":
+        native: "The reporter is coming."
+        bases:
+          "நிருபர்": "reporter"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "நிருபர் கேள்வி கேட்கிறார்.":
+        native: "The reporter asks a question."
+        bases:
+          "நிருபர்": "reporter"
+          "கேட்கிறார்": "asks (respectful); from கேள் (kēḷ), to ask"
+  "ta-7121":
+    native: "journalist; news reporter"
+    notes:
+      n1: "A longer, more formal word than நிருபர் (nirupar); it is built from செய்தி (ceyti) (news)."
+    examples:
+      "அவர் செய்தியாளர்.":
+        native: "He is a journalist."
+        bases:
+          "அவர்": "he or she (polite)"
+          "செய்தியாளர்": "journalist; news reporter"
+      "செய்தியாளர் செய்தி சொல்கிறார்.":
+        native: "The journalist gives the news."
+        bases:
+          "செய்தியாளர்": "journalist; news reporter"
+          "சொல்கிறார்": "is saying (respectful); from சொல் (col), to say; to tell"
+  "ta-7122":
+    native: "media"
+    notes:
+      n1: "The media in general, as in 'the media says'."
+    examples:
+      "ஊடகம் முக்கியம்.":
+        native: "The media is important."
+        bases:
+          "ஊடகம்": "media"
+          "முக்கியம்": "important"
+      "ஊடகத்தில் செய்தி வருகிறது.":
+        native: "The news comes in the media."
+        bases:
+          "ஊடகத்தில்": "in the media; from ஊடகம் (ūṭakam), media"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-7123":
+    native: "article; essay"
+    notes:
+      n1: "Used for a newspaper article and for a school essay."
+    examples:
+      "இது நல்ல கட்டுரை.":
+        native: "This is a good article."
+        bases:
+          "கட்டுரை": "article; essay"
+      "நான் கட்டுரை படிக்கிறேன்.":
+        native: "I am reading an article."
+        bases:
+          "கட்டுரை": "article; essay"
+          "படிக்கிறேன்": "am studying; from படி (paṭi), to study"
+  "ta-7124":
+    native: "editorial"
+    notes:
+      n1: "Literally head-part, the lead piece of a paper; இன்றைய (iṉṟaiya) (today's) is the form of இன்று (iṉṟu) (today) used before a noun."
+    examples:
+      "இன்றைய தலையங்கம் நல்லது.":
+        native: "Today's editorial is good."
+        bases:
+          "இன்றைய": "today's; from இன்று (iṉṟu), today"
+          "தலையங்கம்": "editorial"
+      "தலையங்கம் படி.":
+        native: "Read the editorial."
+        bases:
+          "தலையங்கம்": "editorial"
+  "ta-7125":
+    native: "interview (in the media)"
+    notes:
+      n1: "Tamil 'takes' (எடு (eṭu)) an interview; a job interview is நேர்காணல் (nērkāṇal)."
+    examples:
+      "நிருபர் பேட்டி எடுக்கிறார்.":
+        native: "The reporter is taking an interview."
+        bases:
+          "பேட்டி": "interview (in the media)"
+          "எடுக்கிறார்": "he takes; he makes (a film); from எடு (eṭu), to take"
+      "இன்று பேட்டி இருக்கிறது.":
+        native: "There is an interview today."
+        bases:
+          "பேட்டி": "interview (in the media)"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7126":
+    native: "live broadcast"
+    notes:
+      n1: "Literally direct line; used for live coverage on television and online."
+    examples:
+      "இது நேரலை.":
+        native: "This is live."
+        bases:
+          "நேரலை": "live broadcast"
+      "நேரலை பார்க்கிறேன்.":
+        native: "I am watching the live broadcast."
+        bases:
+          "நேரலை": "live broadcast"
+          "பார்க்கிறேன்": "am watching; from பார் (pār), to see; to look"
+  "ta-7127":
+    native: "announcer"
+    notes:
+      n1: "The person who gives the அறிவிப்பு (aṟivippu) (announcement)."
+    examples:
+      "அறிவிப்பாளர் பேசுகிறார்.":
+        native: "The announcer is speaking."
+        bases:
+          "அறிவிப்பாளர்": "announcer"
+          "பேசுகிறார்": "is speaking; from பேசு (pēcu), to speak"
+      "அவர் வானொலி அறிவிப்பாளர்.":
+        native: "He is a radio announcer."
+        bases:
+          "அவர்": "he or she (polite)"
+          "அறிவிப்பாளர்": "announcer"
+  "ta-7128":
+    native: "rumour"
+    notes:
+      n1: "Used for gossip that may not be true; people warn 'do not believe rumours'."
+    examples:
+      "இது வதந்தி.":
+        native: "This is a rumour."
+        bases:
+          "வதந்தி": "rumour"
+      "வதந்தி பரவுகிறது.":
+        native: "The rumour is spreading."
+        bases:
+          "வதந்தி": "rumour"
+          "பரவுகிறது": "spreads; from பரவு (paravu), to spread"
+  "ta-7129":
+    native: "truth; fact"
+    notes:
+      n1: "Also used as an adjective phrase: உண்மை (uṇmai) alone is 'true' or 'really'."
+    examples:
+      "இது உண்மை.":
+        native: "This is true."
+        bases:
+          "உண்மை": "truth; fact"
+      "உண்மை சொல்.":
+        native: "Tell the truth."
+        bases:
+          "உண்மை": "truth; fact"
+  "ta-7130":
+    native: "lie; falsehood"
+    notes:
+      n1: "Tamil 'says' (சொல் (col)) a lie; the same word means 'false'."
+    examples:
+      "இது பொய்.":
+        native: "This is false."
+        bases:
+          "பொய்": "lie; falsehood"
+      "அவன் பொய் சொல்கிறான்.":
+        native: "He is lying."
+        bases:
+          "அவன்": "his"
+          "பொய்": "lie; falsehood"
+          "சொல்கிறான்": "is saying (he); from சொல் (col), to say; to tell"
+  "ta-7131":
+    native: "explanation"
+    notes:
+      n1: "Tamil 'gives' (கொடு (koṭu)) an explanation, and 'asks' for it."
+    examples:
+      "எனக்கு விளக்கம் வேண்டும்.":
+        native: "I need an explanation."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "விளக்கம்": "explanation"
+      "அமைச்சர் விளக்கம் கொடுக்கிறார்.":
+        native: "The minister is giving an explanation."
+        bases:
+          "அமைச்சர்": "minister"
+          "விளக்கம்": "explanation"
+          "கொடுக்கிறார்": "is giving; from கொடு (koṭu), to give"
+  "ta-7132":
+    native: "fire"
+    notes:
+      n1: "The word for a blaze or flame; for the fire used in cooking, people also say நெருப்பு (neruppu)."
+    examples:
+      "தீ பரவுகிறது.":
+        native: "The fire is spreading."
+        bases:
+          "தீ": "fire"
+          "பரவுகிறது": "spreads; from பரவு (paravu), to spread"
+      "அங்கே தீ.":
+        native: "There is a fire there."
+        bases:
+          "அங்கே": "there"
+          "தீ": "fire"
+  "ta-7133":
+    native: "earthquake"
+    notes:
+      n1: "Literally land shaking; it 'comes' (வந்தது (vantatu)), like other sudden events."
+    examples:
+      "நிலநடுக்கம் வந்தது.":
+        native: "An earthquake came."
+        bases:
+          "நிலநடுக்கம்": "earthquake"
+          "வந்தது": "came; from வா (vā), to come"
+      "நிலநடுக்கம் பெரிய ஆபத்து.":
+        native: "An earthquake is a big danger."
+        bases:
+          "நிலநடுக்கம்": "earthquake"
+  "ta-7134":
+    native: "riot; unrest"
+    notes:
+      n1: "Used in news for riots and violent unrest."
+    examples:
+      "நகரத்தில் கலவரம்.":
+        native: "Unrest in the city."
+        bases:
+          "நகரத்தில்": "in the city; from நகரம் (nakaram), city; town"
+          "கலவரம்": "riot; unrest"
+      "கலவரம் குறைகிறது.":
+        native: "The unrest is dying down."
+        bases:
+          "கலவரம்": "riot; unrest"
+          "குறைகிறது": "goes down; from குறை (kuṟai), to decrease; to lessen"
+  "ta-7135":
+    native: "attack"
+    notes:
+      n1: "In news it 'happens' (நடந்தது (naṭantatu), took place), as events do."
+    examples:
+      "தாக்குதல் நடந்தது.":
+        native: "An attack took place."
+        bases:
+          "தாக்குதல்": "attack"
+          "நடந்தது": "happened; took place; from நட (naṭa), to walk; to happen"
+      "நேற்று தாக்குதல்.":
+        native: "An attack yesterday."
+        bases:
+          "தாக்குதல்": "attack"
+  "ta-7136":
+    native: "incident; event"
+    notes:
+      n1: "A news word for something that happened, often unpleasant."
+    examples:
+      "இது ஒரு சம்பவம்.":
+        native: "This is an incident."
+        bases:
+          "சம்பவம்": "incident; event"
+      "சம்பவம் நேற்று நடந்தது.":
+        native: "The incident happened yesterday."
+        bases:
+          "சம்பவம்": "incident; event"
+          "நடந்தது": "happened; took place; from நட (naṭa), to walk; to happen"
+  "ta-7137":
+    native: "impact; damage; effect"
+    notes:
+      n1: "Used for the harm a flood, storm or illness does to people."
+    examples:
+      "வெள்ளத்தால் பாதிப்பு.":
+        native: "Damage from the flood."
+        bases:
+          "வெள்ளத்தால்": "by the flood; with the flood; from வெள்ளம் (veḷḷam), flood"
+          "பாதிப்பு": "impact; damage; effect"
+      "பாதிப்பு அதிகம்.":
+        native: "The damage is great."
+        bases:
+          "பாதிப்பு": "impact; damage; effect"
+  "ta-7138":
+    native: "life; breath"
+    notes:
+      n1: "The word for life in the sense of staying alive; உயிர் (uyir) பிழை (piḻai) means 'to survive'."
+    examples:
+      "உயிர் முக்கியம்.":
+        native: "Life is important."
+        bases:
+          "உயிர்": "life; breath"
+          "முக்கியம்": "important"
+      "அவர் உயிர் பிழைத்தார்.":
+        native: "He survived."
+        bases:
+          "அவர்": "he or she (polite)"
+          "உயிர்": "life; breath"
+          "பிழைத்தார்": "survived (respectful); from பிழை (piḻai), to survive"
+  "ta-7139":
+    native: "death"
+    notes:
+      n1: "The written, polite word for death; used in news and condolences."
+    examples:
+      "மரணம் வருகிறது.":
+        native: "Death comes."
+        bases:
+          "மரணம்": "death"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "அவர் மரணம் துக்கம்.":
+        native: "His death is a sorrow."
+        bases:
+          "அவர்": "he or she (polite)"
+          "மரணம்": "death"
+  "ta-7140":
+    native: "election"
+    notes:
+      n1: "An election 'happens' (நடக்கிறது (naṭakkiṟatu)), so it takes the verb of events."
+    examples:
+      "தேர்தல் நடக்கிறது.":
+        native: "The election is taking place."
+        bases:
+          "தேர்தல்": "election"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "தேர்தல் அடுத்த மாதம்.":
+        native: "The election is next month."
+        bases:
+          "தேர்தல்": "election"
+  "ta-7141":
+    native: "vote"
+    notes:
+      n1: "Tamil 'puts' (போடு (pōṭu)) a vote; the same word also means a word or a promise."
+    examples:
+      "உன் வாக்கு முக்கியம்.":
+        native: "Your vote is important."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "வாக்கு": "vote"
+          "முக்கியம்": "important"
+      "நான் வாக்கு போடுகிறேன்.":
+        native: "I cast my vote."
+        bases:
+          "வாக்கு": "vote"
+          "போடுகிறேன்": "put on; from போடு (pōṭu), to put; to throw"
+  "ta-7142":
+    native: "candidate"
+    notes:
+      n1: "A candidate for an election; used for men and women alike."
+    examples:
+      "அவர் வேட்பாளர்.":
+        native: "He is a candidate."
+        bases:
+          "அவர்": "he or she (polite)"
+          "வேட்பாளர்": "candidate"
+      "வேட்பாளர் பேசுகிறார்.":
+        native: "The candidate is speaking."
+        bases:
+          "வேட்பாளர்": "candidate"
+          "பேசுகிறார்": "is speaking; from பேசு (pēcu), to speak"
+  "ta-7143":
+    native: "campaign; propaganda"
+    notes:
+      n1: "Used for election campaigns and for awareness campaigns."
+    examples:
+      "பிரச்சாரம் நடக்கிறது.":
+        native: "The campaign is going on."
+        bases:
+          "பிரச்சாரம்": "campaign; propaganda"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "இன்று பிரச்சாரம் இருக்கிறது.":
+        native: "There is a campaign event today."
+        bases:
+          "பிரச்சாரம்": "campaign; propaganda"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7144":
+    native: "debate; discussion"
+    notes:
+      n1: "Used for a formal debate on television or in a hall; for a chat people say பேச்சு (pēccu)."
+    examples:
+      "விவாதம் நடக்கிறது.":
+        native: "A debate is going on."
+        bases:
+          "விவாதம்": "debate; discussion"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "நாளை விவாதம் இருக்கிறது.":
+        native: "There is a debate tomorrow."
+        bases:
+          "விவாதம்": "debate; discussion"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7145":
+    native: "political party"
+    notes:
+      n1: "A political party; the word also means a side in a dispute."
+    examples:
+      "இது என் கட்சி.":
+        native: "This is my party."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "கட்சி": "political party"
+      "கட்சி தலைவர் பேசுகிறார்.":
+        native: "The party leader is speaking."
+        bases:
+          "கட்சி": "political party"
+          "பேசுகிறார்": "is speaking; from பேசு (pēcu), to speak"
+  "ta-7146":
+    native: "chief minister"
+    notes:
+      n1: "The head of a state's government; built from முதல் (mutal) (first) and அமைச்சர் (amaiccar) (minister)."
+    examples:
+      "முதலமைச்சர் வருகிறார்.":
+        native: "The chief minister is coming."
+        bases:
+          "முதலமைச்சர்": "chief minister"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "முதலமைச்சர் பேசுகிறார்.":
+        native: "The chief minister is speaking."
+        bases:
+          "முதலமைச்சர்": "chief minister"
+          "பேசுகிறார்": "is speaking; from பேசு (pēcu), to speak"
+  "ta-7147":
+    native: "prime minister"
+    notes:
+      n1: "The head of the national government; the -ர் (-r) ending is the respectful form."
+    examples:
+      "பிரதமர் பேசுகிறார்.":
+        native: "The prime minister is speaking."
+        bases:
+          "பிரதமர்": "prime minister"
+          "பேசுகிறார்": "is speaking; from பேசு (pēcu), to speak"
+      "பிரதமர் இங்கே வருகிறார்.":
+        native: "The prime minister is coming here."
+        bases:
+          "பிரதமர்": "prime minister"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+  "ta-7148":
+    native: "politics"
+    notes:
+      n1: "Politics in general; அரசியல் (araciyal) செய்தி (ceyti) is political news."
+    examples:
+      "எனக்கு அரசியல் பிடிக்காது.":
+        native: "I do not like politics."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "அரசியல்": "politics"
+      "அரசியல் செய்தி படிக்கிறேன்.":
+        native: "I read political news."
+        bases:
+          "அரசியல்": "politics"
+          "படிக்கிறேன்": "am studying; from படி (paṭi), to study"
+  "ta-7149":
+    native: "conference; convention"
+    notes:
+      n1: "A large public gathering or convention, such as a party or trade conference."
+    examples:
+      "நாளை மாநாடு.":
+        native: "A conference tomorrow."
+        bases:
+          "மாநாடு": "conference; convention"
+      "மாநாடு நகரத்தில் நடக்கிறது.":
+        native: "The conference is taking place in the city."
+        bases:
+          "மாநாடு": "conference; convention"
+          "நகரத்தில்": "in the city; from நகரம் (nakaram), city; town"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-7150":
+    native: "court case; lawsuit"
+    notes:
+      n1: "The word also means custom or usage in speech; in news it is a legal case."
+    examples:
+      "இது பெரிய வழக்கு.":
+        native: "This is a big case."
+        bases:
+          "வழக்கு": "court case; lawsuit"
+      "வழக்கு நடக்கிறது.":
+        native: "The case is going on."
+        bases:
+          "வழக்கு": "court case; lawsuit"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-7151":
+    native: "verdict; judgement"
+    notes:
+      n1: "Tamil 'says' (சொல் (col)) a verdict, or the court 'gives' it."
+    examples:
+      "நீதிமன்றம் தீர்ப்பு சொல்கிறது.":
+        native: "The court gives its verdict."
+        bases:
+          "தீர்ப்பு": "verdict; judgement"
+          "சொல்கிறது": "is saying; from சொல் (col), to say; to tell"
+      "இன்று தீர்ப்பு.":
+        native: "The verdict is today."
+        bases:
+          "தீர்ப்பு": "verdict; judgement"
+  "ta-7152":
+    native: "court of law"
+    notes:
+      n1: "Literally justice hall; the building and the institution are one word."
+    examples:
+      "நீதிமன்றம் எங்கே?":
+        native: "Where is the court?"
+        bases:
+          "நீதிமன்றம்": "court of law"
+      "நீதிமன்றம் மூடியிருக்கிறது.":
+        native: "The court is closed."
+        bases:
+          "நீதிமன்றம்": "court of law"
+          "மூடியிருக்கிறது": "is closed; from மூடு (mūṭu), to close"
+  "ta-7153":
+    native: "crime; fault; blame"
+    notes:
+      n1: "Both a crime and a plain fault or blame; the context tells which."
+    examples:
+      "இது குற்றம்.":
+        native: "This is a crime."
+        bases:
+          "குற்றம்": "crime; fault; blame"
+      "அவன் குற்றம் இல்லை.":
+        native: "It is not his fault."
+        bases:
+          "அவன்": "his"
+          "குற்றம்": "crime; fault; blame"
+  "ta-7154":
+    native: "criminal; guilty person"
+    notes:
+      n1: "A person who has done a குற்றம் (kuṟṟam) (crime)."
+    examples:
+      "அவன் குற்றவாளி.":
+        native: "He is guilty."
+        bases:
+          "அவன்": "his"
+          "குற்றவாளி": "criminal; guilty person"
+      "குற்றவாளி தப்பிக்கிறான்.":
+        native: "The criminal is escaping."
+        bases:
+          "குற்றவாளி": "criminal; guilty person"
+          "தப்பிக்கிறான்": "is escaping (he); from தப்பி (tappi), to escape"
+  "ta-7155":
+    native: "theft"
+    notes:
+      n1: "The act of theft; the thief is திருடன் (tiruṭaṉ)."
+    examples:
+      "நேற்று திருட்டு.":
+        native: "A theft yesterday."
+        bases:
+          "திருட்டு": "theft"
+      "திருட்டு நடந்தது.":
+        native: "A theft took place."
+        bases:
+          "திருட்டு": "theft"
+          "நடந்தது": "happened; took place; from நட (naṭa), to walk; to happen"
+  "ta-7156":
+    native: "arrest"
+    notes:
+      n1: "Tamil says கைது (kaitu) செய் (cey) (do arrest) for 'to arrest', and the passive is just கைது (kaitu)."
+    examples:
+      "அவன் கைது.":
+        native: "He is arrested."
+        bases:
+          "அவன்": "his"
+          "கைது": "arrest"
+      "கைது நடந்தது.":
+        native: "An arrest took place."
+        bases:
+          "கைது": "arrest"
+          "நடந்தது": "happened; took place; from நட (naṭa), to walk; to happen"
+  "ta-7157":
+    native: "murder"
+    notes:
+      n1: "Used for murder; the word for a killing in news."
+    examples:
+      "இது கொலை.":
+        native: "This is murder."
+        bases:
+          "கொலை": "murder"
+      "கொலை நடந்தது.":
+        native: "A murder took place."
+        bases:
+          "கொலை": "murder"
+          "நடந்தது": "happened; took place; from நட (naṭa), to walk; to happen"
+  "ta-7158":
+    native: "police"
+    notes:
+      n1: "A written word built from காவல் (kāval) (guarding) and துறை (tuṟai) (department); in speech people say போலீஸ் (pōlīs) (the English word)."
+    examples:
+      "காவல்துறை வருகிறது.":
+        native: "The police are coming."
+        bases:
+          "காவல்துறை": "police"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "காவல்துறை விசாரிக்கிறது.":
+        native: "The police are investigating."
+        bases:
+          "காவல்துறை": "police"
+          "விசாரிக்கிறது": "is enquiring; from விசாரி (vicāri), to enquire; to ask about"
+  "ta-7159":
+    native: "complaint"
+    notes:
+      n1: "Tamil 'gives' (கொடு (koṭu)) a complaint to the police or an office."
+    examples:
+      "நான் புகார் கொடுக்கிறேன்.":
+        native: "I am lodging a complaint."
+        bases:
+          "புகார்": "complaint"
+          "கொடுக்கிறேன்": "give; from கொடு (koṭu), to give"
+      "புகார் எழுது.":
+        native: "Write a complaint."
+        bases:
+          "புகார்": "complaint"
+  "ta-7160":
+    native: "witness; evidence"
+    notes:
+      n1: "Used for the person who saw and for the evidence itself."
+    examples:
+      "அவன் சாட்சி.":
+        native: "He is a witness."
+        bases:
+          "அவன்": "his"
+          "சாட்சி": "witness; evidence"
+      "சாட்சி சொல்கிறான்.":
+        native: "He is giving evidence."
+        bases:
+          "சாட்சி": "witness; evidence"
+          "சொல்கிறான்": "is saying (he); from சொல் (col), to say; to tell"
+  "ta-7161":
+    native: "rise; increase"
+    notes:
+      n1: "The noun that goes with prices and pay: விலை (vilai) உயர்வு (uyarvu) is a price rise."
+    examples:
+      "விலை உயர்வு.":
+        native: "A price rise."
+        bases:
+          "உயர்வு": "rise; increase"
+      "உயர்வு அதிகம்.":
+        native: "The rise is large."
+        bases:
+          "உயர்வு": "rise; increase"
+  "ta-7162":
+    native: "growth; development"
+    notes:
+      n1: "The noun of வளர் (vaḷar) (to grow); நகரத்தின் (nakarattiṉ) is the 'of' form of நகரம் (nakaram) (city)."
+    examples:
+      "நகரத்தின் வளர்ச்சி.":
+        native: "The growth of the city."
+        bases:
+          "நகரத்தின்": "of the city; from நகரம் (nakaram), city; town"
+          "வளர்ச்சி": "growth; development"
+      "வளர்ச்சி நல்லது.":
+        native: "Growth is good."
+        bases:
+          "வளர்ச்சி": "growth; development"
+  "ta-7163":
+    native: "economy"
+    notes:
+      n1: "A news and school word; in everyday talk people speak of money matters."
+    examples:
+      "பொருளாதாரம் முக்கியம்.":
+        native: "The economy is important."
+        bases:
+          "பொருளாதாரம்": "economy"
+          "முக்கியம்": "important"
+      "பொருளாதாரம் வளர்கிறது.":
+        native: "The economy is growing."
+        bases:
+          "பொருளாதாரம்": "economy"
+          "வளர்கிறது": "is growing; from வளர் (vaḷar), to grow"
+  "ta-7164":
+    native: "grant; scholarship; allowance"
+    notes:
+      n1: "Literally help amount; உதவி (utavi) (help) plus தொகை (tokai) (sum)."
+    examples:
+      "மாணவர்களுக்கு உதவித்தொகை.":
+        native: "A scholarship for students."
+        bases:
+          "மாணவர்களுக்கு": "to students; for students; from மாணவர் (māṇavar), student"
+          "உதவித்தொகை": "grant; scholarship; allowance"
+      "உதவித்தொகை கிடைக்கிறது.":
+        native: "The allowance is received."
+        bases:
+          "உதவித்தொகை": "grant; scholarship; allowance"
+          "கிடைக்கிறது": "is received; is available; from கிடை (kiṭai), to be obtained"
+  "ta-7165":
+    native: "strike (by workers)"
+    notes:
+      n1: "Literally work stopping; வேலை (vēlai) (work) plus நிறுத்தம் (niṟuttam) (stopping)."
+    examples:
+      "நாளை வேலைநிறுத்தம்.":
+        native: "A strike tomorrow."
+        bases:
+          "வேலைநிறுத்தம்": "strike (by workers)"
+      "வேலைநிறுத்தம் நடக்கிறது.":
+        native: "A strike is going on."
+        bases:
+          "வேலைநிறுத்தம்": "strike (by workers)"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-7166":
+    native: "curfew"
+    notes:
+      n1: "Literally the town is hushed; the word became widely used for a public lockdown."
+    examples:
+      "இன்று ஊரடங்கு.":
+        native: "A curfew today."
+        bases:
+          "ஊரடங்கு": "curfew"
+      "ஊரடங்கு முடிகிறது.":
+        native: "The curfew ends."
+        bases:
+          "ஊரடங்கு": "curfew"
+          "முடிகிறது": "ends; finishes; from முடி (muṭi), to end; to finish"
+  "ta-7167":
+    native: "study; research; inspection"
+    notes:
+      n1: "Research in school and news, and an inspection by an official."
+    examples:
+      "இது புதிய ஆய்வு.":
+        native: "This is a new study."
+        bases:
+          "ஆய்வு": "study; research; inspection"
+      "ஆய்வு நடக்கிறது.":
+        native: "An inspection is going on."
+        bases:
+          "ஆய்வு": "study; research; inspection"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-7168":
+    native: "estimate; forecast"
+    notes:
+      n1: "A forecast or estimate; it is not a certain fact."
+    examples:
+      "இது கணிப்பு.":
+        native: "This is an estimate."
+        bases:
+          "கணிப்பு": "estimate; forecast"
+      "வானிலை கணிப்பு நல்லது.":
+        native: "The weather forecast is good."
+        bases:
+          "கணிப்பு": "estimate; forecast"
+  "ta-7169":
+    native: "reason; cause"
+    notes:
+      n1: "காரணம் (kāraṇam) என்ன (eṉṉa) is the plain way to ask why, as in news talk."
+    examples:
+      "காரணம் என்ன?":
+        native: "What is the reason?"
+        bases:
+          "காரணம்": "reason; cause"
+      "இது காரணம்.":
+        native: "This is the reason."
+        bases:
+          "காரணம்": "reason; cause"
+  "ta-7170":
+    native: "result; consequence"
+    notes:
+      n1: "The result of an action, and the crop that results in farming."
+    examples:
+      "இது விளைவு.":
+        native: "This is the result."
+        bases:
+          "விளைவு": "result; consequence"
+      "விளைவு நல்லது.":
+        native: "The result is good."
+        bases:
+          "விளைவு": "result; consequence"
+  "ta-7171":
+    native: "change"
+    notes:
+      n1: "The noun of மாறு (māṟu) (to change)."
+    examples:
+      "மாற்றம் வேண்டும்.":
+        native: "Change is needed."
+        bases:
+          "மாற்றம்": "change"
+      "நல்ல மாற்றம்.":
+        native: "A good change."
+        bases:
+          "மாற்றம்": "change"
+  "ta-7172":
+    native: "situation; state of affairs"
+    notes:
+      n1: "Used for the state of a place, a patient or events."
+    examples:
+      "நிலைமை நல்லது.":
+        native: "The situation is good."
+        bases:
+          "நிலைமை": "situation; state of affairs"
+      "இங்கே நிலைமை சரியில்லை.":
+        native: "The situation is not good here."
+        bases:
+          "நிலைமை": "situation; state of affairs"
+          "சரியில்லை": "not right; from சரி (cari), okay"
+  "ta-7173":
+    native: "society; community"
+    notes:
+      n1: "A written word for the community as a whole; the -இல் (-il) ending after it gives 'in society'."
+    examples:
+      "சமூகம் முக்கியம்.":
+        native: "Society is important."
+        bases:
+          "சமூகம்": "society; community"
+          "முக்கியம்": "important"
+      "சமூகத்தில் மாற்றம் வருகிறது.":
+        native: "Change is coming in society."
+        bases:
+          "சமூகத்தில்": "in the society; from சமூகம் (camūkam), society; community"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-7174":
+    native: "sensation; excitement; hurry"
+    notes:
+      n1: "A news word for a stir or sensation; the same word describes a hurry."
+    examples:
+      "நகரத்தில் பரபரப்பு.":
+        native: "Excitement in the city."
+        bases:
+          "நகரத்தில்": "in the city; from நகரம் (nakaram), city; town"
+          "பரபரப்பு": "sensation; excitement; hurry"
+      "பரபரப்பு செய்தி.":
+        native: "Sensational news."
+        bases:
+          "பரபரப்பு": "sensation; excitement; hurry"
+  "ta-7175":
+    native: "to announce; to declare"
+    notes:
+      n1: "A news and written verb for formal announcements; in speech people say சொல் (col)."
+    examples:
+      "அரசு அறிவிக்கிறது.":
+        native: "The government announces."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "அறிவிக்கிறது": "is announcing; from அறிவி (aṟivi), to announce; to declare"
+      "அவர் தேதி அறிவிக்கிறார்.":
+        native: "He announces the date."
+        bases:
+          "அவர்": "he or she (polite)"
+          "அறிவிக்கிறார்": "is announcing (respectful); from அறிவி (aṟivi), to announce; to declare"
+  "ta-7176":
+    native: "to warn"
+    notes:
+      n1: "The verb of எச்சரிக்கை (eccarikkai) (warning); the person warned takes the -ஐ (-ai) ending."
+    examples:
+      "நான் உன்னை எச்சரிக்கிறேன்.":
+        native: "I warn you."
+        bases:
+          "உன்னை": "you (object); from நீ (nī), you (to a friend or child)"
+          "எச்சரிக்கிறேன்": "am warning; from எச்சரி (eccari), to warn"
+      "அவர்கள் எச்சரிக்கிறார்கள்.":
+        native: "They are warning."
+        bases:
+          "அவர்கள்": "their"
+          "எச்சரிக்கிறார்கள்": "are warning (they, respectful); from எச்சரி (eccari), to warn"
+  "ta-7177":
+    native: "to get injured"
+    notes:
+      n1: "Built from காயம் (kāyam) (wound) and அடை (aṭai) (to reach), so literally to reach a wound."
+    examples:
+      "அவன் காயமடைகிறான்.":
+        native: "He is getting injured."
+        bases:
+          "அவன்": "his"
+          "காயமடைகிறான்": "is getting injured (he); from காயமடை (kāyamaṭai), to get injured"
+      "குழந்தை காயமடைகிறது.":
+        native: "The child is getting injured."
+        bases:
+          "காயமடைகிறது": "is getting injured; from காயமடை (kāyamaṭai), to get injured"
+  "ta-7178":
+    native: "to catch fire"
+    notes:
+      n1: "Literally to catch (பிடி (piṭi)) the தீ (tī) (fire); the thing that burns is the subject."
+    examples:
+      "வீடு தீப்பிடிக்கிறது.":
+        native: "The house is catching fire."
+        bases:
+          "தீப்பிடிக்கிறது": "is catching fire; from தீப்பிடி (tīppiṭi), to catch fire"
+      "கடை தீப்பிடிக்கிறது.":
+        native: "The shop is catching fire."
+        bases:
+          "தீப்பிடிக்கிறது": "is catching fire; from தீப்பிடி (tīppiṭi), to catch fire"
+  "ta-8600":
+    native: "newspaper"
+    notes:
+      n1: "A daily newspaper, built from நாள் (nāḷ) (day) and இதழ் (itaḻ) (magazine); செய்தித்தாள் (ceytittāḷ) is the plainer word for a newspaper."
+    examples:
+      "நாளிதழ் எங்கே?":
+        native: "Where is the newspaper?"
+        bases:
+          "நாளிதழ்": "newspaper"
+      "நான் நாளிதழ் படிக்கிறேன்.":
+        native: "I read the newspaper."
+        bases:
+          "நாளிதழ்": "newspaper"
+          "படிக்கிறேன்": "read; from படி (paṭi), to read"

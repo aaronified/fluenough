@@ -1,0 +1,138 @@
+schema: 1
+id: "ta-cinema-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9500"
+    target: "அவள் இந்தப் படத்தின் கதாநாயகி."
+    reading: "avaḷ intap paṭattiṉ katānāyaki."
+    ipa: "aʋaɭ int̪ap paʈat̪t̪in kat̪aːnaːjaki"
+    phonetic: "[aʋaɭ in̪d̪ap paɖat̪t̪in kad̪aːnaːjaɡi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "இந்தப்", base: "இந்த", reading: "inta" }, { word: "படத்தின்", base: "படம்", reading: "paṭam" }, { word: "கதாநாயகி", ref: "ta-8007" }]
+    confusables:
+      - { id: "w1", ref: "ta-8006", kind: "word" }
+      - { id: "w2", ref: "ta-8002", kind: "word" }
+      - { id: "w3", ref: "ta-8004", kind: "word" }
+  - id: "ta-9501"
+    target: "படத்தின் முடிவு எனக்குப் பிடிக்கும்."
+    reading: "paṭattiṉ muṭivu eṉakkup piṭikkum."
+    ipa: "paʈat̪t̪in muʈiʋu enakkup piʈikkum"
+    phonetic: "[paɖat̪t̪in muɖiʋɯ enakkup piɖikkum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "படத்தின்", base: "படம்", reading: "paṭam" }, { word: "முடிவு", ref: "ta-8023" }, { word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+    confusables:
+      - { id: "w1", ref: "ta-8024", kind: "word" }
+      - { id: "w2", ref: "ta-8041", kind: "word" }
+      - { id: "w3", ref: "ta-8042", kind: "word" }
+  - id: "ta-9502"
+    target: "நாம் இன்று திரையரங்கில் படம் பார்க்கலாம்."
+    reading: "nām iṉṟu tiraiyaraṅkil paṭam pārkkalām."
+    ipa: "naːm inru t̪iɾaijaɾaŋkil paʈam paːɾkkalaːm"
+    phonetic: "[n̪aːm indrɯ t̪iɾaijaɾaŋɡil paɖam paːɾkkalaːm]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "இன்று", ref: "ta-0144" }, { word: "திரையரங்கில்", base: "திரையரங்கு", reading: "tiraiyaraṅku" }, { word: "படம்", ref: "ta-1825" }, { word: "பார்க்கலாம்", base: "பார்", reading: "pār" }]
+    confusables:
+      - { id: "w1", ref: "ta-8017", kind: "word" }
+      - { id: "w2", ref: "ta-8027", kind: "word" }
+      - { id: "w3", ref: "ta-2134", kind: "word" }
+  - id: "ta-9503"
+    target: "இயக்குநர் புதிய படம் எடுக்கிறார்."
+    reading: "iyakkunar putiya paṭam eṭukkiṟār."
+    ipa: "ijakkunaɾ put̪ija paʈam eʈukkiraːɾ"
+    phonetic: "[ijakkunaɾ pud̪ija paɖam eɖukkiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இயக்குநர்", ref: "ta-8004" }, { word: "புதிய", ref: "ta-0171" }, { word: "படம்", ref: "ta-1825" }, { word: "எடுக்கிறார்", base: "எடு", reading: "eṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8005", kind: "word" }
+      - { id: "w2", ref: "ta-8001", kind: "word" }
+      - { id: "w3", ref: "ta-8022", kind: "word" }
+  - id: "ta-9504"
+    target: "படத்தில் ஒரு நல்ல பாடல் இருக்கிறது."
+    reading: "paṭattil oru nalla pāṭal irukkiṟatu."
+    ipa: "paʈat̪t̪il oɾu nalla paːʈal iɾukkirat̪u"
+    phonetic: "[paɖat̪t̪il oɾɯ n̪alla paːɖal iɾukkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "படத்தில்", base: "படம்", reading: "paṭam" }, { word: "ஒரு", ref: "ta-0419" }, { word: "நல்ல", ref: "ta-0169" }, { word: "பாடல்", ref: "ta-8011" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-8010", kind: "word" }
+      - { id: "w2", ref: "ta-8025", kind: "word" }
+      - { id: "w3", ref: "ta-8026", kind: "word" }
+  - id: "ta-9505"
+    target: "எனக்கு நகைச்சுவை படம் பிடிக்கும், திகில் படம் பிடிக்காது."
+    reading: "eṉakku nakaiccuvai paṭam piṭikkum, tikil paṭam piṭikkātu."
+    ipa: "enakku nakaitʃtʃuʋai paʈam piʈikkum t̪ikil paʈam piʈikkaːt̪u"
+    phonetic: "[enakkɯ n̪aɡaitʃtʃuʋai paɖam piɖikkum t̪iɡil paɖam piɖikkaːd̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "நகைச்சுவை", ref: "ta-8013" }, { word: "படம்", ref: "ta-1825" }, { word: "பிடிக்கும்", ref: "ta-0412" }, { word: "திகில்", ref: "ta-8015" }, { word: "பிடிக்காது", ref: "ta-0413" }]
+    confusables:
+      - { id: "w1", ref: "ta-8014", kind: "word" }
+      - { id: "w2", ref: "ta-8012", kind: "word" }
+      - { id: "w3", ref: "ta-8042", kind: "word" }
+  - id: "ta-9506"
+    target: "அவருக்கு நிறைய ரசிகர்கள் இருக்கிறார்கள்."
+    reading: "avarukku niṟaiya racikarkaḷ irukkiṟārkaḷ."
+    ipa: "aʋaɾukku niraija ɾasikaɾkaɭ iɾukkiraːɾkaɭ"
+    phonetic: "[aʋaɾukkɯ n̪iraija ɾasiɡaɾkaɭ iɾukkiraːɾkaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவருக்கு", base: "அவர்", reading: "avar" }, { word: "நிறைய", ref: "ta-0141" }, { word: "ரசிகர்கள்", base: "ரசிகர்", reading: "racikar" }, { word: "இருக்கிறார்கள்", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-8039", kind: "word" }
+      - { id: "w2", ref: "ta-8019", kind: "word" }
+      - { id: "w3", ref: "ta-8032", kind: "word" }
+  - id: "ta-9507"
+    target: "படம் இன்று வெளியாகிறது."
+    reading: "paṭam iṉṟu veḷiyākiṟatu."
+    ipa: "paʈam inru ʋeɭijaːkirat̪u"
+    phonetic: "[paɖam indrɯ ʋeɭijaːɡirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "படம்", ref: "ta-1825" }, { word: "இன்று", ref: "ta-0144" }, { word: "வெளியாகிறது", base: "வெளியாகு", reading: "veḷiyāku" }]
+    confusables:
+      - { id: "w1", ref: "ta-8019", kind: "word" }
+      - { id: "w2", ref: "ta-8021", kind: "word" }
+      - { id: "w3", ref: "ta-8027", kind: "word" }
+  - id: "ta-9508"
+    target: "இந்தப் படத்தின் தலைப்பு என்ன?"
+    reading: "intap paṭattiṉ talaippu eṉṉa?"
+    ipa: "int̪ap paʈat̪t̪in t̪alaippu enna"
+    phonetic: "[in̪d̪ap paɖat̪t̪in t̪alaippɯ enna]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இந்தப்", base: "இந்த", reading: "inta" }, { word: "படத்தின்", base: "படம்", reading: "paṭam" }, { word: "தலைப்பு", ref: "ta-8021" }, { word: "என்ன", ref: "ta-0042" }]
+    confusables:
+      - { id: "w1", ref: "ta-1852", kind: "word" }
+      - { id: "w2", ref: "ta-8035", kind: "word" }
+      - { id: "w3", ref: "ta-8023", kind: "word" }
+  - id: "ta-9509"
+    target: "கடைசிக் காட்சியில் எல்லோரும் கைதட்டுகிறார்கள்."
+    reading: "kaṭaicik kāṭciyil ellōrum kaitaṭṭukiṟārkaḷ."
+    ipa: "kaʈaisik kaːʈtʃijil elloːɾum kait̪aʈʈukiraːɾkaɭ"
+    phonetic: "[kaɖaisik kaːʈtʃijil elloːɾum kaid̪aʈʈuɡiraːɾkaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "கடைசிக்", base: "கடைசி", reading: "kaṭaici" }, { word: "காட்சியில்", base: "காட்சி", reading: "kāṭci" }, { word: "எல்லோரும்", ref: "ta-0449" }, { word: "கைதட்டுகிறார்கள்", base: "கைதட்டு", reading: "kaitaṭṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8040", kind: "word" }
+      - { id: "w2", ref: "ta-8046", kind: "word" }
+      - { id: "w3", ref: "ta-8047", kind: "word" }

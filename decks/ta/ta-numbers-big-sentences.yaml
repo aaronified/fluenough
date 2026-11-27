@@ -1,0 +1,110 @@
+schema: 1
+id: "ta-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-3026"
+    target: "சம்பளம் ஆயிரம்."
+    reading: "campaḷam āyiram."
+    ipa: "sampaɭam aːjiɾam"
+    phonetic: "[sambaɭam aːjiɾam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "சம்பளம்", ref: "ta-0194" }, { word: "ஆயிரம்", ref: "ta-0212" }]
+    confusables:
+      - { id: "w1", ref: "ta-0213", kind: "word" }
+      - { id: "w2", ref: "ta-0209", kind: "word" }
+  - id: "ta-3027"
+    target: "ஐநூறு இல்லை."
+    reading: "ainūṟu illai."
+    ipa: "ainuːru illai"
+    phonetic: "[ainuːrɯ illai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "ஐநூறு", ref: "ta-0211" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-0212", kind: "word" }
+      - { id: "w2", ref: "ta-0209", kind: "word" }
+  - id: "ta-3028"
+    target: "நூறு போதும்."
+    reading: "nūṟu pōtum."
+    ipa: "nuːru poːt̪um"
+    phonetic: "[n̪uːrɯ poːd̪um]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நூறு", ref: "ta-0209" }, { word: "போதும்", ref: "ta-0161" }]
+    confusables:
+      - { id: "w1", ref: "ta-0159", kind: "word" }
+      - { id: "w2", ref: "ta-0158", kind: "word" }
+  - id: "ta-3029"
+    target: "எத்தனை? நூறு."
+    reading: "ettaṉai? nūṟu."
+    ipa: "et̪t̪anai nuːru"
+    phonetic: "[et̪t̪anai n̪uːrɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எத்தனை", ref: "ta-0048" }, { word: "நூறு", ref: "ta-0209" }]
+    confusables:
+      - { id: "w1", ref: "ta-0049", kind: "word" }
+      - { id: "w2", ref: "ta-0044", kind: "word" }
+  - id: "ta-3030"
+    target: "நாற்பது கொடு."
+    reading: "nāṟpatu koṭu."
+    ipa: "naːrpat̪u koʈu"
+    phonetic: "[n̪aːrpad̪ɯ koɖɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நாற்பது", ref: "ta-0203" }, { word: "கொடு", ref: "ta-0125" }]
+    confusables:
+      - { id: "w1", ref: "ta-0204", kind: "word" }
+      - { id: "w2", ref: "ta-0205", kind: "word" }
+  - id: "ta-3031"
+    target: "லட்சம் இல்லை."
+    reading: "laṭcam illai."
+    ipa: "laʈtʃam illai"
+    phonetic: "[laʈtʃam illai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "லட்சம்", ref: "ta-0213" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-0214", kind: "word" }
+      - { id: "w2", ref: "ta-0212", kind: "word" }
+  - id: "ta-3032"
+    target: "இருநூறு அதிகம்."
+    reading: "irunūṟu atikam."
+    ipa: "iɾunuːru at̪ikam"
+    phonetic: "[iɾunuːrɯ ad̪iɡam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இருநூறு", ref: "ta-0210" }, { word: "அதிகம்", ref: "ta-0159" }]
+    confusables:
+      - { id: "w1", ref: "ta-0161", kind: "word" }
+      - { id: "w2", ref: "ta-0160", kind: "word" }
+  - id: "ta-3033"
+    target: "எண்பது கொடு."
+    reading: "eṇpatu koṭu."
+    ipa: "eɳpat̪u koʈu"
+    phonetic: "[eɳbad̪ɯ koɖɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எண்பது", ref: "ta-0207" }, { word: "கொடு", ref: "ta-0125" }]
+    confusables:
+      - { id: "w1", ref: "ta-0206", kind: "word" }
+      - { id: "w2", ref: "ta-0208", kind: "word" }

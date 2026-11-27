@@ -1,0 +1,1336 @@
+schema: 1
+id: "ta-grammar-concessive"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["evenif", "eventhough"]
+  rows:
+    - word: "ta-0010"
+      forms: { "evenif": "வந்தாலும்", "eventhough": "வந்தும்" }
+      readings: { "evenif": "vantālum", "eventhough": "vantum" }
+    - word: "ta-0038"
+      forms: { "evenif": "எழுந்தாலும்", "eventhough": "எழுந்தும்" }
+      readings: { "evenif": "eḻuntālum", "eventhough": "eḻuntum" }
+    - word: "ta-0115"
+      forms: { "evenif": ["படிச்சாலும்", "படித்தாலும்"], "eventhough": ["படிச்சும்", "படித்தும்"] }
+      readings: { "evenif": ["paṭiccālum", "paṭittālum"], "eventhough": ["paṭiccum", "paṭittum"] }
+    - word: "ta-0118"
+      forms: { "evenif": "போனாலும்", "eventhough": "போயும்" }
+      readings: { "evenif": "pōṉālum", "eventhough": "pōyum" }
+    - word: "ta-0119"
+      forms: { "evenif": "சாப்பிட்டாலும்", "eventhough": "சாப்பிட்டும்" }
+      readings: { "evenif": "cāppiṭṭālum", "eventhough": "cāppiṭṭum" }
+    - word: "ta-0120"
+      forms: { "evenif": ["குடிச்சாலும்", "குடித்தாலும்"], "eventhough": ["குடிச்சும்", "குடித்தும்"] }
+      readings: { "evenif": ["kuṭiccālum", "kuṭittālum"], "eventhough": ["kuṭiccum", "kuṭittum"] }
+    - word: "ta-0121"
+      forms: { "evenif": ["பாத்தாலும்", "பார்த்தாலும்"], "eventhough": ["பாத்தும்", "பார்த்தும்"] }
+      readings: { "evenif": ["pāttālum", "pārttālum"], "eventhough": ["pāttum", "pārttum"] }
+    - word: "ta-0122"
+      forms: { "evenif": "கேட்டாலும்", "eventhough": "கேட்டும்" }
+      readings: { "evenif": "kēṭṭālum", "eventhough": "kēṭṭum" }
+    - word: "ta-0123"
+      forms: { "evenif": "பேசினாலும்", "eventhough": "பேசியும்" }
+      readings: { "evenif": "pēciṉālum", "eventhough": "pēciyum" }
+    - word: "ta-0124"
+      forms: { "evenif": "எழுதினாலும்", "eventhough": "எழுதியும்" }
+      readings: { "evenif": "eḻutiṉālum", "eventhough": "eḻutiyum" }
+    - word: "ta-0125"
+      forms: { "evenif": "கொடுத்தாலும்", "eventhough": "கொடுத்தும்" }
+      readings: { "evenif": "koṭuttālum", "eventhough": "koṭuttum" }
+    - word: "ta-0126"
+      forms: { "evenif": "தூங்கினாலும்", "eventhough": "தூங்கியும்" }
+      readings: { "evenif": "tūṅkiṉālum", "eventhough": "tūṅkiyum" }
+    - word: "ta-0127"
+      forms: { "evenif": ["செஞ்சாலும்", "செய்தாலும்"], "eventhough": ["செஞ்சும்", "செய்தும்"] }
+      readings: { "evenif": ["ceñcālum", "ceytālum"], "eventhough": ["ceñcum", "ceytum"] }
+    - word: "ta-0128"
+      forms: { "evenif": ["சமைச்சாலும்", "சமைத்தாலும்"], "eventhough": ["சமைச்சும்", "சமைத்தும்"] }
+      readings: { "evenif": ["camaiccālum", "camaittālum"], "eventhough": ["camaiccum", "camaittum"] }
+    - word: "ta-0129"
+      forms: { "evenif": "வாங்கினாலும்", "eventhough": "வாங்கியும்" }
+      readings: { "evenif": "vāṅkiṉālum", "eventhough": "vāṅkiyum" }
+    - word: "ta-0184"
+      forms: { "evenif": "எடுத்தாலும்", "eventhough": "எடுத்தும்" }
+      readings: { "evenif": "eṭuttālum", "eventhough": "eṭuttum" }
+    - word: "ta-0185"
+      forms: { "evenif": ["வச்சாலும்", "வைத்தாலும்"], "eventhough": ["வச்சும்", "வைத்தும்"] }
+      readings: { "evenif": ["vaccālum", "vaittālum"], "eventhough": ["vaccum", "vaittum"] }
+    - word: "ta-0186"
+      forms: { "evenif": "திறந்தாலும்", "eventhough": "திறந்தும்" }
+      readings: { "evenif": "tiṟantālum", "eventhough": "tiṟantum" }
+    - word: "ta-0187"
+      forms: { "evenif": "மூடினாலும்", "eventhough": "மூடியும்" }
+      readings: { "evenif": "mūṭiṉālum", "eventhough": "mūṭiyum" }
+    - word: "ta-0188"
+      forms: { "evenif": "உட்கார்ந்தாலும்", "eventhough": "உட்கார்ந்தும்" }
+      readings: { "evenif": "uṭkārntālum", "eventhough": "uṭkārntum" }
+    - word: "ta-0189"
+      forms: { "evenif": "நின்றாலும்", "eventhough": "நின்றும்" }
+      readings: { "evenif": "niṉṟālum", "eventhough": "niṉṟum" }
+    - word: "ta-0190"
+      forms: { "evenif": "கழுவினாலும்", "eventhough": "கழுவியும்" }
+      readings: { "evenif": "kaḻuviṉālum", "eventhough": "kaḻuviyum" }
+    - word: "ta-0191"
+      forms: { "evenif": "விளையாடினாலும்", "eventhough": "விளையாடியும்" }
+      readings: { "evenif": "viḷaiyāṭiṉālum", "eventhough": "viḷaiyāṭiyum" }
+    - word: "ta-1101"
+      forms: { "evenif": ["குளிச்சாலும்", "குளித்தாலும்"], "eventhough": ["குளிச்சும்", "குளித்தும்"] }
+      readings: { "evenif": ["kuḷiccālum", "kuḷittālum"], "eventhough": ["kuḷiccum", "kuḷittum"] }
+    - word: "ta-1102"
+      forms: { "evenif": "துலக்கினாலும்", "eventhough": "துலக்கியும்" }
+      readings: { "evenif": "tulakkiṉālum", "eventhough": "tulakkiyum" }
+    - word: "ta-1103"
+      forms: { "evenif": "நடந்தாலும்", "eventhough": "நடந்தும்" }
+      readings: { "evenif": "naṭantālum", "eventhough": "naṭantum" }
+    - word: "ta-1104"
+      forms: { "evenif": "திரும்பினாலும்", "eventhough": "திரும்பியும்" }
+      readings: { "evenif": "tirumpiṉālum", "eventhough": "tirumpiyum" }
+    - word: "ta-1107"
+      forms: { "evenif": "தொடங்கினாலும்", "eventhough": "தொடங்கியும்" }
+      readings: { "evenif": "toṭaṅkiṉālum", "eventhough": "toṭaṅkiyum" }
+    - word: "ta-1801"
+      forms: { "evenif": "உதவினாலும்", "eventhough": "உதவியும்" }
+      readings: { "evenif": "utaviṉālum", "eventhough": "utaviyum" }
+    - word: "ta-0450"
+      forms: { "evenif": "விட்டாலும்", "eventhough": "விட்டும்" }
+      readings: { "evenif": "viṭṭālum", "eventhough": "viṭṭum" }
+    - word: "ta-0451"
+      forms: { "evenif": "கொண்டாலும்", "eventhough": "கொண்டும்" }
+      readings: { "evenif": "koṇṭālum", "eventhough": "koṇṭum" }
+    - word: "ta-0452"
+      forms: { "evenif": "போட்டாலும்", "eventhough": "போட்டும்" }
+      readings: { "evenif": "pōṭṭālum", "eventhough": "pōṭṭum" }
+    - word: "ta-0453"
+      forms: { "evenif": "தந்தாலும்", "eventhough": "தந்தும்" }
+      readings: { "evenif": "tantālum", "eventhough": "tantum" }
+    - word: "ta-0454"
+      forms: { "evenif": "நிறுத்தினாலும்", "eventhough": "நிறுத்தியும்" }
+      readings: { "evenif": "niṟuttiṉālum", "eventhough": "niṟuttiyum" }
+    - word: "ta-0455"
+      forms: { "evenif": "தள்ளினாலும்", "eventhough": "தள்ளியும்" }
+      readings: { "evenif": "taḷḷiṉālum", "eventhough": "taḷḷiyum" }
+    - word: "ta-0456"
+      forms: { "evenif": ["பிடிச்சாலும்", "பிடித்தாலும்"], "eventhough": ["பிடிச்சும்", "பிடித்தும்"] }
+      readings: { "evenif": ["piṭiccālum", "piṭittālum"], "eventhough": ["piṭiccum", "piṭittum"] }
+    - word: "ta-0457"
+      forms: { "evenif": "வீசினாலும்", "eventhough": "வீசியும்" }
+      readings: { "evenif": "vīciṉālum", "eventhough": "vīciyum" }
+    - word: "ta-0458"
+      forms: { "evenif": "தூக்கினாலும்", "eventhough": "தூக்கியும்" }
+      readings: { "evenif": "tūkkiṉālum", "eventhough": "tūkkiyum" }
+    - word: "ta-0460"
+      forms: { "evenif": "பண்ணினாலும்", "eventhough": "பண்ணியும்" }
+      readings: { "evenif": "paṇṇiṉālum", "eventhough": "paṇṇiyum" }
+    - word: "ta-0462"
+      forms: { "evenif": "பட்டாலும்", "eventhough": "பட்டும்" }
+      readings: { "evenif": "paṭṭālum", "eventhough": "paṭṭum" }
+    - word: "ta-0470"
+      forms: { "evenif": "சென்றாலும்", "eventhough": "சென்றும்" }
+      readings: { "evenif": "ceṉṟālum", "eventhough": "ceṉṟum" }
+    - word: "ta-0471"
+      forms: { "evenif": "உண்டாலும்", "eventhough": "உண்டும்" }
+      readings: { "evenif": "uṇṭālum", "eventhough": "uṇṭum" }
+    - word: "ta-0472"
+      forms: { "evenif": "அருந்தினாலும்", "eventhough": "அருந்தியும்" }
+      readings: { "evenif": "aruntiṉālum", "eventhough": "aruntiyum" }
+    - word: "ta-0473"
+      forms: { "evenif": "கூறினாலும்", "eventhough": "கூறியும்" }
+      readings: { "evenif": "kūṟiṉālum", "eventhough": "kūṟiyum" }
+    - word: "ta-0474"
+      forms: { "evenif": "தெரிவித்தாலும்", "eventhough": "தெரிவித்தும்" }
+      readings: { "evenif": "terivittālum", "eventhough": "terivittum" }
+    - word: "ta-2003"
+      forms: { "evenif": "உடுத்தினாலும்", "eventhough": "உடுத்தியும்" }
+      readings: { "evenif": "uṭuttiṉālum", "eventhough": "uṭuttiyum" }
+    - word: "ta-2004"
+      forms: { "evenif": "கழற்றினாலும்", "eventhough": "கழற்றியும்" }
+      readings: { "evenif": "kaḻaṟṟiṉālum", "eventhough": "kaḻaṟṟiyum" }
+    - word: "ta-2005"
+      forms: { "evenif": "கட்டினாலும்", "eventhough": "கட்டியும்" }
+      readings: { "evenif": "kaṭṭiṉālum", "eventhough": "kaṭṭiyum" }
+    - word: "ta-2006"
+      forms: { "evenif": "சீவினாலும்", "eventhough": "சீவியும்" }
+      readings: { "evenif": "cīviṉālum", "eventhough": "cīviyum" }
+    - word: "ta-2007"
+      forms: { "evenif": "அலங்கரித்தாலும்", "eventhough": "அலங்கரித்தும்" }
+      readings: { "evenif": "alaṅkarittālum", "eventhough": "alaṅkarittum" }
+    - word: "ta-2008"
+      forms: { "evenif": "வளர்ந்தாலும்", "eventhough": "வளர்ந்தும்" }
+      readings: { "evenif": "vaḷarntālum", "eventhough": "vaḷarntum" }
+    - word: "ta-2009"
+      forms: { "evenif": "பூசினாலும்", "eventhough": "பூசியும்" }
+      readings: { "evenif": "pūciṉālum", "eventhough": "pūciyum" }
+    - word: "ta-1945"
+      forms: { "evenif": "பெருக்கினாலும்", "eventhough": "பெருக்கியும்" }
+      readings: { "evenif": "perukkiṉālum", "eventhough": "perukkiyum" }
+    - word: "ta-1946"
+      forms: { "evenif": "துடைத்தாலும்", "eventhough": "துடைத்தும்" }
+      readings: { "evenif": "tuṭaittālum", "eventhough": "tuṭaittum" }
+    - word: "ta-1947"
+      forms: { "evenif": "துவைத்தாலும்", "eventhough": "துவைத்தும்" }
+      readings: { "evenif": "tuvaittālum", "eventhough": "tuvaittum" }
+    - word: "ta-1948"
+      forms: { "evenif": "மடித்தாலும்", "eventhough": "மடித்தும்" }
+      readings: { "evenif": "maṭittālum", "eventhough": "maṭittum" }
+    - word: "ta-1949"
+      forms: { "evenif": "இழுத்தாலும்", "eventhough": "இழுத்தும்" }
+      readings: { "evenif": "iḻuttālum", "eventhough": "iḻuttum" }
+    - word: "ta-1951"
+      forms: { "evenif": "நிரப்பினாலும்", "eventhough": "நிரப்பியும்" }
+      readings: { "evenif": "nirappiṉālum", "eventhough": "nirappiyum" }
+    - word: "ta-1952"
+      forms: { "evenif": "ஊற்றினாலும்", "eventhough": "ஊற்றியும்" }
+      readings: { "evenif": "ūṟṟiṉālum", "eventhough": "ūṟṟiyum" }
+    - word: "ta-1953"
+      forms: { "evenif": "அணைத்தாலும்", "eventhough": "அணைத்தும்" }
+      readings: { "evenif": "aṇaittālum", "eventhough": "aṇaittum" }
+    - word: "ta-1954"
+      forms: { "evenif": "ஏற்றினாலும்", "eventhough": "ஏற்றியும்" }
+      readings: { "evenif": "ēṟṟiṉālum", "eventhough": "ēṟṟiyum" }
+    - word: "ta-1955"
+      forms: { "evenif": "உலர்த்தினாலும்", "eventhough": "உலர்த்தியும்" }
+      readings: { "evenif": "ularttiṉālum", "eventhough": "ularttiyum" }
+    - word: "ta-1956"
+      forms: { "evenif": "வெட்டினாலும்", "eventhough": "வெட்டியும்" }
+      readings: { "evenif": "veṭṭiṉālum", "eventhough": "veṭṭiyum" }
+    - word: "ta-1957"
+      forms: { "evenif": "கலக்கினாலும்", "eventhough": "கலக்கியும்" }
+      readings: { "evenif": "kalakkiṉālum", "eventhough": "kalakkiyum" }
+    - word: "ta-1958"
+      forms: { "evenif": "தேடினாலும்", "eventhough": "தேடியும்" }
+      readings: { "evenif": "tēṭiṉālum", "eventhough": "tēṭiyum" }
+    - word: "ta-1959"
+      forms: { "evenif": "அடுக்கினாலும்", "eventhough": "அடுக்கியும்" }
+      readings: { "evenif": "aṭukkiṉālum", "eventhough": "aṭukkiyum" }
+    - word: "ta-1961"
+      forms: { "evenif": "மாற்றினாலும்", "eventhough": "மாற்றியும்" }
+      readings: { "evenif": "māṟṟiṉālum", "eventhough": "māṟṟiyum" }
+    - word: "ta-1183"
+      forms: { "evenif": "பொங்கினாலும்", "eventhough": "பொங்கியும்" }
+      readings: { "evenif": "poṅkiṉālum", "eventhough": "poṅkiyum" }
+    - word: "ta-1192"
+      forms: { "evenif": "கொண்டாடினாலும்", "eventhough": "கொண்டாடியும்" }
+      readings: { "evenif": "koṇṭāṭiṉālum", "eventhough": "koṇṭāṭiyum" }
+    - word: "ta-1202"
+      forms: { "evenif": "வணங்கினாலும்", "eventhough": "வணங்கியும்" }
+      readings: { "evenif": "vaṇaṅkiṉālum", "eventhough": "vaṇaṅkiyum" }
+    - word: "ta-1905"
+      forms: { "evenif": "பாடினாலும்", "eventhough": "பாடியும்" }
+      readings: { "evenif": "pāṭiṉālum", "eventhough": "pāṭiyum" }
+    - word: "ta-1907"
+      forms: { "evenif": "தீட்டினாலும்", "eventhough": "தீட்டியும்" }
+      readings: { "evenif": "tīṭṭiṉālum", "eventhough": "tīṭṭiyum" }
+    - word: "ta-1908"
+      forms: { "evenif": "ஓடினாலும்", "eventhough": "ஓடியும்" }
+      readings: { "evenif": "ōṭiṉālum", "eventhough": "ōṭiyum" }
+    - word: "ta-1909"
+      forms: { "evenif": "பறந்தாலும்", "eventhough": "பறந்தும்" }
+      readings: { "evenif": "paṟantālum", "eventhough": "paṟantum" }
+    - word: "ta-1910"
+      forms: { "evenif": "நீந்தினாலும்", "eventhough": "நீந்தியும்" }
+      readings: { "evenif": "nīntiṉālum", "eventhough": "nīntiyum" }
+    - word: "ta-1911"
+      forms: { "evenif": "குதித்தாலும்", "eventhough": "குதித்தும்" }
+      readings: { "evenif": "kutittālum", "eventhough": "kutittum" }
+    - word: "ta-1912"
+      forms: { "evenif": "ஏறினாலும்", "eventhough": "ஏறியும்" }
+      readings: { "evenif": "ēṟiṉālum", "eventhough": "ēṟiyum" }
+    - word: "ta-1913"
+      forms: { "evenif": "சேகரித்தாலும்", "eventhough": "சேகரித்தும்" }
+      readings: { "evenif": "cēkarittālum", "eventhough": "cēkarittum" }
+    - word: "ta-1914"
+      forms: { "evenif": "சிரித்தாலும்", "eventhough": "சிரித்தும்" }
+      readings: { "evenif": "cirittālum", "eventhough": "cirittum" }
+    - word: "ta-1915"
+      forms: { "evenif": "ரசித்தாலும்", "eventhough": "ரசித்தும்" }
+      readings: { "evenif": "racittālum", "eventhough": "racittum" }
+    - word: "ta-1916"
+      forms: { "evenif": "வென்றாலும்", "eventhough": "வென்றும்" }
+      readings: { "evenif": "veṉṟālum", "eventhough": "veṉṟum" }
+    - word: "ta-2180"
+      forms: { "evenif": "ஓட்டினாலும்", "eventhough": "ஓட்டியும்" }
+      readings: { "evenif": "ōṭṭiṉālum", "eventhough": "ōṭṭiyum" }
+    - word: "ta-2182"
+      forms: { "evenif": "அடைந்தாலும்", "eventhough": "அடைந்தும்" }
+      readings: { "evenif": "aṭaintālum", "eventhough": "aṭaintum" }
+    - word: "ta-2183"
+      forms: { "evenif": "இறக்கினாலும்", "eventhough": "இறக்கியும்" }
+      readings: { "evenif": "iṟakkiṉālum", "eventhough": "iṟakkiyum" }
+    - word: "ta-2186"
+      forms: { "evenif": "இயங்கினாலும்", "eventhough": "இயங்கியும்" }
+      readings: { "evenif": "iyaṅkiṉālum", "eventhough": "iyaṅkiyum" }
+    - word: "ta-2191"
+      forms: { "evenif": "பரிசோதித்தாலும்", "eventhough": "பரிசோதித்தும்" }
+      readings: { "evenif": "paricōtittālum", "eventhough": "paricōtittum" }
+    - word: "ta-2241"
+      forms: { "evenif": "மலர்ந்தாலும்", "eventhough": "மலர்ந்தும்" }
+      readings: { "evenif": "malarntālum", "eventhough": "malarntum" }
+    - word: "ta-2242"
+      forms: { "evenif": "உதிர்ந்தாலும்", "eventhough": "உதிர்ந்தும்" }
+      readings: { "evenif": "utirntālum", "eventhough": "utirntum" }
+    - word: "ta-2243"
+      forms: { "evenif": "முளைத்தாலும்", "eventhough": "முளைத்தும்" }
+      readings: { "evenif": "muḷaittālum", "eventhough": "muḷaittum" }
+    - word: "ta-2244"
+      forms: { "evenif": "உருகினாலும்", "eventhough": "உருகியும்" }
+      readings: { "evenif": "urukiṉālum", "eventhough": "urukiyum" }
+    - word: "ta-2245"
+      forms: { "evenif": "உறைந்தாலும்", "eventhough": "உறைந்தும்" }
+      readings: { "evenif": "uṟaintālum", "eventhough": "uṟaintum" }
+    - word: "ta-2246"
+      forms: { "evenif": "ஒழுகினாலும்", "eventhough": "ஒழுகியும்" }
+      readings: { "evenif": "oḻukiṉālum", "eventhough": "oḻukiyum" }
+    - word: "ta-2122"
+      forms: { "evenif": "இணைத்தாலும்", "eventhough": "இணைத்தும்" }
+      readings: { "evenif": "iṇaittālum", "eventhough": "iṇaittum" }
+    - word: "ta-2123"
+      forms: { "evenif": "துண்டித்தாலும்", "eventhough": "துண்டித்தும்" }
+      readings: { "evenif": "tuṇṭittālum", "eventhough": "tuṇṭittum" }
+    - word: "ta-2124"
+      forms: { "evenif": "நீக்கினாலும்", "eventhough": "நீக்கியும்" }
+      readings: { "evenif": "nīkkiṉālum", "eventhough": "nīkkiyum" }
+    - word: "ta-2125"
+      forms: { "evenif": "புதுப்பித்தாலும்", "eventhough": "புதுப்பித்தும்" }
+      readings: { "evenif": "putuppittālum", "eventhough": "putuppittum" }
+    - word: "ta-2126"
+      forms: { "evenif": "நிறுவினாலும்", "eventhough": "நிறுவியும்" }
+      readings: { "evenif": "niṟuviṉālum", "eventhough": "niṟuviyum" }
+    - word: "ta-2128"
+      forms: { "evenif": "அழுத்தினாலும்", "eventhough": "அழுத்தியும்" }
+      readings: { "evenif": "aḻuttiṉālum", "eventhough": "aḻuttiyum" }
+    - word: "ta-1857"
+      forms: { "evenif": "புரிந்தாலும்", "eventhough": "புரிந்தும்" }
+      readings: { "evenif": "purintālum", "eventhough": "purintum" }
+    - word: "ta-1858"
+      forms: { "evenif": "மறந்தாலும்", "eventhough": "மறந்தும்" }
+      readings: { "evenif": "maṟantālum", "eventhough": "maṟantum" }
+    - word: "ta-1859"
+      forms: { "evenif": "நினைத்தாலும்", "eventhough": "நினைத்தும்" }
+      readings: { "evenif": "niṉaittālum", "eventhough": "niṉaittum" }
+    - word: "ta-1242"
+      forms: { "evenif": "செலுத்தினாலும்", "eventhough": "செலுத்தியும்" }
+      readings: { "evenif": "celuttiṉālum", "eventhough": "celuttiyum" }
+    - word: "ta-1243"
+      forms: { "evenif": "ஒப்பிட்டாலும்", "eventhough": "ஒப்பிட்டும்" }
+      readings: { "evenif": "oppiṭṭālum", "eventhough": "oppiṭṭum" }
+    - word: "ta-1244"
+      forms: { "evenif": "விசாரித்தாலும்", "eventhough": "விசாரித்தும்" }
+      readings: { "evenif": "vicārittālum", "eventhough": "vicārittum" }
+    - word: "ta-1245"
+      forms: { "evenif": "கூட்டினாலும்", "eventhough": "கூட்டியும்" }
+      readings: { "evenif": "kūṭṭiṉālum", "eventhough": "kūṭṭiyum" }
+    - word: "ta-1246"
+      forms: { "evenif": "வசூலித்தாலும்", "eventhough": "வசூலித்தும்" }
+      readings: { "evenif": "vacūlittālum", "eventhough": "vacūlittum" }
+    - word: "ta-2017"
+      forms: { "evenif": "சொன்னாலும்", "eventhough": "சொல்லியும்" }
+      readings: { "evenif": "coṉṉālum", "eventhough": "colliyum" }
+    - word: "ta-2018"
+      forms: { "evenif": "இருந்தாலும்", "eventhough": "இருந்தும்" }
+      readings: { "evenif": "iruntālum", "eventhough": "iruntum" }
+    - word: "ta-2019"
+      forms: { "evenif": "தெரிந்தாலும்", "eventhough": "தெரிந்தும்" }
+      readings: { "evenif": "terintālum", "eventhough": "terintum" }
+    - word: "ta-2020"
+      forms: { "evenif": "தங்கினாலும்", "eventhough": "தங்கியும்" }
+      readings: { "evenif": "taṅkiṉālum", "eventhough": "taṅkiyum" }
+    - word: "ta-2021"
+      forms: { "evenif": "வாழ்ந்தாலும்", "eventhough": "வாழ்ந்தும்" }
+      readings: { "evenif": "vāḻntālum", "eventhough": "vāḻntum" }
+    - word: "ta-2022"
+      forms: { "evenif": "இறங்கினாலும்", "eventhough": "இறங்கியும்" }
+      readings: { "evenif": "iṟaṅkiṉālum", "eventhough": "iṟaṅkiyum" }
+    - word: "ta-2024"
+      forms: { "evenif": "பெற்றாலும்", "eventhough": "பெற்றும்" }
+      readings: { "evenif": "peṟṟālum", "eventhough": "peṟṟum" }
+    - word: "ta-2025"
+      forms: { "evenif": "கிடைத்தாலும்", "eventhough": "கிடைத்தும்" }
+      readings: { "evenif": "kiṭaittālum", "eventhough": "kiṭaittum" }
+    - word: "ta-2029"
+      forms: { "evenif": "அனுப்பினாலும்", "eventhough": "அனுப்பியும்" }
+      readings: { "evenif": "aṉuppiṉālum", "eventhough": "aṉuppiyum" }
+    - word: "ta-2030"
+      forms: { "evenif": "கூப்பிட்டாலும்", "eventhough": "கூப்பிட்டும்" }
+      readings: { "evenif": "kūppiṭṭālum", "eventhough": "kūppiṭṭum" }
+    - word: "ta-2031"
+      forms: { "evenif": "அழைத்தாலும்", "eventhough": "அழைத்தும்" }
+      readings: { "evenif": "aḻaittālum", "eventhough": "aḻaittum" }
+    - word: "ta-2033"
+      forms: { "evenif": "சந்தித்தாலும்", "eventhough": "சந்தித்தும்" }
+      readings: { "evenif": "cantittālum", "eventhough": "cantittum" }
+    - word: "ta-2034"
+      forms: { "evenif": "சேர்ந்தாலும்", "eventhough": "சேர்ந்தும்" }
+      readings: { "evenif": "cērntālum", "eventhough": "cērntum" }
+    - word: "ta-2035"
+      forms: { "evenif": "பிரிந்தாலும்", "eventhough": "பிரிந்தும்" }
+      readings: { "evenif": "pirintālum", "eventhough": "pirintum" }
+    - word: "ta-2036"
+      forms: { "evenif": "நம்பினாலும்", "eventhough": "நம்பியும்" }
+      readings: { "evenif": "nampiṉālum", "eventhough": "nampiyum" }
+    - word: "ta-2038"
+      forms: { "evenif": "பகிர்ந்தாலும்", "eventhough": "பகிர்ந்தும்" }
+      readings: { "evenif": "pakirntālum", "eventhough": "pakirntum" }
+    - word: "ta-2039"
+      forms: { "evenif": "ஒட்டினாலும்", "eventhough": "ஒட்டியும்" }
+      readings: { "evenif": "oṭṭiṉālum", "eventhough": "oṭṭiyum" }
+    - word: "ta-2040"
+      forms: { "evenif": "கொட்டினாலும்", "eventhough": "கொட்டியும்" }
+      readings: { "evenif": "koṭṭiṉālum", "eventhough": "koṭṭiyum" }
+    - word: "ta-2041"
+      forms: { "evenif": "எரிந்தாலும்", "eventhough": "எரிந்தும்" }
+      readings: { "evenif": "erintālum", "eventhough": "erintum" }
+    - word: "ta-2042"
+      forms: { "evenif": "உருவாக்கினாலும்", "eventhough": "உருவாக்கியும்" }
+      readings: { "evenif": "uruvākkiṉālum", "eventhough": "uruvākkiyum" }
+    - word: "ta-2043"
+      forms: { "evenif": "திருடினாலும்", "eventhough": "திருடியும்" }
+      readings: { "evenif": "tiruṭiṉālum", "eventhough": "tiruṭiyum" }
+    - word: "ta-2044"
+      forms: { "evenif": "யோசித்தாலும்", "eventhough": "யோசித்தும்" }
+      readings: { "evenif": "yōcittālum", "eventhough": "yōcittum" }
+    - word: "ta-2045"
+      forms: { "evenif": "விரும்பினாலும்", "eventhough": "விரும்பியும்" }
+      readings: { "evenif": "virumpiṉālum", "eventhough": "virumpiyum" }
+    - word: "ta-2049"
+      forms: { "evenif": "அழுதாலும்", "eventhough": "அழுதும்" }
+      readings: { "evenif": "aḻutālum", "eventhough": "aḻutum" }
+    - word: "ta-2050"
+      forms: { "evenif": "எண்ணினாலும்", "eventhough": "எண்ணியும்" }
+      readings: { "evenif": "eṇṇiṉālum", "eventhough": "eṇṇiyum" }
+    - word: "ta-2051"
+      forms: { "evenif": "நுழைந்தாலும்", "eventhough": "நுழைந்தும்" }
+      readings: { "evenif": "nuḻaintālum", "eventhough": "nuḻaintum" }
+    - word: "ta-2052"
+      forms: { "evenif": "வெளியேறினாலும்", "eventhough": "வெளியேறியும்" }
+      readings: { "evenif": "veḷiyēṟiṉālum", "eventhough": "veḷiyēṟiyum" }
+    - word: "ta-2053"
+      forms: { "evenif": "கடந்தாலும்", "eventhough": "கடந்தும்" }
+      readings: { "evenif": "kaṭantālum", "eventhough": "kaṭantum" }
+    - word: "ta-2054"
+      forms: { "evenif": "சுற்றினாலும்", "eventhough": "சுற்றியும்" }
+      readings: { "evenif": "cuṟṟiṉālum", "eventhough": "cuṟṟiyum" }
+    - word: "ta-2055"
+      forms: { "evenif": "அமர்ந்தாலும்", "eventhough": "அமர்ந்தும்" }
+      readings: { "evenif": "amarntālum", "eventhough": "amarntum" }
+    - word: "ta-2056"
+      forms: { "evenif": "நகர்ந்தாலும்", "eventhough": "நகர்ந்தும்" }
+      readings: { "evenif": "nakarntālum", "eventhough": "nakarntum" }
+    - word: "ta-2057"
+      forms: { "evenif": "தொட்டாலும்", "eventhough": "தொட்டும்" }
+      readings: { "evenif": "toṭṭālum", "eventhough": "toṭṭum" }
+    - word: "ta-2058"
+      forms: { "evenif": "எறிந்தாலும்", "eventhough": "எறிந்தும்" }
+      readings: { "evenif": "eṟintālum", "eventhough": "eṟintum" }
+    - word: "ta-2059"
+      forms: { "evenif": "மாறினாலும்", "eventhough": "மாறியும்" }
+      readings: { "evenif": "māṟiṉālum", "eventhough": "māṟiyum" }
+    - word: "ta-2062"
+      forms: { "evenif": "தொடர்ந்தாலும்", "eventhough": "தொடர்ந்தும்" }
+      readings: { "evenif": "toṭarntālum", "eventhough": "toṭarntum" }
+    - word: "ta-2063"
+      forms: { "evenif": "முயன்றாலும்", "eventhough": "முயன்றும்" }
+      readings: { "evenif": "muyaṉṟālum", "eventhough": "muyaṉṟum" }
+    - word: "ta-2064"
+      forms: { "evenif": "சேமித்தாலும்", "eventhough": "சேமித்தும்" }
+      readings: { "evenif": "cēmittālum", "eventhough": "cēmittum" }
+    - word: "ta-2065"
+      forms: { "evenif": "செலவழித்தாலும்", "eventhough": "செலவழித்தும்" }
+      readings: { "evenif": "celavaḻittālum", "eventhough": "celavaḻittum" }
+    - word: "ta-2066"
+      forms: { "evenif": "எழுப்பினாலும்", "eventhough": "எழுப்பியும்" }
+      readings: { "evenif": "eḻuppiṉālum", "eventhough": "eḻuppiyum" }
+    - word: "ta-2067"
+      forms: { "evenif": "விழித்தாலும்", "eventhough": "விழித்தும்" }
+      readings: { "evenif": "viḻittālum", "eventhough": "viḻittum" }
+    - word: "ta-2068"
+      forms: { "evenif": "விழுந்தாலும்", "eventhough": "விழுந்தும்" }
+      readings: { "evenif": "viḻuntālum", "eventhough": "viḻuntum" }
+    - word: "ta-2070"
+      forms: { "evenif": "காட்டினாலும்", "eventhough": "காட்டியும்" }
+      readings: { "evenif": "kāṭṭiṉālum", "eventhough": "kāṭṭiyum" }
+    - word: "ta-2071"
+      forms: { "evenif": "குனிந்தாலும்", "eventhough": "குனிந்தும்" }
+      readings: { "evenif": "kuṉintālum", "eventhough": "kuṉintum" }
+    - word: "ta-2072"
+      forms: { "evenif": "சாய்ந்தாலும்", "eventhough": "சாய்ந்தும்" }
+      readings: { "evenif": "cāyntālum", "eventhough": "cāyntum" }
+    - word: "ta-2074"
+      forms: { "evenif": "சம்பாதித்தாலும்", "eventhough": "சம்பாதித்தும்" }
+      readings: { "evenif": "campātittālum", "eventhough": "campātittum" }
+    - word: "ta-2075"
+      forms: { "evenif": "பழகினாலும்", "eventhough": "பழகியும்" }
+      readings: { "evenif": "paḻakiṉālum", "eventhough": "paḻakiyum" }
+    - word: "ta-2076"
+      forms: { "evenif": "திட்டினாலும்", "eventhough": "திட்டியும்" }
+      readings: { "evenif": "tiṭṭiṉālum", "eventhough": "tiṭṭiyum" }
+    - word: "ta-2077"
+      forms: { "evenif": "பாராட்டினாலும்", "eventhough": "பாராட்டியும்" }
+      readings: { "evenif": "pārāṭṭiṉālum", "eventhough": "pārāṭṭiyum" }
+    - word: "ta-2078"
+      forms: { "evenif": "நடித்தாலும்", "eventhough": "நடித்தும்" }
+      readings: { "evenif": "naṭittālum", "eventhough": "naṭittum" }
+    - word: "ta-2079"
+      forms: { "evenif": "ஆடினாலும்", "eventhough": "ஆடியும்" }
+      readings: { "evenif": "āṭiṉālum", "eventhough": "āṭiyum" }
+    - word: "ta-2080"
+      forms: { "evenif": "குறைந்தாலும்", "eventhough": "குறைந்தும்" }
+      readings: { "evenif": "kuṟaintālum", "eventhough": "kuṟaintum" }
+    - word: "ta-2081"
+      forms: { "evenif": "அதிகரித்தாலும்", "eventhough": "அதிகரித்தும்" }
+      readings: { "evenif": "atikarittālum", "eventhough": "atikarittum" }
+    - word: "ta-2083"
+      forms: { "evenif": "மன்னித்தாலும்", "eventhough": "மன்னித்தும்" }
+      readings: { "evenif": "maṉṉittālum", "eventhough": "maṉṉittum" }
+    - word: "ta-2084"
+      forms: { "evenif": "ஏமாற்றினாலும்", "eventhough": "ஏமாற்றியும்" }
+      readings: { "evenif": "ēmāṟṟiṉālum", "eventhough": "ēmāṟṟiyum" }
+    - word: "ta-2085"
+      forms: { "evenif": "பயன்படுத்தினாலும்", "eventhough": "பயன்படுத்தியும்" }
+      readings: { "evenif": "payaṉpaṭuttiṉālum", "eventhough": "payaṉpaṭuttiyum" }
+    - word: "ta-1141"
+      forms: { "evenif": "பெய்தாலும்", "eventhough": "பெய்தும்" }
+      readings: { "evenif": "peytālum", "eventhough": "peytum" }
+    - word: "ta-1143"
+      forms: { "evenif": "அடித்தாலும்", "eventhough": "அடித்தும்" }
+      readings: { "evenif": "aṭittālum", "eventhough": "aṭittum" }
+    - word: "ta-1144"
+      forms: { "evenif": "நனைந்தாலும்", "eventhough": "நனைந்தும்" }
+      readings: { "evenif": "naṉaintālum", "eventhough": "naṉaintum" }
+    - word: "ta-1145"
+      forms: { "evenif": "காய்ந்தாலும்", "eventhough": "காய்ந்தும்" }
+      readings: { "evenif": "kāyntālum", "eventhough": "kāyntum" }
+    - word: "ta-2023"
+      forms: { "evenif": "தோன்றினாலும்", "eventhough": "தோன்றியும்" }
+      readings: { "evenif": "tōṉṟiṉālum", "eventhough": "tōṉṟiyum" }
+    - word: "ta-2027"
+      forms: { "evenif": "கவனித்தாலும்", "eventhough": "கவனித்தும்" }
+      readings: { "evenif": "kavaṉittālum", "eventhough": "kavaṉittum" }
+    - word: "ta-2028"
+      forms: { "evenif": "வருந்தினாலும்", "eventhough": "வருந்தியும்" }
+      readings: { "evenif": "varuntiṉālum", "eventhough": "varuntiyum" }
+    - word: "ta-2061"
+      forms: { "evenif": "ஊக்குவித்தாலும்", "eventhough": "ஊக்குவித்தும்" }
+      readings: { "evenif": "ūkkuvittālum", "eventhough": "ūkkuvittum" }
+    - word: "ta-2082"
+      forms: { "evenif": "நிரூபித்தாலும்", "eventhough": "நிரூபித்தும்" }
+      readings: { "evenif": "nirūpittālum", "eventhough": "nirūpittum" }
+    - word: "ta-1142"
+      forms: { "evenif": "மறைந்தாலும்", "eventhough": "மறைந்தும்" }
+      readings: { "evenif": "maṟaintālum", "eventhough": "maṟaintum" }
+    - word: "ta-1950"
+      forms: { "evenif": "அலசினாலும்", "eventhough": "அலசியும்" }
+      readings: { "evenif": "alaciṉālum", "eventhough": "alaciyum" }
+    - word: "ta-1960"
+      forms: { "evenif": "பரப்பினாலும்", "eventhough": "பரப்பியும்" }
+      readings: { "evenif": "parappiṉālum", "eventhough": "parappiyum" }
+    - word: "ta-1146"
+      forms: { "evenif": "மின்னினாலும்", "eventhough": "மின்னியும்" }
+      readings: { "evenif": "miṉṉiṉālum", "eventhough": "miṉṉiyum" }
+    - word: "ta-1297"
+      forms: { "evenif": "இருமினாலும்", "eventhough": "இருமியும்" }
+      readings: { "evenif": "irumiṉālum", "eventhough": "irumiyum" }
+    - word: "ta-1298"
+      forms: { "evenif": "தும்மினாலும்", "eventhough": "தும்மியும்" }
+      readings: { "evenif": "tummiṉālum", "eventhough": "tummiyum" }
+    - word: "ta-1300"
+      forms: { "evenif": "மயங்கினாலும்", "eventhough": "மயங்கியும்" }
+      readings: { "evenif": "mayaṅkiṉālum", "eventhough": "mayaṅkiyum" }
+    - word: "ta-1303"
+      forms: { "evenif": "வீங்கினாலும்", "eventhough": "வீங்கியும்" }
+      readings: { "evenif": "vīṅkiṉālum", "eventhough": "vīṅkiyum" }
+    - word: "ta-1304"
+      forms: { "evenif": "நடுங்கினாலும்", "eventhough": "நடுங்கியும்" }
+      readings: { "evenif": "naṭuṅkiṉālum", "eventhough": "naṭuṅkiyum" }
+    - word: "ta-1305"
+      forms: { "evenif": "வியர்த்தாலும்", "eventhough": "வியர்த்தும்" }
+      readings: { "evenif": "viyarttālum", "eventhough": "viyarttum" }
+    - word: "ta-1317"
+      forms: { "evenif": "பரிமாறினாலும்", "eventhough": "பரிமாறியும்" }
+      readings: { "evenif": "parimāṟiṉālum", "eventhough": "parimāṟiyum" }
+    - word: "ta-1346"
+      forms: { "evenif": "வறுத்தாலும்", "eventhough": "வறுத்தும்" }
+      readings: { "evenif": "vaṟuttālum", "eventhough": "vaṟuttum" }
+    - word: "ta-1347"
+      forms: { "evenif": "வதக்கினாலும்", "eventhough": "வதக்கியும்" }
+      readings: { "evenif": "vatakkiṉālum", "eventhough": "vatakkiyum" }
+    - word: "ta-1348"
+      forms: { "evenif": "கொதித்தாலும்", "eventhough": "கொதித்தும்" }
+      readings: { "evenif": "kotittālum", "eventhough": "kotittum" }
+    - word: "ta-1349"
+      forms: { "evenif": "நறுக்கினாலும்", "eventhough": "நறுக்கியும்" }
+      readings: { "evenif": "naṟukkiṉālum", "eventhough": "naṟukkiyum" }
+    - word: "ta-1350"
+      forms: { "evenif": "கிளறினாலும்", "eventhough": "கிளறியும்" }
+      readings: { "evenif": "kiḷaṟiṉālum", "eventhough": "kiḷaṟiyum" }
+    - word: "ta-1351"
+      forms: { "evenif": "வெந்தாலும்", "eventhough": "வெந்தும்" }
+      readings: { "evenif": "ventālum", "eventhough": "ventum" }
+    - word: "ta-1352"
+      forms: { "evenif": "பொரித்தாலும்", "eventhough": "பொரித்தும்" }
+      readings: { "evenif": "porittālum", "eventhough": "porittum" }
+    - word: "ta-1353"
+      forms: { "evenif": "அவித்தாலும்", "eventhough": "அவித்தும்" }
+      readings: { "evenif": "avittālum", "eventhough": "avittum" }
+    - word: "ta-1354"
+      forms: { "evenif": "சுட்டாலும்", "eventhough": "சுட்டும்" }
+      readings: { "evenif": "cuṭṭālum", "eventhough": "cuṭṭum" }
+    - word: "ta-1355"
+      forms: { "evenif": "தாளித்தாலும்", "eventhough": "தாளித்தும்" }
+      readings: { "evenif": "tāḷittālum", "eventhough": "tāḷittum" }
+    - word: "ta-1356"
+      forms: { "evenif": "பிசைந்தாலும்", "eventhough": "பிசைந்தும்" }
+      readings: { "evenif": "picaintālum", "eventhough": "picaintum" }
+    - word: "ta-1357"
+      forms: { "evenif": "உரித்தாலும்", "eventhough": "உரித்தும்" }
+      readings: { "evenif": "urittālum", "eventhough": "urittum" }
+    - word: "ta-1358"
+      forms: { "evenif": "துருவினாலும்", "eventhough": "துருவியும்" }
+      readings: { "evenif": "turuviṉālum", "eventhough": "turuviyum" }
+    - word: "ta-2347"
+      forms: { "evenif": "நடத்தினாலும்", "eventhough": "நடத்தியும்" }
+      readings: { "evenif": "naṭattiṉālum", "eventhough": "naṭattiyum" }
+    - word: "ta-2348"
+      forms: { "evenif": "நிர்வகித்தாலும்", "eventhough": "நிர்வகித்தும்" }
+      readings: { "evenif": "nirvakittālum", "eventhough": "nirvakittum" }
+    - word: "ta-2349"
+      forms: { "evenif": "விண்ணப்பித்தாலும்", "eventhough": "விண்ணப்பித்தும்" }
+      readings: { "evenif": "viṇṇappittālum", "eventhough": "viṇṇappittum" }
+    - word: "ta-2356"
+      forms: { "evenif": "ஒத்துழைத்தாலும்", "eventhough": "ஒத்துழைத்தும்" }
+      readings: { "evenif": "ottuḻaittālum", "eventhough": "ottuḻaittum" }
+    - word: "ta-2026"
+      forms: { "evenif": "கலந்துகொண்டாலும்", "eventhough": "கலந்துகொண்டும்" }
+      readings: { "evenif": "kalantukoṇṭālum", "eventhough": "kalantukoṇṭum" }
+    - word: "ta-2060"
+      forms: { "evenif": "பெருமைப்பட்டாலும்", "eventhough": "பெருமைப்பட்டும்" }
+      readings: { "evenif": "perumaippaṭṭālum", "eventhough": "perumaippaṭṭum" }
+    - word: "ta-2185"
+      forms: { "evenif": "சுற்றித்திரிந்தாலும்", "eventhough": "சுற்றித்திரிந்தும்" }
+      readings: { "evenif": "cuṟṟittirintālum", "eventhough": "cuṟṟittirintum" }
+    - word: "ta-1906"
+      forms: { "evenif": "நடனமாடினாலும்", "eventhough": "நடனமாடியும்" }
+      readings: { "evenif": "naṭaṉamāṭiṉālum", "eventhough": "naṭaṉamāṭiyum" }
+    - word: "ta-2181"
+      forms: { "evenif": "புறப்பட்டாலும்", "eventhough": "புறப்பட்டும்" }
+      readings: { "evenif": "puṟappaṭṭālum", "eventhough": "puṟappaṭṭum" }
+    - word: "ta-2184"
+      forms: { "evenif": "வழிதவறினாலும்", "eventhough": "வழிதவறியும்" }
+      readings: { "evenif": "vaḻitavaṟiṉālum", "eventhough": "vaḻitavaṟiyum" }
+    - word: "ta-2187"
+      forms: { "evenif": "வழியனுப்பினாலும்", "eventhough": "வழியனுப்பியும்" }
+      readings: { "evenif": "vaḻiyaṉuppiṉālum", "eventhough": "vaḻiyaṉuppiyum" }
+    - word: "ta-2188"
+      forms: { "evenif": "திட்டமிட்டாலும்", "eventhough": "திட்டமிட்டும்" }
+      readings: { "evenif": "tiṭṭamiṭṭālum", "eventhough": "tiṭṭamiṭṭum" }
+    - word: "ta-2189"
+      forms: { "evenif": "எடுத்துச்சென்றாலும்", "eventhough": "எடுத்துச்சென்றும்" }
+      readings: { "evenif": "eṭuttucceṉṟālum", "eventhough": "eṭuttucceṉṟum" }
+    - word: "ta-2190"
+      forms: { "evenif": ["சுற்றிப்பாத்தாலும்", "சுற்றிப்பார்த்தாலும்"], "eventhough": ["சுற்றிப்பாத்தும்", "சுற்றிப்பார்த்தும்"] }
+      readings: { "evenif": ["cuṟṟippāttālum", "cuṟṟippārttālum"], "eventhough": ["cuṟṟippāttum", "cuṟṟippārttum"] }
+    - word: "ta-2121"
+      forms: { "evenif": "பதிவிறக்கினாலும்", "eventhough": "பதிவிறக்கியும்" }
+      readings: { "evenif": "pativiṟakkiṉālum", "eventhough": "pativiṟakkiyum" }
+    - word: "ta-2127"
+      forms: { "evenif": "தொடர்புகொண்டாலும்", "eventhough": "தொடர்புகொண்டும்" }
+      readings: { "evenif": "toṭarpukoṇṭālum", "eventhough": "toṭarpukoṇṭum" }
+    - word: "ta-2129"
+      forms: { "evenif": "தவறவிட்டாலும்", "eventhough": "தவறவிட்டும்" }
+      readings: { "evenif": "tavaṟaviṭṭālum", "eventhough": "tavaṟaviṭṭum" }
+    - word: "ta-2130"
+      forms: { "evenif": "பதிலளித்தாலும்", "eventhough": "பதிலளித்தும்" }
+      readings: { "evenif": "patilaḷittālum", "eventhough": "patilaḷittum" }
+    - word: "ta-2131"
+      forms: { "evenif": "பதிவேற்றினாலும்", "eventhough": "பதிவேற்றியும்" }
+      readings: { "evenif": "pativēṟṟiṉālum", "eventhough": "pativēṟṟiyum" }
+    - word: "ta-1860"
+      forms: { "evenif": "கற்றுக்கொண்டாலும்", "eventhough": "கற்றுக்கொண்டும்" }
+      readings: { "evenif": "kaṟṟukkoṇṭālum", "eventhough": "kaṟṟukkoṇṭum" }
+    - word: "ta-1861"
+      forms: { "evenif": "சொல்லிக்கொடுத்தாலும்", "eventhough": "சொல்லிக்கொடுத்தும்" }
+      readings: { "evenif": "collikkoṭuttālum", "eventhough": "collikkoṭuttum" }
+    - word: "ta-2032"
+      forms: { "evenif": "காத்திருந்தாலும்", "eventhough": "காத்திருந்தும்" }
+      readings: { "evenif": "kāttiruntālum", "eventhough": "kāttiruntum" }
+    - word: "ta-2037"
+      forms: { "evenif": "ஒப்புக்கொண்டாலும்", "eventhough": "ஒப்புக்கொண்டும்" }
+      readings: { "evenif": "oppukkoṇṭālum", "eventhough": "oppukkoṇṭum" }
+    - word: "ta-2046"
+      forms: { "evenif": "பயப்பட்டாலும்", "eventhough": "பயப்பட்டும்" }
+      readings: { "evenif": "payappaṭṭālum", "eventhough": "payappaṭṭum" }
+    - word: "ta-2047"
+      forms: { "evenif": "கவலைப்பட்டாலும்", "eventhough": "கவலைப்பட்டும்" }
+      readings: { "evenif": "kavalaippaṭṭālum", "eventhough": "kavalaippaṭṭum" }
+    - word: "ta-2048"
+      forms: { "evenif": "கோபப்பட்டாலும்", "eventhough": "கோபப்பட்டும்" }
+      readings: { "evenif": "kōpappaṭṭālum", "eventhough": "kōpappaṭṭum" }
+    - word: "ta-2069"
+      forms: { "evenif": "தேர்ந்தெடுத்தாலும்", "eventhough": "தேர்ந்தெடுத்தும்" }
+      readings: { "evenif": "tērnteṭuttālum", "eventhough": "tērnteṭuttum" }
+    - word: "ta-2073"
+      forms: { "evenif": ["கண்டுபிடிச்சாலும்", "கண்டுபிடித்தாலும்"], "eventhough": ["கண்டுபிடிச்சும்", "கண்டுபிடித்தும்"] }
+      readings: { "evenif": ["kaṇṭupiṭiccālum", "kaṇṭupiṭittālum"], "eventhough": ["kaṇṭupiṭiccum", "kaṇṭupiṭittum"] }
+    - word: "ta-2086"
+      forms: { "evenif": ["சரிபாத்தாலும்", "சரிபார்த்தாலும்"], "eventhough": ["சரிபாத்தும்", "சரிபார்த்தும்"] }
+      readings: { "evenif": ["caripāttālum", "caripārttālum"], "eventhough": ["caripāttum", "caripārttum"] }
+    - word: "ta-2350"
+      forms: { "evenif": "கையெழுத்திட்டாலும்", "eventhough": "கையெழுத்திட்டும்" }
+      readings: { "evenif": "kaiyeḻuttiṭṭālum", "eventhough": "kaiyeḻuttiṭṭum" }
+    - word: "ta-2351"
+      forms: { "evenif": "ஈடுபட்டாலும்", "eventhough": "ஈடுபட்டும்" }
+      readings: { "evenif": "īṭupaṭṭālum", "eventhough": "īṭupaṭṭum" }
+    - word: "ta-2352"
+      forms: { "evenif": "முடிவெடுத்தாலும்", "eventhough": "முடிவெடுத்தும்" }
+      readings: { "evenif": "muṭiveṭuttālum", "eventhough": "muṭiveṭuttum" }
+    - word: "ta-2353"
+      forms: { "evenif": "அச்சிட்டாலும்", "eventhough": "அச்சிட்டும்" }
+      readings: { "evenif": "acciṭṭālum", "eventhough": "acciṭṭum" }
+    - word: "ta-2354"
+      forms: { "evenif": "நகலெடுத்தாலும்", "eventhough": "நகலெடுத்தும்" }
+      readings: { "evenif": "nakaleṭuttālum", "eventhough": "nakaleṭuttum" }
+    - word: "ta-2355"
+      forms: { "evenif": "கணக்கிட்டாலும்", "eventhough": "கணக்கிட்டும்" }
+      readings: { "evenif": "kaṇakkiṭṭālum", "eventhough": "kaṇakkiṭṭum" }
+    - word: "ta-0461"
+      forms: { "evenif": "ஆனாலும்", "eventhough": "ஆகியும்" }
+      readings: { "evenif": "āṉālum", "eventhough": "ākiyum" }
+    - word: "ta-1299"
+      forms: { "evenif": "குணமானாலும்", "eventhough": "குணமாகியும்" }
+      readings: { "evenif": "kuṇamāṉālum", "eventhough": "kuṇamākiyum" }
+    - word: "ta-7012"
+      forms: { "evenif": "குணப்படுத்தினாலும்", "eventhough": "குணப்படுத்தியும்" }
+      readings: { "evenif": "kuṇappaṭuttiṉālum", "eventhough": "kuṇappaṭuttiyum" }
+    - word: "ta-7013"
+      forms: { "evenif": "பரவினாலும்", "eventhough": "பரவியும்" }
+      readings: { "evenif": "paraviṉālum", "eventhough": "paraviyum" }
+    - word: "ta-7014"
+      forms: { "evenif": "தடுத்தாலும்", "eventhough": "தடுத்தும்" }
+      readings: { "evenif": "taṭuttālum", "eventhough": "taṭuttum" }
+    - word: "ta-7015"
+      forms: { "evenif": "தவிர்த்தாலும்", "eventhough": "தவிர்த்தும்" }
+      readings: { "evenif": "tavirttālum", "eventhough": "tavirttum" }
+    - word: "ta-7016"
+      forms: { "evenif": "மெலிந்தாலும்", "eventhough": "மெலிந்தும்" }
+      readings: { "evenif": "melintālum", "eventhough": "melintum" }
+    - word: "ta-7030"
+      forms: { "evenif": "புகைபிடித்தாலும்", "eventhough": "புகைபிடித்தும்" }
+      readings: { "evenif": "pukaipiṭittālum", "eventhough": "pukaipiṭittum" }
+    - word: "ta-7104"
+      forms: { "evenif": "மகிழ்ந்தாலும்", "eventhough": "மகிழ்ந்தும்" }
+      readings: { "evenif": "makiḻntālum", "eventhough": "makiḻntum" }
+    - word: "ta-7105"
+      forms: { "evenif": "வெறுத்தாலும்", "eventhough": "வெறுத்தும்" }
+      readings: { "evenif": "veṟuttālum", "eventhough": "veṟuttum" }
+    - word: "ta-7106"
+      forms: { "evenif": "ஆசைப்பட்டாலும்", "eventhough": "ஆசைப்பட்டும்" }
+      readings: { "evenif": "ācaippaṭṭālum", "eventhough": "ācaippaṭṭum" }
+    - word: "ta-7107"
+      forms: { "evenif": "எதிர்பார்த்தாலும்", "eventhough": "எதிர்பார்த்தும்" }
+      readings: { "evenif": "etirpārttālum", "eventhough": "etirpārttum" }
+    - word: "ta-7108"
+      forms: { "evenif": "உணர்ந்தாலும்", "eventhough": "உணர்ந்தும்" }
+      readings: { "evenif": "uṇarntālum", "eventhough": "uṇarntum" }
+    - word: "ta-7109"
+      forms: { "evenif": "வெட்கப்பட்டாலும்", "eventhough": "வெட்கப்பட்டும்" }
+      readings: { "evenif": "veṭkappaṭṭālum", "eventhough": "veṭkappaṭṭum" }
+    - word: "ta-7110"
+      forms: { "evenif": "ஏமாந்தாலும்", "eventhough": "ஏமாந்தும்" }
+      readings: { "evenif": "ēmāntālum", "eventhough": "ēmāntum" }
+    - word: "ta-7175"
+      forms: { "evenif": "அறிவித்தாலும்", "eventhough": "அறிவித்தும்" }
+      readings: { "evenif": "aṟivittālum", "eventhough": "aṟivittum" }
+    - word: "ta-7176"
+      forms: { "evenif": "எச்சரித்தாலும்", "eventhough": "எச்சரித்தும்" }
+      readings: { "evenif": "eccarittālum", "eventhough": "eccarittum" }
+    - word: "ta-7177"
+      forms: { "evenif": "காயமடைந்தாலும்", "eventhough": "காயமடைந்தும்" }
+      readings: { "evenif": "kāyamaṭaintālum", "eventhough": "kāyamaṭaintum" }
+    - word: "ta-7178"
+      forms: { "evenif": "தீப்பிடித்தாலும்", "eventhough": "தீப்பிடித்தும்" }
+      readings: { "evenif": "tīppiṭittālum", "eventhough": "tīppiṭittum" }
+    - word: "ta-7223"
+      forms: { "evenif": "ஏற்றுக்கொண்டாலும்", "eventhough": "ஏற்றுக்கொண்டும்" }
+      readings: { "evenif": "ēṟṟukkoṇṭālum", "eventhough": "ēṟṟukkoṇṭum" }
+    - word: "ta-7224"
+      forms: { "evenif": "மறுத்தாலும்", "eventhough": "மறுத்தும்" }
+      readings: { "evenif": "maṟuttālum", "eventhough": "maṟuttum" }
+    - word: "ta-7225"
+      forms: { "evenif": "ஆதரித்தாலும்", "eventhough": "ஆதரித்தும்" }
+      readings: { "evenif": "ātarittālum", "eventhough": "ātarittum" }
+    - word: "ta-7226"
+      forms: { "evenif": "எதிர்த்தாலும்", "eventhough": "எதிர்த்தும்" }
+      readings: { "evenif": "etirttālum", "eventhough": "etirttum" }
+    - word: "ta-7227"
+      forms: { "evenif": "ஒத்துக்கொண்டாலும்", "eventhough": "ஒத்துக்கொண்டும்" }
+      readings: { "evenif": "ottukkoṇṭālum", "eventhough": "ottukkoṇṭum" }
+    - word: "ta-7228"
+      forms: { "evenif": "சம்மதித்தாலும்", "eventhough": "சம்மதித்தும்" }
+      readings: { "evenif": "cammatittālum", "eventhough": "cammatittum" }
+    - word: "ta-7229"
+      forms: { "evenif": "கருதினாலும்", "eventhough": "கருதியும்" }
+      readings: { "evenif": "karutiṉālum", "eventhough": "karutiyum" }
+    - word: "ta-7230"
+      forms: { "evenif": "வாதாடினாலும்", "eventhough": "வாதாடியும்" }
+      readings: { "evenif": "vātāṭiṉālum", "eventhough": "vātāṭiyum" }
+    - word: "ta-7231"
+      forms: { "evenif": "விவாதித்தாலும்", "eventhough": "விவாதித்தும்" }
+      readings: { "evenif": "vivātittālum", "eventhough": "vivātittum" }
+    - word: "ta-7232"
+      forms: { "evenif": "நிராகரித்தாலும்", "eventhough": "நிராகரித்தும்" }
+      readings: { "evenif": "nirākarittālum", "eventhough": "nirākarittum" }
+    - word: "ta-7284"
+      forms: { "evenif": "ஒத்திவைத்தாலும்", "eventhough": "ஒத்திவைத்தும்" }
+      readings: { "evenif": "ottivaittālum", "eventhough": "ottivaittum" }
+    - word: "ta-7285"
+      forms: { "evenif": "பார்வையிட்டாலும்", "eventhough": "பார்வையிட்டும்" }
+      readings: { "evenif": "pārvaiyiṭṭālum", "eventhough": "pārvaiyiṭṭum" }
+    - word: "ta-7286"
+      forms: { "evenif": "வந்தடைந்தாலும்", "eventhough": "வந்தடைந்தும்" }
+      readings: { "evenif": "vantaṭaintālum", "eventhough": "vantaṭaintum" }
+    - word: "ta-7287"
+      forms: { "evenif": "சென்றடைந்தாலும்", "eventhough": "சென்றடைந்தும்" }
+      readings: { "evenif": "ceṉṟaṭaintālum", "eventhough": "ceṉṟaṭaintum" }
+    - word: "ta-7288"
+      forms: { "evenif": "இடமாற்றினாலும்", "eventhough": "இடமாற்றியும்" }
+      readings: { "evenif": "iṭamāṟṟiṉālum", "eventhough": "iṭamāṟṟiyum" }
+    - word: "ta-7328"
+      forms: { "evenif": "பழுதுபார்த்தாலும்", "eventhough": "பழுதுபார்த்தும்" }
+      readings: { "evenif": "paḻutupārttālum", "eventhough": "paḻutupārttum" }
+    - word: "ta-7329"
+      forms: { "evenif": "சரிசெய்தாலும்", "eventhough": "சரிசெய்தும்" }
+      readings: { "evenif": "cariceytālum", "eventhough": "cariceytum" }
+    - word: "ta-7330"
+      forms: { "evenif": "அளவெடுத்தாலும்", "eventhough": "அளவெடுத்தும்" }
+      readings: { "evenif": "aḷaveṭuttālum", "eventhough": "aḷaveṭuttum" }
+    - word: "ta-7331"
+      forms: { "evenif": "ஒப்படைத்தாலும்", "eventhough": "ஒப்படைத்தும்" }
+      readings: { "evenif": "oppaṭaittālum", "eventhough": "oppaṭaittum" }
+    - word: "ta-7332"
+      forms: { "evenif": "வழங்கினாலும்", "eventhough": "வழங்கியும்" }
+      readings: { "evenif": "vaḻaṅkiṉālum", "eventhough": "vaḻaṅkiyum" }
+    - word: "ta-7333"
+      forms: { "evenif": "திருப்பிக்கொடுத்தாலும்", "eventhough": "திருப்பிக்கொடுத்தும்" }
+      readings: { "evenif": "tiruppikkoṭuttālum", "eventhough": "tiruppikkoṭuttum" }
+    - word: "ta-7380"
+      forms: { "evenif": "நிறைவேற்றினாலும்", "eventhough": "நிறைவேற்றியும்" }
+      readings: { "evenif": "niṟaivēṟṟiṉālum", "eventhough": "niṟaivēṟṟiyum" }
+    - word: "ta-7381"
+      forms: { "evenif": "அமல்படுத்தினாலும்", "eventhough": "அமல்படுத்தியும்" }
+      readings: { "evenif": "amalpaṭuttiṉālum", "eventhough": "amalpaṭuttiyum" }
+    - word: "ta-7382"
+      forms: { "evenif": "நியமித்தாலும்", "eventhough": "நியமித்தும்" }
+      readings: { "evenif": "niyamittālum", "eventhough": "niyamittum" }
+    - word: "ta-7427"
+      forms: { "evenif": "சொடுக்கினாலும்", "eventhough": "சொடுக்கியும்" }
+      readings: { "evenif": "coṭukkiṉālum", "eventhough": "coṭukkiyum" }
+    - word: "ta-7428"
+      forms: { "evenif": "உள்நுழைந்தாலும்", "eventhough": "உள்நுழைந்தும்" }
+      readings: { "evenif": "uḷnuḻaintālum", "eventhough": "uḷnuḻaintum" }
+    - word: "ta-7429"
+      forms: { "evenif": "பின்தொடர்ந்தாலும்", "eventhough": "பின்தொடர்ந்தும்" }
+      readings: { "evenif": "piṉtoṭarntālum", "eventhough": "piṉtoṭarntum" }
+    - word: "ta-7430"
+      forms: { "evenif": "முடக்கினாலும்", "eventhough": "முடக்கியும்" }
+      readings: { "evenif": "muṭakkiṉālum", "eventhough": "muṭakkiyum" }
+    - word: "ta-7431"
+      forms: { "evenif": "வடிவமைத்தாலும்", "eventhough": "வடிவமைத்தும்" }
+      readings: { "evenif": "vaṭivamaittālum", "eventhough": "vaṭivamaittum" }
+    - word: "ta-7432"
+      forms: { "evenif": "தீர்ந்தாலும்", "eventhough": "தீர்ந்தும்" }
+      readings: { "evenif": "tīrntālum", "eventhough": "tīrntum" }
+    - word: "ta-7486"
+      forms: { "evenif": "பணியாற்றினாலும்", "eventhough": "பணியாற்றியும்" }
+      readings: { "evenif": "paṇiyāṟṟiṉālum", "eventhough": "paṇiyāṟṟiyum" }
+    - word: "ta-7487"
+      forms: { "evenif": "பணிபுரிந்தாலும்", "eventhough": "பணிபுரிந்தும்" }
+      readings: { "evenif": "paṇipurintālum", "eventhough": "paṇipurintum" }
+    - word: "ta-7488"
+      forms: { "evenif": "முன்னேறினாலும்", "eventhough": "முன்னேறியும்" }
+      readings: { "evenif": "muṉṉēṟiṉālum", "eventhough": "muṉṉēṟiyum" }
+    - word: "ta-7489"
+      forms: { "evenif": "உழைத்தாலும்", "eventhough": "உழைத்தும்" }
+      readings: { "evenif": "uḻaittālum", "eventhough": "uḻaittum" }
+    - word: "ta-7543"
+      forms: { "evenif": "பாதுகாத்தாலும்", "eventhough": "பாதுகாத்தும்" }
+      readings: { "evenif": "pātukāttālum", "eventhough": "pātukāttum" }
+    - word: "ta-7544"
+      forms: { "evenif": "வீணாக்கினாலும்", "eventhough": "வீணாக்கியும்" }
+      readings: { "evenif": "vīṇākkiṉālum", "eventhough": "vīṇākkiyum" }
+    - word: "ta-7545"
+      forms: { "evenif": "நட்டாலும்", "eventhough": "நட்டும்" }
+      readings: { "evenif": "naṭṭālum", "eventhough": "naṭṭum" }
+    - word: "ta-7546"
+      forms: { "evenif": "தூய்மைப்படுத்தினாலும்", "eventhough": "தூய்மைப்படுத்தியும்" }
+      readings: { "evenif": "tūymaippaṭuttiṉālum", "eventhough": "tūymaippaṭuttiyum" }
+    - word: "ta-7547"
+      forms: { "evenif": "மாசுபட்டாலும்", "eventhough": "மாசுபட்டும்" }
+      readings: { "evenif": "mācupaṭṭālum", "eventhough": "mācupaṭṭum" }
+    - word: "ta-7548"
+      forms: { "evenif": "கட்டுப்படுத்தினாலும்", "eventhough": "கட்டுப்படுத்தியும்" }
+      readings: { "evenif": "kaṭṭuppaṭuttiṉālum", "eventhough": "kaṭṭuppaṭuttiyum" }
+    - word: "ta-7596"
+      forms: { "evenif": "உழுதாலும்", "eventhough": "உழுதும்" }
+      readings: { "evenif": "uḻutālum", "eventhough": "uḻutum" }
+    - word: "ta-7597"
+      forms: { "evenif": "அறுத்தாலும்", "eventhough": "அறுத்தும்" }
+      readings: { "evenif": "aṟuttālum", "eventhough": "aṟuttum" }
+    - word: "ta-7598"
+      forms: { "evenif": "களையெடுத்தாலும்", "eventhough": "களையெடுத்தும்" }
+      readings: { "evenif": "kaḷaiyeṭuttālum", "eventhough": "kaḷaiyeṭuttum" }
+    - word: "ta-7599"
+      forms: { "evenif": "விளைந்தாலும்", "eventhough": "விளைந்தும்" }
+      readings: { "evenif": "viḷaintālum", "eventhough": "viḷaintum" }
+    - word: "ta-7600"
+      forms: { "evenif": "தூற்றினாலும்", "eventhough": "தூற்றியும்" }
+      readings: { "evenif": "tūṟṟiṉālum", "eventhough": "tūṟṟiyum" }
+    - word: "ta-7601"
+      forms: { "evenif": "மேய்ந்தாலும்", "eventhough": "மேய்ந்தும்" }
+      readings: { "evenif": "mēyntālum", "eventhough": "mēyntum" }
+    - word: "ta-7602"
+      forms: { "evenif": "கறந்தாலும்", "eventhough": "கறந்தும்" }
+      readings: { "evenif": "kaṟantālum", "eventhough": "kaṟantum" }
+    - word: "ta-8049"
+      forms: { "evenif": "இயக்கினாலும்", "eventhough": "இயக்கியும்" }
+      readings: { "evenif": "iyakkiṉālum", "eventhough": "iyakkiyum" }
+    - word: "ta-8050"
+      forms: { "evenif": "தயாரித்தாலும்", "eventhough": "தயாரித்தும்" }
+      readings: { "evenif": "tayārittālum", "eventhough": "tayārittum" }
+    - word: "ta-8051"
+      forms: { "evenif": "வெளியிட்டாலும்", "eventhough": "வெளியிட்டும்" }
+      readings: { "evenif": "veḷiyiṭṭālum", "eventhough": "veḷiyiṭṭum" }
+    - word: "ta-8052"
+      forms: { "evenif": "விமர்சித்தாலும்", "eventhough": "விமர்சித்தும்" }
+      readings: { "evenif": "vimarcittālum", "eventhough": "vimarcittum" }
+    - word: "ta-8053"
+      forms: { "evenif": "கைதட்டினாலும்", "eventhough": "கைதட்டியும்" }
+      readings: { "evenif": "kaitaṭṭiṉālum", "eventhough": "kaitaṭṭiyum" }
+    - word: "ta-8054"
+      forms: { "evenif": "பயமுறுத்தினாலும்", "eventhough": "பயமுறுத்தியும்" }
+      readings: { "evenif": "payamuṟuttiṉālum", "eventhough": "payamuṟuttiyum" }
+    - word: "ta-8055"
+      forms: { "evenif": "கத்தினாலும்", "eventhough": "கத்தியும்" }
+      readings: { "evenif": "kattiṉālum", "eventhough": "kattiyum" }
+    - word: "ta-8056"
+      forms: { "evenif": "வெளியானாலும்", "eventhough": "வெளியாகியும்" }
+      readings: { "evenif": "veḷiyāṉālum", "eventhough": "veḷiyākiyum" }
+    - word: "ta-8100"
+      forms: { "evenif": "செதுக்கினாலும்", "eventhough": "செதுக்கியும்" }
+      readings: { "evenif": "cetukkiṉālum", "eventhough": "cetukkiyum" }
+    - word: "ta-8101"
+      forms: { "evenif": "வாசித்தாலும்", "eventhough": "வாசித்தும்" }
+      readings: { "evenif": "vācittālum", "eventhough": "vācittum" }
+    - word: "ta-8102"
+      forms: { "evenif": "மீட்டினாலும்", "eventhough": "மீட்டியும்" }
+      readings: { "evenif": "mīṭṭiṉālum", "eventhough": "mīṭṭiyum" }
+    - word: "ta-8103"
+      forms: { "evenif": "படைத்தாலும்", "eventhough": "படைத்தும்" }
+      readings: { "evenif": "paṭaittālum", "eventhough": "paṭaittum" }
+    - word: "ta-8104"
+      forms: { "evenif": "அரங்கேறினாலும்", "eventhough": "அரங்கேறியும்" }
+      readings: { "evenif": "araṅkēṟiṉālum", "eventhough": "araṅkēṟiyum" }
+    - word: "ta-8105"
+      forms: { "evenif": "கற்பித்தாலும்", "eventhough": "கற்பித்தும்" }
+      readings: { "evenif": "kaṟpittālum", "eventhough": "kaṟpittum" }
+    - word: "ta-8149"
+      forms: { "evenif": "ஆண்டாலும்", "eventhough": "ஆண்டும்" }
+      readings: { "evenif": "āṇṭālum", "eventhough": "āṇṭum" }
+    - word: "ta-8150"
+      forms: { "evenif": "போரிட்டாலும்", "eventhough": "போரிட்டும்" }
+      readings: { "evenif": "pōriṭṭālum", "eventhough": "pōriṭṭum" }
+    - word: "ta-8151"
+      forms: { "evenif": "தோற்கடித்தாலும்", "eventhough": "தோற்கடித்தும்" }
+      readings: { "evenif": "tōṟkaṭittālum", "eventhough": "tōṟkaṭittum" }
+    - word: "ta-8152"
+      forms: { "evenif": "அழித்தாலும்", "eventhough": "அழித்தும்" }
+      readings: { "evenif": "aḻittālum", "eventhough": "aḻittum" }
+    - word: "ta-8153"
+      forms: { "evenif": "தாக்கினாலும்", "eventhough": "தாக்கியும்" }
+      readings: { "evenif": "tākkiṉālum", "eventhough": "tākkiyum" }
+    - word: "ta-8154"
+      forms: { "evenif": "முற்றுகையிட்டாலும்", "eventhough": "முற்றுகையிட்டும்" }
+      readings: { "evenif": "muṟṟukaiyiṭṭālum", "eventhough": "muṟṟukaiyiṭṭum" }
+    - word: "ta-8155"
+      forms: { "evenif": "ஆக்கிரமித்தாலும்", "eventhough": "ஆக்கிரமித்தும்" }
+      readings: { "evenif": "ākkiramittālum", "eventhough": "ākkiramittum" }
+    - word: "ta-8201"
+      forms: { "evenif": "ஆசீர்வதித்தாலும்", "eventhough": "ஆசீர்வதித்தும்" }
+      readings: { "evenif": "ācīrvatittālum", "eventhough": "ācīrvatittum" }
+    - word: "ta-8202"
+      forms: { "evenif": "வரவேற்றாலும்", "eventhough": "வரவேற்றும்" }
+      readings: { "evenif": "varavēṟṟālum", "eventhough": "varavēṟṟum" }
+    - word: "ta-8203"
+      forms: { "evenif": "நிச்சயித்தாலும்", "eventhough": "நிச்சயித்தும்" }
+      readings: { "evenif": "niccayittālum", "eventhough": "niccayittum" }
+    - word: "ta-8204"
+      forms: { "evenif": "தூவினாலும்", "eventhough": "தூவியும்" }
+      readings: { "evenif": "tūviṉālum", "eventhough": "tūviyum" }
+    - word: "ta-8205"
+      forms: { "evenif": "அணிந்தாலும்", "eventhough": "அணிந்தும்" }
+      readings: { "evenif": "aṇintālum", "eventhough": "aṇintum" }
+    - word: "ta-8246"
+      forms: { "evenif": "உதைத்தாலும்", "eventhough": "உதைத்தும்" }
+      readings: { "evenif": "utaittālum", "eventhough": "utaittum" }
+    - word: "ta-8247"
+      forms: { "evenif": "துரத்தினாலும்", "eventhough": "துரத்தியும்" }
+      readings: { "evenif": "turattiṉālum", "eventhough": "turattiyum" }
+    - word: "ta-8248"
+      forms: { "evenif": "தாண்டினாலும்", "eventhough": "தாண்டியும்" }
+      readings: { "evenif": "tāṇṭiṉālum", "eventhough": "tāṇṭiyum" }
+    - word: "ta-8249"
+      forms: { "evenif": "ஜெயித்தாலும்", "eventhough": "ஜெயித்தும்" }
+      readings: { "evenif": "jeyittālum", "eventhough": "jeyittum" }
+    - word: "ta-8250"
+      forms: { "evenif": "போட்டியிட்டாலும்", "eventhough": "போட்டியிட்டும்" }
+      readings: { "evenif": "pōṭṭiyiṭṭālum", "eventhough": "pōṭṭiyiṭṭum" }
+    - word: "ta-8251"
+      forms: { "evenif": "தோற்றாலும்", "eventhough": "தோற்றும்" }
+      readings: { "evenif": "tōṟṟālum", "eventhough": "tōṟṟum" }
+    - word: "ta-8295"
+      forms: { "evenif": "விட்டுக்கொடுத்தாலும்", "eventhough": "விட்டுக்கொடுத்தும்" }
+      readings: { "evenif": "viṭṭukkoṭuttālum", "eventhough": "viṭṭukkoṭuttum" }
+    - word: "ta-8296"
+      forms: { "evenif": "பொறுத்தாலும்", "eventhough": "பொறுத்தும்" }
+      readings: { "evenif": "poṟuttālum", "eventhough": "poṟuttum" }
+    - word: "ta-8297"
+      forms: { "evenif": "அறிமுகப்படுத்தினாலும்", "eventhough": "அறிமுகப்படுத்தியும்" }
+      readings: { "evenif": "aṟimukappaṭuttiṉālum", "eventhough": "aṟimukappaṭuttiyum" }
+    - word: "ta-8299"
+      forms: { "evenif": "சமாளித்தாலும்", "eventhough": "சமாளித்தும்" }
+      readings: { "evenif": "camāḷittālum", "eventhough": "camāḷittum" }
+    - word: "ta-8300"
+      forms: { "evenif": "சமாதானப்படுத்தினாலும்", "eventhough": "சமாதானப்படுத்தியும்" }
+      readings: { "evenif": "camātāṉappaṭuttiṉālum", "eventhough": "camātāṉappaṭuttiyum" }
+    - word: "ta-8301"
+      forms: { "evenif": "மதித்தாலும்", "eventhough": "மதித்தும்" }
+      readings: { "evenif": "matittālum", "eventhough": "matittum" }
+    - word: "ta-8302"
+      forms: { "evenif": "புரிந்துகொண்டாலும்", "eventhough": "புரிந்துகொண்டும்" }
+      readings: { "evenif": "purintukoṇṭālum", "eventhough": "purintukoṇṭum" }
+    - word: "ta-8347"
+      forms: { "evenif": "வெள்ளையடித்தாலும்", "eventhough": "வெள்ளையடித்தும்" }
+      readings: { "evenif": "veḷḷaiyaṭittālum", "eventhough": "veḷḷaiyaṭittum" }
+    - word: "ta-8348"
+      forms: { "evenif": "குடியேறினாலும்", "eventhough": "குடியேறியும்" }
+      readings: { "evenif": "kuṭiyēṟiṉālum", "eventhough": "kuṭiyēṟiyum" }
+    - word: "ta-8349"
+      forms: { "evenif": "காலிசெய்தாலும்", "eventhough": "காலிசெய்தும்" }
+      readings: { "evenif": "kāliceytālum", "eventhough": "kāliceytum" }
+    - word: "ta-8350"
+      forms: { "evenif": "குடிபோனாலும்", "eventhough": "குடிபோயும்" }
+      readings: { "evenif": "kuṭipōṉālum", "eventhough": "kuṭipōyum" }
+    - word: "ta-8383"
+      forms: { "evenif": "தப்பினாலும்", "eventhough": "தப்பியும்" }
+      readings: { "evenif": "tappiṉālum", "eventhough": "tappiyum" }
+    - word: "ta-8384"
+      forms: { "evenif": "காப்பாற்றினாலும்", "eventhough": "காப்பாற்றியும்" }
+      readings: { "evenif": "kāppāṟṟiṉālum", "eventhough": "kāppāṟṟiyum" }
+    - word: "ta-8385"
+      forms: { "evenif": "அலறினாலும்", "eventhough": "அலறியும்" }
+      readings: { "evenif": "alaṟiṉālum", "eventhough": "alaṟiyum" }
+    - word: "ta-8386"
+      forms: { "evenif": "மோதினாலும்", "eventhough": "மோதியும்" }
+      readings: { "evenif": "mōtiṉālum", "eventhough": "mōtiyum" }
+    - word: "ta-8387"
+      forms: { "evenif": "சிக்கினாலும்", "eventhough": "சிக்கியும்" }
+      readings: { "evenif": "cikkiṉālum", "eventhough": "cikkiyum" }
+    - word: "ta-8388"
+      forms: { "evenif": "பதறினாலும்", "eventhough": "பதறியும்" }
+      readings: { "evenif": "pataṟiṉālum", "eventhough": "pataṟiyum" }
+    - word: "ta-8389"
+      forms: { "evenif": "தொலைந்தாலும்", "eventhough": "தொலைந்தும்" }
+      readings: { "evenif": "tolaintālum", "eventhough": "tolaintum" }
+    - word: "ta-8390"
+      forms: { "evenif": "உடைந்தாலும்", "eventhough": "உடைந்தும்" }
+      readings: { "evenif": "uṭaintālum", "eventhough": "uṭaintum" }
+    - word: "ta-8391"
+      forms: { "evenif": "கசிந்தாலும்", "eventhough": "கசிந்தும்" }
+      readings: { "evenif": "kacintālum", "eventhough": "kacintum" }
+    - word: "ta-8392"
+      forms: { "evenif": "கவிழ்ந்தாலும்", "eventhough": "கவிழ்ந்தும்" }
+      readings: { "evenif": "kaviḻntālum", "eventhough": "kaviḻntum" }
+    - word: "ta-8393"
+      forms: { "evenif": "பறித்தாலும்", "eventhough": "பறித்தும்" }
+      readings: { "evenif": "paṟittālum", "eventhough": "paṟittum" }
+    - word: "ta-8394"
+      forms: { "evenif": "மூழ்கினாலும்", "eventhough": "மூழ்கியும்" }
+      readings: { "evenif": "mūḻkiṉālum", "eventhough": "mūḻkiyum" }
+    - word: "ta-8429"
+      forms: { "evenif": "கைதுசெய்தாலும்", "eventhough": "கைதுசெய்தும்" }
+      readings: { "evenif": "kaituceytālum", "eventhough": "kaituceytum" }
+    - word: "ta-8430"
+      forms: { "evenif": "தண்டித்தாலும்", "eventhough": "தண்டித்தும்" }
+      readings: { "evenif": "taṇṭittālum", "eventhough": "taṇṭittum" }
+    - word: "ta-8431"
+      forms: { "evenif": "தீர்ப்பளித்தாலும்", "eventhough": "தீர்ப்பளித்தும்" }
+      readings: { "evenif": "tīrppaḷittālum", "eventhough": "tīrppaḷittum" }
+    - word: "ta-8432"
+      forms: { "evenif": "பின்பற்றினாலும்", "eventhough": "பின்பற்றியும்" }
+      readings: { "evenif": "piṉpaṟṟiṉālum", "eventhough": "piṉpaṟṟiyum" }
+    - word: "ta-8433"
+      forms: { "evenif": "மீறினாலும்", "eventhough": "மீறியும்" }
+      readings: { "evenif": "mīṟiṉālum", "eventhough": "mīṟiyum" }
+    - word: "ta-8434"
+      forms: { "evenif": "கடைப்பிடித்தாலும்", "eventhough": "கடைப்பிடித்தும்" }
+      readings: { "evenif": "kaṭaippiṭittālum", "eventhough": "kaṭaippiṭittum" }
+    - word: "ta-8435"
+      forms: { "evenif": "குற்றம்சாட்டினாலும்", "eventhough": "குற்றம்சாட்டியும்" }
+      readings: { "evenif": "kuṟṟamcāṭṭiṉālum", "eventhough": "kuṟṟamcāṭṭiyum" }
+    - word: "ta-8436"
+      forms: { "evenif": "விடுதலைசெய்தாலும்", "eventhough": "விடுதலைசெய்தும்" }
+      readings: { "evenif": "viṭutalaiceytālum", "eventhough": "viṭutalaiceytum" }
+    - word: "ta-8440"
+      forms: { "evenif": "ஆரம்பித்தாலும்", "eventhough": "ஆரம்பித்தும்" }
+      readings: { "evenif": "ārampittālum", "eventhough": "ārampittum" }
+    - word: "ta-8441"
+      forms: { "evenif": "ஒளிந்துகொண்டாலும்", "eventhough": "ஒளிந்துகொண்டும்" }
+      readings: { "evenif": "oḷintukoṇṭālum", "eventhough": "oḷintukoṇṭum" }
+    - word: "ta-8442"
+      forms: { "evenif": "விலகினாலும்", "eventhough": "விலகியும்" }
+      readings: { "evenif": "vilakiṉālum", "eventhough": "vilakiyum" }
+    - word: "ta-8443"
+      forms: { "evenif": "நெருங்கினாலும்", "eventhough": "நெருங்கியும்" }
+      readings: { "evenif": "neruṅkiṉālum", "eventhough": "neruṅkiyum" }
+    - word: "ta-8444"
+      forms: { "evenif": "கொண்டுவந்தாலும்", "eventhough": "கொண்டுவந்தும்" }
+      readings: { "evenif": "koṇṭuvantālum", "eventhough": "koṇṭuvantum" }
+    - word: "ta-8445"
+      forms: { "evenif": "கொண்டுபோனாலும்", "eventhough": "கொண்டுபோயும்" }
+      readings: { "evenif": "koṇṭupōṉālum", "eventhough": "koṇṭupōyum" }
+    - word: "ta-8446"
+      forms: { "evenif": "தோண்டினாலும்", "eventhough": "தோண்டியும்" }
+      readings: { "evenif": "tōṇṭiṉālum", "eventhough": "tōṇṭiyum" }
+    - word: "ta-8447"
+      forms: { "evenif": "புதைத்தாலும்", "eventhough": "புதைத்தும்" }
+      readings: { "evenif": "putaittālum", "eventhough": "putaittum" }
+    - word: "ta-8448"
+      forms: { "evenif": "கூவினாலும்", "eventhough": "கூவியும்" }
+      readings: { "evenif": "kūviṉālum", "eventhough": "kūviyum" }
+    - word: "ta-8449"
+      forms: { "evenif": "முணுமுணுத்தாலும்", "eventhough": "முணுமுணுத்தும்" }
+      readings: { "evenif": "muṇumuṇuttālum", "eventhough": "muṇumuṇuttum" }
+    - word: "ta-8450"
+      forms: { "evenif": "விவரித்தாலும்", "eventhough": "விவரித்தும்" }
+      readings: { "evenif": "vivarittālum", "eventhough": "vivarittum" }
+    - word: "ta-8451"
+      forms: { "evenif": "வருணித்தாலும்", "eventhough": "வருணித்தும்" }
+      readings: { "evenif": "varuṇittālum", "eventhough": "varuṇittum" }
+    - word: "ta-8452"
+      forms: { "evenif": "நிகழ்ந்தாலும்", "eventhough": "நிகழ்ந்தும்" }
+      readings: { "evenif": "nikaḻntālum", "eventhough": "nikaḻntum" }
+    - word: "ta-8453"
+      forms: { "evenif": "இறந்தாலும்", "eventhough": "இறந்தும்" }
+      readings: { "evenif": "iṟantālum", "eventhough": "iṟantum" }
+    - word: "ta-8454"
+      forms: { "evenif": "பிறந்தாலும்", "eventhough": "பிறந்தும்" }
+      readings: { "evenif": "piṟantālum", "eventhough": "piṟantum" }
+    - word: "ta-8455"
+      forms: { "evenif": "இழந்தாலும்", "eventhough": "இழந்தும்" }
+      readings: { "evenif": "iḻantālum", "eventhough": "iḻantum" }
+    - word: "ta-8456"
+      forms: { "evenif": "கண்டறிந்தாலும்", "eventhough": "கண்டறிந்தும்" }
+      readings: { "evenif": "kaṇṭaṟintālum", "eventhough": "kaṇṭaṟintum" }
+    - word: "ta-8457"
+      forms: { "evenif": "மறந்துபோனாலும்", "eventhough": "மறந்துபோயும்" }
+      readings: { "evenif": "maṟantupōṉālum", "eventhough": "maṟantupōyum" }
+    - word: "ta-8458"
+      forms: { "evenif": "சந்தேகித்தாலும்", "eventhough": "சந்தேகித்தும்" }
+      readings: { "evenif": "cantēkittālum", "eventhough": "cantēkittum" }
+    - word: "ta-8459"
+      forms: { "evenif": "உருண்டாலும்", "eventhough": "உருண்டும்" }
+      readings: { "evenif": "uruṇṭālum", "eventhough": "uruṇṭum" }
+    - word: "ta-8460"
+      forms: { "evenif": "சறுக்கினாலும்", "eventhough": "சறுக்கியும்" }
+      readings: { "evenif": "caṟukkiṉālum", "eventhough": "caṟukkiyum" }
+    - word: "ta-8461"
+      forms: { "evenif": "தடுமாறினாலும்", "eventhough": "தடுமாறியும்" }
+      readings: { "evenif": "taṭumāṟiṉālum", "eventhough": "taṭumāṟiyum" }
+    - word: "ta-8462"
+      forms: { "evenif": "நிமிர்ந்தாலும்", "eventhough": "நிமிர்ந்தும்" }
+      readings: { "evenif": "nimirntālum", "eventhough": "nimirntum" }
+    - word: "ta-8463"
+      forms: { "evenif": "சீறினாலும்", "eventhough": "சீறியும்" }
+      readings: { "evenif": "cīṟiṉālum", "eventhough": "cīṟiyum" }
+    - word: "ta-8464"
+      forms: { "evenif": "தணிந்தாலும்", "eventhough": "தணிந்தும்" }
+      readings: { "evenif": "taṇintālum", "eventhough": "taṇintum" }
+    - word: "ta-8465"
+      forms: { "evenif": "கெஞ்சினாலும்", "eventhough": "கெஞ்சியும்" }
+      readings: { "evenif": "keñciṉālum", "eventhough": "keñciyum" }
+    - word: "ta-8466"
+      forms: { "evenif": "மிரட்டினாலும்", "eventhough": "மிரட்டியும்" }
+      readings: { "evenif": "miraṭṭiṉālum", "eventhough": "miraṭṭiyum" }
+    - word: "ta-8467"
+      forms: { "evenif": "பழிவாங்கினாலும்", "eventhough": "பழிவாங்கியும்" }
+      readings: { "evenif": "paḻivāṅkiṉālum", "eventhough": "paḻivāṅkiyum" }
+    - word: "ta-8468"
+      forms: { "evenif": "போராடினாலும்", "eventhough": "போராடியும்" }
+      readings: { "evenif": "pōrāṭiṉālum", "eventhough": "pōrāṭiyum" }
+    - word: "ta-8469"
+      forms: { "evenif": "எதிர்கொண்டாலும்", "eventhough": "எதிர்கொண்டும்" }
+      readings: { "evenif": "etirkoṇṭālum", "eventhough": "etirkoṇṭum" }
+    - word: "ta-8470"
+      forms: { "evenif": "வழிகாட்டினாலும்", "eventhough": "வழிகாட்டியும்" }
+      readings: { "evenif": "vaḻikāṭṭiṉālum", "eventhough": "vaḻikāṭṭiyum" }
+    - word: "ta-8471"
+      forms: { "evenif": "திருப்பினாலும்", "eventhough": "திருப்பியும்" }
+      readings: { "evenif": "tiruppiṉālum", "eventhough": "tiruppiyum" }
+    - word: "ta-8472"
+      forms: { "evenif": "குவித்தாலும்", "eventhough": "குவித்தும்" }
+      readings: { "evenif": "kuvittālum", "eventhough": "kuvittum" }
+    - word: "ta-8473"
+      forms: { "evenif": "தொங்கினாலும்", "eventhough": "தொங்கியும்" }
+      readings: { "evenif": "toṅkiṉālum", "eventhough": "toṅkiyum" }
+    - word: "ta-8474"
+      forms: { "evenif": "தாங்கினாலும்", "eventhough": "தாங்கியும்" }
+      readings: { "evenif": "tāṅkiṉālum", "eventhough": "tāṅkiyum" }
+    - word: "ta-8475"
+      forms: { "evenif": "சுமந்தாலும்", "eventhough": "சுமந்தும்" }
+      readings: { "evenif": "cumantālum", "eventhough": "cumantum" }
+    - word: "ta-8476"
+      forms: { "evenif": "அள்ளினாலும்", "eventhough": "அள்ளியும்" }
+      readings: { "evenif": "aḷḷiṉālum", "eventhough": "aḷḷiyum" }
+    - word: "ta-8477"
+      forms: { "evenif": "அலைந்துதிரிந்தாலும்", "eventhough": "அலைந்துதிரிந்தும்" }
+      readings: { "evenif": "alaintutirintālum", "eventhough": "alaintutirintum" }
+    - word: "ta-8478"
+      forms: { "evenif": "நடந்துபோனாலும்", "eventhough": "நடந்துபோயும்" }
+      readings: { "evenif": "naṭantupōṉālum", "eventhough": "naṭantupōyum" }
+    - word: "ta-8479"
+      forms: { "evenif": "ஓய்வெடுத்தாலும்", "eventhough": "ஓய்வெடுத்தும்" }
+      readings: { "evenif": "ōyveṭuttālum", "eventhough": "ōyveṭuttum" }
+    - word: "ta-8480"
+      forms: { "evenif": "ஊதினாலும்", "eventhough": "ஊதியும்" }
+      readings: { "evenif": "ūtiṉālum", "eventhough": "ūtiyum" }
+    - word: "ta-8481"
+      forms: { "evenif": "வீழ்ந்தாலும்", "eventhough": "வீழ்ந்தும்" }
+      readings: { "evenif": "vīḻntālum", "eventhough": "vīḻntum" }
+    - word: "ta-8482"
+      forms: { "evenif": "சாய்ந்துகொண்டாலும்", "eventhough": "சாய்ந்துகொண்டும்" }
+      readings: { "evenif": "cāyntukoṇṭālum", "eventhough": "cāyntukoṇṭum" }
+    - word: "ta-8483"
+      forms: { "evenif": "தள்ளாடினாலும்", "eventhough": "தள்ளாடியும்" }
+      readings: { "evenif": "taḷḷāṭiṉālum", "eventhough": "taḷḷāṭiyum" }
+    - word: "ta-8484"
+      forms: { "evenif": "தத்தளித்தாலும்", "eventhough": "தத்தளித்தும்" }
+      readings: { "evenif": "tattaḷittālum", "eventhough": "tattaḷittum" }
+    - word: "ta-8485"
+      forms: { "evenif": "பதுங்கினாலும்", "eventhough": "பதுங்கியும்" }
+      readings: { "evenif": "patuṅkiṉālum", "eventhough": "patuṅkiyum" }
+    - word: "ta-8486"
+      forms: { "evenif": "எய்தாலும்", "eventhough": "எய்தும்" }
+      readings: { "evenif": "eytālum", "eventhough": "eytum" }
+    - word: "ta-8487"
+      forms: { "evenif": "தாவினாலும்", "eventhough": "தாவியும்" }
+      readings: { "evenif": "tāviṉālum", "eventhough": "tāviyum" }
+    - word: "ta-8488"
+      forms: { "evenif": "கொன்றாலும்", "eventhough": "கொன்றும்" }
+      readings: { "evenif": "koṉṟālum", "eventhough": "koṉṟum" }
+    - word: "ta-8489"
+      forms: { "evenif": "குத்தினாலும்", "eventhough": "குத்தியும்" }
+      readings: { "evenif": "kuttiṉālum", "eventhough": "kuttiyum" }
+    - word: "ta-8490"
+      forms: { "evenif": "தப்பிச்சென்றாலும்", "eventhough": "தப்பிச்சென்றும்" }
+      readings: { "evenif": "tappicceṉṟālum", "eventhough": "tappicceṉṟum" }
+    - word: "ta-8491"
+      forms: { "evenif": "ஒட்டிக்கொண்டாலும்", "eventhough": "ஒட்டிக்கொண்டும்" }
+      readings: { "evenif": "oṭṭikkoṇṭālum", "eventhough": "oṭṭikkoṇṭum" }
+    - word: "ta-8492"
+      forms: { "evenif": "பிரிந்துசென்றாலும்", "eventhough": "பிரிந்துசென்றும்" }
+      readings: { "evenif": "pirintuceṉṟālum", "eventhough": "pirintuceṉṟum" }
+    - word: "ta-8493"
+      forms: { "evenif": "சேர்ந்துகொண்டாலும்", "eventhough": "சேர்ந்துகொண்டும்" }
+      readings: { "evenif": "cērntukoṇṭālum", "eventhough": "cērntukoṇṭum" }
+    - word: "ta-8494"
+      forms: { "evenif": "பொழிந்தாலும்", "eventhough": "பொழிந்தும்" }
+      readings: { "evenif": "poḻintālum", "eventhough": "poḻintum" }
+    - word: "ta-8495"
+      forms: { "evenif": "தேய்ந்தாலும்", "eventhough": "தேய்ந்தும்" }
+      readings: { "evenif": "tēyntālum", "eventhough": "tēyntum" }
+    - word: "ta-8496"
+      forms: { "evenif": "விரிந்தாலும்", "eventhough": "விரிந்தும்" }
+      readings: { "evenif": "virintālum", "eventhough": "virintum" }
+    - word: "ta-8497"
+      forms: { "evenif": "சுருங்கினாலும்", "eventhough": "சுருங்கியும்" }
+      readings: { "evenif": "curuṅkiṉālum", "eventhough": "curuṅkiyum" }
+    - word: "ta-8498"
+      forms: { "evenif": "எட்டிப்பார்த்தாலும்", "eventhough": "எட்டிப்பார்த்தும்" }
+      readings: { "evenif": "eṭṭippārttālum", "eventhough": "eṭṭippārttum" }
+    - word: "ta-8499"
+      forms: { "evenif": "ஆச்சரியப்பட்டாலும்", "eventhough": "ஆச்சரியப்பட்டும்" }
+      readings: { "evenif": "āccariyappaṭṭālum", "eventhough": "āccariyappaṭṭum" }
+    - word: "ta-8500"
+      forms: { "evenif": "வியப்படைந்தாலும்", "eventhough": "வியப்படைந்தும்" }
+      readings: { "evenif": "viyappaṭaintālum", "eventhough": "viyappaṭaintum" }
+    - word: "ta-8501"
+      forms: { "evenif": "திடுக்கிட்டாலும்", "eventhough": "திடுக்கிட்டும்" }
+      readings: { "evenif": "tiṭukkiṭṭālum", "eventhough": "tiṭukkiṭṭum" }
+    - word: "ta-8502"
+      forms: { "evenif": "ஏங்கினாலும்", "eventhough": "ஏங்கியும்" }
+      readings: { "evenif": "ēṅkiṉālum", "eventhough": "ēṅkiyum" }
+    - word: "ta-8503"
+      forms: { "evenif": "தவித்தாலும்", "eventhough": "தவித்தும்" }
+      readings: { "evenif": "tavittālum", "eventhough": "tavittum" }
+    - word: "ta-8504"
+      forms: { "evenif": "துடித்தாலும்", "eventhough": "துடித்தும்" }
+      readings: { "evenif": "tuṭittālum", "eventhough": "tuṭittum" }
+    - word: "ta-8505"
+      forms: { "evenif": "புலம்பினாலும்", "eventhough": "புலம்பியும்" }
+      readings: { "evenif": "pulampiṉālum", "eventhough": "pulampiyum" }
+    - word: "ta-8506"
+      forms: { "evenif": "முறையிட்டாலும்", "eventhough": "முறையிட்டும்" }
+      readings: { "evenif": "muṟaiyiṭṭālum", "eventhough": "muṟaiyiṭṭum" }
+    - word: "ta-8507"
+      forms: { "evenif": "ஏற்பட்டாலும்", "eventhough": "ஏற்பட்டும்" }
+      readings: { "evenif": "ēṟpaṭṭālum", "eventhough": "ēṟpaṭṭum" }
+    - word: "ta-8508"
+      forms: { "evenif": "முடிவுசெய்தாலும்", "eventhough": "முடிவுசெய்தும்" }
+      readings: { "evenif": "muṭivuceytālum", "eventhough": "muṭivuceytum" }
+    - word: "ta-8509"
+      forms: { "evenif": "ஆலோசித்தாலும்", "eventhough": "ஆலோசித்தும்" }
+      readings: { "evenif": "ālōcittālum", "eventhough": "ālōcittum" }
+    - word: "ta-8557"
+      forms: { "evenif": "சிந்தித்தாலும்", "eventhough": "சிந்தித்தும்" }
+      readings: { "evenif": "cintittālum", "eventhough": "cintittum" }
+    - word: "ta-8558"
+      forms: { "evenif": "பொறாமைப்பட்டாலும்", "eventhough": "பொறாமைப்பட்டும்" }
+      readings: { "evenif": "poṟāmaippaṭṭālum", "eventhough": "poṟāmaippaṭṭum" }
+    - word: "ta-8559"
+      forms: { "evenif": "அனுபவித்தாலும்", "eventhough": "அனுபவித்தும்" }
+      readings: { "evenif": "aṉupavittālum", "eventhough": "aṉupavittum" }
+    - word: "ta-8560"
+      forms: { "evenif": "நேசித்தாலும்", "eventhough": "நேசித்தும்" }
+      readings: { "evenif": "nēcittālum", "eventhough": "nēcittum" }
+    - word: "ta-8561"
+      forms: { "evenif": "சாதித்தாலும்", "eventhough": "சாதித்தும்" }
+      readings: { "evenif": "cātittālum", "eventhough": "cātittum" }
+    - word: "ta-8562"
+      forms: { "evenif": "பெருகினாலும்", "eventhough": "பெருகியும்" }
+      readings: { "evenif": "perukiṉālum", "eventhough": "perukiyum" }
+    - word: "ta-8563"
+      forms: { "evenif": "மதிப்பிட்டாலும்", "eventhough": "மதிப்பிட்டும்" }
+      readings: { "evenif": "matippiṭṭālum", "eventhough": "matippiṭṭum" }
+    - word: "ta-8564"
+      forms: { "evenif": "தீர்மானித்தாலும்", "eventhough": "தீர்மானித்தும்" }
+      readings: { "evenif": "tīrmāṉittālum", "eventhough": "tīrmāṉittum" }
+    - word: "ta-8565"
+      forms: { "evenif": "வலியுறுத்தினாலும்", "eventhough": "வலியுறுத்தியும்" }
+      readings: { "evenif": "valiyuṟuttiṉālum", "eventhough": "valiyuṟuttiyum" }
+    - word: "ta-8566"
+      forms: { "evenif": "கைவிட்டாலும்", "eventhough": "கைவிட்டும்" }
+      readings: { "evenif": "kaiviṭṭālum", "eventhough": "kaiviṭṭum" }
+rules:
+  - id: "ta-rule-concessive"
+    slots: ["evenif"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வந்தாலும்", reading: "vantālum" }, { word: "படி", reading: "paṭi" }, { word: "படிச்சாலும்", reading: "paṭiccālum" }, { word: "படித்தாலும்", reading: "paṭittālum" }]
+  - id: "ta-rule-concessive-though"
+    slots: ["eventhough"]
+    words: [{ word: "படி", reading: "paṭi" }, { word: "படிச்சும்", reading: "paṭiccum" }, { word: "படித்தும்", reading: "paṭittum" }, { word: "போ", reading: "pō" }, { word: "போயும்", reading: "pōyum" }]

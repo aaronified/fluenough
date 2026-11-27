@@ -1,0 +1,217 @@
+"schema": 1
+"id": "vsn-grammar-a-stems"
+"part": "core"
+"kind": "rules"
+"language":
+  "code": "vsn"
+  "iso639_3": "vsn"
+  "name": "Vedic Sanskrit"
+  "script": "devanagari"
+  "icon": "वै"
+"license": "CC-BY-SA-4.0"
+"source": "Whitney, Sanskrit Grammar, en.wikisource.org, 'Sanskrit Grammar (Whitney)/Chapter V', read 2026-11-23 (sections 321 to 331, Declension I, the examples of declension in section 330); '/Chapter IV' sections 307 to 309; final s as visarga from '/Chapter III' sections 145 and 170 . The Devanagari of देवासः, देवा, देवेभिः is written by the builder from Whitney's Latin letters in section 330."
+"tags":
+- "grammar"
+- "unreviewed"
+"table":
+  "applies_to":
+    "pos":
+    - "noun"
+    "tags":
+    - "case-model"
+  "slots":
+  - "nom-sg"
+  - "acc-sg"
+  - "ins-sg"
+  - "dat-sg"
+  - "abl-sg"
+  - "gen-sg"
+  - "loc-sg"
+  - "voc-sg"
+  - "nav-du"
+  - "ida-du"
+  - "gl-du"
+  - "nv-pl"
+  - "acc-pl"
+  - "ins-pl"
+  - "da-pl"
+  - "gen-pl"
+  - "loc-pl"
+  - "nom-pl-ved"
+  - "nav-du-ved"
+  - "ins-pl-ved"
+  "rows":
+  - "word": "vsn-0005"
+    "forms":
+      "nom-sg":
+      - "देवः"
+      - "देवस्"
+      "acc-sg": "देवम्"
+      "ins-sg": "देवेन"
+      "dat-sg": "देवाय"
+      "abl-sg": "देवात्"
+      "gen-sg": "देवस्य"
+      "loc-sg": "देवे"
+      "voc-sg": "देव"
+      "nav-du": "देवौ"
+      "ida-du": "देवाभ्याम्"
+      "gl-du":
+      - "देवयोः"
+      - "देवयोस्"
+      "nv-pl":
+      - "देवाः"
+      - "देवास्"
+      "acc-pl": "देवान्"
+      "ins-pl":
+      - "देवैः"
+      - "देवैस्"
+      "da-pl":
+      - "देवेभ्यः"
+      - "देवेभ्यस्"
+      "gen-pl": "देवानाम्"
+      "loc-pl": "देवेषु"
+      "nom-pl-ved":
+      - "देवासः"
+      - "देवासस्"
+      "nav-du-ved": "देवा"
+      "ins-pl-ved":
+      - "देवेभिः"
+      - "देवेभिस्"
+    "readings":
+      "nom-sg":
+      - "devaḥ"
+      - "devas"
+      "acc-sg": "devam"
+      "ins-sg": "devena"
+      "dat-sg": "devāya"
+      "abl-sg": "devāt"
+      "gen-sg": "devasya"
+      "loc-sg": "deve"
+      "voc-sg": "deva"
+      "nav-du": "devau"
+      "ida-du": "devābhyām"
+      "gl-du":
+      - "devayoḥ"
+      - "devayos"
+      "nv-pl":
+      - "devāḥ"
+      - "devās"
+      "acc-pl": "devān"
+      "ins-pl":
+      - "devaiḥ"
+      - "devais"
+      "da-pl":
+      - "devebhyaḥ"
+      - "devebhyas"
+      "gen-pl": "devānām"
+      "loc-pl": "deveṣu"
+      "nom-pl-ved":
+      - "devāsaḥ"
+      - "devāsas"
+      "nav-du-ved": "devā"
+      "ins-pl-ved":
+      - "devebhiḥ"
+      - "devebhis"
+"rules":
+- "id": "vsn-rule-a-singular-nom-acc"
+  "slots":
+  - "nom-sg"
+  - "acc-sg"
+  "words":
+  - "word": "देवः"
+    "reading": "devaḥ"
+  - "word": "देवम्"
+    "reading": "devam"
+  - "word": "आस्य"
+    "reading": "āsya"
+- "id": "vsn-rule-a-singular-instrumental"
+  "slots":
+  - "ins-sg"
+  "words":
+  - "word": "देवेन"
+    "reading": "devena"
+- "id": "vsn-rule-a-singular-dative"
+  "slots":
+  - "dat-sg"
+  "words":
+  - "word": "देवाय"
+    "reading": "devāya"
+- "id": "vsn-rule-a-singular-ablative"
+  "slots":
+  - "abl-sg"
+  "words":
+  - "word": "देवात्"
+    "reading": "devāt"
+- "id": "vsn-rule-a-singular-genitive"
+  "slots":
+  - "gen-sg"
+  "words":
+  - "word": "देवस्य"
+    "reading": "devasya"
+- "id": "vsn-rule-a-singular-locative-vocative"
+  "slots":
+  - "loc-sg"
+  - "voc-sg"
+  "words":
+  - "word": "देवे"
+    "reading": "deve"
+  - "word": "देव"
+    "reading": "deva"
+- "id": "vsn-rule-a-dual"
+  "slots":
+  - "nav-du"
+  - "ida-du"
+  - "gl-du"
+  - "nav-du-ved"
+  "words":
+  - "word": "देवौ"
+    "reading": "devau"
+  - "word": "देवा"
+    "reading": "devā"
+  - "word": "आस्ये"
+    "reading": "āsye"
+  - "word": "देवाभ्याम्"
+    "reading": "devābhyām"
+  - "word": "देवयोः"
+    "reading": "devayoḥ"
+- "id": "vsn-rule-a-plural-nominative-accusative"
+  "slots":
+  - "nv-pl"
+  - "acc-pl"
+  - "nom-pl-ved"
+  "words":
+  - "word": "देवाः"
+    "reading": "devāḥ"
+  - "word": "देवासः"
+    "reading": "devāsaḥ"
+  - "word": "देवान्"
+    "reading": "devān"
+  - "word": "आस्यानि"
+    "reading": "āsyāni"
+- "id": "vsn-rule-a-plural-instrumental"
+  "slots":
+  - "ins-pl"
+  - "ins-pl-ved"
+  "words":
+  - "word": "देवैः"
+    "reading": "devaiḥ"
+  - "word": "देवेभिः"
+    "reading": "devebhiḥ"
+- "id": "vsn-rule-a-plural-dative-ablative"
+  "slots":
+  - "da-pl"
+  "words":
+  - "word": "देवेभ्यः"
+    "reading": "devebhyaḥ"
+- "id": "vsn-rule-a-plural-genitive"
+  "slots":
+  - "gen-pl"
+  "words":
+  - "word": "देवानाम्"
+    "reading": "devānām"
+- "id": "vsn-rule-a-plural-locative"
+  "slots":
+  - "loc-pl"
+  "words":
+  - "word": "देवेषु"
+    "reading": "deveṣu"

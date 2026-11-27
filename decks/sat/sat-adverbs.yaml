@@ -1,0 +1,39 @@
+schema: 1
+id: "sat-adverbs"
+part: "core"
+kind: "vocab"
+language: { code: "sat", iso639_3: "sat", name: "Santali", script: "ol_chiki", icon: "ᱥ" }
+license: "CC-BY-SA-4.0"
+theme: "adverbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sat-1624"
+    target: "ᱦᱚᱸ"
+    reading: "hõ̠"
+    ipa: "hɔ̃"
+    phonetic: "[hɔ̃]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1625"
+    target: "ᱯᱩᱨᱟᱹ"
+    reading: "purā"
+    ipa: "puraː"
+    phonetic: "[purə]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "sat-1626"
+    target: "ᱛᱤᱧ ᱡᱷᱚᱜ"
+    reading: "tiñ jho̠k'"
+    ipa: "tiɲ dʒʱɔk"
+    phonetic: "[tiɲ ɟʰɔk]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ᱛᱤᱧ", base: "ᱛᱤᱧ", reading: "tiñ" }, { word: "ᱡᱷᱚᱜ", base: "ᱡᱷᱚᱜ", reading: "jho̠k'" }]

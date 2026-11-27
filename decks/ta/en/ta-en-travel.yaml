@@ -1,0 +1,905 @@
+schema: 1
+id: "ta-en-travel"
+kind: "layer"
+core: "ta-travel"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel and tourism"
+description: "Trips and tourism: booking, hotels and rooms, airports and customs, tourist places and sightseeing, and the verbs of arriving, leaving and putting off a trip. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-7233":
+    native: "tourist"
+    notes:
+      n1: "A person on a சுற்றுலா (cuṟṟulā) (tour); used for men and women alike."
+    examples:
+      "அவர் சுற்றுலாப்பயணி.":
+        native: "He is a tourist."
+        bases:
+          "அவர்": "he or she (polite)"
+          "சுற்றுலாப்பயணி": "tourist"
+      "சுற்றுலாப்பயணி வருகிறார்.":
+        native: "The tourist is coming."
+        bases:
+          "சுற்றுலாப்பயணி": "tourist"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+  "ta-7234":
+    native: "traveller; passenger"
+    notes:
+      n1: "Used for anyone on a journey, on a train, bus or flight."
+    examples:
+      "பயணி உள்ளே வருகிறார்.":
+        native: "The passenger is coming in."
+        bases:
+          "பயணி": "traveller; passenger"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "இவர் எங்கள் பயணி.":
+        native: "This is our passenger."
+        bases:
+          "எங்கள்": "our; from நாங்கள் (nāṅkaḷ), we (not including you)"
+          "பயணி": "traveller; passenger"
+  "ta-7235":
+    native: "rent; hire charge"
+    notes:
+      n1: "The word for rent of a room and hire of a car or an auto; the person who pays it is not named separately."
+    examples:
+      "வாடகை எவ்வளவு?":
+        native: "How much is the rent?"
+        bases:
+          "வாடகை": "rent; hire charge"
+      "அறை வாடகை அதிகம்.":
+        native: "The room rent is high."
+        bases:
+          "வாடகை": "rent; hire charge"
+  "ta-7236":
+    native: "registration; booking; record"
+    notes:
+      n1: "In a hotel, பதிவு (pativu) is the check-in or register entry; with முன் (muṉ) (before) it becomes முன்பதிவு (muṉpativu) (advance booking)."
+    examples:
+      "பதிவு முடிந்தது.":
+        native: "The registration is done."
+        bases:
+          "பதிவு": "registration; booking; record"
+          "முடிந்தது": "finished; ended; from முடி (muṭi), to end; to finish"
+      "பதிவு வேண்டும்.":
+        native: "A booking is needed."
+        bases:
+          "பதிவு": "registration; booking; record"
+  "ta-7237":
+    native: "customs; duty"
+    notes:
+      n1: "The customs desk at an airport or border; you 'pay' (கட்டு (kaṭṭu)) the duty."
+    examples:
+      "சுங்கம் இங்கே.":
+        native: "Customs is here."
+        bases:
+          "சுங்கம்": "customs; duty"
+      "சுங்கம் கட்டு.":
+        native: "Pay the duty."
+        bases:
+          "சுங்கம்": "customs; duty"
+  "ta-7238":
+    native: "immigration"
+    notes:
+      n1: "The airport counter where passports are checked on arrival."
+    examples:
+      "குடியேற்றம் எங்கே?":
+        native: "Where is immigration?"
+        bases:
+          "குடியேற்றம்": "immigration"
+      "குடியேற்றம் அங்கே இருக்கிறது.":
+        native: "Immigration is over there."
+        bases:
+          "குடியேற்றம்": "immigration"
+          "அங்கே": "there"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7239":
+    native: "cancellation"
+    notes:
+      n1: "A ரத்து (rattu) is a cancellation; to cancel something is ரத்து (rattu) செய் (cey) (do cancellation)."
+    examples:
+      "பயணம் ரத்து.":
+        native: "The trip is cancelled."
+        bases:
+          "ரத்து": "cancellation"
+      "ரத்து செய்தி வந்தது.":
+        native: "News of the cancellation came."
+        bases:
+          "ரத்து": "cancellation"
+          "வந்தது": "came; from வா (vā), to come"
+  "ta-7240":
+    native: "tourist place"
+    notes:
+      n1: "Built from சுற்றுலா (cuṟṟulā) (tour) and தலம் (talam) (place); it names a place people visit."
+    examples:
+      "இது சுற்றுலாத்தலம்.":
+        native: "This is a tourist place."
+        bases:
+          "சுற்றுலாத்தலம்": "tourist place"
+      "இங்கே சுற்றுலாத்தலம் இருக்கிறது.":
+        native: "There is a tourist spot here."
+        bases:
+          "சுற்றுலாத்தலம்": "tourist place"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7241":
+    native: "souvenir; keepsake"
+    notes:
+      n1: "Literally memory thing; நினைவு (niṉaivu) (memory) plus பொருள் (poruḷ) (thing)."
+    examples:
+      "இது நினைவுப்பொருள்.":
+        native: "This is a souvenir."
+        bases:
+          "நினைவுப்பொருள்": "souvenir; keepsake"
+      "நினைவுப்பொருள் வாங்கு.":
+        native: "Buy a souvenir."
+        bases:
+          "நினைவுப்பொருள்": "souvenir; keepsake"
+  "ta-7242":
+    native: "facility; convenience"
+    notes:
+      n1: "A word for amenities of a hotel, house or town; the adjective is வசதியான (vacatiyāṉa) (comfortable)."
+    examples:
+      "இங்கே வசதி இருக்கிறது.":
+        native: "There are facilities here."
+        bases:
+          "வசதி": "facility; convenience"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அறையில் வசதி இல்லை.":
+        native: "The room has no facilities."
+        bases:
+          "அறையில்": "in the room; from அறை (aṟai), room"
+          "வசதி": "facility; convenience"
+  "ta-7243":
+    native: "air-conditioning"
+    notes:
+      n1: "The written word; in speech people say ஏசி (ēci) (AC)."
+    examples:
+      "அறையில் குளிர்சாதனம் இருக்கிறது.":
+        native: "The room has air-conditioning."
+        bases:
+          "அறையில்": "in the room; from அறை (aṟai), room"
+          "குளிர்சாதனம்": "air-conditioning"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "குளிர்சாதனம் வேண்டுமா?":
+        native: "Do you want air-conditioning?"
+        bases:
+          "குளிர்சாதனம்": "air-conditioning"
+          "வேண்டுமா": "is it needed?; from வேண்டும் (vēṇṭum), is needed; wanted"
+  "ta-7244":
+    native: "AC; air conditioner"
+    notes:
+      n1: "The spoken word for air-conditioning, said as the English letters."
+    examples:
+      "ஏசி அறை வேண்டும்.":
+        native: "I want an AC room."
+        bases:
+          "ஏசி": "AC; air conditioner"
+      "ஏசி வேலை செய்கிறது.":
+        native: "The AC is working."
+        bases:
+          "ஏசி": "AC; air conditioner"
+          "செய்கிறது": "does; from செய் (cey), to do"
+  "ta-7245":
+    native: "lift; elevator"
+    notes:
+      n1: "Literally power lifter; மின் (miṉ) (electricity) plus தூக்கி (tūkki) (lifter)."
+    examples:
+      "மின்தூக்கி எங்கே?":
+        native: "Where is the lift?"
+        bases:
+          "மின்தூக்கி": "lift; elevator"
+      "மின்தூக்கி வேலை செய்யவில்லை.":
+        native: "The lift is not working."
+        bases:
+          "மின்தூக்கி": "lift; elevator"
+          "செய்யவில்லை": "did not do; is not working; from செய் (cey), to do"
+  "ta-7246":
+    native: "airport"
+    notes:
+      n1: "விமானம் (vimāṉam) (aircraft) plus நிலையம் (nilaiyam) (station); before an ending it becomes விமானநிலையத்துக்கு (vimāṉanilaiyattukku) (to the airport)."
+    examples:
+      "விமானநிலையம் எங்கே?":
+        native: "Where is the airport?"
+        bases:
+          "விமானநிலையம்": "airport"
+      "நான் விமானநிலையத்துக்குப் போகிறேன்.":
+        native: "I am going to the airport."
+        bases:
+          "விமானநிலையத்துக்குப்": "to the airport; for the airport; from விமானநிலையம் (vimāṉanilaiyam), airport"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-7247":
+    native: "railway station"
+    notes:
+      n1: "ரயில் (rayil) (train) plus நிலையம் (nilaiyam) (station); one word in writing."
+    examples:
+      "ரயில்நிலையம் எங்கே?":
+        native: "Where is the railway station?"
+        bases:
+          "ரயில்நிலையம்": "railway station"
+      "ரயில்நிலையம் பக்கத்தில் இருக்கிறது.":
+        native: "The railway station is nearby."
+        bases:
+          "ரயில்நிலையம்": "railway station"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7248":
+    native: "bus station"
+    notes:
+      n1: "The written word; in speech people say பஸ்ஸ்டாண்டு (passṭāṇṭu) (bus stand)."
+    examples:
+      "பேருந்துநிலையம் எங்கே?":
+        native: "Where is the bus station?"
+        bases:
+          "பேருந்துநிலையம்": "bus station"
+      "பேருந்துநிலையம் அருகில் இருக்கிறது.":
+        native: "The bus station is close."
+        bases:
+          "பேருந்துநிலையம்": "bus station"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7249":
+    native: "entrance; gate"
+    notes:
+      n1: "Built from நுழைவு (nuḻaivu) (entry) and வாயில் (vāyil) (door); the opposite is the exit."
+    examples:
+      "நுழைவாயில் எங்கே?":
+        native: "Where is the entrance?"
+        bases:
+          "நுழைவாயில்": "entrance; gate"
+      "நுழைவாயில் அங்கே இருக்கிறது.":
+        native: "The entrance is over there."
+        bases:
+          "நுழைவாயில்": "entrance; gate"
+          "அங்கே": "there"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7250":
+    native: "passport"
+    notes:
+      n1: "The written word; பாஸ்போர்ட் (pāspōrṭ) (the English word) is what people say in speech."
+    examples:
+      "கடவுச்சீட்டு எங்கே?":
+        native: "Where is the passport?"
+        bases:
+          "கடவுச்சீட்டு": "passport"
+      "என் கடவுச்சீட்டு இங்கே இருக்கிறது.":
+        native: "My passport is here."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "கடவுச்சீட்டு": "passport"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7251":
+    native: "itinerary; travel plan"
+    notes:
+      n1: "பயணம் (payaṇam) (journey) plus திட்டம் (tiṭṭam) (plan); the two parts are written as one word."
+    examples:
+      "இது என் பயணத்திட்டம்.":
+        native: "This is my itinerary."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "பயணத்திட்டம்": "itinerary; travel plan"
+      "பயணத்திட்டம் தயார்.":
+        native: "The travel plan is ready."
+        bases:
+          "பயணத்திட்டம்": "itinerary; travel plan"
+          "தயார்": "ready"
+  "ta-7252":
+    native: "reception room; lobby"
+    notes:
+      n1: "வரவேற்பு (varavēṟpu) (welcome) plus அறை (aṟai) (room); the front desk of a hotel."
+    examples:
+      "வரவேற்பறை எங்கே?":
+        native: "Where is the reception?"
+        bases:
+          "வரவேற்பறை": "reception room; lobby"
+      "வரவேற்பறையில் காத்திருக்கிறேன்.":
+        native: "I am waiting at reception."
+        bases:
+          "வரவேற்பறையில்": "at reception; from வரவேற்பறை (varavēṟpaṟai), reception room; lobby"
+          "காத்திருக்கிறேன்": "am waiting; from காத்திரு (kāttiru), to wait"
+  "ta-7253":
+    native: "room key"
+    notes:
+      n1: "அறை (aṟai) (room) plus சாவி (cāvi) (key); the two parts are written as one word."
+    examples:
+      "அறைச்சாவி இங்கே.":
+        native: "The room key is here."
+        bases:
+          "அறைச்சாவி": "room key"
+      "என் அறைச்சாவி எங்கே?":
+        native: "Where is my room key?"
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "அறைச்சாவி": "room key"
+  "ta-7254":
+    native: "bathroom"
+    notes:
+      n1: "Literally bathing room; the room for washing, which in hotels may include the toilet."
+    examples:
+      "குளியலறை எங்கே?":
+        native: "Where is the bathroom?"
+        bases:
+          "குளியலறை": "bathroom"
+      "குளியலறை சுத்தமாக இருக்கிறது.":
+        native: "The bathroom is clean."
+        bases:
+          "குளியலறை": "bathroom"
+          "சுத்தமாக": "clean; from சுத்தம் (cuttam), cleanliness; clean"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7255":
+    native: "toilet"
+    notes:
+      n1: "A polite, written word for the toilet; used on signs and when asking the way."
+    examples:
+      "கழிப்பறை எங்கே?":
+        native: "Where is the toilet?"
+        bases:
+          "கழிப்பறை": "toilet"
+      "கழிப்பறை வெளியே இருக்கிறது.":
+        native: "The toilet is outside."
+        bases:
+          "கழிப்பறை": "toilet"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7256":
+    native: "hot water"
+    notes:
+      n1: "Literally boiled water; the two parts are written as one word."
+    examples:
+      "வெந்நீர் வேண்டும்.":
+        native: "I need hot water."
+        bases:
+          "வெந்நீர்": "hot water"
+      "அறையில் வெந்நீர் இருக்கிறது.":
+        native: "The room has hot water."
+        bases:
+          "அறையில்": "in the room; from அறை (aṟai), room"
+          "வெந்நீர்": "hot water"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7257":
+    native: "camp"
+    notes:
+      n1: "A camp for tourists or for an event, and also a relief camp."
+    examples:
+      "இது முகாம்.":
+        native: "This is a camp."
+        bases:
+          "முகாம்": "camp"
+      "முகாம் மலையில் இருக்கிறது.":
+        native: "The camp is on the hill."
+        bases:
+          "முகாம்": "camp"
+          "மலையில்": "in the hills; from மலை (malai), hill"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7258":
+    native: "tent"
+    notes:
+      n1: "A tent for camping or for an event."
+    examples:
+      "கூடாரம் எங்கே?":
+        native: "Where is the tent?"
+        bases:
+          "கூடாரம்": "tent"
+      "கூடாரம் பெரியது.":
+        native: "The tent is big."
+        bases:
+          "கூடாரம்": "tent"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-7259":
+    native: "trekking; mountain climb"
+    notes:
+      n1: "Literally climbing a hill; மலை (malai) (hill) plus ஏற்றம் (ēṟṟam) (climbing)."
+    examples:
+      "மலையேற்றம் எனக்குப் பிடிக்கும்.":
+        native: "I like trekking."
+        bases:
+          "மலையேற்றம்": "trekking; mountain climb"
+          "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+      "நாளை மலையேற்றம்.":
+        native: "Trekking tomorrow."
+        bases:
+          "மலையேற்றம்": "trekking; mountain climb"
+  "ta-7260":
+    native: "boat ride"
+    notes:
+      n1: "படகு (paṭaku) (boat) plus சவாரி (cavāri) (ride); the two parts are written as one word."
+    examples:
+      "படகுச்சவாரி நன்றாக இருக்கிறது.":
+        native: "The boat ride is nice."
+        bases:
+          "படகுச்சவாரி": "boat ride"
+          "நன்றாக": "well; fine"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இங்கே படகுச்சவாரி இருக்கிறது.":
+        native: "There is a boat ride here."
+        bases:
+          "படகுச்சவாரி": "boat ride"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7261":
+    native: "ride; trip"
+    notes:
+      n1: "A ride on an animal, a boat or a vehicle, and a fare for a driver."
+    examples:
+      "இது நல்ல சவாரி.":
+        native: "This is a good ride."
+        bases:
+          "சவாரி": "ride; trip"
+      "சவாரிக்குப் போகிறேன்.":
+        native: "I am going for a ride."
+        bases:
+          "சவாரிக்குப்": "to the ride; for the ride; from சவாரி (cavāri), ride; trip"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-7262":
+    native: "taxi; hired car"
+    notes:
+      n1: "வாடகை (vāṭakai) (hire) plus வண்டி (vaṇṭi) (vehicle); the common spoken word is டாக்ஸி (ṭāksi) (taxi)."
+    examples:
+      "வாடகைவண்டி வேண்டும்.":
+        native: "I need a taxi."
+        bases:
+          "வாடகைவண்டி": "taxi; hired car"
+      "வாடகைவண்டி வருகிறது.":
+        native: "The taxi is coming."
+        bases:
+          "வாடகைவண்டி": "taxi; hired car"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-7263":
+    native: "fuel"
+    notes:
+      n1: "Literally burning thing; எரி (eri) (burn) plus பொருள் (poruḷ) (thing)."
+    examples:
+      "எரிபொருள் விலை அதிகம்.":
+        native: "Fuel is expensive."
+        bases:
+          "எரிபொருள்": "fuel"
+      "எரிபொருள் வேண்டும்.":
+        native: "Fuel is needed."
+        bases:
+          "எரிபொருள்": "fuel"
+  "ta-7264":
+    native: "toll gate"
+    notes:
+      n1: "சுங்கம் (cuṅkam) (duty) plus சாவடி (cāvaṭi) (post); the toll booth on a highway."
+    examples:
+      "சுங்கச்சாவடி எங்கே?":
+        native: "Where is the toll gate?"
+        bases:
+          "சுங்கச்சாவடி": "toll gate"
+      "சுங்கச்சாவடியில் பணம் கட்டு.":
+        native: "Pay money at the toll gate."
+        bases:
+          "சுங்கச்சாவடியில்": "at the toll gate; from சுங்கச்சாவடி (cuṅkaccāvaṭi), toll gate"
+  "ta-7265":
+    native: "highway"
+    notes:
+      n1: "Literally long road; நெடு (neṭu) (long) plus சாலை (cālai) (road)."
+    examples:
+      "நெடுஞ்சாலை நீளம்.":
+        native: "The highway is long."
+        bases:
+          "நெடுஞ்சாலை": "highway"
+          "நீளம்": "long; length"
+      "நெடுஞ்சாலையில் பேருந்து போகிறது.":
+        native: "The bus goes on the highway."
+        bases:
+          "நெடுஞ்சாலையில்": "on the highway; from நெடுஞ்சாலை (neṭuñcālai), highway"
+          "போகிறது": "is going; from போ (pō), to go"
+  "ta-7266":
+    native: "load; burden"
+    notes:
+      n1: "A load carried on the head or back; it also means a burden."
+    examples:
+      "சுமை அதிகம்.":
+        native: "The load is heavy."
+        bases:
+          "சுமை": "load; burden"
+      "சுமை எங்கே?":
+        native: "Where is the load?"
+        bases:
+          "சுமை": "load; burden"
+  "ta-7267":
+    native: "suitcase"
+    notes:
+      n1: "A loanword from English, said as it is."
+    examples:
+      "என் சூட்கேஸ் இங்கே.":
+        native: "My suitcase is here."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "சூட்கேஸ்": "suitcase"
+      "சூட்கேஸ் கனமாக இருக்கிறது.":
+        native: "The suitcase is heavy."
+        bases:
+          "சூட்கேஸ்": "suitcase"
+          "கனமாக": "heavy; from கனம் (kaṉam), weight; heaviness"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7268":
+    native: "ATM"
+    notes:
+      n1: "The English letters are said out as they are."
+    examples:
+      "ஏடிஎம் எங்கே?":
+        native: "Where is the ATM?"
+        bases:
+          "ஏடிஎம்": "ATM"
+      "ஏடிஎம் பக்கத்தில் இருக்கிறது.":
+        native: "The ATM is nearby."
+        bases:
+          "ஏடிஎம்": "ATM"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7269":
+    native: "fare; travel charge"
+    notes:
+      n1: "பயணம் (payaṇam) (journey) plus கட்டணம் (kaṭṭaṇam) (charge); in speech people say டிக்கெட் (ṭikkeṭ) (ticket) price instead."
+    examples:
+      "பயணக்கட்டணம் எவ்வளவு?":
+        native: "How much is the fare?"
+        bases:
+          "பயணக்கட்டணம்": "fare; travel charge"
+      "பயணக்கட்டணம் அதிகம்.":
+        native: "The fare is high."
+        bases:
+          "பயணக்கட்டணம்": "fare; travel charge"
+  "ta-7270":
+    native: "place to stay; accommodation"
+    notes:
+      n1: "Built from தங்கு (taṅku) (to stay) and இடம் (iṭam) (place), literally 'staying place'."
+    examples:
+      "தங்குமிடம் எங்கே?":
+        native: "Where is a place to stay?"
+        bases:
+          "தங்குமிடம்": "place to stay; accommodation"
+      "தங்குமிடம் வேண்டும்.":
+        native: "I need a place to stay."
+        bases:
+          "தங்குமிடம்": "place to stay; accommodation"
+  "ta-7271":
+    native: "foreign country; abroad"
+    notes:
+      n1: "வெளி (veḷi) (outside) plus நாடு (nāṭu) (country); before an ending it becomes வெளிநாட்டு (veḷināṭṭu)."
+    examples:
+      "வெளிநாட்டுக்குப் போகிறேன்.":
+        native: "I am going abroad."
+        bases:
+          "வெளிநாட்டுக்குப்": "to the foreign country; for the foreign country; from வெளிநாடு (veḷināṭu), foreign country; abroad"
+          "போகிறேன்": "am going; from போ (pō), to go"
+      "அவர் வெளிநாட்டில் இருக்கிறார்.":
+        native: "He is abroad."
+        bases:
+          "அவர்": "he or she (polite)"
+          "வெளிநாட்டில்": "in the foreign country; from வெளிநாடு (veḷināṭu), foreign country; abroad"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-7272":
+    native: "another town; out of town"
+    notes:
+      n1: "A town other than your own; the opposite is சொந்த (conta) (own) ஊர் (ūr) (town)."
+    examples:
+      "வெளியூர் போகிறேன்.":
+        native: "I am going out of town."
+        bases:
+          "வெளியூர்": "another town; out of town"
+          "போகிறேன்": "am going; from போ (pō), to go"
+      "இது வெளியூர் பேருந்து.":
+        native: "This is an out-of-town bus."
+        bases:
+          "வெளியூர்": "another town; out of town"
+  "ta-7273":
+    native: "foreigner"
+    notes:
+      n1: "வெளிநாடு (veḷināṭu) (abroad) plus -அவர் (-avar), 'person'; the oblique stem is வெளிநாட்டு (veḷināṭṭu)."
+    examples:
+      "அவர் வெளிநாட்டவர்.":
+        native: "He is a foreigner."
+        bases:
+          "அவர்": "he or she (polite)"
+          "வெளிநாட்டவர்": "foreigner"
+      "வெளிநாட்டவர் வருகிறார்கள்.":
+        native: "Foreigners are coming."
+        bases:
+          "வெளிநாட்டவர்": "foreigner"
+          "வருகிறார்கள்": "come (respectful plural); from வா (vā), to come"
+  "ta-7274":
+    native: "pleasure trip; excursion"
+    notes:
+      n1: "உல்லாசம் (ullācam) (fun) plus பயணம் (payaṇam) (journey); used for a school or family trip."
+    examples:
+      "நாளை உல்லாசப்பயணம்.":
+        native: "A pleasure trip tomorrow."
+        bases:
+          "உல்லாசப்பயணம்": "pleasure trip; excursion"
+      "உல்லாசப்பயணம் நல்லது.":
+        native: "A pleasure trip is good."
+        bases:
+          "உல்லாசப்பயணம்": "pleasure trip; excursion"
+  "ta-7275":
+    native: "climate; weather conditions"
+    notes:
+      n1: "Built from காலம் (kālam) (time) and நிலை (nilai) (state); it is about the long run, while the daily weather is வானிலை (vāṉilai)."
+    examples:
+      "இங்கே காலநிலை நல்லது.":
+        native: "The climate is good here."
+        bases:
+          "காலநிலை": "climate; weather conditions"
+      "காலநிலை மாறுகிறது.":
+        native: "The climate is changing."
+        bases:
+          "காலநிலை": "climate; weather conditions"
+          "மாறுகிறது": "changes; from மாறு (māṟu), to change"
+  "ta-7276":
+    native: "translator; interpreter"
+    notes:
+      n1: "Built from மொழி (moḻi) (language) and பெயர் (peyar) (to move across); used for men and women alike."
+    examples:
+      "அவர் மொழிபெயர்ப்பாளர்.":
+        native: "He is a translator."
+        bases:
+          "அவர்": "he or she (polite)"
+          "மொழிபெயர்ப்பாளர்": "translator; interpreter"
+      "மொழிபெயர்ப்பாளர் வேண்டும்.":
+        native: "A translator is needed."
+        bases:
+          "மொழிபெயர்ப்பாளர்": "translator; interpreter"
+  "ta-7277":
+    native: "travel companion"
+    notes:
+      n1: "Literally road companion; வழி (vaḻi) (way) plus துணை (tuṇai) (companion)."
+    examples:
+      "அவர் என் வழித்துணை.":
+        native: "He is my travel companion."
+        bases:
+          "அவர்": "he or she (polite)"
+          "என்": "my; from நான் (nāṉ), I; me"
+          "வழித்துணை": "travel companion"
+      "வழித்துணை வேண்டும்.":
+        native: "A travel companion is needed."
+        bases:
+          "வழித்துணை": "travel companion"
+  "ta-7278":
+    native: "culture"
+    notes:
+      n1: "A word for the customs and way of life of a place; travellers learn it."
+    examples:
+      "இங்கே கலாச்சாரம் வேறு.":
+        native: "The culture is different here."
+        bases:
+          "கலாச்சாரம்": "culture"
+          "வேறு": "different; other"
+      "கலாச்சாரம் முக்கியம்.":
+        native: "Culture is important."
+        bases:
+          "கலாச்சாரம்": "culture"
+          "முக்கியம்": "important"
+  "ta-7279":
+    native: "time difference"
+    notes:
+      n1: "நேரம் (nēram) (time) plus வித்தியாசம் (vittiyācam) (difference); one written word."
+    examples:
+      "நேரவித்தியாசம் ஐந்து மணி.":
+        native: "The time difference is five hours."
+        bases:
+          "நேரவித்தியாசம்": "time difference"
+      "நேரவித்தியாசம் இருக்கிறது.":
+        native: "There is a time difference."
+        bases:
+          "நேரவித்தியாசம்": "time difference"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7280":
+    native: "travel fatigue"
+    notes:
+      n1: "பயணம் (payaṇam) (journey) plus களைப்பு (kaḷaippu) (tiredness); a word for the weariness after a long trip."
+    examples:
+      "எனக்குப் பயணக்களைப்பு.":
+        native: "I am tired from the trip."
+        bases:
+          "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+          "பயணக்களைப்பு": "travel fatigue"
+      "பயணக்களைப்பு இருக்கிறது.":
+        native: "There is travel fatigue."
+        bases:
+          "பயணக்களைப்பு": "travel fatigue"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7281":
+    native: "notice board"
+    notes:
+      n1: "அறிவிப்பு (aṟivippu) (notice) plus பலகை (palakai) (board); the two parts are written as one word."
+    examples:
+      "அறிவிப்புப்பலகை எங்கே?":
+        native: "Where is the notice board?"
+        bases:
+          "அறிவிப்புப்பலகை": "notice board"
+      "அறிவிப்புப்பலகையில் பார்.":
+        native: "Look at the notice board."
+        bases:
+          "அறிவிப்புப்பலகையில்": "on the notice board; from அறிவிப்புப்பலகை (aṟivippuppalakai), notice board"
+  "ta-7282":
+    native: "signboard; direction sign"
+    notes:
+      n1: "வழிகாட்டி (vaḻikāṭṭi) (guide) plus பலகை (palakai) (board); the sign that shows the way."
+    examples:
+      "வழிகாட்டிப்பலகை அங்கே.":
+        native: "The direction sign is there."
+        bases:
+          "வழிகாட்டிப்பலகை": "signboard; direction sign"
+          "அங்கே": "there"
+      "வழிகாட்டிப்பலகை பார்.":
+        native: "Look at the sign."
+        bases:
+          "வழிகாட்டிப்பலகை": "signboard; direction sign"
+  "ta-7283":
+    native: "entry fee"
+    notes:
+      n1: "நுழைவு (nuḻaivu) (entry) plus கட்டணம் (kaṭṭaṇam) (charge); the fee at a museum or a temple."
+    examples:
+      "நுழைவுக்கட்டணம் எவ்வளவு?":
+        native: "How much is the entry fee?"
+        bases:
+          "நுழைவுக்கட்டணம்": "entry fee"
+      "நுழைவுக்கட்டணம் இலவசம்.":
+        native: "The entry is free."
+        bases:
+          "நுழைவுக்கட்டணம்": "entry fee"
+  "ta-7284":
+    native: "to postpone; to put off"
+    notes:
+      n1: "Literally to put aside; the thing put off takes the -ஐ (-ai) ending."
+    examples:
+      "பயணத்தை ஒத்திவைக்கிறேன்.":
+        native: "I am postponing the trip."
+        bases:
+          "பயணத்தை": "the journey; from பயணம் (payaṇam), journey; trip"
+          "ஒத்திவைக்கிறேன்": "am postponing; from ஒத்திவை (ottivai), to postpone; to put off"
+      "கூட்டத்தை ஒத்திவைக்கிறார்கள்.":
+        native: "They are postponing the meeting."
+        bases:
+          "கூட்டத்தை": "the meeting; from கூட்டம் (kūṭṭam), meeting; crowd"
+          "ஒத்திவைக்கிறார்கள்": "are postponing (they, respectful); from ஒத்திவை (ottivai), to postpone; to put off"
+  "ta-7285":
+    native: "to visit; to look around; to inspect"
+    notes:
+      n1: "Built from பார்வை (pārvai) (view) and இடு (iṭu) (put); used for sightseeing and for an official inspection."
+    examples:
+      "நான் கோட்டையைப் பார்வையிடுகிறேன்.":
+        native: "I am looking around the fort."
+        bases:
+          "கோட்டையைப்": "the fort (object); from கோட்டை (kōṭṭai), fort"
+          "பார்வையிடுகிறேன்": "am visiting; from பார்வையிடு (pārvaiyiṭu), to visit; to look around; to inspect"
+      "அவர் இடத்தைப் பார்வையிடுகிறார்.":
+        native: "He is inspecting the place."
+        bases:
+          "அவர்": "he or she (polite)"
+          "இடத்தைப்": "the place; from இடம் (iṭam), place; space"
+          "பார்வையிடுகிறார்": "is visiting (respectful); from பார்வையிடு (pārvaiyiṭu), to visit; to look around; to inspect"
+  "ta-7286":
+    native: "to arrive; to reach"
+    notes:
+      n1: "A written word for reaching a place; in speech people say வந்து (vantu) சேர் (cēr) (come and reach)."
+    examples:
+      "நாங்கள் நாளை வந்தடைகிறோம்.":
+        native: "We arrive tomorrow."
+        bases:
+          "வந்தடைகிறோம்": "are arriving (we); from வந்தடை (vantaṭai), to arrive; to reach"
+      "பேருந்து வந்தடைகிறது.":
+        native: "The bus is arriving."
+        bases:
+          "வந்தடைகிறது": "is arriving; from வந்தடை (vantaṭai), to arrive; to reach"
+  "ta-7287":
+    native: "to reach; to get to"
+    notes:
+      n1: "A written word for getting to a place by going; வந்தடை (vantaṭai) is arriving by coming."
+    examples:
+      "நான் நகரத்தைச் சென்றடைகிறேன்.":
+        native: "I reach the city."
+        bases:
+          "நகரத்தைச்": "the city; from நகரம் (nakaram), city; town"
+          "சென்றடைகிறேன்": "am reaching; from சென்றடை (ceṉṟaṭai), to reach; to get to"
+      "அவர்கள் இன்று சென்றடைகிறார்கள்.":
+        native: "They reach there today."
+        bases:
+          "அவர்கள்": "their"
+          "சென்றடைகிறார்கள்": "are reaching (they, respectful); from சென்றடை (ceṉṟaṭai), to reach; to get to"
+  "ta-7288":
+    native: "to transfer; to move to another place"
+    notes:
+      n1: "Built from இடம் (iṭam) (place) and மாற்று (māṟṟu) (change); used for jobs, offices and seats."
+    examples:
+      "அவர்கள் என்னை இடமாற்றுகிறார்கள்.":
+        native: "They are transferring me."
+        bases:
+          "அவர்கள்": "their"
+          "என்னை": "me (object); from நான் (nāṉ), I; me"
+          "இடமாற்றுகிறார்கள்": "are transferring (they, respectful); from இடமாற்று (iṭamāṟṟu), to transfer; to move to another place"
+      "அலுவலகம் இடமாற்றுகிறது.":
+        native: "The office is moving."
+        bases:
+          "இடமாற்றுகிறது": "is transferring; from இடமாற்று (iṭamāṟṟu), to transfer; to move to another place"
+  "ta-7289":
+    native: "high-class; luxury"
+    notes:
+      n1: "A describing word used before a noun, with no -ஆன (-āṉa) ending."
+    examples:
+      "உயர்தர ஹோட்டல்.":
+        native: "A high-class hotel."
+        bases:
+          "உயர்தர": "high-class; luxury"
+      "உயர்தர அறை.":
+        native: "A luxury room."
+        bases:
+          "உயர்தர": "high-class; luxury"
+  "ta-6431":
+    native: "Where does this train go?"
+    notes:
+      "n1": "போகிறது (pōkiṟatu) is 'goes' for a thing, not a person."
+    bases:
+      "இந்த": "this"
+      "போகிறது": "to go"
+  "ta-6432":
+    native: "Which platform?"
+    notes:
+      "n1": "எந்த (enta) means 'which' and comes before the noun."
+    bases:
+      "எந்த": "which"
+  "ta-6433":
+    native: "Where can I get a ticket?"
+    notes:
+      "n1": "கிடைக்கும் (kiṭaikkum) means 'will be available', from கிடை (kiṭai)."
+    bases:
+      "கிடைக்கும்": "to be available; to get"
+  "ta-6434":
+    native: "Please give me one ticket."
+    notes:
+      "n1": "ஒரு (oru) is 'one' before a noun. கொடுங்கள் (koṭuṅkaḷ) is the polite request form of கொடு (koṭu), 'to give'."
+    bases:
+      "கொடுங்கள்": "to give"
+  "ta-6435":
+    native: "When will the train come?"
+    notes:
+      "n1": "வரும் (varum) is the future of வா (vā), 'to come', for a thing."
+    bases:
+      "வரும்": "to come"
+  "ta-6436":
+    native: "The train is running late."
+    notes:
+      "n1": "தாமதமாக (tāmatamāka) is தாமதம் (tāmatam), 'delay', with -ஆக (āka), 'in the manner of'."
+    bases:
+      "தாமதமாக": "delay; late"
+      "வருகிறது": "to come"
+  "ta-6437":
+    native: "This is my seat."
+    notes:
+      "n1": "என் (eṉ) is 'my' and comes before the noun. No word for 'is' is needed."
+    bases:
+      "என்": "my"
+  "ta-6439":
+    native: "Is there a room for tonight?"
+    notes:
+      "n1": "இன்றிரவு (iṉṟiravu) joins இன்று (iṉṟu), 'today', and இரவு (iravu), 'night'; -க்கு (kku) means 'for'."
+    bases:
+      "இன்றிரவுக்கு": "tonight"
+      "இருக்கிறதா": "to be; to have"
+  "ta-6440":
+    native: "How much for one night?"
+    notes:
+      "n1": "-க்கு (kku) on இரவுக்கு (iravukku) means 'for'."
+    bases:
+      "இரவுக்கு": "night"
+  "ta-6441":
+    native: "Please give me the room key."
+    notes:
+      "n1": "கொடுங்கள் (koṭuṅkaḷ) is the polite request form of கொடு (koṭu), 'to give'."
+    bases:
+      "கொடுங்கள்": "to give"
+  "ta-6442":
+    native: "Does hot water come?"
+    notes:
+      "n1": "Tamil asks whether hot water 'comes' from the tap, with -ஆ (ā) making the question."
+    bases:
+      "வருகிறதா": "to come"
+  "ta-6443":
+    native: "The AC is not working."
+    notes:
+      "n1": "வேலை செய்யவில்லை (vēlai ceyyavillai) is 'is not working': செய்ய (ceyya) with the 'not' ending -வில்லை (villai)."
+    bases:
+      "செய்யவில்லை": "to do"
+  "ta-6444":
+    native: "Please wake me at seven in the morning."
+    notes:
+      "n1": "மணிக்கு (maṇikku) means 'at … o'clock'. எழுப்புங்கள் (eḻuppuṅkaḷ) is the polite request form of எழுப்பு (eḻuppu), 'to wake'."
+    bases:
+      "மணிக்கு": "o'clock"
+      "எழுப்புங்கள்": "to wake (someone)"

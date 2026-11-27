@@ -1,0 +1,92 @@
+schema: 1
+id: "ta-en-agriculture-sentences"
+kind: "layer"
+core: "ta-agriculture-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Agriculture in sentences"
+description: "Sentences about the farm, the field, the crop and the harvest, with no claim about real prices or yields. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9100":
+    native: "My father does farming."
+    bases:
+      "என்": "my; from நான் (nāṉ), I; me"
+      "செய்கிறார்": "he does; from செய் (cey), to do"
+    confusables:
+      w1: { why: "உழவன் (uḻavaṉ), farmer; ploughman, is a different word." }
+      w2: { why: "பண்ணை (paṇṇai), farm, is a different word." }
+      w3: { why: "சாகுபடி (cākupaṭi), cultivation, is a different word." }
+  "ta-9101":
+    native: "The farmer ploughs the land."
+    bases:
+      "நிலத்தை": "the land; from நிலம் (nilam), land; ground"
+      "உழுகிறார்": "is ploughing (respectful); from உழு (uḻu), to plough"
+    confusables:
+      w1: { why: "ஏர் (ēr), plough, is a different word." }
+      w2: { why: "கலப்பை (kalappai), plough (blade), is a different word." }
+      w3: { why: "டிராக்டர் (ṭirākṭar), tractor, is a different word." }
+  "ta-9102":
+    native: "Paddy grows in the field."
+    bases:
+      "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+      "வளர்கிறது": "is growing; from வளர் (vaḷar), to grow"
+    confusables:
+      w1: { why: "கோதுமை (kōtumai), wheat, is a different word." }
+      w2: { why: "சோளம் (cōḷam), sorghum; maize, is a different word." }
+      w3: { why: "கம்பு (kampu), pearl millet, is a different word." }
+  "ta-9103":
+    native: "We let water into the field."
+    bases:
+      "வயலுக்குத்": "to the field; for the field; from வயல் (vayal), field"
+      "விடுகிறோம்": "are leaving (we); from விடு (viṭu), to leave; to let go; to finish doing (after a participle)"
+    confusables:
+      w1: { why: "நீர்ப்பாசனம் (nīrppācaṉam), irrigation, is a different word." }
+      w2: { why: "வாய்க்கால் (vāykkāl), irrigation channel, is a different word." }
+      w3: { why: "கிணறு (kiṇaṟu), well, is a different word." }
+  "ta-9104":
+    native: "The crop needs fertiliser."
+    bases:
+      "பயிருக்கு": "to the crop; for the crop; from பயிர் (payir), crop; plant (grown)"
+    confusables:
+      w1: { why: "களை (kaḷai), weed, is a different word." }
+      w2: { why: "பூச்சிக்கொல்லி (pūccikkolli), pesticide, is a different word." }
+  "ta-9105":
+    native: "Tomorrow is the paddy harvest."
+    confusables:
+      w1: { why: "விளைச்சல் (viḷaiccal), yield; produce, is a different word." }
+      w2: { why: "மகசூல் (makacūl), crop yield, is a different word." }
+      w3: { why: "தானியம் (tāṉiyam), grain; cereal, is a different word." }
+  "ta-9106":
+    native: "The produce is in the warehouse."
+    bases:
+      "கிடங்கில்": "in the warehouse; from கிடங்கு (kiṭaṅku), warehouse; godown"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "கொள்முதல் (koḷmutal), procurement; buying of produce, is a different word." }
+      w2: { why: "இடைத்தரகர் (iṭaittarakar), middleman; broker, is a different word." }
+  "ta-9107":
+    native: "The cow gives milk."
+    bases:
+      "தருகிறது": "gives; from தா (tā), to give"
+    confusables:
+      w1: { why: "எருமை (erumai), buffalo, is a different word." }
+      w2: { why: "காளை (kāḷai), bull; ox, is a different word." }
+      w3: { why: "கன்று (kaṉṟu), calf; young plant, is a different word." }
+  "ta-9108":
+    native: "The cattle graze the grass."
+    bases:
+      "மேய்கிறது": "is grazing; from மேய் (mēy), to graze"
+    confusables:
+      w1: { why: "மேய்ச்சல் (mēyccal), grazing, is a different word." }
+      w2: { why: "தொழுவம் (toḻuvam), cattle shed, is a different word." }
+      w3: { why: "வைக்கோல் (vaikkōl), straw, is a different word." }
+  "ta-9109":
+    native: "This land is fertile."
+    bases:
+      "இந்த": "this"
+      "வளமானது": "is fertile; from வளமான (vaḷamāṉa), fertile; rich"
+    confusables:
+      w1: { why: "தரிசு (taricu), fallow land; barren land, is a different word." }
+      w2: { why: "விளைநிலம் (viḷainilam), farmland; arable land, is a different word." }
+      w3: { why: "செழிப்பான (ceḻippāṉa), lush; prosperous, is a different word." }

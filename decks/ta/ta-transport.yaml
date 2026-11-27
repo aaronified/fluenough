@@ -11,6 +11,8 @@ cards:
     target: "பேருந்து"
     reading: "pēruntu"
     ipa: "peːɾunt̪u"
+    phonetic: "[peːɾun̪d̪ɯ]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
     notes:
@@ -29,6 +31,8 @@ cards:
     target: "ஆட்டோ"
     reading: "āṭṭō"
     ipa: "aːʈʈoː"
+    phonetic: "[aːʈʈoː]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
     notes:
@@ -46,7 +50,9 @@ cards:
   - id: "ta-0240"
     target: "டாக்சி"
     reading: "ṭākci"
-    ipa: "ʈaːkʧi"
+    ipa: "ʈaːktʃi"
+    phonetic: "[ʈaːktʃi]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
     notes:
@@ -55,16 +61,18 @@ cards:
     examples:
       - target: "டாக்சி வருகிறது."
         reading: "ṭākci varukiṟatu."
-        ipa: "ʈaːkʧi ʋaɾukirat̪u"
+        ipa: "ʈaːktʃi ʋaɾukirat̪u"
         bases: [{ word: "டாக்சி", base: "டாக்சி", reading: "ṭākci" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
       - target: "இது டாக்சி."
         reading: "itu ṭākci."
-        ipa: "it̪u ʈaːkʧi"
+        ipa: "it̪u ʈaːktʃi"
         bases: [{ word: "இது", ref: "ta-0066" }, { word: "டாக்சி", base: "டாக்சி", reading: "ṭākci" }]
   - id: "ta-0241"
     target: "ரயில்"
     reading: "rayil"
     ipa: "ɾajil"
+    phonetic: "[ɾajil]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
     notes:
@@ -83,6 +91,8 @@ cards:
     target: "சைக்கிள்"
     reading: "caikkiḷ"
     ipa: "saikkiɭ"
+    phonetic: "[saikkiɭ]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
     notes:
@@ -101,6 +111,8 @@ cards:
     target: "கார்"
     reading: "kār"
     ipa: "kaːɾ"
+    phonetic: "[kaːɾ]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
     notes:
@@ -115,3 +127,104 @@ cards:
         reading: "nāṉ kāril pōkiṟēṉ."
         ipa: "naːn kaːɾil poːkireːn"
         bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காரில்", base: "கார்", reading: "kār" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-6400"
+    target: "ஒரு டாக்சி வேண்டும்."
+    reading: "oru ṭākci vēṇṭum."
+    ipa: "oɾu ʈaːktʃi ʋeːɳʈum"
+    phonetic: "[oɾɯ ʈaːktʃi ʋeːɳɖum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "ஒரு", base: "ஒரு", reading: "oru" }
+      - { word: "டாக்சி", ref: "ta-0240" }
+      - { word: "வேண்டும்", ref: "ta-0409" }
+  - id: "ta-6401"
+    target: "இந்த முகவரிக்குப் போகணும்."
+    reading: "inta mukavarikkup pōkaṇum."
+    ipa: "int̪a mukaʋaɾikkup poːkaɳum"
+    phonetic: "[in̪d̪a muɡaʋaɾikkup poːɡaɳum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "இந்த", base: "இந்த", reading: "inta" }
+      - { word: "முகவரிக்குப்", base: "முகவரி", reading: "mukavari" }
+      - { word: "போகணும்", base: "போ", reading: "pō" }
+  - id: "ta-6402"
+    target: "விமானநிலையத்துக்கு எவ்வளவு ஆகும்?"
+    reading: "vimāṉanilaiyattukku evvaḷavu ākum?"
+    ipa: "ʋimaːnanilaijat̪t̪ukku eʋʋaɭaʋu aːkum"
+    phonetic: "[ʋimaːnanilaijat̪t̪ukkɯ eʋʋaɭaʋɯ aːɡum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "விமானநிலையத்துக்கு", base: "விமானநிலையம்", reading: "vimāṉanilaiyam" }
+      - { word: "எவ்வளவு", ref: "ta-0049" }
+      - { word: "ஆகும்", base: "ஆகு", reading: "āku" }
+  - id: "ta-6403"
+    target: "மீட்டர் போடுங்கள்."
+    reading: "mīṭṭar pōṭuṅkaḷ."
+    ipa: "miːʈʈaɾ poːʈuŋkaɭ"
+    phonetic: "[miːʈʈaɾ poːɖuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "மீட்டர்", base: "மீட்டர்", reading: "mīṭṭar" }
+      - { word: "போடுங்கள்", base: "போடு", reading: "pōṭu" }
+  - id: "ta-6404"
+    target: "இங்கே நிறுத்துங்கள்."
+    reading: "iṅkē niṟuttuṅkaḷ."
+    ipa: "iŋkeː nirut̪t̪uŋkaɭ"
+    phonetic: "[iŋɡeː n̪irut̪t̪uŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "இங்கே", ref: "ta-0112" }
+      - { word: "நிறுத்துங்கள்", base: "நிறுத்து", reading: "niṟuttu" }
+  - id: "ta-6405"
+    target: "வலது பக்கம் திரும்புங்கள்."
+    reading: "valatu pakkam tirumpuṅkaḷ."
+    ipa: "ʋalat̪u pakkam t̪iɾumpuŋkaɭ"
+    phonetic: "[ʋalad̪ɯ pakkam t̪iɾumbuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "வலது", ref: "ta-0230" }
+      - { word: "பக்கம்", base: "பக்கம்", reading: "pakkam" }
+      - { word: "திரும்புங்கள்", base: "திரும்பு", reading: "tirumpu" }
+  - id: "ta-6406"
+    target: "இடது பக்கம் திரும்புங்கள்."
+    reading: "iṭatu pakkam tirumpuṅkaḷ."
+    ipa: "iʈat̪u pakkam t̪iɾumpuŋkaɭ"
+    phonetic: "[iɖad̪ɯ pakkam t̪iɾumbuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "இடது", ref: "ta-0231" }
+      - { word: "பக்கம்", base: "பக்கம்", reading: "pakkam" }
+      - { word: "திரும்புங்கள்", base: "திரும்பு", reading: "tirumpu" }
+  - id: "ta-6407"
+    target: "சில்லறை இருக்கிறதா?"
+    reading: "cillaṟai irukkiṟatā?"
+    ipa: "sillarai iɾukkirat̪aː"
+    phonetic: "[sillarai iɾukkirad̪aː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "சில்லறை", base: "சில்லறை", reading: "cillaṟai" }
+      - { word: "இருக்கிறதா", base: "இரு", reading: "iru" }

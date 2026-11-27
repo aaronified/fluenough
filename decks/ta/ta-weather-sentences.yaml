@@ -1,0 +1,115 @@
+schema: 1
+id: "ta-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4008"
+    target: "இன்று வானிலை எப்படி?"
+    reading: "iṉṟu vāṉilai eppaṭi?"
+    ipa: "inru ʋaːnilai eppaʈi"
+    phonetic: "[indrɯ ʋaːnilai eppaɖi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வானிலை", ref: "ta-1123" }, { word: "எப்படி", ref: "ta-0045" }]
+    confusables:
+      - { id: "w1", ref: "ta-1109", kind: "word" }
+      - { id: "w2", ref: "ta-1110", kind: "word" }
+  - id: "ta-4009"
+    target: "நாளை காலை மழை பெய்யும்."
+    reading: "nāḷai kālai maḻai peyyum."
+    ipa: "naːɭai kaːlai maɻai pejjum"
+    phonetic: "[n̪aːɭai kaːlai maɻai pejjum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "காலை", ref: "ta-0152" }, { word: "மழை", ref: "ta-1109" }, { word: "பெய்யும்", base: "பெய்", reading: "pey" }]
+    confusables:
+      - { id: "w1", ref: "ta-1112", kind: "word" }
+      - { id: "w2", ref: "ta-1115", kind: "word" }
+  - id: "ta-4010"
+    target: "வெளியே ரொம்ப வெயில்."
+    reading: "veḷiyē rompa veyil."
+    ipa: "ʋeɭijeː ɾompa ʋejil"
+    phonetic: "[ʋeɭijeː ɾomba ʋejil]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "வெளியே", ref: "ta-0179" }, { word: "ரொம்ப", ref: "ta-0166" }, { word: "வெயில்", ref: "ta-1110" }]
+    confusables:
+      - { id: "w1", ref: "ta-1118", kind: "word" }
+      - { id: "w2", ref: "ta-1119", kind: "word" }
+  - id: "ta-4011"
+    target: "குடை எடுத்துப் போ."
+    reading: "kuṭai eṭuttup pō."
+    ipa: "kuʈai eʈut̪t̪up poː"
+    phonetic: "[kuɖai eɖut̪t̪up poː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "குடை", ref: "ta-0274" }, { word: "எடுத்துப்", base: "எடு", reading: "eṭu" }, { word: "போ", ref: "ta-0118" }]
+    confusables:
+      - { id: "w1", ref: "ta-1109", kind: "word" }
+      - { id: "w2", ref: "ta-1111", kind: "word" }
+  - id: "ta-4012"
+    target: "மலையில் இரவு ரொம்ப குளிர்."
+    reading: "malaiyil iravu rompa kuḷir."
+    ipa: "malaijil iɾaʋu ɾompa kuɭiɾ"
+    phonetic: "[malaijil iɾaʋɯ ɾomba kuɭiɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "மலையில்", base: "மலை", reading: "malai" }, { word: "இரவு", ref: "ta-0154" }, { word: "ரொம்ப", ref: "ta-0166" }, { word: "குளிர்", ref: "ta-1118" }]
+    confusables:
+      - { id: "w1", ref: "ta-1131", kind: "word" }
+      - { id: "w2", ref: "ta-1119", kind: "word" }
+  - id: "ta-4013"
+    target: "மழையில் நனையாதே."
+    reading: "maḻaiyil naṉaiyātē."
+    ipa: "maɻaijil nanaijaːt̪eː"
+    phonetic: "[maɻaijil n̪anaijaːd̪eː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "மழையில்", base: "மழை", reading: "maḻai" }, { word: "நனையாதே", base: "நனை", reading: "naṉai" }]
+    confusables:
+      - { id: "w1", ref: "ta-0272", kind: "word" }
+      - { id: "w2", ref: "ta-0274", kind: "word" }
+  - id: "ta-4014"
+    target: "இங்கே காலையில் பனி, மாலையில் வெயில்."
+    reading: "iṅkē kālaiyil paṉi, mālaiyil veyil."
+    ipa: "iŋkeː kaːlaijil pani maːlaijil ʋejil"
+    phonetic: "[iŋɡeː kaːlaijil pani maːlaijil ʋejil]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "பனி", ref: "ta-1117" }, { word: "மாலையில்", base: "மாலை", reading: "mālai" }, { word: "வெயில்", ref: "ta-1110" }]
+    confusables:
+      - { id: "w1", ref: "ta-1116", kind: "word" }
+      - { id: "w2", ref: "ta-1128", kind: "word" }
+  - id: "ta-4015"
+    target: "கோடையில் புழுக்கம், குளிர்காலத்தில் குளிர்."
+    reading: "kōṭaiyil puḻukkam, kuḷirkālattil kuḷir."
+    ipa: "koːʈaijil puɻukkam kuɭiɾkaːlat̪t̪il kuɭiɾ"
+    phonetic: "[koːɖaijil puɻukkam kuɭiɾkaːlat̪t̪il kuɭiɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "கோடையில்", base: "கோடை", reading: "kōṭai" }, { word: "புழுக்கம்", ref: "ta-1129" }, { word: "குளிர்காலத்தில்", base: "குளிர்காலம்", reading: "kuḷirkālam" }, { word: "குளிர்", ref: "ta-1118" }]
+    confusables:
+      - { id: "w1", ref: "ta-1126", kind: "word" }
+      - { id: "w2", ref: "ta-1127", kind: "word" }
+  - id: "ta-4016"
+    target: "நேற்று இரவு பெரிய இடி இடித்தது."
+    reading: "nēṟṟu iravu periya iṭi iṭittatu."
+    ipa: "neːrru iɾaʋu peɾija iʈi iʈit̪t̪at̪u"
+    phonetic: "[n̪eːttrɯ iɾaʋɯ peɾija iɖi iɖit̪t̪ad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நேற்று", ref: "ta-0134" }, { word: "இரவு", ref: "ta-0154" }, { word: "பெரிய", ref: "ta-0008" }, { word: "இடி", ref: "ta-1113" }, { word: "இடித்தது", base: "இடி", reading: "iṭi" }]
+    confusables:
+      - { id: "w1", ref: "ta-1114", kind: "word" }
+      - { id: "w2", ref: "ta-1109", kind: "word" }

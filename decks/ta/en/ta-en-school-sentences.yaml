@@ -1,0 +1,70 @@
+schema: 1
+id: "ta-en-school-sentences"
+kind: "layer"
+core: "ta-school-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School in sentences"
+description: "Sentences about school: going to class, lessons, books, exams, homework and holidays. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4508":
+    native: "I go to school."
+    bases:
+      "பள்ளிக்குப்": "to school; from பள்ளி (paḷḷi), school"
+      "போகிறேன்": "am going; from போ (pō), to go"
+    confusables:
+      w1: { why: "கல்லூரி (kallūri), college, is a different word." }
+      w2: { why: "நூலகம் (nūlakam), library, is a different word." }
+  "ta-4509":
+    native: "There is no exam today."
+    confusables:
+      w1: { why: "விடுமுறை (viṭumuṟai), holiday; leave, is a different word." }
+      w2: { why: "வீட்டுப்பாடம் (vīṭṭuppāṭam), homework, is a different word." }
+  "ta-4510":
+    native: "The teacher teaches the lesson."
+    bases:
+      "சொல்லிக்கொடுக்கிறார்": "is teaching; from சொல்லிக்கொடு (collikkoṭu), to teach"
+    confusables:
+      w1: { why: "மாணவன் (māṇavaṉ), student (boy), is a different word." }
+      w2: { why: "மாணவி (māṇavi), student (girl), is a different word." }
+  "ta-4511":
+    native: "I am reading a book."
+    bases:
+      "படிக்கிறேன்": "am studying; from படி (paṭi), to study"
+    confusables:
+      w1: { why: "நோட்டு (nōṭṭu), notebook, is a different word." }
+      w2: { why: "கதை (katai), story, is a different word." }
+  "ta-4512":
+    native: "I understand."
+    bases:
+      "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+      "புரிகிறது": "is understood; from புரி (puri), to understand"
+    confusables:
+      w1: { why: "மற (maṟa), to forget, is a different word." }
+      w2: { why: "நினை (niṉai), to think; to remember, is a different word." }
+  "ta-4513":
+    native: "Ask a question."
+    confusables:
+      w1: { why: "பதில் (patil), answer, is a different word." }
+      w2: { why: "கவிதை (kavitai), poem, is a different word." }
+  "ta-4514":
+    native: "Do the homework."
+    confusables:
+      w1: { why: "வகுப்பு (vakuppu), class, is a different word." }
+      w2: { why: "பயிற்சி (payiṟci), practice; exercise, is a different word." }
+  "ta-4515":
+    native: "Tomorrow is a holiday."
+    confusables:
+      w1: { why: "தேர்வு (tērvu), exam; test, is a different word." }
+      w2: { why: "இடைவேளை (iṭaivēḷai), break; interval, is a different word." }
+  "ta-4516":
+    native: "She is a good student."
+    confusables:
+      w1: { why: "ஆசிரியை (āciriyai), teacher (woman), is a different word." }
+      w2: { why: "மாணவன் (māṇavaṉ), student (boy), is a different word." }
+  "ta-4517":
+    native: "What is the answer?"
+    confusables:
+      w1: { why: "கேள்வி (kēḷvi), question, is a different word." }
+      w2: { why: "தவறு (tavaṟu), mistake; wrong, is a different word." }

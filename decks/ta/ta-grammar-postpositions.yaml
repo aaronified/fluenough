@@ -1,0 +1,46 @@
+schema: 1
+id: "ta-grammar-postpositions"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ta-0430"
+    target: "வரை"
+    reading: "varai"
+    ipa: "ʋaɾai"
+    phonetic: "[ʋaɾai]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாளை வரை இங்கே இருக்கிறேன்."
+        reading: "nāḷai varai iṅkē irukkiṟēṉ."
+        ipa: "naːɭai ʋaɾai iŋkeː iɾukkireːn"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "வரை", base: "வரை", reading: "varai" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }]
+      - target: "பத்து மணி வரை வேலை."
+        reading: "pattu maṇi varai vēlai."
+        ipa: "pat̪t̪u maɳi ʋaɾai ʋeːlai"
+        bases: [{ word: "பத்து", ref: "ta-0096" }, { word: "மணி", ref: "ta-0156" }, { word: "வரை", base: "வரை", reading: "varai" }, { word: "வேலை", ref: "ta-0192" }]
+  - id: "ta-0431"
+    target: "பற்றி"
+    reading: "paṟṟi"
+    ipa: "parri"
+    phonetic: "[pattri]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் தமிழைப் பற்றிப் பேசுகிறார்."
+        reading: "avar tamiḻaip paṟṟip pēcukiṟār."
+        ipa: "aʋaɾ t̪amiɻaip parrip peːsukiraːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "தமிழைப்", base: "தமிழ்", reading: "tamiḻ" }, { word: "பற்றிப்", base: "பற்றி", reading: "paṟṟi" }, { word: "பேசுகிறார்", base: "பேசு", reading: "pēcu" }]
+      - target: "இதைப் பற்றிச் சொல்லுங்கள்."
+        reading: "itaip paṟṟic colluṅkaḷ."
+        ipa: "it̪aip parris solluŋkaɭ"
+        bases: [{ word: "இதைப்", base: "இது", reading: "itu" }, { word: "பற்றிச்", base: "பற்றி", reading: "paṟṟi" }, { word: "சொல்லுங்கள்", base: "சொல்", reading: "col" }]

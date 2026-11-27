@@ -1,0 +1,163 @@
+schema: 1
+id: "ml-grammar-conjunctions"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ml-0739"
+    target: "ഉം"
+    reading: "uṁ"
+    ipa: "um"
+    phonetic: "[um]"
+    phonetic_source: "rules"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "അമ്മയും അച്ഛനും ഇവിടെ ഉണ്ട്."
+        reading: "ammayuṁ acchanuṁ iviṭe uṇṭ."
+        ipa: "əmməjum ətʃtʃənum iʋiʈe uɳʈ"
+        bases: [{ word: "അമ്മയും", ref: "ml-0071" }, { word: "അച്ഛനും", ref: "ml-0070" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "ചായയും കാപ്പിയും വേണം."
+        reading: "cāyayuṁ kāppiyuṁ vēṇaṁ."
+        ipa: "tʃaːjəjum kaːppijum ʋeːɳam"
+        bases: [{ word: "ചായയും", ref: "ml-0270" }, { word: "കാപ്പിയും", ref: "ml-0271" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0740"
+    target: "പക്ഷേ"
+    reading: "pakṣē"
+    ipa: "pəkʂeː"
+    phonetic: "[pɐkʂeː]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ വരും, പക്ഷേ എനിക്ക് സമയം ഇല്ല."
+        reading: "ñāṉ varuṁ, pakṣē enikk samayaṁ illa."
+        ipa: "ɲaːn ʋəɾum pəkʂeː enikk səməjam illa"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "വരും", base: "വരിക", reading: "varika" }, { word: "പക്ഷേ", base: "പക്ഷേ", reading: "pakṣē" }, { word: "എനിക്ക്", ref: "ml-0107" }, { word: "സമയം", ref: "ml-0137" }, { word: "ഇല്ല", ref: "ml-0002" }]
+      - target: "വീട് വലുതാണ്, പക്ഷേ പഴയതാണ്."
+        reading: "vīṭ valutāṇ, pakṣē paḻayatāṇ."
+        ipa: "ʋiːʈ ʋəlut̪aːɳ pəkʂeː pəɻəjət̪aːɳ"
+        bases: [{ word: "വീട്", ref: "ml-0009" }, { word: "വലുതാണ്", ref: "ml-0008" }, { word: "പക്ഷേ", base: "പക്ഷേ", reading: "pakṣē" }, { word: "പഴയതാണ്", ref: "ml-0478" }]
+  - id: "ml-0741"
+    target: "അല്ലെങ്കിൽ"
+    reading: "alleṅkil"
+    ipa: "əlleŋkil"
+    phonetic: "[ɐlleŋɡil]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചായ അല്ലെങ്കിൽ കാപ്പി വേണം."
+        reading: "cāya alleṅkil kāppi vēṇaṁ."
+        ipa: "tʃaːja əlleŋkil kaːppi ʋeːɳam"
+        bases: [{ word: "ചായ", ref: "ml-0270" }, { word: "അല്ലെങ്കിൽ", base: "അല്ലെങ്കിൽ", reading: "alleṅkil" }, { word: "കാപ്പി", ref: "ml-0271" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ഇന്ന് അല്ലെങ്കിൽ നാളെ വരാം."
+        reading: "inn alleṅkil nāḷe varāṁ."
+        ipa: "inn əlleŋkil naːɭe ʋəɾaːm"
+        bases: [{ word: "ഇന്ന്", ref: "ml-0127" }, { word: "അല്ലെങ്കിൽ", base: "അല്ലെങ്കിൽ", reading: "alleṅkil" }, { word: "നാളെ", ref: "ml-0128" }, { word: "വരാം", base: "വരിക", reading: "varika" }]
+  - id: "ml-0742"
+    target: "കാരണം"
+    reading: "kāraṇaṁ"
+    ipa: "kaːɾəɳam"
+    phonetic: "[kaːɾɐɳɐm]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ വരുന്നില്ല, കാരണം എനിക്ക് പനി ഉണ്ട്."
+        reading: "ñāṉ varunnilla, kāraṇaṁ enikk pani uṇṭ."
+        ipa: "ɲaːn ʋəɾunnilla kaːɾəɳam enikk pəni uɳʈ"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "വരുന്നില്ല", base: "വരിക", reading: "varika" }, { word: "കാരണം", base: "കാരണം", reading: "kāraṇaṁ" }, { word: "എനിക്ക്", ref: "ml-0107" }, { word: "പനി", ref: "ml-0331" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "കാരണം എനിക്ക് വിശക്കുന്നു."
+        reading: "kāraṇaṁ enikk viśakkunnu."
+        ipa: "kaːɾəɳam enikk ʋiʃəkkunnu"
+        bases: [{ word: "കാരണം", base: "കാരണം", reading: "kāraṇaṁ" }, { word: "എനിക്ക്", ref: "ml-0107" }, { word: "വിശക്കുന്നു", base: "വിശക്കുക", reading: "viśakkuka" }]
+  - id: "ml-0743"
+    target: "എങ്കിൽ"
+    reading: "eṅkil"
+    ipa: "eŋkil"
+    phonetic: "[eŋɡil]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നിങ്ങൾ വരുമെങ്കിൽ ഞാനും വരാം."
+        reading: "niṅṅaḷ varumeṅkil ñānuṁ varāṁ."
+        ipa: "niŋŋaɭ ʋəɾumeŋkil ɲaːnum ʋəɾaːm"
+        bases: [{ word: "നിങ്ങൾ", ref: "ml-0004" }, { word: "വരുമെങ്കിൽ", base: "വരിക", reading: "varika" }, { word: "ഞാനും", ref: "ml-0003" }, { word: "വരാം", base: "വരിക", reading: "varika" }]
+      - target: "ശരി, എങ്കിൽ പോകാം."
+        reading: "śari, eṅkil pōkāṁ."
+        ipa: "ʃəɾi eŋkil poːkaːm"
+        bases: [{ word: "ശരി", ref: "ml-0023" }, { word: "എങ്കിൽ", base: "എങ്കിൽ", reading: "eṅkil" }, { word: "പോകാം", base: "പോകുക", reading: "pōkuka" }]
+  - id: "ml-0744"
+    target: "എന്നാൽ"
+    reading: "ennāl"
+    ipa: "ennaːl"
+    phonetic: "[ennaːl]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്നാൽ ശരി, നാളെ കാണാം."
+        reading: "ennāl śari, nāḷe kāṇāṁ."
+        ipa: "ennaːl ʃəɾi naːɭe kaːɳaːm"
+        bases: [{ word: "എന്നാൽ", base: "എന്നാൽ", reading: "ennāl" }, { word: "ശരി", ref: "ml-0023" }, { word: "നാളെ", ref: "ml-0128" }, { word: "കാണാം", base: "കാണുക", reading: "kāṇuka" }]
+      - target: "എന്നാൽ ഞാൻ പോകട്ടെ."
+        reading: "ennāl ñāṉ pōkaṭṭe."
+        ipa: "ennaːl ɲaːn poːkəʈʈe"
+        bases: [{ word: "എന്നാൽ", base: "എന്നാൽ", reading: "ennāl" }, { word: "ഞാൻ", ref: "ml-0003" }, { word: "പോകട്ടെ", base: "പോകുക", reading: "pōkuka" }]
+  - id: "ml-0745"
+    target: "കൂടാതെ"
+    reading: "kūṭāte"
+    ipa: "kuːʈaːt̪e"
+    phonetic: "[kuːɖaːd̪e]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചായ വേണം. കൂടാതെ ഒരു പഴവും വേണം."
+        reading: "cāya vēṇaṁ. kūṭāte oru paḻavuṁ vēṇaṁ."
+        ipa: "tʃaːja ʋeːɳam kuːʈaːt̪e oɾu pəɻəʋum ʋeːɳam"
+        bases: [{ word: "ചായ", ref: "ml-0270" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }, { word: "കൂടാതെ", base: "കൂടാതെ", reading: "kūṭāte" }, { word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "പഴവും", ref: "ml-0225" }]
+      - target: "അരി വേണം. കൂടാതെ പാലും വേണം."
+        reading: "ari vēṇaṁ. kūṭāte pāluṁ vēṇaṁ."
+        ipa: "əɾi ʋeːɳam kuːʈaːt̪e paːlum ʋeːɳam"
+        bases: [{ word: "അരി", ref: "ml-0217" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }, { word: "കൂടാതെ", base: "കൂടാതെ", reading: "kūṭāte" }, { word: "പാലും", ref: "ml-0220" }]
+  - id: "ml-0746"
+    target: "എങ്കിലും"
+    reading: "eṅkiluṁ"
+    ipa: "eŋkilum"
+    phonetic: "[eŋɡilum]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മഴ പെയ്യുന്നു. എങ്കിലും ഞാൻ പോകും."
+        reading: "maḻa peyyunnu. eṅkiluṁ ñāṉ pōkuṁ."
+        ipa: "məɻa pejjunnu eŋkilum ɲaːn poːkum"
+        bases: [{ word: "മഴ", base: "മഴ", reading: "maḻa" }, { word: "പെയ്യുന്നു", base: "പെയ്യുക", reading: "peyyuka" }, { word: "എങ്കിലും", base: "എങ്കിലും", reading: "eṅkiluṁ" }, { word: "ഞാൻ", ref: "ml-0003" }, { word: "പോകും", base: "പോകുക", reading: "pōkuka" }]
+      - target: "വില കൂടുതലാണ്. എങ്കിലും ഇത് നല്ലതാണ്."
+        reading: "vila kūṭutalāṇ. eṅkiluṁ it nallatāṇ."
+        ipa: "ʋila kuːʈut̪əlaːɳ eŋkilum it̪ nəllət̪aːɳ"
+        bases: [{ word: "വില", ref: "ml-0236" }, { word: "കൂടുതലാണ്", ref: "ml-0455" }, { word: "എങ്കിലും", base: "എങ്കിലും", reading: "eṅkiluṁ" }, { word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "നല്ലതാണ്", ref: "ml-0006" }]
+  - id: "ml-0747"
+    kind: "set"
+    members: [{ ref: "ml-0739" }, { ref: "ml-0740" }, { ref: "ml-0741" }, { ref: "ml-0742" }, { ref: "ml-0532" }, { ref: "ml-0743" }, { ref: "ml-0744" }, { ref: "ml-0745" }, { ref: "ml-0746" }]

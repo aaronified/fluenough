@@ -1,0 +1,96 @@
+schema: 1
+id: "ta-help-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4500"
+    target: "எனக்கு உதவி வேண்டும்."
+    reading: "eṉakku utavi vēṇṭum."
+    ipa: "enakku ut̪aʋi ʋeːɳʈum"
+    phonetic: "[enakkɯ ud̪aʋi ʋeːɳɖum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உதவி", ref: "ta-1800" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-0411", kind: "word" }
+      - { id: "w2", ref: "ta-0043", kind: "word" }
+  - id: "ta-4501"
+    target: "உதவுங்கள்!"
+    reading: "utavuṅkaḷ!"
+    ipa: "ut̪aʋuŋkaɭ"
+    phonetic: "[ud̪aʋuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "உதவுங்கள்", base: "உதவு", reading: "utavu" }]
+    confusables:
+      - { id: "w1", ref: "ta-0013", kind: "word" }
+      - { id: "w2", ref: "ta-0014", kind: "word" }
+  - id: "ta-4502"
+    target: "என்ன பிரச்சினை?"
+    reading: "eṉṉa piracciṉai?"
+    ipa: "enna piɾatʃtʃinai"
+    phonetic: "[enna piɾatʃtʃinai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "என்ன", ref: "ta-0042" }, { word: "பிரச்சினை", ref: "ta-1804" }]
+    confusables:
+      - { id: "w1", ref: "ta-0041", kind: "word" }
+      - { id: "w2", ref: "ta-0043", kind: "word" }
+  - id: "ta-4503"
+    target: "ஆபத்து! உதவுங்கள்!"
+    reading: "āpattu! utavuṅkaḷ!"
+    ipa: "aːpat̪t̪u ut̪aʋuŋkaɭ"
+    phonetic: "[aːbat̪t̪ɯ ud̪aʋuŋɡaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ஆபத்து", ref: "ta-1803" }, { word: "உதவுங்கள்", base: "உதவு", reading: "utavu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1802", kind: "word" }
+      - { id: "w2", ref: "ta-0013", kind: "word" }
+  - id: "ta-4504"
+    target: "போலீஸ் எங்கே?"
+    reading: "pōlīs eṅkē?"
+    ipa: "poːliːs eŋkeː"
+    phonetic: "[poːliːs eŋɡeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "போலீஸ்", ref: "ta-1805" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-0041", kind: "word" }
+      - { id: "w2", ref: "ta-0042", kind: "word" }
+  - id: "ta-4505"
+    target: "இது அவசரம்."
+    reading: "itu avacaram."
+    ipa: "it̪u aʋasaɾam"
+    phonetic: "[id̪ɯ aʋasaɾam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "அவசரம்", ref: "ta-1802" }]
+    confusables:
+      - { id: "w1", ref: "ta-1804", kind: "word" }
+      - { id: "w2", ref: "ta-0023", kind: "word" }
+  - id: "ta-4506"
+    target: "பிரச்சினை இல்லை."
+    reading: "piracciṉai illai."
+    ipa: "piɾatʃtʃinai illai"
+    phonetic: "[piɾatʃtʃinai illai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "பிரச்சினை", ref: "ta-1804" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-0025", kind: "word" }
+      - { id: "w2", ref: "ta-1803", kind: "word" }
+  - id: "ta-4507"
+    target: "நான் உதவுகிறேன்."
+    reading: "nāṉ utavukiṟēṉ."
+    ipa: "naːn ut̪aʋukireːn"
+    phonetic: "[n̪aːn ud̪aʋuɡireːn]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "உதவுகிறேன்", base: "உதவு", reading: "utavu" }]
+    confusables:
+      - { id: "w1", ref: "ta-0004", kind: "word" }
+      - { id: "w2", ref: "ta-0063", kind: "word" }

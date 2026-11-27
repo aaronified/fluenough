@@ -1,0 +1,20 @@
+schema: 1
+id: "ta-en-grammar-articles"
+kind: "layer"
+core: "ta-grammar-articles"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "A and the: ஒரு (oru)"
+description: "Tamil has no the and uses ஒரு (oru) for a. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "No articles"
+  slot_name: "form"
+  entries:
+    "veedu": "house"
+    "kaar": "car"
+    "pena": "pen"
+    "naay": "dog"
+    "arai": "room"
+    "aasiriyar": "teacher"
+  notes: "Tamil has no word for the. A noun on its own means the one you both know, or the thing in general: கார் (kār). ஒரு (oru), one, is used as a: ஒரு கார் (oru kār). Before a word that starts with a vowel it is ஓர் (ōr): ஓர் அறை (ōr aṟai), a room. Source: English Wikipedia, Tamil grammar; English Wiktionary (the form used before a vowel)."

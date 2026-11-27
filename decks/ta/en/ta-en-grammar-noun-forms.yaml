@@ -1,0 +1,49 @@
+schema: 1
+id: "ta-en-grammar-noun-forms"
+kind: "layer"
+core: "ta-grammar-noun-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: plural, to, in, from, with, of"
+description: "Every noun the course teaches, in its plural and with the endings for the thing acted on, to, in, at a person, from, with and of. The forms were checked against the declension tables of English Wiktionary and the Noun section of the English Wikipedia article Tamil grammar. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "plural": "{meaning}, more than one"
+    "oblique": "{meaning}, the stem before an ending"
+    "ai": "{meaning}, as the thing acted on"
+    "ukku": "to {meaning}"
+    "il": "in {meaning}"
+    "itam": "at {meaning} (a person or animal)"
+    "iliruntu": "from {meaning}"
+    "otu": "with {meaning}"
+    "utaiya": "of {meaning}"
+rules:
+  "ta-rule-plural":
+    name: "-கள் (-kaḷ): more than one"
+    explanation: "{1} makes the plural and goes straight on the noun: {2}, house, becomes {3}. A word in -ஆ (-ā) doubles the k, as {4}, mother, becomes {5}. A word in -அம் (-am) turns it into -ங்கள் (-ṅkaḷ): {6}, city, becomes {7}. A few words change more: {8}, stone, becomes {9}, and {10}, male friend, becomes {11}. Words for things you do not count, such as water, have no plural cell. Source: English Wiktionary's declension tables of the nouns quoted."
+  "ta-rule-oblique":
+    name: "Oblique stem: வீடு (vīṭu) to வீட்டு (vīṭṭu)"
+    explanation: "Before an ending, a word in -டு (-ṭu) or -று (-ṟu) doubles its consonant: {1} becomes {2}, so {3}, to the house, has {2} inside it. A word in -அம் (-am) changes to -அத்து (-attu): {4} becomes {5}. The cell shows the stem only for words that change; other words use their ordinary form. Source: English Wikipedia, Tamil grammar, Oblique stems."
+  "ta-rule-ai":
+    name: "-ஐ (-ai): the thing acted on"
+    explanation: "{1} marks what the verb acts on, a thing or a person. After a vowel it takes a glide: -வை (-vai) after ஆ (ā) and -யை (-yai) after இ (i) or ஐ (ai): {2}, mother, becomes {3}, and {4}, school, becomes {5}. A word in -டு (-ṭu) doubles first: {6} becomes {7}. Source: English Wikipedia, Tamil grammar; English Wiktionary's declension tables."
+  "ta-rule-ukku":
+    name: "-உக்கு (-ukku), -க்கு (-kku): to, for"
+    explanation: "{1} follows a consonant and {2} follows இ (i) or ஐ (ai): {3}, male friend, becomes {4}, and {5}, school, becomes {6}. A word in -டு (-ṭu) takes the oblique stem: {7} becomes {8}. After ஆ (ā) the ending is -வுக்கு (-vukku): {9} becomes {10}. It means to a person or place, or for someone. Source: English Wikipedia, Tamil grammar; English Wiktionary's declension tables."
+  "ta-rule-il":
+    name: "-இல் (-il): in, at, on"
+    explanation: "{1} is for things and places: {2}, house, becomes {3}, and {4}, city, becomes {5}. After a vowel it takes a glide: {6}, school, becomes {7}. A person is not said with -இல் (-il): the cell is empty, and -இடம் (-iṭam) is used. Source: English Wikipedia, Tamil grammar, Noun."
+  "ta-rule-itam":
+    name: "-இடம் (-iṭam): at, with, from a person"
+    explanation: "{1} is for people and animals, the place of the person: {2}, mother, becomes {3}, and {4}, male friend, becomes {5}. A cell for a thing is empty. Source: English Wikipedia, Tamil grammar, Noun (the locative of animate nouns)."
+  "ta-rule-iliruntu":
+    name: "-இலிருந்து (-iliruntu): from"
+    explanation: "For things, {1} follows the -இல் (-il) form: {2}, from the house, is {3} plus {1}. For people, {4} follows the -இடம் (-iṭam) form: {5}, from mother, comes from {6}. Source: English Wikipedia, Tamil grammar, Noun (the ablative)."
+  "ta-rule-otu":
+    name: "-ஓடு (-ōṭu): with"
+    explanation: "{1} means together with: {2}, mother, becomes {3}, and {4}, male friend, becomes {5}. The form -உடன் (-uṭaṉ) is used mostly in writing. Cells for words of time and direction are empty. Source: English Wikipedia, Tamil grammar, Noun (the sociative)."
+  "ta-rule-utaiya":
+    name: "-உடைய (-uṭaiya): of, belonging to"
+    explanation: "{1} comes after the owner: {2}, mother, becomes {3}, and {4}, house, becomes {5}. Another form, -இன் (-iṉ), is also used. Source: English Wikipedia, Tamil grammar, Noun (the genitive); English Wiktionary's declension tables."

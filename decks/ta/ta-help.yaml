@@ -1,0 +1,129 @@
+schema: 1
+id: "ta-help"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1800"
+    target: "உதவி"
+    reading: "utavi"
+    ipa: "ut̪aʋi"
+    phonetic: "[ud̪aʋi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு உதவி வேண்டும்."
+        reading: "eṉakku utavi vēṇṭum."
+        ipa: "enakku ut̪aʋi ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உதவி", base: "உதவி", reading: "utavi" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "உதவி எங்கே?"
+        reading: "utavi eṅkē?"
+        ipa: "ut̪aʋi eŋkeː"
+        bases: [{ word: "உதவி", base: "உதவி", reading: "utavi" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1801"
+    target: "உதவு"
+    reading: "utavu"
+    ipa: "ut̪aʋu"
+    phonetic: "[ud̪aʋɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "நான் உதவுகிறேன்."
+        reading: "nāṉ utavukiṟēṉ."
+        ipa: "naːn ut̪aʋukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "உதவுகிறேன்", base: "உதவு", reading: "utavu" }]
+      - target: "உதவுங்கள்."
+        reading: "utavuṅkaḷ."
+        ipa: "ut̪aʋuŋkaɭ"
+        bases: [{ word: "உதவுங்கள்", base: "உதவு", reading: "utavu" }]
+  - id: "ta-1802"
+    target: "அவசரம்"
+    reading: "avacaram"
+    ipa: "aʋasaɾam"
+    phonetic: "[aʋasaɾam]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது அவசரம்."
+        reading: "itu avacaram."
+        ipa: "it̪u aʋasaɾam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "அவசரம்", base: "அவசரம்", reading: "avacaram" }]
+      - target: "அவசரம் இல்லை."
+        reading: "avacaram illai."
+        ipa: "aʋasaɾam illai"
+        bases: [{ word: "அவசரம்", base: "அவசரம்", reading: "avacaram" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1803"
+    target: "ஆபத்து"
+    reading: "āpattu"
+    ipa: "aːpat̪t̪u"
+    phonetic: "[aːbat̪t̪ɯ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே ஆபத்து."
+        reading: "iṅkē āpattu."
+        ipa: "iŋkeː aːpat̪t̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "ஆபத்து", base: "ஆபத்து", reading: "āpattu" }]
+      - target: "ஆபத்து இல்லை."
+        reading: "āpattu illai."
+        ipa: "aːpat̪t̪u illai"
+        bases: [{ word: "ஆபத்து", base: "ஆபத்து", reading: "āpattu" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1804"
+    target: "பிரச்சினை"
+    reading: "piracciṉai"
+    ipa: "piɾatʃtʃinai"
+    phonetic: "[piɾatʃtʃinai]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என்ன பிரச்சினை?"
+        reading: "eṉṉa piracciṉai?"
+        ipa: "enna piɾatʃtʃinai"
+        bases: [{ word: "என்ன", ref: "ta-0042" }, { word: "பிரச்சினை", base: "பிரச்சினை", reading: "piracciṉai" }]
+      - target: "பிரச்சினை இல்லை."
+        reading: "piracciṉai illai."
+        ipa: "piɾatʃtʃinai illai"
+        bases: [{ word: "பிரச்சினை", base: "பிரச்சினை", reading: "piracciṉai" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1805"
+    target: "போலீஸ்"
+    reading: "pōlīs"
+    ipa: "poːliːs"
+    phonetic: "[poːliːs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "போலீஸ் எங்கே?"
+        reading: "pōlīs eṅkē?"
+        ipa: "poːliːs eŋkeː"
+        bases: [{ word: "போலீஸ்", base: "போலீஸ்", reading: "pōlīs" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "போலீஸ் வேண்டும்."
+        reading: "pōlīs vēṇṭum."
+        ipa: "poːliːs ʋeːɳʈum"
+        bases: [{ word: "போலீஸ்", base: "போலீஸ்", reading: "pōlīs" }, { word: "வேண்டும்", ref: "ta-0409" }]

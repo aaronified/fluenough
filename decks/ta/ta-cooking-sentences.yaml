@@ -1,0 +1,122 @@
+schema: 1
+id: "ta-cooking-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4062"
+    target: "அம்மா வெங்காயம் நறுக்குகிறார்."
+    reading: "ammā veṅkāyam naṟukkukiṟār."
+    ipa: "ammaː ʋeŋkaːjam narukkukiraːɾ"
+    phonetic: "[ammaː ʋeŋɡaːjam n̪arukkuɡiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "வெங்காயம்", ref: "ta-1322" }, { word: "நறுக்குகிறார்", base: "நறுக்கு", reading: "naṟukku" }]
+    confusables:
+      - { id: "w1", ref: "ta-1323", kind: "word" }
+      - { id: "w2", ref: "ta-1324", kind: "word" }
+  - id: "ta-4063"
+    target: "எண்ணெயில் கடுகு போடு."
+    reading: "eṇṇeyil kaṭuku pōṭu."
+    ipa: "eɳɳejil kaʈuku poːʈu"
+    phonetic: "[eɳɳejil kaɖuɡɯ poːɖɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எண்ணெயில்", base: "எண்ணெய்", reading: "eṇṇey" }, { word: "கடுகு", ref: "ta-1326" }, { word: "போடு", ref: "ta-0452" }]
+    confusables:
+      - { id: "w1", ref: "ta-1340", kind: "word" }
+      - { id: "w2", ref: "ta-1339", kind: "word" }
+  - id: "ta-4064"
+    target: "வெங்காயம் வதக்கு, பிறகு தக்காளி போடு."
+    reading: "veṅkāyam vatakku, piṟaku takkāḷi pōṭu."
+    ipa: "ʋeŋkaːjam ʋat̪akku piraku t̪akkaːɭi poːʈu"
+    phonetic: "[ʋeŋɡaːjam ʋad̪akkɯ piraɡɯ t̪akkaːɭi poːɖɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "வெங்காயம்", ref: "ta-1322" }, { word: "வதக்கு", ref: "ta-1347" }, { word: "பிறகு", base: "பிறகு", reading: "piṟaku" }, { word: "தக்காளி", ref: "ta-1323" }, { word: "போடு", ref: "ta-0452" }]
+    confusables:
+      - { id: "w1", ref: "ta-1325", kind: "word" }
+      - { id: "w2", ref: "ta-1328", kind: "word" }
+  - id: "ta-4065"
+    target: "குக்கரில் சாதம் வேகிறது."
+    reading: "kukkaril cātam vēkiṟatu."
+    ipa: "kukkaɾil saːt̪am ʋeːkirat̪u"
+    phonetic: "[kukkaɾil saːd̪am ʋeːɡirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "குக்கரில்", base: "குக்கர்", reading: "kukkar" }, { word: "சாதம்", ref: "ta-0247" }, { word: "வேகிறது", base: "வேகு", reading: "vēku" }]
+    confusables:
+      - { id: "w1", ref: "ta-1343", kind: "word" }
+      - { id: "w2", ref: "ta-1344", kind: "word" }
+  - id: "ta-4066"
+    target: "தண்ணீர் கொதிக்கிறது, பால் எங்கே?"
+    reading: "taṇṇīr kotikkiṟatu, pāl eṅkē?"
+    ipa: "t̪aɳɳiːɾ kot̪ikkirat̪u paːl eŋkeː"
+    phonetic: "[t̪aɳɳiːɾ kod̪ikkirad̪ɯ paːl eŋɡeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "கொதிக்கிறது", base: "கொதி", reading: "koti" }, { word: "பால்", ref: "ta-0036" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-1335", kind: "word" }
+      - { id: "w2", ref: "ta-1336", kind: "word" }
+  - id: "ta-4067"
+    target: "பாட்டி தோசை சுடுகிறார்."
+    reading: "pāṭṭi tōcai cuṭukiṟār."
+    ipa: "paːʈʈi t̪oːsai suʈukiraːɾ"
+    phonetic: "[paːʈʈi t̪oːsai suɖuɡiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "பாட்டி", ref: "ta-0082" }, { word: "தோசை", ref: "ta-0248" }, { word: "சுடுகிறார்", base: "சுடு", reading: "cuṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1355", kind: "word" }
+      - { id: "w2", ref: "ta-1352", kind: "word" }
+  - id: "ta-4068"
+    target: "சாம்பாரில் புளி கொஞ்சம் போடு."
+    reading: "cāmpāril puḷi koñcam pōṭu."
+    ipa: "saːmpaːɾil puɭi koɲtʃam poːʈu"
+    phonetic: "[saːmbaːɾil puɭi koɲdʒam poːɖɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "சாம்பாரில்", base: "சாம்பார்", reading: "cāmpār" }, { word: "புளி", ref: "ta-1329" }, { word: "கொஞ்சம்", ref: "ta-0158" }, { word: "போடு", ref: "ta-0452" }]
+    confusables:
+      - { id: "w1", ref: "ta-1337", kind: "word" }
+      - { id: "w2", ref: "ta-0219", kind: "word" }
+  - id: "ta-4069"
+    target: "சாம்பார் ரொம்ப காரமாக இருக்கிறது."
+    reading: "cāmpār rompa kāramāka irukkiṟatu."
+    ipa: "saːmpaːɾ ɾompa kaːɾamaːka iɾukkirat̪u"
+    phonetic: "[saːmbaːɾ ɾomba kaːɾamaːɡa iɾukkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "சாம்பார்", ref: "ta-0250" }, { word: "ரொம்ப", ref: "ta-0166" }, { word: "காரமாக", base: "காரமான", reading: "kāramāṉa" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-1316", kind: "word" }
+      - { id: "w2", ref: "ta-1359", kind: "word" }
+  - id: "ta-4070"
+    target: "ருசி பார், உப்பு சரியா?"
+    reading: "ruci pār, uppu cariyā?"
+    ipa: "ɾusi paːɾ uppu saɾijaː"
+    phonetic: "[ɾusi paːɾ uppɯ saɾijaː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "ருசி", ref: "ta-1360" }, { word: "பார்", ref: "ta-0121" }, { word: "உப்பு", ref: "ta-0219" }, { word: "சரியா", base: "சரி", reading: "cari" }]
+    confusables:
+      - { id: "w1", ref: "ta-1361", kind: "word" }
+      - { id: "w2", ref: "ta-1359", kind: "word" }
+  - id: "ta-4071"
+    target: "மாவு பிசை, சின்ன துண்டு எடு."
+    reading: "māvu picai, ciṉṉa tuṇṭu eṭu."
+    ipa: "maːʋu pisai sinna t̪uɳʈu eʈu"
+    phonetic: "[maːʋɯ pisai sinna t̪uɳɖɯ eɖɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "மாவு", ref: "ta-1338" }, { word: "பிசை", ref: "ta-1356" }, { word: "சின்ன", ref: "ta-0168" }, { word: "துண்டு", ref: "ta-1371" }, { word: "எடு", ref: "ta-0184" }]
+    confusables:
+      - { id: "w1", ref: "ta-1357", kind: "word" }
+      - { id: "w2", ref: "ta-1358", kind: "word" }

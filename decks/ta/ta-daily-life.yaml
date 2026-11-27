@@ -1,0 +1,226 @@
+schema: 1
+id: "ta-daily-life"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "daily-life"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1100"
+    target: "நாள்"
+    reading: "nāḷ"
+    ipa: "naːɭ"
+    phonetic: "[n̪aːɭ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று நல்ல நாள்."
+        reading: "iṉṟu nalla nāḷ."
+        ipa: "inru nalla naːɭ"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "நல்ல", ref: "ta-0169" }, { word: "நாள்", base: "நாள்", reading: "nāḷ" }]
+      - target: "ஒரு நாள் போதும்."
+        reading: "oru nāḷ pōtum."
+        ipa: "oɾu naːɭ poːt̪um"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "நாள்", base: "நாள்", reading: "nāḷ" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-1101"
+    target: "குளி"
+    reading: "kuḷi"
+    ipa: "kuɭi"
+    phonetic: "[kuɭi]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் காலையில் குளிக்கிறேன்."
+        reading: "nāṉ kālaiyil kuḷikkiṟēṉ."
+        ipa: "naːn kaːlaijil kuɭikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "குளிக்கிறேன்", base: "குளி", reading: "kuḷi" }]
+      - target: "நாங்கள் மாலையில் குளிக்கிறோம்."
+        reading: "nāṅkaḷ mālaiyil kuḷikkiṟōm."
+        ipa: "naːŋkaɭ maːlaijil kuɭikkiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "மாலையில்", base: "மாலை", reading: "mālai" }, { word: "குளிக்கிறோம்", base: "குளி", reading: "kuḷi" }]
+  - id: "ta-1102"
+    target: "துலக்கு"
+    reading: "tulakku"
+    ipa: "t̪ulakku"
+    phonetic: "[t̪ulakkɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் பல் துலக்குகிறேன்."
+        reading: "nāṉ pal tulakkukiṟēṉ."
+        ipa: "naːn pal t̪ulakkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பல்", ref: "ta-0035" }, { word: "துலக்குகிறேன்", base: "துலக்கு", reading: "tulakku" }]
+      - target: "பல் துலக்கு."
+        reading: "pal tulakku."
+        ipa: "pal t̪ulakku"
+        bases: [{ word: "பல்", ref: "ta-0035" }, { word: "துலக்கு", base: "துலக்கு", reading: "tulakku" }]
+  - id: "ta-1103"
+    target: "நட"
+    reading: "naṭa"
+    ipa: "naʈa"
+    phonetic: "[n̪aɖa]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் தினமும் நடக்கிறேன்."
+        reading: "nāṉ tiṉamum naṭakkiṟēṉ."
+        ipa: "naːn t̪inamum naʈakkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தினமும்", ref: "ta-1106" }, { word: "நடக்கிறேன்", base: "நட", reading: "naṭa" }]
+      - target: "நான் பள்ளிக்கு நடந்து போகிறேன்."
+        reading: "nāṉ paḷḷikku naṭantu pōkiṟēṉ."
+        ipa: "naːn paɭɭikku naʈant̪u poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பள்ளிக்கு", ref: "ta-0415" }, { word: "நடந்து", base: "நட", reading: "naṭa" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-1104"
+    target: "திரும்பு"
+    reading: "tirumpu"
+    ipa: "t̪iɾumpu"
+    phonetic: "[t̪iɾumbɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் மாலையில் வீட்டுக்குத் திரும்புகிறேன்."
+        reading: "nāṉ mālaiyil vīṭṭukkut tirumpukiṟēṉ."
+        ipa: "naːn maːlaijil ʋiːʈʈukkut̪ t̪iɾumpukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மாலையில்", base: "மாலை", reading: "mālai" }, { word: "வீட்டுக்குத்", base: "வீடு", reading: "vīṭu" }, { word: "திரும்புகிறேன்", base: "திரும்பு", reading: "tirumpu" }]
+      - target: "அப்பா வீட்டுக்குத் திரும்புகிறார்."
+        reading: "appā vīṭṭukkut tirumpukiṟār."
+        ipa: "appaː ʋiːʈʈukkut̪ t̪iɾumpukiraːɾ"
+        bases: [{ word: "அப்பா", ref: "ta-0073" }, { word: "வீட்டுக்குத்", base: "வீடு", reading: "vīṭu" }, { word: "திரும்புகிறார்", base: "திரும்பு", reading: "tirumpu" }]
+  - id: "ta-1105"
+    target: "டிபன்"
+    reading: "ṭipaṉ"
+    ipa: "ʈipan"
+    phonetic: "[ʈiban]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காலை டிபன் தயார்."
+        reading: "kālai ṭipaṉ tayār."
+        ipa: "kaːlai ʈipan t̪ajaːɾ"
+        bases: [{ word: "காலை", ref: "ta-0152" }, { word: "டிபன்", base: "டிபன்", reading: "ṭipaṉ" }, { word: "தயார்", base: "தயார்", reading: "tayār" }]
+      - target: "நான் டிபன் சாப்பிடுகிறேன்."
+        reading: "nāṉ ṭipaṉ cāppiṭukiṟēṉ."
+        ipa: "naːn ʈipan saːppiʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "டிபன்", base: "டிபன்", reading: "ṭipaṉ" }, { word: "சாப்பிடுகிறேன்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-1106"
+    target: "தினமும்"
+    reading: "tiṉamum"
+    ipa: "t̪inamum"
+    phonetic: "[t̪inamum]"
+    phonetic_source: "rules"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் தினமும் வேலைக்குப் போகிறேன்."
+        reading: "nāṉ tiṉamum vēlaikkup pōkiṟēṉ."
+        ipa: "naːn t̪inamum ʋeːlaikkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தினமும்", base: "தினமும்", reading: "tiṉamum" }, { word: "வேலைக்குப்", base: "வேலை", reading: "vēlai" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+      - target: "தினமும் காபி குடிக்கிறேன்."
+        reading: "tiṉamum kāpi kuṭikkiṟēṉ."
+        ipa: "t̪inamum kaːpi kuʈikkireːn"
+        bases: [{ word: "தினமும்", base: "தினமும்", reading: "tiṉamum" }, { word: "காபி", ref: "ta-0245" }, { word: "குடிக்கிறேன்", base: "குடி", reading: "kuṭi" }]
+  - id: "ta-1107"
+    target: "தொடங்கு"
+    reading: "toṭaṅku"
+    ipa: "t̪oʈaŋku"
+    phonetic: "[t̪oɖaŋɡɯ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வேலை தொடங்குகிறது."
+        reading: "vēlai toṭaṅkukiṟatu."
+        ipa: "ʋeːlai t̪oʈaŋkukirat̪u"
+        bases: [{ word: "வேலை", ref: "ta-0192" }, { word: "தொடங்குகிறது", base: "தொடங்கு", reading: "toṭaṅku" }]
+      - target: "நாம் இப்போது தொடங்கலாம்."
+        reading: "nām ippōtu toṭaṅkalām."
+        ipa: "naːm ippoːt̪u t̪oʈaŋkalaːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "இப்போது", ref: "ta-0132" }, { word: "தொடங்கலாம்", base: "தொடங்கு", reading: "toṭaṅku" }]
+  - id: "ta-6452"
+    target: "காலை வணக்கம்."
+    reading: "kālai vaṇakkam."
+    ipa: "kaːlai ʋaɳakkam"
+    phonetic: "[kaːlai ʋaɳakkam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "காலை", ref: "ta-0152" }
+      - { word: "வணக்கம்", ref: "ta-0011" }
+  - id: "ta-6453"
+    target: "மாலை வணக்கம்."
+    reading: "mālai vaṇakkam."
+    ipa: "maːlai ʋaɳakkam"
+    phonetic: "[maːlai ʋaɳakkam]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "மாலை", ref: "ta-0153" }
+      - { word: "வணக்கம்", ref: "ta-0011" }
+  - id: "ta-6454"
+    target: "நீங்கள் எப்படி இருக்கிறீர்கள்?"
+    reading: "nīṅkaḷ eppaṭi irukkiṟīrkaḷ?"
+    ipa: "niːŋkaɭ eppaʈi iɾukkiriːɾkaɭ"
+    phonetic: "[n̪iːŋɡaɭ eppaɖi iɾukkiriːɾkaɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "நீங்கள்", ref: "ta-0004" }
+      - { word: "எப்படி", ref: "ta-0045" }
+      - { word: "இருக்கிறீர்கள்", base: "இரு", reading: "iru" }
+  - id: "ta-6455"
+    target: "நான் நலமாக இருக்கிறேன்."
+    reading: "nāṉ nalamāka irukkiṟēṉ."
+    ipa: "naːn nalamaːka iɾukkireːn"
+    phonetic: "[n̪aːn n̪alamaːɡa iɾukkireːn]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "நான்", ref: "ta-0003" }
+      - { word: "நலமாக", base: "நலம்", reading: "nalam" }
+      - { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }
+  - id: "ta-6456"
+    target: "உங்களைச் சந்தித்ததில் மகிழ்ச்சி."
+    reading: "uṅkaḷaic cantittatil makiḻcci."
+    ipa: "uŋkaɭais sant̪it̪t̪at̪il makiɻtʃtʃi"
+    phonetic: "[uŋɡaɭais san̪d̪it̪t̪ad̪il maɡiɻtʃtʃi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "உங்களைச்", base: "நீங்கள்", reading: "nīṅkaḷ" }
+      - { word: "சந்தித்ததில்", base: "சந்தி", reading: "canti" }
+      - { word: "மகிழ்ச்சி", base: "மகிழ்ச்சி", reading: "makiḻcci" }

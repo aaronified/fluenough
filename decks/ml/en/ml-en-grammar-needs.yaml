@@ -1,0 +1,18 @@
+schema: 1
+id: "ml-en-grammar-needs"
+kind: "layer"
+core: "ml-grammar-needs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam \"need\""
+description: "The word വേണം (vēṇaṁ, need), for saying what someone needs, with its negative and question. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+pattern:
+  name: "Needing: what is needed is the subject"
+  slot_name: "form"
+  slots:
+    "statement": "a statement"
+    "negative": "a negative"
+    "question": "a question"
+  entries:
+    "venam": "need; want"

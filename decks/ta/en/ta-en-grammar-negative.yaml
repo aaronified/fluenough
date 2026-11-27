@@ -1,0 +1,36 @@
+schema: 1
+id: "ta-en-grammar-negative"
+kind: "layer"
+core: "ta-grammar-negative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Saying no: I do not, I will not, I did not"
+description: "Every verb the course teaches, in the negative: I will not and I do not, for each person, and did not for every person, with the common spoken form before the written one. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "naan": "I (will not)"
+    "naankal": "we, not including you"
+    "naam": "we, including you"
+    "nee": "you, to a friend or child"
+    "neenkal": "you, polite or more than one"
+    "avan": "he"
+    "aval": "she"
+    "avar": "he or she, polite"
+    "atu": "it"
+    "avarkal": "they"
+    "notpast": "did not (every person)"
+rules:
+  "ta-rule-negative-first":
+    name: "-மாட்டேன் (-māṭṭēṉ), -மாட்டோம் (-māṭṭōm): I will not, we will not"
+    explanation: "To say what will not happen, or what you do not do as a habit, Tamil takes the infinitive, the verb's form that ends in -அ (-a), and adds a word that carries the person: {1} for I and {2} for we. {3}, to go, has the infinitive {4}, so I will not go is {5}. {6}, to come, has the infinitive {7}, so I will not come is {8}. Both words for we, {9} and {10}, take the same ending: {11}, {12}. One negative does for now and for later: it says I do not and I will not alike. Where a cell has two forms, the first is the common spoken form and the second the written one."
+  "ta-rule-negative-second":
+    name: "-மாட்டாய் (-māṭṭāy), -மாட்டீர்கள் (-māṭṭīrkaḷ): you will not"
+    explanation: "{1} is for {3}, a friend or a child, and {2} is for {4}, a person you respect or several people: {5} and {6} are the written forms of you will not go, and {7} is how the second is usually said."
+  "ta-rule-negative-third":
+    name: "-மாட்டான் (-māṭṭāṉ), -மாட்டாள் (-māṭṭāḷ), -மாட்டார் (-māṭṭār), -ஆது (-ātu): he, she, it, they will not"
+    explanation: "A man takes {1}, a woman {2}, a respected person of either sex {3}, and several people {9}. A thing or an animal takes no person word: the infinitive's last -அ (-a) becomes {4}, as in {5} (it will not go) and {6} (it will not come). For they, speech says {7} and writing {8}."
+  "ta-rule-negative-past":
+    name: "-வில்லை (-villai): did not, for every person"
+    explanation: "To say what did not happen, put {1} after the infinitive. It does not change for person, number or gender: {2} means I, you, he, she, we or they did not go, and {4} means did not come. {1} is built on the word இல்லை (illai), there is not. In speech it shortens to -ல (-la): {3} and {5}."

@@ -1,0 +1,104 @@
+schema: 1
+id: "ml-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-3032"
+    target: "എനിക്ക് അരി വേണം."
+    reading: "enikk ari vēṇaṁ."
+    ipa: "enikk əɾi ʋeːɳam"
+    phonetic: "[enikk ɐɾi ʋeːɳɐm]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "usage" }]
+    bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "അരി", ref: "ml-0217" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0261", kind: "word" }
+      - { id: "w2", ref: "ml-0270", kind: "word" }
+  - id: "ml-3033"
+    target: "പാൽ ഉണ്ടോ?"
+    reading: "pāl uṇṭō?"
+    ipa: "paːl uɳʈoː"
+    phonetic: "[paːl uɳɖoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "പാൽ", ref: "ml-0220" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+    confusables:
+      - { id: "w1", ref: "ml-0224", kind: "word" }
+      - { id: "w2", ref: "ml-0269", kind: "word" }
+  - id: "ml-3034"
+    target: "എനിക്ക് രണ്ട് മുട്ട വേണം."
+    reading: "enikk raṇṭ muṭṭa vēṇaṁ."
+    ipa: "enikk ɾaɳʈ muʈʈa ʋeːɳam"
+    phonetic: "[enikk ɾɐɳʈ muʈʈɐ ʋeːɳɐm]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "usage" }]
+    bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "രണ്ട്", ref: "ml-0049" }, { word: "മുട്ട", ref: "ml-0221" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0050", kind: "word" }
+      - { id: "w2", ref: "ml-0232", kind: "word" }
+  - id: "ml-3035"
+    target: "പഞ്ചസാര ഇല്ലേ?"
+    reading: "pañcasāra illē?"
+    ipa: "pəɲtʃəsaːɾa illeː"
+    phonetic: "[pɐɲdʒɐsaːɾɐ illeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "പഞ്ചസാര", ref: "ml-0218" }, { word: "ഇല്ലേ", ref: "ml-0041" }]
+    confusables:
+      - { id: "w1", ref: "ml-0279", kind: "word" }
+      - { id: "w2", ref: "ml-0302", kind: "word" }
+  - id: "ml-3036"
+    target: "സോപ്പ് എവിടെ?"
+    reading: "sōpp eviṭe?"
+    ipa: "soːpp eʋiʈe"
+    phonetic: "[soːpp eʋiɖe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "സോപ്പ്", ref: "ml-0226" }, { word: "എവിടെ", ref: "ml-0033" }]
+    confusables:
+      - { id: "w1", ref: "ml-0222", kind: "word" }
+      - { id: "w2", ref: "ml-0034", kind: "word" }
+  - id: "ml-3037"
+    target: "തേങ്ങ കൊണ്ടുവരൂ."
+    reading: "tēṅṅa koṇṭuvarū."
+    ipa: "t̪eːŋŋa koɳʈuʋəɾuː"
+    phonetic: "[t̪eːŋŋɐ koɳɖuʋɐɾuː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "തേങ്ങ", ref: "ml-0230" }, { word: "കൊണ്ടുവരൂ", ref: "ml-0153" }]
+    confusables:
+      - { id: "w1", ref: "ml-0229", kind: "word" }
+      - { id: "w2", ref: "ml-0231", kind: "word" }
+  - id: "ml-3038"
+    target: "ഉള്ളി, മുളക്, മഞ്ഞൾ."
+    reading: "uḷḷi, muḷak, maññaḷ."
+    ipa: "uɭɭi muɭak məɲɲaɭ"
+    phonetic: "[uɭɭi muɭɐk mɐɲɲɐɭ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "lookalike", ref: "ml-0302" }]
+    bases: [{ word: "ഉള്ളി", ref: "ml-0229" }, { word: "മുളക്", ref: "ml-0228" }, { word: "മഞ്ഞൾ", ref: "ml-0227" }]
+    confusables:
+      - { id: "w1", ref: "ml-0295", kind: "word" }
+      - { id: "w2", ref: "ml-0302", kind: "word" }
+  - id: "ml-3039"
+    target: "പഴം ഇവിടെ ഉണ്ട്."
+    reading: "paḻaṁ iviṭe uṇṭ."
+    ipa: "pəɻam iʋiʈe uɳʈ"
+    phonetic: "[pɐɻɐm iʋiɖe uɳʈ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "പഴം", ref: "ml-0225" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0287", kind: "word" }
+      - { id: "w2", ref: "ml-0286", kind: "word" }

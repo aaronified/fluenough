@@ -1,0 +1,109 @@
+schema: 1
+id: "ta-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-3034"
+    target: "அரிசி எவ்வளவு?"
+    reading: "arici evvaḷavu?"
+    ipa: "aɾisi eʋʋaɭaʋu"
+    phonetic: "[aɾisi eʋʋaɭaʋɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அரிசி", ref: "ta-0215" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+    confusables:
+      - { id: "w1", ref: "ta-0216", kind: "word" }
+      - { id: "w2", ref: "ta-0219", kind: "word" }
+  - id: "ta-3035"
+    target: "முட்டை நல்லது."
+    reading: "muṭṭai nallatu."
+    ipa: "muʈʈai nallat̪u"
+    phonetic: "[muʈʈai n̪allad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "முட்டை", ref: "ta-0220" }, { word: "நல்லது", ref: "ta-0006" }]
+    confusables:
+      - { id: "w1", ref: "ta-0223", kind: "word" }
+      - { id: "w2", ref: "ta-0222", kind: "word" }
+  - id: "ta-3036"
+    target: "பழம் வாங்கு."
+    reading: "paḻam vāṅku."
+    ipa: "paɻam ʋaːŋku"
+    phonetic: "[paɻam ʋaːŋɡɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "பழம்", ref: "ta-0222" }, { word: "வாங்கு", ref: "ta-0129" }]
+    confusables:
+      - { id: "w1", ref: "ta-0221", kind: "word" }
+      - { id: "w2", ref: "ta-0215", kind: "word" }
+  - id: "ta-3037"
+    target: "எண்ணெய் இல்லை."
+    reading: "eṇṇey illai."
+    ipa: "eɳɳej illai"
+    phonetic: "[eɳɳej illai]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "எண்ணெய்", ref: "ta-0217" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-0218", kind: "word" }
+      - { id: "w2", ref: "ta-0219", kind: "word" }
+  - id: "ta-3038"
+    target: "காய்கறி இங்கே இருக்கிறது."
+    reading: "kāykaṟi iṅkē irukkiṟatu."
+    ipa: "kaːjkari iŋkeː iɾukkirat̪u"
+    phonetic: "[kaːjkari iŋɡeː iɾukkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "காய்கறி", ref: "ta-0221" }
+      - { word: "இங்கே", ref: "ta-0112" }
+      - { word: "இருக்கிறது", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0222", kind: "word" }
+      - { id: "w2", ref: "ta-0220", kind: "word" }
+  - id: "ta-3039"
+    target: "சர்க்கரை எங்கே?"
+    reading: "carkkarai eṅkē?"
+    ipa: "saɾkkaɾai eŋkeː"
+    phonetic: "[saɾkkaɾai eŋɡeː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "சர்க்கரை", ref: "ta-0218" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-0041", kind: "word" }
+      - { id: "w2", ref: "ta-0042", kind: "word" }
+  - id: "ta-3040"
+    target: "இரண்டு முட்டை வாங்கு."
+    reading: "iraṇṭu muṭṭai vāṅku."
+    ipa: "iɾaɳʈu muʈʈai ʋaːŋku"
+    phonetic: "[iɾaɳɖɯ muʈʈai ʋaːŋɡɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "முட்டை", ref: "ta-0220" }, { word: "வாங்கு", ref: "ta-0129" }]
+    confusables:
+      - { id: "w1", ref: "ta-0090", kind: "word" }
+      - { id: "w2", ref: "ta-0096", kind: "word" }
+  - id: "ta-3041"
+    target: "உப்பு, சர்க்கரை, எண்ணெய்."
+    reading: "uppu, carkkarai, eṇṇey."
+    ipa: "uppu saɾkkaɾai eɳɳej"
+    phonetic: "[uppɯ saɾkkaɾai eɳɳej]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "உப்பு", ref: "ta-0219" }, { word: "சர்க்கரை", ref: "ta-0218" }, { word: "எண்ணெய்", ref: "ta-0217" }]
+    confusables:
+      - { id: "w1", ref: "ta-0221", kind: "word" }
+      - { id: "w2", ref: "ta-0223", kind: "word" }

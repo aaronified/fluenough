@@ -1,0 +1,31 @@
+schema: 1
+id: "ta-en-grammar-causative"
+kind: "layer"
+core: "ta-grammar-causative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Making someone do it: the causative"
+description: "Pairs of verbs such as climb and light, and verbs made causative with வை (vai), in the past with he. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  name: "Making someone do it: the causative"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "base": "did it himself (past, he)"
+    "caused": "made or let another do it (past, he)"
+  entries:
+    "eru": "to climb; to get on; its causative to light or switch on"
+    "irangu": "to get down; its causative to drop off or unload"
+    "maru": "to change, to turn into; its causative to change something"
+    "ezhu": "to get up; its causative to wake someone"
+    "otu": "to run; its causative to drive or ride"
+    "nata": "to walk; its causative to conduct or run"
+    "karru": "to learn; its causative to teach"
+    "padi": "to study; made to study (infinitive plus வை (vai))"
+    "siri": "to laugh; made to laugh"
+    "azhu": "to cry; made to cry"
+    "thoongu": "to sleep; made to sleep"
+    "saappidu": "to eat; made to eat"
+    "vaa": "to come; made to come"
+  notes: "To say that someone made another person do something, Tamil has two ways. A few verbs have a paired causative with a changed ending: ஏறு (ēṟu), to climb, and ஏற்று (ēṟṟu), to light; இறங்கு (iṟaṅku), to get down, and இறக்கு (iṟakku), to drop off; எழு (eḻu), to get up, and எழுப்பு (eḻuppu), to wake someone; நட (naṭa), to walk, and நடத்து (naṭattu), to conduct; and கற்றுக்கொள் (kaṟṟukkoḷ), to learn, and கற்பி (kaṟpi), to teach. These pairs must be learned one by one. For every other verb, put the infinitive in front of வை (vai), to put: படிக்க வைத்தான் (paṭikka vaittāṉ), he made someone study, and in speech படிக்க வெச்சான் (paṭikka veccāṉ). The first column of each row is the plain verb and the second the causative, both in the past with he. Not yet confirmed by a Tamil speaker; reviewers check the pairs."

@@ -1,0 +1,104 @@
+schema: 1
+id: "ml-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-3093"
+    target: "നിങ്ങൾ എവിടെ?"
+    reading: "niṅṅaḷ eviṭe?"
+    ipa: "niŋŋaɭ eʋiʈe"
+    phonetic: "[niŋŋɐɭ eʋiɖe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "നിങ്ങൾ", ref: "ml-0004" }, { word: "എവിടെ", ref: "ml-0033" }]
+    confusables:
+      - { id: "w1", ref: "ml-0034", kind: "word" }
+      - { id: "w2", ref: "ml-0032", kind: "word" }
+  - id: "ml-3094"
+    target: "വെള്ളം എവിടെ?"
+    reading: "veḷḷaṁ eviṭe?"
+    ipa: "ʋeɭɭam eʋiʈe"
+    phonetic: "[ʋeɭɭɐm eʋiɖe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "വെള്ളം", ref: "ml-0005" }, { word: "എവിടെ", ref: "ml-0033" }]
+    confusables:
+      - { id: "w1", ref: "ml-0037", kind: "word" }
+      - { id: "w2", ref: "ml-0038", kind: "word" }
+  - id: "ml-3095"
+    target: "നിങ്ങൾ ആരാണ്?"
+    reading: "niṅṅaḷ ārāṇ?"
+    ipa: "niŋŋaɭ aːɾaːɳ"
+    phonetic: "[niŋŋɐɭ aːɾaːɳ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "നിങ്ങൾ", ref: "ml-0004" }, { word: "ആരാണ്", ref: "ml-0031" }]
+    confusables:
+      - { id: "w1", ref: "ml-0032", kind: "word" }
+      - { id: "w2", ref: "ml-0033", kind: "word" }
+  - id: "ml-3096"
+    target: "ഏത് വീട്?"
+    reading: "ēt vīṭ?"
+    ipa: "eːt̪ ʋiːʈ"
+    phonetic: "[eːt̪ ʋiːʈ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ഏത്", ref: "ml-0037" }, { word: "വീട്", ref: "ml-0009" }]
+    confusables:
+      - { id: "w1", ref: "ml-0032", kind: "word" }
+      - { id: "w2", ref: "ml-0038", kind: "word" }
+  - id: "ml-3097"
+    target: "എത്ര വെള്ളം ഉണ്ട്?"
+    reading: "etra veḷḷaṁ uṇṭ?"
+    ipa: "et̪ɾa ʋeɭɭam uɳʈ"
+    phonetic: "[et̪ɾɐ ʋeɭɭɐm uɳʈ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "എത്ര", ref: "ml-0038" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0036", kind: "word" }
+      - { id: "w2", ref: "ml-0032", kind: "word" }
+  - id: "ml-3098"
+    target: "നല്ല വെള്ളം ഉണ്ടോ?"
+    reading: "nalla veḷḷaṁ uṇṭō?"
+    ipa: "nəlla ʋeɭɭam uɳʈoː"
+    phonetic: "[nɐllɐ ʋeɭɭɐm uɳɖoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "നല്ല", ref: "ml-0006" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+    confusables:
+      - { id: "w1", ref: "ml-0008", kind: "word" }
+      - { id: "w2", ref: "ml-0041", kind: "word" }
+  - id: "ml-3099"
+    target: "അതെ, വെള്ളം ഉണ്ട്."
+    reading: "ate, veḷḷaṁ uṇṭ."
+    ipa: "ət̪e ʋeɭɭam uɳʈ"
+    phonetic: "[ɐd̪e ʋeɭɭɐm uɳʈ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "അതെ", ref: "ml-0001" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0002", kind: "word" }
+      - { id: "w2", ref: "ml-0041", kind: "word" }
+  - id: "ml-3100"
+    target: "വലിയ വീട് എവിടെ?"
+    reading: "valiya vīṭ eviṭe?"
+    ipa: "ʋəlija ʋiːʈ eʋiʈe"
+    phonetic: "[ʋɐlijɐ ʋiːʈ eʋiɖe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "വലിയ", ref: "ml-0008" }, { word: "വീട്", ref: "ml-0009" }, { word: "എവിടെ", ref: "ml-0033" }]
+    confusables:
+      - { id: "w1", ref: "ml-0006", kind: "word" }
+      - { id: "w2", ref: "ml-0037", kind: "word" }

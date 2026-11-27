@@ -1,0 +1,29 @@
+schema: 1
+id: "ta-en-grammar-relative-participle"
+kind: "layer"
+core: "ta-grammar-relative-participle"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs that describe a noun: the relative participle"
+description: "Every verb the course teaches as a verb that describes a noun (the man who came, the book that I read), in the past, present, future and negative, spoken forms before written ones. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "past": "that did (past)"
+    "present": "that does (present)"
+    "future": "that will do (future)"
+    "negative": "that does not, did not"
+rules:
+  "ta-rule-relative-participle":
+    name: "The past: -அ (-a) on the past stem"
+    explanation: "The relative participle is a verb that describes a noun, like who or that in English: it stands before the noun and shows no person. For the past, take the past stem and add -அ (-a): {1}, to come, gives {2}, so {3} is the friend who came. Speech keeps its short forms: {4}, to study, gives {5} in speech and {6} in writing. The verb never agrees with the noun that follows. Source: English Wikipedia, Tamil grammar (the adjectival participle is made by adding -a to the past or present stem)."
+  "ta-rule-relative-participle-present":
+    name: "The present: -கிற (-kiṟa) before the noun"
+    explanation: "For the present, take the present stem and add -அ (-a): {1}, to come, gives {2} in speech and {3} in writing, so {4} is the friend who is coming. A verb with no separate speech form has the same form in both: {5}, to study, gives {6}. Source: English Wikipedia, Tamil grammar (the adjectival participle from the present stem)."
+  "ta-rule-relative-participle-future":
+    name: "The future and the habit: -உம் (-um)"
+    explanation: "The future form is the infinitive with -உம் (-um): {1}, to come, gives {2}, and {3}, to study, gives {4}. It means who will do, and it also says what a person usually does: {5} is the friend who will come, or who usually comes. The same form is in {6}, when I come, taught earlier."
+  "ta-rule-relative-participle-negative":
+    name: "The negative: -ஆத (-āta)"
+    explanation: "The negative is the infinitive with -ஆத (-āta): {1}, to come, gives {2}, and {3}, to study, gives {4}. It means who does not, or who did not: {5} is the friend who did not come. Source: English Wikipedia, Tamil grammar (the negative participle is made by adding -āta to the infinitive)."

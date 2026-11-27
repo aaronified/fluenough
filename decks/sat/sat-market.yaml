@@ -1,0 +1,49 @@
+schema: 1
+id: "sat-market"
+part: "core"
+kind: "vocab"
+language: { code: "sat", iso639_3: "sat", name: "Santali", script: "ol_chiki", icon: "ᱥ" }
+license: "CC-BY-SA-4.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sat-1978"
+    target: "ᱫᱳᱠᱚᱱ"
+    reading: "doko̠n"
+    ipa: "dokɔn"
+    phonetic: "[dokɔn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1979"
+    target: "ᱠᱟᱹᱣᱰᱤ"
+    reading: "kāwḍi"
+    ipa: "kaːwɖi"
+    phonetic: "[kəwɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1980"
+    target: "ᱠᱟᱜᱚᱡᱽ ᱠᱟᱹᱣᱰᱤ"
+    reading: "kago̠j kāwḍi"
+    ipa: "kaɡɔdʒ kaːwɖi"
+    phonetic: "[kaɡɔɟ kəwɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ᱠᱟᱜᱚᱡᱽ", base: "ᱠᱟᱜᱚᱡᱽ", reading: "kago̠j" }, { word: "ᱠᱟᱹᱣᱰᱤ", base: "ᱠᱟᱹᱣᱰᱤ", reading: "kāwḍi" }]
+  - id: "sat-1981"
+    target: "ᱠᱷᱟᱡᱽᱱᱟ"
+    reading: "khajna"
+    ipa: "kʰadʒna"
+    phonetic: "[kʰaɟna]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"

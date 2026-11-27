@@ -1,0 +1,117 @@
+schema: 1
+id: "ta-location-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-3009"
+    target: "அப்பா உள்ளே போகிறார்."
+    reading: "appā uḷḷē pōkiṟār."
+    ipa: "appaː uɭɭeː poːkiraːɾ"
+    phonetic: "[appaː uɭɭeː poːɡiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அப்பா", ref: "ta-0073" }, { word: "உள்ளே", ref: "ta-0178" }, { word: "போகிறார்", ref: "ta-0118" }]
+    confusables:
+      - { id: "w1", ref: "ta-0179", kind: "word" }
+      - { id: "w2", ref: "ta-0177", kind: "word" }
+  - id: "ta-3010"
+    target: "அம்மா வெளியே வருகிறார்."
+    reading: "ammā veḷiyē varukiṟār."
+    ipa: "ammaː ʋeɭijeː ʋaɾukiraːɾ"
+    phonetic: "[ammaː ʋeɭijeː ʋaɾuɡiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "வெளியே", ref: "ta-0179" }, { word: "வருகிறார்", ref: "ta-0010" }]
+    confusables:
+      - { id: "w1", ref: "ta-0178", kind: "word" }
+      - { id: "w2", ref: "ta-0181", kind: "word" }
+  - id: "ta-3011"
+    target: "அம்மா பக்கத்தில் இருக்கிறார்."
+    reading: "ammā pakkattil irukkiṟār."
+    ipa: "ammaː pakkat̪t̪il iɾukkiraːɾ"
+    phonetic: "[ammaː pakkat̪t̪il iɾukkiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "அம்மா", ref: "ta-0072" }
+      - { word: "பக்கத்தில்", ref: "ta-0182" }
+      - { word: "இருக்கிறார்", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0183", kind: "word" }
+      - { id: "w2", ref: "ta-0181", kind: "word" }
+  - id: "ta-3012"
+    target: "முன்னால் போ."
+    reading: "muṉṉāl pō."
+    ipa: "munnaːl poː"
+    phonetic: "[munnaːl poː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "முன்னால்", ref: "ta-0180" }, { word: "போ", ref: "ta-0118" }]
+    confusables:
+      - { id: "w1", ref: "ta-0181", kind: "word" }
+      - { id: "w2", ref: "ta-0176", kind: "word" }
+  - id: "ta-3013"
+    target: "அது மேலே இருக்கிறது."
+    reading: "atu mēlē irukkiṟatu."
+    ipa: "at̪u meːleː iɾukkirat̪u"
+    phonetic: "[ad̪ɯ meːleː iɾukkirad̪ɯ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "அது", ref: "ta-0061" }
+      - { word: "மேலே", ref: "ta-0176" }
+      - { word: "இருக்கிறது", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0177", kind: "word" }
+      - { id: "w2", ref: "ta-0181", kind: "word" }
+  - id: "ta-3014"
+    target: "இங்கே வா."
+    reading: "iṅkē vā."
+    ipa: "iŋkeː ʋaː"
+    phonetic: "[iŋɡeː ʋaː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "வா", ref: "ta-0010" }]
+    confusables:
+      - { id: "w1", ref: "ta-0043", kind: "word" }
+      - { id: "w2", ref: "ta-0176", kind: "word" }
+  - id: "ta-3015"
+    target: "அப்பா பின்னால் இருக்கிறார்."
+    reading: "appā piṉṉāl irukkiṟār."
+    ipa: "appaː pinnaːl iɾukkiraːɾ"
+    phonetic: "[appaː pinnaːl iɾukkiraːɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "அப்பா", ref: "ta-0073" }
+      - { word: "பின்னால்", ref: "ta-0181" }
+      - { word: "இருக்கிறார்", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0180", kind: "word" }
+      - { id: "w2", ref: "ta-0178", kind: "word" }
+  - id: "ta-3016"
+    target: "அருகில் வா."
+    reading: "arukil vā."
+    ipa: "aɾukil ʋaː"
+    phonetic: "[aɾuɡil ʋaː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "அருகில்", ref: "ta-0183" }, { word: "வா", ref: "ta-0010" }]
+    confusables:
+      - { id: "w1", ref: "ta-0112", kind: "word" }
+      - { id: "w2", ref: "ta-0177", kind: "word" }

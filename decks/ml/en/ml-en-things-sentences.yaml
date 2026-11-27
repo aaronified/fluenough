@@ -1,0 +1,34 @@
+schema: 1
+id: "ml-en-things-sentences"
+kind: "layer"
+core: "ml-things-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Things in sentences"
+description: "Short sentences about a key, a book, a door, a fridge and where things are kept. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0557":
+    native: "Where is the key?"
+  "ml-0558":
+    native: "The book is on the table."
+  "ml-0559":
+    native: "Open the door, close the window."
+  "ml-0560":
+    native: "Put the bottle in the fridge."
+    bases:
+      "ഇടൂ": "put"
+  "ml-0561":
+    native: "Switch on the fan."
+    bases:
+      "ഓൺ": "on"
+  "ml-0562":
+    native: "There is tea in the kitchen."
+    bases:
+      "ഉണ്ട്": "there is"
+  "ml-0563":
+    native: "Put the knife in the sink."
+    bases:
+      "വെക്കൂ": "put"
+  "ml-0564":
+    native: "There is no paper on the table."

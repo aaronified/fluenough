@@ -1,0 +1,143 @@
+schema: 1
+id: "ml-en-grammar-gender-number"
+kind: "layer"
+core: "ml-grammar-gender-number"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Men, women and things; one and many"
+description: "The words for a boy, a girl, a man, a woman and a person, and for they and these and those. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ml-0761":
+    native: "boy"
+    notes:
+      n1: "A noun for a male child, made of ആൺ (āṇ), male, and കുട്ടി (kuṭṭi), child. It is masculine, so the pronoun that stands for it is അവൻ (avaṉ), he. Source: English Wiktionary, the entry ആൺകുട്ടി (āṇkuṭṭi) (boy, young male)."
+    examples:
+      "ആൺകുട്ടി സ്കൂളിലേക്ക് പോകുന്നു.":
+        native: "The boy is going to school."
+        bases:
+          "ആൺകുട്ടി": "boy"
+      "അവൻ ഒരു ആൺകുട്ടിയാണ്.":
+        native: "He is a boy."
+        bases:
+          "ആൺകുട്ടിയാണ്": "is a boy; from ആൺകുട്ടി (āṇkuṭṭi), boy"
+  "ml-0762":
+    native: "girl"
+    notes:
+      n1: "A noun for a female child, made of പെൺ (peṇ), female, and കുട്ടി (kuṭṭi), child. It is feminine, so the pronoun that stands for it is അവൾ (avaḷ), she. Source: English Wiktionary, the entry പെൺകുട്ടി (peṇkuṭṭi) (girl)."
+    examples:
+      "പെൺകുട്ടി പുസ്തകം വായിക്കുന്നു.":
+        native: "The girl is reading a book."
+        bases:
+          "പെൺകുട്ടി": "girl"
+      "അവൾ ഒരു പെൺകുട്ടിയാണ്.":
+        native: "She is a girl."
+        bases:
+          "പെൺകുട്ടിയാണ്": "is a girl; from പെൺകുട്ടി (peṇkuṭṭi), girl"
+  "ml-0763":
+    native: "man; male"
+    notes:
+      n1: "The formal word for a man, borrowed from Sanskrit. It is masculine: the pronoun is അവൻ (avaṉ). Its opposite is സ്ത്രീ (strī), woman. Source: English Wiktionary, the entry പുരുഷൻ (puruṣaṉ) (man, male; antonym സ്ത്രീ (strī))."
+    examples:
+      "ആ പുരുഷൻ എന്റെ അച്ഛനാണ്.":
+        native: "That man is my father."
+        bases:
+          "പുരുഷൻ": "man"
+      "ഒരു പുരുഷൻ കടയിൽ ഉണ്ട്.":
+        native: "There is a man in the shop."
+        bases:
+          "പുരുഷൻ": "man"
+  "ml-0764":
+    native: "woman"
+    notes:
+      n1: "The formal word for a woman, borrowed from Sanskrit. It is feminine: the pronoun is അവൾ (avaḷ). Its opposite is പുരുഷൻ (puruṣaṉ), man. The plural is സ്ത്രീകൾ (strīkaḷ). Source: English Wiktionary, the declension table of സ്ത്രീ (strī)."
+    examples:
+      "ആ സ്ത്രീ എന്റെ അമ്മയാണ്.":
+        native: "That woman is my mother."
+        bases:
+          "സ്ത്രീ": "woman"
+      "ഒരു സ്ത്രീ കടയിൽ ഉണ്ട്.":
+        native: "There is a woman in the shop."
+        bases:
+          "സ്ത്രീ": "woman"
+  "ml-0765":
+    native: "human being; person; man"
+    notes:
+      n1: "A person of either sex, but the word is grammatically masculine. Its plural is മനുഷ്യർ (manuṣyar), which takes the ending -അർ (-ar) for people, not -കൾ (-kaḷ). Source: English Wiktionary, the declension table of മനുഷ്യൻ (manuṣyaṉ); English Wikipedia, Malayalam grammar (the plural of people)."
+    examples:
+      "മനുഷ്യൻ വെള്ളം കുടിക്കുന്നു.":
+        native: "A human being drinks water."
+        bases:
+          "മനുഷ്യൻ": "human being"
+      "മനുഷ്യർ ഇവിടെ ഉണ്ട്.":
+        native: "There are people here."
+        bases:
+          "മനുഷ്യർ": "people; plural of മനുഷ്യൻ (manuṣyaṉ), human being"
+  "ml-0766":
+    native: "person; individual; he, she (that person)"
+    notes:
+      n1: "A person of either sex. With ഒരു (oru) it becomes ഒരാൾ (orāḷ), one person, the way you count people. It is also used for he or she when the sex does not matter: ആൾ വീട്ടിൽ ഇല്ല (āḷ vīṭṭil illa), the person is not at home. Its plural is ആളുകൾ (āḷukaḷ). Source: English Wiktionary, the entry ആൾ (āḷ) (person; he, that person)."
+    examples:
+      "ഒരാൾ ഇവിടെ വരുന്നു.":
+        native: "A person is coming here."
+        bases:
+          "ഒരാൾ": "one person; from ഒരു (oru), one, and ആൾ (āḷ), person"
+      "ആൾ വീട്ടിൽ ഇല്ല.":
+        native: "He is not at home."
+        bases:
+          "ആൾ": "person; he, she"
+  "ml-0769":
+    native: "those (things)"
+    notes:
+      n1: "The plural of അത് (at), that, for things and animals: അത് പുസ്തകമാണ് (at pustakamāṇ) is that is a book, and അവ പുസ്തകങ്ങളാണ് (ava pustakaṅṅaḷāṇ) is those are books. A word for people takes അവർ (avar) instead. Source: English Wiktionary, the entry അവ (ava) (those)."
+    examples:
+      "അവ എന്റെ പുസ്തകങ്ങളാണ്.":
+        native: "Those are my books."
+        bases:
+          "അവ": "those"
+      "അവ നല്ലതാണ്.":
+        native: "Those are good."
+        bases:
+          "അവ": "those"
+  "ml-0770":
+    native: "these (things)"
+    notes:
+      n1: "The plural of ഇത് (it), this, for things and animals; the near form of അവ (ava). A word for people takes ഇവർ (ivar) instead. Source: English Wiktionary, the entry ഇവ (iva) (these)."
+    examples:
+      "ഇവ എന്റെ കുപ്പായങ്ങളാണ്.":
+        native: "These are my shirts."
+        bases:
+          "ഇവ": "these"
+      "ഇവ എന്താണ്?":
+        native: "What are these?"
+        bases:
+          "ഇവ": "these"
+  "ml-0772":
+    native: "woman; girl; wife"
+    notes:
+      n1: "The everyday word for a woman or a girl, and also a bride or a wife. It is more casual than സ്ത്രീ (strī). It is feminine: the pronoun is അവൾ (avaḷ). The plural is irregular, പെണ്ണുങ്ങൾ (peṇṇuṅṅaḷ). A longer spelling is പെൺ (peṇ). Source: English Wiktionary, the entry പെണ്ണ് (peṇṇ); English Wikipedia, Malayalam grammar (the plural പെണ്ണുങ്ങൾ (peṇṇuṅṅaḷ))."
+    examples:
+      "ആ പെണ്ണ് എന്റെ ചേച്ചിയാണ്.":
+        native: "That girl is my elder sister."
+        bases:
+          "പെണ്ണ്": "girl; woman"
+      "പെണ്ണുങ്ങൾ വീട്ടിൽ ഉണ്ട്.":
+        native: "The women are at home."
+        bases:
+          "പെണ്ണുങ്ങൾ": "women; plural of പെണ്ണ് (peṇṇ), woman"
+  "ml-0773":
+    native: "children; sons and daughters"
+    notes:
+      n1: "One's own children: the plural of മകൻ (makaṉ), son, and മകൾ (makaḷ), daughter, together. It has no singular of its own; for one child say കുട്ടി (kuṭṭi). It is used for people, so its verb and pronoun are those of അവർ (avar), they. Source: English Wiktionary, the entry മക്കൾ (makkaḷ) (plural of മകൻ (makaṉ) or മകൾ (makaḷ))."
+    examples:
+      "എനിക്ക് രണ്ട് മക്കൾ ഉണ്ട്.":
+        native: "I have two children."
+        bases:
+          "മക്കൾ": "children"
+      "അവളുടെ മക്കൾ ഇവിടെ ഉണ്ട്.":
+        native: "Her children are here."
+        bases:
+          "മക്കൾ": "children"
+  "ml-0771":
+    native: "He, she, it and they"
+    explanation: "The pronoun follows the noun's class: a man or boy is അവൻ (avaṉ), a woman or girl is അവൾ (avaḷ), a thing or animal is അത് (at), several things are അവ (ava), and several people, or one person you respect, are അവർ (avar). The verb is the same for every one of them."
