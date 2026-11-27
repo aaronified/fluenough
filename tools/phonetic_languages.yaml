@@ -338,3 +338,22 @@
     # vowel diacritics and an `agree` guard.
     name: "Standard (Seoul) Korean; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"sw":
+  dump: "Swahili"
+  variety:
+    # Measured on the kaikki.org Swahili dump (read 2026-11-27, 21723 entries):
+    # 1305 sound forms, 1302 of them broad `/ /` and only 3 narrow `[ ]`
+    # (aali, and baadhi twice with the tag "colloquial"). Wiktionary writes
+    # Swahili phonemically, in a convention the course's broad `ipa` does not
+    # use: the vowels ɑ ɛ ɔ against the deck's a e o, the implosives ɓ ɗ ɠ ʄ
+    # for b d g j, the prenasalised stops ᵐb ⁿd ᵑɡ ⁿdʒ ⁿz, the syllabic nasal
+    # m̩, the labialised consonants Cʷ, the vowel length ː and, in some words,
+    # an aspirated stop. So no Wiktionary form is taken (untagged: false, no
+    # notes, no tags): nothing is imported, and every Swahili card gets its
+    # narrow form from decks/sw/sw-phonetics.yaml, in one convention (as Tamil,
+    # Malayalam and Santali). The broad `ipa` and the reading come from
+    # `swahili_ipa()` in tools/transcribe.py. Flip `untagged` to true only with
+    # a `normalise` list for those differences and an `agree` guard.
+    name: "Standard Swahili; no Wiktionary form is taken (rules only)"
+    untagged: false
