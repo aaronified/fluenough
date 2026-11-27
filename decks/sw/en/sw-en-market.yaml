@@ -1,0 +1,132 @@
+schema: 1
+id: "sw-en-market"
+kind: "layer"
+core: "sw-market"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Market"
+description: "Money and buying: 8 words for price, money, change, customers and sellers. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-2420":
+    native: "money"
+    notes:
+      "n1": "Noun class V or IX, as the entry gives it (it gives both). Plural: mapesa class VI or pesa class X (the entry gives both)."
+    examples:
+      "Nina pesa.":
+        native: "I have some money."
+        bases:
+          "Nina": "to have (I have)"
+          "pesa": "money"
+      "Ninataka pesa.":
+        native: "I want some money."
+        bases:
+          "Ninataka": "to want (I want)"
+          "pesa": "money"
+  "sw-2421":
+    native: "price"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, bei."
+    examples:
+      "Nina bei.":
+        native: "I have the price."
+        bases:
+          "Nina": "to have (I have)"
+          "bei": "price"
+      "Ninataka bei.":
+        native: "I want the price."
+        bases:
+          "Ninataka": "to want (I want)"
+          "bei": "price"
+  "sw-2422":
+    native: "expensive"
+    notes:
+      "n1": "An invariable adjective: the same form with every noun class."
+    examples:
+      "Bei ni ghali.":
+        native: "The price is expensive."
+        bases:
+          "Bei": "price"
+          "ni": "is; are"
+          "ghali": "expensive"
+      "Ninataka bei ghali.":
+        native: "I want an expensive price."
+        bases:
+          "Ninataka": "to want (I want)"
+          "bei": "price"
+  "sw-2423":
+    native: "cheap"
+    notes:
+      "n1": "The entry's first sense is easy; the deck teaches cheap, inexpensive."
+    examples:
+      "Bei ni rahisi.":
+        native: "The price is cheap."
+        bases:
+          "Bei": "price"
+          "ni": "is; are"
+          "rahisi": "cheap"
+      "Ninataka bei rahisi.":
+        native: "I want a cheap price."
+        bases:
+          "Ninataka": "to want (I want)"
+          "bei": "price"
+  "sw-2424":
+    native: "change (money given back)"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, chenji."
+    examples:
+      "Nina chenji.":
+        native: "I have the change (money given back)."
+        bases:
+          "Nina": "to have (I have)"
+          "chenji": "change (money given back)"
+      "Ninataka chenji.":
+        native: "I want the change (money given back)."
+        bases:
+          "Ninataka": "to want (I want)"
+          "chenji": "change (money given back)"
+  "sw-2425":
+    native: "shilling"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, shilingi."
+    examples:
+      "Nina shilingi.":
+        native: "I have the shilling."
+        bases:
+          "Nina": "to have (I have)"
+          "shilingi": "shilling"
+      "Ninataka shilingi.":
+        native: "I want the shilling."
+        bases:
+          "Ninataka": "to want (I want)"
+          "shilingi": "shilling"
+  "sw-2426":
+    native: "customer"
+    notes:
+      "n1": "Noun class I, plural class II: mteja in the singular, wateja in the plural."
+    examples:
+      "Nina mteja.":
+        native: "I have the customer."
+        bases:
+          "Nina": "to have (I have)"
+          "mteja": "customer"
+      "Ninataka mteja.":
+        native: "I want the customer."
+        bases:
+          "Ninataka": "to want (I want)"
+          "mteja": "customer"
+  "sw-2427":
+    native: "seller, vendor"
+    notes:
+      "n1": "Noun class I, plural class II: mwuzaji in the singular, wauzaji in the plural."
+    examples:
+      "Nina mwuzaji.":
+        native: "I have the seller, vendor."
+        bases:
+          "Nina": "to have (I have)"
+          "mwuzaji": "seller, vendor"
+      "Ninataka mwuzaji.":
+        native: "I want the seller, vendor."
+        bases:
+          "Ninataka": "to want (I want)"
+          "mwuzaji": "seller, vendor"

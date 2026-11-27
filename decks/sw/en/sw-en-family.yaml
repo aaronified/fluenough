@@ -1,0 +1,520 @@
+schema: 1
+id: "sw-en-family"
+kind: "layer"
+core: "sw-family"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Family"
+description: "Twenty-seven words for family: parents, brothers and sisters, grandparents, aunts and uncles, children, in-laws and the people you marry. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-1440":
+    native: "father (male parent)"
+    notes:
+      "n1": "Baba is father, class I/IX, and its plural baba is in class II/X. Baba yangu is my father, with yangu for class IX."
+    examples:
+      "Baba yangu ni mwalimu.":
+        native: "My father is a teacher."
+        bases:
+          "Baba": "father"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Baba yako ni nani?":
+        native: "Who is your father?"
+        bases:
+          "Baba": "father"
+          "yako": "your (class IX)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1441":
+    native: "mother (female parent)"
+    notes:
+      "n1": "Mama is mother, class I/IX, and its plural mama is in class II/X. It is also the respectful word for an older woman, so Habari, mama? greets one."
+    examples:
+      "Mama yako ni nani?":
+        native: "Who is your mother?"
+        bases:
+          "Mama": "mother"
+          "yako": "your (class IX)"
+          "ni": "is"
+          "nani": "who"
+      "Habari, mama?":
+        native: "Hello, madam."
+        bases:
+          "Habari": "news; greeting"
+          "mama": "madam"
+  "sw-1442":
+    native: "sister"
+    notes:
+      "n1": "Dada is sister, class IX, with the plural dada in class X. Dada yangu is my sister."
+    examples:
+      "Dada yangu ni mwalimu.":
+        native: "My sister is a teacher."
+        bases:
+          "Dada": "sister"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Dada yake ni nzuri.":
+        native: "His or her sister is good."
+        bases:
+          "Dada": "sister"
+          "yake": "his; her (class IX)"
+          "ni": "is"
+          "nzuri": "good"
+  "sw-1443":
+    native: "brother"
+    notes:
+      "n1": "Kaka is brother, class IX, with the plural kaka in class X. Kaka yako is your brother."
+    examples:
+      "Kaka yangu ni mwalimu.":
+        native: "My brother is a teacher."
+        bases:
+          "Kaka": "brother"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Kaka yako ni nani?":
+        native: "Who is your brother?"
+        bases:
+          "Kaka": "brother"
+          "yako": "your (class IX)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1444":
+    native: "relative; sibling"
+    notes:
+      "n1": "Ndugu is a relative or a sibling, class IX, with the plural ndugu in class X. It also means comrade, as a form of address."
+    examples:
+      "Ndugu yangu ni mwalimu.":
+        native: "My relative is a teacher."
+        bases:
+          "Ndugu": "relative; sibling"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Sisi ni ndugu.":
+        native: "We are relatives."
+        bases:
+          "Sisi": "we"
+          "ni": "are"
+          "ndugu": "relatives"
+  "sw-1445":
+    native: "grandfather (either side)"
+    notes:
+      "n1": "Babu is grandfather, from either side. It is class V, so its possessives take l-: babu langu, my grandfather; babu lako, your grandfather. Its plural is mababu in class VI."
+    examples:
+      "Babu langu ni mwalimu.":
+        native: "My grandfather is a teacher."
+        bases:
+          "Babu": "grandfather"
+          "langu": "my (class V)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Babu lako ni nani?":
+        native: "Who is your grandfather?"
+        bases:
+          "Babu": "grandfather"
+          "lako": "your (class V)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1446":
+    native: "grandmother"
+    notes:
+      "n1": "Bibi is grandmother. It is class V, so its possessives take l-: bibi langu is my grandmother. The dictionary's first sense is lady, and the plural is mabibi in class VI."
+    examples:
+      "Bibi langu ni mwalimu.":
+        native: "My grandmother is a teacher."
+        bases:
+          "Bibi": "grandmother"
+          "langu": "my (class V)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Bibi lako ni nani?":
+        native: "Who is your grandmother?"
+        bases:
+          "Bibi": "grandmother"
+          "lako": "your (class V)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1447":
+    native: "paternal aunt"
+    notes:
+      "n1": "Shangazi is a paternal aunt, on your father's side. It is class I/IX; its plural is flagged for review because the dictionary gives two forms."
+    examples:
+      "Shangazi yangu ni mwalimu.":
+        native: "My aunt is a teacher."
+        bases:
+          "Shangazi": "aunt"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Shangazi yako ni nani?":
+        native: "Who is your aunt?"
+        bases:
+          "Shangazi": "aunt"
+          "yako": "your (class IX)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1448":
+    native: "maternal uncle"
+    notes:
+      "n1": "Mjomba is a maternal uncle, on your mother's side. It is class I, with the plural wajomba in class II. Mjomba wangu is my uncle."
+    examples:
+      "Mjomba wangu ni mwalimu.":
+        native: "My uncle is a teacher."
+        bases:
+          "Mjomba": "uncle"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Wajomba wangu ni wazuri.":
+        native: "My uncles are good."
+        bases:
+          "Wajomba": "uncles"
+          "wangu": "my (class II)"
+          "ni": "are"
+          "wazuri": "good (class II)"
+  "sw-1449":
+    native: "grandchild"
+    notes:
+      "n1": "Mjukuu is grandchild, class I, with the plural wajukuu in class II. Mjukuu wangu is my grandchild."
+    examples:
+      "Mjukuu wangu ni mtoto.":
+        native: "My grandchild is a child."
+        bases:
+          "Mjukuu": "grandchild"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mtoto": "child"
+      "Wajukuu wangu ni wadogo.":
+        native: "My grandchildren are small."
+        bases:
+          "Wajukuu": "grandchildren"
+          "wangu": "my (class II)"
+          "ni": "are"
+          "wadogo": "small (class II)"
+  "sw-1450":
+    native: "child (a son or daughter)"
+    notes:
+      "n1": "Mwana is a child, a son or a daughter of any age, class I, with the plural wana in class II. Mtoto is a very young child."
+    examples:
+      "Mwana wangu ni mzuri.":
+        native: "My child is good."
+        bases:
+          "Mwana": "child"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mzuri": "good (class I)"
+      "Wana wangu ni wadogo.":
+        native: "My children are small."
+        bases:
+          "Wana": "children"
+          "wangu": "my (class II)"
+          "ni": "are"
+          "wadogo": "small (class II)"
+  "sw-1451":
+    native: "daughter"
+    notes:
+      "n1": "Binti is daughter, class V, with the plural mabinti in class VI. Its possessives take l-: binti langu is my daughter."
+    examples:
+      "Binti langu ni dogo.":
+        native: "My daughter is small."
+        bases:
+          "Binti": "daughter"
+          "langu": "my (class V)"
+          "ni": "is"
+          "dogo": "small (class V)"
+      "Binti lako ni nani?":
+        native: "Who is your daughter?"
+        bases:
+          "Binti": "daughter"
+          "lako": "your (class V)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1452":
+    native: "parent"
+    notes:
+      "n1": "Mzazi is a parent, the person you are descended from, class I, with the plural wazazi in class II."
+    examples:
+      "Mzazi wangu ni mwalimu.":
+        native: "My parent is a teacher."
+        bases:
+          "Mzazi": "parent"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Wazazi wangu ni wazuri.":
+        native: "My parents are good."
+        bases:
+          "Wazazi": "parents"
+          "wangu": "my (class II)"
+          "ni": "are"
+          "wazuri": "good (class II)"
+  "sw-1453":
+    native: "in-law"
+    notes:
+      "n1": "Mkwe is an in-law, class I, with the plural wakwe in class II. Mkwe wangu is my in-law."
+    examples:
+      "Mkwe wangu ni mgeni.":
+        native: "My in-law is a stranger."
+        bases:
+          "Mkwe": "in-law"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mgeni": "stranger"
+      "Wakwe wangu ni wazuri.":
+        native: "My in-laws are good."
+        bases:
+          "Wakwe": "in-laws"
+          "wangu": "my (class II)"
+          "ni": "are"
+          "wazuri": "good (class II)"
+  "sw-1454":
+    native: "sister-in-law"
+    notes:
+      "n1": "Wifi is sister-in-law, class V, with the plural mawifi in class VI. Its possessives take l-: wifi langu is my sister-in-law."
+    examples:
+      "Wifi langu ni mwalimu.":
+        native: "My sister-in-law is a teacher."
+        bases:
+          "Wifi": "sister-in-law"
+          "langu": "my (class V)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Wifi lako ni nani?":
+        native: "Who is your sister-in-law?"
+        bases:
+          "Wifi": "sister-in-law"
+          "lako": "your (class V)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1455":
+    native: "brother-in-law"
+    notes:
+      "n1": "Shemeji is brother-in-law, class V, with the plural mashemeji in class VI. Its possessives take l-: shemeji langu is my brother-in-law."
+    examples:
+      "Shemeji langu ni mwalimu.":
+        native: "My brother-in-law is a teacher."
+        bases:
+          "Shemeji": "brother-in-law"
+          "langu": "my (class V)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Shemeji lako ni nani?":
+        native: "Who is your brother-in-law?"
+        bases:
+          "Shemeji": "brother-in-law"
+          "lako": "your (class V)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1456":
+    native: "wife"
+    notes:
+      "n1": "Mke is wife, class I, with the plural wake in class II. Mke wangu is my wife."
+    examples:
+      "Mke wangu ni mwalimu.":
+        native: "My wife is a teacher."
+        bases:
+          "Mke": "wife"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Mke wako ni nani?":
+        native: "Who is your wife?"
+        bases:
+          "Mke": "wife"
+          "wako": "your (class I)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1457":
+    native: "husband"
+    notes:
+      "n1": "Mume is husband, class I, with the plural waume in class II. Mume wangu is my husband."
+    examples:
+      "Mume wangu ni mgeni.":
+        native: "My husband is a stranger."
+        bases:
+          "Mume": "husband"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mgeni": "stranger"
+      "Mume wake ni mzuri.":
+        native: "Her husband is good."
+        bases:
+          "Mume": "husband"
+          "wake": "her; his (class I)"
+          "ni": "is"
+          "mzuri": "good (class I)"
+  "sw-1458":
+    native: "family"
+    notes:
+      "n1": "Familia is family, class IX, with the plural familia in class X. Familia yangu is my family."
+    examples:
+      "Familia yangu ni kubwa.":
+        native: "My family is big."
+        bases:
+          "Familia": "family"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "kubwa": "big"
+      "Familia yako ni nzuri.":
+        native: "Your family is good."
+        bases:
+          "Familia": "family"
+          "yako": "your (class IX)"
+          "ni": "is"
+          "nzuri": "good"
+  "sw-1459":
+    native: "clan; kinship"
+    notes:
+      "n1": "Ukoo is a clan or kinship, the wider family, class XI, with the plural koo in class X. Use it for relatives beyond the household."
+    examples:
+      "Ukoo wangu ni mkubwa.":
+        native: "My clan is large."
+        bases:
+          "Ukoo": "clan"
+          "wangu": "my (class XI)"
+          "ni": "is"
+          "mkubwa": "large (class XI)"
+      "Ukoo wetu ni mkubwa.":
+        native: "Our clan is large."
+        bases:
+          "Ukoo": "clan"
+          "wetu": "our (class XI)"
+          "ni": "is"
+          "mkubwa": "large (class XI)"
+  "sw-1460":
+    native: "twin"
+    notes:
+      "n1": "Pacha is a twin, class V, with the plural mapacha in class VI. Its possessives take l-: pacha langu is my twin."
+    examples:
+      "Pacha langu ni mwalimu.":
+        native: "My twin is a teacher."
+        bases:
+          "Pacha": "twin"
+          "langu": "my (class V)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Mapacha yangu ni mazuri.":
+        native: "My twins are good."
+        bases:
+          "Mapacha": "twins"
+          "yangu": "my (class VI)"
+          "ni": "are"
+          "mazuri": "good (class VI)"
+  "sw-1461":
+    native: "widow; widower"
+    notes:
+      "n1": "Mjane is a widow or a widower, class I, with the plural wajane in class II."
+    examples:
+      "Mjane yule ni mama yangu.":
+        native: "That widow is my mother."
+        bases:
+          "Mjane": "widow"
+          "yule": "that (one person, far away)"
+          "ni": "is"
+          "mama": "mother"
+          "yangu": "my (class IX)"
+      "Wajane wale ni wazuri.":
+        native: "Those widows are good."
+        bases:
+          "Wajane": "widows"
+          "wale": "those (people, far away)"
+          "ni": "are"
+          "wazuri": "good (class II)"
+  "sw-1462":
+    native: "orphan"
+    notes:
+      "n1": "Yatima is an orphan, class I, with the plural mayatima in class II."
+    examples:
+      "Mtoto huyu ni yatima.":
+        native: "This child is an orphan."
+        bases:
+          "Mtoto": "child"
+          "huyu": "this (one person, class I)"
+          "ni": "is"
+          "yatima": "orphan"
+      "Mayatima ni watu.":
+        native: "Orphans are people."
+        bases:
+          "Mayatima": "orphans"
+          "ni": "are"
+          "watu": "people"
+  "sw-1463":
+    native: "nephew; niece"
+    notes:
+      "n1": "Mpwa is a nephew or a niece, class I, with the plural wapwa in class II. Mpwa wangu is my nephew or niece."
+    examples:
+      "Mpwa wangu ni mtoto.":
+        native: "My nephew is a child."
+        bases:
+          "Mpwa": "nephew"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mtoto": "child"
+      "Wapwa wangu ni wadogo.":
+        native: "My nephews are small."
+        bases:
+          "Wapwa": "nephews"
+          "wangu": "my (class II)"
+          "ni": "are"
+          "wadogo": "small (class II)"
+  "sw-1464":
+    native: "cousin"
+    notes:
+      "n1": "Binamu is a cousin, a relative who is not a parent or a child, class I/IX. Its plural is flagged for review because the dictionary gives two forms."
+    examples:
+      "Binamu yangu ni mwalimu.":
+        native: "My cousin is a teacher."
+        bases:
+          "Binamu": "cousin"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Binamu yako ni nani?":
+        native: "Who is your cousin?"
+        bases:
+          "Binamu": "cousin"
+          "yako": "your (class IX)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1465":
+    native: "paternal uncle"
+    notes:
+      "n1": "Ami is a paternal uncle, on your father's side, class IX, with the plural ami in class X. Mjomba is the maternal uncle."
+    examples:
+      "Ami yangu ni mwalimu.":
+        native: "My uncle is a teacher."
+        bases:
+          "Ami": "uncle"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Ami yako ni nani?":
+        native: "Who is your uncle?"
+        bases:
+          "Ami": "uncle"
+          "yako": "your (class IX)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1466":
+    native: "child (very young person)"
+    notes:
+      "n1": "Mtoto is a very young child, class I, with the plural watoto in class II. Use mwana for a son or a daughter of any age."
+    examples:
+      "Mtoto wangu ni mdogo.":
+        native: "My child is small."
+        bases:
+          "Mtoto": "child"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mdogo": "small (class I)"
+      "Watoto wangu ni wadogo.":
+        native: "My children are small."
+        bases:
+          "Watoto": "children"
+          "wangu": "my (class II)"
+          "ni": "are"
+          "wadogo": "small (class II)"

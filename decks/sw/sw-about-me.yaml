@@ -1,0 +1,98 @@
+schema: 1
+id: "sw-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "sw-1580"
+    target: "jina"
+    ipa: "ˈdʒina"
+    pos: "noun"
+    tags: ["noun", "about-me"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jina langu ni Amina.", ipa: "ˈdʒina ˈlaŋɡu ni aˈmina", bases: [{ word: "Jina", base: "jina" }, { word: "langu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "Amina", base: "Amina" }] }
+      - { target: "Jina lako nani?", ipa: "ˈdʒina ˈlako ˈnani", bases: [{ word: "Jina", base: "jina" }, { word: "lako", base: "-ako" }, { word: "nani", base: "nani" }] }
+  - id: "sw-1581"
+    target: "umri"
+    ipa: "ˈumɾi"
+    pos: "noun"
+    tags: ["noun", "about-me"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Una umri gani?", ipa: "ˈuna ˈumɾi ˈɡani", bases: [{ word: "Una", base: "na" }, { word: "umri", base: "umri" }, { word: "gani", base: "gani" }] }
+      - { target: "Umri wangu ni mdogo.", ipa: "ˈumɾi ˈwaŋɡu ni mˈdoɡo", bases: [{ word: "Umri", base: "umri" }, { word: "wangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "mdogo", base: "dogo" }] }
+  - id: "sw-1582"
+    target: "nchi"
+    ipa: "ˈntʃi"
+    pos: "noun"
+    tags: ["noun", "about-me"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nchi yangu ni Kenya.", ipa: "ˈntʃi ˈjaŋɡu ni ˈkeɲa", bases: [{ word: "Nchi", base: "nchi" }, { word: "yangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "Kenya", base: "Kenya" }] }
+      - { target: "Nchi hii ni nzuri.", ipa: "ˈntʃi ˈhii ni ˈnzuɾi", bases: [{ word: "Nchi", base: "nchi" }, { word: "hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+  - id: "sw-1583"
+    target: "lugha"
+    ipa: "ˈluɣa"
+    pos: "noun"
+    tags: ["noun", "about-me"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Lugha yangu ni Kiswahili.", ipa: "ˈluɣa ˈjaŋɡu ni kiswaˈhili", bases: [{ word: "Lugha", base: "lugha" }, { word: "yangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "Kiswahili", base: "Kiswahili" }] }
+      - { target: "Ninazungumza Kiswahili.", ipa: "ninazuˈŋɡumza kiswaˈhili", bases: [{ word: "Ninazungumza", base: "zungumza" }, { word: "Kiswahili", base: "Kiswahili" }] }
+  - id: "sw-1584"
+    target: "kuishi"
+    ipa: "kuˈiʃi"
+    pos: "verb"
+    tags: ["verb", "about-me"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninaishi Nairobi.", ipa: "ninaˈiʃi naiˈɾobi", bases: [{ word: "Ninaishi", base: "kuishi" }, { word: "Nairobi", base: "Nairobi" }] }
+      - { target: "Ninataka kuishi hapa.", ipa: "ninaˈtaka kuˈiʃi ˈhapa", bases: [{ word: "Ninataka", base: "taka" }, { word: "kuishi", base: "kuishi" }, { word: "hapa", base: "hapa" }] }
+  - id: "sw-1585"
+    target: "kuitwa"
+    ipa: "kuˈitwa"
+    pos: "verb"
+    tags: ["verb", "about-me"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninaitwa Amina.", ipa: "ninaˈitwa aˈmina", bases: [{ word: "Ninaitwa", base: "itwa" }, { word: "Amina", base: "Amina" }] }
+      - { target: "Anaitwa Juma.", ipa: "anaˈitwa ˈdʒuma", bases: [{ word: "Anaitwa", base: "itwa" }, { word: "Juma", base: "Juma" }] }
+  - id: "sw-1586"
+    target: "kuzaliwa"
+    ipa: "kuzaˈliwa"
+    pos: "verb"
+    tags: ["verb", "about-me"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nilizaliwa Nairobi.", ipa: "nilizaˈliwa naiˈɾobi", bases: [{ word: "Nilizaliwa", base: "zaliwa" }, { word: "Nairobi", base: "Nairobi" }] }
+      - { target: "Alizaliwa Kenya.", ipa: "alizaˈliwa ˈkeɲa", bases: [{ word: "Alizaliwa", base: "zaliwa" }, { word: "Kenya", base: "Kenya" }] }
+  - id: "sw-1587"
+    target: "kutoka"
+    ipa: "kuˈtoka"
+    pos: "verb"
+    tags: ["verb", "about-me"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninatoka Kenya.", ipa: "ninaˈtoka ˈkeɲa", bases: [{ word: "Ninatoka", base: "toka" }, { word: "Kenya", base: "Kenya" }] }
+      - { target: "Unatoka wapi?", ipa: "unaˈtoka ˈwapi", bases: [{ word: "Unatoka", base: "toka" }, { word: "wapi", base: "wapi" }] }
