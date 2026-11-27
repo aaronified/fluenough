@@ -1,5 +1,6 @@
 import 'package:yaml/yaml.dart';
 
+import '../achievements/achievement_set.dart';
 import '../private/private_ids.dart';
 import 'deck_parser.dart';
 import 'yaml_tree.dart';
@@ -22,6 +23,7 @@ class LanguagePath with _B1Plan {
     this.regions = const <Region>[],
     this.genders,
     this.levels,
+    this.achievementSets = const <AchievementSet>[],
     this.privatelyModified = false,
   });
 
@@ -40,6 +42,7 @@ class LanguagePath with _B1Plan {
     regions: regions,
     genders: genders,
     levels: levels,
+    achievementSets: achievementSets,
     privatelyModified: true,
   );
 
@@ -73,6 +76,10 @@ class LanguagePath with _B1Plan {
   @override
   final Map<Milestone, int>? levels;
 
+  /// The sets the achievements count (`achievement_sets`, #322), by core id.
+  /// Empty when the path chooses none: its Sets category is then empty.
+  final List<AchievementSet> achievementSets;
+
   /// The deck a learner from [native] is taught for [coreId]: `te-home`
   /// from `en` is `te-en-home`.
   String deckFor(String native, String coreId) {
@@ -92,6 +99,21 @@ class LanguagePath with _B1Plan {
     final units = <List<String>>[];
     final open = <int>{};
     final plan = <PlanUnit>[];
+    final chosen = <AchievementSet>[];
+    for (final choice in achievementSets) {
+      final held = <String>[
+        for (final core in choice.decks)
+          if (deckFor(native, core) case final id when exists(id)) id,
+      ];
+      if (held.isEmpty) continue;
+      chosen.add(
+        AchievementSet(
+          id: choice.id,
+          grammar: choice.grammar,
+          decks: List<String>.unmodifiable(held),
+        ),
+      );
+    }
     for (final unit in this.plan) {
       if (unit.isPlanned) {
         plan.add(unit);
@@ -125,6 +147,7 @@ class LanguagePath with _B1Plan {
       }),
       plan: List<PlanUnit>.unmodifiable(plan),
       levels: levels,
+      achievementSets: List<AchievementSet>.unmodifiable(chosen),
       privatelyModified: privatelyModified,
     );
   }
@@ -156,6 +179,7 @@ class CoursePath with _B1Plan {
     this.alphabet = const <String>{},
     this.plan = const <PlanUnit>[],
     this.levels,
+    this.achievementSets = const <AchievementSet>[],
     this.privatelyModified = false,
   });
 
@@ -196,6 +220,11 @@ class CoursePath with _B1Plan {
   /// its path gives none.
   @override
   final Map<Milestone, int>? levels;
+
+  /// The sets the achievements count ([LanguagePath.achievementSets]), by
+  /// this course's deck ids: only decks the course has, and no set with
+  /// none of them.
+  final List<AchievementSet> achievementSets;
 
   /// How many of the language's written units this course teaches, a unit
   /// of `"*"` alone not counted: "30 of 34 units" ([writtenUnits]).
@@ -260,6 +289,7 @@ class CoursePath with _B1Plan {
       alphabet: alphabet,
       plan: plan,
       levels: levels,
+      achievementSets: achievementSets,
       privatelyModified: privatelyModified,
     );
   }
@@ -436,7 +466,9 @@ const _pathFields = {
   'regions',
   'genders',
   'levels',
+  'achievement_sets',
 };
+const _setFields = {'id', 'kind', 'decks'};
 const _unitFields = {
   'decks',
   'planned',
@@ -781,6 +813,13 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
       alphabet.add(value as String);
     }
   }
+  final achievementSets = _achievementSets(
+    root.nodes['achievement_sets'],
+    bad,
+    isCoreId: isCoreId,
+    notCoreId: notCoreId,
+    listed: seen,
+  );
   return LanguagePath(
     id: id as String,
     language: language,
@@ -789,7 +828,92 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
     regions: regions,
     genders: genders,
     levels: levels,
+    achievementSets: achievementSets,
   );
+}
+
+/// A path's chosen sets for the achievements (#322, decision 7):
+/// `achievement_sets`, a list of `{ id, kind, decks }`, `kind` being `word`
+/// or `grammar` and `decks` core ids the path lists. Optional: an older path
+/// without it has no sets, and its Sets category is empty.
+List<AchievementSet> _achievementSets(
+  YamlNode? node,
+  DeckParseException Function(String, [YamlNode?]) bad, {
+  required bool Function(Object?) isCoreId,
+  required String Function(Object?) notCoreId,
+  required Set<String> listed,
+}) {
+  if (node == null) return const <AchievementSet>[];
+  if (node is! YamlList) {
+    throw bad(
+      'achievement_sets must be a list of sets, each { id, kind, decks }',
+      node,
+    );
+  }
+  final ids = <String>{};
+  final sets = <AchievementSet>[];
+  for (final (i, item) in node.nodes.indexed) {
+    if (item is! YamlMap) {
+      throw bad(
+        'achievement_sets[$i] must be a mapping with id, kind and decks',
+        item,
+      );
+    }
+    for (final key in item.nodes.keys.cast<YamlNode>()) {
+      if (!_setFields.contains(key.value)) {
+        throw bad('achievement_sets[$i]: unknown field "${key.value}"', key);
+      }
+    }
+    final id = item['id'];
+    if (id is! String || !_name.hasMatch(id)) {
+      throw bad(
+        'achievement_sets[$i].id must match [a-z0-9-]+, got "$id"',
+        item.nodes['id'] ?? item,
+      );
+    }
+    if (!ids.add(id)) {
+      throw bad('achievement_sets[$i]: "$id" is listed twice', item);
+    }
+    final kind = item['kind'];
+    if (kind != 'word' && kind != 'grammar') {
+      throw bad(
+        'achievement_sets[$i].kind must be "word" or "grammar", got "$kind"',
+        item.nodes['kind'] ?? item,
+      );
+    }
+    final decksNode = item.nodes['decks'];
+    if (decksNode is! YamlList || decksNode.nodes.isEmpty) {
+      throw bad(
+        'achievement_sets[$i].decks must be a non-empty list of core ids',
+        decksNode ?? item,
+      );
+    }
+    final decks = <String>[];
+    for (final deck in decksNode.nodes) {
+      final value = deck.value;
+      if (!isCoreId(value)) {
+        throw bad('achievement_sets[$i].decks: ${notCoreId(value)}', deck);
+      }
+      if (!listed.contains(value)) {
+        throw bad(
+          'achievement_sets[$i].decks lists "$value", which the path does not',
+          deck,
+        );
+      }
+      if (decks.contains(value)) {
+        throw bad('achievement_sets[$i].decks: "$value" is listed twice', deck);
+      }
+      decks.add(value as String);
+    }
+    sets.add(
+      AchievementSet(
+        id: id,
+        grammar: kind == 'grammar',
+        decks: List<String>.unmodifiable(decks),
+      ),
+    );
+  }
+  return List<AchievementSet>.unmodifiable(sets);
 }
 
 /// A path's words per level (#615, ADR-0045): `{ A1: 120, A2: 60, B1: 80 }`,

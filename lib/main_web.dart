@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'app.dart';
+import 'app/achievements_holder.dart';
 import 'app/added_decks.dart';
 import 'app/app_info.dart';
 import 'app/app_log.dart';
@@ -95,6 +96,7 @@ Future<void> main() async {
         fitRunner: (job) async => SkillFit.run(job),
         paceRunner: paceInPlace,
         progressRunner: progressInPlace,
+        achievementsRunner: achievementsInPlace,
         webInstall: WebInstall(openWebPlatform()),
         log: log,
       ),
