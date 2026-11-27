@@ -109,11 +109,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-1 approved open issue.
-
-**Enhancements**
-
-- [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
+0 approved open issues.
 
 ### 1 · Skill model + FSRS
 
