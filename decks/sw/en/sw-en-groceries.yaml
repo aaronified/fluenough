@@ -1,0 +1,277 @@
+schema: 1
+id: "sw-en-groceries"
+kind: "layer"
+core: "sw-groceries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries"
+description: "Food, drink and the measures used when buying them. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "sw-2350":
+    native: "sugar"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural sukari, class X."
+    examples:
+      "Ninataka sukari.":
+        native: "I want sugar."
+        bases:
+          "Ninataka": "to want (I want)"
+          "sukari": "sugar"
+      "Ninapenda sukari.":
+        native: "I like sugar."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "sukari": "sugar"
+  "sw-2351":
+    native: "salt"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). It has no plural."
+    examples:
+      "Ninataka chumvi.":
+        native: "I want salt."
+        bases:
+          "Ninataka": "to want (I want)"
+          "chumvi": "salt"
+      "Ninapenda chumvi.":
+        native: "I like salt."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "chumvi": "salt"
+  "sw-2352":
+    native: "flour"
+    notes:
+      "n1": "Noun class XI (u-). It has no plural."
+    examples:
+      "Ninataka unga.":
+        native: "I want flour."
+        bases:
+          "Ninataka": "to want (I want)"
+          "unga": "flour"
+      "Ninapenda unga.":
+        native: "I like flour."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "unga": "flour"
+  "sw-2353":
+    native: "oil; grease; fat"
+    notes:
+      "n1": "Noun class VI (ma-). Plural only. The entry's other sense is fuel or petrol, not used here."
+    examples:
+      "Ninataka mafuta.":
+        native: "I want oil."
+        bases:
+          "Ninataka": "to want (I want)"
+          "mafuta": "oil"
+      "Mafuta ni mazuri.":
+        native: "The oil is good."
+        bases:
+          "Mafuta": "oil"
+          "ni": "is; am"
+          "mazuri": "good"
+  "sw-2354":
+    native: "uncooked rice"
+    notes:
+      "n1": "Noun class III (m-). Plural michele, class IV. The entry's other sense is a drug, not used here."
+    examples:
+      "Ninataka mchele.":
+        native: "I want rice."
+        bases:
+          "Ninataka": "to want (I want)"
+          "mchele": "rice"
+      "Mchele ni mzuri.":
+        native: "The rice is good."
+        bases:
+          "Mchele": "rice"
+          "ni": "is; am"
+          "mzuri": "good"
+  "sw-2355":
+    native: "beans"
+    notes:
+      "n1": "Noun class VI (ma-). Plural only."
+    examples:
+      "Ninataka maharage.":
+        native: "I want beans."
+        bases:
+          "Ninataka": "to want (I want)"
+          "maharage": "beans"
+      "Maharage ni mazuri.":
+        native: "The beans are good."
+        bases:
+          "Maharage": "beans"
+          "ni": "is; am"
+          "mazuri": "good"
+  "sw-2356":
+    native: "butter"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). It has no plural."
+    examples:
+      "Ninataka siagi.":
+        native: "I want butter."
+        bases:
+          "Ninataka": "to want (I want)"
+          "siagi": "butter"
+      "Ninapenda siagi.":
+        native: "I like butter."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "siagi": "butter"
+  "sw-2357":
+    native: "bread"
+    notes:
+      "n1": "Noun class III (m-). Plural mikate, class IV. The entry's other sense is loaf."
+    examples:
+      "Ninataka mkate.":
+        native: "I want bread."
+        bases:
+          "Ninataka": "to want (I want)"
+          "mkate": "bread"
+      "Mkate ni mzuri.":
+        native: "The bread is good."
+        bases:
+          "Mkate": "bread"
+          "ni": "is; am"
+          "mzuri": "good"
+  "sw-2358":
+    native: "milk"
+    notes:
+      "n1": "Noun class VI (ma-). Plural only."
+    examples:
+      "Ninataka maziwa.":
+        native: "I want milk."
+        bases:
+          "Ninataka": "to want (I want)"
+          "maziwa": "milk"
+      "Maziwa ni mazuri.":
+        native: "The milk is good."
+        bases:
+          "Maziwa": "milk"
+          "ni": "is; am"
+          "mazuri": "good"
+  "sw-2359":
+    native: "egg"
+    notes:
+      "n1": "Noun class V (no prefix). Plural mayai, class VI."
+    examples:
+      "Ninataka yai.":
+        native: "I want an egg."
+        bases:
+          "Ninataka": "to want (I want)"
+          "yai": "egg"
+      "Ninapenda yai.":
+        native: "I like eggs."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "yai": "egg"
+  "sw-2360":
+    native: "tea"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural chai, class X. The entry's other sense is breakfast, not used here."
+    examples:
+      "Ninataka chai.":
+        native: "I want tea."
+        bases:
+          "Ninataka": "to want (I want)"
+          "chai": "tea"
+      "Chai ni nzuri.":
+        native: "The tea is good."
+        bases:
+          "Chai": "tea"
+          "ni": "is; am"
+          "nzuri": "good"
+  "sw-2361":
+    native: "coffee"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). It has no plural."
+    examples:
+      "Ninataka kahawa.":
+        native: "I want coffee."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kahawa": "coffee"
+      "Kahawa ni nzuri.":
+        native: "The coffee is good."
+        bases:
+          "Kahawa": "coffee"
+          "ni": "is; am"
+          "nzuri": "good"
+  "sw-2362":
+    native: "cheese"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural jibini, class X."
+    examples:
+      "Ninapenda jibini.":
+        native: "I like cheese."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "jibini": "cheese"
+      "Jibini ni nzuri.":
+        native: "The cheese is good."
+        bases:
+          "Jibini": "cheese"
+          "ni": "is; am"
+          "nzuri": "good"
+  "sw-2363":
+    native: "kilogram"
+    notes:
+      "n1": "Noun class IX or VII: the entry gives both, so the class is not fixed here. Plural kilo, class X."
+    examples:
+      "Ninataka kilo.":
+        native: "I want a kilogram."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kilo": "kilogram"
+      "Ninataka kilo mbili.":
+        native: "I want two kilograms."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kilo": "kilogram"
+          "mbili": "two"
+  "sw-2364":
+    native: "litre"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural lita, class X."
+    examples:
+      "Ninataka lita.":
+        native: "I want a litre."
+        bases:
+          "Ninataka": "to want (I want)"
+          "lita": "litre"
+      "Ninataka lita mbili.":
+        native: "I want two litres."
+        bases:
+          "Ninataka": "to want (I want)"
+          "lita": "litre"
+          "mbili": "two"
+  "sw-2365":
+    native: "packet; small pack"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural pakiti, class X."
+    examples:
+      "Ninataka pakiti.":
+        native: "I want a packet."
+        bases:
+          "Ninataka": "to want (I want)"
+          "pakiti": "packet"
+      "Ninataka pakiti mbili.":
+        native: "I want two packets."
+        bases:
+          "Ninataka": "to want (I want)"
+          "pakiti": "packet"
+          "mbili": "two"
+  "sw-2366":
+    native: "can; tin"
+    notes:
+      "n1": "Noun class V (no prefix). Plural makopo, class VI."
+    examples:
+      "Ninataka kopo.":
+        native: "I want a can."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kopo": "can"
+      "Ninataka makopo.":
+        native: "I want cans."
+        bases:
+          "Ninataka": "to want (I want)"
+          "makopo": "can"
