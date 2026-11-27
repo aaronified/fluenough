@@ -314,6 +314,33 @@ void main() {
   });
 
   group('the badge glyph', () {
+    testWidgets('the progress ring follows the badge outline', (tester) async {
+      _tallPhone(tester);
+      final result = inProgress(AchievementDef.words(500), 100, 500);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: BadgeGlyph(view: BadgeView(result, BadgeShown.progress)),
+        ),
+      );
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      const size = BadgeSize.regular;
+      final box = Size.square(size.side + 2 * size.ringGap);
+      final outline = badgeRingPath(box, size.radius + size.ringGap - 2);
+      // The ring is a rounded square, not a circle, with the glyph's centre.
+      final bounds = outline.getBounds();
+      expect(bounds.width, closeTo(box.width - 4, 1e-6));
+      expect(bounds.height, closeTo(box.height - 4, 1e-6));
+      expect(bounds.center, Offset(box.width / 2, box.height / 2));
+      // It starts at the top centre and the corner is cut, as the glyph's is.
+      final metric = outline.computeMetrics().single;
+      final start = metric.getTangentForOffset(0)!.position;
+      expect(start.dx, closeTo(box.width / 2, 1e-6));
+      expect(start.dy, closeTo(2, 1e-6));
+      expect(outline.contains(Offset(box.width - 3, 3)), isFalse);
+      expect(outline.contains(Offset(box.width / 2, box.height / 2)), isTrue);
+    });
+
     testWidgets('draws the three states and the metals of the levels', (
       tester,
     ) async {
