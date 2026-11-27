@@ -131,11 +131,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 2 · B1 plans
 
-4 approved open issues.
+3 approved open issues.
 
 **Other**
 
-- [#39](https://github.com/aaronified/fluenough/issues/39) Telugu and Kannada: refit to the Dravidian order
 - [#413](https://github.com/aaronified/fluenough/issues/413) Plan: a phrasebook, then words, then rules, then sentences
 - [#419](https://github.com/aaronified/fluenough/issues/419) Words, rules, sentences: Telugu content
 - [#420](https://github.com/aaronified/fluenough/issues/420) Words, rules, sentences: content for the other courses
@@ -249,7 +248,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#351](https://github.com/aaronified/fluenough/issues/351) New course: Punjabi
 - [#352](https://github.com/aaronified/fluenough/issues/352) New course: Odia
 - [#353](https://github.com/aaronified/fluenough/issues/353) New course: Nepali
-- [#354](https://github.com/aaronified/fluenough/issues/354) New course: Tamil
 - [#355](https://github.com/aaronified/fluenough/issues/355) New course: Malayalam
 - [#356](https://github.com/aaronified/fluenough/issues/356) New course: Sanskrit
 - [#357](https://github.com/aaronified/fluenough/issues/357) New course: Portuguese
