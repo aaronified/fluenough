@@ -1,0 +1,88 @@
+schema: 1
+id: "sw-grammar-verb-slots-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "sw-0600"
+    target: "Ninakupenda."
+    ipa: "ninakuˈpenda"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-ku-" }
+    bases: [{ word: "Ninakupenda", base: "penda" }]
+  - id: "sw-0601"
+    target: "Wananipenda."
+    ipa: "wananiˈpenda"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-ni-" }
+    bases: [{ word: "Wananipenda", base: "penda" }]
+  - id: "sw-0602"
+    target: "Sikukisoma."
+    ipa: "sikukiˈsoma"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-ku-" }
+    bases: [{ word: "Sikukisoma", base: "soma" }]
+  - id: "sw-0603"
+    target: "Sitakisoma."
+    ipa: "sitakiˈsoma"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-ta-" }
+    bases: [{ word: "Sitakisoma", base: "soma" }]
+  - id: "sw-0604"
+    target: "Walikula."
+    ipa: "waliˈkula"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-li-" }
+    bases: [{ word: "Walikula", base: "la" }]
+  - id: "sw-0605"
+    target: "Watakwenda."
+    ipa: "wataˈkwenda"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-ta-" }
+    bases: [{ word: "Watakwenda", base: "enda" }]
+  - id: "sw-0606"
+    target: "Nilisoma na kuandika."
+    ipa: "niliˈsoma na kuaˈndika"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/ku-" }
+    bases: [{ word: "Nilisoma", base: "soma" }, { word: "na", base: "na" }, { word: "kuandika", base: "andika" }]
+  - id: "sw-0607"
+    target: "Sijui."
+    ipa: "siˈdʒui"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-i" }
+    bases: [{ word: "Sijui", base: "jua" }]
+  - id: "sw-0608"
+    target: "Watoto walisoma."
+    ipa: "waˈtoto waliˈsoma"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-li-" }
+    bases: [{ word: "Watoto", base: "mtoto" }, { word: "walisoma", base: "soma" }]
+  - id: "sw-0609"
+    target: "Hatukusoma."
+    ipa: "hatukuˈsoma"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-ku-" }
+    bases: [{ word: "Hatukusoma", base: "soma" }]
