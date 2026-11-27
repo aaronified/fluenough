@@ -1,0 +1,143 @@
+schema: 1
+id: "sw-en-about-me"
+kind: "layer"
+core: "sw-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+description: "Eight words for talking about yourself: your name and age, your country and language, where you live, where you were born and where you come from. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-1580":
+    native: "name"
+    notes:
+      "n1": "Jina is name, class V, with the plural majina in class VI. Jina langu is my name and jina lako is your name; the phrase jina lako nani? asks what your name is."
+    examples:
+      "Jina langu ni Amina.":
+        native: "My name is Amina."
+        bases:
+          "Jina": "name"
+          "langu": "my (class V)"
+          "ni": "is"
+          "Amina": "a personal name"
+      "Jina lako nani?":
+        native: "What is your name?"
+        bases:
+          "Jina": "name"
+          "lako": "your (class V)"
+          "nani": "who (here, what)"
+  "sw-1581":
+    native: "age"
+    notes:
+      "n1": "Umri is age, class XI, with no plural. Una umri gani? asks how old you are, literally what age you have."
+    examples:
+      "Una umri gani?":
+        native: "How old are you?"
+        bases:
+          "Una": "you have"
+          "umri": "age"
+          "gani": "what"
+      "Umri wangu ni mdogo.":
+        native: "I am young."
+        bases:
+          "Umri": "age"
+          "wangu": "my (class XI)"
+          "ni": "is"
+          "mdogo": "small; young (class XI)"
+  "sw-1582":
+    native: "country (nation)"
+    notes:
+      "n1": "Nchi is country or nation, class IX, with the plural nchi in class X. Nchi yangu is my country. The dictionary's second sense is the earth."
+    examples:
+      "Nchi yangu ni Kenya.":
+        native: "My country is Kenya."
+        bases:
+          "Nchi": "country"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "Kenya": "the country Kenya"
+      "Nchi hii ni nzuri.":
+        native: "This country is good."
+        bases:
+          "Nchi": "country"
+          "hii": "this (class IX)"
+          "ni": "is"
+          "nzuri": "good"
+  "sw-1583":
+    native: "language"
+    notes:
+      "n1": "Lugha is language, class IX, with the plural lugha in class X. Lugha yangu is my language. Kiswahili is the Swahili language."
+    examples:
+      "Lugha yangu ni Kiswahili.":
+        native: "My language is Swahili."
+        bases:
+          "Lugha": "language"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "Kiswahili": "Swahili (the language)"
+      "Ninazungumza Kiswahili.":
+        native: "I speak Swahili."
+        bases:
+          "Ninazungumza": "I speak"
+          "Kiswahili": "Swahili (the language)"
+  "sw-1584":
+    native: "to live"
+    notes:
+      "n1": "Kuishi is to live, the infinitive of -ishi. Ninaishi is I live: ni- is I, -na- is the present and -ishi is the stem. Kuishi can also mean to exist."
+    examples:
+      "Ninaishi Nairobi.":
+        native: "I live in Nairobi."
+        bases:
+          "Ninaishi": "I live"
+          "Nairobi": "the city Nairobi"
+      "Ninataka kuishi hapa.":
+        native: "I want to live here."
+        bases:
+          "Ninataka": "I want"
+          "kuishi": "to live"
+          "hapa": "here"
+  "sw-1585":
+    native: "to be called (passive of -ita)"
+    notes:
+      "n1": "Kuitwa is to be called, the passive of -ita, to call. Ninaitwa Amina is literally I am called Amina, the way to say your name."
+    examples:
+      "Ninaitwa Amina.":
+        native: "My name is Amina."
+        bases:
+          "Ninaitwa": "I am called"
+          "Amina": "a personal name"
+      "Anaitwa Juma.":
+        native: "He is called Juma."
+        bases:
+          "Anaitwa": "he is called"
+          "Juma": "a personal name"
+  "sw-1586":
+    native: "to be born (passive of -zaa)"
+    notes:
+      "n1": "Kuzaliwa is to be born, the passive of -zaa, to give birth. Nilizaliwa is I was born: ni- is I, -li- the past and -zaliwa the stem."
+    examples:
+      "Nilizaliwa Nairobi.":
+        native: "I was born in Nairobi."
+        bases:
+          "Nilizaliwa": "I was born"
+          "Nairobi": "the city Nairobi"
+      "Alizaliwa Kenya.":
+        native: "She or he was born in Kenya."
+        bases:
+          "Alizaliwa": "he or she was born"
+          "Kenya": "the country Kenya"
+  "sw-1587":
+    native: "to come from"
+    notes:
+      "n1": "Kutoka is to come from, or to leave, the infinitive of -toka. Ninatoka Kenya is I come from Kenya. Its first dictionary sense is to go out."
+    examples:
+      "Ninatoka Kenya.":
+        native: "I come from Kenya."
+        bases:
+          "Ninatoka": "I come from"
+          "Kenya": "the country Kenya"
+      "Unatoka wapi?":
+        native: "Where do you come from?"
+        bases:
+          "Unatoka": "you come from"
+          "wapi": "where"
