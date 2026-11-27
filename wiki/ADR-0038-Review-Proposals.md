@@ -211,6 +211,19 @@ read.
   text-to-speech; any other point is a flag note whose only change is the
   record, for the owner to act on.
 
+### Amendment: the mail's issue is closed by the pipeline (owner, 2026-11-26)
+
+"All such issues should be closed once merge happens via the CI itself." The
+issue of a review or questions mail carries a hidden line with the mail's key,
+the key of the bot's branches. After the proposals, each run closes, as
+completed, every open such issue whose mail's PRs are all merged or closed (or
+had nothing to change, or did not validate) and none open or waiting, with one
+plain comment; a mail left to the owner stays open. It reads GitHub each run,
+so a PR merged between runs is caught, and closed issues are never touched. A
+legacy issue without the key is matched by its rater code. Merge decisions,
+labels and the mail labelling are unchanged. Setup:
+[Review-Bot-Setup](Review-Bot-Setup.md).
+
 ## Consequences
 
 - Native speakers change the decks learners download without the owner,
