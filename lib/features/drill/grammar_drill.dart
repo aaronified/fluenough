@@ -7,6 +7,7 @@ import '../../app/skill.dart';
 import '../../core/feedback/content_report.dart';
 import '../../core/grading/answer_grader.dart';
 import '../../core/grading/self_grade.dart';
+import '../../core/grading/table_mistake.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -501,9 +502,32 @@ class _GrammarDrillState extends State<GrammarDrill> {
       AnswerOutcome.wrong => FeedbackBanner(
         kind: FeedbackKind.wrong,
         title: l10n.feedbackWrong,
-        detail: l10n.feedbackAnswer(shown),
+        detail:
+            '${l10n.feedbackAnswer(shown)}'
+            '${_mistakeLine(l10n, cell, answer.typed)}',
       ),
     };
+  }
+
+  /// A line after the answer saying what the wrong answer was, read from the
+  /// cell's own table (#327): another cell's form, or the uninflected word.
+  /// Empty, with no line break, for any other wrong answer.
+  String _mistakeLine(AppLocalizations l10n, GrammarCell cell, String typed) {
+    final mistake = readTableMistake(
+      given: typed,
+      entry: cell.entry,
+      slots: cell.pattern.slots,
+      asked: cell.slot,
+    );
+    if (mistake == null) return '';
+    final sentence = switch (mistake.kind) {
+      TableMistakeKind.otherCell => l10n.feedbackTableOtherCell(
+        mistake.slots.join(', '),
+        cell.slot,
+      ),
+      TableMistakeKind.uninflected => l10n.feedbackTableUninflected(cell.slot),
+    };
+    return '\n$sentence';
   }
 
   /// The foot, as the production drill draws it. While the feature is

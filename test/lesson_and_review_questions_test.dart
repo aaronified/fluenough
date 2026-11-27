@@ -805,7 +805,11 @@ cards:
 
             expect(banner(tester).kind, FeedbackKind.wrong);
             expect(banner(tester).title, l10n.feedbackWrong);
-            expect(banner(tester).detail, l10n.feedbackAnswer('habláis'));
+            expect(
+              banner(tester).detail,
+              '${l10n.feedbackAnswer('habláis')}\n'
+              '${l10n.feedbackTableOtherCell('nosotros', 'vosotros')}',
+            );
 
             final row = findGrammarCell(
               pattern,
@@ -828,6 +832,28 @@ cards:
           }
         },
       );
+
+      testWidgets('the lemma typed is the dictionary form', (tester) async {
+        usePhone(tester);
+        await pumpScreen(tester, const GrammarDrill(), state: grammarOn());
+        await typeAndCheck(tester, 'hablar');
+        final l10n = l10nOf(tester);
+        expect(banner(tester).kind, FeedbackKind.wrong);
+        expect(
+          banner(tester).detail,
+          '${l10n.feedbackAnswer('habláis')}\n'
+          '${l10n.feedbackTableUninflected('vosotros')}',
+        );
+      });
+
+      testWidgets('an unmatched wrong answer adds no line', (tester) async {
+        usePhone(tester);
+        await pumpScreen(tester, const GrammarDrill(), state: grammarOn());
+        await typeAndCheck(tester, 'comeis');
+        final l10n = l10nOf(tester);
+        expect(banner(tester).kind, FeedbackKind.wrong);
+        expect(banner(tester).detail, l10n.feedbackAnswer('habláis'));
+      });
     });
 
     testWidgets('live: a session card is graded, recorded, and shows its table '

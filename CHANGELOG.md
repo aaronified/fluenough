@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Grammar mistakes explained.** When a wrong grammar answer is another form of the same word, such as the "we" form for "you all", or the dictionary form, the feedback now says which form you gave.
+
 ## [0.12.2] - 2026-11-23
 
 - **Faster start.** The app opens straight to your language and loads the others when you pick them.

@@ -5079,6 +5079,21 @@
       }
     }
   },
+  "feedbackTableOtherCell": "That is the form for {slots}, not for {asked}.",
+  "@feedbackTableOtherCell": {
+    "description": "Grammar drill, wrong: the typed answer is the form of another cell of the same table (#327), read from the table. {slots} is the slot label or labels, such as 'nosotros', {asked} the slot that was asked.",
+    "placeholders": {
+      "slots": {"type": "String", "example": "nosotros"},
+      "asked": {"type": "String", "example": "vosotros"}
+    }
+  },
+  "feedbackTableUninflected": "That is the dictionary form, not yet changed for {asked}.",
+  "@feedbackTableUninflected": {
+    "description": "Grammar drill, wrong: the typed answer is the word as the dictionary gives it (#327). {asked} is the slot that was asked, such as 'vosotros'.",
+    "placeholders": {
+      "asked": {"type": "String", "example": "vosotros"}
+    }
+  },
   "feedbackSaidContrast": "You said “{said}”. The difference is {contrast}.",
   "@feedbackSaidContrast": {
     "description": "Speaking drill, wrong: the word heard is the answer with one sound changed (#89). {contrast} comes from the language's sounds file, such as 'a breath after the consonant'.",
