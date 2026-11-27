@@ -121,12 +121,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 1 · Skill model + FSRS
 
-3 approved open issues.
+2 approved open issues.
 
 **Other**
 
 - [#31](https://github.com/aaronified/fluenough/issues/31) Phonemic contrasts: the sounds of the language learnt that the learner's languages lack
-- [#32](https://github.com/aaronified/fluenough/issues/32) Grapheme-level TTS fallback for script decks
 - [#93](https://github.com/aaronified/fluenough/issues/93) Grammar exercises: match rows and sort into groups
 
 ### 2 · B1 plans
@@ -172,11 +171,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1674](https://github.com/aaronified/fluenough/issues/1674) In-house text-to-speech engine: synthesised audio for cards and sounds (future)
 - [#1677](https://github.com/aaronified/fluenough/issues/1677) Move decks-live to a separate public repo (fluenough decks), with whole-deck NC support
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
-- [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
-- [#33](https://github.com/aaronified/fluenough/issues/33) Right-to-left: check on a device with a real Urdu deck
-- [#34](https://github.com/aaronified/fluenough/issues/34) Complex script rendering: Nastaliq, conjuncts, matras
-- [#46](https://github.com/aaronified/fluenough/issues/46) Let the user choose the interface language, with translations in plain txt files
 - [#99](https://github.com/aaronified/fluenough/issues/99) Culture decks: beyond the basics (tracking)
 - [#101](https://github.com/aaronified/fluenough/issues/101) Culture deck: local mythology and folklore
 - [#102](https://github.com/aaronified/fluenough/issues/102) Culture deck: cuisine
