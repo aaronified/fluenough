@@ -40,6 +40,10 @@ on:
     workflows: [Deck CI]
     types: [completed]
 
+# After the proposals each run also closes the issue of every review mail whose
+# PRs are all merged or closed (tools/close_review_issues.py, ADR-0038); that
+# needs only the issues: write and pull-requests: read below.
+
 # One run at a time: two would file the same mail twice.
 concurrency:
   group: feedback-mail

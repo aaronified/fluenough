@@ -144,6 +144,22 @@ this order:
 - `Review mails proposed: …` and `Question mails counted: …` (for example
   `1 merged`, or `1 closed`; `none waiting` when there is nothing new).
 - `Agreed proposals: …` and `Flagged question points: …`
+- `Review issues: N closed, N waiting for their PRs, N left to the owner.`
+
+The issue of a review or questions mail is closed by the workflow itself, as
+completed, with the comment "Closed by the review pipeline: all of this
+mail's pull requests are merged or closed." (owner, 2026-11-26). Nothing to
+set up: it uses the workflow's own token, which already has `issues: write`
+and `pull-requests: read`. The issue's last line is a hidden comment naming
+the mail's key (`<!-- fluenough-mail: KEY -->`), the same key as the bot's
+branches `review-bot/review/KEY` and `review-bot/questions/KEY`. It closes
+when each of the mail's PRs is merged or closed (or there was nothing to
+propose, or the change did not validate) and none is open or waiting. An
+issue marked "check the files", "sender does not match", "held for the owner"
+or "sender not checked" is left open for the owner. Issues filed before the
+key existed are matched by the rater code in their title: closed when every
+bot PR of that code is done and the newest was opened after the issue. See
+`tools/close_review_issues.py`.
 
 The bot's PRs are labelled `review-bot`, with `proposals`, `agreement` or
 `proposal outdated`, and target `decks-live`.
