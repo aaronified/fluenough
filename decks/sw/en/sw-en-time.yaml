@@ -1,0 +1,340 @@
+schema: 1
+id: "sw-en-time"
+kind: "layer"
+core: "sw-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time"
+description: "Nineteen words for time: today, tomorrow and yesterday, now, the day, week, month and year, the hour, minute and second, and the parts of the day from morning to night. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-1930":
+    native: "today"
+    notes:
+      "n1": "Leo is today. It stands at the front or the end of its sentence: leo ni siku nzuri is today is a good day."
+    examples:
+      "Leo ni siku nzuri.":
+        native: "Today is a good day."
+        bases:
+          "Leo": "today"
+          "ni": "is"
+          "siku": "day"
+          "nzuri": "good"
+      "Leo ninataka chai.":
+        native: "Today I want tea."
+        bases:
+          "Leo": "today"
+          "ninataka": "I want"
+          "chai": "tea"
+  "sw-1931":
+    native: "tomorrow"
+    notes:
+      "n1": "Kesho is tomorrow. The future marker -ta- goes on the verb: nitakuja is I will come, so kesho nitakuja is I will come tomorrow."
+    examples:
+      "Kesho nitakuja.":
+        native: "I will come tomorrow."
+        bases:
+          "Kesho": "tomorrow"
+          "nitakuja": "I will come"
+      "Kesho ni siku nzuri.":
+        native: "Tomorrow is a good day."
+        bases:
+          "Kesho": "tomorrow"
+          "ni": "is"
+          "siku": "day"
+          "nzuri": "good"
+  "sw-1932":
+    native: "yesterday"
+    notes:
+      "n1": "Jana is yesterday. After a noun it means last, as in mwaka jana, last year. Its past verb is made with -li-, as in nilikuwa, I was."
+    examples:
+      "Jana ilikuwa siku nzuri.":
+        native: "Yesterday was a good day."
+        bases:
+          "Jana": "yesterday"
+          "ilikuwa": "was"
+          "siku": "day"
+          "nzuri": "good"
+      "Jana nilikuwa hapa.":
+        native: "Yesterday I was here."
+        bases:
+          "Jana": "yesterday"
+          "nilikuwa": "I was"
+          "hapa": "here"
+  "sw-1933":
+    native: "the day before yesterday"
+    notes:
+      "n1": "Juzi is the day before yesterday. It can also mean a few days ago, when the day is not clear."
+    examples:
+      "Juzi ilikuwa siku nzuri.":
+        native: "The day before yesterday was a good day."
+        bases:
+          "Juzi": "the day before yesterday"
+          "ilikuwa": "was"
+          "siku": "day"
+          "nzuri": "good"
+      "Nilikuwa hapa juzi.":
+        native: "I was here the day before yesterday."
+        bases:
+          "Nilikuwa": "I was"
+          "hapa": "here"
+          "juzi": "the day before yesterday"
+  "sw-1934":
+    native: "now"
+    notes:
+      "n1": "Sasa is now, at this time. Sasa hivi is right now, with hivi, which is the vi- form of hii."
+    examples:
+      "Sasa ni saa ngapi?":
+        native: "What time is it now?"
+        bases:
+          "Sasa": "now"
+          "ni": "is"
+          "saa": "hour; o'clock"
+          "ngapi": "how many"
+      "Ninataka chai sasa.":
+        native: "I want tea now."
+        bases:
+          "Ninataka": "I want"
+          "chai": "tea"
+          "sasa": "now"
+  "sw-1935":
+    native: "day"
+    notes:
+      "n1": "Siku is a day, class IX, with the plural siku in class X. It is also the whole day of twenty-four hours, from sunrise to sunrise."
+    examples:
+      "Siku hii ni nzuri.":
+        native: "This day is good."
+        bases:
+          "Siku": "day"
+          "hii": "this (class IX)"
+          "ni": "is"
+          "nzuri": "good"
+      "Siku saba ni wiki.":
+        native: "Seven days make a week."
+        bases:
+          "Siku": "days"
+          "saba": "seven"
+          "ni": "make"
+          "wiki": "week"
+  "sw-1936":
+    native: "week"
+    notes:
+      "n1": "Wiki is a week, class IX, with the plural wiki in class X. Wiki iliyopita is last week, from the dictionary."
+    examples:
+      "Wiki iliyopita.":
+        native: "Last week."
+        bases:
+          "Wiki": "week"
+          "iliyopita": "last; past"
+      "Wiki hii ni nzuri.":
+        native: "This week is good."
+        bases:
+          "Wiki": "week"
+          "hii": "this (class IX)"
+          "ni": "is"
+          "nzuri": "good"
+  "sw-1937":
+    native: "month"
+    notes:
+      "n1": "Mwezi is a month, class III, with the plural miezi in class IV. The dictionary's first sense is the moon."
+    examples:
+      "Mwezi huu ni mzuri.":
+        native: "This month is good."
+        bases:
+          "Mwezi": "month"
+          "huu": "this (class III)"
+          "ni": "is"
+          "mzuri": "good (class III)"
+      "Mwezi una wiki nne.":
+        native: "A month has four weeks."
+        bases:
+          "Mwezi": "month"
+          "una": "has"
+          "wiki": "weeks"
+          "nne": "four"
+  "sw-1938":
+    native: "year"
+    notes:
+      "n1": "Mwaka is a year, class III, with the plural miaka in class IV. Mwaka jana is last year, and mwaka huu is this year."
+    examples:
+      "Mwaka huu ni mzuri.":
+        native: "This year is good."
+        bases:
+          "Mwaka": "year"
+          "huu": "this (class III)"
+          "ni": "is"
+          "mzuri": "good (class III)"
+      "Mwaka jana nilikuwa hapa.":
+        native: "Last year I was here."
+        bases:
+          "Mwaka": "year"
+          "jana": "last"
+          "nilikuwa": "I was"
+          "hapa": "here"
+  "sw-1939":
+    native: "hour; clock; o'clock"
+    notes:
+      "n1": "Saa is an hour, a clock or an o'clock, class IX, with the plural saa in class X. Saa moja is one o'clock, and saa mbili usiku is two at night."
+    examples:
+      "Saa moja asubuhi.":
+        native: "One o'clock in the morning."
+        bases:
+          "Saa": "o'clock"
+          "moja": "one"
+          "asubuhi": "morning"
+      "Saa mbili usiku.":
+        native: "Two o'clock at night."
+        bases:
+          "Saa": "o'clock"
+          "mbili": "two"
+          "usiku": "night"
+  "sw-1940":
+    native: "minute"
+    notes:
+      "n1": "Dakika is a minute, class IX, with the plural dakika in class X. Subiri dakika moja is wait one minute."
+    examples:
+      "Dakika tano tu.":
+        native: "Only five minutes."
+        bases:
+          "Dakika": "minutes"
+          "tano": "five"
+          "tu": "only"
+      "Subiri dakika moja.":
+        native: "Wait one minute."
+        bases:
+          "Subiri": "wait"
+          "dakika": "minute"
+          "moja": "one"
+  "sw-1941":
+    native: "second (of time)"
+    notes:
+      "n1": "Sekunde is a second of time, class IX, with the plural sekunde in class X. It is a sixtieth of a minute."
+    examples:
+      "Subiri sekunde moja.":
+        native: "Wait one second."
+        bases:
+          "Subiri": "wait"
+          "sekunde": "second"
+          "moja": "one"
+      "Sekunde moja, tafadhali.":
+        native: "One second, please."
+        bases:
+          "Sekunde": "second"
+          "moja": "one"
+          "tafadhali": "please"
+  "sw-1942":
+    native: "morning"
+    notes:
+      "n1": "Asubuhi is morning, class IX, with the plural asubuhi in class X. Habari ya asubuhi is good morning."
+    examples:
+      "Habari ya asubuhi.":
+        native: "Good morning."
+        bases:
+          "Habari": "news; greeting"
+          "ya": "of (class IX)"
+          "asubuhi": "morning"
+      "Asubuhi ni nzuri.":
+        native: "The morning is good."
+        bases:
+          "Asubuhi": "morning"
+          "ni": "is"
+          "nzuri": "good"
+  "sw-1943":
+    native: "daytime; afternoon"
+    notes:
+      "n1": "Mchana is the daytime, from midday to the evening, class III, with no plural. Habari ya mchana is good afternoon."
+    examples:
+      "Habari ya mchana.":
+        native: "Good afternoon."
+        bases:
+          "Habari": "news; greeting"
+          "ya": "of (class IX)"
+          "mchana": "afternoon"
+      "Mchana huu ni mzuri.":
+        native: "This afternoon is good."
+        bases:
+          "Mchana": "afternoon"
+          "huu": "this (class III)"
+          "ni": "is"
+          "mzuri": "good (class III)"
+  "sw-1944":
+    native: "evening"
+    notes:
+      "n1": "Jioni is evening, class IX, with the plural jioni in class X. Habari ya jioni is good evening."
+    examples:
+      "Habari ya jioni.":
+        native: "Good evening."
+        bases:
+          "Habari": "news; greeting"
+          "ya": "of (class IX)"
+          "jioni": "evening"
+      "Jioni ni nzuri.":
+        native: "The evening is good."
+        bases:
+          "Jioni": "evening"
+          "ni": "is"
+          "nzuri": "good"
+  "sw-1945":
+    native: "night"
+    notes:
+      "n1": "Usiku is night, the time from sunset to sunrise, class XI, with no plural. Usiku uliopita is last night."
+    examples:
+      "Usiku uliopita.":
+        native: "Last night."
+        bases:
+          "Usiku": "night"
+          "uliopita": "last; past"
+      "Usiku ni mrefu.":
+        native: "The night is long."
+        bases:
+          "Usiku": "night"
+          "ni": "is"
+          "mrefu": "long (class XI)"
+  "sw-1946":
+    native: "late afternoon"
+    notes:
+      "n1": "Alasiri is the late afternoon, from about half past three to five, class IX, with the plural alasiri in class X."
+    examples:
+      "Alasiri ni nzuri.":
+        native: "The late afternoon is good."
+        bases:
+          "Alasiri": "late afternoon"
+          "ni": "is"
+          "nzuri": "good"
+      "Ninarudi alasiri.":
+        native: "I come back in the late afternoon."
+        bases:
+          "Ninarudi": "I come back"
+          "alasiri": "late afternoon"
+  "sw-1947":
+    native: "midday; noon"
+    notes:
+      "n1": "Adhuhuri is midday or noon, class IX, with the plural adhuhuri in class X. Chakula cha adhuhuri is a midday meal."
+    examples:
+      "Ni adhuhuri.":
+        native: "It is midday."
+        bases:
+          "Ni": "it is"
+          "adhuhuri": "midday"
+      "Chakula cha adhuhuri.":
+        native: "A midday meal."
+        bases:
+          "Chakula": "food; meal"
+          "cha": "of (class VII)"
+          "adhuhuri": "midday"
+  "sw-1948":
+    native: "dawn; early morning"
+    notes:
+      "n1": "Alfajiri is dawn or the early morning, class IX, with the plural alfajiri in class X."
+    examples:
+      "Ni alfajiri.":
+        native: "It is dawn."
+        bases:
+          "Ni": "it is"
+          "alfajiri": "dawn"
+      "Alfajiri ni baridi.":
+        native: "The dawn is cold."
+        bases:
+          "Alfajiri": "dawn"
+          "ni": "is"
+          "baridi": "cold"
