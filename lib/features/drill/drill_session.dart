@@ -10,6 +10,7 @@ import '../../app/features.dart';
 import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
+import '../../app/unlocks.dart' show UnlockState;
 import '../../core/grading/answer_grader.dart';
 import '../../core/grading/meaning_rules.dart' show meaningKey;
 import '../../core/grading/romanised.dart';
