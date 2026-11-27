@@ -85,6 +85,21 @@ Then, on cloze:
    out, the gap filled in the script or in Latin letters, and graded as
    that word.
 
+## Built: slice 1, cloze from existing cards (#321)
+
+Owner, 2026-11-27: sentence building is answered **by tiles only** (no typed
+answers, no speech), so cloze is **chosen** only; ADR-0034's typed grade is
+not built. A sentence card, and an example of any card, is asked as a cloze
+(`Ask.cloze`) on its turn, in Write: a sentence card on every second review
+after the first, a word card on its third and then every fourth review, and
+never in a lesson, as a new pair or just after a miss. The gap is a word the
+learner knows by `Unlocks.isWordKnown`, in a sentence with at least three
+known words; the wrong tiles are other known words of its part of speech,
+nearest in length. A right tile records Hard (3), as every right choice in
+Write does, a wrong one 1. Placement never asks it. Not built: the bank, a
+typed grade, and a schedule of its own per sentence (a cloze is a review of
+the card's Write pair).
+
 ## To decide
 
 - **Cloze:**

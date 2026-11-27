@@ -66,7 +66,13 @@ enum Ask {
 
   /// Hear the word, choose its picture from four (#91). Recognition, as
   /// [choosePicture] is: what is heard is a way of showing the word.
-  hearPicture;
+  hearPicture,
+
+  /// Shown a sentence's meaning, and the sentence with one word the learner
+  /// knows left out, choose the missing word among a few (#321, the cloze of
+  /// the sentence-building plan). Production, as rearrange is: its own
+  /// widget, since the options are words of a sentence, not cards.
+  cloze;
 
   /// Whether it only shows something and records nothing: a word taught, a
   /// set shown or a rule card.
@@ -196,7 +202,9 @@ const int matchSize = 4;
 ///   can be ([Ask.hearPicture]), and its picture chosen among four of the
 ///   deck's ([pictureTurn]). Never where the deck has fewer than four
 ///   pictures to offer.
-/// - **Production** of a card that [Card.rearranges] is rearranged.
+/// - **Production** of a card that [Card.rearranges] is rearranged, and on
+///   its turn, where [canCloze] says a known word of one of its sentences
+///   can be left out, asked as a cloze ([Ask.cloze], #321).
 /// - **Listening** is Hear (ADR-0034): its meaning is chosen while the pair
 ///   is new or was last missed, and typed once it was last remembered. A
 ///   new pair starts typed where [recallsFirst] says the learner's ability
@@ -225,6 +233,7 @@ List<SessionItem> reviewAsks(
   bool Function(SessionItem item)? typed,
   List<Card> Function(Card card)? siblingsOf,
   bool Function(SessionItem item)? canHear,
+  bool Function(SessionItem item)? canCloze,
 }) {
   final context = QuestionContext(
     canChoose: canChoose,
@@ -233,6 +242,7 @@ List<SessionItem> reviewAsks(
     typed: typed,
     siblingsOf: siblingsOf,
     canHear: canHear,
+    canCloze: canCloze,
   );
   final recognised = <int>[
     for (final (i, item) in items.indexed)

@@ -1,10 +1,12 @@
 import 'dart:math';
 
 import '../core/models/card.dart';
+import '../core/models/deck.dart' show DeckKind;
 import '../core/models/review_event.dart';
 import '../core/models/rule.dart';
 import '../core/progress/recent_answers.dart'
     show MasteryLevel, ParametersOfReview, RecentAnswers;
+import '../core/progress/cloze.dart';
 import '../core/progress/unlocks.dart';
 import 'app_state.dart';
 import 'deck_catalog.dart';
@@ -61,6 +63,40 @@ extension UnlockState on AppState {
       cards: cards,
       parametersOf: (event) => progress.parameters.of(language, event.mode),
     );
+  }
+
+  /// What a cloze of [language] is made from (#321): its vocab cards, and the
+  /// words of them that are known by the gate's one rule. Kept like the gate,
+  /// and made again when the learner's answers change.
+  ClozeBank clozeBankFor(String language) {
+    // Read before the kept value is asked for: a kept value is not worked out
+    // from inside another.
+    final gate = unlocksFor(language);
+    return keptFor<ClozeBank>(
+      language,
+      #clozeBank,
+      () => ClozeBank(
+        cards: <Card>[
+          for (final entry in decksOf(language))
+            if (entry.deck.kind == DeckKind.vocab) ...entry.cards,
+        ],
+        isKnown: gate.isWordKnown,
+      ),
+    );
+  }
+
+  /// Whether [card] can be asked as a cloze now.
+  bool canCloze(Card card) {
+    final language = deckOf(card)?.language.code;
+    return language != null && clozeBankFor(language).canAsk(card);
+  }
+
+  /// The cloze of one of [card]'s sentences, drawn with [random], or null.
+  Cloze? clozeFor(Card card, {required Random random}) {
+    final language = deckOf(card)?.language.code;
+    return language == null
+        ? null
+        : clozeBankFor(language).make(card, random: random);
   }
 
   List<KindedCard> _kindedCards(String language) => <KindedCard>[

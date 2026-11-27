@@ -1,6 +1,7 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
+import '../progress/unlocks.dart' show isSentenceCard;
 import 'picture_choice.dart';
 import 'session_queue.dart';
 
@@ -15,6 +16,7 @@ class QuestionContext {
     this.typed,
     this.siblingsOf,
     this.canHear,
+    this.canCloze,
   });
 
   /// Whether the item, asked as it now is, has enough to choose from.
@@ -37,6 +39,11 @@ class QuestionContext {
   /// language and sound is on. Null where it cannot, so a picture choice is
   /// then only ever shown the word.
   final bool Function(SessionItem item)? canHear;
+
+  /// Whether a word the learner knows can be left out of one of the item's
+  /// sentences (#321): its own, if it is a sentence card, or an example of
+  /// it. Null where no cloze can be made, so none is ever asked.
+  final bool Function(SessionItem item)? canCloze;
 }
 
 /// One way of asking (ADR-0039): the [ask] it produces, the skill it asks
@@ -134,6 +141,40 @@ final QuestionType rearrangeType = QuestionType(
       item.card is! QuestionCard && item.card.rearranges,
 );
 
+/// How many reviews of a sentence card pass between its clozes: it is asked
+/// as one on every second review after the first (an odd count of
+/// consecutive right reviews), rearranged between.
+bool _sentenceClozeTurn(int repetitions) => repetitions.isOdd;
+
+/// How often a word card is asked as a cloze on one of its examples: on its
+/// third consecutive right review, and every fourth after, so that most
+/// reviews of a word stay recall.
+bool _wordClozeTurn(int repetitions) => repetitions % 4 == 3;
+
+/// Whether [item]'s pair is on its turn to be asked as a cloze. Never a new
+/// pair, nor one just missed (its repetitions are then 0): a lesson, and the
+/// first review after a miss, ask the sentence its usual way.
+bool clozeTurn(SessionItem item) {
+  final repetitions = item.state?.repetitions ?? 0;
+  if (repetitions < 1) return false;
+  return isSentenceCard(item.card)
+      ? _sentenceClozeTurn(repetitions)
+      : _wordClozeTurn(repetitions);
+}
+
+/// Shown the meaning and a sentence with a known word left out, choose the
+/// word (#321). Production: on its turn ([clozeTurn]), a card that has a
+/// sentence with a gap to offer ([QuestionContext.canCloze]). Never a lesson's
+/// question, nor a reading question.
+final QuestionType clozeType = QuestionType(
+  ask: Ask.cloze,
+  skill: DrillMode.production,
+  eligible: (item, context) =>
+      item.card is! QuestionCard &&
+      clozeTurn(item) &&
+      (context.canCloze?.call(item) ?? false),
+);
+
 /// Shown the meaning, choose the word, where the language is not typed.
 final QuestionType chooseWordType = QuestionType(
   ask: Ask.chooseWord,
@@ -193,6 +234,7 @@ final List<QuestionType> questionTypes = <QuestionType>[
   hearPictureType,
   chooseMeaningType,
   matchPairsType,
+  clozeType,
   rearrangeType,
   chooseWordType,
   hearMeaningType,
