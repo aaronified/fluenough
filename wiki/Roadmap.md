@@ -64,7 +64,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.6.0
 
-5 approved open issues.
+4 approved open issues.
 
 **Enhancements**
 
@@ -74,7 +74,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 **Other**
 
-- [#506](https://github.com/aaronified/fluenough/issues/506) Deck format review: card data list, questions from card data, DECK-FORMAT as the one guide
 - [#631](https://github.com/aaronified/fluenough/issues/631) Offensive-words decks for the priority languages
 
 ### 0.7.0
