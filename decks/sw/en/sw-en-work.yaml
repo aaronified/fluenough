@@ -1,0 +1,363 @@
+schema: 1
+id: "sw-en-work"
+kind: "layer"
+core: "sw-work"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Work"
+description: "Work, offices and jobs, with each noun's class and plural. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "sw-2140":
+    native: "work; business"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural kazi, class X."
+    examples:
+      "Ninataka kazi.":
+        native: "I want work."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kazi": "work"
+      "Kazi ni ngumu.":
+        native: "The work is hard."
+        bases:
+          "Kazi": "work"
+          "ni": "is; am"
+          "ngumu": "hard"
+  "sw-2141":
+    native: "worker"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): mfanyakazi, plural wafanyakazi (class II)."
+    examples:
+      "Mimi ni mfanyakazi.":
+        native: "I am a worker."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mfanyakazi": "worker"
+      "Ninataka kuwa mfanyakazi.":
+        native: "I want to be a worker."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mfanyakazi": "worker"
+  "sw-2142":
+    native: "office, an administrative unit"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural ofisi, class X. The other sense is a room or building for non-manual work."
+    examples:
+      "Ninapenda ofisi.":
+        native: "I like the office."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "ofisi": "office"
+      "Ofisi ni nzuri.":
+        native: "The office is good."
+        bases:
+          "Ofisi": "office"
+          "ni": "is; am"
+          "nzuri": "good"
+  "sw-2143":
+    native: "business; trade; commerce"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural biashara, class X."
+    examples:
+      "Ninapenda biashara.":
+        native: "I like business."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "biashara": "business"
+      "Biashara ni nzuri.":
+        native: "Business is good."
+        bases:
+          "Biashara": "business"
+          "ni": "is; am"
+          "nzuri": "good"
+  "sw-2144":
+    native: "company"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural kampuni, class X."
+    examples:
+      "Ninataka kampuni.":
+        native: "I want a company."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kampuni": "company"
+      "Kampuni ni kubwa.":
+        native: "The company is big."
+        bases:
+          "Kampuni": "company"
+          "ni": "is; am"
+          "kubwa": "big"
+  "sw-2145":
+    native: "salary; wage"
+    notes:
+      "n1": "Noun class III (m-, with mi- in the plural): mshahara, plural mishahara (class IV)."
+    examples:
+      "Ninataka mshahara.":
+        native: "I want a salary."
+        bases:
+          "Ninataka": "to want (I want)"
+          "mshahara": "salary"
+      "Mshahara ni mkubwa.":
+        native: "The salary is big."
+        bases:
+          "Mshahara": "salary"
+          "ni": "is; am"
+          "mkubwa": "big"
+  "sw-2146":
+    native: "boss"
+    notes:
+      "n1": "Noun class V (no prefix). Plural mabosi, class VI."
+    examples:
+      "Mimi ni bosi.":
+        native: "I am a boss."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "bosi": "boss"
+      "Ninataka kuwa bosi.":
+        native: "I want to be a boss."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "bosi": "boss"
+  "sw-2147":
+    native: "manager"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): meneja, plural mameneja (class II). The entry gives the plural as mameneja."
+    examples:
+      "Mimi ni meneja.":
+        native: "I am a manager."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "meneja": "manager"
+      "Ninataka kuwa meneja.":
+        native: "I want to be a manager."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "meneja": "manager"
+  "sw-2148":
+    native: "teacher"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural). Plural walimu, class II. The entry also lists waalimu; only walimu is given here."
+    examples:
+      "Mimi ni mwalimu.":
+        native: "I am a teacher."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mwalimu": "teacher"
+      "Ninataka kuwa mwalimu.":
+        native: "I want to be a teacher."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mwalimu": "teacher"
+  "sw-2149":
+    native: "medical doctor"
+    notes:
+      "n1": "Noun class I (m-). Plural madaktari, class II, as the entry gives it."
+    examples:
+      "Mimi ni daktari.":
+        native: "I am a doctor."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "daktari": "doctor"
+      "Ninataka kuwa daktari.":
+        native: "I want to be a doctor."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "daktari": "doctor"
+  "sw-2150":
+    native: "farmer"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): mkulima, plural wakulima (class II)."
+    examples:
+      "Mimi ni mkulima.":
+        native: "I am a farmer."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mkulima": "farmer"
+      "Ninataka kuwa mkulima.":
+        native: "I want to be a farmer."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mkulima": "farmer"
+  "sw-2151":
+    native: "trader; merchant"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): mfanyabiashara, plural wafanyabiashara (class II)."
+    examples:
+      "Mimi ni mfanyabiashara.":
+        native: "I am a trader."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mfanyabiashara": "trader"
+      "Ninataka kuwa mfanyabiashara.":
+        native: "I want to be a trader."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mfanyabiashara": "trader"
+  "sw-2152":
+    native: "driver"
+    notes:
+      "n1": "Noun class V (no prefix). Plural madereva, class VI."
+    examples:
+      "Mimi ni dereva.":
+        native: "I am a driver."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "dereva": "driver"
+      "Ninataka kuwa dereva.":
+        native: "I want to be a driver."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "dereva": "driver"
+  "sw-2153":
+    native: "cook"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): mpishi, plural wapishi (class II)."
+    examples:
+      "Mimi ni mpishi.":
+        native: "I am a cook."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mpishi": "cook"
+      "Ninataka kuwa mpishi.":
+        native: "I want to be a cook."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mpishi": "cook"
+  "sw-2154":
+    native: "fisherman"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): mvuvi, plural wavuvi (class II)."
+    examples:
+      "Mimi ni mvuvi.":
+        native: "I am a fisherman."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mvuvi": "fisherman"
+      "Ninataka kuwa mvuvi.":
+        native: "I want to be a fisherman."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mvuvi": "fisherman"
+  "sw-2155":
+    native: "soldier; guard"
+    notes:
+      "n1": "Noun class I/IX. Plural askari (class II/X) or maaskari; the entry gives both, and only askari is shown here. Its other sense is police officer."
+    examples:
+      "Mimi ni askari.":
+        native: "I am a soldier."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "askari": "soldier"
+      "Ninataka kuwa askari.":
+        native: "I want to be a soldier."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "askari": "soldier"
+  "sw-2156":
+    native: "nurse"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): muuguzi, plural wauguzi (class II)."
+    examples:
+      "Mimi ni muuguzi.":
+        native: "I am a nurse."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "muuguzi": "nurse"
+      "Ninataka kuwa muuguzi.":
+        native: "I want to be a nurse."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "muuguzi": "nurse"
+  "sw-2157":
+    native: "craftsman; artisan"
+    notes:
+      "n1": "Noun class V (no prefix). Plural mafundi, class VI."
+    examples:
+      "Mimi ni fundi.":
+        native: "I am a craftsman."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "fundi": "craftsman"
+      "Ninataka kuwa fundi.":
+        native: "I want to be a craftsman."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "fundi": "craftsman"
+  "sw-2158":
+    native: "writer; author"
+    notes:
+      "n1": "Noun class I (m-). Plural wandishi or waandishi (class II); the entry gives both, and only wandishi is shown here. Its other sense is scribe."
+    examples:
+      "Mimi ni mwandishi.":
+        native: "I am a writer."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mwandishi": "writer"
+      "Ninataka kuwa mwandishi.":
+        native: "I want to be a writer."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mwandishi": "writer"
+  "sw-2159":
+    native: "waiter"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): mhudumu, plural wahudumu (class II)."
+    examples:
+      "Mimi ni mhudumu.":
+        native: "I am a waiter."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mhudumu": "waiter"
+      "Ninataka kuwa mhudumu.":
+        native: "I want to be a waiter."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mhudumu": "waiter"
+  "sw-2160":
+    native: "engineer; technician"
+    notes:
+      "n1": "Noun class I (m-, with wa- in the plural): mhandisi, plural wahandisi (class II)."
+    examples:
+      "Mimi ni mhandisi.":
+        native: "I am an engineer."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mhandisi": "engineer"
+      "Ninataka kuwa mhandisi.":
+        native: "I want to be an engineer."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kuwa": "to be"
+          "mhandisi": "engineer"
