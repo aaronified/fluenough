@@ -314,7 +314,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1203](https://github.com/aaronified/fluenough/issues/1203) Language: Sumerian: full deck format
 - [#1204](https://github.com/aaronified/fluenough/issues/1204) Language: Egyptian: full deck format
 - [#1205](https://github.com/aaronified/fluenough/issues/1205) Language: Proto-Indo-European: full deck format
-- [#1206](https://github.com/aaronified/fluenough/issues/1206) Language: Vedic Sanskrit: full deck format
 - [#1207](https://github.com/aaronified/fluenough/issues/1207) Language: Latin: full deck format
 - [#1208](https://github.com/aaronified/fluenough/issues/1208) Language: Old English: full deck format
 - [#1209](https://github.com/aaronified/fluenough/issues/1209) Language: Middle English: full deck format
