@@ -245,7 +245,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#328](https://github.com/aaronified/fluenough/issues/328) Explain mistakes: rules a card can name
 - [#329](https://github.com/aaronified/fluenough/issues/329) Explain mistakes: known mistakes per sentence
 - [#330](https://github.com/aaronified/fluenough/issues/330) Explain mistakes: in every grammar drill, with content
-- [#331](https://github.com/aaronified/fluenough/issues/331) Handwriting: owner decisions before building
 - [#332](https://github.com/aaronified/fluenough/issues/332) Handwriting: stroke data
 - [#333](https://github.com/aaronified/fluenough/issues/333) Handwriting: the stroke animation
 - [#334](https://github.com/aaronified/fluenough/issues/334) Handwriting: tracing and drawing blind, recorded as Write
