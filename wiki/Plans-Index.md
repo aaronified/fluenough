@@ -5,6 +5,7 @@ Source of truth: this wiki page.
 Every live plan in the wiki, one line each. Each plan has its own wiki page. Finished plans are under Retired.
 
 - [Achievements](Plan-Achievements): achievements, quietly
+- [Achievements Pacing](Plan-Achievements-Pacing): the approved decisions, categories, pacing rule and plots for achievements
 - [Ai Conversation](Plan-Ai-Conversation): an AI conversation partner, within what the learner knows
 - [Audio Drills](Plan-Audio-Drills): hands-free audio drills
 - [B1 Plans](Plan-B1-Plans): a B1 plan in every path

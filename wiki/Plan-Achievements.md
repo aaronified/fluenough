@@ -5,6 +5,8 @@ Source of truth: this wiki page.
 
 Written 2026-10-05.
 
+Status 2026-11-27: the engine (#322) is in progress; the screens (#323, #324) are next, per the owner's approval of the mockup and the pacing on 2026-11-27. The approved decisions, the categories (Levels, Skills with Start and Master, Sets, Other), the pacing rule and the plots are in [Plan-Achievements-Pacing](Plan-Achievements-Pacing).
+
 ## What the owner asked
 
 With the course path (owner, 2026-10-09; the path itself is now built):
@@ -118,4 +120,4 @@ reaches. That target is set in aaronified/fluenough#187.
 
 Confidence: medium.
 
-See also: [Roadmap](Roadmap) · [Plans-Index](Plans-Index) · [Home](Home)
+See also: [Plan-Achievements-Pacing](Plan-Achievements-Pacing) · [Roadmap](Roadmap) · [Plans-Index](Plans-Index) · [Home](Home)
