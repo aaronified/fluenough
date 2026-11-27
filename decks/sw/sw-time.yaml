@@ -1,0 +1,219 @@
+schema: 1
+id: "sw-time"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "sw-1930"
+    target: "leo"
+    ipa: "ˈleo"
+    pos: "adv"
+    tags: ["time", "day"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Leo ni siku nzuri.", ipa: "ˈleo ni ˈsiku ˈnzuɾi", bases: [{ word: "Leo", base: "leo" }, { word: "ni", base: "ni" }, { word: "siku", base: "siku" }, { word: "nzuri", base: "nzuri" }] }
+      - { target: "Leo ninataka chai.", ipa: "ˈleo ninaˈtaka ˈtʃai", bases: [{ word: "Leo", base: "leo" }, { word: "ninataka", base: "taka" }, { word: "chai", base: "chai" }] }
+  - id: "sw-1931"
+    target: "kesho"
+    ipa: "ˈkeʃo"
+    pos: "adv"
+    tags: ["time", "day"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kesho nitakuja.", ipa: "ˈkeʃo nitaˈkudʒa", bases: [{ word: "Kesho", base: "kesho" }, { word: "nitakuja", base: "kuja" }] }
+      - { target: "Kesho ni siku nzuri.", ipa: "ˈkeʃo ni ˈsiku ˈnzuɾi", bases: [{ word: "Kesho", base: "kesho" }, { word: "ni", base: "ni" }, { word: "siku", base: "siku" }, { word: "nzuri", base: "nzuri" }] }
+  - id: "sw-1932"
+    target: "jana"
+    ipa: "ˈdʒana"
+    pos: "adv"
+    tags: ["time", "day"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jana ilikuwa siku nzuri.", ipa: "ˈdʒana iliˈkuwa ˈsiku ˈnzuɾi", bases: [{ word: "Jana", base: "jana" }, { word: "ilikuwa", base: "kuwa" }, { word: "siku", base: "siku" }, { word: "nzuri", base: "nzuri" }] }
+      - { target: "Jana nilikuwa hapa.", ipa: "ˈdʒana niliˈkuwa ˈhapa", bases: [{ word: "Jana", base: "jana" }, { word: "nilikuwa", base: "kuwa" }, { word: "hapa", base: "hapa" }] }
+  - id: "sw-1933"
+    target: "juzi"
+    ipa: "ˈdʒuzi"
+    pos: "adv"
+    tags: ["time", "day"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Juzi ilikuwa siku nzuri.", ipa: "ˈdʒuzi iliˈkuwa ˈsiku ˈnzuɾi", bases: [{ word: "Juzi", base: "juzi" }, { word: "ilikuwa", base: "kuwa" }, { word: "siku", base: "siku" }, { word: "nzuri", base: "nzuri" }] }
+      - { target: "Nilikuwa hapa juzi.", ipa: "niliˈkuwa ˈhapa ˈdʒuzi", bases: [{ word: "Nilikuwa", base: "kuwa" }, { word: "hapa", base: "hapa" }, { word: "juzi", base: "juzi" }] }
+  - id: "sw-1934"
+    target: "sasa"
+    ipa: "ˈsasa"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sasa ni saa ngapi?", ipa: "ˈsasa ni ˈsaa ˈŋɡapi", bases: [{ word: "Sasa", base: "sasa" }, { word: "ni", base: "ni" }, { word: "saa", base: "saa" }, { word: "ngapi", base: "ngapi" }] }
+      - { target: "Ninataka chai sasa.", ipa: "ninaˈtaka ˈtʃai ˈsasa", bases: [{ word: "Ninataka", base: "taka" }, { word: "chai", base: "chai" }, { word: "sasa", base: "sasa" }] }
+  - id: "sw-1935"
+    target: "siku"
+    ipa: "ˈsiku"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Siku hii ni nzuri.", ipa: "ˈsiku ˈhii ni ˈnzuɾi", bases: [{ word: "Siku", base: "siku" }, { word: "hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+      - { target: "Siku saba ni wiki.", ipa: "ˈsiku ˈsaba ni ˈwiki", bases: [{ word: "Siku", base: "siku" }, { word: "saba", base: "saba" }, { word: "ni", base: "ni" }, { word: "wiki", base: "wiki" }] }
+  - id: "sw-1936"
+    target: "wiki"
+    ipa: "ˈwiki"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Wiki iliyopita.", ipa: "ˈwiki ilijoˈpita", bases: [{ word: "Wiki", base: "wiki" }, { word: "iliyopita", base: "pita" }] }
+      - { target: "Wiki hii ni nzuri.", ipa: "ˈwiki ˈhii ni ˈnzuɾi", bases: [{ word: "Wiki", base: "wiki" }, { word: "hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+  - id: "sw-1937"
+    target: "mwezi"
+    ipa: "ˈmwezi"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mwezi huu ni mzuri.", ipa: "ˈmwezi ˈhuu ni mˈzuɾi", bases: [{ word: "Mwezi", base: "mwezi" }, { word: "huu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+      - { target: "Mwezi una wiki nne.", ipa: "ˈmwezi ˈuna ˈwiki ˈnne", bases: [{ word: "Mwezi", base: "mwezi" }, { word: "una", base: "na" }, { word: "wiki", base: "wiki" }, { word: "nne", base: "nne" }] }
+  - id: "sw-1938"
+    target: "mwaka"
+    ipa: "ˈmwaka"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mwaka huu ni mzuri.", ipa: "ˈmwaka ˈhuu ni mˈzuɾi", bases: [{ word: "Mwaka", base: "mwaka" }, { word: "huu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+      - { target: "Mwaka jana nilikuwa hapa.", ipa: "ˈmwaka ˈdʒana niliˈkuwa ˈhapa", bases: [{ word: "Mwaka", base: "mwaka" }, { word: "jana", base: "jana" }, { word: "nilikuwa", base: "kuwa" }, { word: "hapa", base: "hapa" }] }
+  - id: "sw-1939"
+    target: "saa"
+    ipa: "ˈsaa"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Saa moja asubuhi.", ipa: "ˈsaa ˈmodʒa asuˈbuhi", bases: [{ word: "Saa", base: "saa" }, { word: "moja", base: "moja" }, { word: "asubuhi", base: "asubuhi" }] }
+      - { target: "Saa mbili usiku.", ipa: "ˈsaa ˈmbili uˈsiku", bases: [{ word: "Saa", base: "saa" }, { word: "mbili", base: "mbili" }, { word: "usiku", base: "usiku" }] }
+  - id: "sw-1940"
+    target: "dakika"
+    ipa: "daˈkika"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dakika tano tu.", ipa: "daˈkika ˈtano tu", bases: [{ word: "Dakika", base: "dakika" }, { word: "tano", base: "tano" }, { word: "tu", base: "tu" }] }
+      - { target: "Subiri dakika moja.", ipa: "suˈbiɾi daˈkika ˈmodʒa", bases: [{ word: "Subiri", base: "subiri" }, { word: "dakika", base: "dakika" }, { word: "moja", base: "moja" }] }
+  - id: "sw-1941"
+    target: "sekunde"
+    ipa: "seˈkunde"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Subiri sekunde moja.", ipa: "suˈbiɾi seˈkunde ˈmodʒa", bases: [{ word: "Subiri", base: "subiri" }, { word: "sekunde", base: "sekunde" }, { word: "moja", base: "moja" }] }
+      - { target: "Sekunde moja, tafadhali.", ipa: "seˈkunde ˈmodʒa tafaˈðali", bases: [{ word: "Sekunde", base: "sekunde" }, { word: "moja", base: "moja" }, { word: "tafadhali", base: "tafadhali" }] }
+  - id: "sw-1942"
+    target: "asubuhi"
+    ipa: "asuˈbuhi"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Habari ya asubuhi.", ipa: "haˈbaɾi ja asuˈbuhi", bases: [{ word: "Habari", base: "habari" }, { word: "ya", base: "-a" }, { word: "asubuhi", base: "asubuhi" }] }
+      - { target: "Asubuhi ni nzuri.", ipa: "asuˈbuhi ni ˈnzuɾi", bases: [{ word: "Asubuhi", base: "asubuhi" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+  - id: "sw-1943"
+    target: "mchana"
+    ipa: "mˈtʃana"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Habari ya mchana.", ipa: "haˈbaɾi ja mˈtʃana", bases: [{ word: "Habari", base: "habari" }, { word: "ya", base: "-a" }, { word: "mchana", base: "mchana" }] }
+      - { target: "Mchana huu ni mzuri.", ipa: "mˈtʃana ˈhuu ni mˈzuɾi", bases: [{ word: "Mchana", base: "mchana" }, { word: "huu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+  - id: "sw-1944"
+    target: "jioni"
+    ipa: "dʒiˈoni"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Habari ya jioni.", ipa: "haˈbaɾi ja dʒiˈoni", bases: [{ word: "Habari", base: "habari" }, { word: "ya", base: "-a" }, { word: "jioni", base: "jioni" }] }
+      - { target: "Jioni ni nzuri.", ipa: "dʒiˈoni ni ˈnzuɾi", bases: [{ word: "Jioni", base: "jioni" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+  - id: "sw-1945"
+    target: "usiku"
+    ipa: "uˈsiku"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Usiku uliopita.", ipa: "uˈsiku ulioˈpita", bases: [{ word: "Usiku", base: "usiku" }, { word: "uliopita", base: "pita" }] }
+      - { target: "Usiku ni mrefu.", ipa: "uˈsiku ni mˈɾefu", bases: [{ word: "Usiku", base: "usiku" }, { word: "ni", base: "ni" }, { word: "mrefu", base: "refu" }] }
+  - id: "sw-1946"
+    target: "alasiri"
+    ipa: "alaˈsiɾi"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Alasiri ni nzuri.", ipa: "alaˈsiɾi ni ˈnzuɾi", bases: [{ word: "Alasiri", base: "alasiri" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+      - { target: "Ninarudi alasiri.", ipa: "ninaˈɾudi alaˈsiɾi", bases: [{ word: "Ninarudi", base: "rudi" }, { word: "alasiri", base: "alasiri" }] }
+  - id: "sw-1947"
+    target: "adhuhuri"
+    ipa: "aðuˈhuɾi"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ni adhuhuri.", ipa: "ni aðuˈhuɾi", bases: [{ word: "Ni", base: "ni" }, { word: "adhuhuri", base: "adhuhuri" }] }
+      - { target: "Chakula cha adhuhuri.", ipa: "tʃaˈkula tʃa aðuˈhuɾi", bases: [{ word: "Chakula", base: "chakula" }, { word: "cha", base: "-a" }, { word: "adhuhuri", base: "adhuhuri" }] }
+  - id: "sw-1948"
+    target: "alfajiri"
+    ipa: "alfaˈdʒiɾi"
+    pos: "noun"
+    tags: ["noun", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ni alfajiri.", ipa: "ni alfaˈdʒiɾi", bases: [{ word: "Ni", base: "ni" }, { word: "alfajiri", base: "alfajiri" }] }
+      - { target: "Alfajiri ni baridi.", ipa: "alfaˈdʒiɾi ni baˈɾidi", bases: [{ word: "Alfajiri", base: "alfajiri" }, { word: "ni", base: "ni" }, { word: "baridi", base: "baridi" }] }
