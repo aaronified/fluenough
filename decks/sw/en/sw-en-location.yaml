@@ -1,0 +1,278 @@
+schema: 1
+id: "sw-en-location"
+kind: "layer"
+core: "sw-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Location"
+description: "Words for place and direction: there, here-and-there, up, down, inside, outside, far, between and side. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "sw-2000":
+    native: "there"
+    notes:
+      "n1": "Adverb meaning there. Its adjective sense (a ku-class form of hiyo, that) is not taught here."
+    examples:
+      "Ninataka kwenda huko.":
+        native: "I want to go there."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "huko": "there"
+      "Ninapenda kukaa huko.":
+        native: "I like to sit there."
+        bases:
+          "Ninapenda": "I like"
+          "kukaa": "to sit"
+          "huko": "there"
+  "sw-2001":
+    native: "at that place (class XVI form of hiyo, that)"
+    bases:
+      "hapo": { meaning: "that" }
+    notes:
+      "n1": "Form of hiyo (that). Agrees with noun class XVI (pa-), the locative class: it means at that place."
+    examples:
+      "Ninataka kukaa hapo.":
+        native: "I want to sit there."
+        bases:
+          "Ninataka": "I want"
+          "kukaa": "to sit"
+          "hapo": "at that place"
+      "Ninapenda kula hapo.":
+        native: "I like to eat there."
+        bases:
+          "Ninapenda": "I like"
+          "kula": "to eat"
+          "hapo": "at that place"
+  "sw-2002":
+    native: "over there (class XVI form of the distal -le, that)"
+    bases:
+      "pale": { meaning: "that (distal demonstrative)" }
+    notes:
+      "n1": "Form of -le (that, distal). Agrees with noun class XVI (pa-), the locative class."
+    examples:
+      "Ninataka kwenda pale.":
+        native: "I want to go over there."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "pale": "over there"
+      "Ninapenda kukaa pale.":
+        native: "I like to sit over there."
+        bases:
+          "Ninapenda": "I like"
+          "kukaa": "to sit"
+          "pale": "over there"
+  "sw-2003":
+    native: "over there (class XV/XVII form of the distal -le, that)"
+    bases:
+      "kule": { meaning: "that (distal demonstrative)" }
+    notes:
+      "n1": "Form of -le (that, distal). Agrees with noun class XV/XVII (ku-)."
+    examples:
+      "Ninataka kwenda kule.":
+        native: "I want to go over there."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "kule": "over there"
+      "Ninapenda kukaa kule.":
+        native: "I like to sit over there."
+        bases:
+          "Ninapenda": "I like"
+          "kukaa": "to sit"
+          "kule": "over there"
+  "sw-2004":
+    native: "aside, along"
+    notes:
+      "n1": "Also a noun (an edge of something), class 9/10 (n-/n-)."
+    examples:
+      "Ninataka kukaa kando.":
+        native: "I want to sit aside."
+        bases:
+          "Ninataka": "I want"
+          "kukaa": "to sit"
+          "kando": "aside"
+      "Ninapenda kutembea kando.":
+        native: "I like to walk along the side."
+        bases:
+          "Ninapenda": "I like"
+          "kutembea": "to walk"
+          "kando": "aside"
+  "sw-2005":
+    native: "in the middle"
+    notes:
+      "n1": "Also a noun (the middle), class 9/10, and a preposition (among, between)."
+    examples:
+      "Ninataka kukaa katikati.":
+        native: "I want to sit in the middle."
+        bases:
+          "Ninataka": "I want"
+          "kukaa": "to sit"
+          "katikati": "in the middle"
+      "Ninataka kusimama katikati.":
+        native: "I want to stand in the middle."
+        bases:
+          "Ninataka": "I want"
+          "kusimama": "to stand"
+          "katikati": "in the middle"
+  "sw-2006":
+    native: "up, above (away from earth's centre)"
+    notes:
+      "n1": "Also a noun (top, upper part) and an adjective (high). Also means about, and because (Kenya, colloquial)."
+    examples:
+      "Ninataka kwenda juu.":
+        native: "I want to go up."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "juu": "up"
+      "Ninapenda kukaa juu.":
+        native: "I like to sit up high."
+        bases:
+          "Ninapenda": "I like"
+          "kukaa": "to sit"
+          "juu": "up"
+  "sw-2007":
+    native: "below (in a lower place)"
+    notes:
+      "n1": "Also means down (from a high to a low position)."
+    examples:
+      "Ninataka kukaa chini.":
+        native: "I want to sit down."
+        bases:
+          "Ninataka": "I want"
+          "kukaa": "to sit"
+          "chini": "below"
+      "Ninataka kwenda chini.":
+        native: "I want to go below."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "chini": "below"
+  "sw-2008":
+    native: "inside; in"
+    notes:
+      "n1": "Also a noun (inside, interior), class 9/10 (n-/n-)."
+    examples:
+      "Ninataka kuingia ndani.":
+        native: "I want to go inside."
+        bases:
+          "Ninataka": "I want"
+          "kuingia": "to enter"
+          "ndani": "inside"
+      "Ninapenda kukaa ndani.":
+        native: "I like to stay inside."
+        bases:
+          "Ninapenda": "I like"
+          "kukaa": "to sit"
+          "ndani": "inside"
+  "sw-2009":
+    native: "outside"
+    notes:
+      "n1": "Also an adjective (external)."
+    examples:
+      "Ninataka kukaa nje.":
+        native: "I want to sit outside."
+        bases:
+          "Ninataka": "I want"
+          "kukaa": "to sit"
+          "nje": "outside"
+      "Ninapenda kucheza nje.":
+        native: "I like to play outside."
+        bases:
+          "Ninapenda": "I like"
+          "kucheza": "to play"
+          "nje": "outside"
+  "sw-2010":
+    native: "far off; distant; apart"
+    notes:
+      "n1": "Also means differently, and utterly or completely."
+    examples:
+      "Ninataka kwenda mbali.":
+        native: "I want to go far away."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "mbali": "far off"
+      "Nyumba ni mbali.":
+        native: "The house is far away."
+        bases:
+          "Nyumba": "house"
+          "ni": "is, am, are"
+          "mbali": "far off"
+  "sw-2011":
+    native: "aside"
+    notes:
+      "n1": "Adverb, placed after the verb it describes."
+    examples:
+      "Ninataka kukaa pembeni.":
+        native: "I want to sit aside."
+        bases:
+          "Ninataka": "I want"
+          "kukaa": "to sit"
+          "pembeni": "aside"
+      "Ninapenda kusimama pembeni.":
+        native: "I like to stand aside."
+        bases:
+          "Ninapenda": "I like"
+          "kusimama": "to stand"
+          "pembeni": "aside"
+  "sw-2012":
+    native: "between"
+    notes:
+      "n1": "Used with ya before the noun: baina ya shule na soko, between the school and the market."
+    examples:
+      "Ninataka kukaa baina ya shule na soko.":
+        native: "I want to sit between the school and the market."
+        bases:
+          "Ninataka": "I want"
+          "kukaa": "to sit"
+          "baina": "between"
+          "ya": "of"
+          "shule": "school"
+          "na": "and"
+          "soko": "market"
+      "Ninapenda kusimama baina ya watu.":
+        native: "I like to stand between people."
+        bases:
+          "Ninapenda": "I like"
+          "kusimama": "to stand"
+          "baina": "between"
+          "ya": "of"
+          "watu": "people"
+  "sw-2013":
+    native: "part, section"
+    notes:
+      "n1": "Class 11/10 (u-/n-): upande, pande. Plural pande, class 10. Also means side."
+    examples:
+      "Hii ni upande.":
+        native: "This is a side."
+        bases:
+          "Hii": "this"
+          "ni": "is, am, are"
+          "upande": "part"
+      "Ninapenda upande wa nyumba.":
+        native: "I like the side of the house."
+        bases:
+          "Ninapenda": "I like"
+          "upande": "part"
+          "wa": "of"
+          "nyumba": "house"
+  "sw-2014":
+    native: "place (location, position)"
+    notes:
+      "n1": "Class 16 (pa-): pahali. It has no plural."
+    examples:
+      "Ninataka pahali.":
+        native: "I want a place."
+        bases:
+          "Ninataka": "I want"
+          "pahali": "place"
+      "Hii ni pahali.":
+        native: "This is a place."
+        bases:
+          "Hii": "this"
+          "ni": "is, am, are"
+          "pahali": "place"
