@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Achievements</title>
-<meta name="description" content="Quiet achievements (#223), revision 2: category tabs, a Start and Master for each skill, mastery of word sets and grammar tables, and the Journey strip that spaces unlocks evenly along a course.">
+<meta name="description" content="Quiet achievements (#223), revision 2: category tabs, a Start and Master for each skill, mastery of word sets and grammar tables.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
@@ -191,7 +191,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .ph.mid{height:600px}
 </style>
 <style>
-/* revision 2 (2026-11-27): category tabs, skills, sets, journey */
+/* revision 2 (2026-11-27): category tabs, skills, sets */
 .tabs{display:flex;gap:4px;margin:0 0 6px;padding:4px;background:var(--sLow);border-radius:24px}
 .tab{flex:1;min-width:0;min-height:48px;border:0;border-radius:20px;background:none;font-size:calc(13px*var(--t));font-weight:600;color:var(--onSv);padding:0 2px;line-height:1.1}
 .tab[aria-selected="true"]{background:var(--sc);color:var(--onSc)}
@@ -199,51 +199,19 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .sk-h{display:flex;align-items:center;gap:8px;margin:16px 0 6px}
 .sk-h svg.i{width:20px;height:20px;color:var(--onSv)}
 .sk-h .t-lab{margin:0}
-.nxt{display:flex;align-items:center;gap:12px;background:var(--sLow);border-radius:16px;padding:10px 8px 10px 12px;width:100%;border:0;text-align:left;margin:0 0 10px}
-.nxt .tx{flex:1;min-width:0}
-.nxt .tx b{display:block;font-size:calc(14px*var(--t));font-weight:600;line-height:1.25}
-.jscroll{overflow-x:auto;overflow-y:hidden;margin:0 -16px;padding:0 16px;scrollbar-width:thin;border-radius:12px}
-.jscroll:focus-visible{outline:3px solid var(--onS);outline-offset:2px}
-.jin{position:relative;height:calc(46px*var(--t) + 40px)}
-.jline{position:absolute;left:8px;right:8px;top:calc(23px*var(--t) + 22px);height:4px;border-radius:2px;background:var(--olv)}
-.jfill{position:absolute;left:8px;top:calc(23px*var(--t) + 22px);height:4px;border-radius:2px;background:var(--p)}
-.mk{position:absolute;top:calc(23px*var(--t) + 24px);width:16px;height:16px;margin:-8px 0 0 -8px;background:var(--s);border:2px solid var(--ol);box-sizing:border-box}
-.mk.K{border-radius:50%}
-.mk.W{border-radius:3px}
-.mk.S{clip-path:polygon(50% 0,100% 100%,0 100%);border:0;background:var(--ol);width:18px;height:17px;margin:-9px 0 0 -9px}
-.mk.S::after{content:"";position:absolute;inset:3px 4px 2px;clip-path:polygon(50% 0,100% 100%,0 100%);background:var(--s)}
-.mk.L{width:22px;height:22px;margin:-11px 0 0 -11px;transform:rotate(45deg);border-radius:4px}
-.mk.e{background:var(--p);border-color:var(--p)}
-.mk.S.e{background:var(--p)}
-.mk.S.e::after{display:none}
-.mk.nx{outline:3px solid var(--onS);outline-offset:3px}
-.mk.S.nx{outline:0;filter:drop-shadow(0 0 0 var(--onS))}
-.mkl{position:absolute;transform:translateX(-50%);font-size:calc(12px*var(--t));font-weight:700;color:var(--onS);line-height:1.2;white-space:nowrap}
-.mkl.b{top:calc(23px*var(--t) + 40px)}
-.mkl.a{top:2px;background:var(--p);color:var(--onP);padding:2px 8px;border-radius:10px}
-.lg{display:flex;flex-wrap:wrap;gap:4px 12px;margin:4px 0 10px;font-size:calc(11px*var(--t));color:var(--onSv)}
-.lg span{display:inline-flex;align-items:center;gap:4px}
-.lg i{display:inline-block;width:12px;height:12px;border:2px solid var(--onSv);box-sizing:border-box}
-.lg i.K{border-radius:50%}.lg i.W{border-radius:2px}.lg i.L{transform:rotate(45deg);border-radius:2px}.lg i.S{border:0;background:var(--onSv);clip-path:polygon(50% 0,100% 100%,0 100%)}
-.fig{background:var(--page-card);border:1px solid var(--page-line);border-radius:14px;padding:14px 16px;margin:0 0 14px;max-width:900px}
-.fig h3{margin:0 0 2px;font-size:16px;font-weight:700}
-.fig svg{width:100%;height:auto;display:block}
-.fig .cnt{display:grid;grid-template-columns:repeat(10,1fr);gap:0;font-size:13px;text-align:center;color:var(--page-muted);margin:0 0 0 0}
-.fig p{margin:4px 0 0;font-size:13px;color:var(--page-muted)}
 .bd.big{margin:0 auto}
 .bd.sm.prog svg.ring{inset:-2px;width:44px;height:44px}
 .ph.g2{height:1130px}
 .ph.g3{height:1290px}
 .ph.g1{height:900px}
 .ph.g4{height:1080px}
-.ph.jr{height:820px}
 .ph.sheetph{height:940px}
 </style>
 </head>
 <body>
 <div class="wrap" id="wrap">
 <h1>Achievements, revision 2</h1>
-<p class="cap1">Revised 2026-11-27 after the owner's answer: looks approved; add a Start and a Master for each skill, achievements for mastering a set (pronouns, kin terms, a grammar table), and unlocks spaced evenly along the course. The look, the three states, the sheets, the level metals and the quiet announcement are unchanged. New here and marked "new": the category tabs on Progress, the Skills and Sets pages, the Journey strip and the figure that shows the spacing. Phone 360 dp at 1.4x text, light and dark, Hindustani and Bengali. Self-checks, the five earlier decisions (kept at their defaults) and the new ones are in achievements.md.</p>
+<p class="cap1">Revised 2026-11-27 after the owner's answer: looks approved; add a Start and a Master for each skill, achievements for mastering a set (pronouns, kin terms, a grammar table), and unlocks spaced evenly along the course. The look, the three states, the sheets, the level metals and the quiet announcement are unchanged. New here and marked "new": the category tabs on Progress, the Skills and Sets pages Phone 360 dp at 1.4x text, light and dark, Hindustani and Bengali. Self-checks, the five earlier decisions (kept at their defaults) and the new ones are in achievements.md.</p>
 <div class="sticky tw">
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Text size <span class="seg" data-k="ts"><button data-v="1.4">1.4x (app cap)</button></span></div>
@@ -279,7 +247,6 @@ tag:'M20 10V8h-4V4h-2v4h-4V4H8v4H4v2h4v4H4v2h4v4h2v-4h4v4h2v-4h4v-2h-4v-4h4zm-6 
 food:'M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z',
 notes:'M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z'};
 const svg=(k)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
-/* ---- The journey: a course's path is its timeline (units up to the B1 mark) ---- */
 const SKN={hear:['Hear','head'],speak:['Speak','mic'],read:['Read','eye'],write:['Write','pencil']};
 const SKH={hear:{s:'Hear and answer 10 audio cards.',m:'Know every listening card up to the A2 mark.'},speak:{s:'Say an answer aloud and have it heard.',m:'Know every speaking card up to the A2 mark.'},read:{s:'Know your first 5 letters of the script.',m:'Know every script and reading card up to the A1 mark.'},write:{s:'Write your first 5 letters.',m:'Know every writing card up to the A1 mark.'}};
 const SETS={
@@ -303,12 +270,11 @@ const SETS={
  beaf:{nm:'Before, after',full:'Before and after',g:'g',ic:'notes',n:26},
  conc:{nm:'Even if',full:'Concessive clauses',g:'g',ic:'notes',n:24},
  rep:{nm:'Reported speech',full:'Reported speech',g:'g',ic:'notes',n:30}};
-/* [unit, kind, key, extra]: L level, W words, K skill (s start, m master), S set. Units are path units up to the B1 mark
+/* The unit is where the pacing rule of achievements.md places a badge; here it only decides which badges the learner has reached. [unit, kind, key, extra]: L level, W words, K skill (s start, m master), S set. Units are path units up to the B1 mark
    (hi: A1 mark unit 43, A2 71, B1 114; bn: 60, 109, 187, as in decks-live's paths). Illustrative: the app computes them. */
 const COURSE={
 hi:{units:114,A1:43,A2:71,list:[[4,'K','hear','s'],[6,'W',100],[9,'K','read','s'],[12,'S','pron'],[15,'S','fam'],[19,'S','num'],[23,'K','speak','s'],[26,'K','write','s'],[31,'W',500],[35,'S','food'],[39,'S','post'],[43,'L','A1'],[47,'K','read','m'],[49,'K','write','m'],[52,'W',1000],[58,'S','past'],[65,'S','fest'],[68,'S','fut'],[71,'L','A2'],[75,'K','hear','m'],[79,'S','rel'],[83,'K','speak','m'],[88,'S','cond'],[90,'S','purp'],[95,'S','caus'],[99,'S','indef'],[103,'W',2500],[108,'S','pass'],[114,'L','B1']]},
 bn:{units:187,A1:60,A2:109,list:[[7,'K','hear','s'],[9,'W',100],[16,'K','read','s'],[22,'S','pron'],[27,'S','fam'],[33,'K','speak','s'],[38,'K','write','s'],[43,'W',500],[50,'S','num'],[60,'L','A1'],[68,'K','read','m'],[72,'K','write','m'],[76,'W',1000],[82,'S','past'],[88,'S','comp'],[98,'S','compar'],[103,'S','imper'],[109,'L','A2'],[118,'K','hear','m'],[123,'S','rel'],[130,'K','speak','m'],[138,'S','cond'],[144,'S','purp'],[148,'S','beaf'],[154,'S','caus'],[160,'S','conc'],[168,'W',2500],[175,'S','pass'],[181,'S','rep'],[187,'L','B1']]}};
-const SHORT={units:45,A1:18,A2:32,list:[[3,'K','hear','s'],[5,'W',100],[8,'K','read','s'],[10,'S','pron'],[13,'K','speak','s'],[15,'K','write','s'],[18,'L','A1'],[21,'S','num'],[24,'W',500],[27,'K','read','m'],[29,'K','write','m'],[32,'L','A2'],[35,'S','past'],[38,'K','hear','m'],[41,'W',1000],[43,'K','speak','m'],[45,'L','B1']]};
 const PP={hi:{mix:46,fresh:5,most:100},bn:{mix:52,fresh:7,most:150}};
 const pos=()=>PP[S.course][S.bs];
 const LV={A1:['bronze','Know every card on the path up to the A1 mark.'],A2:['silver','Know every card on the path up to the A2 mark.'],B1:['gold','Know every card on the path up to the B1 mark.']};
@@ -366,25 +332,9 @@ function navHtml(on){return `<div class="nav">${['Today','Decks','Progress','Mor
 const ph=(t,body,o={})=>`<div class="fcol"${o.id?` id="${o.id}"`:''}><div class="fcap">${t}</div><div class="ph ${o.cls||''}"><div class="appbar"><span class="ttl">${o.bar||t.split(' · ')[0]}</span></div>${o.raw?body:`<div class="scroll">${body}</div>`}${o.nav?navHtml(o.nav):''}</div></div>`;
 function sheetOver(inner){return `<div class="backdrop"><p class="t-h">Progress</p><p class="t-sm">Badges</p></div><div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll">${inner}</div></div>`}
 const chip=()=>`<span class="chip">${CT().name} · <span class="script">${CT().sc}</span></span>`;
-/* ---- Journey ---- */
-function nextItem(){const P=pos();return ALL().sort((a,b)=>a.u-b.u).find(b=>b.u>P)}
-function unitsOn(b){const d=b.u-pos();return d<=1?'about 1 unit on':`about ${d} units on`}
-function jstrip(C,P,all){
- const W=C.units>120?900:760,x=u=>16+u/C.units*(W-32),nx=all.find(b=>b.u>P);
- let h=`<div class="jscroll" tabindex="0" role="group" aria-label="Journey strip, scrolls sideways"><div class="jin" style="width:${W}px"><div class="jline"></div><div class="jfill" style="width:${x(P)-8}px"></div>`;
- all.forEach(b=>{h+=`<span class="mk ${b.t} ${b.u<=P?'e':''} ${b===nx?'nx':''}" style="left:${x(b.u).toFixed(1)}px"></span>`;
-  if(b.t=='L')h+=`<span class="mkl b" style="left:${x(b.u).toFixed(1)}px">${b.nm}</span>`;});
- if(nx)h+=`<span class="mkl a" style="left:${Math.min(W-60,Math.max(50,x(nx.u))).toFixed(1)}px">${nameOf(nx)}</span>`;
- return h+'</div></div>';}
-const legend=()=>`<div class="lg"><span><i class="L"></i>Level</span><span><i class="W"></i>Words</span><span><i class="K"></i>Skill</span><span><i class="S"></i>Set</span></div>`;
-function journey(){
- const c=CT(),C=COURSE[S.course],P=pos(),all=ALL().sort((a,b)=>a.u-b.u),done=all.filter(b=>b.u<=P).length,nx=all.filter(b=>b.u>P).slice(0,3);
- const row=(b)=>{const s=ST(b);return `<div class="card" style="margin:0 0 8px;padding:10px 12px">${badge(b,s,'sm')}<div class="tx"><b class="t-body" style="font-weight:600">${nameOf(b)}</b><p class="t-sm">${unitsOn(b)}</p></div></div>`};
- return `<p class="t-h" style="margin:2px 0 2px">Journey</p><p class="t-sm">${chip()} ${done} of ${all.length} unlocked. One about every ${Math.round(C.units/all.length)} units of the path.</p><div class="chg" style="margin:10px 0 0;border-radius:12px">${jstrip(C,P,all)}</div>${legend()}${nx.length?`<p class="t-lab">Next up</p><div class="card" style="margin:0 0 8px"><div class="tx"><div style="display:flex;gap:12px;align-items:center">${badge(nx[0],ST(nx[0]),'sm')}<div><b class="t-body" style="font-weight:600">${nameOf(nx[0])}</b><p class="t-sm">${unitsOn(nx[0])}</p></div></div><p class="t-body" style="margin-top:8px">${nx[0].how}</p></div></div>${nx.length>1?'<p class="t-lab">Then</p>'+nx.slice(1).map(row).join(''):''}`:'<p class="t-body" style="margin-top:12px">Every achievement of this course is yours.</p>'}<p class="t-sm" style="margin-top:8px">The path is the timeline. Streaks and answer counts follow days, not units, so they sit on Progress, not here.</p>`;}
 /* ---- Progress grid with category tabs ---- */
 const TABS=[['lv','Levels'],['sk','Skills'],['st','Sets'],['ot','Other']];
 function tabbar(on){return `<div class="tabs chg" role="tablist" aria-label="Badge categories">${TABS.map(([k,n])=>`<button class="tab" role="tab" aria-selected="${k==on}">${n}</button>`).join('')}</div>`}
-function nextRow(){const nx=nextItem();if(!nx)return '';return `<button class="nxt chg">${badge(nx,ST(nx),'sm')}<span class="tx"><b>Next: ${nameOf(nx)}</b><span class="t-sm">${unitsOn(nx)} · Journey</span></span><span class="ib" style="width:40px">${svg('chev')}</span></button>`}
 function tabBody(k){
  const all=ALL(),c=CT();
  if(k=='lv')return grp('Levels')+grid(all.filter(b=>b.g=='lv'))+grp('Words')+grid(all.filter(b=>b.g=='w'));
@@ -393,7 +343,7 @@ function tabBody(k){
  return grp('Firsts')+grid(OTHER.filter(b=>b.g=='o'))+`<div class="grp"><p class="t-lab" style="margin-top:12px">For every language</p></div>`+grp('In a row')+grid(OTHER.filter(b=>b.g=='s'))+grp('Answers')+grid(OTHER.filter(b=>b.g=='r'));}
 function gridFrame(k,cls,id){
  const c=CT(),n=TABS.find(t=>t[0]==k)[1];
- const body=`<div class="lbar" style="padding:0 0 8px"><span class="pill on">${c.name}</span><span class="pill">${S.course=='hi'?'Bengali':'Hindustani'}</span></div><p class="t-h" style="margin-top:4px">Badges</p>${nextRow()}${tabbar(k)}<div class="chg" style="border-radius:16px;padding:0 0 4px">${tabBody(k)}</div>`;
+ const body=`<div class="lbar" style="padding:0 0 8px"><span class="pill on">${c.name}</span><span class="pill">${S.course=='hi'?'Bengali':'Hindustani'}</span></div><p class="t-h" style="margin-top:4px">Badges</p>${tabbar(k)}<div class="chg" style="border-radius:16px;padding:0 0 4px">${tabBody(k)}</div>`;
  return ph('Progress · '+n+' tab',body,{cls,nav:'Progress',bar:'Progress',id});}
 /* ---- Sheets ---- */
 function detail(kind){
@@ -428,22 +378,6 @@ function catchup(){
  const row=['A1','w100','lesson','d3'].map(id=>{const b=ALL().concat(OTHER).find(x=>x.id==id);return badge(b,['e',0,'x'],'sm')}).join('')+badge(mk([4,'K','hear','s']),['e',0,'x'],'sm')+badge(mk([12,'S','pron']),['e',0,'x'],'sm');
  if(S.pr=='q')return `<div class="card chg" style="flex-direction:column;align-items:flex-start;gap:8px"><div class="row3">${row}</div><p class="t-body">We found 6 achievements in your past reviews. Each is dated when you first met it.</p><button class="btn tonal sm">See them</button></div>`;
  return `<div class="earn chg" style="flex-direction:column;align-items:flex-start;gap:10px;padding:18px"><p class="n" style="font-size:calc(20px*var(--t))">6 achievements already yours</p><div class="row3">${row}</div><p class="d">Your past reviews earned these. Look through them when you like.</p><button class="btn fill full">Look through them</button></div>`;}
-/* ---- The spacing figure (page, not app) ---- */
-function fig(name,C,ex){
- const all=C.list.map(mk).sort((a,b)=>a.u-b.u),W=860,H=96,x=u=>20+u/C.units*(W-40),n=all.length;
- let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${name}: ${n} unlocks along ${C.units} path units">`;
- for(let d=0;d<=10;d++){const gx=x(C.units*d/10);s+=`<line x1="${gx}" x2="${gx}" y1="14" y2="70" stroke="var(--page-line)" stroke-width="1"/>`;}
- s+=`<line x1="20" x2="${W-20}" y1="42" y2="42" stroke="var(--page-muted)" stroke-width="2"/>`;
- all.forEach(b=>{const cx=x(b.u),cy=42,f='var(--page-acc)';
-  if(b.t=='L')s+=`<rect x="${cx-9}" y="${cy-9}" width="18" height="18" transform="rotate(45 ${cx} ${cy})" fill="${f}"/>`;
-  else if(b.t=='W')s+=`<rect x="${cx-6}" y="${cy-6}" width="12" height="12" fill="${f}"/>`;
-  else if(b.t=='K')s+=`<circle cx="${cx}" cy="${cy}" r="7" fill="${f}"/>`;
-  else s+=`<path d="M${cx} ${cy-8}L${cx+8} ${cy+6}L${cx-8} ${cy+6}Z" fill="${f}"/>`;
-  if(b.t=='L')s+=`<text x="${cx}" y="${cy+34}" text-anchor="middle" font-size="22" font-weight="700" fill="var(--page-fg)">${b.nm}</text>`;});
- s+='</svg>';
- const cnt=Array(10).fill(0),gaps=[];all.forEach((b,i)=>{cnt[Math.min(9,Math.floor(b.u/C.units*10))]++;if(i)gaps.push(b.u-all[i-1].u)});
- const mn=Math.min(...gaps),mxg=Math.max(...gaps),avg=(C.units/n).toFixed(1);
- return `<div class="fig"><h3>${name}</h3><p>${n} unlocks on ${C.units} path units: one about every ${avg} units (${(100/n).toFixed(1)}% of the plan); closest ${mn} units, furthest ${mxg} units apart. ${ex||''}</p>${s}<div class="cnt" style="padding:0 ${20/860*100}%">${cnt.map(c=>`<span>${c}</span>`).join('')}</div><p>The row of numbers counts the unlocks in each tenth of the course.</p></div>`;}
 function build(){
  const c=CT(),p=PAL[S.theme],root=document.getElementById('root');
  root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
@@ -452,14 +386,11 @@ function build(){
  const top=`<p class="t-h" style="margin:2px 0 8px">Level</p><div class="lvtile"><div class="a">${c.name}</div><div class="b">${S.course=='bn'?'A1 in progress':'A1 · since 4 Nov'}</div></div><button class="recent"><span class="bd earned sm">${svg('book')}</span><span class="tx"><b>100 words</b><span class="t-sm">${c.name} · 14 Oct</span></span><span class="ib" style="width:40px">${svg('chev')}</span></button><p class="t-lab">Mastery by skill</p><div class="card"><div class="tx"><p class="t-sm">The star and the rest of Progress stay as they are.</p></div></div>`;
  root.innerHTML=`
 <section class="opt"><h2>1 · Summary entry</h2><p class="cap1">Unchanged. A quiet line on Progress with the latest badge, under the Level tile. It opens the grid and shows only the most recent badge, and nothing at all before the first.</p><div class="frames">${ph('Progress · top',top,{nav:'Progress'})}</div></section>
-<section class="opt" id="s-grid"><h2>2 · Progress badges, now in four categories</h2><p class="cap1">New: a tab row (Levels, Skills, Sets, Other) so the grid stays short, and a "Next" row that opens the Journey (section 4). Levels now holds the words badges too. Skills has a Start and a Master for each skill. Sets has the word sets and the grammar tables. Other keeps the first lesson, streaks and answers. Same three states as before. The Badge states control moves the learner along the course.</p><div class="frames">${gridFrame('lv','g1')}${gridFrame('sk','g2','shot-skills')}${gridFrame('st','g3','shot-sets')}${gridFrame('ot','g4')}</div></section>
+<section class="opt" id="s-grid"><h2>2 · Progress badges, now in four categories</h2><p class="cap1">New: a tab row (Levels, Skills, Sets, Other) so the grid stays short. Levels now holds the words badges too. Skills has a Start and a Master for each skill. Sets has the word sets and the grammar tables. Other keeps the first lesson, streaks and answers. Same three states as before. The Badge states control moves the learner along the course.</p><div class="frames">${gridFrame('lv','g1')}${gridFrame('sk','g2','shot-skills')}${gridFrame('st','g3','shot-sets')}${gridFrame('ot','g4')}</div></section>
 <section class="opt"><h2>3 · Badge sheets</h2><p class="cap1">The three sheets of revision 1 are unchanged (earned, in progress, locked). New: a skill sheet (what Master asks and which cards are left) and a set sheet (how many cards, and the ones still to know, with the example words in ${c.sc}).</p><div class="frames">${ph('Sheet · earned',sheetOver(detail('e')),{cls:'sheetph',raw:true,bar:'Progress'})}${ph('Sheet · in progress',sheetOver(detail('p')),{cls:'sheetph',raw:true,bar:'Progress'})}${ph('Sheet · locked',sheetOver(detail('l')),{cls:'sheetph',raw:true,bar:'Progress'})}<div class="fcol chg"><div class="fcap">Sheet · skill, Master</div><div class="ph sheetph"><div class="appbar"><span class="ttl">Progress</span></div>${sheetOver(skillSheet())}</div></div><div class="fcol chg" id="shot-setsheet"><div class="fcap">Sheet · set, in progress</div><div class="ph sheetph"><div class="appbar"><span class="ttl">Progress</span></div>${sheetOver(setSheet())}</div></div></div></section>
-<section class="opt" id="s-journey"><h2>4 · The Journey</h2><p class="cap1">New. The course path is the timeline: a strip from the first unit to the B1 mark, one marker for every unlock, the reached part filled, the next one ringed and named. Levels are diamonds, words squares, skills circles, sets triangles, so no marker depends on colour. The strip scrolls sideways; it opens already centred on the next unlock. Below it, the next three. Streaks and answers are not on it, because they follow days, not units.</p><div class="frames">${ph('Journey',journey(),{cls:'jr',nav:'Progress',bar:'Progress',id:'shot-journey'})}</div></section>
-<section class="opt" id="s-spacing"><h2>5 · How the unlocks are spaced</h2><p class="cap1">Not a screen: the rule's result on three paths, from the real unit numbers of decks-live (Hindustani 114 units, A1 mark at unit 43, A2 at 71; Bengali 187 units, marks at 60 and 109) and a short 45-unit path. Each marker is one unlock at the unit where its rule is first met; the faint lines are tenths of the course.</p>${fig('Hindustani',COURSE.hi,'')}${fig('Bengali',COURSE.bn,'')}${fig('A short path (45 units)',SHORT,'Fewer sets are chosen, so the gap never falls under 2 units.')}</section>
-<section class="opt"><h2>6 · Level badges from the B1 marks</h2><p class="cap1">Unchanged: A1 bronze, A2 silver, B1 gold, in the metals of the Level tile (level_badge.dart, #678). The Level rule control changes the sentence under the bar (decision 1).</p><div class="frames">${ph('Sheet · levels',sheetOver(levelsSheet()),{cls:'sheetph',raw:true,bar:'Progress'})}</div></section>
-<section class="opt"><h2>7 · How an earned badge is announced</h2><p class="cap1">Unchanged rule: once, at the end of the session that earned it, on the session summary, a tonal card that fades in over 0.2 s. New frame: a set badge (a mastered Family deck) announced the same way. No confetti, sound, vibration, pop-up, reminder, or word about a lost streak.</p><div class="frames">${ph('Summary · one earned',summary(1),{cls:'short',bar:'Summary'})}${ph('Summary · several earned',summary(2),{cls:'short',bar:'Summary'})}${ph('Summary · a set',summary(3),{cls:'short',bar:'Summary'})}${ph('First launch · '+(S.pr=='q'?'quiet':'celebrated'),`${catchup()}`,{cls:'short',bar:'Achievements'})}</div></section>`;
+<section class="opt"><h2>4 · Level badges from the B1 marks</h2><p class="cap1">Unchanged: A1 bronze, A2 silver, B1 gold, in the metals of the Level tile (level_badge.dart, #678). The Level rule control changes the sentence under the bar (decision 1).</p><div class="frames">${ph('Sheet · levels',sheetOver(levelsSheet()),{cls:'sheetph',raw:true,bar:'Progress'})}</div></section>
+<section class="opt"><h2>5 · How an earned badge is announced</h2><p class="cap1">Unchanged rule: once, at the end of the session that earned it, on the session summary, a tonal card that fades in over 0.2 s. New frame: a set badge (a mastered Family deck) announced the same way. No confetti, sound, vibration, pop-up, reminder, or word about a lost streak.</p><div class="frames">${ph('Summary · one earned',summary(1),{cls:'short',bar:'Summary'})}${ph('Summary · several earned',summary(2),{cls:'short',bar:'Summary'})}${ph('Summary · a set',summary(3),{cls:'short',bar:'Summary'})}${ph('First launch · '+(S.pr=='q'?'quiet':'celebrated'),`${catchup()}`,{cls:'short',bar:'Achievements'})}</div></section>`;
  document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
- document.querySelectorAll('.jscroll').forEach(j=>{const n=j.querySelector('.mkl.a');if(n)j.scrollLeft=Math.max(0,parseFloat(n.style.left)-140)});
 }
 document.querySelectorAll('.seg').forEach(s=>s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;build()}));
 build();
