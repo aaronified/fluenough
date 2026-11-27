@@ -142,11 +142,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 3 · Deck downloads
 
-1 approved open issue.
-
-**Other**
-
-- [#22](https://github.com/aaronified/fluenough/issues/22) Add a deck from a link
+0 approved open issues.
 
 ### 4 · Settings redesign
 
