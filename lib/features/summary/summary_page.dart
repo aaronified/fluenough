@@ -128,7 +128,7 @@ class SummaryPage extends StatelessWidget {
                       const SizedBox(height: 24),
                       _Unlocked(unlocked: unlocked),
                     ],
-                    if (finished != null && !empty)
+                    if (finished != null && result.total > 0)
                       AchievementAnnouncement(
                         language: finished.code,
                         since: result.startedAt,

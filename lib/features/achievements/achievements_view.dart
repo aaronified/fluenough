@@ -5,6 +5,7 @@ import '../../core/languages/language_skills.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
+import '../../ui/theme.dart';
 import '../languages/skill_widgets.dart';
 import 'badge_tile.dart';
 import 'badge_view.dart';
@@ -227,7 +228,7 @@ class _TabBar extends StatelessWidget {
         padding: const EdgeInsetsDirectional.all(4),
         decoration: BoxDecoration(
           color: scheme.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(AppRadii.card),
         ),
         child: Row(
           spacing: 4,
@@ -245,7 +246,7 @@ class _TabBar extends StatelessWidget {
                     color: tab == selected
                         ? scheme.secondaryContainer
                         : Colors.transparent,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(AppRadii.field),
                     clipBehavior: Clip.antiAlias,
                     child: InkWell(
                       onTap: () => onSelected(tab),
