@@ -5,7 +5,7 @@ Source of truth: this wiki page.
 
 Written 2026-10-05.
 
-Status 2026-11-27: the engine (#322) is in progress; the screens (#323, #324) are next, per the owner's approval of the mockup and the pacing on 2026-11-27. The approved decisions, the categories (Levels, Skills with Start and Master, Sets, Other), the pacing rule and the plots are in [Plan-Achievements-Pacing](Plan-Achievements-Pacing).
+Status (2026-11-27): built. The engine is merged (PR #1745) and the screens (PR #1747): the Progress badges page, the latest-badge line, and the Summary announcement; earned dates are stored in the settings store so a badge is never lost. Not built: the set lists in each course's path file (`achievement_sets`, content on decks-live: the Sets tab says none are chosen until they exist) and the Play Games flavour (decision 5, later). The approved decisions, the categories (Levels, Skills with Start and Master, Sets, Other), the pacing rule and the plots are in [Plan-Achievements-Pacing](Plan-Achievements-Pacing).
 
 ## What the owner asked
 

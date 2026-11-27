@@ -4,7 +4,7 @@ Source of truth: this wiki page.
 
 Written 2026-11-27. Extends [Plan-Achievements](Plan-Achievements). The owner approved the looks and the pacing of the achievements mockup on 2026-11-27 and ordered: "save the details and the plots to the wiki". This page is that record. The achievements mockup (PR #1743, branch `mockup/achievements`, revision 3, commit `30a2ba370`) is removed now that the feature is built; its decisions are recorded on this page. The plots are planning illustrations drawn from the same unit numbers; they were first published as the artifact [Achievements pacing](https://claude.ai/artifact/5yz6tyGs9d1ehbPTqJhP1w) (an interactive page, private to the owner).
 
-Status: the engine (#322) is in progress; the screens (#323, #324) come next, per the 2026-11-27 approval. Parent issue #223.
+Status (2026-11-27): built. The engine is merged (PR #1745) and the screens (PR #1747): the Progress badges page, the latest-badge line, and the Summary announcement; earned dates are stored in the settings store so a badge is never lost. Not built: the set lists in each course's path file (`achievement_sets`, content on decks-live: the Sets tab says none are chosen until they exist) and the Play Games flavour (decision 5, later). Parent issue #223.
 
 **The Journey and the spacing plots are not app screens.** The owner, 2026-11-27: "the journey or the spacing plots should not be in the app." They are planning aids for the engine's rule below. Decision 12 of revision 2 (one Journey per language) was withdrawn; decisions 1 to 11 keep their numbers.
 
