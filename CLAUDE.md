@@ -267,6 +267,8 @@ long-horizon ask (owner, 2026-10-23).
 
 **Swahili replaces Afrikaans on the second list** (owner, 2026-11-20: "Remove africaans in list 2 and replace it with the most spoken african language."). Decision made by the orchestrator: Swahili (Kiswahili, `sw`), the most spoken African language by total speakers (about 200 million, mostly as a second language), takes Afrikaans's place on the second list, in the same position (after Korean, before Italian). Afrikaans moves to the third list (first words only) rather than being deleted from the plans. Swahili already has a language entry and a path of 84 units (1 built) in [Plan-Language-Completeness](wiki/Plan-Language-Completeness.md); its phonology plan is checked before its A1 build, as for the other new languages.
 
+**Ancient languages: A1 plus scripts only** (owner, 2026-11-27: "For ancient languages, we will only build till A1 + scripts. No point inventing much more."): every ancient language (Vedic Sanskrit, Pali, Latin, Old English, Middle English, Classical Greek, Archaic Greek, Koine Greek, Mycenaean Greek, Aramaic (Imperial), Ashokan Prakrit, Sumerian, Egyptian, Proto-Indo-European) is built to the A1 path (first words, phrasebook, A1 word and grammar units) plus its script decks, and no further: no genre decks (culture, proverbs, situations, topics, facts, recommendations), no A2 or B1. Classical Sanskrit, already Complete, is unchanged. Vedic Sanskrit met this scope (A1 and four script decks merged) and its issue was closed.
+
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose
 "One course, two scripts"). The `hi` course and its card ids stay; it is
