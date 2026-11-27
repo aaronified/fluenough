@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 
 import '../../l10n/app_localizations.dart';
@@ -125,6 +123,7 @@ class BadgeGlyph extends StatelessWidget {
             track: scheme.outlineVariant,
             fill: scheme.primary,
             share: view.fraction,
+            radius: size.radius + size.ringGap - _ringInset,
           ),
           child: Center(child: glyph),
         ),
@@ -143,33 +142,71 @@ class BadgeGlyph extends StatelessWidget {
   }
 }
 
-/// The ring round a badge in progress: a track, and over it the share done.
+/// How far the ring's stroke sits inside the edge of its box.
+const double _ringInset = 2;
+
+/// The outline of the ring round a badge in progress: the badge's rounded
+/// shape (the same corner curve as the glyph's [BorderRadius]) grown by the
+/// ring's gap, so the ring and the glyph always agree. It starts at the top
+/// centre and runs clockwise.
+Path badgeRingPath(Size size, double radius) {
+  final rect = (Offset.zero & size).deflate(_ringInset);
+  final corner = Radius.circular(radius);
+  return Path()
+    ..moveTo(rect.center.dx, rect.top)
+    ..lineTo(rect.right - radius, rect.top)
+    ..arcToPoint(Offset(rect.right, rect.top + radius), radius: corner)
+    ..lineTo(rect.right, rect.bottom - radius)
+    ..arcToPoint(Offset(rect.right - radius, rect.bottom), radius: corner)
+    ..lineTo(rect.left + radius, rect.bottom)
+    ..arcToPoint(Offset(rect.left, rect.bottom - radius), radius: corner)
+    ..lineTo(rect.left, rect.top + radius)
+    ..arcToPoint(Offset(rect.left + radius, rect.top), radius: corner)
+    ..close();
+}
+
+/// The ring round a badge in progress: a track, and over it the share done,
+/// both along the badge's own rounded outline.
 class _Ring extends CustomPainter {
-  const _Ring({required this.track, required this.fill, required this.share});
+  const _Ring({
+    required this.track,
+    required this.fill,
+    required this.share,
+    required this.radius,
+  });
 
   final Color track;
   final Color fill;
   final double share;
+  final double radius;
 
   @override
   void paint(Canvas canvas, Size size) {
-    final rect = (Offset.zero & size).deflate(2);
+    final outline = badgeRingPath(size, radius);
     final base = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3
       ..color = track;
-    canvas.drawArc(rect, 0, 2 * math.pi, false, base);
+    canvas.drawPath(outline, base);
     final done = Paint()
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 3.5
       ..color = fill;
-    canvas.drawArc(rect, -math.pi / 2, 2 * math.pi * share, false, done);
+    for (final metric in outline.computeMetrics()) {
+      canvas.drawPath(
+        metric.extractPath(0, metric.length * share.clamp(0.0, 1.0)),
+        done,
+      );
+    }
   }
 
   @override
   bool shouldRepaint(_Ring old) =>
-      old.track != track || old.fill != fill || old.share != share;
+      old.track != track ||
+      old.fill != fill ||
+      old.share != share ||
+      old.radius != radius;
 }
 
 /// The dashed border of a locked badge.
