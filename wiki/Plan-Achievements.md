@@ -122,15 +122,60 @@ and draws nothing:
   is a rule over the review log, replayed oldest first. A card counts once it has
   ever been known (the Progress star's rule, `leavesKnown`), so a lapse never
   takes a badge away; the date is the first time the rule was met; placement
-  credit counts for nothing. Nothing is stored.
+  credit counts for nothing. The rules are not stored; the dates they find are
+  kept (see "Earned badges are kept" below).
 - **Sets** are chosen in the path file with the optional `achievement_sets:` key
   ([Deck-Format](Deck-Format#paths)); a language that chooses none has none.
 - **Wiring** (`lib/app/achievements_holder.dart`): `AppState.achievements`
   works the report out on an isolate, as Progress's numbers are, and recomputes
   it only when the log, the language's decks or its skills marked Leave change.
 
-Not yet: the Progress screens (#323), the level badges' drawing (#324), the
-announcement on the session summary, and Play Games.
+## The screens (#323, #324)
+
+Built from the approved mockup (decisions 1 to 11; the Journey and the spacing
+plots are not app screens). They live in `lib/features/achievements/`:
+
+- **Progress** shows one quiet line under the Level tile, the latest badge and
+  its date (`RecentBadgeEntry`); nothing before the first badge. A tap opens the
+  **badges page** (`AchievementsPage`, route `/achievements`).
+- **The badges page** has four tabs: Levels (A1 bronze, A2 silver, B1 gold,
+  drawn with `LevelBadge`, and the word counts), Skills (a Start and a Master
+  for each skill, Read and Write for each script), Sets (word sets and grammar
+  tables; "No sets are chosen for this course yet." when the path chooses none)
+  and Other (first lesson, days in a row, answers). A badge is earned (filled,
+  with its date), in progress (a ring and "312 of 500") or locked (dashed with a
+  lock); only the next badge of a chain shows progress. A skill marked Leave is
+  dimmed, "Not part of your plan".
+- **Sheets**: a tap on a badge opens its sheet (what it is, what remains, the
+  date earned; a word count shows a few of the learner's words, a Master or a
+  set the next cards still to know); a tap on a level opens the levels sheet
+  with the three metals, the next level's bar and the rule of decision 1.
+- **Announcement** on the session summary (`AchievementAnnouncement`): a tonal
+  "New badge" card that fades in over 0.2 s, two at most then "and N more", no
+  confetti, sound, vibration or pop-up, and nothing about a streak at risk or
+  lost. The first time, badges the past reviews already earned are shown once,
+  in one quiet card (decision 4).
+
+### Earned badges are kept
+
+The engine review found that a badge could be lost when a deck grew (the rule
+no longer held). So the settings (the profile's database, and so backups) keep
+`achievements_earned` (scope, then badge id, then the date first earned) and
+`achievements_seen` (scope, then the ids shown). The scope is a language code
+or `*` for the app-wide badges. Each report is given the kept dates as
+`earnedBefore`; a kept date is only ever added or made earlier, never removed.
+The review log is never edited. Nothing is lost on a restart.
+
+### When the badges are worked out
+
+Never after an answer. The holder listens to nothing: a report is worked out
+only when a screen asks (`AchievementsHolder.of`), and the only screens that ask
+are Progress (the line, when the tab is shown), the badges page and the session
+summary, never a lesson or a drill. The summary waits for the report that
+counts the session's answers (`currentOf`), so a session costs at most one job
+per language, off the main thread.
+
+Not yet: Play Games.
 
 ## To decide
 

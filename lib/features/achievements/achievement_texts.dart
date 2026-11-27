@@ -117,8 +117,23 @@ String achievementCount(AppLocalizations l10n, int n) => _count(l10n, n);
 String achievementDate(AppLocalizations l10n, DateTime at) =>
     DateFormat.yMMMd(l10n.localeName).format(at.toLocal());
 
+/// The ids a path file may spell a set with, besides the ones named here.
+const Map<String, String> _setAliases = <String, String>{
+  'numbers': 'numbers-1-20',
+  'past-tense': 'past',
+  'future-tense': 'future',
+  'noun-forms': 'nouns',
+  'relative-clauses': 'relative',
+  'conditional-clauses': 'conditional',
+  'purpose-clauses': 'purpose',
+  'causative-verbs': 'causative',
+  'indefinite-words': 'indefinite',
+  'concessive-clauses': 'concessive',
+};
+
 String _setName(AppLocalizations l10n, String id, {required bool full}) {
-  final name = full ? _fullSetName(l10n, id) : _shortSetName(l10n, id);
+  final known = _setAliases[id] ?? id;
+  final name = full ? _fullSetName(l10n, known) : _shortSetName(l10n, known);
   if (name != null) return name;
   // A set the app has no name for: its id, as words.
   final words = id.replaceAll('-', ' ');
@@ -175,7 +190,7 @@ String? _fullSetName(AppLocalizations l10n, String id) => switch (id) {
 
 IconData _setIcon(String id, bool grammar) {
   if (grammar) return Icons.notes;
-  return switch (id) {
+  return switch (_setAliases[id] ?? id) {
     'pronouns' => Icons.people,
     'family' => Icons.people,
     'numbers-1-20' => Icons.numbers,

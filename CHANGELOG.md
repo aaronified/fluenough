@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Fill in the missing word.** Sentence reviews sometimes show the meaning and the sentence with one word you know left out, and you tap the missing word from a few.
 - **Grammar mistakes explained.** When a wrong grammar answer is another form of the same word, such as the "we" form for "you all", or the dictionary form, the feedback now says which form you gave.
 - **Add a deck from a link.** On Add a deck, From a link downloads a deck file from a secure https link, checks it as it checks a file from your phone, and asks before it replaces a deck you added before.
+- **Achievements.** Progress now shows your latest badge, and a page of badges in four tabs (levels and word counts, a Start and Master for each skill, sets of words and grammar tables, and days in a row), each with how far you have got and how to earn it; a new badge is mentioned once, quietly, at the end of a session.
 
 ## [0.12.2] - 2026-11-23
 
