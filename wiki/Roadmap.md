@@ -232,7 +232,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#324](https://github.com/aaronified/fluenough/issues/324) Achievements: level badges from the B1 marks
 - [#325](https://github.com/aaronified/fluenough/issues/325) Audio drills: the audio service, controls and queue
 - [#326](https://github.com/aaronified/fluenough/issues/326) Audio drills: grading by the recogniser and the screen-off fallback
-- [#327](https://github.com/aaronified/fluenough/issues/327) Explain mistakes: read the mistake from the tables
 - [#328](https://github.com/aaronified/fluenough/issues/328) Explain mistakes: rules a card can name
 - [#329](https://github.com/aaronified/fluenough/issues/329) Explain mistakes: known mistakes per sentence
 - [#330](https://github.com/aaronified/fluenough/issues/330) Explain mistakes: in every grammar drill, with content
