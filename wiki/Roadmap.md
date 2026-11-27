@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.13.0**
 - **v0.12.2**
 - **v0.12.1**
 - **v0.12.0**
