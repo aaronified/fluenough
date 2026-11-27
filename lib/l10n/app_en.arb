@@ -7097,6 +7097,34 @@
   "@reminderChannelDescription": {
     "description": "What the daily reminder's notification channel is for, under its name in the phone's own notification settings."
   },
+  "homeWidgetDue": "{count, plural, other{{count} due}}",
+  "@homeWidgetDue": {
+    "description": "Home-screen widget: how many cards are due, on one short line under the language's name. Only a number and one word.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "homeWidgetAllDone": "All done for today",
+  "@homeWidgetAllDone": {
+    "description": "Home-screen widget: the line when no card is due."
+  },
+  "homeWidgetStreak": "{days, plural, other{{days} day streak}}",
+  "@homeWidgetStreak": {
+    "description": "Home-screen widget: the days in a row with a review, on one short line.",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "homeWidgetOpen": "Open the app to update",
+  "@homeWidgetOpen": {
+    "description": "Home-screen widget: the line when the app has not been opened for a few days, so the widget cannot know what is due."
+  },
   "reminderRefusedTitle": "Notifications are off",
   "@reminderRefusedTitle": {
     "description": "Title of the dialog shown when the learner switches the daily reminder on but the phone does not allow the app to show notifications."

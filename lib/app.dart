@@ -138,6 +138,8 @@ class _FluenoughAppState extends State<FluenoughApp>
     switch (lifecycle) {
       case AppLifecycleState.resumed:
         reminders.appResumed();
+        // A new day may have begun while the app was away.
+        unawaited(widget.state.homeWidget.flush());
         // Android's installer, if it was open, has been closed (#487).
         widget.state.updates.appResumed();
         // The wallpaper may have changed while the app was away.
@@ -145,6 +147,8 @@ class _FluenoughAppState extends State<FluenoughApp>
       case AppLifecycleState.paused:
       case AppLifecycleState.hidden:
         reminders.appPaused();
+        // The widget is brought up to date as the learner leaves.
+        unawaited(widget.state.homeWidget.flush());
       case AppLifecycleState.inactive:
       case AppLifecycleState.detached:
         break;

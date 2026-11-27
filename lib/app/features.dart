@@ -71,6 +71,8 @@ enum Feature {
 
   // Settings.
   reminder(90),
+  // The Android home-screen widget (#108): cards due and the streak.
+  homeWidget(108),
   uiLanguage(46),
   // Settings > Voices opens the phone's text-to-speech settings, through
   // the app's own platform channel (lib/app/system_settings.dart).
@@ -139,6 +141,7 @@ enum Feature {
     Feature.hoursLeft,
     Feature.deckUpdates,
     Feature.reminder,
+    Feature.homeWidget,
   };
 }
 
@@ -171,6 +174,7 @@ class FeatureRegistry {
       // A reminder setting restored from an Android backup must not make the
       // service schedule a notification a browser cannot show.
       (feature != Feature.reminder || hasNotifications) &&
+      (feature != Feature.homeWidget || !_browser) &&
       _on.contains(feature);
 
   /// Built but not yet switched on: shown disabled, with a badge.
