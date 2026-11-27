@@ -8,6 +8,7 @@ import 'package:flutter/scheduler.dart';
 import '../core/data/course_path.dart';
 import '../core/placement/item_registry.dart' show RegItem;
 import '../core/private/private_ids.dart' show languageOfId;
+import 'achievements_holder.dart';
 import 'blob_store.dart';
 import 'placement_bank.dart';
 import '../core/feedback/report.dart';
@@ -237,6 +238,7 @@ class AppState extends ChangeNotifier {
     this._fitRunner = fitInIsolate,
     this._paceRunner = paceInIsolate,
     this._progressRunner = progressInIsolate,
+    this._achievementsRunner = achievementsInIsolate,
     this.deckDownloads,
     this.marks,
     BlobStore? bankStore,
@@ -426,6 +428,7 @@ class AppState extends ChangeNotifier {
     FitRunner fitRunner = fitInPlace,
     PaceRunner paceRunner = paceInPlace,
     ProgressRunner progressRunner = progressInPlace,
+    AchievementRunner achievementsRunner = achievementsInPlace,
     DeckDownloads? deckDownloads,
     BlobStore? bankStore,
     BankRunner? bankRunner,
@@ -476,6 +479,7 @@ class AppState extends ChangeNotifier {
       fitRunner: fitRunner,
       paceRunner: paceRunner,
       progressRunner: progressRunner,
+      achievementsRunner: achievementsRunner,
       deckDownloads: deckDownloads,
       bankStore: bankStore,
       // A test's bank is never built unless the test says how: the real
@@ -689,6 +693,17 @@ class AppState extends ChangeNotifier {
     runner: _progressRunner,
   );
   final ProgressRunner _progressRunner;
+
+  /// The achievements (#322): every badge as a rule over the review log,
+  /// derived and never stored. Worked out off the main thread from the
+  /// language's decks and the whole log, and read without waiting, as
+  /// [progressNumbers] is; recomputed only when the log, the language's decks
+  /// or its skills marked Leave change. Has its own notifier.
+  late final AchievementsHolder achievements = AchievementsHolder(
+    state: this,
+    runner: _achievementsRunner,
+  );
+  final AchievementRunner _achievementsRunner;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
@@ -5445,6 +5460,7 @@ class AppState extends ChangeNotifier {
     tuner.dispose();
     pacing.dispose();
     progressNumbers.dispose();
+    achievements.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
     if (_ownsLog) log.dispose();

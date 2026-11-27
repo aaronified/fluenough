@@ -2734,6 +2734,7 @@ units:
 | `regions` | no | The language's regions ([Regions](#regions)). |
 | `genders` | no | The language's gender classes, such as `["m", "f"]`, or `[]` for a language without gender: what a noun's `gender` may be ([Gender](#gender)). |
 | `levels` | no | The words per level, such as `{ A1: 120, A2: 60, B1: 80 }`, in place of the default sizes ([The sizes](#the-b1-plan), [ADR-0045](ADR-0045-Path-Level-Sizes)). |
+| `achievement_sets` | no | The sets the Achievements count (#322): a list of `{ id, kind, decks }`, about 14 a course. `id` is `[a-z0-9-]+` and unique, `kind` is `word` (Pronouns, Family) or `grammar` (Past tense), and `decks` are core ids the path lists: the deck, its sentences deck and its reading deck. A set is mastered when every card of those decks has been known. A path without the key has no sets. |
 | `description` | no | Free text. |
 
 **A deck's core id** is `<lang>-<name>`: a core's own id, a layer's core

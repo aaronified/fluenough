@@ -128,7 +128,10 @@ KINDS = {"vocab", "grammar", "facts", "situations", "themes", "numbers", "path",
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
 PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphabet",
-             "regions", "genders", "levels"}
+             "regions", "genders", "levels", "achievement_sets"}
+# A set the achievements count (#322): its kind, and the keys it may have.
+ACHIEVEMENT_SET_KINDS = ("word", "grammar")
+ACHIEVEMENT_SET_KEYS = {"id", "kind", "decks"}
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
@@ -5839,6 +5842,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
                                     f"name, such as {lc}-home")
             elif deck not in listed:
                 r.error("alphabet", f"lists {deck!r}, which the path does not")
+    check_achievement_sets(r, raw, listed, lc)
     for u in parsed:
         if u.decks and u.planned is None and all(d in alphabet for d in u.decks):
             u.exempt = True
@@ -5848,6 +5852,53 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
         r.course_path = (lang, listed)
         r.plan = PathPlan(lang, parsed, [d for d in alphabet if isinstance(d, str)],
                           has_plan, marks, end, regions, genders, levels)
+
+
+def check_achievement_sets(r: Report, raw: dict, listed: list[str], lc: str) -> None:
+    """A path's chosen sets for the achievements (#322, decision 7):
+    `achievement_sets`, a list of { id, kind, decks }, `kind` being `word` or
+    `grammar` and `decks` core ids the path lists (the deck, its sentences deck
+    and its reading deck). Optional: a path without it has no sets, and its Sets
+    category is empty."""
+    if "achievement_sets" not in raw:
+        return
+    sets = raw["achievement_sets"]
+    if not isinstance(sets, list):
+        r.error("achievement_sets", "must be a list of sets, each { id, kind, decks }")
+        return
+    seen: set[str] = set()
+    for i, item in enumerate(sets):
+        where = f"achievement_sets[{i}]"
+        if not isinstance(item, dict):
+            r.error(where, "must be a mapping with id, kind and decks")
+            continue
+        for unknown in sorted(set(item) - ACHIEVEMENT_SET_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        set_id = item.get("id")
+        if not _is_str(set_id) or not ID_RE.fullmatch(set_id):
+            r.error(f"{where}.id", f"must match [a-z0-9-]+, got {set_id!r}")
+        elif set_id in seen:
+            r.error(where, f"{set_id!r} is listed twice")
+        else:
+            seen.add(set_id)
+        kind = item.get("kind")
+        if kind not in ACHIEVEMENT_SET_KINDS:
+            r.error(f"{where}.kind", f'must be "word" or "grammar", got {kind!r}')
+        decks = item.get("decks")
+        if not isinstance(decks, list) or not decks:
+            r.error(f"{where}.decks", "must be a non-empty list of core ids")
+            continue
+        held: list[str] = []
+        for deck in decks:
+            if not _is_core_id(deck, lc):
+                r.error(f"{where}.decks", f"{deck!r} is not a core id of {lc}: {lc}- and a "
+                                          f"name, such as {lc}-home")
+            elif deck not in listed:
+                r.error(f"{where}.decks", f"lists {deck!r}, which the path does not")
+            elif deck in held:
+                r.error(f"{where}.decks", f"{deck!r} is listed twice")
+            else:
+                held.append(deck)
 
 
 def check_regions(r: Report, raw: dict) -> list[str] | None:

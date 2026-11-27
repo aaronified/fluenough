@@ -101,6 +101,37 @@ reaches. That target is set in aaronified/fluenough#187.
     app. A build without them, for F-Droid, would need a separate flavour.
   - Signing in stays optional. Nothing but the unlocks is sent.
 
+## The engine (#322)
+
+Built before the screens (owner order, 2026-11-27, after the mockup
+`docs/mockups/achievements.md` was approved). It lives in `lib/core/achievements/`
+and draws nothing:
+
+- **Catalogue** (`achievement_catalogue.dart`): the badges of a language as
+  data, from its path's marks and chosen sets. Levels A1, A2 and B1; words 100,
+  500, 1,000, 2,500; a Start and a Master for each skill; the path's sets; the
+  first lesson; streaks 3, 7, 30, 100, 365 and answers 1,000, 10,000, which
+  belong to the app. A path with only part of its plan written places only that
+  part.
+- **Pacing** (`achievement_pacing.dart`): where each badge sits on the path.
+  Levels sit on their marks; word counts and skill badges sit at fixed shares of
+  the plan and move only to keep two units apart; sets fill the tenths of the
+  course, at most 3 a tenth, word sets first. About one unlock per 3.5% of the
+  plan, never closer than 2 units, never farther than about 7%.
+- **Evaluator** (`achievement_evaluator.dart`, `known_history.dart`): every badge
+  is a rule over the review log, replayed oldest first. A card counts once it has
+  ever been known (the Progress star's rule, `leavesKnown`), so a lapse never
+  takes a badge away; the date is the first time the rule was met; placement
+  credit counts for nothing. Nothing is stored.
+- **Sets** are chosen in the path file with the optional `achievement_sets:` key
+  ([Deck-Format](Deck-Format#paths)); a language that chooses none has none.
+- **Wiring** (`lib/app/achievements_holder.dart`): `AppState.achievements`
+  works the report out on an isolate, as Progress's numbers are, and recomputes
+  it only when the log, the language's decks or its skills marked Leave change.
+
+Not yet: the Progress screens (#323), the level badges' drawing (#324), the
+announcement on the session summary, and Play Games.
+
 ## To decide
 
 - Milestones earned when the cards are taught, or when they are remembered.
