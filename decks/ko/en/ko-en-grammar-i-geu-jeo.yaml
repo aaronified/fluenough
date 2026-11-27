@@ -1,0 +1,24 @@
+schema: 1
+id: "ko-en-grammar-i-geu-jeo"
+kind: "layer"
+core: "ko-grammar-i-geu-jeo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "이 (i), 그 (geu), 저 (jeo): this, that and that over there"
+description: "The three pointing words and the question word 어느 (eoneu), each with a person, a thing, a casual thing, a respected person and a place. Sources: the en.wiktionary.org entries 이 (i), 그 (geu), 저 (jeo), 이것 (igeot), 이거 (igeo) and the 'Korean demonstratives' table on them. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "This, that and which"
+  slot_name: "what is pointed at"
+  slots:
+    "det": "'this (that, which) person': the word and 사람 (saram)"
+    "thing": "'this (that, which) thing': the long form ending in 것 (geot)"
+    "casual": "'this (that, which) thing' in speech: the form ending in 거 (geo)"
+    "person": "'this (that, which) person', respectful: the form ending in 분 (bun)"
+    "place": "'here', 'there', 'over there', 'where'"
+  entries:
+    "i": "this: near me"
+    "geu": "that: near you"
+    "jeo": "that over there: far from us both"
+    "eoneu": "which"
+  notes: "Korean points in three steps, where English has two. 이 (i) is near the speaker, 'this'; 그 (geu) is near the listener, or already in the talk, 'that'; 저 (jeo) is far from both, 'that over there'; and 어느 (eoneu) asks 'which' (Wiktionary names them proximal, mesial and distal). In speech 이 (i), 그 (geu) and 저 (jeo) are used only in front of a noun, as a separate word: 이 사람 (i saram), this person (Wiktionary, entry 이 (i)). To stand alone they need the noun 것 (geot), thing: 이것 (igeot), 그것 (geugeot), 저것 (jeogeot). 이것 (igeot) is often spoken as 이거 (igeo), and Wiktionary notes that 이거 (igeo) is chiefly spoken and not found in formal writing; with particles it contracts, so 이것은 (igeoseun) becomes 이건 (igeon), 이것이 (igeosi) becomes 이게 (ige) and 이것을 (igeoseul) becomes 이걸 (igeol). The same pattern gives the places: 여기 (yeogi) here, 거기 (geogi) there, 저기 (jeogi) over there, 어디 (eodi) where; and the respectful forms for a person: 이분 (ibun), 그분 (geubun), 저분 (jeobun) and 어느 분 (eoneu bun), 'which person', in the same table."

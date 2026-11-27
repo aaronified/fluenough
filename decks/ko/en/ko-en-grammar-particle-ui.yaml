@@ -1,0 +1,23 @@
+schema: 1
+id: "ko-en-grammar-particle-ui"
+kind: "layer"
+core: "ko-grammar-particle-ui"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "의 (ui): of and the possessive"
+description: "Six words with the possessive particle 의 (ui), and the same word in 'the (person)'s name'. Sources: the en.wikipedia.org page 'Korean postpositions' (의 (ui): possession indicator) and the en.wiktionary.org entry -의 (-ui) (genitive, 'a possessive like -'s'; usually said 에 (e)). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The particle 의 (ui)"
+  slot_name: "form"
+  slots:
+    "of": "the word with 의 (ui): 's"
+    "name": "'the (person)'s name': the word with 의 (ui) and 이름 (ireum)"
+  entries:
+    "chingu": "the friend's (name)"
+    "seonsaengnim": "the teacher's (name)"
+    "haksaeng": "the student's (name)"
+    "uisa": "the doctor's (name)"
+    "sajangnim": "the boss's (name)"
+    "gyosunim": "the professor's (name)"
+  notes: "-의 (-ui) joins two nouns: the first owns or has the second, as the English 's does (친구의 (chinguui) 이름 (ireum) is 'the friend's name'). Wiktionary says it works like the English suffix 's, or like 'of' with the possessor and the possessed turned the other way round; Wikipedia lists it as the possession marker. It is the same after a consonant or a vowel and is joined to the first noun. Wiktionary adds that the common pronunciation of this particle is 에 (e): the spelling stays 의 (ui), and the reading used in this course follows the spelling."

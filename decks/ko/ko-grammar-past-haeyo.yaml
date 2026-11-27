@@ -1,0 +1,220 @@
+# Unit 36 (ko-grammar-past). Sources read: en.wikipedia.org 'Korean verbs' (the past suffix -았/-었 after the infinitive and its contractions: 가 is 갔, 오 is 왔, 하 is 했; the polite suffix 요) and 'Korean grammar',
+# en.wiktionary.org: the conjugation table of every verb used (the informal polite past is copied from it), the entries -이다 and 아니다 (copula past forms -이었어요, -였어요, 아니었어요) and example sentences on 하다, 신, 나라 and 내 (…이었다, …였다) read in the kaikki.org Korean extract.
+schema: 1
+id: "ko-grammar-past-haeyo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["past", "yesterday"]
+  entries:
+    - lemma: "먹다"
+      key: "meokda"
+      reading: "meokda"
+      ipa: "mʌkt͈a"
+      forms:
+        "past": "먹었어요"
+        "yesterday": "어제 먹었어요"
+      readings:
+        "past": "meogeosseoyo"
+        "yesterday": "eoje meogeosseoyo"
+      ipas:
+        "past": "mʌkʌs͈ʌjo"
+        "yesterday": "ʌtɕe mʌkʌs͈ʌjo"
+    - lemma: "마시다"
+      key: "masida"
+      reading: "masida"
+      ipa: "masita"
+      forms:
+        "past": "마셨어요"
+        "yesterday": "어제 마셨어요"
+      readings:
+        "past": "masyeosseoyo"
+        "yesterday": "eoje masyeosseoyo"
+      ipas:
+        "past": "masjʌs͈ʌjo"
+        "yesterday": "ʌtɕe masjʌs͈ʌjo"
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "past": "갔어요"
+        "yesterday": "어제 갔어요"
+      readings:
+        "past": "gasseoyo"
+        "yesterday": "eoje gasseoyo"
+      ipas:
+        "past": "kas͈ʌjo"
+        "yesterday": "ʌtɕe kas͈ʌjo"
+    - lemma: "오다"
+      key: "oda"
+      reading: "oda"
+      ipa: "ota"
+      forms:
+        "past": "왔어요"
+        "yesterday": "어제 왔어요"
+      readings:
+        "past": "wasseoyo"
+        "yesterday": "eoje wasseoyo"
+      ipas:
+        "past": "was͈ʌjo"
+        "yesterday": "ʌtɕe was͈ʌjo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "past": "봤어요"
+        "yesterday": "어제 봤어요"
+      readings:
+        "past": "bwasseoyo"
+        "yesterday": "eoje bwasseoyo"
+      ipas:
+        "past": "pwas͈ʌjo"
+        "yesterday": "ʌtɕe pwas͈ʌjo"
+    - lemma: "사다"
+      key: "sada"
+      reading: "sada"
+      ipa: "sata"
+      forms:
+        "past": "샀어요"
+        "yesterday": "어제 샀어요"
+      readings:
+        "past": "sasseoyo"
+        "yesterday": "eoje sasseoyo"
+      ipas:
+        "past": "sas͈ʌjo"
+        "yesterday": "ʌtɕe sas͈ʌjo"
+    - lemma: "자다"
+      key: "jada"
+      reading: "jada"
+      ipa: "tɕata"
+      forms:
+        "past": "잤어요"
+        "yesterday": "어제 잤어요"
+      readings:
+        "past": "jasseoyo"
+        "yesterday": "eoje jasseoyo"
+      ipas:
+        "past": "tɕas͈ʌjo"
+        "yesterday": "ʌtɕe tɕas͈ʌjo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "past": "읽었어요"
+        "yesterday": "어제 읽었어요"
+      readings:
+        "past": "ilgeosseoyo"
+        "yesterday": "eoje ilgeosseoyo"
+      ipas:
+        "past": "ilkʌs͈ʌjo"
+        "yesterday": "ʌtɕe ilkʌs͈ʌjo"
+    - lemma: "앉다"
+      key: "anda"
+      reading: "anda"
+      ipa: "anta"
+      forms:
+        "past": "앉았어요"
+        "yesterday": "어제 앉았어요"
+      readings:
+        "past": "anjasseoyo"
+        "yesterday": "eoje anjasseoyo"
+      ipas:
+        "past": "antɕas͈ʌjo"
+        "yesterday": "ʌtɕe antɕas͈ʌjo"
+    - lemma: "쉬다"
+      key: "swida"
+      reading: "swida"
+      ipa: "swita"
+      forms:
+        "past": "쉬었어요"
+        "yesterday": "어제 쉬었어요"
+      readings:
+        "past": "swieosseoyo"
+        "yesterday": "eoje swieosseoyo"
+      ipas:
+        "past": "swiʌs͈ʌjo"
+        "yesterday": "ʌtɕe swiʌs͈ʌjo"
+    - lemma: "만나다"
+      key: "mannada"
+      reading: "mannada"
+      ipa: "mannata"
+      forms:
+        "past": "만났어요"
+        "yesterday": "어제 만났어요"
+      readings:
+        "past": "mannasseoyo"
+        "yesterday": "eoje mannasseoyo"
+      ipas:
+        "past": "mannas͈ʌjo"
+        "yesterday": "ʌtɕe mannas͈ʌjo"
+    - lemma: "기다리다"
+      key: "gidarida"
+      reading: "gidarida"
+      ipa: "kitaɾita"
+      forms:
+        "past": "기다렸어요"
+        "yesterday": "어제 기다렸어요"
+      readings:
+        "past": "gidaryeosseoyo"
+        "yesterday": "eoje gidaryeosseoyo"
+      ipas:
+        "past": "kitaɾjʌs͈ʌjo"
+        "yesterday": "ʌtɕe kitaɾjʌs͈ʌjo"
+    - lemma: "공부하다"
+      key: "gongbuhada"
+      reading: "gongbuhada"
+      ipa: "koŋpuhata"
+      forms:
+        "past": "공부했어요"
+        "yesterday": "어제 공부했어요"
+      readings:
+        "past": "gongbuhaesseoyo"
+        "yesterday": "eoje gongbuhaesseoyo"
+      ipas:
+        "past": "koŋpuhes͈ʌjo"
+        "yesterday": "ʌtɕe koŋpuhes͈ʌjo"
+    - lemma: "일하다"
+      key: "ilhada"
+      reading: "ilhada"
+      ipa: "ilhata"
+      forms:
+        "past": "일했어요"
+        "yesterday": "어제 일했어요"
+      readings:
+        "past": "ilhaesseoyo"
+        "yesterday": "eoje ilhaesseoyo"
+      ipas:
+        "past": "ilhes͈ʌjo"
+        "yesterday": "ʌtɕe ilhes͈ʌjo"
+    - lemma: "있다"
+      key: "itda"
+      reading: "itda"
+      ipa: "itt͈a"
+      forms:
+        "past": "있었어요"
+        "yesterday": "어제 있었어요"
+      readings:
+        "past": "isseosseoyo"
+        "yesterday": "eoje isseosseoyo"
+      ipas:
+        "past": "is͈ʌs͈ʌjo"
+        "yesterday": "ʌtɕe is͈ʌs͈ʌjo"
+    - lemma: "없다"
+      key: "eopda"
+      reading: "eopda"
+      ipa: "ʌpt͈a"
+      forms:
+        "past": "없었어요"
+        "yesterday": "어제 없었어요"
+      readings:
+        "past": "eopseosseoyo"
+        "yesterday": "eoje eopseosseoyo"
+      ipas:
+        "past": "ʌps͈ʌs͈ʌjo"
+        "yesterday": "ʌtɕe ʌps͈ʌs͈ʌjo"

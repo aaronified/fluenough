@@ -1,0 +1,28 @@
+schema: 1
+id: "ko-en-grammar-go-sipeoyo"
+kind: "layer"
+core: "ko-grammar-go-sipeoyo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "-고 싶어요 (-go sipeoyo): I want to"
+description: "Ten verbs with the stem and -고 (-go), then with 싶어요 (sipeoyo), 'want to', and after 저는 (jeoneun). Sources: the en.wiktionary.org entries 싶다 (sipda), -고 (-go) and -이 (-i), and the en.wikipedia.org page 'Korean grammar' (supporting verbs). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Wanting to do something"
+  slot_name: "form"
+  slots:
+    "go": "the stem with -고 (-go)"
+    "want": "'(someone) wants to ...': the stem with -고 (-go) and 싶어요 (sipeoyo)"
+    "i-want": "'I want to ...': 저는 (jeoneun) and the same"
+  entries:
+    "meokda": "to eat"
+    "masida": "to drink"
+    "gada": "to go"
+    "boda": "to see, to watch"
+    "sada": "to buy"
+    "jada": "to sleep"
+    "ikda": "to read"
+    "swida": "to rest"
+    "mannada": "to meet"
+    "gongbuhada": "to study"
+  notes: "To say 'want to do', take the stem of the verb, add -고 (-go), and then the polite form of the helping adjective 싶다 (sipda): 먹고 (meokgo) 싶어요 (sipeoyo), 'I want to eat'. -고 (-go) is added straight to the stem: there is no vowel harmony and no joining of vowels, so 가다 (gada) is 가고 (gago) and 공부하다 (gongbuhada) is 공부하고 (gongbuhago). Wikipedia lists -고 싶다 (-go sipda) among the supporting-verb patterns, 'to want to do'. The polite form 싶어요 (sipeoyo) is copied from Wiktionary's conjugation table of 싶다 (sipda). Wiktionary notes that, unlike English 'want', 싶다 (sipda) takes only a verb: for 'want' plus a thing, use a verb such as 갖고 싶다 (gatgo sipda), 'want to have'. The thing wanted can still appear before the verb: with -이 (-i) or -가 (-ga) as an emphatic marker, as in Wiktionary's example 짜장면이 먹고 싶다 (jjajangmyeoni meokgo sipda), 'she wants to eat jajangmyeon'. The subject is often left out."

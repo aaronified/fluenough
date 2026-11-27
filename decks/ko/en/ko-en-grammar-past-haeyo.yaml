@@ -1,0 +1,33 @@
+schema: 1
+id: "ko-en-grammar-past-haeyo"
+kind: "layer"
+core: "ko-grammar-past-haeyo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The polite past: -았어요 (-asseoyo) and -었어요 (-eosseoyo)"
+description: "Sixteen verbs in the polite past, alone and after 어제 (eoje), yesterday. Sources: the en.wikipedia.org page 'Korean verbs' and the en.wiktionary.org conjugation table of each verb, from which every form is copied. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The polite past"
+  slot_name: "form"
+  slots:
+    "past": "the polite past"
+    "yesterday": "'Yesterday I ...': 어제 (eoje) and the polite past"
+  entries:
+    "meokda": "to eat"
+    "masida": "to drink"
+    "gada": "to go"
+    "oda": "to come"
+    "boda": "to see, to watch"
+    "sada": "to buy"
+    "jada": "to sleep"
+    "ikda": "to read"
+    "anda": "to sit"
+    "swida": "to rest"
+    "mannada": "to meet"
+    "gidarida": "to wait for"
+    "gongbuhada": "to study"
+    "ilhada": "to work"
+    "itda": "to be (there), to have"
+    "eopda": "not to be (there), not to have"
+  notes: "The past adds -았 (-at) or -었 (-eot) to the stem, in front of the polite -어요 (-eoyo). The vowel follows the same harmony as the present: -았 (-at) after ㅏ (a) or ㅗ (o), -었 (-eot) after any other vowel (Wikipedia, Korean verbs): 먹다 (meokda) is 먹었어요 (meogeosseoyo), 앉다 (anda) is 앉았어요 (anjasseoyo). With a vowel stem the vowels join, as in the present: 가다 (gada) is 갔어요 (gasseoyo), 오다 (oda) is 왔어요 (wasseoyo), 보다 (boda) is 봤어요 (bwasseoyo), 마시다 (masida) is 마셨어요 (masyeosseoyo), 기다리다 (gidarida) is 기다렸어요 (gidaryeosseoyo); -하다 (-hada) is irregular and gives -했어요 (-haesseoyo): 공부하다 (gongbuhada) is 공부했어요 (gongbuhaesseoyo). The past is a single form for every person and number. The time word 어제 (eoje) is placed first, and the subject is left out. Wikipedia notes that this suffix is a contraction of the existential verb 있다 (itda), and Wiktionary's tables give 있었어요 (isseosseoyo) and 없었어요 (eopseosseoyo) for the past of 있다 (itda) and 없다 (eopda). The past can mean a simple past or a present perfect, depending on the verb and context (Wikipedia). Every form here is copied from Wiktionary's table of the verb."

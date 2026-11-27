@@ -1,0 +1,103 @@
+# Unit 28 (ko-grammar-more-particles). Sources read: en.wikipedia.org 'Korean postpositions' (도, 의, 와/과/랑, 하고, 부터, 까지, 에게/한테, 께) and 'Korean grammar' (case and informational clitics; the topic and additive markers override 이/가 and 을/를),
+# en.wiktionary.org entries -도, -의, -하고, -부터, -까지, -에게 (senses and usage notes) and the conjugation table of 전화하다 and 가다 for the polite verbs. Forms are built by rule and checked against tools/transcribe.py ko.
+schema: 1
+id: "ko-grammar-particle-do"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["also", "good"]
+  entries:
+    - lemma: "저"
+      key: "jeo"
+      reading: "jeo"
+      ipa: "tɕʌ"
+      forms:
+        "also": "저도"
+        "good": "저도 좋아요"
+      readings:
+        "also": "jeodo"
+        "good": "jeodo joayo"
+      ipas:
+        "also": "tɕʌto"
+        "good": "tɕʌto tɕoajo"
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "also": "친구도"
+        "good": "친구도 좋아요"
+      readings:
+        "also": "chingudo"
+        "good": "chingudo joayo"
+      ipas:
+        "also": "tɕʰinkuto"
+        "good": "tɕʰinkuto tɕoajo"
+    - lemma: "가족"
+      key: "gajok"
+      reading: "gajok"
+      ipa: "katɕok"
+      forms:
+        "also": "가족도"
+        "good": "가족도 좋아요"
+      readings:
+        "also": "gajokdo"
+        "good": "gajokdo joayo"
+      ipas:
+        "also": "katɕokt͈o"
+        "good": "katɕokt͈o tɕoajo"
+    - lemma: "물"
+      key: "mul"
+      reading: "mul"
+      ipa: "mul"
+      forms:
+        "also": "물도"
+        "good": "물도 좋아요"
+      readings:
+        "also": "muldo"
+        "good": "muldo joayo"
+      ipas:
+        "also": "multo"
+        "good": "multo tɕoajo"
+    - lemma: "커피"
+      key: "keopi"
+      reading: "keopi"
+      ipa: "kʰʌpʰi"
+      forms:
+        "also": "커피도"
+        "good": "커피도 좋아요"
+      readings:
+        "also": "keopido"
+        "good": "keopido joayo"
+      ipas:
+        "also": "kʰʌpʰito"
+        "good": "kʰʌpʰito tɕoajo"
+    - lemma: "돈"
+      key: "don"
+      reading: "don"
+      ipa: "ton"
+      forms:
+        "also": "돈도"
+        "good": "돈도 좋아요"
+      readings:
+        "also": "dondo"
+        "good": "dondo joayo"
+      ipas:
+        "also": "tonto"
+        "good": "tonto tɕoajo"
+    - lemma: "시간"
+      key: "sigan"
+      reading: "sigan"
+      ipa: "sikan"
+      forms:
+        "also": "시간도"
+        "good": "시간도 좋아요"
+      readings:
+        "also": "sigando"
+        "good": "sigando joayo"
+      ipas:
+        "also": "sikanto"
+        "good": "sikanto tɕoajo"

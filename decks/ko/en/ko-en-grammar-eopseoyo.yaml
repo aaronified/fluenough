@@ -1,0 +1,26 @@
+schema: 1
+id: "ko-en-grammar-eopseoyo"
+kind: "layer"
+core: "ko-grammar-eopseoyo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "없어요 (eopseoyo): there is not and I do not have"
+description: "The same eight nouns in 'there is no (a noun)', the question, and 'I do not have (a noun)'. Sources: the en.wikipedia.org pages 'Korean grammar' and 'Korean verbs' and the en.wiktionary.org entries 없다 (eopda) (example 전 은행 계좌가 없어요 (jeon eunhaeng gyejwaga eopseoyo); its table gives 없어요 (eopseoyo)) and 안 (an). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "'There is not' and 'not to have' with 없어요 (eopseoyo)"
+  slot_name: "sentence"
+  slots:
+    "none": "'There is no (the noun)': the noun with 이 (i) or 가 (ga) and 없어요 (eopseoyo)"
+    "question": "'Is there no (the noun)?': the same with a question mark"
+    "have-not": "'I do not have (the noun)': 저는 (jeoneun), the noun with 이 (i) or 가 (ga) and 없어요 (eopseoyo)"
+  entries:
+    "chingu": "a friend"
+    "gajok": "a family"
+    "don": "money"
+    "sigan": "time"
+    "jadongcha": "a car"
+    "keompyuteo": "a computer"
+    "hyudaepon": "a mobile phone"
+    "yeolsoe": "a key"
+  notes: "없다 (eopda) is the opposite of 있다 (itda): to have none, to be lacking, to be nonexistent. Its polite form is 없어요 (eopseoyo), copied from Wiktionary's table for 없다 (eopda). The thing that is missing takes -이 (-i) or -가 (-ga), just as with 있다 (itda): Wiktionary's example is 전 은행 계좌가 없어요 (jeon eunhaeng gyejwaga eopseoyo), 'I don't have a bank account'. Wikipedia says a verb is negated by a special negative form when there is one and otherwise by putting a negative adverb in front of it; for 있다 (itda) the special negative form is 없다 (eopda), so 안 있어요 (an isseoyo) is not the way to say it. Wiktionary notes that 없다 (eopda) belongs to the words that are negated with 않다 (anta) rather than 안 (an). Most grammars classify 없다 (eopda) as an adjective with verbal qualities (Wiktionary), and Wikipedia lists it with 있다 (itda) among the existential verbs. The honorific form of 없다 (eopda) is 안 계시다 (an gyesida), as Wiktionary's table gives."

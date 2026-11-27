@@ -1,0 +1,204 @@
+# Unit 25 (ko-grammar-negation). Sources read: en.wiktionary.org entries 안 (the adverb 'not': 안 먹어; 않다 negates the whole clause and has a more formal connotation; 사과만 안 먹어 / 사과만 먹지 않아), 않다 (auxiliary adjective used with -지; its polite form 않아요), -지,
+# en.wikipedia.org 'Korean verbs' (negation: the negative adverb 안 in front of the verb; 못 is a separate word) and the conjugation table of every word used (the polite form is copied from it).
+schema: 1
+id: "ko-grammar-an-negation"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["positive", "negative", "i-not"]
+  entries:
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "positive": "가요"
+        "negative": "안 가요"
+        "i-not": "저는 안 가요"
+      readings:
+        "positive": "gayo"
+        "negative": "an gayo"
+        "i-not": "jeoneun an gayo"
+      ipas:
+        "positive": "kajo"
+        "negative": "an kajo"
+        "i-not": "tɕʌnɯn an kajo"
+    - lemma: "오다"
+      key: "oda"
+      reading: "oda"
+      ipa: "ota"
+      forms:
+        "positive": "와요"
+        "negative": "안 와요"
+        "i-not": "저는 안 와요"
+      readings:
+        "positive": "wayo"
+        "negative": "an wayo"
+        "i-not": "jeoneun an wayo"
+      ipas:
+        "positive": "wajo"
+        "negative": "an wajo"
+        "i-not": "tɕʌnɯn an wajo"
+    - lemma: "먹다"
+      key: "meokda"
+      reading: "meokda"
+      ipa: "mʌkt͈a"
+      forms:
+        "positive": "먹어요"
+        "negative": "안 먹어요"
+        "i-not": "저는 안 먹어요"
+      readings:
+        "positive": "meogeoyo"
+        "negative": "an meogeoyo"
+        "i-not": "jeoneun an meogeoyo"
+      ipas:
+        "positive": "mʌkʌjo"
+        "negative": "an mʌkʌjo"
+        "i-not": "tɕʌnɯn an mʌkʌjo"
+    - lemma: "마시다"
+      key: "masida"
+      reading: "masida"
+      ipa: "masita"
+      forms:
+        "positive": "마셔요"
+        "negative": "안 마셔요"
+        "i-not": "저는 안 마셔요"
+      readings:
+        "positive": "masyeoyo"
+        "negative": "an masyeoyo"
+        "i-not": "jeoneun an masyeoyo"
+      ipas:
+        "positive": "masjʌjo"
+        "negative": "an masjʌjo"
+        "i-not": "tɕʌnɯn an masjʌjo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "positive": "봐요"
+        "negative": "안 봐요"
+        "i-not": "저는 안 봐요"
+      readings:
+        "positive": "bwayo"
+        "negative": "an bwayo"
+        "i-not": "jeoneun an bwayo"
+      ipas:
+        "positive": "pwajo"
+        "negative": "an pwajo"
+        "i-not": "tɕʌnɯn an pwajo"
+    - lemma: "사다"
+      key: "sada"
+      reading: "sada"
+      ipa: "sata"
+      forms:
+        "positive": "사요"
+        "negative": "안 사요"
+        "i-not": "저는 안 사요"
+      readings:
+        "positive": "sayo"
+        "negative": "an sayo"
+        "i-not": "jeoneun an sayo"
+      ipas:
+        "positive": "sajo"
+        "negative": "an sajo"
+        "i-not": "tɕʌnɯn an sajo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "positive": "읽어요"
+        "negative": "안 읽어요"
+        "i-not": "저는 안 읽어요"
+      readings:
+        "positive": "ilgeoyo"
+        "negative": "an ilgeoyo"
+        "i-not": "jeoneun an ilgeoyo"
+      ipas:
+        "positive": "ilkʌjo"
+        "negative": "an ilkʌjo"
+        "i-not": "tɕʌnɯn an ilkʌjo"
+    - lemma: "자다"
+      key: "jada"
+      reading: "jada"
+      ipa: "tɕata"
+      forms:
+        "positive": "자요"
+        "negative": "안 자요"
+        "i-not": "저는 안 자요"
+      readings:
+        "positive": "jayo"
+        "negative": "an jayo"
+        "i-not": "jeoneun an jayo"
+      ipas:
+        "positive": "tɕajo"
+        "negative": "an tɕajo"
+        "i-not": "tɕʌnɯn an tɕajo"
+    - lemma: "좋다"
+      key: "jota"
+      reading: "jota"
+      ipa: "tɕotʰa"
+      forms:
+        "positive": "좋아요"
+        "negative": "안 좋아요"
+        "i-not": "저는 안 좋아요"
+      readings:
+        "positive": "joayo"
+        "negative": "an joayo"
+        "i-not": "jeoneun an joayo"
+      ipas:
+        "positive": "tɕoajo"
+        "negative": "an tɕoajo"
+        "i-not": "tɕʌnɯn an tɕoajo"
+    - lemma: "비싸다"
+      key: "bissada"
+      reading: "bissada"
+      ipa: "pis͈ata"
+      forms:
+        "positive": "비싸요"
+        "negative": "안 비싸요"
+        "i-not": "저는 안 비싸요"
+      readings:
+        "positive": "bissayo"
+        "negative": "an bissayo"
+        "i-not": "jeoneun an bissayo"
+      ipas:
+        "positive": "pis͈ajo"
+        "negative": "an pis͈ajo"
+        "i-not": "tɕʌnɯn an pis͈ajo"
+    - lemma: "작다"
+      key: "jakda"
+      reading: "jakda"
+      ipa: "tɕakt͈a"
+      forms:
+        "positive": "작아요"
+        "negative": "안 작아요"
+        "i-not": "저는 안 작아요"
+      readings:
+        "positive": "jagayo"
+        "negative": "an jagayo"
+        "i-not": "jeoneun an jagayo"
+      ipas:
+        "positive": "tɕakajo"
+        "negative": "an tɕakajo"
+        "i-not": "tɕʌnɯn an tɕakajo"
+    - lemma: "맛있다"
+      key: "masitda"
+      reading: "masitda"
+      ipa: "masitt͈a"
+      forms:
+        "positive": "맛있어요"
+        "negative": "안 맛있어요"
+        "i-not": "저는 안 맛있어요"
+      readings:
+        "positive": "masisseoyo"
+        "negative": "an masisseoyo"
+        "i-not": "jeoneun an masisseoyo"
+      ipas:
+        "positive": "masis͈ʌjo"
+        "negative": "an masis͈ʌjo"
+        "i-not": "tɕʌnɯn an masis͈ʌjo"

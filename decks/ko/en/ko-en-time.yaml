@@ -1,0 +1,276 @@
+schema: 1
+id: "ko-en-time"
+kind: "layer"
+core: "ko-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time"
+license: "CC-BY-SA-4.0"
+description: "Words for days, parts of the day, years, and how the time is asked and told. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+"cards":
+  "ko-1940":
+    "native": "today; this day"
+    "examples":
+      "오늘 뭐 해요?":
+        "native": "What are you doing today?"
+        "bases":
+          "오늘": "today"
+          "해요": "to do (polite)"
+      "오늘 어디 가요?":
+        "native": "Where are you going today?"
+        "bases":
+          "오늘": "today"
+          "가요": "to go (polite)"
+  "ko-1941":
+    "native": "tomorrow"
+    "examples":
+      "내일 뭐 해요?":
+        "native": "What are you doing tomorrow?"
+        "bases":
+          "내일": "tomorrow"
+          "해요": "to do (polite)"
+      "내일 학교 가요?":
+        "native": "Are you going to school tomorrow?"
+        "bases":
+          "내일": "tomorrow"
+          "학교": "school"
+          "가요": "to go (polite)"
+  "ko-1942":
+    "native": "yesterday"
+    "examples": {}
+  "ko-1943":
+    "native": "the day after tomorrow"
+    "examples":
+      "모레 뭐 해요?":
+        "native": "What are you doing the day after tomorrow?"
+        "bases":
+          "모레": "the day after tomorrow"
+          "해요": "to do (polite)"
+      "모레 어디 가요?":
+        "native": "Where are you going the day after tomorrow?"
+        "bases":
+          "모레": "the day after tomorrow"
+          "가요": "to go (polite)"
+  "ko-1944":
+    "native": "two days ago; the day before yesterday"
+    "notes":
+      "n1": "그저께 (geujeokke) is two days ago, the day before yesterday. 어제 (eoje) is yesterday."
+  "ko-1945":
+    "native": "now"
+    "examples":
+      "지금 뭐 해요?":
+        "native": "What are you doing now?"
+        "bases":
+          "지금": "now"
+          "해요": "to do (polite)"
+      "지금 몇 시예요?":
+        "native": "What time is it now?"
+        "bases":
+          "지금": "now"
+          "시예요": "hour, with the copula 예요 (yeyo)"
+  "ko-1946":
+    "native": "morning"
+    "notes":
+      "n1": "With 에 (e) a time of day says when: 아침에 (achime) is \"in the morning\". 저녁에 (jeonyeoge), 밤에 (bame) and 낮에 (naje) work the same way."
+    "examples":
+      "아침에 커피 마셔요?":
+        "native": "Do you drink coffee in the morning?"
+        "bases":
+          "아침에": "morning, with the time particle 에 (e)"
+          "마셔요": "to drink (polite)"
+      "아침에 뭐 해요?":
+        "native": "What do you do in the morning?"
+        "bases":
+          "아침에": "morning, with the time particle 에 (e)"
+          "해요": "to do (polite)"
+  "ko-1947":
+    "native": "evening"
+    "examples":
+      "저녁에 뭐 해요?":
+        "native": "What do you do in the evening?"
+        "bases":
+          "저녁에": "evening, with the time particle 에 (e)"
+          "해요": "to do (polite)"
+      "저녁에 어디 가요?":
+        "native": "Where do you go in the evening?"
+        "bases":
+          "저녁에": "evening, with the time particle 에 (e)"
+          "가요": "to go (polite)"
+  "ko-1948":
+    "native": "night"
+    "examples":
+      "밤에 뭐 해요?":
+        "native": "What do you do at night?"
+        "bases":
+          "밤에": "night, with the time particle 에 (e)"
+          "해요": "to do (polite)"
+      "밤에 어디 가요?":
+        "native": "Where do you go at night?"
+        "bases":
+          "밤에": "night, with the time particle 에 (e)"
+          "가요": "to go (polite)"
+  "ko-1949":
+    "native": "daytime"
+    "examples":
+      "낮에 뭐 해요?":
+        "native": "What do you do in the daytime?"
+        "bases":
+          "낮에": "daytime, with the time particle 에 (e)"
+          "해요": "to do (polite)"
+      "낮에 학교 가요?":
+        "native": "Do you go to school in the daytime?"
+        "bases":
+          "낮에": "daytime, with the time particle 에 (e)"
+          "학교": "school"
+          "가요": "to go (polite)"
+  "ko-1950":
+    "native": "dawn; daybreak; the early hours"
+    "notes":
+      "n1": "새벽 (saebyeok) is dawn. It also means the early hours, about one to three in the morning."
+    "examples":
+      "새벽에 뭐 해요?":
+        "native": "What do you do at dawn?"
+        "bases":
+          "새벽에": "dawn, with the time particle 에 (e)"
+          "해요": "to do (polite)"
+      "새벽에 커피 마셔요?":
+        "native": "Do you drink coffee at dawn?"
+        "bases":
+          "새벽에": "dawn, with the time particle 에 (e)"
+          "마셔요": "drink, polite form"
+  "ko-1951":
+    "native": "time"
+    "examples":
+      "시간 있어요?":
+        "native": "Do you have time?"
+        "bases":
+          "시간": "time"
+          "있어요": "to have; to be (in a place)"
+      "시간이 얼마나 걸려요?":
+        "native": "How long does it take?"
+        "bases":
+          "시간이": "time, with the subject particle 이 (i)"
+          "걸려요": "to take (time)"
+  "ko-1952":
+    "native": "second (unit of time)"
+    "examples":
+      "몇 초예요?":
+        "native": "How many seconds is it?"
+        "bases":
+          "초예요": "second, with the copula 예요 (yeyo)"
+  "ko-1953":
+    "native": "a week; seven days"
+    "examples":
+      "일주일 후에 뭐 해요?":
+        "native": "What will you do in a week?"
+        "bases":
+          "해요": "do, polite form"
+  "ko-1954":
+    "native": "before"
+    "notes":
+      "n1": "전 (jeon) is \"before\" and 후 (hu) is \"after\". With 에 (e) they say when: 전에 (jeone) and 후에 (hue)."
+    "examples":
+      "전에 뭐 해요?":
+        "native": "What do you do before that?"
+        "bases":
+          "전에": "before, with the time particle 에 (e)"
+          "해요": "to do (polite)"
+  "ko-1955":
+    "native": "after"
+    "examples":
+      "후에 뭐 해요?":
+        "native": "What do you do after that?"
+        "bases":
+          "후에": "after, with the time particle 에 (e)"
+          "해요": "to do (polite)"
+  "ko-1956":
+    "native": "last year; the year before"
+    "notes":
+      "n1": "작년 (jangnyeon), 올해 (olhae) and 내년 (naenyeon) are last year, this year and next year. With 에 (e) they say \"in\" a year: 내년에 (naenyeone)."
+  "ko-1957":
+    "native": "this year; the current year"
+    "examples":
+      "올해 뭐 해요?":
+        "native": "What are you doing this year?"
+        "bases":
+          "올해": "this year"
+          "해요": "to do (polite)"
+      "올해 학생이에요?":
+        "native": "Are you a student this year?"
+        "bases":
+          "올해": "this year"
+  "ko-1958":
+    "native": "next year"
+    "examples":
+      "내년에 뭐 해요?":
+        "native": "What do you do next year?"
+        "bases":
+          "내년에": "next year, with the time particle 에 (e)"
+          "해요": "to do (polite)"
+      "내년에 어디 가요?":
+        "native": "Where are you going next year?"
+        "bases":
+          "내년에": "next year, with the time particle 에 (e)"
+          "가요": "to go (polite)"
+  "ko-1959":
+    "native": "every day"
+    "examples":
+      "매일 뭐 해요?":
+        "native": "What do you do every day?"
+        "bases":
+          "매일": "every day"
+          "해요": "to do (polite)"
+      "매일 학교 가요?":
+        "native": "Do you go to school every day?"
+        "bases":
+          "매일": "every day"
+          "학교": "school"
+          "가요": "to go (polite)"
+  "ko-1960":
+    "native": "morning (a.m.)"
+    "examples":
+      "오전에 뭐 해요?":
+        "native": "What do you do in the morning?"
+        "bases":
+          "오전에": "morning, a.m., with the time particle 에 (e)"
+          "해요": "to do (polite)"
+      "오전에 학교 가요?":
+        "native": "Do you go to school in the morning?"
+        "bases":
+          "오전에": "morning, a.m., with the time particle 에 (e)"
+          "학교": "school"
+          "가요": "to go (polite)"
+  "ko-1961":
+    "native": "afternoon (p.m.)"
+    "examples":
+      "오후에 뭐 해요?":
+        "native": "What do you do in the afternoon?"
+        "bases":
+          "오후에": "afternoon, p.m., with the time particle 에 (e)"
+          "해요": "to do (polite)"
+      "오후에 어디 가요?":
+        "native": "Where do you go in the afternoon?"
+        "bases":
+          "오후에": "afternoon, p.m., with the time particle 에 (e)"
+          "가요": "to go (polite)"
+  "ko-1962":
+    "native": "a day; 24 hours"
+    "examples":
+      "하루에 뭐 해요?":
+        "native": "What do you do each day?"
+        "bases":
+          "하루에": "a day, with the particle 에 (e)"
+          "해요": "to do (polite)"
+  "ko-1963":
+    "native": "hour (time of day)"
+    "notes":
+      "n1": "시 (si) is the hour, and a native number comes before it: 한 시 (han si) is one o'clock. 몇 시 (myeot si) asks the time."
+    "examples":
+      "몇 시예요?":
+        "native": "What time is it?"
+        "bases":
+          "시예요": "hour, with the copula 예요 (yeyo)"
+      "오후 몇 시예요?":
+        "native": "What time is it in the afternoon?"
+        "bases":
+          "시예요": "hour, with the copula 예요 (yeyo)"

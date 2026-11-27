@@ -1,0 +1,25 @@
+schema: 1
+id: "ko-en-grammar-particle-i-ga"
+kind: "layer"
+core: "ko-grammar-particle-i-ga"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "이 (i) and 가 (ga): the subject particle"
+description: "Eight nouns with the subject particle 이 (i) or 가 (ga), and the same noun in the sentence '(the noun) is good'. Sources: the en.wikipedia.org page 'Korean postpositions' and the en.wiktionary.org entries -이 (-i), -가 (-ga) and 좋다 (jota). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The subject particle 이 (i) / 가 (ga)"
+  slot_name: "form"
+  slots:
+    "subject": "the noun with 이 (i) or 가 (ga)"
+    "good": "'(The noun) is good': the noun with 이 (i) or 가 (ga) and 좋아요 (joayo)"
+  entries:
+    "mul": "water"
+    "keopi": "coffee"
+    "ireum": "the name"
+    "chingu": "the friend"
+    "seonsaengnim": "the teacher"
+    "hakgyo": "the school"
+    "jip": "home"
+    "gajok": "the family"
+  notes: "-이 (-i) and -가 (-ga) are one particle in two shapes: -이 (-i) after a noun that ends in a consonant, -가 (-ga) after a noun that ends in a vowel. It marks the subject of a verb or an adjective, the thing that does or is: 물이 (muri) 좋아요 (joayo), 'the water is good'. It is joined to the noun with no space. Wiktionary's -이 (-i) entry says it is often dropped in speech, but not when the subject is a new topic brought into the conversation or is picked out from the others: 집이 (jibi) 제일 (jeil) 좋다 (jota), 'home is best'. Korean often uses two subjects in one sentence, a person and then a part or a thing that person likes or feels (the 'double subject'): with 좋아요 (joayo) the thing liked takes -이 (-i) or -가 (-ga), so 커피가 (keopiga) 좋아요 (joayo) can mean 'coffee is good' or 'I like coffee'. The topic particle -은 (-eun) or -는 (-neun) is the other way to start a sentence; Wikipedia's grammar article says it replaces -이 (-i) and -가 (-ga) rather than following them."

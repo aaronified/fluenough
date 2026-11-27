@@ -1,0 +1,116 @@
+# Unit 22 (ko-grammar-topic-subject). Sources read: en.wikipedia.org 'Korean postpositions' (-은/는: topic particle, 은 after a consonant and 는 after a vowel; -이/가: subject particle) and 'Korean grammar' (case and informational clitics),
+# en.wiktionary.org pages -은, -는, -이, -가 (the topic uses, the double subject note), 좋다 (the sense 'likeable'). Forms built by rule from each noun's last letter and checked with tools/transcribe.py ko.
+schema: 1
+id: "ko-grammar-particle-i-ga"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["subject", "good"]
+  entries:
+    - lemma: "물"
+      key: "mul"
+      reading: "mul"
+      ipa: "mul"
+      forms:
+        "subject": "물이"
+        "good": "물이 좋아요"
+      readings:
+        "subject": "muri"
+        "good": "muri joayo"
+      ipas:
+        "subject": "muɾi"
+        "good": "muɾi tɕoajo"
+    - lemma: "커피"
+      key: "keopi"
+      reading: "keopi"
+      ipa: "kʰʌpʰi"
+      forms:
+        "subject": "커피가"
+        "good": "커피가 좋아요"
+      readings:
+        "subject": "keopiga"
+        "good": "keopiga joayo"
+      ipas:
+        "subject": "kʰʌpʰika"
+        "good": "kʰʌpʰika tɕoajo"
+    - lemma: "이름"
+      key: "ireum"
+      reading: "ireum"
+      ipa: "iɾɯm"
+      forms:
+        "subject": "이름이"
+        "good": "이름이 좋아요"
+      readings:
+        "subject": "ireumi"
+        "good": "ireumi joayo"
+      ipas:
+        "subject": "iɾɯmi"
+        "good": "iɾɯmi tɕoajo"
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "subject": "친구가"
+        "good": "친구가 좋아요"
+      readings:
+        "subject": "chinguga"
+        "good": "chinguga joayo"
+      ipas:
+        "subject": "tɕʰinkuka"
+        "good": "tɕʰinkuka tɕoajo"
+    - lemma: "선생님"
+      key: "seonsaengnim"
+      reading: "seonsaengnim"
+      ipa: "sʌnseŋnim"
+      forms:
+        "subject": "선생님이"
+        "good": "선생님이 좋아요"
+      readings:
+        "subject": "seonsaengnimi"
+        "good": "seonsaengnimi joayo"
+      ipas:
+        "subject": "sʌnseŋnimi"
+        "good": "sʌnseŋnimi tɕoajo"
+    - lemma: "학교"
+      key: "hakgyo"
+      reading: "hakgyo"
+      ipa: "hakk͈jo"
+      forms:
+        "subject": "학교가"
+        "good": "학교가 좋아요"
+      readings:
+        "subject": "hakgyoga"
+        "good": "hakgyoga joayo"
+      ipas:
+        "subject": "hakk͈joka"
+        "good": "hakk͈joka tɕoajo"
+    - lemma: "집"
+      key: "jip"
+      reading: "jip"
+      ipa: "tɕip"
+      forms:
+        "subject": "집이"
+        "good": "집이 좋아요"
+      readings:
+        "subject": "jibi"
+        "good": "jibi joayo"
+      ipas:
+        "subject": "tɕipi"
+        "good": "tɕipi tɕoajo"
+    - lemma: "가족"
+      key: "gajok"
+      reading: "gajok"
+      ipa: "katɕok"
+      forms:
+        "subject": "가족이"
+        "good": "가족이 좋아요"
+      readings:
+        "subject": "gajogi"
+        "good": "gajogi joayo"
+      ipas:
+        "subject": "katɕoki"
+        "good": "katɕoki tɕoajo"

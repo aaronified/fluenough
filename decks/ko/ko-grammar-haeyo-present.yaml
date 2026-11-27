@@ -1,0 +1,207 @@
+# Unit 24 (ko-grammar-haeyo-present). Sources read: en.wikipedia.org 'Korean verbs' (the infinitive 어/아 by vowel harmony and its contractions, the politeness suffix 요, 해요체), 'Korean grammar' and 'Korean honorifics' (the informal polite 해요 form),
+# and the en.wiktionary.org conjugation table of every verb used (infinitive, informal polite 해요체 and stem class are copied from it).
+schema: 1
+id: "ko-grammar-haeyo-present"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["polite", "i-do"]
+  entries:
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "polite": "가요"
+        "i-do": "저는 가요"
+      readings:
+        "polite": "gayo"
+        "i-do": "jeoneun gayo"
+      ipas:
+        "polite": "kajo"
+        "i-do": "tɕʌnɯn kajo"
+    - lemma: "오다"
+      key: "oda"
+      reading: "oda"
+      ipa: "ota"
+      forms:
+        "polite": "와요"
+        "i-do": "저는 와요"
+      readings:
+        "polite": "wayo"
+        "i-do": "jeoneun wayo"
+      ipas:
+        "polite": "wajo"
+        "i-do": "tɕʌnɯn wajo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "polite": "봐요"
+        "i-do": "저는 봐요"
+      readings:
+        "polite": "bwayo"
+        "i-do": "jeoneun bwayo"
+      ipas:
+        "polite": "pwajo"
+        "i-do": "tɕʌnɯn pwajo"
+    - lemma: "사다"
+      key: "sada"
+      reading: "sada"
+      ipa: "sata"
+      forms:
+        "polite": "사요"
+        "i-do": "저는 사요"
+      readings:
+        "polite": "sayo"
+        "i-do": "jeoneun sayo"
+      ipas:
+        "polite": "sajo"
+        "i-do": "tɕʌnɯn sajo"
+    - lemma: "자다"
+      key: "jada"
+      reading: "jada"
+      ipa: "tɕata"
+      forms:
+        "polite": "자요"
+        "i-do": "저는 자요"
+      readings:
+        "polite": "jayo"
+        "i-do": "jeoneun jayo"
+      ipas:
+        "polite": "tɕajo"
+        "i-do": "tɕʌnɯn tɕajo"
+    - lemma: "먹다"
+      key: "meokda"
+      reading: "meokda"
+      ipa: "mʌkt͈a"
+      forms:
+        "polite": "먹어요"
+        "i-do": "저는 먹어요"
+      readings:
+        "polite": "meogeoyo"
+        "i-do": "jeoneun meogeoyo"
+      ipas:
+        "polite": "mʌkʌjo"
+        "i-do": "tɕʌnɯn mʌkʌjo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "polite": "읽어요"
+        "i-do": "저는 읽어요"
+      readings:
+        "polite": "ilgeoyo"
+        "i-do": "jeoneun ilgeoyo"
+      ipas:
+        "polite": "ilkʌjo"
+        "i-do": "tɕʌnɯn ilkʌjo"
+    - lemma: "앉다"
+      key: "anda"
+      reading: "anda"
+      ipa: "anta"
+      forms:
+        "polite": "앉아요"
+        "i-do": "저는 앉아요"
+      readings:
+        "polite": "anjayo"
+        "i-do": "jeoneun anjayo"
+      ipas:
+        "polite": "antɕajo"
+        "i-do": "tɕʌnɯn antɕajo"
+    - lemma: "찾다"
+      key: "chatda"
+      reading: "chatda"
+      ipa: "tɕʰatt͈a"
+      forms:
+        "polite": "찾아요"
+        "i-do": "저는 찾아요"
+      readings:
+        "polite": "chajayo"
+        "i-do": "jeoneun chajayo"
+      ipas:
+        "polite": "tɕʰatɕajo"
+        "i-do": "tɕʌnɯn tɕʰatɕajo"
+    - lemma: "입다"
+      key: "ipda"
+      reading: "ipda"
+      ipa: "ipt͈a"
+      forms:
+        "polite": "입어요"
+        "i-do": "저는 입어요"
+      readings:
+        "polite": "ibeoyo"
+        "i-do": "jeoneun ibeoyo"
+      ipas:
+        "polite": "ipʌjo"
+        "i-do": "tɕʌnɯn ipʌjo"
+    - lemma: "마시다"
+      key: "masida"
+      reading: "masida"
+      ipa: "masita"
+      forms:
+        "polite": "마셔요"
+        "i-do": "저는 마셔요"
+      readings:
+        "polite": "masyeoyo"
+        "i-do": "jeoneun masyeoyo"
+      ipas:
+        "polite": "masjʌjo"
+        "i-do": "tɕʌnɯn masjʌjo"
+    - lemma: "쉬다"
+      key: "swida"
+      reading: "swida"
+      ipa: "swita"
+      forms:
+        "polite": "쉬어요"
+        "i-do": "저는 쉬어요"
+      readings:
+        "polite": "swieoyo"
+        "i-do": "jeoneun swieoyo"
+      ipas:
+        "polite": "swiʌjo"
+        "i-do": "tɕʌnɯn swiʌjo"
+    - lemma: "기다리다"
+      key: "gidarida"
+      reading: "gidarida"
+      ipa: "kitaɾita"
+      forms:
+        "polite": "기다려요"
+        "i-do": "저는 기다려요"
+      readings:
+        "polite": "gidaryeoyo"
+        "i-do": "jeoneun gidaryeoyo"
+      ipas:
+        "polite": "kitaɾjʌjo"
+        "i-do": "tɕʌnɯn kitaɾjʌjo"
+    - lemma: "공부하다"
+      key: "gongbuhada"
+      reading: "gongbuhada"
+      ipa: "koŋpuhata"
+      forms:
+        "polite": "공부해요"
+        "i-do": "저는 공부해요"
+      readings:
+        "polite": "gongbuhaeyo"
+        "i-do": "jeoneun gongbuhaeyo"
+      ipas:
+        "polite": "koŋpuhejo"
+        "i-do": "tɕʌnɯn koŋpuhejo"
+    - lemma: "일하다"
+      key: "ilhada"
+      reading: "ilhada"
+      ipa: "ilhata"
+      forms:
+        "polite": "일해요"
+        "i-do": "저는 일해요"
+      readings:
+        "polite": "ilhaeyo"
+        "i-do": "jeoneun ilhaeyo"
+      ipas:
+        "polite": "ilhejo"
+        "i-do": "tɕʌnɯn ilhejo"

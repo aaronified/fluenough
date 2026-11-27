@@ -1,0 +1,140 @@
+# Unit 26 (ko-grammar-isseoyo). Sources read: en.wikipedia.org 'Korean grammar' (copulative and existential verbs: 있다 'there is', 없다 'there isn't', the honorific 계시다) and 'Korean verbs' (existential verbs conjugate like action verbs; negation by a suppletive negative form),
+# en.wiktionary.org entries 있다 and 없다 (senses, the example 전 은행 계좌가 없어요, the conjugation tables from which the polite forms 있어요 and 없어요 are copied), 안 (inherently negative verbs such as 없다).
+schema: 1
+id: "ko-grammar-isseoyo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["exists", "question", "have"]
+  entries:
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "exists": "친구가 있어요"
+        "question": "친구가 있어요?"
+        "have": "저는 친구가 있어요"
+      readings:
+        "exists": "chinguga isseoyo"
+        "question": "chinguga isseoyo?"
+        "have": "jeoneun chinguga isseoyo"
+      ipas:
+        "exists": "tɕʰinkuka is͈ʌjo"
+        "question": "tɕʰinkuka is͈ʌjo"
+        "have": "tɕʌnɯn tɕʰinkuka is͈ʌjo"
+    - lemma: "가족"
+      key: "gajok"
+      reading: "gajok"
+      ipa: "katɕok"
+      forms:
+        "exists": "가족이 있어요"
+        "question": "가족이 있어요?"
+        "have": "저는 가족이 있어요"
+      readings:
+        "exists": "gajogi isseoyo"
+        "question": "gajogi isseoyo?"
+        "have": "jeoneun gajogi isseoyo"
+      ipas:
+        "exists": "katɕoki is͈ʌjo"
+        "question": "katɕoki is͈ʌjo"
+        "have": "tɕʌnɯn katɕoki is͈ʌjo"
+    - lemma: "돈"
+      key: "don"
+      reading: "don"
+      ipa: "ton"
+      forms:
+        "exists": "돈이 있어요"
+        "question": "돈이 있어요?"
+        "have": "저는 돈이 있어요"
+      readings:
+        "exists": "doni isseoyo"
+        "question": "doni isseoyo?"
+        "have": "jeoneun doni isseoyo"
+      ipas:
+        "exists": "toni is͈ʌjo"
+        "question": "toni is͈ʌjo"
+        "have": "tɕʌnɯn toni is͈ʌjo"
+    - lemma: "시간"
+      key: "sigan"
+      reading: "sigan"
+      ipa: "sikan"
+      forms:
+        "exists": "시간이 있어요"
+        "question": "시간이 있어요?"
+        "have": "저는 시간이 있어요"
+      readings:
+        "exists": "sigani isseoyo"
+        "question": "sigani isseoyo?"
+        "have": "jeoneun sigani isseoyo"
+      ipas:
+        "exists": "sikani is͈ʌjo"
+        "question": "sikani is͈ʌjo"
+        "have": "tɕʌnɯn sikani is͈ʌjo"
+    - lemma: "자동차"
+      key: "jadongcha"
+      reading: "jadongcha"
+      ipa: "tɕatoŋtɕʰa"
+      forms:
+        "exists": "자동차가 있어요"
+        "question": "자동차가 있어요?"
+        "have": "저는 자동차가 있어요"
+      readings:
+        "exists": "jadongchaga isseoyo"
+        "question": "jadongchaga isseoyo?"
+        "have": "jeoneun jadongchaga isseoyo"
+      ipas:
+        "exists": "tɕatoŋtɕʰaka is͈ʌjo"
+        "question": "tɕatoŋtɕʰaka is͈ʌjo"
+        "have": "tɕʌnɯn tɕatoŋtɕʰaka is͈ʌjo"
+    - lemma: "컴퓨터"
+      key: "keompyuteo"
+      reading: "keompyuteo"
+      ipa: "kʰʌmpʰjutʰʌ"
+      forms:
+        "exists": "컴퓨터가 있어요"
+        "question": "컴퓨터가 있어요?"
+        "have": "저는 컴퓨터가 있어요"
+      readings:
+        "exists": "keompyuteoga isseoyo"
+        "question": "keompyuteoga isseoyo?"
+        "have": "jeoneun keompyuteoga isseoyo"
+      ipas:
+        "exists": "kʰʌmpʰjutʰʌka is͈ʌjo"
+        "question": "kʰʌmpʰjutʰʌka is͈ʌjo"
+        "have": "tɕʌnɯn kʰʌmpʰjutʰʌka is͈ʌjo"
+    - lemma: "휴대폰"
+      key: "hyudaepon"
+      reading: "hyudaepon"
+      ipa: "hjutepʰon"
+      forms:
+        "exists": "휴대폰이 있어요"
+        "question": "휴대폰이 있어요?"
+        "have": "저는 휴대폰이 있어요"
+      readings:
+        "exists": "hyudaeponi isseoyo"
+        "question": "hyudaeponi isseoyo?"
+        "have": "jeoneun hyudaeponi isseoyo"
+      ipas:
+        "exists": "hjutepʰoni is͈ʌjo"
+        "question": "hjutepʰoni is͈ʌjo"
+        "have": "tɕʌnɯn hjutepʰoni is͈ʌjo"
+    - lemma: "열쇠"
+      key: "yeolsoe"
+      reading: "yeolsoe"
+      ipa: "jʌlswe"
+      forms:
+        "exists": "열쇠가 있어요"
+        "question": "열쇠가 있어요?"
+        "have": "저는 열쇠가 있어요"
+      readings:
+        "exists": "yeolsoega isseoyo"
+        "question": "yeolsoega isseoyo?"
+        "have": "jeoneun yeolsoega isseoyo"
+      ipas:
+        "exists": "jʌlsweka is͈ʌjo"
+        "question": "jʌlsweka is͈ʌjo"
+        "have": "tɕʌnɯn jʌlsweka is͈ʌjo"

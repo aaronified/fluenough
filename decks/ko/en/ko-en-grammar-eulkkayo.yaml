@@ -1,0 +1,31 @@
+schema: 1
+id: "ko-en-grammar-eulkkayo"
+kind: "layer"
+core: "ko-grammar-eulkkayo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "-을까요 (-eulkkayo) and -ㄹ까요 (-lkkayo): shall we?"
+description: "Thirteen verbs with the question ending -ㄹ까요 (-lkkayo) and -을까요 (-eulkkayo), and the question after 우리 (uri), 'we'. Sources: the en.wiktionary.org entries -을까 (-eulkka) (example 음악이나 들을까요 (eumagina deureulkkayo)) and -ㄹ까 (-lkka), and the conjugation table of each verb (the future form is copied from it). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Shall we ...?"
+  slot_name: "form"
+  slots:
+    "kka": "the future form with 까 (kka): the casual question"
+    "kkayo": "'Shall we ...?': the future form with 까요 (kkayo)"
+    "we": "'Shall we ...?': 우리 (uri) and the same"
+  entries:
+    "meokda": "to eat"
+    "masida": "to drink"
+    "gada": "to go"
+    "boda": "to see, to watch"
+    "sada": "to buy"
+    "mannada": "to meet"
+    "ikda": "to read"
+    "swida": "to rest"
+    "gongbuhada": "to study"
+    "gidarida": "to wait for"
+    "anda": "to sit"
+    "jada": "to sleep"
+    "itda": "to be (there)"
+  notes: "-을까요 (-eulkkayo) and -ㄹ까요 (-lkkayo) make a question of doubt or of suggestion: 'shall we ...?', 'should I ...?'. It is the future ending of the last lesson, -을 (-eul) after a consonant and -ㄹ (-l) after a vowel, and then 까 (kka), plus 요 (yo) for the polite style: 먹을까요 (meogeulkkayo), 갈까요 (galkkayo). Wiktionary's examples are 음악이나 들을까요 (eumagina deureulkkayo), 'should we listen to some music?', 언제 만날까 (eonje mannalkka), 'when should we meet up?' and 커피나 마실까 (keopina masilkka), 'should we drink coffee?', the last two in the casual style without 요 (yo). With 우리 (uri), 'we', it is the usual way to suggest doing something together: 우리 갈까요 (uri galkkayo). Wiktionary says the ending has a nuance of greater doubt or uncertainty and, with 하다 (hada) added, means intention. The answer to an offer is often 좋아요 (joayo). Every future form is copied from the Wiktionary table of the verb."

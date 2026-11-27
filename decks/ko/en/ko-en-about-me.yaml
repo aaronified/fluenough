@@ -1,0 +1,143 @@
+schema: 1
+id: "ko-en-about-me"
+kind: "layer"
+core: "ko-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+license: "CC-BY-SA-4.0"
+description: "Words for saying who you are: age, job, country, hometown, living, having and not being. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+"cards":
+  "ko-1540":
+    "native": "age; how old a person is"
+    "examples":
+      "나이가 몇이에요?":
+        "native": "How old are you?"
+        "bases":
+          "나이가": "age, with the subject particle 가 (ga)"
+      "나이는 몇이에요?":
+        "native": "What is your age?"
+        "bases":
+          "나이는": "age, with the topic particle 는 (neun)"
+  "ko-1541":
+    "native": "job; occupation"
+    "examples":
+      "직업이 뭐예요?":
+        "native": "What is your job?"
+        "bases":
+          "직업이": "job, with the subject particle 이 (i)"
+      "저는 직업이 있어요.":
+        "native": "I have a job."
+        "bases":
+          "직업이": "job, with the subject particle 이 (i)"
+          "있어요": "to have; to be (in a place)"
+  "ko-1542":
+    "native": "housewife"
+    "examples":
+      "저는 주부예요.":
+        "native": "I am a housewife."
+        "bases":
+          "주부예요": "housewife, with the copula 예요 (yeyo)"
+      "주부가 뭐예요?":
+        "native": "What is a housewife?"
+        "bases":
+          "주부가": "housewife, with the subject particle 가 (ga)"
+  "ko-1543":
+    "native": "country; nation"
+    "examples":
+      "어느 나라 사람이에요?":
+        "native": "What country are you from?"
+        "bases":
+          "나라": "country"
+          "사람이에요": "person, with the copula 이에요 (ieyo)"
+      "나라가 어디예요?":
+        "native": "Which country is it?"
+        "bases":
+          "나라가": "country, with the subject particle 가 (ga)"
+  "ko-1544":
+    "native": "Korea"
+    "examples":
+      "저는 한국 사람이에요.":
+        "native": "I am Korean."
+        "bases":
+          "한국": "Korea"
+          "사람이에요": "person, with the copula 이에요 (ieyo)"
+      "한국이 어디예요?":
+        "native": "Where is Korea?"
+        "bases":
+          "한국이": "Korea, with the subject particle 이 (i)"
+  "ko-1545":
+    "native": "hometown; birthplace"
+    "examples":
+      "고향이 어디예요?":
+        "native": "Where is your hometown?"
+        "bases":
+          "고향이": "hometown, with the subject particle 이 (i)"
+      "고향은 한국이에요?":
+        "native": "Is your hometown Korea?"
+        "bases":
+          "고향은": "hometown, with the topic particle 은 (eun)"
+          "한국이에요": "Korea, with the copula 이에요 (ieyo)"
+  "ko-1546":
+    "native": "person; human being"
+    "examples":
+      "사람이 많아요?":
+        "native": "Are there many people?"
+        "bases":
+          "사람이": "person, with the subject particle 이 (i)"
+          "많아요": "many; plenty"
+      "사람이 누구예요?":
+        "native": "Who is the person?"
+        "bases":
+          "사람이": "person, with the subject particle 이 (i)"
+  "ko-1547":
+    "native": "to live"
+    "notes":
+      "n1": "살다 (salda) is irregular: its final consonant drops before some endings, as in 사는 (saneun), \"who lives\". The polite -요 (-yo) form keeps its stem: 살아요 (sarayo)."
+    "examples":
+      "저는 한국에 살아요.":
+        "native": "I live in Korea."
+        "bases":
+          "한국에": "Korea, with the place particle 에 (e)"
+          "살아요": "to live"
+      "어디에 살아요?":
+        "native": "Where do you live?"
+        "bases":
+          "살아요": "to live"
+  "ko-1548":
+    "native": "to be (in a place); to exist; to have"
+    "notes":
+      "n1": "있다 (itda) means to be in a place, or to have something. Its opposite is 없다 (eopda)."
+    "examples":
+      "저는 명함이 있어요.":
+        "native": "I have a business card."
+        "bases":
+          "있어요": "to have; to be (in a place)"
+      "학생이 있어요?":
+        "native": "Are there any students?"
+        "bases":
+          "있어요": "to have; to be (in a place)"
+  "ko-1549":
+    "native": "to have none; to be lacking; to not exist"
+    "examples":
+      "명함이 없어요.":
+        "native": "I don't have a business card."
+        "bases":
+          "없어요": "to have none; to be lacking"
+      "물이 없어요.":
+        "native": "There is no water."
+        "bases":
+          "없어요": "to have none; to be lacking"
+  "ko-1550":
+    "native": "to not be (something)"
+    "notes":
+      "n1": "아니다 (anida) is used after a noun. 아니에요 (anieyo) is the negative of 이에요 (ieyo): \"is not\"."
+    "examples":
+      "저는 학생이 아니에요.":
+        "native": "I am not a student."
+        "bases":
+          "아니에요": "to not be (something)"
+      "선생님이 아니에요?":
+        "native": "Are you not a teacher?"
+        "bases":
+          "아니에요": "to not be (something)"

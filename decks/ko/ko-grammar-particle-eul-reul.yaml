@@ -1,0 +1,116 @@
+# Unit 23 (ko-grammar-object-place). Sources read: en.wikipedia.org 'Korean postpositions' (을/를 object, 에 time and place, 에서 'from' and 'at'), 'Korean grammar' (case clitics, verb-final order),
+# en.wiktionary.org pages -을, -를, -에, -에서 (uses and usage notes) and the conjugation tables of each verb used (the polite form is copied from the table). Particle forms built by rule from each noun's last letter.
+schema: 1
+id: "ko-grammar-particle-eul-reul"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["object", "sentence"]
+  entries:
+    - lemma: "물"
+      key: "mul"
+      reading: "mul"
+      ipa: "mul"
+      forms:
+        "object": "물을"
+        "sentence": "저는 물을 마셔요"
+      readings:
+        "object": "mureul"
+        "sentence": "jeoneun mureul masyeoyo"
+      ipas:
+        "object": "muɾɯl"
+        "sentence": "tɕʌnɯn muɾɯl masjʌjo"
+    - lemma: "커피"
+      key: "keopi"
+      reading: "keopi"
+      ipa: "kʰʌpʰi"
+      forms:
+        "object": "커피를"
+        "sentence": "저는 커피를 마셔요"
+      readings:
+        "object": "keopireul"
+        "sentence": "jeoneun keopireul masyeoyo"
+      ipas:
+        "object": "kʰʌpʰiɾɯl"
+        "sentence": "tɕʌnɯn kʰʌpʰiɾɯl masjʌjo"
+    - lemma: "라면"
+      key: "ramyeon"
+      reading: "ramyeon"
+      ipa: "ɾamjʌn"
+      forms:
+        "object": "라면을"
+        "sentence": "저는 라면을 먹어요"
+      readings:
+        "object": "ramyeoneul"
+        "sentence": "jeoneun ramyeoneul meogeoyo"
+      ipas:
+        "object": "ɾamjʌnɯl"
+        "sentence": "tɕʌnɯn ɾamjʌnɯl mʌkʌjo"
+    - lemma: "사과"
+      key: "sagwa"
+      reading: "sagwa"
+      ipa: "sakwa"
+      forms:
+        "object": "사과를"
+        "sentence": "저는 사과를 먹어요"
+      readings:
+        "object": "sagwareul"
+        "sentence": "jeoneun sagwareul meogeoyo"
+      ipas:
+        "object": "sakwaɾɯl"
+        "sentence": "tɕʌnɯn sakwaɾɯl mʌkʌjo"
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "object": "친구를"
+        "sentence": "저는 친구를 만나요"
+      readings:
+        "object": "chingureul"
+        "sentence": "jeoneun chingureul mannayo"
+      ipas:
+        "object": "tɕʰinkuɾɯl"
+        "sentence": "tɕʌnɯn tɕʰinkuɾɯl mannajo"
+    - lemma: "선생님"
+      key: "seonsaengnim"
+      reading: "seonsaengnim"
+      ipa: "sʌnseŋnim"
+      forms:
+        "object": "선생님을"
+        "sentence": "저는 선생님을 만나요"
+      readings:
+        "object": "seonsaengnimeul"
+        "sentence": "jeoneun seonsaengnimeul mannayo"
+      ipas:
+        "object": "sʌnseŋnimɯl"
+        "sentence": "tɕʌnɯn sʌnseŋnimɯl mannajo"
+    - lemma: "집"
+      key: "jip"
+      reading: "jip"
+      ipa: "tɕip"
+      forms:
+        "object": "집을"
+        "sentence": "저는 집을 청소해요"
+      readings:
+        "object": "jibeul"
+        "sentence": "jeoneun jibeul cheongsohaeyo"
+      ipas:
+        "object": "tɕipɯl"
+        "sentence": "tɕʌnɯn tɕipɯl tɕʰʌŋsohejo"
+    - lemma: "텔레비전"
+      key: "tellebijeon"
+      reading: "tellebijeon"
+      ipa: "tʰellepitɕʌn"
+      forms:
+        "object": "텔레비전을"
+        "sentence": "저는 텔레비전을 봐요"
+      readings:
+        "object": "tellebijeoneul"
+        "sentence": "jeoneun tellebijeoneul bwayo"
+      ipas:
+        "object": "tʰellepitɕʌnɯl"
+        "sentence": "tɕʌnɯn tʰellepitɕʌnɯl pwajo"

@@ -1,0 +1,30 @@
+schema: 1
+id: "ko-en-grammar-counters"
+kind: "layer"
+core: "ko-grammar-counters"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Counters: how to count people, things and money"
+description: "Thirteen counters, each with three and five. Sources: the en.wikipedia.org pages 'Korean numerals' and 'Korean count word' and the en.wiktionary.org entries of every counter used. Only counters whose entries were read are included. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Number and counter"
+  slot_name: "count"
+  slots:
+    "three": "'three': the number for 3 and the counter"
+    "five": "'five': the number for 5 and the counter"
+  entries:
+    "gae": "things in general (the general counter for objects) (native numbers)"
+    "myeong": "people (native numbers)"
+    "mari": "animals and fish (native numbers)"
+    "gwon": "books (volumes) (native numbers)"
+    "jan": "glasses and cups of a drink (native numbers)"
+    "byeong": "bottles (native numbers)"
+    "sal": "years of age (native numbers)"
+    "si": "o'clock (hours of the day) (native numbers)"
+    "beon": "times (occasions) (native numbers)"
+    "won": "won (Korean money) (Sino-Korean numbers)"
+    "cheung": "floors of a building (Sino-Korean numbers)"
+    "bun": "minutes of the hour (Sino-Korean numbers)"
+    "wol": "months of the year (Sino-Korean numbers, written joined)"
+  notes: "Korean counts with a counter word, a short noun that follows the number, as English says 'three cups' but also 'three sheets of paper'. Two sets of numbers exist, and the counter decides which one it takes (Wikipedia, Korean numerals and Korean count word). Native numbers go with most counters: 개 (gae) things, 명 (myeong) people, 마리 (mari) animals, 권 (gwon) books, 잔 (jan) glasses of a drink, 병 (byeong) bottles, 살 (sal) years of age, 시 (si) hours of the day and 번 (beon) times. So three cups is 세 잔 (se jan) and five bottles is 다섯 병 (daseot byeong). Sino-Korean numbers go with 원 (won) money, 층 (cheung) floors, 분 (bun) minutes and 월 (wol) months: 삼 원 (sam won), 오 층 (o cheung), 삼 분 (sam bun). The first three native numbers change before a counter, which the next lesson sets out: 세 (se), not 셋 (set). The month is written joined to its number, 삼월 (samwol), March; two months are irregular, 유월 (yuwol), June, and 시월 (siwol), October (Wikipedia, Korean count word). Wiktionary notes that 층 (cheung) with Sino-Korean numbers gives the floor, 'the third floor', and with native numbers a count of floors; and that 시 (si) and 번 (beon) are also written joined to the number: 세시 (sesi), 세번 (sebeon). Wikipedia's examples keep a space between the number and the counter, which is the form shown first here. The thing counted comes first, then the number and the counter, as in Wikipedia's example 버스 표 열 장 (beoseu pyo yeol jang), ten bus tickets."

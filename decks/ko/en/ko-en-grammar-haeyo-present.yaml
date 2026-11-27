@@ -1,0 +1,32 @@
+schema: 1
+id: "ko-en-grammar-haeyo-present"
+kind: "layer"
+core: "ko-grammar-haeyo-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The polite present: -아요 (-ayo) and -어요 (-eoyo)"
+description: "Fifteen everyday verbs in the polite present, the style used with strangers and in shops, and the same verb after 저는 (jeoneun). Sources: the en.wikipedia.org pages 'Korean verbs', 'Korean grammar' and 'Korean honorifics' and the en.wiktionary.org conjugation table of each verb, from which every form is copied. The formal -ㅂ니다 (-mnida) and the casual endings are later units. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The polite present"
+  slot_name: "form"
+  slots:
+    "polite": "the polite present"
+    "i-do": "'I (do it)': 저는 (jeoneun) and the polite present"
+  entries:
+    "gada": "to go"
+    "oda": "to come"
+    "boda": "to see, to watch"
+    "sada": "to buy"
+    "jada": "to sleep"
+    "meokda": "to eat"
+    "ikda": "to read"
+    "anda": "to sit"
+    "chatda": "to look for"
+    "ipda": "to wear (clothes)"
+    "masida": "to drink"
+    "swida": "to rest"
+    "gidarida": "to wait for"
+    "gongbuhada": "to study"
+    "ilhada": "to work"
+  notes: "The polite present is the dictionary form without -다 (-da), the stem, plus -아요 (-ayo) or -어요 (-eoyo). Which one follows vowel harmony: a stem whose last vowel is ㅏ (a) or ㅗ (o) takes -아요 (-ayo), any other stem takes -어요 (-eoyo) (Wikipedia: the ending is -아 (-a) after ㅏ (a) or ㅗ (o), else -어 (-eo)). So 앉다 (anda) is 앉아요 (anjayo), 찾다 (chatda) is 찾아요 (chajayo), and 먹다 (meokda) is 먹어요 (meogeoyo), 읽다 (ikda) is 읽어요 (ilgeoyo), 입다 (ipda) is 입어요 (ibeoyo). When the stem ends in a vowel the two vowels join: 가다 (gada) is 가요 (gayo), 오다 (oda) is 와요 (wayo), 보다 (boda) is 봐요 (bwayo), 마시다 (masida) is 마셔요 (masyeoyo), 기다리다 (gidarida) is 기다려요 (gidaryeoyo); 쉬다 (swida) is 쉬어요 (swieoyo), with no joining. A verb in -하다 (-hada) is irregular and gives -해요 (-haeyo): 공부하다 (gongbuhada) is 공부해요 (gongbuhaeyo). None of these verbs changes its stem apart from the joining; stems that do change, such as 쓰다 (sseuda), 써요 (sseoyo), come later. The same polite form serves as a statement, a question, a suggestion and a command, as the Wiktionary table of 먹다 (meokda) shows, and the subject is often left out. Wiktionary names it 해요체 (haeyoche), the informal polite style, used with strangers, and the formal -ㅂ니다 (-mnida) style and the casual endings come in the next level. Every form here is copied from Wiktionary's conjugation table of the verb."

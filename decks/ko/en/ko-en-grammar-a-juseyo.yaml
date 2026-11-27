@@ -1,0 +1,30 @@
+schema: 1
+id: "ko-en-grammar-a-juseyo"
+kind: "layer"
+core: "ko-grammar-a-juseyo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "-아 주세요 (-a juseyo) and -어 주세요 (-eo juseyo): please do it for me"
+description: "Twelve verbs in the infinitive, in the polite request with 주세요 (juseyo), and the same request after 다시 (dasi), 'again'. Sources: the en.wiktionary.org entries 주다 (juda) (auxiliary after the infinitive: 도와주세요 (dowajuseyo)) and -으세요 (-euseyo), the conjugation table of each verb (the infinitive is copied from it), and the en.wikipedia.org page 'Korean grammar' (supporting verbs). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Asking someone to do something for you"
+  slot_name: "form"
+  slots:
+    "inf": "the infinitive"
+    "request": "'Please ... (for me)': the infinitive and 주세요 (juseyo)"
+    "again": "'Please ... again': 다시 (dasi), the infinitive and 주세요 (juseyo)"
+  entries:
+    "gidarida": "to wait for"
+    "boda": "to see, to watch"
+    "malhada": "to speak"
+    "ikda": "to read"
+    "sada": "to buy"
+    "datda": "to close"
+    "chatda": "to look for"
+    "jeonhwahada": "to call"
+    "gyesanhada": "to pay, to calculate"
+    "oda": "to come"
+    "gada": "to go"
+    "jumunhada": "to order"
+  notes: "To ask someone to do something for you, take the infinitive of the verb (-아 (-a) or -어 (-eo), joined as in the polite present) and add the honorific polite form of 주다 (juda), 주세요 (juseyo). Wiktionary lists 주다 (juda) as a helping verb after the infinitive, 'for someone', which makes a benefactive verb, and gives 좀 도와주세요 (jom dowajuseyo), 'please help me out a bit'. The infinitive of each verb is copied from its Wiktionary table: 기다려 (gidaryeo), 봐 (bwa), 말해 (malhae), 읽어 (ilgeo), 사 (sa), 닫아 (dada), 찾아 (chaja), 전화해 (jeonhwahae), 계산해 (gyesanhae), 와 (wa), 가 (ga), 주문해 (jumunhae). The infinitive is written as a separate word before 주세요 (juseyo), as in the phrasebook's 천천히 말해 주세요 (cheoncheonhi malhae juseyo), 'please speak slowly'. The word for a plain request with a thing is just 주세요 (juseyo), as in 이거 주세요 (igeo juseyo), 'give me this'. The polite 주세요 (juseyo) is the honorific polite form of 주다 (juda), taught in the previous lesson; the polite non-honorific 줘요 (jwoyo) is also listed in Wiktionary's table."

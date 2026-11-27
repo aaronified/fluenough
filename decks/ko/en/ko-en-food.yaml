@@ -1,0 +1,816 @@
+schema: 1
+id: "ko-en-food"
+kind: "layer"
+core: "ko-food"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food and drink"
+license: "CC-BY-SA-4.0"
+description: "Fifty-eight words for food and drink: dishes, tastes, cooking verbs and meals. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+cards:
+  "ko-2580":
+    native: "food, including drink"
+    notes:
+      "n1": "음식 (eumsik) is food and drink in general; 음료 (eumnyo) is a drink."
+    examples:
+      "음식이 좋아요.":
+        native: "The food is good."
+        bases:
+          "음식이": "food, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "음식이 많아요.":
+        native: "There is a lot of food."
+        bases:
+          "음식이": "food, with the subject particle 이 (i)"
+          "많아요": "to be many, polite"
+  "ko-2581":
+    native: "cooking, a dish"
+    notes:
+      "n1": "요리 (yori) is cooking, or a dish; the dictionary tags the cuisine sense as South Korean usage."
+    examples:
+      "요리가 좋아요.":
+        native: "The cooking is good."
+        bases:
+          "요리가": "cooking, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "요리를 해요.":
+        native: "I cook."
+        bases:
+          "요리를": "cooking, with the object particle 를 (reul)"
+          "해요": "to do, polite"
+  "ko-2582":
+    native: "soup"
+    notes:
+      "n1": "국 (guk) is a soup, usually served with rice; 찌개 (jjigae) is a thicker stew."
+    examples:
+      "국이 뜨거워요.":
+        native: "The soup is hot."
+        bases:
+          "국이": "soup, with the subject particle 이 (i)"
+      "국이 좋아요.":
+        native: "The soup is good."
+        bases:
+          "국이": "soup, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+  "ko-2583":
+    native: "stew"
+    notes:
+      "n1": "찌개 (jjigae) is a thick stew, cooked in a pot and served hot."
+    examples:
+      "찌개가 뜨거워요.":
+        native: "The stew is hot."
+        bases:
+          "찌개가": "stew, with the subject particle 가 (ga)"
+      "찌개가 좋아요.":
+        native: "The stew is good."
+        bases:
+          "찌개가": "stew, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+  "ko-2584":
+    native: "side dish"
+    notes:
+      "n1": "반찬 (banchan) are the side dishes served with rice at a meal."
+    examples:
+      "반찬이 많아요.":
+        native: "There are many side dishes."
+        bases:
+          "반찬이": "side dish, with the subject particle 이 (i)"
+          "많아요": "to be many, polite"
+      "반찬이 좋아요.":
+        native: "The side dishes are good."
+        bases:
+          "반찬이": "side dish, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+  "ko-2585":
+    native: "bibimbap"
+    notes:
+      "n1": "비빔밥 (bibimbap) is rice mixed with vegetables and meat in one bowl, often with 고추장 (gochujang) (gochujang) added."
+    examples:
+      "비빔밥이 좋아요.":
+        native: "Bibimbap is good."
+        bases:
+          "비빔밥이": "bibimbap, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "비빔밥을 주세요.":
+        native: "Please give me bibimbap."
+        bases:
+          "비빔밥을": "bibimbap, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2586":
+    native: "kimbap"
+    notes:
+      "n1": "김밥 (gimbap) is rice and fillings rolled in dried seaweed, then sliced into pieces."
+    examples:
+      "김밥이 좋아요.":
+        native: "Kimbap is good."
+        bases:
+          "김밥이": "kimbap, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "김밥을 주세요.":
+        native: "Please give me kimbap."
+        bases:
+          "김밥을": "kimbap, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2587":
+    native: "tteokbokki"
+    notes:
+      "n1": "떡볶이 (tteokbokki) is rice cakes stir-fried in a red pepper paste sauce, a popular street food."
+    examples:
+      "떡볶이가 뜨거워요.":
+        native: "The tteokbokki is hot."
+        bases:
+          "떡볶이가": "tteokbokki, with the subject particle 가 (ga)"
+      "떡볶이를 주세요.":
+        native: "Please give me tteokbokki."
+        bases:
+          "떡볶이를": "tteokbokki, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2588":
+    native: "naengmyeon"
+    notes:
+      "n1": "냉면 (naengmyeon) is a cold noodle dish in a broth, often with a slice of pear and a boiled egg."
+    examples:
+      "냉면이 차가워요.":
+        native: "The naengmyeon is cold."
+        bases:
+          "냉면이": "naengmyeon, with the subject particle 이 (i)"
+      "냉면을 주세요.":
+        native: "Please give me naengmyeon."
+        bases:
+          "냉면을": "naengmyeon, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2589":
+    native: "bulgogi"
+    notes:
+      "n1": "불고기 (bulgogi) is thin slices of beef cooked with vegetables, a well-known Korean dish."
+    examples:
+      "불고기가 좋아요.":
+        native: "Bulgogi is good."
+        bases:
+          "불고기가": "bulgogi, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "불고기를 주세요.":
+        native: "Please give me bulgogi."
+        bases:
+          "불고기를": "bulgogi, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2590":
+    native: "samgyeopsal"
+    notes:
+      "n1": "삼겹살 (samgyeopsal) is thick pork belly, grilled just before it is eaten."
+    examples:
+      "삼겹살이 좋아요.":
+        native: "Samgyeopsal is good."
+        bases:
+          "삼겹살이": "samgyeopsal, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "삼겹살을 주세요.":
+        native: "Please give me samgyeopsal."
+        bases:
+          "삼겹살을": "samgyeopsal, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2591":
+    native: "dakgalbi"
+    notes:
+      "n1": "닭갈비 (dakgalbi) is spiced chicken with a lot of vegetables; it comes from Gangwon province."
+    examples:
+      "닭갈비가 뜨거워요.":
+        native: "The dakgalbi is hot."
+        bases:
+          "닭갈비가": "dakgalbi, with the subject particle 가 (ga)"
+      "닭갈비를 주세요.":
+        native: "Please give me dakgalbi."
+        bases:
+          "닭갈비를": "dakgalbi, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2592":
+    native: "fried chicken"
+    notes:
+      "n1": "치킨 (chikin) is a loanword from English \"chicken\"; in Korea it usually means fried chicken."
+    examples:
+      "치킨이 좋아요.":
+        native: "Fried chicken is good."
+        bases:
+          "치킨이": "fried chicken, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "치킨을 주세요.":
+        native: "Please give me fried chicken."
+        bases:
+          "치킨을": "fried chicken, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2593":
+    native: "pizza"
+    notes:
+      "n1": "피자 (pija) is a loanword from Italian \"pizza\"; the dictionary tags it as South Korean usage."
+    examples:
+      "피자가 좋아요.":
+        native: "Pizza is good."
+        bases:
+          "피자가": "pizza, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "피자를 주세요.":
+        native: "Please give me pizza."
+        bases:
+          "피자를": "pizza, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2594":
+    native: "hamburger"
+    notes:
+      "n1": "햄버거 (haembeogeo) is a loanword from English \"hamburger\", a sandwich of meat in a bun."
+    examples:
+      "햄버거가 뜨거워요.":
+        native: "The hamburger is hot."
+        bases:
+          "햄버거가": "hamburger, with the subject particle 가 (ga)"
+      "햄버거를 주세요.":
+        native: "Please give me a hamburger."
+        bases:
+          "햄버거를": "hamburger, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2595":
+    native: "sandwich"
+    notes:
+      "n1": "샌드위치 (saendeuwichi) is a loanword from English \"sandwich\"."
+    examples:
+      "샌드위치가 좋아요.":
+        native: "The sandwich is good."
+        bases:
+          "샌드위치가": "sandwich, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "샌드위치를 주세요.":
+        native: "Please give me a sandwich."
+        bases:
+          "샌드위치를": "sandwich, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2596":
+    native: "spaghetti"
+    notes:
+      "n1": "스파게티 (seupageti) is a loanword from Italian \"spaghetti\", a pasta dish."
+    examples:
+      "스파게티가 뜨거워요.":
+        native: "The spaghetti is hot."
+        bases:
+          "스파게티가": "spaghetti, with the subject particle 가 (ga)"
+      "스파게티를 주세요.":
+        native: "Please give me spaghetti."
+        bases:
+          "스파게티를": "spaghetti, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2597":
+    native: "salad"
+    notes:
+      "n1": "샐러드 (saelleodeu) is a loanword from English \"salad\", mostly of raw vegetables."
+    examples:
+      "샐러드가 차가워요.":
+        native: "The salad is cold."
+        bases:
+          "샐러드가": "salad, with the subject particle 가 (ga)"
+      "샐러드를 주세요.":
+        native: "Please give me a salad."
+        bases:
+          "샐러드를": "salad, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2598":
+    native: "soup, Western-style"
+    notes:
+      "n1": "수프 (supeu) is a loanword from English \"soup\", a Western-style soup; 국 (guk) is the Korean soup."
+    examples:
+      "수프가 뜨거워요.":
+        native: "The soup is hot."
+        bases:
+          "수프가": "soup, with the subject particle 가 (ga)"
+      "수프를 주세요.":
+        native: "Please give me soup."
+        bases:
+          "수프를": "soup, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2599":
+    native: "broth"
+    notes:
+      "n1": "국물 (gungmul) is the broth or liquid of a soup or stew."
+    examples:
+      "국물이 뜨거워요.":
+        native: "The broth is hot."
+        bases:
+          "국물이": "broth, with the subject particle 이 (i)"
+      "국물이 많아요.":
+        native: "There is a lot of broth."
+        bases:
+          "국물이": "broth, with the subject particle 이 (i)"
+          "많아요": "to be many, polite"
+  "ko-2600":
+    native: "taste, flavour"
+    notes:
+      "n1": "맛 (mat) is taste or flavour; 맛보다 (matboda) is to taste something."
+    examples:
+      "맛이 좋아요.":
+        native: "The taste is good."
+        bases:
+          "맛이": "taste, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "맛이 어때요?":
+        native: "How does it taste?"
+        bases:
+          "맛이": "taste, with the subject particle 이 (i)"
+          "어때요": "how is it, polite"
+  "ko-2601":
+    native: "salty"
+    notes:
+      "n1": "짜다 (jjada) is salty; its polite form is 짜요 (jjayo). The dictionary tags this sense as colloquial; it is the everyday word for salty."
+    examples:
+      "국이 짜요.":
+        native: "The soup is salty."
+        bases:
+          "짜요": "to be salty, polite"
+      "찌개가 짜요.":
+        native: "The stew is salty."
+        bases:
+          "짜요": "to be salty, polite"
+  "ko-2602":
+    native: "bland, not salty"
+    notes:
+      "n1": "싱겁다 (singgeopda) is not salty, bland. Its polite form 싱거워요 (singgeowoyo) changes the stem (ㅂ irregular)."
+    examples:
+      "국이 싱거워요.":
+        native: "The soup is bland."
+        bases:
+          "싱거워요": "to be bland, polite"
+      "찌개가 싱거워요.":
+        native: "The stew is bland."
+        bases:
+          "싱거워요": "to be bland, polite"
+  "ko-2603":
+    native: "spicy, hot"
+    notes:
+      "n1": "맵다 (maepda) is spicy. Its polite form 매워요 (maewoyo) changes the stem (ㅂ irregular)."
+    examples:
+      "떡볶이가 매워요.":
+        native: "The tteokbokki is spicy."
+        bases:
+          "매워요": "to be spicy, polite"
+      "찌개가 매워요.":
+        native: "The stew is spicy."
+        bases:
+          "매워요": "to be spicy, polite"
+  "ko-2604":
+    native: "sweet"
+    notes:
+      "n1": "달다 (dalda) is sweet; its polite form is 달아요 (darayo)."
+    examples:
+      "수박이 달아요.":
+        native: "The watermelon is sweet."
+        bases:
+          "수박이": "watermelon, with the subject particle 이 (i)"
+          "달아요": "to be sweet, polite"
+      "음료가 달아요.":
+        native: "The drink is sweet."
+        bases:
+          "달아요": "to be sweet, polite"
+  "ko-2605":
+    native: "sour"
+    notes:
+      "n1": "시다 (sida) is sour; its polite form is 셔요 (syeoyo)."
+    examples:
+      "식초가 셔요.":
+        native: "The vinegar is sour."
+        bases:
+          "식초가": "vinegar, with the subject particle 가 (ga)"
+          "셔요": "to be sour, polite"
+      "과일이 셔요?":
+        native: "Is the fruit sour?"
+        bases:
+          "과일이": "fruit, with the subject particle 이 (i)"
+          "셔요": "to be sour, polite"
+  "ko-2606":
+    native: "bitter"
+    notes:
+      "n1": "쓰다 (sseuda) is bitter; its polite form 써요 (sseoyo) changes the stem (으 (eu) irregular). The same spelling also means to write or to use, a different word."
+    examples:
+      "커피가 써요.":
+        native: "The coffee is bitter."
+        bases:
+          "써요": "to be bitter, polite"
+      "맛이 써요.":
+        native: "The taste is bitter."
+        bases:
+          "써요": "to be bitter, polite"
+  "ko-2607":
+    native: "nutty, savoury"
+    notes:
+      "n1": "고소하다 (gosohada) describes a nutty, savoury smell or taste, such as sesame oil."
+    examples:
+      "참기름이 고소해요.":
+        native: "The sesame oil is nutty."
+        bases:
+          "참기름이": "sesame oil, with the subject particle 이 (i)"
+          "고소해요": "nutty, polite"
+      "고기가 고소해요.":
+        native: "The meat is savoury."
+        bases:
+          "고기가": "meat, with the subject particle 가 (ga)"
+          "고소해요": "savoury, polite"
+  "ko-2608":
+    native: "greasy, heavy"
+    notes:
+      "n1": "느끼하다 (neukkihada) describes food that is greasy or heavy with oil; 느끼해요 (neukkihaeyo) is the polite form."
+    examples:
+      "삼겹살이 느끼해요.":
+        native: "The samgyeopsal is greasy."
+        bases:
+          "느끼해요": "greasy, polite"
+      "음식이 느끼해요.":
+        native: "The food is greasy."
+        bases:
+          "느끼해요": "greasy, polite"
+  "ko-2609":
+    native: "sourish"
+    notes:
+      "n1": "새콤하다 (saekomhada) means slightly and pleasantly sour."
+    examples:
+      "과일이 새콤해요.":
+        native: "The fruit is tangy."
+        bases:
+          "과일이": "fruit, with the subject particle 이 (i)"
+          "새콤해요": "tangy, polite"
+      "식초가 새콤해요.":
+        native: "The vinegar is tangy."
+        bases:
+          "식초가": "vinegar, with the subject particle 가 (ga)"
+          "새콤해요": "tangy, polite"
+  "ko-2610":
+    native: "sweet"
+    notes:
+      "n1": "달콤하다 (dalkomhada) is sweet, as sugar or fruit is sweet."
+    examples:
+      "디저트가 달콤해요.":
+        native: "The dessert is sweet."
+        bases:
+          "달콤해요": "sweet, polite"
+      "포도가 달콤해요.":
+        native: "The grapes are sweet."
+        bases:
+          "포도가": "grape, with the subject particle 가 (ga)"
+          "달콤해요": "sweet, polite"
+  "ko-2611":
+    native: "soft, tender"
+    notes:
+      "n1": "부드럽다 (budeureopda) is soft or tender. Its polite form 부드러워요 (budeureowoyo) changes the stem (ㅂ irregular)."
+    examples:
+      "두부가 부드러워요.":
+        native: "The tofu is soft."
+        bases:
+          "두부가": "tofu, with the subject particle 가 (ga)"
+          "부드러워요": "to be soft, polite"
+      "고기가 부드러워요.":
+        native: "The meat is tender."
+        bases:
+          "고기가": "meat, with the subject particle 가 (ga)"
+          "부드러워요": "to be tender, polite"
+  "ko-2612":
+    native: "chewy, springy"
+    notes:
+      "n1": "쫄깃하다 (jjolgithada) describes springy, chewy food such as noodles or rice cakes."
+    examples:
+      "떡볶이가 쫄깃해요.":
+        native: "The tteokbokki is chewy."
+        bases:
+          "쫄깃해요": "chewy, polite"
+      "라면이 쫄깃해요.":
+        native: "The noodles are chewy."
+        bases:
+          "라면이": "noodles, with the subject particle 이 (i)"
+          "쫄깃해요": "chewy, polite"
+  "ko-2613":
+    native: "spicy"
+    notes:
+      "n1": "매콤하다 (maekomhada) has a spicy taste."
+    examples:
+      "찌개가 매콤해요.":
+        native: "The stew is spicy."
+        bases:
+          "매콤해요": "spicy, polite"
+      "떡볶이가 매콤해요.":
+        native: "The tteokbokki is spicy."
+        bases:
+          "매콤해요": "spicy, polite"
+  "ko-2616":
+    native: "to bake, grill"
+    notes:
+      "n1": "굽다 (gupda) is to bake or grill over a fire. Its polite form 구워요 (guwoyo) changes the stem (ㅂ irregular)."
+    examples:
+      "고기를 구워요.":
+        native: "I grill the meat."
+        bases:
+          "고기를": "meat, with the object particle 를 (reul)"
+          "구워요": "to grill, polite"
+      "빵을 구워요.":
+        native: "I bake bread."
+        bases:
+          "구워요": "to bake, polite"
+  "ko-2617":
+    native: "to stir-fry"
+    notes:
+      "n1": "볶다 (bokda) is to stir-fry or roast in a pan; its polite form is 볶아요 (bokkayo)."
+    examples:
+      "양파를 볶아요.":
+        native: "I stir-fry the onion."
+        bases:
+          "양파를": "onion, with the object particle 를 (reul)"
+          "볶아요": "to stir-fry, polite"
+      "마늘을 볶아요.":
+        native: "I stir-fry the garlic."
+        bases:
+          "마늘을": "garlic, with the object particle 을 (eul)"
+          "볶아요": "to stir-fry, polite"
+  "ko-2618":
+    native: "to boil, cook in liquid"
+    notes:
+      "n1": "끓이다 (kkeulida) is to boil something, such as soup; its polite form is 끓여요 (kkeulyeoyo)."
+    examples:
+      "국을 끓여요.":
+        native: "I boil the soup."
+        bases:
+          "끓여요": "to boil, polite"
+      "찌개를 끓여요.":
+        native: "I boil the stew."
+        bases:
+          "끓여요": "to boil, polite"
+  "ko-2619":
+    native: "to fry"
+    notes:
+      "n1": "튀기다 (twigida) is to fry in a lot of oil; its polite form is 튀겨요 (twigyeoyo)."
+    examples:
+      "치킨을 튀겨요.":
+        native: "I fry the chicken."
+        bases:
+          "튀겨요": "to fry, polite"
+      "감자를 튀겨요.":
+        native: "I fry the potatoes."
+        bases:
+          "감자를": "potato, with the object particle 를 (reul)"
+          "튀겨요": "to fry, polite"
+  "ko-2620":
+    native: "to boil in water"
+    notes:
+      "n1": "삶다 (samda) is to boil in water, as eggs or potatoes; its polite form is 삶아요 (salmayo)."
+    examples:
+      "달걀을 삶아요.":
+        native: "I boil the eggs."
+        bases:
+          "달걀을": "egg, with the object particle 을 (eul)"
+          "삶아요": "to boil, polite"
+      "감자를 삶아요.":
+        native: "I boil the potatoes."
+        bases:
+          "감자를": "potato, with the object particle 를 (reul)"
+          "삶아요": "to boil, polite"
+  "ko-2621":
+    native: "to steam"
+    notes:
+      "n1": "찌다 (jjida) is to steam food; its polite form is 쪄요 (jjyeoyo)."
+    examples:
+      "고구마를 쪄요.":
+        native: "I steam the sweet potatoes."
+        bases:
+          "고구마를": "sweet potato, with the object particle 를 (reul)"
+          "쪄요": "to steam, polite"
+      "감자를 쪄요.":
+        native: "I steam the potatoes."
+        bases:
+          "감자를": "potato, with the object particle 를 (reul)"
+          "쪄요": "to steam, polite"
+  "ko-2622":
+    native: "to chop, to slice"
+    notes:
+      "n1": "썰다 (sseolda) is to chop or slice, as vegetables; its polite form is 썰어요 (sseoreoyo)."
+    examples:
+      "양파를 썰어요.":
+        native: "I chop the onion."
+        bases:
+          "양파를": "onion, with the object particle 를 (reul)"
+          "썰어요": "to chop, polite"
+      "배추를 썰어요.":
+        native: "I slice the napa cabbage."
+        bases:
+          "배추를": "napa cabbage, with the object particle 를 (reul)"
+          "썰어요": "to slice, polite"
+  "ko-2623":
+    native: "to cut"
+    notes:
+      "n1": "자르다 (jareuda) is to cut; its polite form 잘라요 (jallayo) changes the stem (르 (reu) irregular)."
+    examples:
+      "무를 잘라요.":
+        native: "I cut the radish."
+        bases:
+          "무를": "radish, with the object particle 를 (reul)"
+          "잘라요": "to cut, polite"
+      "고기를 잘라요.":
+        native: "I cut the meat."
+        bases:
+          "고기를": "meat, with the object particle 를 (reul)"
+          "잘라요": "to cut, polite"
+  "ko-2624":
+    native: "to mix"
+    notes:
+      "n1": "섞다 (seokda) is to mix things together; its polite form is 섞어요 (seokkeoyo)."
+    examples:
+      "양념을 섞어요.":
+        native: "I mix the seasoning."
+        bases:
+          "섞어요": "to mix, polite"
+      "비빔밥을 섞어요.":
+        native: "I mix the bibimbap."
+        bases:
+          "섞어요": "to mix, polite"
+  "ko-2625":
+    native: "to season with sauce"
+    notes:
+      "n1": "무치다 (muchida) is to season vegetables by mixing them with a sauce; its polite form is 무쳐요 (muchyeoyo)."
+    examples:
+      "상추를 무쳐요.":
+        native: "I season the lettuce."
+        bases:
+          "상추를": "lettuce, with the object particle 를 (reul)"
+          "무쳐요": "to season, polite"
+      "오이를 무쳐요.":
+        native: "I season the cucumber."
+        bases:
+          "오이를": "cucumber, with the object particle 를 (reul)"
+          "무쳐요": "to season, polite"
+  "ko-2626":
+    native: "to taste"
+    notes:
+      "n1": "맛보다 (matboda) is to taste food by eating a little; its polite form is 맛봐요 (matbwayo)."
+    examples:
+      "국을 맛봐요.":
+        native: "I taste the soup."
+        bases:
+          "맛봐요": "to taste, polite"
+      "음식을 맛봐요.":
+        native: "I taste the food."
+        bases:
+          "맛봐요": "to taste, polite"
+  "ko-2627":
+    native: "seasoning"
+    notes:
+      "n1": "양념 (yangnyeom) is a seasoning or sauce, such as garlic or sesame oil."
+    examples:
+      "양념이 많아요.":
+        native: "There is a lot of seasoning."
+        bases:
+          "양념이": "seasoning, with the subject particle 이 (i)"
+          "많아요": "to be many, polite"
+      "양념이 좋아요.":
+        native: "The seasoning is good."
+        bases:
+          "양념이": "seasoning, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+  "ko-2628":
+    native: "ingredient"
+    notes:
+      "n1": "재료 (jaeryo) is an ingredient used in cooking."
+    examples:
+      "재료가 많아요.":
+        native: "There are many ingredients."
+        bases:
+          "재료가": "ingredient, with the subject particle 가 (ga)"
+          "많아요": "to be many, polite"
+      "재료가 있어요?":
+        native: "Are there ingredients?"
+        bases:
+          "재료가": "ingredient, with the subject particle 가 (ga)"
+          "있어요": "to be there, polite"
+  "ko-2629":
+    native: "cook, chef"
+    notes:
+      "n1": "요리사 (yorisa) is a cook or chef."
+    examples:
+      "요리사가 친절해요.":
+        native: "The chef is kind."
+        bases:
+          "요리사가": "chef, with the subject particle 가 (ga)"
+          "친절해요": "to be kind, polite"
+      "요리사가 있어요?":
+        native: "Is there a chef?"
+        bases:
+          "요리사가": "chef, with the subject particle 가 (ga)"
+          "있어요": "to be there, polite"
+  "ko-2630":
+    native: "meal"
+    notes:
+      "n1": "식사 (siksa) is a meal, the food eaten at one sitting."
+    examples:
+      "식사가 좋아요.":
+        native: "The meal is good."
+        bases:
+          "식사가": "meal, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "식사를 해요.":
+        native: "I have a meal."
+        bases:
+          "식사를": "meal, with the object particle 를 (reul)"
+          "해요": "to do, polite"
+  "ko-2631":
+    native: "lunch"
+    notes:
+      "n1": "점심 (jeomsim) is lunch, the midday meal."
+    examples:
+      "점심을 먹어요.":
+        native: "I eat lunch."
+        bases:
+          "점심을": "lunch, with the object particle 을 (eul)"
+          "먹어요": "to eat, polite"
+      "점심이 좋아요.":
+        native: "Lunch is good."
+        bases:
+          "점심이": "lunch, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+  "ko-2632":
+    native: "snack"
+    notes:
+      "n1": "간식 (gansik) is a snack between meals."
+    examples:
+      "간식이 있어요?":
+        native: "Is there a snack?"
+        bases:
+          "간식이": "snack, with the subject particle 이 (i)"
+          "있어요": "to be there, polite"
+      "간식을 먹어요.":
+        native: "I eat a snack."
+        bases:
+          "간식을": "snack, with the object particle 을 (eul)"
+          "먹어요": "to eat, polite"
+  "ko-2633":
+    native: "dessert"
+    notes:
+      "n1": "디저트 (dijeoteu) is a loanword from English \"dessert\", eaten after a meal."
+    examples:
+      "디저트가 있어요?":
+        native: "Is there dessert?"
+        bases:
+          "디저트가": "dessert, with the subject particle 가 (ga)"
+          "있어요": "to be there, polite"
+      "디저트가 달콤해요.":
+        native: "The dessert is sweet."
+        bases:
+          "디저트가": "dessert, with the subject particle 가 (ga)"
+  "ko-2634":
+    native: "food after a meal"
+    notes:
+      "n1": "후식 (husik) is what is served after a meal, such as fruit or a sweet; 디저트 (dijeoteu) is the loanword for dessert."
+    examples:
+      "후식이 좋아요.":
+        native: "The after-meal food is good."
+        bases:
+          "후식이": "after-meal food, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "후식을 먹어요.":
+        native: "I eat something after the meal."
+        bases:
+          "후식을": "after-meal food, with the object particle 을 (eul)"
+          "먹어요": "to eat, polite"
+  "ko-2635":
+    native: "snack with drinks"
+    notes:
+      "n1": "안주 (anju) is a snack eaten with alcoholic drinks."
+    examples:
+      "안주가 좋아요.":
+        native: "The snack is good."
+        bases:
+          "안주가": "snack, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "안주를 먹어요.":
+        native: "I eat a snack with the drink."
+        bases:
+          "안주를": "snack, with the object particle 를 (reul)"
+          "먹어요": "to eat, polite"
+  "ko-2636":
+    native: "menu"
+    notes:
+      "n1": "메뉴 (menyu) is a loanword from English \"menu\"."
+    examples:
+      "메뉴가 있어요?":
+        native: "Is there a menu?"
+        bases:
+          "메뉴가": "menu, with the subject particle 가 (ga)"
+          "있어요": "to be there, polite"
+      "메뉴를 주세요.":
+        native: "Please give me the menu."
+        bases:
+          "메뉴를": "menu, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2637":
+    native: "drink"
+    notes:
+      "n1": "음료 (eumnyo) is a drink or beverage; 음식 (eumsik) is food."
+    examples:
+      "음료가 있어요?":
+        native: "Is there a drink?"
+        bases:
+          "음료가": "drink, with the subject particle 가 (ga)"
+          "있어요": "to be there, polite"
+      "음료를 주세요.":
+        native: "Please give me a drink."
+        bases:
+          "음료를": "drink, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
