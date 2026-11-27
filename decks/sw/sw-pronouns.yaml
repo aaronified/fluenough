@@ -1,0 +1,415 @@
+schema: 1
+id: "sw-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "sw-1370"
+    target: "yeye"
+    ipa: "ˈjeje"
+    pos: "pronoun"
+    tags: ["pronoun", "person"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Yeye ni mwalimu.", ipa: "ˈjeje ni mwaˈlimu", bases: [{ word: "Yeye", base: "yeye" }, { word: "ni", base: "ni" }, { word: "mwalimu", base: "mwalimu" }] }
+      - { target: "Yeye anapenda chai.", ipa: "ˈjeje anaˈpenda ˈtʃai", bases: [{ word: "Yeye", base: "yeye" }, { word: "anapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+  - id: "sw-1371"
+    target: "sisi"
+    ipa: "ˈsisi"
+    pos: "pronoun"
+    tags: ["pronoun", "person"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sisi ni marafiki.", ipa: "ˈsisi ni maɾaˈfiki", bases: [{ word: "Sisi", base: "sisi" }, { word: "ni", base: "ni" }, { word: "marafiki", base: "rafiki" }] }
+      - { target: "Sisi tunapenda maji.", ipa: "ˈsisi tunaˈpenda ˈmadʒi", bases: [{ word: "Sisi", base: "sisi" }, { word: "tunapenda", base: "penda" }, { word: "maji", base: "maji" }] }
+  - id: "sw-1372"
+    target: "ninyi"
+    ipa: "ˈniɲi"
+    pos: "pronoun"
+    tags: ["pronoun", "person"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninyi ni nani?", ipa: "ˈniɲi ni ˈnani", bases: [{ word: "Ninyi", base: "ninyi" }, { word: "ni", base: "ni" }, { word: "nani", base: "nani" }] }
+      - { target: "Ninyi mnapenda chai?", ipa: "ˈniɲi mnaˈpenda ˈtʃai", bases: [{ word: "Ninyi", base: "ninyi" }, { word: "mnapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+  - id: "sw-1373"
+    target: "wao"
+    ipa: "ˈwao"
+    pos: "pronoun"
+    tags: ["pronoun", "person"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Wao ni walimu.", ipa: "ˈwao ni waˈlimu", bases: [{ word: "Wao", base: "wao" }, { word: "ni", base: "ni" }, { word: "walimu", base: "mwalimu" }] }
+      - { target: "Wao wanapenda chai.", ipa: "ˈwao wanaˈpenda ˈtʃai", bases: [{ word: "Wao", base: "wao" }, { word: "wanapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+  - id: "sw-1374"
+    target: "nani"
+    ipa: "ˈnani"
+    pos: "pronoun"
+    tags: ["question", "person"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Wewe ni nani?", ipa: "ˈwewe ni ˈnani", bases: [{ word: "Wewe", base: "wewe" }, { word: "ni", base: "ni" }, { word: "nani", base: "nani" }] }
+      - { target: "Huyu ni nani?", ipa: "ˈhuju ni ˈnani", bases: [{ word: "Huyu", base: "hii" }, { word: "ni", base: "ni" }, { word: "nani", base: "nani" }] }
+  - id: "sw-1375"
+    target: "nini"
+    ipa: "ˈnini"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hii ni nini?", ipa: "ˈhii ni ˈnini", bases: [{ word: "Hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "nini", base: "nini" }] }
+      - { target: "Unataka nini?", ipa: "unaˈtaka ˈnini", bases: [{ word: "Unataka", base: "taka" }, { word: "nini", base: "nini" }] }
+  - id: "sw-1376"
+    target: "mtu"
+    ipa: "ˈmtu"
+    pos: "noun"
+    tags: ["noun", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Huyu ni mtu mzuri.", ipa: "ˈhuju ni ˈmtu mˈzuɾi", bases: [{ word: "Huyu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mtu", base: "mtu" }, { word: "mzuri", base: "zuri" }] }
+      - { target: "Watu wawili ni walimu.", ipa: "ˈwatu waˈwili ni waˈlimu", bases: [{ word: "Watu", base: "mtu" }, { word: "wawili", base: "mbili" }, { word: "ni", base: "ni" }, { word: "walimu", base: "mwalimu" }] }
+  - id: "sw-1377"
+    target: "mwanamke"
+    ipa: "mwaˈnamke"
+    pos: "noun"
+    tags: ["noun", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mwanamke huyu ni mwalimu.", ipa: "mwaˈnamke ˈhuju ni mwaˈlimu", bases: [{ word: "Mwanamke", base: "mwanamke" }, { word: "huyu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mwalimu", base: "mwalimu" }] }
+      - { target: "Mwanamke yule ni mgeni.", ipa: "mwaˈnamke ˈjule ni mˈɡeni", bases: [{ word: "Mwanamke", base: "mwanamke" }, { word: "yule", base: "-le" }, { word: "ni", base: "ni" }, { word: "mgeni", base: "mgeni" }] }
+  - id: "sw-1378"
+    target: "mwanamume"
+    ipa: "mwanaˈmume"
+    pos: "noun"
+    tags: ["noun", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mwanamume yule ni mgeni.", ipa: "mwanaˈmume ˈjule ni mˈɡeni", bases: [{ word: "Mwanamume", base: "mwanamume" }, { word: "yule", base: "-le" }, { word: "ni", base: "ni" }, { word: "mgeni", base: "mgeni" }] }
+      - { target: "Wanaume wale ni walimu.", ipa: "wanaˈume ˈwale ni waˈlimu", bases: [{ word: "Wanaume", base: "mwanamume" }, { word: "wale", base: "-le" }, { word: "ni", base: "ni" }, { word: "walimu", base: "mwalimu" }] }
+  - id: "sw-1379"
+    target: "mvulana"
+    ipa: "mvuˈlana"
+    pos: "noun"
+    tags: ["noun", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mvulana huyu ni mdogo.", ipa: "mvuˈlana ˈhuju ni mˈdoɡo", bases: [{ word: "Mvulana", base: "mvulana" }, { word: "huyu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mdogo", base: "dogo" }] }
+      - { target: "Wavulana wale ni wangu.", ipa: "wavuˈlana ˈwale ni ˈwaŋɡu", bases: [{ word: "Wavulana", base: "mvulana" }, { word: "wale", base: "-le" }, { word: "ni", base: "ni" }, { word: "wangu", base: "-angu" }] }
+  - id: "sw-1380"
+    target: "msichana"
+    ipa: "msiˈtʃana"
+    pos: "noun"
+    tags: ["noun", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Msichana huyu ni mtoto.", ipa: "msiˈtʃana ˈhuju ni mˈtoto", bases: [{ word: "Msichana", base: "msichana" }, { word: "huyu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mtoto", base: "mtoto" }] }
+      - { target: "Msichana yule ni rafiki yangu.", ipa: "msiˈtʃana ˈjule ni ɾaˈfiki ˈjaŋɡu", bases: [{ word: "Msichana", base: "msichana" }, { word: "yule", base: "-le" }, { word: "ni", base: "ni" }, { word: "rafiki", base: "rafiki" }, { word: "yangu", base: "-angu" }] }
+  - id: "sw-1381"
+    target: "rafiki"
+    ipa: "ɾaˈfiki"
+    pos: "noun"
+    tags: ["noun", "person"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Yeye ni rafiki yangu.", ipa: "ˈjeje ni ɾaˈfiki ˈjaŋɡu", bases: [{ word: "Yeye", base: "yeye" }, { word: "ni", base: "ni" }, { word: "rafiki", base: "rafiki" }, { word: "yangu", base: "-angu" }] }
+      - { target: "Sisi ni marafiki.", ipa: "ˈsisi ni maɾaˈfiki", bases: [{ word: "Sisi", base: "sisi" }, { word: "ni", base: "ni" }, { word: "marafiki", base: "rafiki" }] }
+  - id: "sw-1382"
+    target: "jirani"
+    ipa: "dʒiˈɾani"
+    pos: "noun"
+    tags: ["noun", "person"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jirani yangu ni mwalimu.", ipa: "dʒiˈɾani ˈjaŋɡu ni mwaˈlimu", bases: [{ word: "Jirani", base: "jirani" }, { word: "yangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "mwalimu", base: "mwalimu" }] }
+      - { target: "Wewe ni jirani yangu?", ipa: "ˈwewe ni dʒiˈɾani ˈjaŋɡu", bases: [{ word: "Wewe", base: "wewe" }, { word: "ni", base: "ni" }, { word: "jirani", base: "jirani" }, { word: "yangu", base: "-angu" }] }
+  - id: "sw-1383"
+    target: "mgeni"
+    ipa: "mˈɡeni"
+    pos: "noun"
+    tags: ["noun", "person"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Karibu, mgeni.", ipa: "kaˈɾibu mˈɡeni", bases: [{ word: "Karibu", base: "karibu" }, { word: "mgeni", base: "mgeni" }] }
+      - { target: "Mimi ni mgeni hapa.", ipa: "ˈmimi ni mˈɡeni ˈhapa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ni", base: "ni" }, { word: "mgeni", base: "mgeni" }, { word: "hapa", base: "hapa" }] }
+  - id: "sw-1384"
+    target: "huyu"
+    ipa: "ˈhuju"
+    pos: "adj"
+    tags: ["demonstrative", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Huyu ni mama yangu.", ipa: "ˈhuju ni ˈmama ˈjaŋɡu", bases: [{ word: "Huyu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mama", base: "mama" }, { word: "yangu", base: "-angu" }] }
+      - { target: "Mtu huyu ni mgeni.", ipa: "ˈmtu ˈhuju ni mˈɡeni", bases: [{ word: "Mtu", base: "mtu" }, { word: "huyu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mgeni", base: "mgeni" }] }
+  - id: "sw-1385"
+    target: "hawa"
+    ipa: "ˈhawa"
+    pos: "adj"
+    tags: ["demonstrative", "class-ii"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hawa ni walimu.", ipa: "ˈhawa ni waˈlimu", bases: [{ word: "Hawa", base: "hii" }, { word: "ni", base: "ni" }, { word: "walimu", base: "mwalimu" }] }
+      - { target: "Watu hawa ni wageni.", ipa: "ˈwatu ˈhawa ni waˈɡeni", bases: [{ word: "Watu", base: "mtu" }, { word: "hawa", base: "hii" }, { word: "ni", base: "ni" }, { word: "wageni", base: "mgeni" }] }
+  - id: "sw-1386"
+    target: "hii"
+    ipa: "ˈhii"
+    pos: "adj"
+    tags: ["demonstrative", "class-ix"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hii ni nyumba yangu.", ipa: "ˈhii ni ˈɲumba ˈjaŋɡu", bases: [{ word: "Hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "nyumba", base: "nyumba" }, { word: "yangu", base: "-angu" }] }
+      - { target: "Nyumba hii ni kubwa.", ipa: "ˈɲumba ˈhii ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+  - id: "sw-1387"
+    target: "huu"
+    ipa: "ˈhuu"
+    pos: "adj"
+    tags: ["demonstrative", "class-iii"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mti huu ni mkubwa.", ipa: "ˈmti ˈhuu ni mˈkubwa", bases: [{ word: "Mti", base: "mti" }, { word: "huu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mkubwa", base: "kubwa" }] }
+      - { target: "Huu ni mti.", ipa: "ˈhuu ni ˈmti", bases: [{ word: "Huu", base: "hii" }, { word: "ni", base: "ni" }, { word: "mti", base: "mti" }] }
+  - id: "sw-1388"
+    target: "huyo"
+    ipa: "ˈhujo"
+    pos: "adj"
+    tags: ["demonstrative", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Huyo ni nani?", ipa: "ˈhujo ni ˈnani", bases: [{ word: "Huyo", base: "hiyo" }, { word: "ni", base: "ni" }, { word: "nani", base: "nani" }] }
+      - { target: "Mtu huyo ni mwalimu.", ipa: "ˈmtu ˈhujo ni mwaˈlimu", bases: [{ word: "Mtu", base: "mtu" }, { word: "huyo", base: "hiyo" }, { word: "ni", base: "ni" }, { word: "mwalimu", base: "mwalimu" }] }
+  - id: "sw-1389"
+    target: "hao"
+    ipa: "ˈhao"
+    pos: "adj"
+    tags: ["demonstrative", "class-ii"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hao ni walimu wangu.", ipa: "ˈhao ni waˈlimu ˈwaŋɡu", bases: [{ word: "Hao", base: "hiyo" }, { word: "ni", base: "ni" }, { word: "walimu", base: "mwalimu" }, { word: "wangu", base: "-angu" }] }
+      - { target: "Watu hao wanapenda chai.", ipa: "ˈwatu ˈhao wanaˈpenda ˈtʃai", bases: [{ word: "Watu", base: "mtu" }, { word: "hao", base: "hiyo" }, { word: "wanapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+  - id: "sw-1390"
+    target: "yule"
+    ipa: "ˈjule"
+    pos: "adj"
+    tags: ["demonstrative", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Yule ni baba yangu.", ipa: "ˈjule ni ˈbaba ˈjaŋɡu", bases: [{ word: "Yule", base: "-le" }, { word: "ni", base: "ni" }, { word: "baba", base: "baba" }, { word: "yangu", base: "-angu" }] }
+      - { target: "Mwanamke yule ni mgeni.", ipa: "mwaˈnamke ˈjule ni mˈɡeni", bases: [{ word: "Mwanamke", base: "mwanamke" }, { word: "yule", base: "-le" }, { word: "ni", base: "ni" }, { word: "mgeni", base: "mgeni" }] }
+  - id: "sw-1391"
+    target: "wale"
+    ipa: "ˈwale"
+    pos: "adj"
+    tags: ["demonstrative", "class-ii"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Wale ni walimu.", ipa: "ˈwale ni waˈlimu", bases: [{ word: "Wale", base: "-le" }, { word: "ni", base: "ni" }, { word: "walimu", base: "mwalimu" }] }
+      - { target: "Watu wale ni wageni.", ipa: "ˈwatu ˈwale ni waˈɡeni", bases: [{ word: "Watu", base: "mtu" }, { word: "wale", base: "-le" }, { word: "ni", base: "ni" }, { word: "wageni", base: "mgeni" }] }
+  - id: "sw-1392"
+    target: "hiki"
+    ipa: "ˈhiki"
+    pos: "adj"
+    tags: ["demonstrative", "class-vii"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kitabu hiki ni kizuri.", ipa: "kiˈtabu ˈhiki ni kiˈzuɾi", bases: [{ word: "Kitabu", base: "kitabu" }, { word: "hiki", base: "hii" }, { word: "ni", base: "ni" }, { word: "kizuri", base: "zuri" }] }
+      - { target: "Kitabu hiki ni cha nani?", ipa: "kiˈtabu ˈhiki ni tʃa ˈnani", bases: [{ word: "Kitabu", base: "kitabu" }, { word: "hiki", base: "hii" }, { word: "ni", base: "ni" }, { word: "cha", base: "-a" }, { word: "nani", base: "nani" }] }
+  - id: "sw-1393"
+    target: "hivi"
+    ipa: "ˈhivi"
+    pos: "adj"
+    tags: ["demonstrative", "class-viii"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vitabu hivi ni vizuri.", ipa: "viˈtabu ˈhivi ni viˈzuɾi", bases: [{ word: "Vitabu", base: "kitabu" }, { word: "hivi", base: "hii" }, { word: "ni", base: "ni" }, { word: "vizuri", base: "zuri" }] }
+      - { target: "Vitabu hivi ni vyangu.", ipa: "viˈtabu ˈhivi ni ˈvjaŋɡu", bases: [{ word: "Vitabu", base: "kitabu" }, { word: "hivi", base: "hii" }, { word: "ni", base: "ni" }, { word: "vyangu", base: "-angu" }] }
+  - id: "sw-1394"
+    target: "hili"
+    ipa: "ˈhili"
+    pos: "adj"
+    tags: ["demonstrative", "class-v"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jina hili ni zuri.", ipa: "ˈdʒina ˈhili ni ˈzuɾi", bases: [{ word: "Jina", base: "jina" }, { word: "hili", base: "hii" }, { word: "ni", base: "ni" }, { word: "zuri", base: "zuri" }] }
+      - { target: "Jina hili ni langu.", ipa: "ˈdʒina ˈhili ni ˈlaŋɡu", bases: [{ word: "Jina", base: "jina" }, { word: "hili", base: "hii" }, { word: "ni", base: "ni" }, { word: "langu", base: "-angu" }] }
+  - id: "sw-1395"
+    target: "haya"
+    ipa: "ˈhaja"
+    pos: "adj"
+    tags: ["demonstrative", "class-vi"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Maji haya ni baridi.", ipa: "ˈmadʒi ˈhaja ni baˈɾidi", bases: [{ word: "Maji", base: "maji" }, { word: "haya", base: "hii" }, { word: "ni", base: "ni" }, { word: "baridi", base: "baridi" }] }
+      - { target: "Maji haya ni yangu.", ipa: "ˈmadʒi ˈhaja ni ˈjaŋɡu", bases: [{ word: "Maji", base: "maji" }, { word: "haya", base: "hii" }, { word: "ni", base: "ni" }, { word: "yangu", base: "-angu" }] }
+  - id: "sw-1396"
+    target: "yangu"
+    ipa: "ˈjaŋɡu"
+    pos: "adj"
+    tags: ["possessive", "class-ix"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba yangu ni kubwa.", ipa: "ˈɲumba ˈjaŋɡu ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "yangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+      - { target: "Miti yangu ni mirefu.", ipa: "ˈmiti ˈjaŋɡu ni miˈɾefu", bases: [{ word: "Miti", base: "mti" }, { word: "yangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "mirefu", base: "refu" }] }
+  - id: "sw-1397"
+    target: "yako"
+    ipa: "ˈjako"
+    pos: "adj"
+    tags: ["possessive", "class-ix"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba yako ni nzuri.", ipa: "ˈɲumba ˈjako ni ˈnzuɾi", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "yako", base: "-ako" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+      - { target: "Maji yako ni baridi.", ipa: "ˈmadʒi ˈjako ni baˈɾidi", bases: [{ word: "Maji", base: "maji" }, { word: "yako", base: "-ako" }, { word: "ni", base: "ni" }, { word: "baridi", base: "baridi" }] }
+  - id: "sw-1398"
+    target: "yake"
+    ipa: "ˈjake"
+    pos: "adj"
+    tags: ["possessive", "class-ix"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba yake ni kubwa.", ipa: "ˈɲumba ˈjake ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "yake", base: "-ake" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+      - { target: "Maji yake ni baridi.", ipa: "ˈmadʒi ˈjake ni baˈɾidi", bases: [{ word: "Maji", base: "maji" }, { word: "yake", base: "-ake" }, { word: "ni", base: "ni" }, { word: "baridi", base: "baridi" }] }
+  - id: "sw-1399"
+    target: "yetu"
+    ipa: "ˈjetu"
+    pos: "adj"
+    tags: ["possessive", "class-ix"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba yetu ni kubwa.", ipa: "ˈɲumba ˈjetu ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "yetu", base: "-etu" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+      - { target: "Miti yetu ni mirefu.", ipa: "ˈmiti ˈjetu ni miˈɾefu", bases: [{ word: "Miti", base: "mti" }, { word: "yetu", base: "-etu" }, { word: "ni", base: "ni" }, { word: "mirefu", base: "refu" }] }
+  - id: "sw-1400"
+    target: "yenu"
+    ipa: "ˈjenu"
+    pos: "adj"
+    tags: ["possessive", "class-ix"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba yenu ni nzuri.", ipa: "ˈɲumba ˈjenu ni ˈnzuɾi", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "yenu", base: "-enu" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "nzuri" }] }
+      - { target: "Maji yenu ni baridi.", ipa: "ˈmadʒi ˈjenu ni baˈɾidi", bases: [{ word: "Maji", base: "maji" }, { word: "yenu", base: "-enu" }, { word: "ni", base: "ni" }, { word: "baridi", base: "baridi" }] }
+  - id: "sw-1401"
+    target: "yao"
+    ipa: "ˈjao"
+    pos: "adj"
+    tags: ["possessive", "class-ix"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba yao ni kubwa.", ipa: "ˈɲumba ˈjao ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "yao", base: "-ao" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+      - { target: "Miti yao ni mirefu.", ipa: "ˈmiti ˈjao ni miˈɾefu", bases: [{ word: "Miti", base: "mti" }, { word: "yao", base: "-ao" }, { word: "ni", base: "ni" }, { word: "mirefu", base: "refu" }] }
+  - id: "sw-1402"
+    target: "wangu"
+    ipa: "ˈwaŋɡu"
+    pos: "adj"
+    tags: ["possessive", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mwalimu wangu ni mzuri.", ipa: "mwaˈlimu ˈwaŋɡu ni mˈzuɾi", bases: [{ word: "Mwalimu", base: "mwalimu" }, { word: "wangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+      - { target: "Mti wangu ni mkubwa.", ipa: "ˈmti ˈwaŋɡu ni mˈkubwa", bases: [{ word: "Mti", base: "mti" }, { word: "wangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "mkubwa", base: "kubwa" }] }
+  - id: "sw-1403"
+    target: "wako"
+    ipa: "ˈwako"
+    pos: "adj"
+    tags: ["possessive", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mwalimu wako ni nani?", ipa: "mwaˈlimu ˈwako ni ˈnani", bases: [{ word: "Mwalimu", base: "mwalimu" }, { word: "wako", base: "-ako" }, { word: "ni", base: "ni" }, { word: "nani", base: "nani" }] }
+      - { target: "Mti wako ni mkubwa.", ipa: "ˈmti ˈwako ni mˈkubwa", bases: [{ word: "Mti", base: "mti" }, { word: "wako", base: "-ako" }, { word: "ni", base: "ni" }, { word: "mkubwa", base: "kubwa" }] }
+  - id: "sw-1404"
+    target: "wake"
+    ipa: "ˈwake"
+    pos: "adj"
+    tags: ["possessive", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mwalimu wake ni mzuri.", ipa: "mwaˈlimu ˈwake ni mˈzuɾi", bases: [{ word: "Mwalimu", base: "mwalimu" }, { word: "wake", base: "-ake" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+      - { target: "Mti wake ni mkubwa.", ipa: "ˈmti ˈwake ni mˈkubwa", bases: [{ word: "Mti", base: "mti" }, { word: "wake", base: "-ake" }, { word: "ni", base: "ni" }, { word: "mkubwa", base: "kubwa" }] }
+  - id: "sw-1405"
+    target: "wetu"
+    ipa: "ˈwetu"
+    pos: "adj"
+    tags: ["possessive", "class-i"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mwalimu wetu ni mzuri.", ipa: "mwaˈlimu ˈwetu ni mˈzuɾi", bases: [{ word: "Mwalimu", base: "mwalimu" }, { word: "wetu", base: "-etu" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+      - { target: "Mti wetu ni mkubwa.", ipa: "ˈmti ˈwetu ni mˈkubwa", bases: [{ word: "Mti", base: "mti" }, { word: "wetu", base: "-etu" }, { word: "ni", base: "ni" }, { word: "mkubwa", base: "kubwa" }] }
+  - id: "sw-1406"
+    kind: "set"
+    members: [{ ref: "sw-0003" }, { ref: "sw-0004" }, { ref: "sw-1370" }, { ref: "sw-1371" }, { ref: "sw-1372" }, { ref: "sw-1373" }]
+  - id: "sw-1407"
+    kind: "set"
+    members: [{ ref: "sw-1386" }, { ref: "sw-1384" }, { ref: "sw-1385" }, { ref: "sw-1387" }, { ref: "sw-1392" }, { ref: "sw-1393" }, { ref: "sw-1394" }, { ref: "sw-1395" }]
+  - id: "sw-1408"
+    kind: "set"
+    members: [{ ref: "sw-1388" }, { ref: "sw-1389" }, { ref: "sw-1390" }, { ref: "sw-1391" }]

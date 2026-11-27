@@ -1,0 +1,685 @@
+schema: 1
+id: "sw-en-pronouns"
+kind: "layer"
+core: "sw-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people"
+description: "Thirty-six words for people, this and that, and whose: the people words, who and what, the nouns for people, the demonstratives and the possessives, each with its class. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-1370":
+    native: "he; she; it (third person singular)"
+    notes:
+      "n1": "Yeye is he or she, for one person (class I). It stands alone or for emphasis. The verb carries the subject as well: anapenda is he or she likes."
+    examples:
+      "Yeye ni mwalimu.":
+        native: "He is a teacher."
+        bases:
+          "Yeye": "he; she"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Yeye anapenda chai.":
+        native: "He likes tea."
+        bases:
+          "Yeye": "he; she"
+          "anapenda": "he likes"
+          "chai": "tea"
+  "sw-1371":
+    native: "we; us"
+    notes:
+      "n1": "Sisi is we, the first person plural. It stands alone or for emphasis, and the verb carries it too: tunapenda is we like."
+    examples:
+      "Sisi ni marafiki.":
+        native: "We are friends."
+        bases:
+          "Sisi": "we"
+          "ni": "are"
+          "marafiki": "friends"
+      "Sisi tunapenda maji.":
+        native: "We like water."
+        bases:
+          "Sisi": "we"
+          "tunapenda": "we like"
+          "maji": "water"
+  "sw-1372":
+    native: "you (plural)"
+    notes:
+      "n1": "Ninyi is you for more than one person, the plural of wewe. The verb carries it as well: mnapenda is you all like."
+    examples:
+      "Ninyi ni nani?":
+        native: "Who are you all?"
+        bases:
+          "Ninyi": "you (plural)"
+          "ni": "are"
+          "nani": "who"
+      "Ninyi mnapenda chai?":
+        native: "Do you all like tea?"
+        bases:
+          "Ninyi": "you (plural)"
+          "mnapenda": "you all like"
+          "chai": "tea"
+  "sw-1373":
+    native: "they (people)"
+    notes:
+      "n1": "Wao is they for people, class II, the plural of yeye. The verb carries it too: wanapenda is they like."
+    examples:
+      "Wao ni walimu.":
+        native: "They are teachers."
+        bases:
+          "Wao": "they"
+          "ni": "are"
+          "walimu": "teachers"
+      "Wao wanapenda chai.":
+        native: "They like tea."
+        bases:
+          "Wao": "they"
+          "wanapenda": "they like"
+          "chai": "tea"
+  "sw-1374":
+    native: "who?"
+    notes:
+      "n1": "Nani is who, asking about a person. It comes after ni: huyu ni nani? is who is this? Jina lako nani? (in the phrasebook) asks what your name is."
+    examples:
+      "Wewe ni nani?":
+        native: "Who are you?"
+        bases:
+          "Wewe": "you"
+          "ni": "are"
+          "nani": "who"
+      "Huyu ni nani?":
+        native: "Who is this?"
+        bases:
+          "Huyu": "this (one person, class I)"
+          "ni": "is"
+          "nani": "who"
+  "sw-1375":
+    native: "what?"
+    notes:
+      "n1": "Nini is what, asking about a thing. It comes after ni or after a verb: hii ni nini? is what is this? Sababu ni nini? is what is the reason?"
+    examples:
+      "Hii ni nini?":
+        native: "What is this?"
+        bases:
+          "Hii": "this"
+          "ni": "is"
+          "nini": "what"
+      "Unataka nini?":
+        native: "What do you want?"
+        bases:
+          "Unataka": "you want"
+          "nini": "what"
+  "sw-1376":
+    native: "person"
+    notes:
+      "n1": "Mtu is person, class I, with the plural watu in class II. The class I prefix m- becomes wa- in the plural. Its adjectives take the class I form: mtu mzuri, a good person."
+    examples:
+      "Huyu ni mtu mzuri.":
+        native: "This is a good person."
+        bases:
+          "Huyu": "this (one person, class I)"
+          "ni": "is"
+          "mtu": "person"
+          "mzuri": "good (class I)"
+      "Watu wawili ni walimu.":
+        native: "Two people are teachers."
+        bases:
+          "Watu": "people"
+          "wawili": "two"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1377":
+    native: "woman"
+    notes:
+      "n1": "Mwanamke is woman, class I, with the plural wanawake in class II. Words that agree with it take the class I form, as huyu does here."
+    examples:
+      "Mwanamke huyu ni mwalimu.":
+        native: "This woman is a teacher."
+        bases:
+          "Mwanamke": "woman"
+          "huyu": "this (one person, class I)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Mwanamke yule ni mgeni.":
+        native: "That woman is a stranger."
+        bases:
+          "Mwanamke": "woman"
+          "yule": "that (one person, far away)"
+          "ni": "is"
+          "mgeni": "stranger"
+  "sw-1378":
+    native: "man (male adult)"
+    notes:
+      "n1": "Mwanamume is man, class I, with the plural wanaume in class II. Use it for an adult male; mvulana is a boy."
+    examples:
+      "Mwanamume yule ni mgeni.":
+        native: "That man is a stranger."
+        bases:
+          "Mwanamume": "man"
+          "yule": "that (one person, far away)"
+          "ni": "is"
+          "mgeni": "stranger"
+      "Wanaume wale ni walimu.":
+        native: "Those men are teachers."
+        bases:
+          "Wanaume": "men"
+          "wale": "those (people, far away)"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1379":
+    native: "boy (male child)"
+    notes:
+      "n1": "Mvulana is boy, class I, with the plural wavulana in class II. Its adjectives take the class I form: mvulana mdogo, a small boy."
+    examples:
+      "Mvulana huyu ni mdogo.":
+        native: "This boy is small."
+        bases:
+          "Mvulana": "boy"
+          "huyu": "this (one person, class I)"
+          "ni": "is"
+          "mdogo": "small (class I)"
+      "Wavulana wale ni wangu.":
+        native: "Those boys are mine."
+        bases:
+          "Wavulana": "boys"
+          "wale": "those (people, far away)"
+          "ni": "are"
+          "wangu": "my (class II)"
+  "sw-1380":
+    native: "girl (young female)"
+    notes:
+      "n1": "Msichana is girl, class I, with the plural wasichana in class II. Use mwanamke for an adult woman."
+    examples:
+      "Msichana huyu ni mtoto.":
+        native: "This girl is a child."
+        bases:
+          "Msichana": "girl"
+          "huyu": "this (one person, class I)"
+          "ni": "is"
+          "mtoto": "child"
+      "Msichana yule ni rafiki yangu.":
+        native: "That girl is my friend."
+        bases:
+          "Msichana": "girl"
+          "yule": "that (one person, far away)"
+          "ni": "is"
+          "rafiki": "friend"
+          "yangu": "my (class IX)"
+  "sw-1381":
+    native: "friend"
+    notes:
+      "n1": "Rafiki is friend. The dictionary gives two plurals for it, rafiki and marafiki, so the plural is flagged for review in the queue. Rafiki yangu is my friend."
+    examples:
+      "Yeye ni rafiki yangu.":
+        native: "He is my friend."
+        bases:
+          "Yeye": "he; she"
+          "ni": "is"
+          "rafiki": "friend"
+          "yangu": "my (class IX)"
+      "Sisi ni marafiki.":
+        native: "We are friends."
+        bases:
+          "Sisi": "we"
+          "ni": "are"
+          "marafiki": "friends"
+  "sw-1382":
+    native: "neighbour"
+    notes:
+      "n1": "Jirani is neighbour. Its plural is given in the dictionary in two forms, jirani and majirani, so the plural is flagged for review in the queue."
+    examples:
+      "Jirani yangu ni mwalimu.":
+        native: "My neighbour is a teacher."
+        bases:
+          "Jirani": "neighbour"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "mwalimu": "teacher"
+      "Wewe ni jirani yangu?":
+        native: "Are you my neighbour?"
+        bases:
+          "Wewe": "you"
+          "ni": "are"
+          "jirani": "neighbour"
+          "yangu": "my (class IX)"
+  "sw-1383":
+    native: "foreigner; stranger; guest"
+    notes:
+      "n1": "Mgeni is a foreigner, a stranger or a guest, class I, with the plural wageni in class II. Karibu, mgeni is welcome, guest."
+    examples:
+      "Karibu, mgeni.":
+        native: "Welcome, guest."
+        bases:
+          "Karibu": "welcome"
+          "mgeni": "guest"
+      "Mimi ni mgeni hapa.":
+        native: "I am a stranger here."
+        bases:
+          "Mimi": "I"
+          "ni": "am"
+          "mgeni": "stranger"
+          "hapa": "here"
+  "sw-1384":
+    native: "this (one person, class I)"
+    notes:
+      "n1": "Huyu is this, for one person in class I: mtu huyu is this person. It is the class I form of hii and it takes the class of its noun."
+    examples:
+      "Huyu ni mama yangu.":
+        native: "This is my mother."
+        bases:
+          "Huyu": "this (one person, class I)"
+          "ni": "is"
+          "mama": "mother"
+          "yangu": "my (class IX)"
+      "Mtu huyu ni mgeni.":
+        native: "This person is a stranger."
+        bases:
+          "Mtu": "person"
+          "huyu": "this (one person, class I)"
+          "ni": "is"
+          "mgeni": "stranger"
+  "sw-1385":
+    native: "these (people, class II)"
+    notes:
+      "n1": "Hawa is these, for people in class II: watu hawa are these people. It is the class II form of hii."
+    examples:
+      "Hawa ni walimu.":
+        native: "These are teachers."
+        bases:
+          "Hawa": "these (people, class II)"
+          "ni": "are"
+          "walimu": "teachers"
+      "Watu hawa ni wageni.":
+        native: "These people are guests."
+        bases:
+          "Watu": "people"
+          "hawa": "these (people, class II)"
+          "ni": "are"
+          "wageni": "guests"
+  "sw-1386":
+    native: "this (class IX)"
+    notes:
+      "n1": "Hii is this, the basic form for class IX: nyumba hii is this house. The other forms of this in the unit agree with the class of their noun."
+    examples:
+      "Hii ni nyumba yangu.":
+        native: "This is my house."
+        bases:
+          "Hii": "this (class IX)"
+          "ni": "is"
+          "nyumba": "house"
+          "yangu": "my (class IX)"
+      "Nyumba hii ni kubwa.":
+        native: "This house is big."
+        bases:
+          "Nyumba": "house"
+          "hii": "this (class IX)"
+          "ni": "is"
+          "kubwa": "big"
+  "sw-1387":
+    native: "this (class III or XI)"
+    notes:
+      "n1": "Huu is this for class III (mti huu, this tree) and class XI (ukuta huu, this wall). It is the m- and u- form of hii."
+    examples:
+      "Mti huu ni mkubwa.":
+        native: "This tree is big."
+        bases:
+          "Mti": "tree"
+          "huu": "this (class III or XI)"
+          "ni": "is"
+          "mkubwa": "big (class III)"
+      "Huu ni mti.":
+        native: "This is a tree."
+        bases:
+          "Huu": "this (class III or XI)"
+          "ni": "is"
+          "mti": "tree"
+  "sw-1388":
+    native: "that (one person, class I, near the listener)"
+    notes:
+      "n1": "Huyo is that, for one person in class I near the listener: mtu huyo is that person. It is the class I form of hiyo."
+    examples:
+      "Huyo ni nani?":
+        native: "Who is that?"
+        bases:
+          "Huyo": "that (one person, class I, near you)"
+          "ni": "is"
+          "nani": "who"
+      "Mtu huyo ni mwalimu.":
+        native: "That person is a teacher."
+        bases:
+          "Mtu": "person"
+          "huyo": "that (one person, class I, near you)"
+          "ni": "is"
+          "mwalimu": "teacher"
+  "sw-1389":
+    native: "those (people, class II, near the listener)"
+    notes:
+      "n1": "Hao is those, for people in class II near the listener: watu hao are those people. It is the class II form of hiyo."
+    examples:
+      "Hao ni walimu wangu.":
+        native: "Those are my teachers."
+        bases:
+          "Hao": "those (people, class II, near you)"
+          "ni": "are"
+          "walimu": "teachers"
+          "wangu": "my (class II)"
+      "Watu hao wanapenda chai.":
+        native: "Those people like tea."
+        bases:
+          "Watu": "people"
+          "hao": "those (people, class II, near you)"
+          "wanapenda": "they like"
+          "chai": "tea"
+  "sw-1390":
+    native: "that (one person, class I, over there)"
+    notes:
+      "n1": "Yule is that, for one person in class I, away from both of you: mtu yule is that person over there. It is the class I form of -le."
+    examples:
+      "Yule ni baba yangu.":
+        native: "That one is my father."
+        bases:
+          "Yule": "that (one person, far away)"
+          "ni": "is"
+          "baba": "father"
+          "yangu": "my (class IX)"
+      "Mwanamke yule ni mgeni.":
+        native: "That woman over there is a stranger."
+        bases:
+          "Mwanamke": "woman"
+          "yule": "that (one person, far away)"
+          "ni": "is"
+          "mgeni": "stranger"
+  "sw-1391":
+    native: "those (people, class II, over there)"
+    notes:
+      "n1": "Wale is those over there, for people in class II: watu wale are those people. It is the class II form of -le."
+    examples:
+      "Wale ni walimu.":
+        native: "Those over there are teachers."
+        bases:
+          "Wale": "those (people, far away)"
+          "ni": "are"
+          "walimu": "teachers"
+      "Watu wale ni wageni.":
+        native: "Those people over there are guests."
+        bases:
+          "Watu": "people"
+          "wale": "those (people, far away)"
+          "ni": "are"
+          "wageni": "guests"
+  "sw-1392":
+    native: "this (class VII)"
+    notes:
+      "n1": "Hiki is this for class VII, the ki- class: kitabu hiki is this book. It is the ki- form of hii."
+    examples:
+      "Kitabu hiki ni kizuri.":
+        native: "This book is good."
+        bases:
+          "Kitabu": "book"
+          "hiki": "this (class VII)"
+          "ni": "is"
+          "kizuri": "good (class VII)"
+      "Kitabu hiki ni cha nani?":
+        native: "Whose book is this?"
+        bases:
+          "Kitabu": "book"
+          "hiki": "this (class VII)"
+          "ni": "is"
+          "cha": "of (class VII)"
+          "nani": "who"
+  "sw-1393":
+    native: "these (class VIII)"
+    notes:
+      "n1": "Hivi is these for class VIII, the vi- class: vitabu hivi is these books. It is the vi- form of hii."
+    examples:
+      "Vitabu hivi ni vizuri.":
+        native: "These books are good."
+        bases:
+          "Vitabu": "books"
+          "hivi": "these (class VIII)"
+          "ni": "are"
+          "vizuri": "good (class VIII)"
+      "Vitabu hivi ni vyangu.":
+        native: "These books are mine."
+        bases:
+          "Vitabu": "books"
+          "hivi": "these (class VIII)"
+          "ni": "are"
+          "vyangu": "my (class VIII)"
+  "sw-1394":
+    native: "this (class V)"
+    notes:
+      "n1": "Hili is this for class V, the ji- class: jina hili is this name. It is the ji- form of hii."
+    examples:
+      "Jina hili ni zuri.":
+        native: "This name is good."
+        bases:
+          "Jina": "name"
+          "hili": "this (class V)"
+          "ni": "is"
+          "zuri": "good (class V)"
+      "Jina hili ni langu.":
+        native: "This name is mine."
+        bases:
+          "Jina": "name"
+          "hili": "this (class V)"
+          "ni": "is"
+          "langu": "my (class V)"
+  "sw-1395":
+    native: "these (class VI)"
+    notes:
+      "n1": "Haya is these for class VI, the ma- class: maji haya are these waters. It is the ma- form of hii."
+    examples:
+      "Maji haya ni baridi.":
+        native: "This water is cold."
+        bases:
+          "Maji": "water"
+          "haya": "these (class VI)"
+          "ni": "is"
+          "baridi": "cold"
+      "Maji haya ni yangu.":
+        native: "This water is mine."
+        bases:
+          "Maji": "water"
+          "haya": "these (class VI)"
+          "ni": "is"
+          "yangu": "my (class VI)"
+  "sw-1396":
+    native: "my (class IV, VI or IX)"
+    notes:
+      "n1": "Yangu is my, for nouns of class IV (miti yangu, my trees), VI (maji yangu) and IX (nyumba yangu, my house). Class I, II, III and XI take wangu."
+    examples:
+      "Nyumba yangu ni kubwa.":
+        native: "My house is big."
+        bases:
+          "Nyumba": "house"
+          "yangu": "my (class IX)"
+          "ni": "is"
+          "kubwa": "big"
+      "Miti yangu ni mirefu.":
+        native: "My trees are tall."
+        bases:
+          "Miti": "trees"
+          "yangu": "my (class IV)"
+          "ni": "are"
+          "mirefu": "tall (class IV)"
+  "sw-1397":
+    native: "your (class IV, VI or IX)"
+    notes:
+      "n1": "Yako is your, for one person you speak to, for classes IV, VI and IX: nyumba yako is your house. Class I, III and XI take wako."
+    examples:
+      "Nyumba yako ni nzuri.":
+        native: "Your house is good."
+        bases:
+          "Nyumba": "house"
+          "yako": "your (class IX)"
+          "ni": "is"
+          "nzuri": "good"
+      "Maji yako ni baridi.":
+        native: "Your water is cold."
+        bases:
+          "Maji": "water"
+          "yako": "your (class VI)"
+          "ni": "is"
+          "baridi": "cold"
+  "sw-1398":
+    native: "his; her; its (class IV, VI or IX)"
+    notes:
+      "n1": "Yake is his or her, for classes IV, VI and IX: nyumba yake is his or her house. The same word does not show which person owns it; the sentence does. Class I, III and XI take wake."
+    examples:
+      "Nyumba yake ni kubwa.":
+        native: "His house is big."
+        bases:
+          "Nyumba": "house"
+          "yake": "his; her (class IX)"
+          "ni": "is"
+          "kubwa": "big"
+      "Maji yake ni baridi.":
+        native: "Her water is cold."
+        bases:
+          "Maji": "water"
+          "yake": "her; his (class VI)"
+          "ni": "is"
+          "baridi": "cold"
+  "sw-1399":
+    native: "our (class IV, VI or IX)"
+    notes:
+      "n1": "Yetu is our, for classes IV, VI and IX: nyumba yetu is our house. Class I, III and XI take wetu."
+    examples:
+      "Nyumba yetu ni kubwa.":
+        native: "Our house is big."
+        bases:
+          "Nyumba": "house"
+          "yetu": "our (class IX)"
+          "ni": "is"
+          "kubwa": "big"
+      "Miti yetu ni mirefu.":
+        native: "Our trees are tall."
+        bases:
+          "Miti": "trees"
+          "yetu": "our (class IV)"
+          "ni": "are"
+          "mirefu": "tall (class IV)"
+  "sw-1400":
+    native: "your, plural (class IV, VI or IX)"
+    notes:
+      "n1": "Yenu is your, when you speak to more than one person, for classes IV, VI and IX: nyumba yenu is your house, of you all."
+    examples:
+      "Nyumba yenu ni nzuri.":
+        native: "Your house, all of you, is good."
+        bases:
+          "Nyumba": "house"
+          "yenu": "your, plural (class IX)"
+          "ni": "is"
+          "nzuri": "good"
+      "Maji yenu ni baridi.":
+        native: "Your water, all of you, is cold."
+        bases:
+          "Maji": "water"
+          "yenu": "your, plural (class VI)"
+          "ni": "is"
+          "baridi": "cold"
+  "sw-1401":
+    native: "their (class IV, VI or IX)"
+    notes:
+      "n1": "Yao is their, for classes IV, VI and IX: nyumba yao is their house. Class II takes wao, and the class I and III forms are taught on the next cards."
+    examples:
+      "Nyumba yao ni kubwa.":
+        native: "Their house is big."
+        bases:
+          "Nyumba": "house"
+          "yao": "their (class IX)"
+          "ni": "is"
+          "kubwa": "big"
+      "Miti yao ni mirefu.":
+        native: "Their trees are tall."
+        bases:
+          "Miti": "trees"
+          "yao": "their (class IV)"
+          "ni": "are"
+          "mirefu": "tall (class IV)"
+  "sw-1402":
+    native: "my (class I, III or XI)"
+    notes:
+      "n1": "Wangu is my, for class I (mwalimu wangu, my teacher), class III (mti wangu, my tree) and class XI. Class IV, VI and IX take yangu."
+    examples:
+      "Mwalimu wangu ni mzuri.":
+        native: "My teacher is good."
+        bases:
+          "Mwalimu": "teacher"
+          "wangu": "my (class I)"
+          "ni": "is"
+          "mzuri": "good (class I)"
+      "Mti wangu ni mkubwa.":
+        native: "My tree is big."
+        bases:
+          "Mti": "tree"
+          "wangu": "my (class III)"
+          "ni": "is"
+          "mkubwa": "big (class III)"
+  "sw-1403":
+    native: "your (class I, III or XI)"
+    notes:
+      "n1": "Wako is your, for one person you speak to, for class I, III and XI: mwalimu wako is your teacher. Classes IV, VI and IX take yako."
+    examples:
+      "Mwalimu wako ni nani?":
+        native: "Who is your teacher?"
+        bases:
+          "Mwalimu": "teacher"
+          "wako": "your (class I)"
+          "ni": "is"
+          "nani": "who"
+      "Mti wako ni mkubwa.":
+        native: "Your tree is big."
+        bases:
+          "Mti": "tree"
+          "wako": "your (class III)"
+          "ni": "is"
+          "mkubwa": "big (class III)"
+  "sw-1404":
+    native: "his; her (class I, III or XI)"
+    notes:
+      "n1": "Wake is his or her, for class I, III and XI: mwalimu wake is his or her teacher. Classes IV, VI and IX take yake."
+    examples:
+      "Mwalimu wake ni mzuri.":
+        native: "His teacher is good."
+        bases:
+          "Mwalimu": "teacher"
+          "wake": "his; her (class I)"
+          "ni": "is"
+          "mzuri": "good (class I)"
+      "Mti wake ni mkubwa.":
+        native: "Her tree is big."
+        bases:
+          "Mti": "tree"
+          "wake": "her; his (class III)"
+          "ni": "is"
+          "mkubwa": "big (class III)"
+  "sw-1405":
+    native: "our (class I, III or XI)"
+    notes:
+      "n1": "Wetu is our, for class I, III and XI: mwalimu wetu is our teacher. Classes IV, VI and IX take yetu."
+    examples:
+      "Mwalimu wetu ni mzuri.":
+        native: "Our teacher is good."
+        bases:
+          "Mwalimu": "teacher"
+          "wetu": "our (class I)"
+          "ni": "is"
+          "mzuri": "good (class I)"
+      "Mti wetu ni mkubwa.":
+        native: "Our tree is big."
+        bases:
+          "Mti": "tree"
+          "wetu": "our (class III)"
+          "ni": "is"
+          "mkubwa": "big (class III)"
+  "sw-1406":
+    native: "Pronouns for people: six words"
+    explanation: "Six words for people, each with its own person and number: mimi (I), wewe (you), yeye (he or she), sisi (we), ninyi (you all) and wao (they). The verb carries the same person as well: ninapenda, unapenda, anapenda, tunapenda, mnapenda and wanapenda."
+  "sw-1407":
+    native: "This: eight forms by class"
+    explanation: "This takes the class of its noun: hii (class IX), huyu (class I), hawa (class II), huu (classes III and XI), hiki (VII), hivi (VIII), hili (V) and haya (VI). Learn the form that goes with the noun in front of it."
+  "sw-1408":
+    native: "That: four forms"
+    explanation: "That comes in two distances. Huyo (class I) and hao (class II) are that near the listener; yule (class I) and wale (class II) are that over there, away from both of you."

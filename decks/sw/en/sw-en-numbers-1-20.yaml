@@ -1,0 +1,451 @@
+schema: 1
+id: "sw-en-numbers-1-20"
+kind: "layer"
+core: "sw-numbers-1-20"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Numbers one to twenty"
+description: "Twenty-two words for counting: zero, the numbers from three to ten, the teens, twenty, and the words for number, first and second. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-1510":
+    native: "zero"
+    notes:
+      "n1": "Sifuri is zero. It does not change for class, so it is invariable."
+    examples:
+      "Sifuri ni nambari.":
+        native: "Zero is a number."
+        bases:
+          "Sifuri": "zero"
+          "ni": "is"
+          "nambari": "number"
+      "Sifuri, moja, mbili.":
+        native: "Zero, one, two."
+        bases:
+          "Sifuri": "zero"
+          "moja": "one"
+          "mbili": "two"
+  "sw-1511":
+    native: "three"
+    notes:
+      "n1": "Tatu is three. It takes the class of its noun: watu watatu, three people (class II), and vitabu vitatu, three books (class VIII)."
+    examples:
+      "Watoto watatu ni wadogo.":
+        native: "Three children are small."
+        bases:
+          "Watoto": "children"
+          "watatu": "three (class II)"
+          "ni": "are"
+          "wadogo": "small (class II)"
+      "Vitabu vitatu ni vizuri.":
+        native: "Three books are good."
+        bases:
+          "Vitabu": "books"
+          "vitatu": "three (class VIII)"
+          "ni": "are"
+          "vizuri": "good (class VIII)"
+  "sw-1512":
+    native: "four"
+    notes:
+      "n1": "Nne is four. It takes the class of its noun: watu wanne, four people (class II), and miti minne, four trees (class IV)."
+    examples:
+      "Watu wanne ni walimu.":
+        native: "Four people are teachers."
+        bases:
+          "Watu": "people"
+          "wanne": "four (class II)"
+          "ni": "are"
+          "walimu": "teachers"
+      "Miti minne ni mirefu.":
+        native: "Four trees are tall."
+        bases:
+          "Miti": "trees"
+          "minne": "four (class IV)"
+          "ni": "are"
+          "mirefu": "tall (class IV)"
+  "sw-1513":
+    native: "five"
+    notes:
+      "n1": "Tano is five. It takes the class of its noun: watu watano, five people (class II), and vitabu vitano, five books (class VIII)."
+    examples:
+      "Watu watano ni walimu.":
+        native: "Five people are teachers."
+        bases:
+          "Watu": "people"
+          "watano": "five (class II)"
+          "ni": "are"
+          "walimu": "teachers"
+      "Nina vitabu vitano.":
+        native: "I have five books."
+        bases:
+          "Nina": "I have"
+          "vitabu": "books"
+          "vitano": "five (class VIII)"
+  "sw-1514":
+    native: "six"
+    notes:
+      "n1": "Sita is six. It is invariable, so it does not change for the noun's class."
+    examples:
+      "Watu sita ni walimu.":
+        native: "Six people are teachers."
+        bases:
+          "Watu": "people"
+          "sita": "six"
+          "ni": "are"
+          "walimu": "teachers"
+      "Nina watoto sita.":
+        native: "I have six children."
+        bases:
+          "Nina": "I have"
+          "watoto": "children"
+          "sita": "six"
+  "sw-1515":
+    native: "seven"
+    notes:
+      "n1": "Saba is seven. It is invariable, like sita."
+    examples:
+      "Wiki ina siku saba.":
+        native: "A week has seven days."
+        bases:
+          "Wiki": "week"
+          "ina": "has"
+          "siku": "days"
+          "saba": "seven"
+      "Watoto saba ni wadogo.":
+        native: "Seven children are small."
+        bases:
+          "Watoto": "children"
+          "saba": "seven"
+          "ni": "are"
+          "wadogo": "small (class II)"
+  "sw-1516":
+    native: "eight"
+    notes:
+      "n1": "Nane is eight. It takes the class of its noun: watu wanane, eight people (class II), and vitabu vinane, eight books (class VIII)."
+    examples:
+      "Watu wanane ni walimu.":
+        native: "Eight people are teachers."
+        bases:
+          "Watu": "people"
+          "wanane": "eight (class II)"
+          "ni": "are"
+          "walimu": "teachers"
+      "Vitabu vinane ni vyangu.":
+        native: "Eight books are mine."
+        bases:
+          "Vitabu": "books"
+          "vinane": "eight (class VIII)"
+          "ni": "are"
+          "vyangu": "my (class VIII)"
+  "sw-1517":
+    native: "nine"
+    notes:
+      "n1": "Tisa is nine. It is invariable, so it does not change for the noun's class."
+    examples:
+      "Ni saa tisa.":
+        native: "It is nine o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "tisa": "nine"
+      "Watoto tisa ni wadogo.":
+        native: "Nine children are small."
+        bases:
+          "Watoto": "children"
+          "tisa": "nine"
+          "ni": "are"
+          "wadogo": "small (class II)"
+  "sw-1518":
+    native: "ten"
+    notes:
+      "n1": "Kumi is ten, invariable. It is the base of the teens: kumi na moja is eleven, kumi na mbili is twelve, and so on."
+    examples:
+      "Ni saa kumi.":
+        native: "It is ten o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+      "Watu kumi ni walimu.":
+        native: "Ten people are teachers."
+        bases:
+          "Watu": "people"
+          "kumi": "ten"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1519":
+    native: "eleven"
+    notes:
+      "n1": "Kumi na moja is eleven: kumi, ten, then na, and, then moja, one. The teens are made the same way, with the units after na."
+    examples:
+      "Ni saa kumi na moja.":
+        native: "It is eleven o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "moja": "one"
+      "Kumi na moja ni nambari.":
+        native: "Eleven is a number."
+        bases:
+          "Kumi": "ten"
+          "na": "and"
+          "moja": "one"
+          "ni": "is"
+          "nambari": "number"
+  "sw-1520":
+    native: "twelve"
+    notes:
+      "n1": "Kumi na mbili is twelve, invariable: ten and two."
+    examples:
+      "Ni saa kumi na mbili.":
+        native: "It is twelve o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "mbili": "two"
+      "Watu kumi na mbili ni walimu.":
+        native: "Twelve people are teachers."
+        bases:
+          "Watu": "people"
+          "kumi": "ten"
+          "na": "and"
+          "mbili": "two"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1521":
+    native: "thirteen"
+    notes:
+      "n1": "Kumi na tatu is thirteen: ten and three. Only the units after na take the class of the noun, as watu kumi na watatu."
+    examples:
+      "Ni saa kumi na tatu.":
+        native: "It is thirteen o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "tatu": "three"
+      "Kumi na tatu ni nambari.":
+        native: "Thirteen is a number."
+        bases:
+          "Kumi": "ten"
+          "na": "and"
+          "tatu": "three"
+          "ni": "is"
+          "nambari": "number"
+  "sw-1522":
+    native: "fourteen"
+    notes:
+      "n1": "Kumi na nne is fourteen, invariable: ten and four."
+    examples:
+      "Ni saa kumi na nne.":
+        native: "It is fourteen o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "nne": "four"
+      "Watu kumi na nne ni walimu.":
+        native: "Fourteen people are teachers."
+        bases:
+          "Watu": "people"
+          "kumi": "ten"
+          "na": "and"
+          "nne": "four"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1523":
+    native: "fifteen"
+    notes:
+      "n1": "Kumi na tano is fifteen, invariable: ten and five."
+    examples:
+      "Ni saa kumi na tano.":
+        native: "It is fifteen o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "tano": "five"
+      "Watu kumi na tano ni walimu.":
+        native: "Fifteen people are teachers."
+        bases:
+          "Watu": "people"
+          "kumi": "ten"
+          "na": "and"
+          "tano": "five"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1524":
+    native: "sixteen"
+    notes:
+      "n1": "Kumi na sita is sixteen, invariable: ten and six."
+    examples:
+      "Ni saa kumi na sita.":
+        native: "It is sixteen o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "sita": "six"
+      "Watu kumi na sita ni walimu.":
+        native: "Sixteen people are teachers."
+        bases:
+          "Watu": "people"
+          "kumi": "ten"
+          "na": "and"
+          "sita": "six"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1525":
+    native: "seventeen"
+    notes:
+      "n1": "Kumi na saba is seventeen, invariable: ten and seven."
+    examples:
+      "Ni saa kumi na saba.":
+        native: "It is seventeen o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "saba": "seven"
+      "Watu kumi na saba ni walimu.":
+        native: "Seventeen people are teachers."
+        bases:
+          "Watu": "people"
+          "kumi": "ten"
+          "na": "and"
+          "saba": "seven"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1526":
+    native: "eighteen"
+    notes:
+      "n1": "Kumi na nane is eighteen, invariable: ten and eight."
+    examples:
+      "Ni saa kumi na nane.":
+        native: "It is eighteen o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "nane": "eight"
+      "Watu kumi na nane ni walimu.":
+        native: "Eighteen people are teachers."
+        bases:
+          "Watu": "people"
+          "kumi": "ten"
+          "na": "and"
+          "nane": "eight"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1527":
+    native: "nineteen"
+    notes:
+      "n1": "Kumi na tisa is nineteen, invariable: ten and nine."
+    examples:
+      "Ni saa kumi na tisa.":
+        native: "It is nineteen o'clock."
+        bases:
+          "Ni": "it is"
+          "saa": "o'clock"
+          "kumi": "ten"
+          "na": "and"
+          "tisa": "nine"
+      "Watu kumi na tisa ni walimu.":
+        native: "Nineteen people are teachers."
+        bases:
+          "Watu": "people"
+          "kumi": "ten"
+          "na": "and"
+          "tisa": "nine"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1528":
+    native: "twenty"
+    notes:
+      "n1": "Ishirini is twenty, invariable. After it come the units with na, as in ishirini na moja, twenty-one, which is not in this unit."
+    examples:
+      "Ishirini ni nambari.":
+        native: "Twenty is a number."
+        bases:
+          "Ishirini": "twenty"
+          "ni": "is"
+          "nambari": "number"
+      "Watu ishirini ni walimu.":
+        native: "Twenty people are teachers."
+        bases:
+          "Watu": "people"
+          "ishirini": "twenty"
+          "ni": "are"
+          "walimu": "teachers"
+  "sw-1529":
+    native: "number"
+    notes:
+      "n1": "Nambari is number, class IX, with the plural nambari in class X. It is the word for a number in a phone or a house."
+    examples:
+      "Nambari hii ni kubwa.":
+        native: "This number is big."
+        bases:
+          "Nambari": "number"
+          "hii": "this (class IX)"
+          "ni": "is"
+          "kubwa": "big"
+      "Nambari ni tatu.":
+        native: "The number is three."
+        bases:
+          "Nambari": "number"
+          "ni": "is"
+          "tatu": "three"
+  "sw-1530":
+    native: "first"
+    notes:
+      "n1": "Kwanza is first, invariable in the phrase -a kwanza. Siku ya kwanza is the first day, with ya for class IX. Mtoto wa kwanza is the first child, with wa for class I."
+    examples:
+      "Siku ya kwanza ni leo.":
+        native: "The first day is today."
+        bases:
+          "Siku": "day"
+          "ya": "of (class IX)"
+          "kwanza": "first"
+          "ni": "is"
+          "leo": "today"
+      "Ni mtoto wa kwanza.":
+        native: "I am the first child."
+        bases:
+          "Ni": "am"
+          "mtoto": "child"
+          "wa": "of (class I)"
+          "kwanza": "first"
+  "sw-1531":
+    native: "second (number two)"
+    notes:
+      "n1": "Pili is second, invariable in the phrase -a pili. Mtoto wa pili is the second child, and siku ya pili is the second day."
+    examples:
+      "Siku ya pili ni kesho.":
+        native: "The second day is tomorrow."
+        bases:
+          "Siku": "day"
+          "ya": "of (class IX)"
+          "pili": "second"
+          "ni": "is"
+          "kesho": "tomorrow"
+      "Mtoto wa pili ni mzuri.":
+        native: "The second child is good."
+        bases:
+          "Mtoto": "child"
+          "wa": "of (class I)"
+          "pili": "second"
+          "ni": "is"
+          "mzuri": "good (class I)"
+  "sw-1532":
+    native: "Numbers one to ten"
+    explanation: "The first ten numbers: moja (one), mbili (two), tatu (three), nne (four), tano (five), sita (six), saba (seven), nane (eight), tisa (nine) and kumi (ten). The numbers from three to eight take the class of their noun, as watu watatu or vitabu vitatu; moja and mbili are taught in the first words."
