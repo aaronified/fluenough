@@ -178,7 +178,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#220](https://github.com/aaronified/fluenough/issues/220) Plan: read your own text, and make cards from it
 - [#221](https://github.com/aaronified/fluenough/issues/221) Plan: readings made in the app
 - [#222](https://github.com/aaronified/fluenough/issues/222) Plan: building sentences by reasoning, and cloze
-- [#223](https://github.com/aaronified/fluenough/issues/223) Plan: achievements, not as aggressive as Duolingo
 - [#224](https://github.com/aaronified/fluenough/issues/224) Plan: hands-free audio drills
 - [#225](https://github.com/aaronified/fluenough/issues/225) Plan: explain a grammar mistake
 - [#226](https://github.com/aaronified/fluenough/issues/226) Plan: writing the script by hand
@@ -208,7 +207,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#319](https://github.com/aaronified/fluenough/issues/319) Sentence building: each course's answers
 - [#320](https://github.com/aaronified/fluenough/issues/320) Sentence building: unlocking, the drill and grading
 - [#321](https://github.com/aaronified/fluenough/issues/321) Sentence building: cloze
-- [#322](https://github.com/aaronified/fluenough/issues/322) Achievements: rules over the log
 - [#325](https://github.com/aaronified/fluenough/issues/325) Audio drills: the audio service, controls and queue
 - [#326](https://github.com/aaronified/fluenough/issues/326) Audio drills: grading by the recogniser and the screen-off fallback
 - [#328](https://github.com/aaronified/fluenough/issues/328) Explain mistakes: rules a card can name
@@ -312,7 +310,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 A plan with no tracking issue is flagged.
 
-- [achievements, quietly](https://github.com/aaronified/fluenough/wiki/Plan-Achievements) (Written 2026-10-05), tracks #223
+- [achievements, quietly](https://github.com/aaronified/fluenough/wiki/Plan-Achievements) (Written 2026-10-05), **no tracking issue**
 - [achievements pacing, the approved decisions and the plots](https://github.com/aaronified/fluenough/wiki/Plan-Achievements-Pacing) (Written 2026-11-27), **no tracking issue**
 - [an AI conversation partner, within what the learner knows](https://github.com/aaronified/fluenough/wiki/Plan-Ai-Conversation) (Written 2026-10-05), tracks #219
 - [hands-free audio drills](https://github.com/aaronified/fluenough/wiki/Plan-Audio-Drills) (Written 2026-10-05), tracks #224
