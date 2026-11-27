@@ -73,6 +73,16 @@ dependencies:
   flutter_local_notifications: 22.3.2
   timezone: 0.11.1
 
+  # The Android home-screen widget's data (#108). Agreed with the owner
+  # (2026-11-27): the plugin, which stores what the widget shows and has it
+  # drawn again, instead of a platform channel of our own. Pinned to a
+  # release at least two weeks old (0.10.0, 2026-09-17; it needs Dart
+  # >=3.10 and Flutter >=3.38.1). Reached only through
+  # lib/app/plugin_home_widget_gateway.dart, which only lib/main.dart
+  # imports, so the web build never compiles it. The widget itself is native
+  # code written by tools/brand_android.py from tools/android_templates/.
+  home_widget: 0.10.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

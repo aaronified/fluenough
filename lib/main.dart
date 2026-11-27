@@ -24,6 +24,8 @@ import 'app/language_unit_job.dart';
 import 'app/links.dart';
 import 'app/mail_share.dart';
 import 'app/ota_installer.dart';
+import 'app/home_widget_gateway.dart';
+import 'app/plugin_home_widget_gateway.dart';
 import 'app/plugin_reminder_scheduler.dart';
 import 'app/private_import.dart';
 import 'app/private_store.dart';
@@ -136,6 +138,11 @@ Future<void> main() async {
   } catch (e) {
     log.warning('Reminder error: start failed: $e');
   }
+  // The home-screen widget's data (#108): Android only. Without the plugin
+  // the widget keeps what it last stored.
+  final HomeWidgetGateway homeWidgetGateway = Platform.isAndroid
+      ? const PluginHomeWidgetGateway()
+      : const NullHomeWidgetGateway();
   // Private language packages (#1017), kept apart from every other deck.
   final privateStore = FilePrivateStore(
     Directory('${files.path}/private'),
@@ -250,6 +257,7 @@ Future<void> main() async {
     wallpaperSource: const ChannelWallpaperSource(),
     hapticEngine: const SystemHapticEngine(),
     reminderScheduler: reminderScheduler,
+    homeWidgetGateway: homeWidgetGateway,
     reports: MailReportSender(
       address: AppLinks.feedbackEmail,
       links: const LauncherLinks(),

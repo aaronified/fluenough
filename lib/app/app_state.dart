@@ -7,6 +7,7 @@ import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
 import '../core/placement/item_registry.dart' show RegItem;
+import '../core/widget/home_widget_summary.dart';
 import '../core/private/private_ids.dart' show languageOfId;
 import 'achievements_holder.dart';
 import 'blob_store.dart';
@@ -95,6 +96,9 @@ import 'startup_marks.dart';
 import 'pacing.dart';
 import '../features/stats/progress_numbers.dart';
 import 'profile.dart';
+import 'home_widget_gateway.dart';
+import 'home_widget_service.dart';
+import 'home_widget_words.dart';
 import 'reminder_scheduler.dart';
 import 'reminder_service.dart';
 import 'reminder_words.dart';
@@ -228,6 +232,7 @@ class AppState extends ChangeNotifier {
     this._hapticEngine = const NullHapticEngine(),
     this._hapticClock,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
+    HomeWidgetGateway homeWidgetGateway = const NullHomeWidgetGateway(),
     this.reports = const NullReportSender(),
     this._mailShare = const NullMailShare(),
     AppLog? log,
@@ -263,6 +268,14 @@ class AppState extends ChangeNotifier {
        placementBanks = PlacementBanks(store: bankStore, runner: bankRunner),
        _profiles = List<Profile>.of(profiles),
        _currentProfileId = currentProfileId ?? profiles.first.id {
+    homeWidget = HomeWidgetService(
+      gateway: homeWidgetGateway,
+      available: () => features.isAvailable(Feature.homeWidget),
+      summary: homeWidgetSummary,
+      texts: () => homeWidgetTextsFor(PlatformDispatcher.instance.locale),
+      clock: now,
+      log: (message) => this.log.warning(message),
+    );
     // What is pending follows progress, settings and this state's own
     // changes: the catalog, voices and the profile.
     for (final source in <Listenable>[this, this.settings, progress]) {
@@ -307,6 +320,35 @@ class AppState extends ChangeNotifier {
     );
   }
 
+  /// The Android home-screen widget (#108): stores the shown language, the
+  /// cards due and the streak where the widget reads them, when progress
+  /// changes and when the app is left. Nothing where the build has no widget.
+  late final HomeWidgetService homeWidget;
+
+  /// What the home-screen widget shows now: the shown language's name, the
+  /// cards due today and by the end of tomorrow as Today counts reviews
+  /// (the shown language's decks, the skills switched on, nothing set aside)
+  /// and the streak. Null while no language is shown. Only the pairs of the
+  /// shown language are read, and only where the widget is built in.
+  HomeWidgetSummary? homeWidgetSummary() {
+    final code = shownLanguage;
+    if (code == null) return null;
+    final at = now();
+    final due = progress.dueByDay(at, days: 2, counts: _countsAsDue());
+    final name = <String>[
+      for (final language in languages)
+        if (language.code == code) language.name,
+    ];
+    return HomeWidgetSummary(
+      language: name.isEmpty ? '' : name.first,
+      day: DateTime(at.year, at.month, at.day),
+      dueToday: due[0],
+      dueNext: due[1],
+      streak: progress.streakAt(at),
+      practisedToday: progress.practisedOn(at),
+    );
+  }
+
   /// The daily reminder (#90): its permission, its plan and the
   /// notifications. Switched on and off in Settings > Reminders.
   late final ReminderService reminders;
@@ -343,6 +385,7 @@ class AppState extends ChangeNotifier {
     _lastAdult = adult;
     _lastShown = shown;
     _lastProgressAll = all;
+    homeWidget.changed();
     // The setting that moved already bumped the settings version, which
     // drops what is kept for a queue.
     _notifyKeepingStructure();
@@ -418,6 +461,7 @@ class AppState extends ChangeNotifier {
     HapticEngine hapticEngine = const NullHapticEngine(),
     Duration Function()? hapticClock,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
+    HomeWidgetGateway homeWidgetGateway = const NullHomeWidgetGateway(),
     ReportSender reports = const NullReportSender(),
     MailShare mailShare = const NullMailShare(),
     AppLog? log,
@@ -469,6 +513,7 @@ class AppState extends ChangeNotifier {
       hapticEngine: hapticEngine,
       hapticClock: hapticClock ?? steppingClock(),
       reminderScheduler: reminderScheduler,
+      homeWidgetGateway: homeWidgetGateway,
       reports: reports,
       mailShare: mailShare,
       log: log,
@@ -2964,6 +3009,7 @@ class AppState extends ChangeNotifier {
   final Map<String, int> sessionBuilds = <String, int>{};
 
   void _progressChanged() {
+    homeWidget.changed();
     _anyProgressVersion++;
     final language = _recordingLanguage;
     if (language == null) {
@@ -5432,6 +5478,7 @@ class AppState extends ChangeNotifier {
     unawaited(_asrSub?.cancel());
     asrChanges.dispose();
     reminders.dispose();
+    homeWidget.dispose();
     settings
       ..removeListener(_forgetPending)
       ..removeListener(_reviewerToDownloads)
