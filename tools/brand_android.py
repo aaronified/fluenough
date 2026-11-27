@@ -84,6 +84,17 @@ in CI, in the release workflow and on a first checkout. It
   puts them back after a reboot or an app update. Tapping a notification
   needs no receiver: it opens MainActivity;
 
+- adds the home-screen widget (#108): the files of
+  tools/android_templates/widget/, which are written here and never edited
+  in android/. res/ is copied into android/app/src/main/res/ (a layout, the
+  appwidget-provider file, a background, colours light, dark and from
+  Android 12, and one string for the widget picker), DueWidgetProvider.kt
+  goes beside MainActivity, and the manifest gets its <receiver>, with the
+  home_widget plugin's HomeWidgetScheduledUpdateReceiver, which has the
+  phone draw the widget again at the day's turn and after a reboot (the
+  boot permission is declared above). The data it draws is stored by the
+  app through the home_widget plugin (lib/app/plugin_home_widget_gateway.dart);
+
 Each is added only if it is not there already, so running this twice is
 the same as running it once.
 
@@ -1020,6 +1031,41 @@ def asr(text: str) -> str:
 # registering of the app.fluenough/asr channel.
 CHANNEL_MEMBERS = asr(listen(wallpaper(install(share(VOICE_MEMBERS)))))
 
+# The home-screen widget (#108): a provider class and resources kept as
+# files under tools/android_templates/widget/, the way a deck is a file, not
+# as strings in this script. The provider extends home_widget's
+# HomeWidgetProvider, and the plugin's receiver has the phone draw it at the
+# day's turn.
+WIDGET_TEMPLATES = Path("tools/android_templates/widget")
+WIDGET_PROVIDER_CLASS = "app.fluenough.DueWidgetProvider"
+WIDGET_PROVIDER_FILE = Path(
+    "android/app/src/main/kotlin/app/fluenough/DueWidgetProvider.kt"
+)
+WIDGET_SCHEDULE_RECEIVER = (
+    "es.antonborri.home_widget.HomeWidgetScheduledUpdateReceiver"
+)
+WIDGET_RECEIVER_XML = f'''        <receiver
+            android:name="{WIDGET_PROVIDER_CLASS}"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/due_widget_info"/>
+        </receiver>
+'''
+WIDGET_SCHEDULE_RECEIVER_XML = f'''        <receiver
+            android:name="{WIDGET_SCHEDULE_RECEIVER}"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+'''
+
 # The version ota_update 7.1.0's own build uses.
 DESUGAR_LIBS = "com.android.tools:desugar_jdk_libs:2.1.4"
 
@@ -1085,6 +1131,19 @@ def notify(text: str) -> str:
     for name, receiver in (
         (NOTIFICATION_RECEIVER, NOTIFICATION_RECEIVER_XML),
         (NOTIFICATION_BOOT_RECEIVER, NOTIFICATION_BOOT_RECEIVER_XML),
+    ):
+        if f'android:name="{name}"' not in text:
+            text = text.replace("    </application>", f"{receiver}    </application>", 1)
+    return text
+
+
+def widget(text: str) -> str:
+    """[text], a manifest, with the home-screen widget's provider and the
+    home_widget plugin's update receiver last in its <application>, each
+    unless it has it."""
+    for name, receiver in (
+        (WIDGET_PROVIDER_CLASS, WIDGET_RECEIVER_XML),
+        (WIDGET_SCHEDULE_RECEIVER, WIDGET_SCHEDULE_RECEIVER_XML),
     ):
         if f'android:name="{name}"' not in text:
             text = text.replace("    </application>", f"{receiver}    </application>", 1)
@@ -1258,6 +1317,7 @@ def declare(text: str) -> str:
         text = refuse(text, permission)
     text = provide(text)
     text = notify(text)
+    text = widget(text)
     for action in (RECOGNITION_SERVICE, TTS_SERVICE, TTS_SETTINGS, INSTALL_TTS_DATA):
         if not queries(text, action):
             text = query(text, f'<action android:name="{action}"/>')
@@ -1322,6 +1382,11 @@ def apply(root: Path) -> str:
     kotlin = activity.read_text(encoding="utf-8")
     channelled = channel(kotlin)
 
+    templates = root / WIDGET_TEMPLATES
+    for needed in (templates / "res", templates / WIDGET_PROVIDER_FILE.name):
+        if not needed.exists():
+            raise BrandError(f"{needed.relative_to(root)} is missing")
+
     name = app_name(root)
     label = f'android:label="{escape(name, {chr(34): "&quot;"})}"'
     # Everything is worked out before anything is written.
@@ -1339,6 +1404,8 @@ def apply(root: Path) -> str:
         encoding="utf-8",
     )
     (root / ASR_FILE).write_text(ASR_KOTLIN, encoding="utf-8")
+    shutil.copytree(templates / "res", root / RES, dirs_exist_ok=True)
+    shutil.copyfile(templates / WIDGET_PROVIDER_FILE.name, root / WIDGET_PROVIDER_FILE)
     if channelled != kotlin:
         activity.write_text(channelled, encoding="utf-8")
     return name
@@ -1353,7 +1420,7 @@ def main() -> int:
     print(f"Brand applied to {RES}; launcher label {name!r}; microphone, "
           "internet, notifications and their receivers, speech recogniser, text-to-speech settings, on-device listener runtime, https and upi links and "
           "mail apps declared; ota_update set up; MainActivity's channel and "
-          "ShareFileProvider written.")
+          "ShareFileProvider written; home-screen widget added.")
     return 0
 
 

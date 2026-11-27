@@ -99,6 +99,10 @@ class ApplyTest(unittest.TestCase):
         self.root = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, self.root)
         shutil.copytree(BRAND, self.root / brand_android.BRAND)
+        shutil.copytree(
+            REPO / brand_android.WIDGET_TEMPLATES,
+            self.root / brand_android.WIDGET_TEMPLATES,
+        )
         arb = self.root / brand_android.ARB
         arb.parent.mkdir(parents=True)
         arb.write_text(json.dumps({"appTitle": "Fluenough"}), encoding="utf-8")
@@ -157,7 +161,9 @@ class ApplyTest(unittest.TestCase):
         for exact in ("SCHEDULE_EXACT_ALARM", "USE_EXACT_ALARM"):
             self.assertNotIn(f"android.permission.{exact}", permissions)
         receivers = {
-            e.get(NAME): e for e in root.findall("application/receiver")
+            e.get(NAME): e
+            for e in root.findall("application/receiver")
+            if e.get(NAME).startswith("com.dexterous.")
         }
         plugin = "com.dexterous.flutterlocalnotifications."
         self.assertEqual(
@@ -175,6 +181,57 @@ class ApplyTest(unittest.TestCase):
         actions = [a.get(NAME) for a in boot.findall("intent-filter/action")]
         self.assertIn("android.intent.action.BOOT_COMPLETED", actions)
         self.assertIn("android.intent.action.MY_PACKAGE_REPLACED", actions)
+
+    def _the_home_screen_widget_is_added_and_survives_a_second_run(self) -> None:
+        # The widget (#108) is native code that android/ cannot keep, so it is
+        # written from tools/android_templates/widget/ on every run.
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        receivers = {e.get(NAME): e for e in root.findall("application/receiver")}
+        provider = receivers[brand_android.WIDGET_PROVIDER_CLASS]
+        actions = [a.get(NAME) for a in provider.findall("intent-filter/action")]
+        self.assertEqual(actions, ["android.appwidget.action.APPWIDGET_UPDATE"])
+        meta = provider.find("meta-data")
+        self.assertEqual(meta.get(NAME), "android.appwidget.provider")
+        self.assertEqual(meta.get(f"{ANDROID}resource"), "@xml/due_widget_info")
+        # The plugin's receiver, so the phone draws it at the day's turn.
+        schedule = receivers[brand_android.WIDGET_SCHEDULE_RECEIVER]
+        self.assertEqual(schedule.get(f"{ANDROID}exported"), "false")
+        self.assertIn(
+            "android.permission.RECEIVE_BOOT_COMPLETED",
+            granted(root),
+            "the receiver restores its alarms after a reboot",
+        )
+        # Once each, however many runs.
+        brand_android.apply(self.root)
+        text = self.manifest.read_text(encoding="utf-8")
+        self.assertEqual(text.count(brand_android.WIDGET_PROVIDER_CLASS), 1)
+        self.assertEqual(text.count(brand_android.WIDGET_SCHEDULE_RECEIVER), 1)
+        # The files the manifest and the provider name are written.
+        res = self.root / brand_android.RES
+        for path in (
+            "layout/due_widget.xml",
+            "xml/due_widget_info.xml",
+            "drawable/due_widget_background.xml",
+            "values/due_widget_strings.xml",
+            "values/due_widget_colors.xml",
+            "values-night/due_widget_colors.xml",
+            "values-v31/due_widget_colors.xml",
+            "values-night-v31/due_widget_colors.xml",
+        ):
+            with self.subTest(path):
+                ET.parse(res / path)
+        kotlin = (self.root / brand_android.WIDGET_PROVIDER_FILE).read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("class DueWidgetProvider : HomeWidgetProvider()", kotlin)
+
+    def _a_missing_widget_template_is_an_error_and_nothing_changes(self) -> None:
+        shutil.rmtree(self.root / brand_android.WIDGET_TEMPLATES / "res")
+        before = self.manifest.read_text(encoding="utf-8")
+        with self.assertRaises(brand_android.BrandError):
+            brand_android.apply(self.root)
+        self.assertEqual(self.manifest.read_text(encoding="utf-8"), before)
 
     def _the_text_to_speech_engine_is_declared(self) -> None:
         # Android 11+ shows the app no TTS engine without the query, so
@@ -499,6 +556,8 @@ class ApplyTest(unittest.TestCase):
         cases = (
             self._the_microphone_and_the_recogniser_are_declared,
             self._the_reminder_can_be_shown_and_survives_a_reboot,
+            self._the_home_screen_widget_is_added_and_survives_a_second_run,
+            self._a_missing_widget_template_is_an_error_and_nothing_changes,
             self._the_text_to_speech_engine_is_declared,
             self._the_internet_and_https_links_are_declared,
             self._the_files_are_lent_through_the_apps_own_provider,

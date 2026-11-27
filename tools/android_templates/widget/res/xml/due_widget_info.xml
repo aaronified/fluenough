@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Written by tools/brand_android.py: the home-screen widget (#108). No
+     periodic update: the app has it drawn after a session, and the phone
+     draws it a minute into each new day (HomeWidget.scheduleWidgetUpdates),
+     so nothing polls. The two cell attributes are read from Android 12. -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/due_widget_description"
+    android:initialLayout="@layout/due_widget"
+    android:minHeight="70dp"
+    android:minWidth="110dp"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellHeight="1"
+    android:targetCellWidth="2"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen" />
