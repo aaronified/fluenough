@@ -88,10 +88,9 @@ Future<AchievementReport> achievementsInIsolate(AchievementJob job) async {
 /// same ones.
 class AchievementsHolder extends ChangeNotifier {
   AchievementsHolder({
-    required AppState state,
-    AchievementRunner runner = achievementsInIsolate,
-  }) : _state = state,
-       _runner = runner;
+    required this._state,
+    this._runner = achievementsInIsolate,
+  });
 
   final AppState _state;
   final AchievementRunner _runner;

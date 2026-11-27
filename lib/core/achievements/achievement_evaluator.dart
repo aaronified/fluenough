@@ -223,8 +223,7 @@ class _Evaluator {
   };
 
   Iterable<DateTime> _wordTimes() => <DateTime>[
-    for (final id in _words)
-      if (history.cardKnownAt(id) case final at?) at,
+    for (final id in _words) ?history.cardKnownAt(id),
   ];
 
   // Skills ------------------------------------------------------------------
@@ -264,7 +263,7 @@ class _Evaluator {
         final mode = _modeOf(skill.kind);
         final times = <DateTime>[
           for (final id in _letters(facts, skill.script))
-            if (history.pairKnownAt(id, mode) case final at?) at,
+            ?history.pairKnownAt(id, mode),
         ];
         return _counted(def, times, kLettersForStart);
       case SkillKind.gesture:
