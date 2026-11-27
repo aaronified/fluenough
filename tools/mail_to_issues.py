@@ -104,6 +104,12 @@ agreed on `main` are applied. A mail with no single good code, or from
 another sender, is labelled and left to the owner. The bot needs PyYAML;
 filing does not.
 
+The issue of a review or questions mail ends with a hidden line naming the
+mail's key (`<!-- fluenough-mail: KEY -->`, the key the bot's branches
+carry). After the proposals, `tools/close_review_issues.py` closes each such
+issue, as completed, once all of its mail's PRs are merged or closed (owner,
+2026-11-26); a mail left to the owner is never closed.
+
 Environment:
     FEEDBACK_GMAIL_ADDRESS, FEEDBACK_GMAIL_APP_PASSWORD  the inbox. Without
         them it does nothing and says so: the inbox is not set up yet.
@@ -133,6 +139,7 @@ from typing import Callable
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from rater_codes import CROCKFORD, check_symbol, rater_code  # noqa: E402,F401
+import close_review_issues  # noqa: E402
 import reviewer_binding  # noqa: E402
 import reviewer_keys  # noqa: E402
 import review_quorum  # noqa: E402
@@ -783,6 +790,15 @@ def make_bot(env: dict[str, str]):
         review_bot.agreements_needed(env))
 
 
+def make_closer(env: dict[str, str]):
+    """What closes the issues of finished review mails, with the workflow's
+    own token, or None without one."""
+    token, repo = env.get("GITHUB_TOKEN", ""), env.get("GITHUB_REPOSITORY", "")
+    if not token or not repo:
+        return None
+    return close_review_issues.RestIssues(repo, token)
+
+
 def key_held(gate: "reviewer_binding.KeyGate | None", files: list[dict],
              code: str, mail: str, count: bool = True) -> bool:
     """Whether the reviewer key in [files] holds the mail for the owner. The
@@ -794,7 +810,8 @@ def key_held(gate: "reviewer_binding.KeyGate | None", files: list[dict],
 
 
 def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot,
-                  gate: "reviewer_binding.KeyGate | None" = None
+                  gate: "reviewer_binding.KeyGate | None" = None,
+                  outcomes: dict[str, dict[str, str]] | None = None
                   ) -> dict[str, int]:
     """Makes the proposals of every review mail filed and not yet proposed,
     each through a PR of its own (ADR-0038). A mail is labelled
@@ -807,7 +824,10 @@ def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot,
     The reviewer key a mail carries (ADR-0058, W7) is checked by [gate], and
     taken out of the files whatever comes of it; a mail held for its key is
     left to the owner. It is not counted again here: its use was counted when
-    it was filed."""
+    it was filed.
+
+    Each mail's outcome is also recorded in [outcomes], by mail key, for
+    [close_review_issues] to close its issue."""
     import review_bot
     counts: dict[str, int] = {}
     _, found = imap.search(
@@ -844,16 +864,21 @@ def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot,
         if outcome in ("merged", "closed", "nothing", "invalid",
                        "left to the owner"):
             imap.store(number, "+X-GM-LABELS", PROPOSED)
+        if outcomes is not None:
+            outcomes.setdefault(mail_key(message), {})["review"] = outcome
         counts[outcome] = counts.get(outcome, 0) + 1
     return counts
 
 
-def answer_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
+def answer_mails(imap: imaplib.IMAP4, raters: Raters, bot,
+                 outcomes: dict[str, dict[str, str]] | None = None
+                 ) -> dict[str, int]:
     """Counts the answers of every daily-questions mail filed and not yet
     counted, each through a PR of its own (#519), as [propose_mails] does for
     reviews: the mail is labelled [ANSWERED] once its PR is merged or closed,
     or there was nothing to count, and a mail from another sender, or with no
-    single good code, is left to the owner."""
+    single good code, is left to the owner. Outcomes go in [outcomes], as
+    [propose_mails] does."""
     import question_answers
     counts: dict[str, int] = {}
     _, found = imap.search(
@@ -887,6 +912,8 @@ def answer_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
         if outcome in ("merged", "closed", "nothing", "invalid",
                        "left to the owner"):
             imap.store(number, "+X-GM-LABELS", ANSWERED)
+        if outcomes is not None:
+            outcomes.setdefault(mail_key(message), {})["questions"] = outcome
         counts[outcome] = counts.get(outcome, 0) + 1
     return counts
 
@@ -894,13 +921,17 @@ def answer_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
 def run(env: dict[str, str],
         connect: Callable[[str], imaplib.IMAP4] = imaplib.IMAP4_SSL,
         file_issue: Callable[[dict], None] | None = None,
-        bot=None) -> int:
+        bot=None, closer=None) -> int:
     """Files every bug report, feedback and review mail not filed yet, and
     leaves support mails as they are. With the review bot, then makes the
     proposals of review mails, and applies the proposals agreed on `main`.
-    Returns how many mails were filed."""
+    Then closes the issue of each review mail whose PRs are all merged or
+    closed ([close_review_issues]), with [closer], made from [env] only when
+    the bot is too. Returns how many mails were filed."""
     if bot is None:
         bot = make_bot(env)
+        if closer is None and bot is not None:
+            closer = make_closer(env)
     if bot is None:
         print("::notice::The review bot's GitHub App is not set up "
               "(FLUENOUGH_BOT_APP_ID, FLUENOUGH_BOT_PRIVATE_KEY): review "
@@ -909,7 +940,8 @@ def run(env: dict[str, str],
     else:
         print(f"Review bot: {bot.threshold} other reviewer(s) must accept a "
               f"proposal.")
-    filed = file_mails(env, connect, file_issue, bot)
+    outcomes: dict[str, dict[str, str]] = {}
+    filed = file_mails(env, connect, file_issue, bot, outcomes)
     if bot is not None:
         try:
             counts = bot.sweep()
@@ -925,6 +957,15 @@ def run(env: dict[str, str],
                   f"{counts['closed']} closed.")
         except Exception as error:  # noqa: BLE001 - logged, next run retries
             print(f"::warning::The flag sweep failed: "
+                  f"{type(error).__name__}: {error}")
+    if closer is not None:
+        try:
+            counts = close_review_issues.close_settled(closer, outcomes)
+            print(f"Review issues: {counts['closed']} closed, "
+                  f"{counts['waiting']} waiting for their PRs, "
+                  f"{counts['owner']} left to the owner.")
+        except Exception as error:  # noqa: BLE001 - logged, next run retries
+            print(f"::warning::Closing the review issues failed: "
                   f"{type(error).__name__}: {error}")
     return filed
 
@@ -974,7 +1015,8 @@ def count_outside_inbox(imap: imaplib.IMAP4) -> dict[str, int]:
 def file_mails(env: dict[str, str],
                connect: Callable[[str], imaplib.IMAP4],
                file_issue: Callable[[dict], None] | None,
-               bot) -> int:
+               bot,
+               outcomes: dict[str, dict[str, str]] | None = None) -> int:
     address = env.get("FEEDBACK_GMAIL_ADDRESS", "")
     password = env.get("FEEDBACK_GMAIL_APP_PASSWORD", "")
     if not address or not password:
@@ -1035,6 +1077,11 @@ def file_mails(env: dict[str, str],
             if issue is None:
                 skipped += 1
                 continue
+            if (issue.get("labels") or [""])[0] in close_review_issues.LABELS:
+                # Ties the issue to its mail, for closing it once the mail's
+                # PRs are done; hidden, and no more than a branch name says.
+                issue = {**issue, "body": issue["body"] + "\n\n"
+                         + close_review_issues.marker(mail_key(message))}
             file_issue(issue)
             imap.store(number, "+X-GM-LABELS", FILED)
             if gate is not None and gate.held(mail_key(message)):
@@ -1057,11 +1104,11 @@ def file_mails(env: dict[str, str],
                   f"as issues are left for the bot, nothing is proposed. "
                   f"Owner steps: {SETUP_PAGE}.")
         if bot is not None:
-            counts = propose_mails(imap, raters, bot, gate)
+            counts = propose_mails(imap, raters, bot, gate, outcomes)
             print("Review mails proposed: " + (", ".join(
                 f"{n} {outcome}" for outcome, n in sorted(counts.items()))
                 or "none waiting") + ".")
-            counts = answer_mails(imap, raters, bot)
+            counts = answer_mails(imap, raters, bot, outcomes)
             print("Question mails counted: " + (", ".join(
                 f"{n} {outcome}" for outcome, n in sorted(counts.items()))
                 or "none waiting") + ".")
