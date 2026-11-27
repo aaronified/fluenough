@@ -2028,7 +2028,8 @@ def _sw_word(w: str) -> str:
 # or closed (`bene` ɛ, `sera` e), whether a z is ts or dz, whether an i or u
 # before a vowel is a glide (`storia`) or a syllable (`farmacìa`), and the
 # voicing of an s between vowels that begins a word's second part
-# (`buonasera`, which the engine writes with z). The engine settles the
+# (`buonasera` is s; _IT_S_VOICELESS lists the few the engine knows, any
+# other such compound is read with z). The engine settles the
 # stress, the openness and the z in four ways, and no more:
 #  1. a written accent is believed, and a *hint* (the text with its words
 #     marked as a dictionary marks them: `tàvolo`, `bène`, `farmacìa`) gives
@@ -2083,11 +2084,22 @@ _IT_MARKS = {
     "scrivere": "scrìvere", "piccolo": "pìccolo", "piccola": "pìccola",
     "macchina": "màcchina", "farmacia": "farmacìa",
     "telefono": "telèfono", "zucchero": "zùcchero",
+    "scena": "scèna", "scene": "scène", "rosa": "ròsa", "rose": "ròse",
+    "zero": "zèro", "gnocchi": "gnòcchi", "gnocco": "gnòcco", "so": "sò",
+    "dopo": "dòpo", "nonno": "nònno", "nonna": "nònna",
+    "destra": "dèstra", "prezzo": "prèzzo", "pezzo": "pèzzo",
+    "america": "amèrica",
 }
+# Words whose s after the first part of the compound is voiceless, by the
+# index of the s (buona-sera, risalire, girasole): every other s between
+# vowels is z.
+_IT_S_VOICELESS = {"buonasera": (5,), "risalire": (2,), "girasole": (4,)}
+# One-syllable words with ui, which the rules would read as a glide.
+_IT_FIXED = {"cui": "kui", "sui": "sui"}
 # z is dz in these (zero, mezzo, pranzo, azzurro, -izzare); every other z
 # is ts. Measured on Wiktionary's entries; the rest of the dz words need
 # a hint-free respelling the engine does not have.
-_IT_DZ = re.compile(r"^zer|^zeb|^zon|^zain|^zanz|mezz|pranz|azzurr|romanz|"
+_IT_DZ = re.compile(r"^zer|^zeb|^zon|^zain|^zanz|^zucch|mezz|pranz|azzurr|romanz|"
                     r"izz(?=ar|az|at|abil|ant|and|er)")
 # A word beginning ri- and a vowel keeps both vowels (riabbellire, riesplorare:
 # 561 of 563 such words of six letters or more in Wiktionary); one that ends
@@ -2095,6 +2107,14 @@ _IT_DZ = re.compile(r"^zer|^zeb|^zon|^zain|^zanz|mezz|pranz|azzurr|romanz|"
 # farmacologia, macelleria). The rare exceptions (riempire, materia) need a
 # hint.
 _IT_HIATUS_END = re.compile(r"(?:logi|grafi|foni|nomi|eri|si|mi)[ae]$")
+
+
+# The articles and prepositions that elide before a vowel, to their IPA when
+# the letters alone cannot give it (l has no vowel); else "".
+_IT_ELIDED = {"l": "l", "un": "", "dell": "", "all": "",
+              "nell": "", "sull": "", "dall": "", "coll": "", "quell": "",
+              "quest": "", "anch": "", "bell": "", "sant": "", "tutt": "",
+              "senz": "", "nient": ""}
 
 
 def italian_ipa(text: str, hint: str | None = None) -> str:
@@ -2147,12 +2167,26 @@ def _it_plain(word: str) -> str:
 
 
 def _it_word(raw: str, hint: str) -> str:
-    # Elision (dov'è, l'acqua) is one word: the stress is the host's.
+    # Elision: an article or preposition before an apostrophe (l'amico,
+    # un'idea, dell'acqua) is read apart, unstressed, and the host word has
+    # its own stress and openness; dov'è, cos'è, c'è are one word.
+    head, apos, host = raw.partition("'") if "'" in raw else \
+        raw.partition("’")
+    if apos and host and head in _IT_ELIDED:
+        h_head, _, h_host = hint.replace("’", "'").partition("'")
+        tail = _it_word(host, h_host if h_head else "")
+        front = _IT_ELIDED[head] if _IT_ELIDED[head] else \
+            _it_word(head, "").replace("ˈ", "")
+        if tail.startswith("ˈ") and front:
+            return front[:-1] + "ˈ" + front[-1] + tail[1:]
+        return front + tail
     word = "".join(c for c in raw if c not in _IT_PUNCT and c not in "'’")
     marked = "".join(c for c in hint if c not in _IT_PUNCT and c not in "'’")
     if not word:
         return ""
     plain = _it_plain(word)
+    if plain in _IT_FIXED and not marked:
+        return _IT_FIXED[plain]
     if not marked and plain in _IT_MARKS and \
             not any(c in _IT_ACCENTS for c in word):
         marked = _IT_MARKS[plain]
@@ -2278,6 +2312,8 @@ def _it_tokens(s: str, acc: dict[int, str],
                 add("s", "C", i)
                 add("s", "C", i)
                 i += 1
+            elif i in _IT_S_VOICELESS.get(s, ()):
+                add("s", "C", i)
             elif nx and nx in "bdglmnrv" or \
                     (after_vowel() and _it_vowel(s, i + 1)):
                 add("z", "C", i)

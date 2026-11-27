@@ -791,8 +791,8 @@ class ItalianTest(unittest.TestCase):
                     ("cinque", "ˈtʃinkwe"), ("che", "ke")))
 
     def test_sounds_long_between_vowels_are_written_long(self):
-        self.check((("gnocchi", "ˈɲokki"), ("famiglia", "faˈmiʎʎa"),
-                    ("scena", "ˈʃena"), ("pesce", "ˈpeʃʃe"),
+        self.check((("gnocchi", "ˈɲɔkki"), ("famiglia", "faˈmiʎʎa"),
+                    ("scena", "ˈʃɛna"), ("pesce", "ˈpeʃʃe"),
                     ("sciare", "ˈʃare"), ("gli amici", "ʎi aˈmitʃi"),
                     ("bagno", "ˈbaɲɲo")))
 
@@ -803,9 +803,9 @@ class ItalianTest(unittest.TestCase):
                     ("ottobre", "otˈtobre")))
 
     def test_s_and_z_voicing(self):
-        self.check((("casa", "ˈkaza"), ("rosa", "ˈroza"),
+        self.check((("casa", "ˈkaza"), ("rosa", "ˈrɔza"),
                     ("scusi", "ˈskuzi"), ("studente", "stuˈdɛnte"),
-                    ("zero", "ˈdzero"), ("pranzo", "ˈprandzo"),
+                    ("zero", "ˈdzɛro"), ("pranzo", "ˈprandzo"),
                     ("organizzare", "orɡanidˈdzare"),
                     ("colazione", "kolatˈtsjone")))
 
@@ -823,7 +823,7 @@ class ItalianTest(unittest.TestCase):
 
     def test_penultimate_stress_is_the_default(self):
         self.check((("parlare", "parˈlare"), ("italiano", "itaˈljano"),
-                    ("buonasera", "bwonaˈzera"),
+                    ("buonasera", "bwonaˈsera"),
                     ("arrivederci", "arriveˈdertʃi")))
 
     def test_endings_that_fix_the_stress(self):
@@ -843,17 +843,17 @@ class ItalianTest(unittest.TestCase):
                     ("sera", "ˈsera")))
 
     def test_a_hint_marks_what_the_letters_do_not(self):
-        self.assertEqual(italian_ipa("ricetta"), "riˈtʃetta")
-        self.assertEqual(italian_ipa("ricetta", "ricètta"), "riˈtʃɛtta")
+        self.assertEqual(italian_ipa("leggo"), "ˈleɡɡo")
+        self.assertEqual(italian_ipa("leggo", "lèggo"), "ˈlɛɡɡo")
         # Marked per word, with the punctuation of the text.
-        self.assertEqual(italian_ipa("Che ricetta!", "che ricètta"),
-                         "ke riˈtʃɛtta")
+        self.assertEqual(italian_ipa("Che leggo!", "che lèggo"),
+                         "ke ˈlɛɡɡo")
 
     def test_a_hint_that_is_not_the_text_is_ignored_and_says_so(self):
-        t = transcribe("ricetta", "it", "cena")
-        self.assertEqual(t.ipa, "riˈtʃetta")
+        t = transcribe("leggo", "it", "cena")
+        self.assertEqual(t.ipa, "ˈleɡɡo")
         self.assertFalse(t.fitted)
-        self.assertTrue(transcribe("ricetta", "it", "ricètta").fitted)
+        self.assertTrue(transcribe("leggo", "it", "lèggo").fitted)
 
     def test_sentences_and_elision(self):
         self.check((("Mi chiamo Marco.", "mi ˈkjamo ˈmarko"),
@@ -874,8 +874,25 @@ class ItalianTest(unittest.TestCase):
                     ("Acqua, per favore.", "ˈakkwa per faˈvore"),
                     ("mi dispiace", "mi disˈpjatʃe"),
                     ("come si chiama?", "ˈkome si ˈkjama"),
-                    ("piacere", "pjaˈtʃere"), ("aiuto!", "aˈjuto"),
-                    ("non lo so", "non lo so")))
+                    ("piacere", "pjaˈtʃere"), ("aiuto!", "aˈjuto")))
+
+    def test_so_is_open_and_cui_is_one_syllable(self):
+        self.check((("non lo so", "non lo sɔ"), ("cui", "kui"),
+                    ("sui", "sui")))
+
+    def test_everyday_words_with_open_vowels_and_dz(self):
+        self.check((("dopo", "ˈdɔpo"), ("nonna", "ˈnɔnna"),
+                    ("destra", "ˈdɛstra"), ("prezzo", "ˈprɛttso"),
+                    ("pezzo", "ˈpɛttso"), ("zucchero", "ˈdzukkero"),
+                    ("gnocco", "ˈɲɔkko"), ("America", "aˈmɛrika")))
+
+    def test_voiceless_s_after_a_compound_part(self):
+        self.check((("girasole", "dʒiraˈsole"), ("risalire", "risaˈlire")))
+
+    def test_elision_reads_the_host_word_with_its_own_stress(self):
+        self.check((("l'amico", "laˈmiko"), ("un'amica", "unaˈmika"),
+                    ("un'idea", "uniˈdɛa"), ("l'acqua", "ˈlakkwa"),
+                    ("dell'acqua", "delˈlakkwa"), ("un'ora", "uˈnora")))
 
     def test_dispatch(self):
         t = transcribe("Grazie mille", "it")
