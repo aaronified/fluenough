@@ -130,6 +130,7 @@ class _Evaluator {
       need: found.need,
       earnedAt: earnedAt,
       earnable: found.earnable,
+      cards: found.cards,
     );
   }
 
@@ -148,7 +149,7 @@ class _Evaluator {
         final mark = facts!.marks[def.level!]!;
         return _allKnown(def, facts.cardIdsUpTo(mark));
       case AchievementKind.wordCount:
-        return _counted(def, _wordTimes(), def.target);
+        return _wordCount(def);
       case AchievementKind.skillStart:
         return _start(def, facts!);
       case AchievementKind.skillMaster:
@@ -171,13 +172,23 @@ class _Evaluator {
   AchievementResult _allKnown(AchievementDef def, Set<String> ids) {
     DateTime? last;
     var have = 0;
+    final rest = <String>[];
     for (final id in ids) {
       final at = history.cardKnownAt(id);
-      if (at == null) continue;
+      if (at == null) {
+        if (rest.length < kShownCards) rest.add(id);
+        continue;
+      }
       have++;
       if (last == null || at.isAfter(last)) last = at;
     }
-    return _result(def, have, ids.length, have == ids.length ? last : null);
+    return _result(
+      def,
+      have,
+      ids.length,
+      have == ids.length ? last : null,
+      cards: rest,
+    );
   }
 
   /// Earned when [times], sorted here, holds [need] moments; dated at the
@@ -196,8 +207,9 @@ class _Evaluator {
     AchievementDef def,
     int have,
     int need,
-    DateTime? earnedAt,
-  ) {
+    DateTime? earnedAt, {
+    List<String> cards = const <String>[],
+  }) {
     // Nothing to know is nothing earned: an empty bar never opens.
     final earned = earnedAt != null && need > 0;
     var status = AchievementStatus.locked;
@@ -212,6 +224,9 @@ class _Evaluator {
       have: have,
       need: need,
       earnedAt: earned ? earnedAt : null,
+      cards: earned && def.kind != AchievementKind.wordCount
+          ? const <String>[]
+          : cards,
     );
   }
 
@@ -222,9 +237,30 @@ class _Evaluator {
         if (card.isWord) card.id,
   };
 
-  Iterable<DateTime> _wordTimes() => <DateTime>[
-    for (final id in _words) ?history.cardKnownAt(id),
-  ];
+  /// Earned when [def]'s target of words are known; dated at the last of
+  /// them, and listing the first few known.
+  AchievementResult _wordCount(AchievementDef def) {
+    final known = <(DateTime, String)>[
+      for (final id in _words)
+        if (history.cardKnownAt(id) case final at?) (at, id),
+    ]..sort(_byTimeThenId);
+    final need = def.target;
+    final at = known.length >= need ? known[need - 1].$1 : null;
+    return _result(
+      def,
+      known.length,
+      need,
+      at,
+      cards: at == null
+          ? const <String>[]
+          : <String>[for (final (_, id) in known.take(kShownWords)) id],
+    );
+  }
+
+  static int _byTimeThenId((DateTime, String) a, (DateTime, String) b) {
+    final order = a.$1.compareTo(b.$1);
+    return order != 0 ? order : a.$2.compareTo(b.$2);
+  }
 
   // Skills ------------------------------------------------------------------
 
@@ -299,6 +335,7 @@ class _Evaluator {
     var need = 0;
     var have = 0;
     DateTime? last;
+    final rest = <String>[];
     for (final deckId in facts.decksUpTo(end ?? 0)) {
       final deck = facts.decks[deckId];
       if (deck == null) continue;
@@ -322,12 +359,15 @@ class _Evaluator {
           }
           if (at == null || when.isAfter(at)) at = when;
         }
-        if (!known) continue;
+        if (!known) {
+          if (rest.length < kShownCards) rest.add(card.id);
+          continue;
+        }
         have++;
         if (last == null || at!.isAfter(last)) last = at;
       }
     }
-    return _result(def, have, need, have == need ? last : null);
+    return _result(def, have, need, have == need ? last : null, cards: rest);
   }
 
   // Other -------------------------------------------------------------------

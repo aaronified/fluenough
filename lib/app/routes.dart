@@ -43,6 +43,7 @@ import '../features/settings/voices_page.dart';
 import '../features/stats/all_tags_page.dart';
 import '../features/stats/over_time_page.dart';
 import '../features/stats/how_you_learn_page.dart';
+import '../features/achievements/achievements_page.dart';
 import '../features/stats/leeches_page.dart';
 import '../features/stats/stats_numbers.dart';
 import '../features/summary/summary_page.dart';
@@ -84,6 +85,10 @@ abstract final class AppRoutes {
   /// Leeches. Argument: a language code, a [String], for that language's
   /// only; none for every language.
   static const String leeches = '/leeches';
+
+  /// The badges of a language and the app (#323). Argument: a language code,
+  /// a [String]; the language the app shows when none.
+  static const String achievements = '/achievements';
 
   /// Every tag with its bar and a Practise button. Argument: the
   /// [StatsRange] counted.
@@ -202,6 +207,7 @@ abstract final class AppRoutes {
       ),
       summary when args is SessionResult => SummaryPage(result: args),
       leeches => LeechesPage(language: args is String ? args : null),
+      achievements => AchievementsPage(language: args is String ? args : null),
       allTags when args is StatsRange => AllTagsPage(range: args),
       progressOverTime => const OverTimePage(),
       howYouLearn => HowYouLearnPage(language: args is String ? args : null),
@@ -436,6 +442,14 @@ abstract final class AppNavigator {
   /// Leeches, in [language] only when given.
   static Future<void> openLeeches(BuildContext context, {String? language}) =>
       Navigator.of(context).pushNamed(AppRoutes.leeches, arguments: language);
+
+  /// The badges, in [language] when given (#323).
+  static Future<void> openAchievements(
+    BuildContext context, {
+    String? language,
+  }) =>
+      Navigator.of(context)
+          .pushNamed(AppRoutes.achievements, arguments: language);
 
   /// The All tags page, counting [range].
   static Future<void> openAllTags(BuildContext context, StatsRange range) =>

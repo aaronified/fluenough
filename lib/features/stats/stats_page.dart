@@ -13,6 +13,7 @@ import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/visible_listenable_builder.dart';
+import '../achievements/recent_badge_line.dart';
 import 'hours_tiles.dart';
 import 'leeches.dart';
 import 'practice_week_card.dart';
@@ -178,6 +179,7 @@ class _StatsBody extends StatelessWidget {
           started: mastery.started,
           allLanguages: language == null,
         ),
+        RecentBadgeEntry(language: language),
         const SizedBox(height: 8),
         PracticeWeekCard(week: mastery.week, quota: kDefaultDailyQuota),
         const SizedBox(height: 16),

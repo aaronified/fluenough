@@ -145,6 +145,9 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _resourcesHidden = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
   Map<String, List<String>> _situationsShown = const <String, List<String>>{};
+  Map<String, Map<String, DateTime>> _achievementsEarned =
+      const <String, Map<String, DateTime>>{};
+  Map<String, Set<String>> _achievementsSeen = const <String, Set<String>>{};
   Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
   Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
   Map<String, Map<int, int>> _placedBy = const <String, Map<int, int>>{};
@@ -847,6 +850,53 @@ class SettingsNotifier extends ChangeNotifier {
         for (final MapEntry(:key, :value) in _situationsShown.entries)
           if (key != language) key: value,
         if (ids != null) language: List<String>.unmodifiable(ids),
+      },
+    );
+    notifyListeners();
+  }
+
+  /// The badges earned in [scope] (a language code, or `*` for the app-wide
+  /// ones) and the date each was first earned (#323). Kept so that an earned
+  /// badge is never lost when a deck grows: the evaluator is given them as
+  /// `earnedBefore`. Only ever added to, never taken away.
+  Map<String, DateTime> achievementsEarnedOf(String scope) =>
+      _achievementsEarned[scope] ?? const <String, DateTime>{};
+
+  /// Adds the badges of [earned] to what [scope] keeps: a new id is added, a
+  /// known one keeps the earlier of the two dates, and none is removed.
+  void rememberAchievements(String scope, Map<String, DateTime> earned) {
+    final kept = achievementsEarnedOf(scope);
+    final next = Map<String, DateTime>.of(kept);
+    for (final MapEntry(:key, :value) in earned.entries) {
+      final at = value.toUtc();
+      final before = next[key];
+      if (before == null || at.isBefore(before)) next[key] = at;
+    }
+    if (mapEquals(next, kept)) return;
+    _achievementsEarned = Map<String, Map<String, DateTime>>.unmodifiable(
+      <String, Map<String, DateTime>>{
+        ..._achievementsEarned,
+        scope: Map<String, DateTime>.unmodifiable(next),
+      },
+    );
+    notifyListeners();
+  }
+
+  /// The badges of [scope] the learner has been shown (#323), or null before
+  /// they were first looked at: the badges already earned then are the past
+  /// reviews' (decision 4), celebrated once and quietly.
+  Set<String>? achievementsSeenOf(String scope) => _achievementsSeen[scope];
+
+  /// Marks [ids] as shown in [scope]. An empty list still marks the scope as
+  /// looked at.
+  void markAchievementsSeen(String scope, Iterable<String> ids) {
+    final kept = _achievementsSeen[scope];
+    final next = <String>{...?kept, ...ids};
+    if (kept != null && setEquals(kept, next)) return;
+    _achievementsSeen = Map<String, Set<String>>.unmodifiable(
+      <String, Set<String>>{
+        ..._achievementsSeen,
+        scope: Set<String>.unmodifiable(next),
       },
     );
     notifyListeners();
@@ -1570,6 +1620,17 @@ class SettingsNotifier extends ChangeNotifier {
         key: value.toList()..sort(),
     }),
     'situations_shown': jsonEncode(_situationsShown),
+    'achievements_earned': jsonEncode(<String, Map<String, String>>{
+      for (final MapEntry(:key, :value) in _achievementsEarned.entries)
+        key: <String, String>{
+          for (final MapEntry(key: id, value: at) in value.entries)
+            id: at.toUtc().toIso8601String(),
+        },
+    }),
+    'achievements_seen': jsonEncode(<String, List<String>>{
+      for (final MapEntry(:key, :value) in _achievementsSeen.entries)
+        key: value.toList()..sort(),
+    }),
     'waiting_open': (_waitingOpen.toList()..sort()).join(','),
     'paused_until': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _pausedUntil.entries)
@@ -2023,6 +2084,30 @@ class SettingsNotifier extends ChangeNotifier {
         ];
         // An empty list is no choice: the card would have no buttons.
         if (ids.isNotEmpty) setSituationsShown(key, ids);
+      }
+    }
+    final achievementScope = RegExp(r'^([a-z]{2,3}|\*)$');
+    final achievementId = RegExp(r'^[a-z0-9-]+$');
+    if (pick('achievements_earned', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!achievementScope.hasMatch(key) || value is! Map) continue;
+        final earned = <String, DateTime>{};
+        for (final MapEntry(key: id, value: text) in value.entries) {
+          if (id is! String || !achievementId.hasMatch(id)) continue;
+          if (text is! String) continue;
+          final at = DateTime.tryParse(text);
+          if (at != null) earned[id] = at;
+        }
+        rememberAchievements(key, earned);
+      }
+    }
+    if (pick('achievements_seen', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!achievementScope.hasMatch(key) || value is! List) continue;
+        markAchievementsSeen(key, <String>[
+          for (final id in value)
+            if (id is String && achievementId.hasMatch(id)) id,
+        ]);
       }
     }
     for (final (name, unsupported) in <(String, bool)>[
