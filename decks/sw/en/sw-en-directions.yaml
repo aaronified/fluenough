@@ -1,0 +1,205 @@
+schema: 1
+id: "sw-en-directions"
+kind: "layer"
+core: "sw-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+description: "Directions: left and right, in front and behind, the four compass points, and the words for path, road, corner, map and street. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-2490":
+    native: "left"
+    notes:
+      "n1": "An adverb of direction. It has no noun class."
+    examples:
+      "Ninaenda kushoto.":
+        native: "I go left."
+        bases:
+          "Ninaenda": "to go (I go)"
+          "kushoto": "left"
+      "Nenda kushoto.":
+        native: "Go left."
+        bases:
+          "Nenda": "to go (go!)"
+          "kushoto": "left"
+  "sw-2491":
+    native: "right"
+    notes:
+      "n1": "An adverb meaning right. It is not the verb kulia, to cry."
+    examples:
+      "Ninaenda kulia.":
+        native: "I go right."
+        bases:
+          "Ninaenda": "to go (I go)"
+          "kulia": "right"
+      "Nenda kulia.":
+        native: "Go right."
+        bases:
+          "Nenda": "to go (go!)"
+          "kulia": "right"
+  "sw-2492":
+    native: "in front"
+    notes:
+      "n1": "An adverb of direction. It has no noun class."
+    examples:
+      "Ninaenda mbele.":
+        native: "I go forward."
+        bases:
+          "Ninaenda": "to go (I go)"
+          "mbele": "in front"
+      "Nenda mbele.":
+        native: "Go forward."
+        bases:
+          "Nenda": "to go (go!)"
+          "mbele": "in front"
+  "sw-2493":
+    native: "behind"
+    notes:
+      "n1": "An adverb of direction. It has no noun class."
+    examples:
+      "Ninaenda nyuma.":
+        native: "I go back."
+        bases:
+          "Ninaenda": "to go (I go)"
+          "nyuma": "behind"
+      "Nenda nyuma.":
+        native: "Go back."
+        bases:
+          "Nenda": "to go (go!)"
+          "nyuma": "behind"
+  "sw-2494":
+    native: "north"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, kaskazini."
+    examples:
+      "Ninaenda kaskazini.":
+        native: "I go north."
+        bases:
+          "Ninaenda": "to go (I go)"
+          "kaskazini": "north"
+      "Nenda kaskazini.":
+        native: "Go north."
+        bases:
+          "Nenda": "to go (go!)"
+          "kaskazini": "north"
+  "sw-2495":
+    native: "south"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, kusini."
+    examples:
+      "Ninaenda kusini.":
+        native: "I go south."
+        bases:
+          "Ninaenda": "to go (I go)"
+          "kusini": "south"
+      "Nenda kusini.":
+        native: "Go south."
+        bases:
+          "Nenda": "to go (go!)"
+          "kusini": "south"
+  "sw-2496":
+    native: "east"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, mashariki. The entry's first sense is dawn; the deck teaches east."
+    examples:
+      "Ninaenda mashariki.":
+        native: "I go east."
+        bases:
+          "Ninaenda": "to go (I go)"
+          "mashariki": "east"
+      "Nenda mashariki.":
+        native: "Go east."
+        bases:
+          "Nenda": "to go (go!)"
+          "mashariki": "east"
+  "sw-2497":
+    native: "west"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, magharibi. The entry's first sense is sunset; the deck teaches west."
+    examples:
+      "Ninaenda magharibi.":
+        native: "I go west."
+        bases:
+          "Ninaenda": "to go (I go)"
+          "magharibi": "west"
+      "Nenda magharibi.":
+        native: "Go west."
+        bases:
+          "Nenda": "to go (go!)"
+          "magharibi": "west"
+  "sw-2498":
+    native: "path"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, njia."
+    examples:
+      "Nina njia.":
+        native: "I have the path."
+        bases:
+          "Nina": "to have (I have)"
+          "njia": "path"
+      "Ninataka njia.":
+        native: "I want the path."
+        bases:
+          "Ninataka": "to want (I want)"
+          "njia": "path"
+  "sw-2499":
+    native: "road"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, barabara."
+    examples:
+      "Nina barabara.":
+        native: "I have the road."
+        bases:
+          "Nina": "to have (I have)"
+          "barabara": "road"
+      "Ninataka barabara.":
+        native: "I want the road."
+        bases:
+          "Ninataka": "to want (I want)"
+          "barabara": "road"
+  "sw-2500":
+    native: "corner"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, kona."
+    examples:
+      "Nina kona.":
+        native: "I have the corner."
+        bases:
+          "Nina": "to have (I have)"
+          "kona": "corner"
+      "Ninataka kona.":
+        native: "I want the corner."
+        bases:
+          "Ninataka": "to want (I want)"
+          "kona": "corner"
+  "sw-2501":
+    native: "map"
+    notes:
+      "n1": "Noun class IX, plural class X: the same word in the singular and the plural, ramani."
+    examples:
+      "Nina ramani.":
+        native: "I have the map."
+        bases:
+          "Nina": "to have (I have)"
+          "ramani": "map"
+      "Ninataka ramani.":
+        native: "I want the map."
+        bases:
+          "Ninataka": "to want (I want)"
+          "ramani": "map"
+  "sw-2502":
+    native: "street or neighbourhood"
+    notes:
+      "n1": "Noun class III, plural class IV: mtaa in the singular, mitaa in the plural."
+    examples:
+      "Nina mtaa.":
+        native: "I have the street or neighbourhood."
+        bases:
+          "Nina": "to have (I have)"
+          "mtaa": "street or neighbourhood"
+      "Ninataka mtaa.":
+        native: "I want the street or neighbourhood."
+        bases:
+          "Ninataka": "to want (I want)"
+          "mtaa": "street or neighbourhood"
