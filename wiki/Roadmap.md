@@ -112,21 +112,15 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-5 approved open issues.
+2 approved open issues.
 
 **Bugs**
 
-- [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
 - [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
 
 **Enhancements**
 
 - [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
-
-**Other**
-
-- [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
-- [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
 
 ### 1 · Skill model + FSRS
 
@@ -205,7 +199,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#110](https://github.com/aaronified/fluenough/issues/110) Dialogue decks: short role-plays, one side each
 - [#214](https://github.com/aaronified/fluenough/issues/214) Plan: a Research and standards page, with the sources
 - [#215](https://github.com/aaronified/fluenough/issues/215) Plan: books, films and songs you bring, with questions on them
-- [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
 - [#218](https://github.com/aaronified/fluenough/issues/218) Plan: Fluenough on the web, installable
 - [#219](https://github.com/aaronified/fluenough/issues/219) Plan: conversation practice with an AI, within what you know
 - [#220](https://github.com/aaronified/fluenough/issues/220) Plan: read your own text, and make cards from it
@@ -409,7 +402,7 @@ A plan with no tracking issue is flagged.
 - [a deck that teaches ISO 15919, in each language](https://github.com/aaronified/fluenough/wiki/Plan-Iso-15919-Deck), **no tracking issue**
 - [Japanese B1 word lists](https://github.com/aaronified/fluenough/wiki/Plan-Japanese-B1-Wordlists) (Written 2026-11-06 (Sonnet, for the owner)), **no tracking issue**
 - [language completeness, everything the app plans for a language, in full](https://github.com/aaronified/fluenough/wiki/Plan-Language-Completeness), **no tracking issue**
-- [language paths, pacing by difficulty, and every language in the scheme](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths) (Written 2026-10-05), tracks #216
+- [language paths, pacing by difficulty, and every language in the scheme](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths) (Written 2026-10-05), **no tracking issue**
 - [Language Learning Paths (English Base, 30 min/day)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths-Scheme), **no tracking issue**
 - [a look for each language (colour, icon, background image)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Themes) (Written 2026-10-10; owner's answers recorded 2026-10-11), **no tracking issue**
 - [load only the selected language at startup, the others when they are selected, and never on the UI thread](https://github.com/aaronified/fluenough/wiki/Plan-Lazy-Language-Loading) (Written 2026-11-22; status 2026-11-23: P-A to P-C are built and the default is lazy (see the P-C notes), P-D (removal of the whole path) is next), **no tracking issue**
@@ -418,7 +411,7 @@ A plan with no tracking issue is flagged.
 - [offensive words, their level, and warnings on words like them](https://github.com/aaronified/fluenough/wiki/Plan-Offensive-Words) (Written 2026-10-09), tracks #96, #97
 - [placement, script first, then a three-skill check](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V2), **no tracking issue**
 - [placement V3, find my level](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V3), **no tracking issue**
-- [build entire languages as private decks (Your decks)](https://github.com/aaronified/fluenough/wiki/Plan-Private-Languages), tracks #1017
+- [build entire languages as private decks (Your decks)](https://github.com/aaronified/fluenough/wiki/Plan-Private-Languages), **no tracking issue**
 - [profiles, a PIN lock, and parental supervision](https://github.com/aaronified/fluenough/wiki/Plan-Profiles) (Written 2026-10-10), tracks #97, #204
 - [progress screen revamp — mastery across all skills](https://github.com/aaronified/fluenough/wiki/Plan-Progress-Revamp), **no tracking issue**
 - [the question engine, derived from card data](https://github.com/aaronified/fluenough/wiki/Plan-Question-Engine) (Written 2026-10-13), **no tracking issue**
