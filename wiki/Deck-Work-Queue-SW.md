@@ -22,6 +22,7 @@ State was read from `origin/decks-live` (PyYAML over `decks/sw/**` and `sw-path.
 - **Noun classes.** Every noun carries its class pair in a note (m-wa, ki-vi, n-n, m-mi, ji-ma, u-n, pa/ku/mu) and the concord it takes. Grammar units are taught only from sources read to the page; a table row that cannot be checked is left out and queued.
 - **Source discipline.** Every card word is a headword of a read Wiktionary entry (or another named source read on the page). A gloss written from memory is not allowed. A word with no readable source is a shortfall listed in `docs/review-queue/sw.md` for a Swahili speaker.
 - **Stress.** Swahili stress is penultimate and not marked in writing; the broad `ipa` marks it only if the repo's convention for other languages does (decided in SW-110, recorded here).
+- **Stress decision (SW-110, 2026-11-27).** `swahili_ipa` (PR #1750) follows the Spanish and Toki Pona convention: the broad `ipa` marks penultimate stress with ˈ on every word of two or more syllables. A word-initial m or n before a non-prenasalising consonant (mtu, nchi) counts as a syllable but is written as a plain m or n. The 30 existing hand-written cards all differ from the engine, almost only by the missing stress mark; other differences: sw-0007 `ʤ` ligature, sw-0017 dh is `ð`, sw-0021 `sjelewi` is `sieˈlewi`, sw-0022/0023/0029 carry a stray `ː`, sw-0025/0029 `ŋg` is `ŋɡ`, `ɛ` is `e`, `r` is `ɾ`, sw-0027 `tʃo` is `ˈtʃoo`. They are re-derived by the engine in the wave, never edited by hand; the full list is in the PR description.
 
 ## 3. Task table
 
