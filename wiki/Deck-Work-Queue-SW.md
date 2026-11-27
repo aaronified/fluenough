@@ -26,7 +26,7 @@ State was read from `origin/decks-live` (PyYAML over `decks/sw/**` and `sw-path.
 
 ## 3. Task table
 
-Ids (never reused, ascending inside a task): grammar words `sw-0400..0999`, new vocab `sw-1300..2999`, sentences `sw-3000..3999`.
+Ids (never reused, ascending inside a task): grammar `sw-0400..0899` (noun-classes 0400, agreement 0500, verb-slots 0600, present 0700, sound-differences 0800, 100 each), word units `sw-1300..3049` (70 per unit in path order: questions 1300, pronouns 1370, family 1440, numbers-1-20 1510, about-me 1580, everyday-verbs 1650, adverbs 1720, quantities 1790, describing 1860, time 1930, location 2000, more-verbs 2070, work 2140, numbers-big 2210, food 2280, groceries 2350, market 2420, directions 2490, transport 2560, body 2630, places 2700, things 2770, home 2840, clothes 2910, animals 2980), sentences `sw-4000..4999`.
 
 | Id | Model | Branch | Spec |
 |---|---|---|---|
@@ -40,3 +40,5 @@ Ids (never reused, ascending inside a task): grammar words `sw-0400..0999`, new 
 ## 4. Progress
 
 2026-11-27: audit done, this page written.
+
+2026-11-27 (later): SW-110 merged, #1750 (`swahili_ipa` engine; penultimate stress marked, no syllabic-nasal mark). SW-050 and SW-060 (curated lists, 690 words, all 25 themes full; padded: adverbs, numbers-big, quantities; days of the week dropped as proper nouns) done. Shared branch `decks/sw-a1-wave1` created; workers SW-101 to SW-105 (Haiku, word units) and SW-100 (Sonnet, five grammar units) are building and pushing after every commit. Path edits (SW-120) come last, by the architect's task, so that workers never conflict on `sw-path.yaml`.
