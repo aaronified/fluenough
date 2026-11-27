@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Achievements</title>
+<meta name="description" content="Quiet achievements (#223): the Summary line, the Progress badge grid, the badge sheet, bronze, silver and gold level badges and how an earned badge is announced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+</style>
+<style>
+.bgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 6px}
+.bt{background:var(--sLow);border:0;border-radius:16px;padding:12px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;min-width:0}
+.bt .nm{font-size:calc(12px*var(--t));line-height:1.2;font-weight:600;color:var(--onS);overflow-wrap:anywhere}
+.bt .st{font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv)}
+.bd{position:relative;width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex:none}
+.bd svg.i{width:26px;height:26px}
+.bd .lv{font-size:calc(14px*var(--t));font-weight:700;color:#1F1700;letter-spacing:.2px}
+.bd.earned{background:var(--p);color:var(--onP)}
+.bd.prog{background:var(--sc);color:var(--onSc)}
+.bd.prog svg.ring{position:absolute;inset:-3px;width:62px;height:62px}
+.bd.lock{background:none;border:2px dashed var(--ol);color:var(--onSv)}
+.bd.bronze{background:linear-gradient(135deg,#C07C45 0%,#D09562 30%,#EFC9A3 50%,#D09562 70%,#C07C45 100%)}
+.bd.silver{background:linear-gradient(135deg,#AEB3B8 0%,#C4C8CC 30%,#F3F5F7 50%,#C4C8CC 70%,#AEB3B8 100%)}
+.bd.gold{background:linear-gradient(135deg,#D1A02A 0%,#E0B13A 30%,#FFE595 50%,#E0B13A 70%,#D1A02A 100%)}
+.bd.big{width:96px;height:96px;border-radius:30px}
+.bd.big svg.i{width:44px;height:44px}
+.bd.big .lv{font-size:calc(22px*var(--t))}
+.bd.big.prog svg.ring{inset:-4px;width:104px;height:104px}
+.bd.sm{width:40px;height:40px;border-radius:13px}
+.bd.sm svg.i{width:20px;height:20px}
+.bd.sm .lv{font-size:calc(11px*var(--t))}
+.grp{display:flex;align-items:baseline;gap:8px;margin:16px 0 6px}
+.grp .t-lab{margin:0}
+.recent{display:flex;align-items:center;gap:12px;background:var(--sLow);border-radius:16px;padding:12px 8px 12px 14px;width:100%;border:0;text-align:left;margin:0 0 12px}
+.recent .tx{flex:1;min-width:0}
+.recent .tx b{display:block;font-size:calc(14px*var(--t));font-weight:600;line-height:1.3}
+.lvtile{border-radius:16px;padding:14px 16px;margin:0 0 12px;color:#1F1700;background:linear-gradient(135deg,#C07C45 0%,#D09562 30%,#EFC9A3 50%,#D09562 70%,#C07C45 100%)}
+.lvtile .a{font-size:calc(12px*var(--t));font-weight:600}
+.lvtile .b{font-size:calc(20px*var(--t));font-weight:700;line-height:1.2}
+.bar{height:8px;border-radius:4px;background:var(--olv);overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:var(--p)}
+.medals{display:flex;justify-content:space-between;gap:8px;margin:8px 0 4px}
+.medals div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.medals .nm{font-size:calc(12px*var(--t));font-weight:600;line-height:1.2}
+.medals .st{font-size:calc(11px*var(--t));color:var(--onSv);line-height:1.2}
+.sumrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 12px;text-align:center}
+.sumrow div{background:var(--sLow);border-radius:14px;padding:10px 4px}
+.sumrow b{display:block;font-size:calc(20px*var(--t));line-height:1.2;font-weight:600}
+.sumrow span{font-size:calc(11px*var(--t));color:var(--onSv)}
+.earn{display:flex;gap:12px;align-items:center;background:var(--sc);color:var(--onSc);border-radius:20px;padding:14px;margin:0 0 12px;animation:fade .2s ease-out}
+.earn .tx{flex:1;min-width:0}
+.earn .k{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase;margin:0}
+.earn .n{font-size:calc(16px*var(--t));font-weight:600;line-height:1.25;margin:0}
+.earn .d{font-size:calc(13px*var(--t));line-height:1.3;margin:2px 0 0}
+.mo-1 .earn{animation:none}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.row3{display:flex;gap:4px;flex-wrap:wrap}
+.backdrop{padding:16px;opacity:.55}
+.ph.short{height:640px}
+.ph.tall{height:1760px}
+.ph.mid{height:600px}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Achievements</h1>
+<p class="cap1">The quiet achievements of #223 (children #322, #323, #324): the Summary line, the Progress grid with earned, in progress and locked badges, the badge sheet, bronze, silver and gold level badges, and how an earned one is announced. Phone 360 dp at 1.4x text, light and dark, Hindustani and Bengali. Self-checks, the five open decisions and my recommended defaults are in achievements.md. Everything here is new except the Level tile.</p>
+<div class="sticky tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Text size <span class="seg" data-k="ts"><button data-v="1.4">1.4x (app cap)</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Badge states <span class="seg" data-k="bs"><button data-v="mix">Mixed</button><button data-v="fresh">Just started</button><button data-v="most">Nearly all</button></span></div>
+ <div class="tg">Level rule <span class="seg" data-k="lr"><button data-v="rem">Remembered</button><button data-v="tau">Taught</button></span></div>
+ <div class="tg">Past reviews <span class="seg" data-k="pr"><button data-v="q">Quiet</button><button data-v="c">Celebrated</button></span></div>
+ <div class="tg">Highlight new <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+ <div class="tg">Motion <span class="seg" data-k="mo"><button data-v="0">Fades in</button><button data-v="1">Reduced</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff"}};
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',ts:'1.4',course:'hi',bs:'mix',lr:'rem',pr:'q',hl:'1',mo:'0'};
+const IC={
+star:'M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z',
+book:'M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z',
+fire:'M19.48 12.35c-1.57-4.08-7.16-4.3-5.81-10.23.1-.44-.37-.78-.75-.55C9.29 3.71 6.68 8 8.87 13.62c.18.46-.36.89-.75.59-1.81-1.37-2-3.34-1.84-4.75.06-.52-.62-.77-.91-.34C4.69 10.16 4 11.84 4 14.37c.38 5.6 5.11 7.32 6.81 7.54 2.43.31 5.06-.14 6.95-1.87 2.08-1.93 2.84-5.01 1.72-7.69z',
+head:'M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z',
+mic:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+check:'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+all:'M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z',
+lock:'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM15.1 8H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z',
+chev:'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+cap:'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z'};
+const svg=(k)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
+const B=[
+ {id:'A1',g:'lv',s:'l',nm:'A1',lv:1,m:'bronze',how:'Know every card on the path up to the A1 mark.'},
+ {id:'A2',g:'lv',s:'l',nm:'A2',lv:1,m:'silver',how:'Know every card on the path up to the A2 mark.'},
+ {id:'B1',g:'lv',s:'l',nm:'B1',lv:1,m:'gold',how:'Know every card on the path up to the B1 mark.'},
+ {id:'w100',g:'w',s:'l',nm:'100 words',ic:'book',n:100,how:'Know 100 words in this language.'},
+ {id:'w500',g:'w',s:'l',nm:'500 words',ic:'book',n:500,how:'Know 500 words in this language.'},
+ {id:'w1000',g:'w',s:'l',nm:'1,000 words',ic:'book',n:1000,how:'Know 1,000 words in this language.'},
+ {id:'w2500',g:'w',s:'l',nm:'2,500 words',ic:'book',n:2500,how:'Know 2,500 words in this language.'},
+ {id:'lesson',g:'f',s:'l',nm:'First lesson',ic:'check',how:'Finish a lesson.'},
+ {id:'deck',g:'f',s:'l',nm:'First deck',ic:'all',how:'Finish every card of one deck.'},
+ {id:'script',g:'f',s:'l',nm:'Script',ic:'cap',how:'Finish the script units of the path.'},
+ {id:'passage',g:'f',s:'l',nm:'First passage',ic:'head',how:'Hear a whole passage.'},
+ {id:'spoken',g:'f',s:'l',nm:'First spoken',ic:'mic',how:'Say an answer aloud and have it heard.'},
+ {id:'d3',g:'s',s:'a',nm:'3 days',ic:'fire',n:3,how:'Review on 3 days in a row.'},
+ {id:'d7',g:'s',s:'a',nm:'7 days',ic:'fire',n:7,how:'Review on 7 days in a row.'},
+ {id:'d30',g:'s',s:'a',nm:'30 days',ic:'fire',n:30,how:'Review on 30 days in a row.'},
+ {id:'d100',g:'s',s:'a',nm:'100 days',ic:'fire',n:100,how:'Review on 100 days in a row.'},
+ {id:'d365',g:'s',s:'a',nm:'365 days',ic:'fire',n:365,how:'Review on 365 days in a row.'},
+ {id:'r1k',g:'r',s:'a',nm:'1,000 answers',ic:'star',n:1000,how:'Give 1,000 answers in all.'},
+ {id:'r10k',g:'r',s:'a',nm:'10,000 answers',ic:'star',n:10000,how:'Give 10,000 answers in all.'}];
+const GN={lv:'Levels',w:'Words',f:'Firsts',s:'In a row',r:'Answers'};
+/* [status, have, date]: e earned, p in progress, l locked. Only the next badge of a chain shows progress. */
+function st(id){
+ const bn=S.course=='bn';
+ const M={A1:bn?['p',38]:['e',0,'4 Nov'],A2:bn?['l']:['p',41],B1:['l'],w100:['e',0,bn?'21 Oct':'14 Oct'],w500:['p',bn?148:312],w1000:['l'],w2500:['l'],
+  lesson:['e',0,'2 Oct'],deck:['e',0,'19 Oct'],script:bn?['p',.7]:['e',0,'9 Oct'],passage:['e',0,'30 Oct'],spoken:['l'],
+  d3:['e',0,'6 Oct'],d7:['p',5],d30:['l'],d100:['l'],d365:['l'],r1k:['p',640],r10k:['l']};
+ const N={A1:['p',3],A2:['l'],B1:['l'],w100:['p',17],w500:['l'],w1000:['l'],w2500:['l'],lesson:['e',0,'Today'],deck:['p',.4],script:['p',.2],passage:['l'],spoken:['l'],d3:['p',1],d7:['l'],d30:['l'],d100:['l'],d365:['l'],r1k:['p',24],r10k:['l']};
+ const A={A1:['e',0,'4 Nov'],A2:['e',0,'18 Nov'],B1:['p',51],w100:['e',0,'14 Oct'],w500:['e',0,'2 Nov'],w1000:['e',0,'20 Nov'],w2500:['p',1480],lesson:['e',0,'2 Oct'],deck:['e',0,'19 Oct'],script:['e',0,'9 Oct'],passage:['e',0,'30 Oct'],spoken:['e',0,'11 Nov'],d3:['e',0,'6 Oct'],d7:['e',0,'10 Oct'],d30:['e',0,'5 Nov'],d100:['p',61],d365:['l'],r1k:['e',0,'12 Nov'],r10k:['p',4210]};
+ return ({mix:M,fresh:N,most:A})[S.bs][id];
+}
+function ringSvg(f){const r=28,c=2*Math.PI*r;return `<svg class="ring" viewBox="0 0 62 62" aria-hidden="true"><circle cx="31" cy="31" r="${r}" fill="none" stroke="var(--olv)" stroke-width="3"/><circle cx="31" cy="31" r="${r}" fill="none" stroke="var(--p)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="${(c*f).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 31 31)"/></svg>`}
+function frac(b,s){ if(s[0]!='p')return 0; const h=s[1]; if(b.n)return Math.min(.97,Math.max(.03,h/b.n)); if(b.g=='lv')return Math.min(.97,Math.max(.03,h/62)); return Math.min(.97,Math.max(.03,h));}
+function badge(b,s,cls=''){
+ const inner=b.lv?`<span class="lv">${b.nm}</span>`:svg(b.ic);
+ if(s[0]=='e')return `<span class="bd ${b.lv?b.m:'earned'} ${cls}">${inner}</span>`;
+ if(s[0]=='p')return `<span class="bd prog ${cls}">${ringSvg(frac(b,s))}${b.lv?`<span class="lv" style="color:var(--onSc)">${b.nm}</span>`:svg(b.ic)}</span>`;
+ return `<span class="bd lock ${cls}">${b.lv?`<span class="lv" style="color:var(--onSv)">${b.nm}</span>`:svg('lock')}</span>`;
+}
+function status(b,s){
+ if(s[0]=='e')return s[2];
+ if(s[0]=='l')return 'Locked';
+ if(b.n)return `${s[1].toLocaleString('en')} of ${b.n.toLocaleString('en')}`;
+ return Math.round(frac(b,s)*100)+'%';
+}
+const CT=()=>({hi:{name:'Hindustani',sc:'हिन्दुस्तानी',w:'नमस्ते · किराया · सीधे',k:'किराया'},bn:{name:'Bengali',sc:'বাংলা',w:'নমস্কার · ভাড়া · সোজা',k:'ভাড়া'}})[S.course];
+function aria(b,s){return `${b.nm}${b.s=='l'?', '+CT().name:''}: ${s[0]=='e'?'earned '+s[2]:s[0]=='p'?'in progress, '+status(b,s):'locked. '+b.how}`}
+function tile(b){const s=st(b.id);return `<button class="bt" aria-label="${aria(b,s)}">${badge(b,s)}<span class="nm">${b.nm}</span><span class="st">${status(b,s)}</span></button>`}
+function group(g){return `<div class="grp"><p class="t-lab">${GN[g]}</p></div><div class="bgrid">${B.filter(b=>b.g==g).map(tile).join('')}</div>`}
+function navHtml(on){return `<div class="nav">${['Today','Decks','Progress','More'].map(x=>`<div class="${x==on?'on':''}"><span class="pl"></span>${x}</div>`).join('')}</div>`}
+const ph=(t,body,o={})=>`<div class="fcol"><div class="fcap">${t}</div><div class="ph ${o.cls||''}"><div class="appbar"><span class="ttl">${o.bar||t.split(' · ')[0]}</span></div>${o.raw?body:`<div class="scroll">${body}</div>`}${o.nav?navHtml(o.nav):''}</div></div>`;
+function sheetOver(inner){return `<div class="backdrop"><p class="t-h">Progress</p><p class="t-sm">Badges</p></div><div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll">${inner}</div></div>`}
+const chip=()=>`<span class="chip">${CT().name} · <span class="script">${CT().sc}</span></span>`;
+function detail(kind){
+ const c=CT();
+ if(kind=='e'){const b=B.find(x=>x.id=='w100');return `<div style="text-align:center">${badge(b,['e',0,'x'],'big')}</div><h3 style="text-align:center;margin-top:12px">100 words</h3><p class="t-sm" style="text-align:center">${chip()}</p><p class="t-body" style="margin-top:14px">Earned 14 Oct 2026, the day you first knew 100 ${c.name} words.</p><p class="t-sm" style="margin-top:6px">Know 100 words in this language.</p><p class="t-lab">A few of your words</p><p class="t-body script" style="font-size:calc(20px*var(--t))">${c.w}</p><button class="btn text" style="margin-top:8px">Close</button>`}
+ if(kind=='p'){const b=B.find(x=>x.id=='w500');const h=S.course=='bn'?148:312;return `<div style="text-align:center">${badge(b,['p',h],'big')}</div><h3 style="text-align:center;margin-top:12px">500 words</h3><p class="t-sm" style="text-align:center">${chip()}</p><p class="t-body" style="margin-top:14px">${h} of 500 words known.</p><div class="bar"><i style="width:${h/5}%"></i></div><p class="t-sm">Know 500 words in this language. It fills as you review, and waits if you take a break.</p><button class="btn text" style="margin-top:8px">Close</button>`}
+ const b=B.find(x=>x.id=='B1');return `<div style="text-align:center">${badge(b,['l'],'big')}</div><h3 style="text-align:center;margin-top:12px">B1</h3><p class="t-sm" style="text-align:center">${chip()}</p><p class="t-body" style="margin-top:14px">Locked. Know every card on the path up to the B1 mark.</p><p class="t-sm" style="margin-top:6px">A2 comes first.</p><button class="btn text" style="margin-top:8px">Close</button>`}
+function levelsSheet(){
+ const c=CT(),bn=S.course=='bn';
+ const rows=['A1','A2','B1'].map(id=>{const b=B.find(x=>x.id==id),s=st(id);return `<div>${badge(b,s)}<span class="nm">${id}</span><span class="st">${status(b,s)}</span></div>`}).join('');
+ const nx=bn?['A1',38,62]:['A2',41,62];
+ const rem=S.lr=='rem';
+ return `<h3>${c.name} levels</h3><p class="t-sm">${chip()} Level badges follow the marks on the path.</p><div class="medals">${rows}</div><p class="t-lab">Next: ${nx[0]}</p><div class="bar"><i style="width:${(rem?nx[1]:nx[1]+14)/nx[2]*100}%"></i></div><p class="t-body">${rem?nx[1]:nx[1]+14} of ${nx[2]} cards up to the ${nx[0]} mark are ${rem?'known':'taught'}.</p><p class="t-sm" style="margin-top:6px">${rem?'A card counts once you know it, so a level can wait while words are still settling.':'A card counts once a lesson has taught it, so a level can come before the words have settled.'}</p><button class="btn text" style="margin-top:8px">Close</button>`;
+}
+function earnCard(b,s,line){return `<div class="earn chg">${badge(b,s)}<div class="tx"><p class="k">New badge</p><p class="n">${b.nm}${b.s=='l'?' · '+CT().name:''}</p><p class="d">${line}</p></div></div>`}
+function summary(n){
+ const c=CT(),w=B.find(x=>x.id=='w100'),l=B.find(x=>x.id=='d7');
+ let h=`<p class="t-h" style="margin:8px 0 2px">Session done</p><p class="t-sm"><span class="script">${c.k}</span> and 11 more cards</p><div class="sumrow"><div><b>12</b><span>cards</span></div><div><b>9</b><span>right</span></div><div><b>6 min</b><span>time</span></div></div><p class="t-body" style="margin:0 0 12px">4 days in a row</p>`;
+ h+=earnCard(w,['e',0,'x'],'You now know 100 words.');
+ if(n==2)h+=earnCard(l,['e',0,'x'],'You reviewed on 7 days in a row.')+`<button class="btn text chg" style="margin:-4px 0 8px">and 2 more · See all</button>`;
+ return h+`<button class="btn fill full">Done</button><button class="btn text full" style="margin-top:4px">See on Progress</button>`;
+}
+function catchup(){
+ const row=['A1','w100','lesson','deck','d3','script'].map(id=>badge(B.find(x=>x.id==id),['e',0,'x'],'sm')).join('');
+ if(S.pr=='q')return `<div class="card chg" style="flex-direction:column;align-items:flex-start;gap:8px"><div class="row3">${row}</div><p class="t-body">We found 6 achievements in your past reviews. Each is dated when you first met it.</p><button class="btn tonal sm">See them</button></div>`;
+ return `<div class="earn chg" style="flex-direction:column;align-items:flex-start;gap:10px;padding:18px"><p class="n" style="font-size:calc(20px*var(--t))">6 achievements already yours</p><div class="row3">${row}</div><p class="d">Your past reviews earned these. Look through them when you like.</p><button class="btn fill full">Look through them</button></div>`;
+}
+function build(){
+ const c=CT(),p=PAL[S.theme],root=document.getElementById('root');
+ root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.className=(S.hl=='1'?'hl-on ':'')+(S.mo=='1'?'mo-1':'');
+ document.documentElement.dataset.theme=S.theme;
+ const top=`<p class="t-h" style="margin:2px 0 8px">Level</p><div class="lvtile"><div class="a">${c.name}</div><div class="b">${S.course=='bn'?'A1 in progress':'A1 · since 4 Nov'}</div></div><button class="recent chg"><span class="bd earned sm">${svg('book')}</span><span class="tx"><b>100 words</b><span class="t-sm">${c.name} · 14 Oct</span></span><span class="ib" style="width:40px">${svg('chev')}</span></button><p class="t-lab">Mastery by skill</p><div class="card"><div class="tx"><p class="t-sm">The star and the rest of Progress stay as they are.</p></div></div>`;
+ const grid=`<div class="lbar" style="padding:0 0 8px"><span class="pill on">${c.name}</span><span class="pill">${S.course=='hi'?'Bengali':'Hindustani'}</span></div><p class="t-h" style="margin-top:4px">Badges</p><p class="t-sm"><span class="script">${c.sc}</span> badges for this language, then the ones for every language.</p><div class="chg" style="border-radius:16px;padding:0 0 4px">${['lv','w','f'].map(group).join('')}<p class="t-lab" style="margin-top:20px">For every language</p>${['s','r'].map(group).join('')}</div><div class="card" style="margin-top:12px"><div class="tx"><p class="t-sm"><b>Filled</b>: earned, with its date. <b>Ring</b>: in progress, with a count. <b>Dashed</b>: locked; tap to see how.</p></div></div>`;
+ root.innerHTML=`
+<section class="opt"><h2>1 · Summary entry</h2><p class="cap1">A quiet line on Progress with the latest badge, under the Level tile (the one existing element). It opens the grid and shows only the most recent badge, and nothing at all before the first.</p><div class="frames">${ph('Progress · top',top,{nav:'Progress'})}</div></section>
+<section class="opt"><h2>2 · Progress grid of badges</h2><p class="cap1">Three states, never colour alone: earned is filled with its date, in progress has a ring and a count, locked is dashed with a lock. The Badge states control switches the data.</p><div class="frames">${ph('Progress · badges',grid,{cls:'tall',nav:'Progress'})}</div></section>
+<section class="opt"><h2>3 · Badge sheet</h2><p class="cap1">One sheet for all three states. The how-to is here, not in the grid, so the grid stays three even columns at 1.4x. Example words in ${c.sc}.</p><div class="frames">${ph('Sheet · earned',sheetOver(detail('e')),{cls:'mid',raw:true,bar:'Progress'})}${ph('Sheet · in progress',sheetOver(detail('p')),{cls:'mid',raw:true,bar:'Progress'})}${ph('Sheet · locked',sheetOver(detail('l')),{cls:'mid',raw:true,bar:'Progress'})}</div></section>
+<section class="opt"><h2>4 · Level badges from the B1 marks</h2><p class="cap1">A1 bronze, A2 silver, B1 gold, in the metals of the Level tile (level_badge.dart, #678), the same in both themes, with the dark text that clears 4.5:1 on every stop. Opens from the Levels row of the grid. The Level rule control changes the sentence under the bar (decision 1).</p><div class="frames">${ph('Sheet · levels',sheetOver(levelsSheet()),{cls:'mid',raw:true,bar:'Progress'})}</div></section>
+<section class="opt"><h2>5 · How an earned badge is announced</h2><p class="cap1">Once, at the end of the session that earned it, on the session summary under its numbers: a tonal card that fades in over 0.2 s (nothing moves under reduced motion). No confetti, no sound, no vibration, no pop-up over a lesson, no reminder or notification, and nothing is ever shown about a streak that was lost. More than two earned at once: two cards and a text button. The Past reviews control switches the third frame.</p><div class="frames">${ph('Summary · one earned',summary(1),{cls:'short',bar:'Summary'})}${ph('Summary · several earned',summary(2),{cls:'short',bar:'Summary'})}${ph('First launch · '+(S.pr=='q'?'quiet':'celebrated'),`${catchup()}`,{cls:'short',bar:'Achievements'})}</div></section>`;
+ document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
+}
+document.querySelectorAll('.seg').forEach(s=>s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;build()}));
+build();
+</script>
+</body>
+</html>
