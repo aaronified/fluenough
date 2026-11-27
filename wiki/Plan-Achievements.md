@@ -103,8 +103,7 @@ reaches. That target is set in aaronified/fluenough#187.
 
 ## The engine (#322)
 
-Built before the screens (owner order, 2026-11-27, after the mockup
-`docs/mockups/achievements.md` was approved). It lives in `lib/core/achievements/`
+Built before the screens (owner order, 2026-11-27, after the achievements mockup was approved; the mockup is removed once built, and its decisions are recorded in [Plan-Achievements-Pacing](Plan-Achievements-Pacing)). It lives in `lib/core/achievements/`
 and draws nothing:
 
 - **Catalogue** (`achievement_catalogue.dart`): the badges of a language as

@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Written 2026-11-27. Extends [Plan-Achievements](Plan-Achievements). The owner approved the looks and the pacing of the achievements mockup on 2026-11-27 and ordered: "save the details and the plots to the wiki". This page is that record. The mockup is `docs/mockups/achievements.html` with its notes in `docs/mockups/achievements.md` (PR #1743, branch `mockup/achievements`, revision 3, commit `30a2ba370`). The plots are planning illustrations drawn from the same unit numbers; they were first published as the artifact [Achievements pacing](https://claude.ai/artifact/5yz6tyGs9d1ehbPTqJhP1w) (an interactive page, private to the owner).
+Written 2026-11-27. Extends [Plan-Achievements](Plan-Achievements). The owner approved the looks and the pacing of the achievements mockup on 2026-11-27 and ordered: "save the details and the plots to the wiki". This page is that record. The achievements mockup (PR #1743, branch `mockup/achievements`, revision 3, commit `30a2ba370`) is removed now that the feature is built; its decisions are recorded on this page. The plots are planning illustrations drawn from the same unit numbers; they were first published as the artifact [Achievements pacing](https://claude.ai/artifact/5yz6tyGs9d1ehbPTqJhP1w) (an interactive page, private to the owner).
 
 Status: the engine (#322) is in progress; the screens (#323, #324) come next, per the 2026-11-27 approval. Parent issue #223.
 

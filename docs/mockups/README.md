@@ -6,8 +6,6 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
-- `achievements.html` (`achievements.md`): quiet achievements (#223; #322, #323, #324): the Summary line, the Progress badge grid, the badge sheet, bronze, silver and gold level badges and how an earned badge is announced. Five decisions with recommended defaults are in `achievements.md`.
-
 - `today-chain.html`: the Today chain's screens still to build (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
   screen."): situation cheatsheets and their inspect view (#724, built in 0.7.0, so no longer awaiting), the decks
