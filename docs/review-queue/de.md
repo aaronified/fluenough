@@ -70,7 +70,6 @@ Facets a deck builder doubts, for a German reviewer. See [README](README.md). Ro
 | de-1650 | about-me | meaning | dump gloss is cut off; card teaches to be called and das heißt | DE-100 | 2026-11-28 |
 | de-1650 | about-me | example | Das heisst nicht gut is composed; check the sense reads naturally | DE-100 | 2026-11-28 |
 | de-1660 | about-me | meaning | dump gloss points to usage notes; check the sense taught is number | DE-100 | 2026-11-28 |
-| de-1665 | about-me | meaning | dump sense is regional; check the standard sense taught | DE-100 | 2026-11-28 |
 | de-1669 | about-me | example | Wo ist das Geschlecht is a stiff composed sentence | DE-100 | 2026-11-28 |
 | de-1726 | everyday-verbs | meaning | dump first sense is to go at speed; card teaches to drive | DE-100 | 2026-11-28 |
 | de-1751 | everyday-verbs | note | antworten is not separable; the candidate list said an-; claim left out | DE-100 | 2026-11-28 |
