@@ -825,6 +825,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return _german(text, hint)
     if lang == "ru":
         return _russian(text, hint)
+    if lang == "el":
+        return _greek(text, hint)
     if lang == "ja":
         return japanese(text)
     if lang == "ko":
@@ -3547,6 +3549,278 @@ def _ru_word(letters: str, stress: int | None, clitic: bool
                 break
         atoms.insert(pos, ("M", "ˈ"))
     return "".join(a[1] for a in atoms), guessed
+
+
+# --- Modern Greek ------------------------------------------------------------
+
+# Standard Modern Greek (monotonic spelling), broad, as the decks write it: ˈ
+# before the stressed syllable of a word of two syllables or more (none on a
+# word of one), ɾ for ρ, ɡ for γκ, ð θ for δ θ, ɣ for γ, ʝ for γ before a
+# front vowel (the front vowels are ε η ι υ and the digraphs αι ει οι υι),
+# x for χ, ps and ks for ψ and ξ. Vowels: α a, ε e, η ι υ i, ο ω o; digraphs
+# αι e, ει οι υι i, ου u; αυ and ευ are av ev before a vowel or a voiced
+# consonant and af ef elsewhere. A tonos on the first letter of a pair (άι,
+# όυ) or a diaeresis (ϊ ϋ ΐ ΰ) keeps the two vowels apart. An unstressed ι,
+# ει or οι after a consonant (or at the start of a word) and before a vowel is
+# the glide j (μια mja, πιο pjo, ποιος pjos), and a ʝ absorbs it (για ʝa,
+# γεια ʝa). Consonant groups: μπ is b at the start of a word and mb inside
+# it, ντ d and nd, γκ ɡ and ŋɡ, γγ ŋɡ (ŋɣ before ν), γχ ŋx,
+# γξ ŋks, τσ ts, τζ dz; a doubled consonant is single (ελληνικά eliniˈka); σ and ς are z before a voiced consonant (β γ δ ζ λ μ ν ρ, b d ɡ
+# from μπ ντ γκ) and s elsewhere, inside a word only.
+#
+# Choices read off the cards already in decks/el: κ and χ are not
+# palatalised (όχι ˈoxi, not ˈoçi), and the stress mark goes before the
+# longest group of consonants that can begin a syllable (taˈksiði, ˈkrio,
+# staθˈmos, kurazˈmenos).
+#
+# Sources: Wiktionary, "Appendix:Greek pronunciation" and en.wikipedia.org,
+# "Modern Greek phonology" (the vowels and digraphs, the voicing of αυ ευ, the
+# nasal-stop groups, the voicing of σ, ʝ before front vowels); the glide and
+# the onset groups are the engine's own rules, read off the first cards.
+#
+# Stress is the written tonos. A word of one syllable is unstressed and
+# needs none; a word of two or more with no tonos (or with two) is refused
+# with CannotRead, never guessed. Known limits: loan words (μπ ντ in a
+# foreign word are read as native), a word spelt with υ or η before a vowel
+# without a tonos (δυο: refused), the glide is not made after a vowel,
+# elision marks and capitals written without a tonos (refused), ancient and
+# polytonic letters (refused), no assimilation across a word boundary.
+# The reading is the course's own Latin scheme (naí, óchi, ch for χ), which
+# is not computed: the stored reading (the hint) is echoed.
+
+_EL_PUNCT = set(".,?!;:\"“”«»()…-–—·")
+_EL_LETTERS = set("αβγδεζηθικλμνξοπρσςτυφχψω")
+_EL_BASE = {"β": "v", "δ": "ð", "ζ": "z", "θ": "θ", "κ": "k", "λ": "l",
+            "μ": "m", "ν": "n", "ξ": "ks", "π": "p", "ρ": "ɾ", "τ": "t",
+            "φ": "f", "χ": "x", "ψ": "ps"}
+_EL_VOWEL_IPA = {"α": "a", "ε": "e", "η": "i", "ι": "i", "ο": "o", "υ": "i",
+                 "ω": "o"}
+_EL_DIGRAPH = {"αι": "e", "ει": "i", "οι": "i", "υι": "i", "ου": "u"}
+_EL_VOICED_START = set("bdɡvɣʝðzmnlɾŋ")
+_EL_OBSTRUENT = set("pbtdkɡfvθðxɣ")
+_EL_LIQUID = {"ɾ", "l", "j"}
+_EL_STOPS = set("ptkbdɡ")
+_EL_VOWELS = set("aeiou")
+_EL_TONOS = "́"
+_EL_DIAERESIS = "̈"
+
+
+@dataclass
+class _ElUnit:
+    kind: str                   # "C" or "V"
+    ipa: str
+    stressed: bool = False
+    glide: bool = False
+    front: bool = False
+    raw: str = ""               # a pending letter: "γ" or "σ"
+
+
+def _el_check(text: str) -> None:
+    for c in unicodedata.normalize("NFD", text.lower()):
+        if (c.isspace() or c in _EL_PUNCT or c in _EL_LETTERS
+                or c in (_EL_TONOS, _EL_DIAERESIS)):
+            continue
+        raise CannotRead(f"not a Modern Greek letter: {c!r}")
+
+
+def _el_words(text: str) -> list[str]:
+    return "".join(" " if c in _EL_PUNCT else c for c in text).split()
+
+
+def _el_letters(word: str) -> list[list]:
+    """A word as [letter, stressed, diaeresis] lists, from its decomposed
+    form (ά is α and a tonos, ΐ is ι with a diaeresis and a tonos)."""
+    out: list[list] = []
+    for c in unicodedata.normalize("NFD", word):
+        if c == _EL_TONOS:
+            if not out:
+                raise CannotRead(f"a tonos with no letter in {word!r}")
+            out[-1][1] = True
+        elif c == _EL_DIAERESIS:
+            if not out:
+                raise CannotRead(f"a diaeresis with no letter in {word!r}")
+            out[-1][2] = True
+        else:
+            out.append([c, False, False])
+    return out
+
+
+def _el_units(word: str) -> list[_ElUnit]:
+    """The word's sounds, before the context rules (γ, σ, αυ, ευ, glides)."""
+    ls = _el_letters(word)
+    units: list[_ElUnit] = []
+    i, n = 0, len(ls)
+    while i < n:
+        c, st, dia = ls[i]
+        nxt = ls[i + 1] if i + 1 < n else None
+        if c in _EL_VOWEL_IPA:
+            if (nxt and not st and not dia and not nxt[2]
+                    and c + nxt[0] in _EL_DIGRAPH):
+                ipa = _EL_DIGRAPH[c + nxt[0]]
+                units.append(_ElUnit("V", ipa, nxt[1], front=ipa in "ei"))
+                i += 2
+            elif (nxt and not st and not dia and not nxt[2] and c in "αε"
+                    and nxt[0] == "υ"):
+                units.append(_ElUnit("V", _EL_VOWEL_IPA[c], nxt[1],
+                                     front=c == "ε"))
+                units.append(_ElUnit("C", "", raw="υ"))   # v or f, below
+                i += 2
+            else:
+                ipa = _EL_VOWEL_IPA[c]
+                units.append(_ElUnit("V", ipa, st, front=ipa in "ei"))
+                i += 1
+            continue
+        pair = c + nxt[0] if nxt else ""
+        if c == "μ" and pair == "μπ":
+            units.append(_ElUnit("C", "b" if not units else "mb"))
+            i += 2
+        elif pair == "ντ":
+            units.append(_ElUnit("C", "d" if not units else "nd"))
+            i += 2
+        elif pair == "γκ":
+            units.append(_ElUnit("C", "ɡ" if not units else "ŋɡ"))
+            i += 2
+        elif pair == "γγ":
+            units.append(_ElUnit("C", "", raw="γγ"))
+            i += 2
+        elif pair == "γχ":
+            units.append(_ElUnit("C", "ŋx"))
+            i += 2
+        elif pair == "γξ":
+            units.append(_ElUnit("C", "ŋks"))
+            i += 2
+        elif pair == "τσ":
+            units.append(_ElUnit("C", "ts"))
+            i += 2
+        elif pair == "τζ":
+            units.append(_ElUnit("C", "dz"))
+            i += 2
+        elif nxt and nxt[0] == c and (c in _EL_BASE or c == "σ"):
+            i += 1                      # a doubled consonant is single
+        elif c == "γ":
+            units.append(_ElUnit("C", "", raw="γ"))
+            i += 1
+        elif c in "σς":
+            units.append(_ElUnit("C", "", raw="σ"))
+            i += 1
+        else:
+            units.append(_ElUnit("C", _EL_BASE[c]))
+            i += 1
+    return units
+
+
+def _el_glides(units: list[_ElUnit]) -> None:
+    """Mark an unstressed ι, ει or οι (a vowel unit of i) after a consonant
+    or at the start of a word and before a vowel as a glide."""
+    for k, u in enumerate(units):
+        if (u.kind != "V" or u.ipa != "i" or u.stressed
+                or k + 1 >= len(units)):
+            continue
+        if k and units[k - 1].kind != "C":
+            continue
+        if units[k + 1].kind != "V":
+            continue
+        u.glide = True
+        u.ipa = "j"
+
+
+def _el_context(units: list[_ElUnit]) -> None:
+    """Resolve γ, γγ, σ, αυ and ευ from what follows."""
+    n = len(units)
+    for k, u in enumerate(units):
+        nxt = units[k + 1] if k + 1 < n else None
+        if u.raw == "γ":
+            u.ipa = "ʝ" if nxt and nxt.kind == "V" and nxt.front else "ɣ"
+        elif u.raw == "γγ":
+            u.ipa = "ŋɣ" if nxt and nxt.ipa == "n" else "ŋɡ"
+    # Voicing needs the sound after, so a second pass.
+    for k, u in enumerate(units):
+        nxt = units[k + 1] if k + 1 < n else None
+        voiced = nxt is not None and (
+            nxt.kind == "V"
+            or (nxt.raw not in ("σ", "υ") and nxt.ipa[:1] in _EL_VOICED_START))
+        if u.raw == "σ":
+            u.ipa = "z" if (nxt is not None and nxt.kind == "C"
+                            and voiced) else "s"
+        elif u.raw == "υ":
+            u.ipa = "v" if voiced else "f"
+
+
+def _el_legal(cl: list[str]) -> bool:
+    """Whether the sounds can begin a syllable together."""
+    if len(cl) == 1:
+        return True
+    if len(cl) == 2:
+        a, b = cl
+        return ((a in _EL_OBSTRUENT and b in _EL_LIQUID)
+                or (a in ("s", "z") and b in _EL_STOPS)
+                or (a, b) == ("ɣ", "n"))
+    if len(cl) == 3:
+        return cl[0] == "s" and _el_legal(cl[1:])
+    return False
+
+
+def _el_sounds(units: list[_ElUnit]) -> tuple[list[str], int]:
+    """The word's sounds one by one (ts dz ks ps stay whole, mb is m and b),
+    and the index of the stressed vowel's sound (-1 if none)."""
+    sounds: list[str] = []
+    at = -1
+    for k, u in enumerate(units):
+        if u.glide and k and units[k - 1].ipa == "ʝ":
+            continue                    # a ʝ takes the glide in: για ʝa
+        if u.stressed:
+            at = len(sounds)
+        rest = u.ipa
+        while rest:
+            for whole in ("ks", "ps", "ts", "dz"):
+                if rest.startswith(whole):
+                    sounds.append(whole)
+                    rest = rest[2:]
+                    break
+            else:
+                sounds.append(rest[0])
+                rest = rest[1:]
+    return sounds, at
+
+
+def _el_word(word: str) -> str:
+    """The IPA of one word. Raises CannotRead for a word of two syllables or
+    more with no tonos, or with two."""
+    units = _el_units(word)
+    _el_glides(units)
+    _el_context(units)
+    nuclei = [u for u in units if u.kind == "V" and not u.glide]
+    marked = [u for u in nuclei if u.stressed]
+    if len(marked) > 1:
+        raise CannotRead(f"two tonos marks in {word!r}")
+    if not marked and len(nuclei) > 1:
+        raise CannotRead(f"no tonos on {word!r}: mark the stressed vowel")
+    sounds, at = _el_sounds(units)
+    if marked and len(nuclei) > 1:
+        start = at
+        while start > 0 and sounds[start - 1] not in _EL_VOWELS:
+            start -= 1
+        pos = at
+        for b in range(start, at):
+            if _el_legal(sounds[b:at]):
+                pos = b
+                break
+        sounds.insert(0 if start == 0 else pos, "ˈ")
+    return "".join(sounds)
+
+
+def greek_ipa(text: str, hint: str | None = None) -> str:
+    """Modern Greek, broad. The stress is the written tonos, so [hint] is
+    not needed and is not used for the IPA. Raises CannotRead for a letter
+    Greek spelling does not use, and for a word of two syllables or more
+    without exactly one tonos."""
+    text = unicodedata.normalize("NFC", text).lower()
+    _el_check(text)
+    return " ".join(w for w in (_el_word(w) for w in _el_words(text)) if w)
+
+
+def _greek(text: str, hint: str | None) -> Transcription:
+    return Transcription(hint or "", greek_ipa(text, hint), True)
 
 
 # --- Japanese, Korean, Mandarin and Toki Pona (#612) -------------------------

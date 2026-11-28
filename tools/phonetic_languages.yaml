@@ -409,3 +409,16 @@
     # `normalise` list and an `agree` guard.
     name: "Standard Russian; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"el":
+  dump: "Greek"
+  variety:
+    # Rules only, as German and Russian: no Wiktionary form is taken
+    # (untagged: false, no notes, no tags), nothing is imported, and every
+    # Greek card will get its narrow form from decks/el/el-phonetics.yaml
+    # (not yet written), in one convention. The broad `ipa` comes from
+    # `greek_ipa()` in tools/transcribe.py. This entry was not measured
+    # against the kaikki dump: flip `untagged` to true only after such a
+    # measurement, with a `normalise` list and an `agree` guard.
+    name: "Standard Modern Greek; no Wiktionary form is taken (rules only)"
+    untagged: false
