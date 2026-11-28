@@ -1,0 +1,609 @@
+schema: 1
+id: "de-en-numbers-big"
+kind: "layer"
+core: "de-numbers-big"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Big numbers"
+description: "Numbers from thirty to a thousand, and the words for sums, measures and prices: million, euro, percent, kilogram. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "de-2210":
+    native: "thirty"
+    notes:
+      "n1": "dreißig is thirty."
+    examples:
+      "Das ist dreißig.":
+        native: "This is thirty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "dreißig": "thirty"
+      "Das ist nicht dreißig.":
+        native: "This is not thirty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "dreißig": "thirty"
+  "de-2211":
+    native: "forty"
+    notes:
+      "n1": "vierzig is forty."
+    examples:
+      "Das ist vierzig.":
+        native: "This is forty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "vierzig": "forty"
+      "Das ist nicht vierzig.":
+        native: "This is not forty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "vierzig": "forty"
+  "de-2212":
+    native: "fifty"
+    notes:
+      "n1": "fünfzig is fifty."
+    examples:
+      "Das ist fünfzig.":
+        native: "This is fifty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "fünfzig": "fifty"
+      "Das ist nicht fünfzig.":
+        native: "This is not fifty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "fünfzig": "fifty"
+  "de-2213":
+    native: "sixty"
+    notes:
+      "n1": "sechzig is sixty."
+    examples:
+      "Das ist sechzig.":
+        native: "This is sixty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "sechzig": "sixty"
+      "Das ist nicht sechzig.":
+        native: "This is not sixty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "sechzig": "sixty"
+  "de-2214":
+    native: "seventy"
+    notes:
+      "n1": "siebzig is seventy."
+    examples:
+      "Das ist siebzig.":
+        native: "This is seventy."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "siebzig": "seventy"
+      "Das ist nicht siebzig.":
+        native: "This is not seventy."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "siebzig": "seventy"
+  "de-2215":
+    native: "eighty"
+    notes:
+      "n1": "achtzig is eighty."
+    examples:
+      "Das ist achtzig.":
+        native: "This is eighty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "achtzig": "eighty"
+      "Das ist nicht achtzig.":
+        native: "This is not eighty."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "achtzig": "eighty"
+  "de-2216":
+    native: "ninety"
+    notes:
+      "n1": "neunzig is ninety."
+    examples:
+      "Das ist neunzig.":
+        native: "This is ninety."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "neunzig": "ninety"
+      "Das ist nicht neunzig.":
+        native: "This is not ninety."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "neunzig": "ninety"
+  "de-2217":
+    native: "one hundred"
+    notes:
+      "n1": "hundert is one hundred."
+    examples:
+      "Das ist hundert.":
+        native: "This is one hundred."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "hundert": "one hundred"
+      "Das ist nicht hundert.":
+        native: "This is not one hundred."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "hundert": "one hundred"
+  "de-2218":
+    native: "one thousand"
+    notes:
+      "n1": "tausend is one thousand."
+    examples:
+      "Das ist tausend.":
+        native: "This is one thousand."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "tausend": "one thousand"
+      "Das ist nicht tausend.":
+        native: "This is not one thousand."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "nicht": "not"
+          "tausend": "one thousand"
+  "de-2219":
+    native: "million"
+    notes:
+      "n1": "Million is million: die Million. Its plural is Millionen."
+    examples:
+      "Das ist eine Million.":
+        native: "This is a million."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "eine": "a"
+          "Million": "million"
+      "Ich habe eine Million.":
+        native: "I have a million."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Million": "million"
+    forms: { "pl": "plural" }
+  "de-2220":
+    native: "billion"
+    notes:
+      "n1": "Milliarde is billion: die Milliarde. Its plural is Milliarden."
+    examples:
+      "Das ist eine Milliarde.":
+        native: "This is a billion."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "eine": "a"
+          "Milliarde": "billion"
+      "Ich habe eine Milliarde.":
+        native: "I have a billion."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Milliarde": "billion"
+    forms: { "pl": "plural" }
+  "de-2221":
+    native: "euro"
+    notes:
+      "n1": "Euro is euro: der Euro. Its plural is Euros."
+    examples:
+      "Das ist der Euro.":
+        native: "This is the euro."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Euro": "euro"
+      "Ich habe einen Euro.":
+        native: "I have an euro."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Euro": "euro"
+    forms: { "pl": "plural" }
+  "de-2222":
+    native: "cent"
+    notes:
+      "n1": "Cent is cent: der Cent. Its plural is Cents."
+    examples:
+      "Das ist der Cent.":
+        native: "This is the cent."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Cent": "cent"
+      "Ich habe einen Cent.":
+        native: "I have a cent."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Cent": "cent"
+    forms: { "pl": "plural" }
+  "de-2223":
+    native: "century"
+    notes:
+      "n1": "Jahrhundert is century: das Jahrhundert. Its plural is Jahrhunderte."
+    examples:
+      "Das ist ein Jahrhundert.":
+        native: "This is a century."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Jahrhundert": "century"
+      "Wo ist das Jahrhundert?":
+        native: "Where is the century?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Jahrhundert": "century"
+    forms: { "pl": "plural" }
+  "de-2224":
+    native: "number"
+    notes:
+      "n1": "Zahl is number: die Zahl. Its plural is Zahlen."
+    examples:
+      "Das ist die Zahl.":
+        native: "This is the number."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Zahl": "number"
+      "Wo ist die Zahl?":
+        native: "Where is the number?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Zahl": "number"
+    forms: { "pl": "plural" }
+  "de-2225":
+    native: "digit"
+    notes:
+      "n1": "Ziffer is digit: die Ziffer. Its plural is Ziffern."
+    examples:
+      "Das ist die Ziffer.":
+        native: "This is the digit."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Ziffer": "digit"
+      "Wo ist die Ziffer?":
+        native: "Where is the digit?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Ziffer": "digit"
+    forms: { "pl": "plural" }
+  "de-2226":
+    native: "percent"
+    notes:
+      "n1": "Prozent is percent: das Prozent. Its plural is Prozente."
+    examples:
+      "Das ist ein Prozent.":
+        native: "This is a percent."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Prozent": "percent"
+      "Wo ist das Prozent?":
+        native: "Where is the percent?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Prozent": "percent"
+    forms: { "pl": "plural" }
+  "de-2227":
+    native: "comma"
+    notes:
+      "n1": "Komma is comma: das Komma. Its plural is Kommas."
+    examples:
+      "Das ist ein Komma.":
+        native: "This is a comma."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Komma": "comma"
+      "Wo ist das Komma?":
+        native: "Where is the comma?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Komma": "comma"
+    forms: { "pl": "plural" }
+  "de-2228":
+    native: "centimetre"
+    notes:
+      "n1": "Zentimeter is centimetre: der Zentimeter. Its plural is the same."
+    examples:
+      "Das ist der Zentimeter.":
+        native: "This is the centimetre."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Zentimeter": "centimetre"
+      "Wo ist der Zentimeter?":
+        native: "Where is the centimetre?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Zentimeter": "centimetre"
+  "de-2229":
+    native: "kilogram"
+    notes:
+      "n1": "Kilogramm is kilogram: das Kilogramm. Its plural is Kilogramme."
+    examples:
+      "Das ist ein Kilogramm.":
+        native: "This is a kilogram."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Kilogramm": "kilogram"
+      "Wo ist das Kilogramm?":
+        native: "Where is the kilogram?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Kilogramm": "kilogram"
+    forms: { "pl": "plural" }
+  "de-2230":
+    native: "sum"
+    notes:
+      "n1": "Summe is sum: die Summe. Its plural is Summen."
+    examples:
+      "Das ist die Summe.":
+        native: "This is the sum."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Summe": "sum"
+      "Wo ist die Summe?":
+        native: "Where is the sum?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Summe": "sum"
+    forms: { "pl": "plural" }
+  "de-2231":
+    native: "bill"
+    notes:
+      "n1": "Rechnung is bill: die Rechnung. Its plural is Rechnungen."
+    examples:
+      "Das ist die Rechnung.":
+        native: "This is the bill."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Rechnung": "bill"
+      "Ich habe eine Rechnung.":
+        native: "I have a bill."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Rechnung": "bill"
+    forms: { "pl": "plural" }
+  "de-2232":
+    native: "value"
+    notes:
+      "n1": "Wert is value: der Wert. Its plural is Werte."
+    examples:
+      "Das ist der Wert.":
+        native: "This is the value."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Wert": "value"
+      "Wo ist der Wert?":
+        native: "Where is the value?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Wert": "value"
+    forms: { "pl": "plural" }
+  "de-2233":
+    native: "size"
+    notes:
+      "n1": "Größe is size: die Größe. Its plural is Größen."
+    examples:
+      "Das ist die Größe.":
+        native: "This is the size."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Größe": "size"
+      "Wo ist die Größe?":
+        native: "Where is the size?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Größe": "size"
+    forms: { "pl": "plural" }
+  "de-2234":
+    native: "length"
+    notes:
+      "n1": "Länge is length: die Länge. Its plural is Längen."
+    examples:
+      "Das ist die Länge.":
+        native: "This is the length."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Länge": "length"
+      "Wo ist die Länge?":
+        native: "Where is the length?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Länge": "length"
+    forms: { "pl": "plural" }
+  "de-2235":
+    native: "height"
+    notes:
+      "n1": "Höhe is height: die Höhe. Its plural is Höhen."
+    examples:
+      "Das ist die Höhe.":
+        native: "This is the height."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Höhe": "height"
+      "Wo ist die Höhe?":
+        native: "Where is the height?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Höhe": "height"
+    forms: { "pl": "plural" }
+  "de-2236":
+    native: "degree"
+    notes:
+      "n1": "Grad is degree: der Grad. Its plural is Grade."
+    examples:
+      "Das ist der Grad.":
+        native: "This is the degree."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Grad": "degree"
+      "Wo ist der Grad?":
+        native: "Where is the degree?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Grad": "degree"
+    forms: { "pl": "plural" }
+  "de-2237":
+    native: "times"
+    notes:
+      "n1": "Mal is times, as in a multiplication sum: zwei mal eins is two times one."
+    examples:
+      "Zwei mal Eins.":
+        native: "Two times one."
+        bases:
+          "Zwei": "two"
+          "mal": "times"
+          "Eins": "one"
+      "Eins mal Zwei.":
+        native: "One times two."
+        bases:
+          "Eins": "one"
+          "mal": "times"
+          "Zwei": "two"
+  "de-2238":
+    native: "pound (500 grams)"
+    notes:
+      "n1": "Pfund is pound (500 grams): das Pfund. Its plural is Pfunde."
+    examples:
+      "Das ist ein Pfund.":
+        native: "This is a pound (500 grams)."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Pfund": "pound (500 grams)"
+      "Wo ist das Pfund?":
+        native: "Where is the pound (500 grams)?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Pfund": "pound (500 grams)"
+    forms: { "pl": "plural" }
+  "de-2239":
+    native: "result"
+    notes:
+      "n1": "Ergebnis is result: das Ergebnis. Its plural is Ergebnisse."
+    examples:
+      "Das ist ein Ergebnis.":
+        native: "This is a result."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Ergebnis": "result"
+      "Wo ist das Ergebnis?":
+        native: "Where is the result?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Ergebnis": "result"
+    forms: { "pl": "plural" }
+  "de-2240":
+    native: "price"
+    notes:
+      "n1": "Preis is price: der Preis. Its plural is Preise."
+    examples:
+      "Das ist der Preis.":
+        native: "This is the price."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Preis": "price"
+      "Wo ist der Preis?":
+        native: "Where is the price?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Preis": "price"
+    forms: { "pl": "plural" }
