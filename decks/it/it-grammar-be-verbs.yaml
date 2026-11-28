@@ -1,0 +1,44 @@
+schema: 1
+id: "it-grammar-be-verbs"
+part: "core"
+kind: "grammar"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["io", "tu", "lui-lei", "noi", "voi", "loro"]
+  entries:
+    - lemma: "essere"
+      key: "essere"
+      ipa: "ˈɛssere"
+      forms:
+        "io": "sono"
+        "tu": "sei"
+        "lui-lei": "è"
+        "noi": "siamo"
+        "voi": "siete"
+        "loro": "sono"
+      ipas:
+        "io": "ˈsono"
+        "tu": "sɛj"
+        "lui-lei": "ɛ"
+        "noi": "ˈsjamo"
+        "voi": "ˈsjɛte"
+        "loro": "ˈsono"
+    - lemma: "stare"
+      key: "stare"
+      ipa: "ˈstare"
+      forms:
+        "io": "sto"
+        "tu": "stai"
+        "lui-lei": "sta"
+        "noi": "stiamo"
+        "voi": "state"
+        "loro": "stanno"
+      ipas:
+        "io": "sto"
+        "tu": "staj"
+        "lui-lei": "sta"
+        "noi": "ˈstjamo"
+        "voi": "ˈstate"
+        "loro": "ˈstanno"

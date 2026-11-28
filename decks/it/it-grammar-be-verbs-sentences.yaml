@@ -1,0 +1,136 @@
+schema: 1
+id: "it-grammar-be-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "it-4100"
+    target: "Siamo qui."
+    ipa: "ˈsjamo kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/essere" }
+    bases: [{ word: "Siamo", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4101"
+    target: "Giovanni è di Napoli."
+    ipa: "dʒoˈvanni ɛ di naˈpoli"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/essere" }
+    bases: [{ word: "Giovanni", base: "Giovanni" }, { word: "è", ref: "it-0600" }, { word: "di", base: "di" }, { word: "Napoli", base: "Napoli" }]
+  - id: "it-4102"
+    target: "Come stai?"
+    ipa: "ˈkome staj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/stare" }
+    bases: [{ word: "Come", ref: "it-1303" }, { word: "stai", ref: "it-0601" }]
+  - id: "it-4103"
+    target: "Io sono studente."
+    ipa: "ˈio ˈsono stuˈdɛnte"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "studente", base: "studente" }]
+  - id: "it-4104"
+    target: "Tu sei italiano?"
+    ipa: "tu sɛj itaˈljano"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Tu", ref: "it-0004" }, { word: "sei", ref: "it-0600" }, { word: "italiano", ref: "it-1585" }]
+  - id: "it-4105"
+    target: "Lei è a casa."
+    ipa: "lɛj ɛ a ˈkaza"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lei", ref: "it-1371" }, { word: "è", ref: "it-0600" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }]
+  - id: "it-4106"
+    target: "Noi siamo a scuola."
+    ipa: "noj ˈsjamo a ˈskwɔla"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Noi", ref: "it-1372" }, { word: "siamo", ref: "it-0600" }, { word: "a", ref: "it-0417" }, { word: "scuola", ref: "it-2704" }]
+  - id: "it-4107"
+    target: "Voi siete qui?"
+    ipa: "voj ˈsjɛte kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Voi", ref: "it-1373" }, { word: "siete", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4108"
+    target: "Loro sono qui."
+    ipa: "ˈloro ˈsono kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4109"
+    target: "Questo è un treno."
+    ipa: "ˈkwesto ɛ un ˈtrɛno"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "un", base: "un" }, { word: "treno", ref: "it-2560" }]
+  - id: "it-4110"
+    target: "Sto bene."
+    ipa: "sto ˈbɛne"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Sto", ref: "it-0601" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4111"
+    target: "Io sto male."
+    ipa: "ˈio sto ˈmale"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "sto", ref: "it-0601" }, { word: "male", ref: "it-1737" }]
+  - id: "it-4112"
+    target: "Stiamo bene."
+    ipa: "ˈstjamo ˈbɛne"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Stiamo", ref: "it-0601" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4113"
+    target: "Voi state bene?"
+    ipa: "voj ˈstate ˈbɛne"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Voi", ref: "it-1373" }, { word: "state", ref: "it-0601" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4114"
+    target: "Loro stanno bene."
+    ipa: "ˈloro ˈstanno ˈbɛne"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "stanno", ref: "it-0601" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4115"
+    target: "Lui sta a casa."
+    ipa: "ˈlui sta a ˈkaza"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lui", ref: "it-1370" }, { word: "sta", ref: "it-0601" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }]

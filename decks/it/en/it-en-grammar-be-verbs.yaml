@@ -1,0 +1,22 @@
+schema: 1
+id: "it-en-grammar-be-verbs"
+kind: "layer"
+core: "it-grammar-be-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be: essere and stare"
+license: "CC-BY-SA-4.0"
+description: "The present tense of the two verbs for to be, essere and stare, for six persons. Not yet checked by an Italian speaker: please report any mistake."
+pattern:
+  name: "The present of essere and stare"
+  slot_name: "person"
+  slots:
+    "io": "I (io)"
+    "tu": "you, one person (tu)"
+    "lui-lei": "he, she, it (lui, lei)"
+    "noi": "we (noi)"
+    "voi": "you, more than one (voi)"
+    "loro": "they (loro)"
+  entries:
+    "essere": "to be: who or what someone is, where they are from, where they are"
+    "stare": "to be in a condition; to stay"
+  notes: "Italian leaves the subject out most of the time: sono is already I am, and Wiktionary writes the subject in brackets or drops it, as in (Io) sto andando and Siamo qui. Essere says who or what someone is, where they are from and where they are: Giovanni è di Napoli, Siamo qui. It also gives the day and the time: È venerdì. Stare is to be in a condition, and Wiktionary's example is Come stai? (How are you?). Stare also means to stay: Starà a casa, he will stay at home. Sono is both I am and they are: only the context shows which. Sources: Wiktionary's entries for essere and stare and their present tables, and Wikipedia's page on Italian grammar."

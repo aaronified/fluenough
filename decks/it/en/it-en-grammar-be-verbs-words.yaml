@@ -1,0 +1,40 @@
+schema: 1
+id: "it-en-grammar-be-verbs-words"
+kind: "layer"
+core: "it-grammar-be-verbs-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The verbs essere and stare"
+license: "CC-BY-SA-4.0"
+description: "The two verbs for to be, essere and stare, as word cards with their own examples. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-0600":
+    native: "to be"
+    notes:
+      "n1": "Essere is the verb to be, and it is irregular: sono, sei, è, siamo, siete, sono. It also forms the compound tenses with its own past participle stato."
+      "n2": "Wiktionary gives it for who or what someone is, where they are from, where they are and what day it is: Giovanni è di Napoli, Siamo qui, È venerdì."
+    examples:
+      "Siamo qui.":
+        native: "We are here."
+        bases:
+          "Siamo": "to be (we are)"
+      "Giovanni è di Napoli.":
+        native: "Giovanni is from Naples."
+        bases:
+          "Giovanni": "Giovanni (a man's name)"
+          "è": "to be (is)"
+          "di": "of; from"
+          "Napoli": "Naples"
+  "it-0601":
+    native: "to stay; to be (in a condition)"
+    notes:
+      "n1": "Stare means to be in a certain condition and to stay. Its present is sto, stai, sta, stiamo, state, stanno."
+      "n2": "Wiktionary's example for the condition sense is come stai?, how are you? For to stay it gives Starà a casa, he will stay at home."
+    examples:
+      "Come stai?":
+        native: "How are you?"
+        bases:
+          "stai": "to stay; to be (you are)"
+      "Sto bene.":
+        native: "I am well."
+        bases:
+          "Sto": "to stay; to be (I am)"
