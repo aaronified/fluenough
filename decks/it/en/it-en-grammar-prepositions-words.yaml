@@ -1,0 +1,71 @@
+schema: 1
+id: "it-en-grammar-prepositions-words"
+kind: "layer"
+core: "it-grammar-prepositions-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The prepositions di, da, con and per"
+license: "CC-BY-SA-4.0"
+description: "The small words di, da, con and per as word cards with their own examples. The others, a, in, su, tra and fra, are in other units. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-0850":
+    native: "of; from"
+    notes:
+      "n1": "Di shows who owns something and where someone is from. Wiktionary gives la coda del cane, the dog's tail, and Lei è di Monreale, she is from Monreale."
+      "n2": "With the article it means some: Vuoi dell'acqua? is would you like some water? Before a noun with an article, di joins it: del, della, dei."
+    examples:
+      "Lei è di Roma.":
+        native: "She is from Rome."
+        bases:
+          "di": "from"
+          "Roma": "Rome"
+      "La casa di Marco.":
+        native: "Marco's house."
+        bases:
+          "La": "the"
+          "di": "of"
+          "Marco": "Marco"
+  "it-0851":
+    native: "from; at (someone's home)"
+    notes:
+      "n1": "Da means from, as in Wiktionary's interviste dal libro, interviews from the book. It also means at someone's place: da Giovanni, andare dal dottore."
+      "n2": "Da joins the article that follows it: dal, dallo, dall', dalla, dai, dagli, dalle."
+    examples:
+      "Vado da Marco.":
+        native: "I am going to Marco's."
+        bases:
+          "da": "at (someone's home)"
+          "Marco": "Marco"
+      "Vengo dalla scuola.":
+        native: "I come from school."
+        bases:
+          "dalla": "from (da + la)"
+  "it-0852":
+    native: "with"
+    notes:
+      "n1": "Con means with or together; Wiktionary gives that one meaning."
+      "n2": "Con and the article may join (col, coi), but it is optional and mostly the two are written apart: con la mamma."
+    examples:
+      "Parlo con la mamma.":
+        native: "I talk with Mum."
+        bases:
+          "con": "with"
+          "la": "the"
+      "Vado con Marco.":
+        native: "I go with Marco."
+        bases:
+          "con": "with"
+          "Marco": "Marco"
+  "it-0853":
+    native: "for; in order to; through"
+    notes:
+      "n1": "Per means for, in order to and through. Wiktionary gives Ma io l'ho fatto per te!, but I did it for you, and Vado a Londra per vedere il Big Ben."
+      "n2": "Per can join the article (pel, pei), but those forms are archaic and rare; write per il, per la."
+    examples:
+      "Questo è per te.":
+        native: "This is for you."
+        bases:
+          "per": "for"
+      "Vado a casa per dormire.":
+        native: "I go home to sleep."
+        bases:
+          "per": "in order to"

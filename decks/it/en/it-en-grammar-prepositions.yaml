@@ -1,0 +1,28 @@
+schema: 1
+id: "it-en-grammar-prepositions"
+kind: "layer"
+core: "it-grammar-prepositions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Prepositions and the article"
+license: "CC-BY-SA-4.0"
+description: "The prepositions di, a, da, in, su, con and per, each with the article that follows it: del, della, al, alla, nel, nella and the rest. Not yet checked by an Italian speaker: please report any mistake."
+pattern:
+  name: "Prepositions with the article"
+  slot_name: "article"
+  slots:
+    "il": "+ il (masculine, before most consonants)"
+    "lo": "+ lo (masculine, before s + consonant, z, gn, ps)"
+    "l": "+ l' (before a vowel)"
+    "la": "+ la (feminine, before a consonant)"
+    "i": "+ i (masculine plural)"
+    "gli": "+ gli (masculine plural, before s + consonant, z, gn, ps, vowels)"
+    "le": "+ le (feminine plural)"
+  entries:
+    "di": "of; from; some (with the article)"
+    "a": "to; at; in (a place)"
+    "da": "from; by; at someone's home"
+    "in": "in; to; by"
+    "su": "on; about"
+    "con": "with (may join the article: col, coi)"
+    "per": "for; to; in order to; through"
+  notes: "In modern Italian di, a, da, in and su join the article that follows them into one word: di + il is del, a + la is alla, in + lo is nello, su + i is sui (Wikipedia's page on Italian grammar). Con and per may join too, but that is optional, and only col and coi are still used; mostly you write them apart: con il, per la. Tra and fra do not join, and the two mean the same, between or among, and also in with a time: tra due settimane. Before a vowel the l' forms keep the apostrophe: dell'amico, nell'acqua. Su becomes su di before a pronoun: su di te. What they mean: di is of, from and the owner (la coda del cane, the dog's tail; Lei è di Roma), and with the article it means some (Vuoi dell'acqua?). A is to or at a place (a casa, a scuola) and starts goodbyes (A domani!). Da is from, and at someone's home (da Giovanni, andare dal dottore). In is in, to and by (in autobus). Su is on (sul tavolo). Con is with. Per is for, to and in order to (Questo è per te). Sources: Wikipedia's Italian grammar page for the two contraction tables, and the Wiktionary entries for each preposition for the meanings and the sentences."
