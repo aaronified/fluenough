@@ -1,0 +1,101 @@
+# Unit 21 grammar topic nominative. Sources read: en.wikipedia.org 'Polish grammar' (the declension table of klub, mapa and mięso; the table of singular endings by case; the table of plural endings; na and w with the locative and the accusative) and 'Polish morphology' (the alternations before the endings -e and -i, and ó-o), en.wiktionary.org 'Appendix:Polish nouns' (the list of palatalizations in the dative and locative), and the declension table in the en.wiktionary.org entry of each noun.
+schema: 1
+id: "pl-grammar-nominative"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["singular", "plural"]
+  entries:
+    - lemma: "dom"
+      key: "dom"
+      ipa: "dɔm"
+      forms:
+        "singular": "dom"
+        "plural": "domy"
+      ipas:
+        "singular": "dɔm"
+        "plural": "ˈdɔmɨ"
+    - lemma: "stół"
+      key: "stol"
+      ipa: "stuw"
+      forms:
+        "singular": "stół"
+        "plural": "stoły"
+      ipas:
+        "singular": "stuw"
+        "plural": "ˈstɔwɨ"
+    - lemma: "kot"
+      key: "kot"
+      ipa: "kɔt"
+      forms:
+        "singular": "kot"
+        "plural": "koty"
+      ipas:
+        "singular": "kɔt"
+        "plural": "ˈkɔtɨ"
+    - lemma: "brat"
+      key: "brat"
+      ipa: "brat"
+      forms:
+        "singular": "brat"
+        "plural": "bracia"
+      ipas:
+        "singular": "brat"
+        "plural": "ˈbratɕa"
+    - lemma: "książka"
+      key: "ksiazka"
+      ipa: "ˈkɕɔ̃ʂka"
+      forms:
+        "singular": "książka"
+        "plural": "książki"
+      ipas:
+        "singular": "ˈkɕɔ̃ʂka"
+        "plural": "ˈkɕɔ̃ʂkʲi"
+    - lemma: "woda"
+      key: "woda"
+      ipa: "ˈvɔda"
+      forms:
+        "singular": "woda"
+        "plural": "wody"
+      ipas:
+        "singular": "ˈvɔda"
+        "plural": "ˈvɔdɨ"
+    - lemma: "kobieta"
+      key: "kobieta"
+      ipa: "kɔˈbjɛta"
+      forms:
+        "singular": "kobieta"
+        "plural": "kobiety"
+      ipas:
+        "singular": "kɔˈbjɛta"
+        "plural": "kɔˈbjɛtɨ"
+    - lemma: "okno"
+      key: "okno"
+      ipa: "ˈɔknɔ"
+      forms:
+        "singular": "okno"
+        "plural": "okna"
+      ipas:
+        "singular": "ˈɔknɔ"
+        "plural": "ˈɔkna"
+    - lemma: "morze"
+      key: "morze"
+      ipa: "ˈmɔʐɛ"
+      forms:
+        "singular": "morze"
+        "plural": "morza"
+      ipas:
+        "singular": "ˈmɔʐɛ"
+        "plural": "ˈmɔʐa"
+    - lemma: "dziecko"
+      key: "dziecko"
+      ipa: "ˈdʑɛtskɔ"
+      forms:
+        "singular": "dziecko"
+        "plural": "dzieci"
+      ipas:
+        "singular": "ˈdʑɛtskɔ"
+        "plural": "ˈdʑɛtɕi"

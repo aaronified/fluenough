@@ -1,0 +1,110 @@
+# Unit 21 grammar topic accusative. Sources read: en.wikipedia.org 'Polish grammar' (the declension table of klub, mapa and mięso; the table of singular endings by case; the table of plural endings; na and w with the locative and the accusative) and 'Polish morphology' (the alternations before the endings -e and -i, and ó-o), en.wiktionary.org 'Appendix:Polish nouns' (the list of palatalizations in the dative and locative), and the declension table in the en.wiktionary.org entry of each noun.
+schema: 1
+id: "pl-grammar-accusative"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["nominative", "accusative"]
+  entries:
+    - lemma: "dom"
+      key: "dom"
+      ipa: "dɔm"
+      forms:
+        "nominative": "dom"
+        "accusative": "dom"
+      ipas:
+        "nominative": "dɔm"
+        "accusative": "dɔm"
+    - lemma: "stół"
+      key: "stol"
+      ipa: "stuw"
+      forms:
+        "nominative": "stół"
+        "accusative": "stół"
+      ipas:
+        "nominative": "stuw"
+        "accusative": "stuw"
+    - lemma: "kot"
+      key: "kot"
+      ipa: "kɔt"
+      forms:
+        "nominative": "kot"
+        "accusative": "kota"
+      ipas:
+        "nominative": "kɔt"
+        "accusative": "ˈkɔta"
+    - lemma: "pies"
+      key: "pies"
+      ipa: "pjɛs"
+      forms:
+        "nominative": "pies"
+        "accusative": "psa"
+      ipas:
+        "nominative": "pjɛs"
+        "accusative": "psa"
+    - lemma: "brat"
+      key: "brat"
+      ipa: "brat"
+      forms:
+        "nominative": "brat"
+        "accusative": "brata"
+      ipas:
+        "nominative": "brat"
+        "accusative": "ˈbrata"
+    - lemma: "woda"
+      key: "woda"
+      ipa: "ˈvɔda"
+      forms:
+        "nominative": "woda"
+        "accusative": "wodę"
+      ipas:
+        "nominative": "ˈvɔda"
+        "accusative": "ˈvɔdɛ"
+    - lemma: "książka"
+      key: "ksiazka"
+      ipa: "ˈkɕɔ̃ʂka"
+      forms:
+        "nominative": "książka"
+        "accusative": "książkę"
+      ipas:
+        "nominative": "ˈkɕɔ̃ʂka"
+        "accusative": "ˈkɕɔ̃ʂkɛ"
+    - lemma: "kobieta"
+      key: "kobieta"
+      ipa: "kɔˈbjɛta"
+      forms:
+        "nominative": "kobieta"
+        "accusative": "kobietę"
+      ipas:
+        "nominative": "kɔˈbjɛta"
+        "accusative": "kɔˈbjɛtɛ"
+    - lemma: "siostra"
+      key: "siostra"
+      ipa: "ˈɕɔstra"
+      forms:
+        "nominative": "siostra"
+        "accusative": "siostrę"
+      ipas:
+        "nominative": "ˈɕɔstra"
+        "accusative": "ˈɕɔstrɛ"
+    - lemma: "noc"
+      key: "noc"
+      ipa: "nɔts"
+      forms:
+        "nominative": "noc"
+        "accusative": "noc"
+      ipas:
+        "nominative": "nɔts"
+        "accusative": "nɔts"
+    - lemma: "okno"
+      key: "okno"
+      ipa: "ˈɔknɔ"
+      forms:
+        "nominative": "okno"
+        "accusative": "okno"
+      ipas:
+        "nominative": "ˈɔknɔ"
+        "accusative": "ˈɔknɔ"

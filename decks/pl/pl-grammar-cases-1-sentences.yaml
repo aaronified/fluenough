@@ -1,0 +1,142 @@
+# Unit 21 sentences. Every noun form comes from the unit's tables (nominative, accusative and locative) or a Wiktionary usage example (Siedzę na koniu, Mieszkam na wsi); the others use the table's forms with taught words.
+schema: 1
+id: "pl-grammar-cases-1-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "pl-4300"
+    target: "Mam psa."
+    ipa: "mam psa"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Mam", ref: "pl-0520" }, { word: "psa", ref: "pl-0427" }]
+  - id: "pl-4301"
+    target: "Mam siostrę."
+    ipa: "mam ˈɕɔstrɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Mam", ref: "pl-0520" }, { word: "siostrę", ref: "pl-1447" }]
+  - id: "pl-4302"
+    target: "Czytam książkę."
+    ipa: "ˈtʂɨtam ˈkɕɔ̃ʂkɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Czytam", ref: "pl-1655" }, { word: "książkę", ref: "pl-0580" }]
+  - id: "pl-4303"
+    target: "Pijemy mleko."
+    ipa: "pʲiˈjɛmɨ ˈmlɛkɔ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Pijemy", ref: "pl-1653" }, { word: "mleko", ref: "pl-2283" }]
+  - id: "pl-4304"
+    target: "Mama ma kota."
+    ipa: "ˈmama ma ˈkɔta"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Mama", ref: "pl-1440" }, { word: "ma", ref: "pl-0520" }, { word: "kota", ref: "pl-0462" }]
+  - id: "pl-4305"
+    target: "Kot jest na stole."
+    ipa: "kɔt jɛst na ˈstɔlɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Kot", ref: "pl-0462" }, { word: "jest", base: "być" }, { word: "na", ref: "pl-0582" }, { word: "stole", ref: "pl-0461" }]
+  - id: "pl-4306"
+    target: "Książka jest na stole."
+    ipa: "ˈkɕɔ̃ʂka jɛst na ˈstɔlɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Książka", ref: "pl-0580" }, { word: "jest", base: "być" }, { word: "na", ref: "pl-0582" }, { word: "stole", ref: "pl-0461" }]
+  - id: "pl-4307"
+    target: "Mama jest w domu."
+    ipa: "ˈmama jɛst v ˈdɔmu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Mama", ref: "pl-1440" }, { word: "jest", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "domu", ref: "pl-0460" }]
+  - id: "pl-4308"
+    target: "Brat jest w szkole."
+    ipa: "brat jɛst f ˈʂkɔlɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Brat", ref: "pl-1446" }, { word: "jest", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "szkole", ref: "pl-0413" }]
+  - id: "pl-4309"
+    target: "Mieszkam w Polsce."
+    ipa: "ˈmjɛʂkam f ˈpɔlstsɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Mieszkam", ref: "pl-1583" }, { word: "w", ref: "pl-2008" }, { word: "Polsce", ref: "pl-0581" }]
+  - id: "pl-4310"
+    target: "Dziecko jest w pokoju."
+    ipa: "ˈdʑɛtskɔ jɛst f pɔˈkɔju"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Dziecko", ref: "pl-1453" }, { word: "jest", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "pokoju", ref: "pl-2005" }]
+  - id: "pl-4311"
+    target: "Pies jest na ulicy."
+    ipa: "pjɛs jɛst na uˈlitsɨ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Pies", ref: "pl-0427" }, { word: "jest", base: "być" }, { word: "na", ref: "pl-0582" }, { word: "ulicy", ref: "pl-2004" }]
+  - id: "pl-4312"
+    target: "Brat mieszka w mieście."
+    ipa: "brat ˈmjɛʂka v ˈmjɛɕtɕɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Brat", ref: "pl-1446" }, { word: "mieszka", ref: "pl-1583" }, { word: "w", ref: "pl-2008" }, { word: "mieście", ref: "pl-0428" }]
+  - id: "pl-4313"
+    target: "To są koty."
+    ipa: "tɔ sɔ̃ ˈkɔtɨ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "są", base: "być" }, { word: "koty", ref: "pl-0462" }]
+  - id: "pl-4314"
+    target: "To są domy."
+    ipa: "tɔ sɔ̃ ˈdɔmɨ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "są", base: "być" }, { word: "domy", ref: "pl-0460" }]
+  - id: "pl-4315"
+    target: "Czy masz psa?"
+    ipa: "tʂɨ maʂ psa"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Czy", ref: "pl-1308" }, { word: "masz", ref: "pl-0520" }, { word: "psa", ref: "pl-0427" }]
+  - id: "pl-4316"
+    target: "Gdzie mieszkasz?"
+    ipa: "ɡdʑɛ ˈmjɛʂkaʂ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Gdzie", ref: "pl-1302" }, { word: "mieszkasz", ref: "pl-1583" }]
+  - id: "pl-4317"
+    target: "Siedzę na koniu."
+    ipa: "ˈɕɛdzɛ na ˈkɔɲu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/na" }]
+    bases: [{ word: "Siedzę", ref: "pl-1683" }, { word: "na", ref: "pl-0582" }, { word: "koniu", ref: "pl-0418" }]
+  - id: "pl-4318"
+    target: "Mieszkam na wsi."
+    ipa: "ˈmjɛʂkam na fɕi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/na" }]
+    bases: [{ word: "Mieszkam", ref: "pl-1583" }, { word: "na", ref: "pl-0582" }, { word: "wsi", ref: "pl-2002" }]

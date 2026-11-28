@@ -1,0 +1,27 @@
+schema: 1
+id: "pl-en-grammar-nominative"
+kind: "layer"
+core: "pl-grammar-nominative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The nominative: one thing and more than one"
+license: "CC-BY-SA-4.0"
+description: "10 nouns, each in the nominative singular and in the nominative plural. The nominative is the form in the dictionary and the form of the subject. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The nominative: one thing and more than one"
+  slot_name: "number"
+  slots:
+    "singular": "one (singular)"
+    "plural": "more than one (plural)"
+  entries:
+    "dom": "house (masculine: -y)"
+    "stol": "table (masculine: -y; the ó becomes o)"
+    "kot": "cat (masculine: -y)"
+    "brat": "brother (masculine, a person: an irregular plural)"
+    "ksiazka": "book (feminine: -a becomes -i after k)"
+    "woda": "water (feminine: -a becomes -y)"
+    "kobieta": "woman (feminine: -a becomes -y)"
+    "okno": "window (neuter: -o becomes -a)"
+    "morze": "sea (neuter: -e becomes -a)"
+    "dziecko": "child (neuter: an irregular plural)"
+  notes: "The nominative is the case of the subject, the one who or what does the action, and it is the form a dictionary gives. Polish has seven cases; this unit teaches the nominative, the accusative and the locative. The plural of a noun is made with an ending (Wikipedia, Polish grammar). A masculine noun that does not name a person usually adds -y: dom, domy; stół, stoły (the ó becomes o); kot, koty. A feminine noun in -a changes it to -y, or to -i after k and g: woda, wody; kobieta, kobiety; książka, książki. A neuter noun in -o changes it to -a, and one in -e too: okno, okna; morze, morza. Some everyday nouns are irregular: brat has bracia and dziecko has dzieci, so the plural is learnt with the word. A masculine noun for a person has its own plural endings (Wikipedia calls it masculine personal); this course does not go further into them at A1."
