@@ -827,6 +827,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return _russian(text, hint)
     if lang == "el":
         return _greek(text, hint)
+    if lang == "pl":
+        return _polish(text, hint)
     if lang == "ja":
         return japanese(text)
     if lang == "ko":
@@ -3821,6 +3823,364 @@ def greek_ipa(text: str, hint: str | None = None) -> str:
 
 def _greek(text: str, hint: str | None) -> Transcription:
     return Transcription(hint or "", greek_ipa(text, hint), True)
+
+
+# --- Polish ------------------------------------------------------------------
+
+# Standard Polish, broad, as the decks write it: ˈ before the stressed
+# syllable of a word of two syllables or more (none on a word of one), ɡ for g,
+# ɨ for y, ɛ ɔ for e o, u for u and ó, w for ł, v for w, x for ch and h, j for
+# j and for the glide of "ia ie io iu" after any consonant but c s z dz n
+# (kiedy ˈkjɛdɨ, mieć mjɛtɕ, rozumiem rɔˈzumjɛm, as Wiktionary writes
+# them), ts dz for c dz, tɕ dʑ ɕ ʑ ɲ for ć dź ś ź ń (and for c dz s z n
+# before an i), tʂ dʐ ʂ ʐ for cz dż sz and for rz and ż (ʂ for rz after a
+# voiceless consonant). The letter i before a vowel is a softness mark and
+# makes no syllable: after c s z dz n it makes the consonant palatal (ciało
+# tɕawɔ, nie ɲɛ); after any other consonant it is a glide j; at the start of
+# a word and after a vowel it is j. No ʲ is written: before a vowel i the
+# consonant is plain (kilogram kiˈlɔɡram, bilet ˈbilɛt, mi mi, gips ɡips),
+# but c s z dz n before an i become palatal (ci tɕi, zi ʑi, ni ɲi).
+#
+# The nasal vowels ą and ę are written by what follows, as in the cards of
+# decks/pl (dziękuję dʑɛŋˈkujɛ): ɛm ɔm before p b, ɛn ɔn before t d ts dz tʂ dʐ,
+# ɛɲ ɔɲ before tɕ dʑ, ɛŋ ɔŋ before k g, a plain ɛ ɔ before l ł, ɛ̃ ɔ̃ before a
+# fricative or a sonorant, and at the end of a word ę is ɛ (wodę ˈvɔdɛ, as the
+# cards write it) and ą is ɔ̃. An n before k or g is ŋ (angielski). Voicing:
+# a voiced obstruent is voiceless at the end of a word and before a voiceless
+# one, a voiceless one is voiced before a voiced one (not before w or rz,
+# which do not pass their voicing back); w and rz are voiceless after a
+# voiceless obstruent (przepraszam pʂɛpraˈʂam, kwiat kfjat); one-letter words
+# without a vowel (w, z) are said with the next word (w porządku f pɔˈʐɔntku).
+# The reading is the written word: Polish is Latin script, so no reading is
+# made.
+#
+# Sources: Wikipedia, "Polish phonology" (consonants and vowels, the nasal
+# vowels and their allophones, voicing assimilation, the softness of i,
+# penultimate stress) and Wiktionary, "Appendix:Polish pronunciation". The
+# placing of the mark before the longest group of consonants that can begin a
+# syllable, the glides after lip consonants and the forms of the nasal vowels
+# before the letters above are the engine's own rules, read off the first
+# cards of decks/pl (the exceptions are listed in the pull request that added
+# this engine).
+#
+# Stress is penultimate unless told otherwise. The engine takes it from:
+#  1. the text itself: a combining acute U+0301 after the stressed vowel
+#     (`muzýka`), or á é í ú ý;
+#  2. a *hint*: the same words with their stress marked as in (1); used only
+#     if, with its marks removed, it is the text;
+#  3. else the second-last syllable, which is right for nearly every native
+#     word, and a word of one syllable is unmarked. The exceptions (muzyka,
+#     uniwersytet, matematyka, most words in -yka -ika -ologia, the
+#     compound numbers and some loan words) need a mark or a hint.
+# Known limits: dz is always one sound (podziemny, odzew); rz is always
+# one sound; no voicing across a word boundary except for the one-letter
+# words w and z; ch is not voiced before a voiced consonant; a doubled
+# consonant is kept as written (Anna anna); vowels side by side (Europa,
+# nauka) are two syllables, so the penultimate rule is wrong for the loan
+# words that say them as one; foreign letters q v x are refused with
+# CannotRead.
+
+_PL_VOWELS = set("aąeęioóuy")
+_PL_LETTERS = set("aąbcćdeęfghijklłmnńoóprsśtuwyzźż")
+_PL_PUNCT = set(".,?!;:\"“”«»()…-–—")
+_PL_ACUTE = "́"
+_PL_STRESSED = {"á": "a", "é": "e", "í": "i", "ú": "u", "ý": "y"}
+_PL_BASE = {"b": "b", "c": "ts", "ć": "tɕ", "d": "d", "f": "f", "g": "ɡ",
+            "h": "x", "j": "j", "k": "k", "l": "l", "ł": "w", "m": "m",
+            "n": "n", "ń": "ɲ", "p": "p", "r": "r", "s": "s", "ś": "ɕ",
+            "t": "t", "w": "v", "z": "z", "ź": "ʑ", "ż": "ʐ"}
+_PL_VOWEL_IPA = {"a": "a", "e": "ɛ", "i": "i", "o": "ɔ", "ó": "u", "u": "u",
+                 "y": "ɨ"}
+_PL_NASAL = {"ą": "ɔ", "ę": "ɛ"}
+_PL_DEVOICE = {"b": "p", "d": "t", "ɡ": "k", "v": "f", "z": "s", "ʑ": "ɕ",
+               "ʐ": "ʂ", "dz": "ts", "dʑ": "tɕ", "dʐ": "tʂ"}
+_PL_VOICE = {v: k for k, v in _PL_DEVOICE.items()}
+_PL_OBSTRUENT = set(_PL_DEVOICE) | set(_PL_VOICE) | {"x"}
+_PL_PALATAL = {"ts": "tɕ", "s": "ɕ", "z": "ʑ", "dz": "dʑ", "n": "ɲ"}
+_PL_LABIAL = {"p", "b", "f", "v", "m"}
+_PL_VELAR = {"k", "ɡ", "x"}
+_PL_ONSET_A = {"p", "b", "t", "d", "k", "ɡ", "f", "v", "s", "z", "x", "ʂ",
+               "ʐ", "ɕ", "ʑ"}
+_PL_ONSET_B = {"r", "l", "v", "w", "m", "n", "ɲ", "j"}
+
+
+@dataclass
+class _PlTok:
+    kind: str                   # "C" or "V"
+    ipa: str
+    stressed: bool = False
+    letter: str = ""            # the plain letter of c s z dz n, for i
+    palatal: bool = False       # a letter already palatal: ś ć ź ń dź
+    prog: bool = False          # w and rz: devoiced after a voiceless one
+    nasal: str = ""             # ɛ or ɔ for ę and ą, until resolved
+
+
+def _pl_check(text: str) -> None:
+    for c in text.lower():
+        if (c.isspace() or c in _PL_PUNCT or c == _PL_ACUTE
+                or c in _PL_LETTERS or c in _PL_STRESSED):
+            continue
+        raise CannotRead(f"not a Polish letter: {c!r}")
+
+
+def _pl_words(text: str) -> list[str]:
+    return "".join(" " if c in _PL_PUNCT else c for c in text).split()
+
+
+def _pl_parse(word: str) -> tuple[list[str], int | None]:
+    """A word's letters, and the index of its marked vowel, if any."""
+    letters: list[str] = []
+    stress: int | None = None
+    for c in word:
+        if c == _PL_ACUTE:
+            if letters and letters[-1] in _PL_VOWELS:
+                stress = len(letters) - 1
+        elif c in _PL_STRESSED:
+            stress = len(letters)
+            letters.append(_PL_STRESSED[c])
+        else:
+            letters.append(c)
+    return letters, stress
+
+
+def _pl_hint_words(words: list[str], hint: str | None) -> list[str]:
+    if not hint:
+        return []
+    hints = _pl_words(unicodedata.normalize("NFC", hint).lower())
+    if len(hints) != len(words) or any(
+            _pl_parse(h)[0] != _pl_parse(w)[0] for h, w in zip(hints, words)):
+        return []
+    return hints
+
+
+def _pl_tokens(ls: list[str], stress: int | None) -> list[_PlTok]:
+    """One word's sounds, before the context rules (voicing, nasals)."""
+    toks: list[_PlTok] = []
+    i, n = 0, len(ls)
+    while i < n:
+        c = ls[i]
+        nxt = ls[i + 1] if i + 1 < n else ""
+        pair = c + nxt
+        if c in _PL_NASAL:
+            toks.append(_PlTok("V", "", i == stress, nasal=_PL_NASAL[c]))
+        elif c == "i":
+            _pl_soft_i(toks, nxt in _PL_VOWELS, i == stress)
+        elif c in _PL_VOWEL_IPA:
+            toks.append(_PlTok("V", _PL_VOWEL_IPA[c], i == stress))
+        elif pair == "ch":
+            toks.append(_PlTok("C", "x"))
+            i += 1
+        elif pair == "cz":
+            toks.append(_PlTok("C", "tʂ"))
+            i += 1
+        elif pair == "sz":
+            toks.append(_PlTok("C", "ʂ"))
+            i += 1
+        elif pair == "rz":
+            toks.append(_PlTok("C", "ʐ", prog=True))
+            i += 1
+        elif pair == "dź":
+            toks.append(_PlTok("C", "dʑ", palatal=True))
+            i += 1
+        elif pair == "dż":
+            toks.append(_PlTok("C", "dʐ"))
+            i += 1
+        elif pair == "dz":
+            toks.append(_PlTok("C", "dz", letter="dz"))
+            i += 1
+        else:
+            toks.append(_PlTok("C", _PL_BASE[c], letter=c if c in "csznd"
+                               else "", palatal=c in "ćńśź", prog=c == "w"))
+            if c == "c":
+                toks[-1].letter = "ts"
+        i += 1
+    return _pl_merge(toks)
+
+
+_PL_AFFRICATES = ({"tɕ", "dʑ"}, {"tʂ", "dʐ"}, {"ts", "dz"})
+
+
+def _pl_merge(toks: list[_PlTok]) -> list[_PlTok]:
+    """An affricate before one of the same place is one sound (pięćdziesiąt
+    pjɛɲˈdʑɛɕɔnt, not dʑdʑ), and ć before s is ts (pięćset)."""
+    out: list[_PlTok] = []
+    for t in toks:
+        prev = out[-1] if out else None
+        if prev is not None and prev.kind == "C" and t.kind == "C":
+            if any(prev.ipa in g and t.ipa in g for g in _PL_AFFRICATES):
+                out.pop()
+            elif prev.ipa == "tɕ" and t.ipa == "s":
+                out.pop()
+                t = _PlTok("C", "ts", palatal=True)
+        out.append(t)
+    return out
+
+
+def _pl_soft_i(toks: list[_PlTok], before_vowel: bool, stressed: bool
+               ) -> None:
+    """Add the letter i: a vowel, or a softness mark before a vowel."""
+    prev = toks[-1] if toks and toks[-1].kind == "C" else None
+    if prev is not None and prev.letter in _PL_PALATAL:
+        prev.ipa = _PL_PALATAL[prev.letter]
+        prev.letter, prev.palatal = "", True
+        if not before_vowel:
+            toks.append(_PlTok("V", "i", stressed))
+        return
+    if not before_vowel:
+        toks.append(_PlTok("V", "i", stressed))
+        return
+    if prev is None:
+        toks.append(_PlTok("C", "j"))       # at the start or after a vowel
+    elif prev.palatal or prev.ipa == "j":
+        pass                                # already soft: the i is only a mark
+    else:
+        toks.append(_PlTok("C", "j"))
+
+
+def _pl_base(t: _PlTok) -> str:
+    return t.ipa.rstrip("ʲ")
+
+
+def _pl_flip(t: _PlTok, table: dict[str, str]) -> None:
+    base = _pl_base(t)
+    if base in table:
+        t.ipa = table[base] + t.ipa[len(base):]
+
+
+def _pl_is_obstruent(t: _PlTok) -> bool:
+    return t.kind == "C" and _pl_base(t) in _PL_OBSTRUENT
+
+
+def _pl_voicing(toks: list[_PlTok]) -> None:
+    """Voicing: w and rz after a voiceless obstruent, final devoicing, and
+    assimilation of a cluster to its last obstruent (a voiced w or rz does
+    not pass its voicing back)."""
+    n = len(toks)
+    for j in range(1, n):
+        if (toks[j].prog and _pl_is_obstruent(toks[j - 1])
+                and _pl_base(toks[j - 1]) not in _PL_DEVOICE):
+            _pl_flip(toks[j], _PL_DEVOICE)
+    if n and _pl_is_obstruent(toks[-1]):
+        _pl_flip(toks[-1], _PL_DEVOICE)
+    for j in range(n - 2, -1, -1):
+        a, b = toks[j], toks[j + 1]
+        if not (_pl_is_obstruent(a) and _pl_is_obstruent(b)):
+            continue
+        base = _pl_base(b)
+        if base == "x":
+            _pl_flip(a, _PL_DEVOICE)
+        elif base in _PL_DEVOICE:
+            if not b.prog:
+                _pl_flip(a, _PL_VOICE)
+        else:
+            _pl_flip(a, _PL_DEVOICE)
+
+
+def _pl_nasals(toks: list[_PlTok]) -> list[_PlTok]:
+    """Write ą and ę by what follows, and n before k g as ŋ."""
+    out: list[_PlTok] = []
+    for j, t in enumerate(toks):
+        nxt = _pl_base(toks[j + 1]) if j + 1 < len(toks) else ""
+        if t.ipa == "n" and nxt in ("k", "ɡ"):
+            t.ipa = "ŋ"
+        if not t.nasal:
+            out.append(t)
+            continue
+        v = t.nasal
+        if not nxt:
+            out.append(_PlTok("V", v if v == "ɛ" else "ɔ̃", t.stressed))
+            continue
+        if nxt in ("p", "b"):
+            nas = "m"
+        elif nxt == "ts" and toks[j + 1].palatal:
+            nas = "ɲ"                       # pięćset: the ć shows
+        elif nxt in ("t", "d", "ts", "dz", "tʂ", "dʐ"):
+            nas = "n"
+        elif nxt in ("tɕ", "dʑ"):
+            nas = "ɲ"
+        elif nxt in ("k", "ɡ"):
+            nas = "ŋ"
+        elif nxt in ("l", "w"):
+            nas = ""
+        else:
+            out.append(_PlTok("V", v + "̃", t.stressed))
+            continue
+        out.append(_PlTok("V", v, t.stressed))
+        if nas:
+            out.append(_PlTok("C", nas))
+    return out
+
+
+def _pl_legal(cl: list[str]) -> bool:
+    """Whether the consonants can begin a syllable together."""
+    if len(cl) == 1:
+        return True
+    return (len(cl) == 2 and cl[0].rstrip("ʲ") in _PL_ONSET_A
+            and cl[1].rstrip("ʲ") in _PL_ONSET_B)
+
+
+def _pl_stress_at(w: list[_PlTok]) -> int | None:
+    """Where the mark goes in a word's tokens (None for no mark)."""
+    vowels = [k for k, t in enumerate(w) if t.kind == "V"]
+    if len(vowels) < 2:
+        return None
+    marked = [k for k in vowels if w[k].stressed]
+    at = marked[0] if marked else vowels[-2]
+    start = at
+    while start > 0 and w[start - 1].kind == "C":
+        start -= 1
+    if start == 0:
+        return 0                    # the whole initial cluster: mnożyć
+    run = [t.ipa for t in w[start:at]]
+    for b in range(len(run)):
+        if _pl_legal(run[b:]):
+            return start + b
+    return at
+
+
+def _pl_ipa(text: str, hint: str | None) -> str:
+    text = unicodedata.normalize("NFC", text).lower()
+    _pl_check(text)
+    words = _pl_words(text)
+    hints = _pl_hint_words(words, hint)
+    out: list[str] = []
+    group: list[tuple[list[_PlTok], bool]] = []
+    for k, raw in enumerate(words):
+        letters, stress = _pl_parse(raw)
+        if stress is None and hints:
+            stress = _pl_parse(hints[k])[1]
+        toks = _pl_tokens(letters, stress)
+        group.append((toks, not any(t.kind == "V" for t in toks)))
+        if group[-1][1] and k + 1 < len(words):
+            continue                # a word with no vowel joins the next
+        flat = [t for g, _ in group for t in g]
+        _pl_voicing(flat)
+        parts: list[str] = []
+        for g, _ in group:
+            g[:] = _pl_nasals(g)
+            at = _pl_stress_at(g)
+            syl = [t.ipa for t in g]
+            if at is not None:
+                syl.insert(at, "ˈ")
+            parts.append("".join(syl))
+        out.extend(parts)
+        group = []
+    return " ".join(w for w in out if w)
+
+
+def polish_ipa(text: str, hint: str | None = None) -> str:
+    """Standard Polish, broad. [hint] is the text with its words' stress
+    marked (an acute U+0301 after the stressed vowel); it is used only if,
+    with its marks removed, it is the text. The limits and the stress rules
+    are the section header's. Raises CannotRead for a letter Polish spelling
+    does not use."""
+    return _pl_ipa(text, hint)
+
+
+def _polish(text: str, hint: str | None) -> Transcription:
+    words = _pl_words(unicodedata.normalize("NFC", text).lower())
+    fitted = not hint or bool(_pl_hint_words(words, hint))
+    return Transcription(text, _pl_ipa(text, hint), fitted)
 
 
 # --- Japanese, Korean, Mandarin and Toki Pona (#612) -------------------------

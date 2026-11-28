@@ -422,3 +422,16 @@
     # measurement, with a `normalise` list and an `agree` guard.
     name: "Standard Modern Greek; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"pl":
+  dump: "Polish"
+  variety:
+    # Rules only, as German, Russian and Greek: no Wiktionary form is taken
+    # (untagged: false, no notes, no tags), nothing is imported, and every
+    # Polish card will get its narrow form from decks/pl/pl-phonetics.yaml
+    # (not yet written), in one convention. The broad `ipa` comes from
+    # `polish_ipa()` in tools/transcribe.py. This entry was not measured
+    # against the kaikki dump: flip `untagged` to true only after such a
+    # measurement, with a `normalise` list and an `agree` guard.
+    name: "Standard Polish; no Wiktionary form is taken (rules only)"
+    untagged: false

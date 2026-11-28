@@ -9,8 +9,8 @@ from pathlib import Path
 import transcribe_decks
 import validate_decks
 from transcribe import (BLOCKS, CannotRead, french_ipa, german_ipa,
-                        greek_ipa, italian_ipa, russian_ipa, spanish_ipa, swahili_ipa,
-                        transcribe)
+                        greek_ipa, italian_ipa, polish_ipa, russian_ipa,
+                        spanish_ipa, swahili_ipa, transcribe)
 
 
 class ReadingTest(unittest.TestCase):
@@ -2395,6 +2395,108 @@ class GreekTest(unittest.TestCase):
         self.assertEqual((t.reading, t.ipa, t.fitted, t.notes),
                          ("efcharistó", "efxaɾiˈsto", True, []))
         self.assertEqual(transcribe("ναι", "el").ipa, "ne")
+
+
+class PolishTest(unittest.TestCase):
+    """Polish (pl), broad. The expected forms are the engine's own rules (see
+    the section header in transcribe.py), checked by hand against the
+    hand-written cards of decks/pl and Wikipedia's "Polish phonology", not
+    against single entries."""
+
+    def check(self, pairs):
+        for text, ipa in pairs:
+            with self.subTest(text=text):
+                self.assertEqual(polish_ipa(text), ipa)
+
+    def test_stress_is_penultimate_and_one_syllable_is_unmarked(self):
+        self.check((("woda", "ˈvɔda"), ("dobry", "ˈdɔbrɨ"),
+                    ("dobranoc", "dɔˈbranɔts"), ("tak", "tak"),
+                    ("nie", "ɲɛ"), ("jest", "jɛst")))
+
+    def test_the_digraphs_and_the_acute_letters(self):
+        self.check((("szafa", "ˈʂafa"), ("czas", "tʂas"),
+                    ("chleb", "xlɛp"), ("dżem", "dʐɛm"),
+                    ("cześć", "tʂɛɕtɕ"), ("łódź", "wutɕ"),
+                    ("źle", "ʑlɛ"), ("kość", "kɔɕtɕ")))
+
+    def test_i_before_a_vowel_softens_and_makes_no_syllable(self):
+        self.check((("ciało", "ˈtɕawɔ"), ("dzień", "dʑɛɲ"),
+                    ("siostra", "ˈɕɔstra"), ("zielony", "ʑɛˈlɔnɨ"),
+                    ("rozumiem", "rɔˈzumjɛm"),
+                    ("angielski", "aŋˈɡjɛlski")))
+
+    def test_i_before_a_consonant_is_a_vowel(self):
+        self.check((("kilogram", "kiˈlɔɡram"), ("bilet", "ˈbilɛt"),
+                    ("kierunek", "kjɛˈrunɛk"), ("gips", "ɡips"),
+                    ("miło", "ˈmiwɔ"), ("mieć", "mjɛtɕ"), ("ci", "tɕi"), ("zima", "ˈʑima"), ("mi", "mi"),
+                    ("niski", "ˈɲiski"), ("ich", "ix")))
+
+    def test_the_nasal_vowels_are_written_by_what_follows(self):
+        self.check((("dziękuję", "dʑɛŋˈkujɛ"), ("wodę", "ˈvɔdɛ"),
+                    ("ząb", "zɔmp"), ("tęcza", "ˈtɛntʂa"),
+                    ("więc", "vjɛnts"), ("pięć", "pjɛɲtɕ"),
+                    ("wąs", "vɔ̃s"), ("mąż", "mɔ̃ʂ"),
+                    ("wzięli", "ˈvʑɛli"), ("są", "sɔ̃")))
+
+    def test_o_acute_is_u_y_is_ɨ_and_l_stroke_is_w(self):
+        self.check((("mówić", "ˈmuvitɕ"), ("ty", "tɨ"), ("było", "ˈbɨwɔ"),
+                    ("góra", "ˈɡura")))
+
+    def test_final_devoicing_and_voicing_assimilation(self):
+        self.check((("zęb", "zɛmp"), ("prawda", "ˈpravda"),
+                    ("łódka", "ˈwutka"), ("liczba", "ˈlidʐba"),
+                    ("zdrowy", "ˈzdrɔvɨ"), ("mów", "muf")))
+
+    def test_w_and_rz_are_voiceless_after_a_voiceless_consonant(self):
+        self.check((("przepraszam", "pʂɛˈpraʂam"), ("trzy", "tʂɨ"),
+                    ("dobrze", "ˈdɔbʐɛ"), ("kwiat", "kfjat"),
+                    ("swój", "sfuj"), ("wstać", "fstatɕ")))
+
+    def test_the_mark_goes_before_the_longest_onset_that_can_begin_a_word(self):
+        self.check((("kosztuje", "kɔʂˈtujɛ"), ("poproszę", "pɔˈprɔʂɛ"),
+                    ("smaczne", "ˈsmatʂnɛ"), ("smacznego", "smatʂˈnɛɡɔ"),
+                    ("zmęczony", "zmɛnˈtʂɔnɨ"), ("toaleta", "tɔaˈlɛta")))
+
+    def test_a_vowelless_word_joins_the_next_one(self):
+        self.check((("w porządku", "f pɔˈʐɔntku"),
+                    ("z Polski", "s ˈpɔlski"), ("w domu", "v ˈdɔmu")))
+
+    def test_an_affricate_before_one_of_the_same_place_is_one_sound(self):
+        self.check((("pięćdziesiąt", "pjɛɲˈdʑɛɕɔnt"),
+                    ("dziewięćdziesiąt", "dʑɛvjɛɲˈdʑɛɕɔnt"),
+                    ("sześćdziesiąt", "ʂɛʑˈdʑɛɕɔnt"),
+                    ("pięćset", "ˈpjɛɲtsɛt")))
+
+    def test_a_phrase_stresses_each_polysyllable(self):
+        self.check((("Dzień dobry.", "dʑɛɲ ˈdɔbrɨ"),
+                    ("Nie rozumiem.", "ɲɛ rɔˈzumjɛm"),
+                    ("Ile to kosztuje?", "ˈilɛ tɔ kɔʂˈtujɛ"),
+                    ("Gdzie jest dworzec?", "ɡdʑɛ jɛst ˈdvɔʐɛts")))
+
+    def test_an_acute_in_the_text_or_a_hint_moves_the_stress(self):
+        self.assertEqual(polish_ipa("muzyka"), "muˈzɨka")
+        self.assertEqual(polish_ipa("mu\u0301zyka"), "ˈmuzɨka")
+        self.assertEqual(polish_ipa("múzyka"), "ˈmuzɨka")
+        self.assertEqual(polish_ipa("muzyka", "mu\u0301zyka"), "ˈmuzɨka")
+        self.assertEqual(polish_ipa("muzyka", "muzy\u0301ka"), "muˈzɨka")
+        self.assertEqual(polish_ipa("mu\u0301zyka", "muzy\u0301ka"),
+                         "ˈmuzɨka")
+
+    def test_a_hint_is_used_only_if_it_is_the_text(self):
+        self.assertEqual(polish_ipa("muzyka", "pomo\u0301c"),
+                         polish_ipa("muzyka"))
+        self.assertTrue(transcribe("muzyka", "pl", "mu\u0301zyka").fitted)
+        self.assertFalse(transcribe("muzyka", "pl", "pomo\u0301c").fitted)
+
+    def test_the_pl_dispatch_keeps_the_text_as_its_reading(self):
+        t = transcribe("Dzień dobry.", "pl")
+        self.assertEqual((t.reading, t.ipa, t.fitted, t.notes),
+                         ("Dzień dobry.", "dʑɛɲ ˈdɔbrɨ", True, []))
+
+    def test_a_letter_polish_does_not_use_is_refused(self):
+        for bad in ("quiz", "xylofon", "привет", "dobry1", "señor"):
+            with self.subTest(bad=bad), self.assertRaises(CannotRead):
+                polish_ipa(bad)
 
 
 if __name__ == "__main__":
