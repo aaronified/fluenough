@@ -1,0 +1,139 @@
+schema: 1
+id: "ru-market"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ru-2420"
+    target: "рынок"
+    reading: "rynok"
+    ipa: "ˈrɨnək"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это рынок.", reading: "eto rynok.", ipa: "ˈɛtə ˈrɨnək", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "рынок", base: "рынок", reading: "rynok" }] }
+  - id: "ru-2421"
+    target: "базар"
+    reading: "bazar"
+    ipa: "bɐˈzar"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это базар.", reading: "eto bazar.", ipa: "ˈɛtə bɐˈzar", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "базар", base: "базар", reading: "bazar" }] }
+  - id: "ru-2422"
+    target: "покупатель"
+    reading: "pokupatel'"
+    ipa: "pəkʊˈpatʲɪlʲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это покупатель.", reading: "eto pokupatel'.", ipa: "ˈɛtə pəkʊˈpatʲɪlʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "покупатель", base: "покупатель", reading: "pokupatel'" }] }
+  - id: "ru-2423"
+    target: "торговец"
+    reading: "torgovets"
+    ipa: "tɐrˈɡovʲɪts"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это торговец.", reading: "eto torgovets.", ipa: "ˈɛtə tɐrˈɡovʲɪts", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "торговец", base: "торговец", reading: "torgovets" }] }
+  - id: "ru-2424"
+    target: "товар"
+    reading: "tovar"
+    ipa: "tɐˈvar"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это товар.", reading: "eto tovar.", ipa: "ˈɛtə tɐˈvar", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "товар", base: "товар", reading: "tovar" }] }
+  - id: "ru-2425"
+    target: "прилавок"
+    reading: "prilavok"
+    ipa: "prʲɪˈlavək"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это прилавок.", reading: "eto prilavok.", ipa: "ˈɛtə prʲɪˈlavək", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "прилавок", base: "прилавок", reading: "prilavok" }] }
+  - id: "ru-2426"
+    target: "весы"
+    reading: "vesy"
+    ipa: "vʲɪˈsɨ"
+    pos: "noun"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-2427"
+    target: "ярмарка"
+    reading: "yarmarka"
+    ipa: "ˈjarmərkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это ярмарка.", reading: "eto yarmarka.", ipa: "ˈɛtə ˈjarmərkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "ярмарка", base: "ярмарка", reading: "yarmarka" }] }
+  - id: "ru-2428"
+    target: "торговля"
+    reading: "torgovlya"
+    ipa: "tɐrˈɡovlʲə"
+    pos: "noun"
+    gender: "f"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это торговля.", reading: "eto torgovlya.", ipa: "ˈɛtə tɐrˈɡovlʲə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "торговля", base: "торговля", reading: "torgovlya" }] }
+  - id: "ru-2429"
+    target: "лоток"
+    reading: "lotok"
+    ipa: "lɐˈtok"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это лоток.", reading: "eto lotok.", ipa: "ˈɛtə lɐˈtok", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "лоток", base: "лоток", reading: "lotok" }] }
+  - id: "ru-2430"
+    target: "киоск"
+    reading: "kiosk"
+    ipa: "kʲɪˈosk"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это киоск.", reading: "eto kiosk.", ipa: "ˈɛtə kʲɪˈosk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "киоск", base: "киоск", reading: "kiosk" }] }
+  - id: "ru-2431"
+    target: "палатка"
+    reading: "palatka"
+    ipa: "pɐˈlatkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["market"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это палатка.", reading: "eto palatka.", ipa: "ˈɛtə pɐˈlatkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "палатка", base: "палатка", reading: "palatka" }] }
