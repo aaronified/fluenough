@@ -8,8 +8,8 @@ from pathlib import Path
 
 import transcribe_decks
 import validate_decks
-from transcribe import (BLOCKS, CannotRead, french_ipa, spanish_ipa,
-                        swahili_ipa, transcribe)
+from transcribe import (BLOCKS, CannotRead, french_ipa, italian_ipa,
+                        spanish_ipa, swahili_ipa, transcribe)
 
 
 class ReadingTest(unittest.TestCase):
@@ -773,6 +773,136 @@ class SwahiliTest(unittest.TestCase):
         for bad in ("café", "a1", "ಕನ್ನಡ"):
             with self.assertRaises(CannotRead):
                 swahili_ipa(bad)
+
+
+class ItalianTest(unittest.TestCase):
+    """Italian (it), broad, as decks/it writes it. The expected forms agree
+    with Wiktionary's pronunciations of the same words."""
+
+    def check(self, pairs):
+        for text, ipa in pairs:
+            with self.subTest(text=text):
+                self.assertEqual(italian_ipa(text), ipa)
+
+    def test_soft_and_hard_c_g_and_the_silent_i(self):
+        self.check((("ciao", "ˈtʃao"), ("giorno", "ˈdʒorno"),
+                    ("chiesa", "ˈkjɛza"), ("ghiaccio", "ˈɡjattʃo"),
+                    ("spaghetti", "spaˈɡetti"), ("lingua", "ˈlinɡwa"),
+                    ("cinque", "ˈtʃinkwe"), ("che", "ke")))
+
+    def test_sounds_long_between_vowels_are_written_long(self):
+        self.check((("gnocchi", "ˈɲɔkki"), ("famiglia", "faˈmiʎʎa"),
+                    ("scena", "ˈʃɛna"), ("pesce", "ˈpeʃʃe"),
+                    ("sciare", "ˈʃare"), ("gli amici", "ʎi aˈmitʃi"),
+                    ("bagno", "ˈbaɲɲo")))
+
+    def test_doubled_letters_are_doubled_and_split_the_syllable(self):
+        self.check((("acqua", "ˈakkwa"), ("oggi", "ˈɔddʒi"),
+                    ("grazie", "ˈɡrattsje"), ("pizza", "ˈpittsa"),
+                    ("stazione", "statˈtsjone"), ("caffè", "kafˈfɛ"),
+                    ("ottobre", "otˈtobre")))
+
+    def test_s_and_z_voicing(self):
+        self.check((("casa", "ˈkaza"), ("rosa", "ˈrɔza"),
+                    ("scusi", "ˈskuzi"), ("studente", "stuˈdɛnte"),
+                    ("zero", "ˈdzɛro"), ("pranzo", "ˈprandzo"),
+                    ("organizzare", "orɡanidˈdzare"),
+                    ("colazione", "kolatˈtsjone")))
+
+    def test_i_and_u_before_a_vowel_are_glides_unless_stressed(self):
+        self.check((("piano", "ˈpjano"), ("storia", "ˈstɔrja"),
+                    ("nuovo", "ˈnwɔvo"), ("uomo", "ˈwɔmo"),
+                    ("dieci", "ˈdjɛtʃi"), ("aiuto", "aˈjuto"),
+                    ("mio", "ˈmio"), ("zio", "ˈtsio"), ("due", "ˈdue"),
+                    ("riunione", "riuˈnjone"), ("riempire", "riemˈpire")))
+
+    def test_a_written_accent_stresses_the_last_vowel_and_sets_openness(self):
+        self.check((("città", "tʃitˈta"), ("perché", "perˈke"),
+                    ("università", "universiˈta"), ("può", "pwɔ"),
+                    ("più", "pju"), ("è", "ɛ")))
+
+    def test_penultimate_stress_is_the_default(self):
+        self.check((("parlare", "parˈlare"), ("italiano", "itaˈljano"),
+                    ("buonasera", "bwonaˈsera"),
+                    ("arrivederci", "arriveˈdertʃi")))
+
+    def test_endings_that_fix_the_stress(self):
+        self.check((("possibile", "posˈsibile"), ("facile", "ˈfatʃile"),
+                    ("musica", "ˈmuzika"), ("bellissimo", "belˈlissimo"),
+                    ("farai", "faˈraj"), ("farmacologia", "farmakoloˈdʒia"),
+                    ("libreria", "libreˈria")))
+
+    def test_frequent_exceptions_to_those_endings(self):
+        self.check((("amico", "aˈmiko"), ("gentile", "dʒenˈtile")))
+
+    def test_open_e_and_o_by_ending_and_by_table(self):
+        self.check((("bello", "ˈbɛllo"), ("stella", "ˈstɛlla"),
+                    ("senza", "ˈsɛntsa"), ("medico", "ˈmɛdiko"),
+                    ("bene", "ˈbɛne"), ("otto", "ˈɔtto"),
+                    ("tavolo", "ˈtavolo"), ("telefono", "teˈlɛfono"),
+                    ("sera", "ˈsera")))
+
+    def test_a_hint_marks_what_the_letters_do_not(self):
+        self.assertEqual(italian_ipa("leggo"), "ˈleɡɡo")
+        self.assertEqual(italian_ipa("leggo", "lèggo"), "ˈlɛɡɡo")
+        # Marked per word, with the punctuation of the text.
+        self.assertEqual(italian_ipa("Che leggo!", "che lèggo"),
+                         "ke ˈlɛɡɡo")
+
+    def test_a_hint_that_is_not_the_text_is_ignored_and_says_so(self):
+        t = transcribe("leggo", "it", "cena")
+        self.assertEqual(t.ipa, "ˈleɡɡo")
+        self.assertFalse(t.fitted)
+        self.assertTrue(transcribe("leggo", "it", "lèggo").fitted)
+
+    def test_sentences_and_elision(self):
+        self.check((("Mi chiamo Marco.", "mi ˈkjamo ˈmarko"),
+                    ("Dov'è il bagno?", "doˈvɛ il ˈbaɲɲo"),
+                    ("Parla più lentamente, per favore.",
+                     "ˈparla pju lentaˈmente per faˈvore"),
+                    ("Quanto costa?", "ˈkwanto ˈkɔsta"),
+                    ("L'acqua è fredda.", "ˈlakkwa ɛ ˈfredda"),
+                    ("Un caffè, per favore.", "un kafˈfɛ per faˈvore"),
+                    ("Io non capisco.", "ˈio non kaˈpisko"),
+                    ("Tu parli inglese?", "tu ˈparli inˈɡleze")))
+
+    def test_the_decks_existing_cards_that_are_right_come_out_the_same(self):
+        self.check((("Sì, grazie.", "si ˈɡrattsje"),
+                    ("Sì, parlo italiano.", "si ˈparlo itaˈljano"),
+                    ("Non parlo inglese.", "non ˈparlo inˈɡleze"),
+                    ("Pane e vino.", "ˈpane e ˈvino"),
+                    ("Acqua, per favore.", "ˈakkwa per faˈvore"),
+                    ("mi dispiace", "mi disˈpjatʃe"),
+                    ("come si chiama?", "ˈkome si ˈkjama"),
+                    ("piacere", "pjaˈtʃere"), ("aiuto!", "aˈjuto")))
+
+    def test_so_is_open_and_cui_is_one_syllable(self):
+        self.check((("non lo so", "non lo sɔ"), ("cui", "kui"),
+                    ("sui", "sui")))
+
+    def test_everyday_words_with_open_vowels_and_dz(self):
+        self.check((("dopo", "ˈdɔpo"), ("nonna", "ˈnɔnna"),
+                    ("destra", "ˈdɛstra"), ("prezzo", "ˈprɛttso"),
+                    ("pezzo", "ˈpɛttso"), ("zucchero", "ˈdzukkero"),
+                    ("gnocco", "ˈɲɔkko"), ("America", "aˈmɛrika")))
+
+    def test_voiceless_s_after_a_compound_part(self):
+        self.check((("girasole", "dʒiraˈsole"), ("risalire", "risaˈlire")))
+
+    def test_elision_reads_the_host_word_with_its_own_stress(self):
+        self.check((("l'amico", "laˈmiko"), ("un'amica", "unaˈmika"),
+                    ("un'idea", "uniˈdɛa"), ("l'acqua", "ˈlakkwa"),
+                    ("dell'acqua", "delˈlakkwa"), ("un'ora", "uˈnora")))
+
+    def test_dispatch(self):
+        t = transcribe("Grazie mille", "it")
+        self.assertEqual(t.ipa, "ˈɡrattsje ˈmille")
+        self.assertTrue(t.fitted)
+
+    def test_other_letters_and_words_without_a_vowel_cannot_be_read(self):
+        for bad in ("naïve", "a1", "ಕನ್ನಡ", "pkt"):
+            with self.assertRaises(CannotRead):
+                italian_ipa(bad)
 
 
 class MalayalamTest(unittest.TestCase):
