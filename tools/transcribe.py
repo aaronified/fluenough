@@ -3151,11 +3151,15 @@ def _de_join(toks: list[_DeTok], stressed: int, n_nuclei: int) -> str:
 # Sources: Wikipedia, "Russian phonology" (vowel reduction by position and
 # by the consonant before; palatalisation; final devoicing and voicing
 # assimilation, в excepted; the silent consonants of стн, вств, лнц, рдц; сч
-# and зч as ɕː; -тся and -ться as tsə; long consonants) and Wiktionary,
-# "Appendix:Russian pronunciation" (the vowels, ж ш as hard, ч щ й as soft,
-# the ɐ of the first pretonic syllable and of a word-initial а or о, ɪ for an
-# initial or post-vocalic unstressed э). The broad symbols follow
-# Wiktionary's phonemic forms and the first cards (ɐ ə ɪ ʊ, not ʌ).
+# and зч as ɕː; long consonants; the -ся after т or ть as hard) and
+# Wiktionary, "Appendix:Russian pronunciation" (the vowels, ж ш as hard,
+# ч щ й as soft, the ɐ of an unstressed word-initial а or о). The broad
+# symbols follow Wiktionary's phonemic forms and the first cards (ɐ ə ɪ ʊ, not
+# ʌ). Not stated on those pages, and so the engine's own rules (several read
+# off the first cards): -тся and -ться as tsə, the ɐ of the first pretonic
+# syllable, ɪ for an unstressed э, the values of a final unstressed е and я,
+# г as x before к and ч, the glide after a vowel, and the doubled-consonant
+# rule below.
 #
 # Stress is in the lexicon, not the letters. The engine takes it from:
 #  1. the text itself: a combining acute U+0301 after the stressed vowel
@@ -3174,10 +3178,11 @@ def _de_join(toks: list[_DeTok], stressed: int, n_nuclei: int) -> str:
 # в; стн, здн and стл drop their т or д everywhere, though some words keep
 # it (костный); ч is ш only in что чтобы конечно скучно нарочно; no
 # assimilation of softness (стʲ before a soft consonant) and no voicing
-# across a word boundary; тч дц тс are not simplified; a prefix before с or з
-# and ч (без часов) is read as щ; the proclitics are the listed words only; the й of пожалуйста is dropped
-# (as the first cards write it), and no other word with a silent letter is
-# known.
+# across a word boundary; doubled soft consonants (Россия) are not checked;
+# тч дц тс are not simplified; a prefix before с or з and ч (без часов) is
+# read as щ; the proclitics are the listed words only; the й of пожалуйста
+# is dropped (as the first cards write it), and no other word with a silent
+# letter is known.
 
 _RU_VOWELS = "аеёиоуыэюя"
 _RU_CONS = "бвгджзклмнпрстфхцчшщй"
@@ -3428,7 +3433,9 @@ def _ru_voicing(units: list[_RuUnit]) -> None:
             if u.base in _RU_DEVOICE:
                 u.base = _RU_DEVOICE[u.base]
         elif nxt.kind == "C":
-            if nxt.base in _RU_VOICELESS and u.base in _RU_DEVOICE:
+            if u.base == "ɡ" and nxt.base in ("k", "tɕ"):
+                u.base = "x"            # мягкий, легко
+            elif nxt.base in _RU_VOICELESS and u.base in _RU_DEVOICE:
                 u.base = _RU_DEVOICE[u.base]
             elif nxt.base in _RU_VOICED_OBS and u.base in _RU_VOICE:
                 u.base = _RU_VOICE[u.base]

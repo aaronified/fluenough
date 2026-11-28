@@ -2177,12 +2177,13 @@ class GujaratiHintTest(unittest.TestCase):
 
 
 class RussianTest(unittest.TestCase):
-    """Russian (ru), broad. The forms of рассказ, нож, ложка, солнце, жена,
-    язык, чувство, счастье and the rules behind them are those that
-    en.wikipedia.org's "Russian phonology" gives (read 2026-11-28), written
-    in this engine's symbols (ɐ for ʌ, ˈ before the syllable, ɡ); the rest
-    follow the rules of that page and of Wiktionary's "Appendix:Russian
-    pronunciation" and are checked by hand, not against single entries."""
+    """Russian (ru), broad. The forms of рассказ, нож, ложка, солнце and
+    жена are those that en.wikipedia.org's "Russian phonology" gives (read
+    2026-11-28), written in this engine's symbols (ɐ for ʌ, ˈ before the
+    syllable, ɡ); the rest, счастье included, are the engine's own rules,
+    which follow that page and Wiktionary's "Appendix:Russian pronunciation"
+    where they state them, and are checked by hand, not against single
+    entries."""
 
     def check(self, triples):
         for text, hint, ipa in triples:
@@ -2216,6 +2217,8 @@ class RussianTest(unittest.TestCase):
         self.check((("друг", None, "druk"), ("нож", None, "noʂ"),
                     ("хлеб", None, "xlʲep"), ("ложка", "ло́жка", "ˈloʂkə"),
                     ("всё", None, "fsʲo"),
+                    ("мягкий", "мя́гкий", "ˈmʲaxkʲɪj"),
+                    ("легко", "легко́", "lʲɪxˈko"),
                     ("здравствуйте", "здра́вствуйте", "ˈzdrastvʊjtʲɪ")))
 
     def test_silent_letters_and_changed_consonants(self):
