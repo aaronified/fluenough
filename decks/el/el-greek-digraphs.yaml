@@ -1,0 +1,131 @@
+# Unit 7 of the Greek A1 path (the letters of the alphabet): the letter pairs. Sources read: en.wikipedia.org 'Modern Greek phonology' (vowel pairs, αυ ευ before voiced and voiceless sounds, μπ ντ γκ as stops) and 'Greek alphabet'.
+# The ipa of every card comes from tools/transcribe.py (the el engine). The engine writes μπ ντ γκ as the stop at the start of a word, as the card's broad ipa; the note gives the inside-word value.
+schema: 1
+id: "el-greek-digraphs"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "el-0330"
+    target: "αι"
+    alt_target: "Αι"
+    reading: "ai"
+    ipa: "e"
+    pos: "letter"
+    tags: ["digraph", "e-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+      - { id: "pair", kind: "pair", ref: "el-0301", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0331"
+    target: "ει"
+    alt_target: "Ει"
+    reading: "ei"
+    ipa: "i"
+    pos: "letter"
+    tags: ["digraph", "i-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0332"
+    target: "οι"
+    alt_target: "Οι"
+    reading: "oi"
+    ipa: "i"
+    pos: "letter"
+    tags: ["digraph", "i-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0333"
+    target: "ου"
+    alt_target: "Ου"
+    reading: "ou"
+    ipa: "u"
+    pos: "letter"
+    tags: ["digraph", "u-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0334"
+    target: "υι"
+    alt_target: "Υι"
+    reading: "yi"
+    ipa: "i"
+    pos: "letter"
+    tags: ["digraph", "i-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0335"
+    target: "αυ"
+    alt_target: "Αυ"
+    reading: "af"
+    ipa: "af"
+    pos: "letter"
+    tags: ["digraph", "f-v-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0336"
+    target: "ευ"
+    alt_target: "Ευ"
+    reading: "ef"
+    ipa: "ef"
+    pos: "letter"
+    tags: ["digraph", "f-v-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0337"
+    target: "μπ"
+    alt_target: "Μπ"
+    reading: "b"
+    ipa: "b"
+    pos: "letter"
+    tags: ["digraph", "consonant"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+      - { id: "pair", kind: "pair", ref: "el-0310", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0338"
+    target: "ντ"
+    alt_target: "Ντ"
+    reading: "d"
+    ipa: "d"
+    pos: "letter"
+    tags: ["digraph", "consonant"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+      - { id: "pair", kind: "pair", ref: "el-0312", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0339"
+    target: "γκ"
+    alt_target: "Γκ"
+    reading: "g"
+    ipa: "ɡ"
+    pos: "letter"
+    tags: ["digraph", "consonant"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+      - { id: "pair", kind: "pair", ref: "el-0311", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0340"
+    target: "γγ"
+    alt_target: "Γγ"
+    reading: "ng"
+    ipa: "ŋɡ"
+    pos: "letter"
+    tags: ["digraph", "consonant"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0341"
+    target: "τσ"
+    alt_target: "Τσ"
+    reading: "ts"
+    ipa: "ts"
+    pos: "letter"
+    tags: ["digraph", "consonant"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
+  - id: "el-0342"
+    target: "τζ"
+    alt_target: "Τζ"
+    reading: "tz"
+    ipa: "dz"
+    pos: "letter"
+    tags: ["digraph", "consonant"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Modern_Greek_phonology" }
