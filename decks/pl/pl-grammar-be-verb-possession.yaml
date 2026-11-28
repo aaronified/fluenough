@@ -1,0 +1,65 @@
+# Unit 26 grammar, the possession frame. Sources read: en.wikipedia.org 'Polish grammar' (the present of być, jestem jesteś jest jesteśmy jesteście są; nie directly before the verb; jest and nie ma with the genitive; to jest; the genitive for the object of a negated verb) and the en.wiktionary.org entries być, mieć and nie ma (conjugation tables, usage examples).
+schema: 1
+id: "pl-grammar-be-verb-possession"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["have", "have-not"]
+  entries:
+    - lemma: "ja"
+      key: "ja"
+      ipa: "ja"
+      forms:
+        "have": "ja mam książkę"
+        "have-not": "ja nie mam książki"
+      ipas:
+        "have": "ja mam ˈkɕɔ̃ʂkɛ"
+        "have-not": "ja ɲɛ mam ˈkɕɔ̃ʂkʲi"
+    - lemma: "ty"
+      key: "ty"
+      ipa: "tɨ"
+      forms:
+        "have": "ty masz książkę"
+        "have-not": "ty nie masz książki"
+      ipas:
+        "have": "tɨ maʂ ˈkɕɔ̃ʂkɛ"
+        "have-not": "tɨ ɲɛ maʂ ˈkɕɔ̃ʂkʲi"
+    - lemma: "on"
+      key: "on"
+      ipa: "ɔn"
+      forms:
+        "have": "on ma książkę"
+        "have-not": "on nie ma książki"
+      ipas:
+        "have": "ɔn ma ˈkɕɔ̃ʂkɛ"
+        "have-not": "ɔn ɲɛ ma ˈkɕɔ̃ʂkʲi"
+    - lemma: "my"
+      key: "my"
+      ipa: "mɨ"
+      forms:
+        "have": "my mamy książkę"
+        "have-not": "my nie mamy książki"
+      ipas:
+        "have": "mɨ ˈmamɨ ˈkɕɔ̃ʂkɛ"
+        "have-not": "mɨ ɲɛ ˈmamɨ ˈkɕɔ̃ʂkʲi"
+    - lemma: "wy"
+      key: "wy"
+      ipa: "vɨ"
+      forms:
+        "have": "wy macie książkę"
+        "have-not": "wy nie macie książki"
+      ipas:
+        "have": "vɨ ˈmatɕɛ ˈkɕɔ̃ʂkɛ"
+        "have-not": "vɨ ɲɛ ˈmatɕɛ ˈkɕɔ̃ʂkʲi"
+    - lemma: "oni"
+      key: "oni"
+      ipa: "ˈɔɲi"
+      forms:
+        "have": "oni mają książkę"
+        "have-not": "oni nie mają książki"
+      ipas:
+        "have": "ˈɔɲi ˈmajɔ̃ ˈkɕɔ̃ʂkɛ"
+        "have-not": "ˈɔɲi ɲɛ ˈmajɔ̃ ˈkɕɔ̃ʂkʲi"

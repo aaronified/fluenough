@@ -1,0 +1,23 @@
+schema: 1
+id: "pl-en-grammar-be-verb-possession"
+kind: "layer"
+core: "pl-grammar-be-verb-possession"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "I have: mam"
+license: "CC-BY-SA-4.0"
+description: "Six ways of saying who has a book: Mam książkę, and, for no book, Nie mam książki. Polish uses the verb mieć, to have, here. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "I have: mam"
+  slot_name: "sentence"
+  slots:
+    "have": "has a book (mieć and the accusative)"
+    "have-not": "has no book (nie, mieć and the genitive)"
+  entries:
+    "ja": "I have"
+    "ty": "you have (one person)"
+    "on": "he, she or it has"
+    "my": "we have"
+    "wy": "you have (more than one person)"
+    "oni": "they have"
+  notes: "Polish says I have with the verb mieć, to have, and the person as its subject: Mam książkę, I have a book. Its present tense is mam, masz, ma, mamy, macie, mają. The thing that is had goes in the accusative: książka, książkę (the cases unit). To say that the person does not have something, nie goes before the verb and the thing changes to the genitive: książka becomes książki, so Nie mam książki. Wikipedia's page on Polish grammar says the genitive is used for the object of a negated verb, and the accusative for the object of a verb that is not negated. The genitive is not taught in this course yet, so książki is learnt here as part of the frame nie mam, nie masz and so on, with the noun in the genitive."

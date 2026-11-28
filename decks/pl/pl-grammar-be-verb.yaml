@@ -1,0 +1,83 @@
+# Unit 26 grammar topic be-verb. Sources read: en.wikipedia.org 'Polish grammar' (the present of być, jestem jesteś jest jesteśmy jesteście są; nie directly before the verb; jest and nie ma with the genitive; to jest; the genitive for the object of a negated verb) and the en.wiktionary.org entries być, mieć and nie ma (conjugation tables, usage examples).
+schema: 1
+id: "pl-grammar-be-verb"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["is", "is-not"]
+  entries:
+    - lemma: "ja"
+      key: "ja"
+      ipa: "ja"
+      forms:
+        "is": "ja jestem"
+        "is-not": "ja nie jestem"
+      ipas:
+        "is": "ja ˈjɛstɛm"
+        "is-not": "ja ɲɛ ˈjɛstɛm"
+    - lemma: "ty"
+      key: "ty"
+      ipa: "tɨ"
+      forms:
+        "is": "ty jesteś"
+        "is-not": "ty nie jesteś"
+      ipas:
+        "is": "tɨ ˈjɛstɛɕ"
+        "is-not": "tɨ ɲɛ ˈjɛstɛɕ"
+    - lemma: "on"
+      key: "on"
+      ipa: "ɔn"
+      forms:
+        "is": "on jest"
+        "is-not": "on nie jest"
+      ipas:
+        "is": "ɔn jɛst"
+        "is-not": "ɔn ɲɛ jɛst"
+    - lemma: "ona"
+      key: "ona"
+      ipa: "ˈɔna"
+      forms:
+        "is": "ona jest"
+        "is-not": "ona nie jest"
+      ipas:
+        "is": "ˈɔna jɛst"
+        "is-not": "ˈɔna ɲɛ jɛst"
+    - lemma: "ono"
+      key: "ono"
+      ipa: "ˈɔnɔ"
+      forms:
+        "is": "ono jest"
+        "is-not": "ono nie jest"
+      ipas:
+        "is": "ˈɔnɔ jɛst"
+        "is-not": "ˈɔnɔ ɲɛ jɛst"
+    - lemma: "my"
+      key: "my"
+      ipa: "mɨ"
+      forms:
+        "is": "my jesteśmy"
+        "is-not": "my nie jesteśmy"
+      ipas:
+        "is": "mɨ jɛsˈtɛɕmɨ"
+        "is-not": "mɨ ɲɛ jɛsˈtɛɕmɨ"
+    - lemma: "wy"
+      key: "wy"
+      ipa: "vɨ"
+      forms:
+        "is": "wy jesteście"
+        "is-not": "wy nie jesteście"
+      ipas:
+        "is": "vɨ jɛsˈtɛɕtɕɛ"
+        "is-not": "vɨ ɲɛ jɛsˈtɛɕtɕɛ"
+    - lemma: "oni"
+      key: "oni"
+      ipa: "ˈɔɲi"
+      forms:
+        "is": "oni są"
+        "is-not": "oni nie są"
+      ipas:
+        "is": "ˈɔɲi sɔ̃"
+        "is-not": "ˈɔɲi ɲɛ sɔ̃"
