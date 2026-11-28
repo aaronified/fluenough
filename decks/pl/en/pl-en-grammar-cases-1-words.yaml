@@ -1,0 +1,53 @@
+schema: 1
+id: "pl-en-grammar-cases-1-words"
+kind: "layer"
+core: "pl-grammar-cases-1-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Words for the cases"
+license: "CC-BY-SA-4.0"
+description: "3 words the case tables need: książka, book, Polska, Poland, and the preposition na, on. Taken from each word's Wiktionary entry and Wikipedia's page on Polish grammar. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "pl-0580":
+    native: "book"
+    notes:
+      "n1": "książka is feminine: it ends in -a. The letters ksi are said /kɕ/, the ą before ż is a nasal vowel that Wiktionary writes /ɔw̃/, and the ż before k is said /ʂ/: książka is /ˈkɕɔw̃ʂka/. The k becomes c in the locative: w książce, and the accusative is książkę."
+    examples:
+      "To jest książka.":
+        native: "This is a book."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "książka": "book"
+      "Czytam książkę.":
+        native: "I read a book."
+        bases:
+          "książkę": "book (here as the thing that is read)"
+  "pl-0581":
+    native: "Poland"
+    notes:
+      "n1": "Polska is the name of the country and is feminine: it ends in -a. It has a capital letter, but the adjective polski, Polish, does not. The locative is w Polsce (sk becomes sc before the ending -e) and the genitive Polski, which is in z Polski, from Poland."
+    examples:
+      "Mieszkam w Polsce.":
+        native: "I live in Poland."
+        bases:
+          "Polsce": "Poland (here: in Poland)"
+      "Jestem z Polski.":
+        native: "I am from Poland."
+        bases:
+          "Jestem": "am (a form of być, to be)"
+          "z": "from; out of"
+          "Polski": "Poland (here: from Poland)"
+  "pl-0582":
+    native: "on; at"
+    notes:
+      "n1": "na means on, and also at a place or an event. With the locative case it says where something is: na stole, on the table. With the accusative it says where something goes onto, which this course teaches later. Whether a place takes na or w, in, is learnt with the noun: na wsi, in the countryside, but w mieście, in the city."
+    examples:
+      "Siedzę na koniu.":
+        native: "I am sitting on a horse."
+        bases:
+          "na": "on; at"
+      "Mieszkam na wsi.":
+        native: "I live in the countryside."
+        bases:
+          "na": "on; at"

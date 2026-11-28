@@ -1,0 +1,303 @@
+schema: 1
+id: "pl-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "pl-1790"
+    target: "wiele"
+    ipa: "ˈvjɛlɛ"
+    pos: "other"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1791"
+    target: "kilka"
+    ipa: "ˈkilka"
+    pos: "other"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1792"
+    target: "kilo"
+    ipa: "ˈkilɔ"
+    pos: "noun"
+    gender: "n"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest kilo.", ipa: "tɔ jɛst ˈkilɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kilo", base: "kilo" }] }
+  - id: "pl-1793"
+    target: "litr"
+    ipa: "litr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest litr.", ipa: "tɔ jɛst litr", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "litr", base: "litr" }] }
+  - id: "pl-1794"
+    target: "metr"
+    ipa: "mɛtr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest metr.", ipa: "tɔ jɛst mɛtr", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "metr", base: "metr" }] }
+  - id: "pl-1795"
+    target: "kawałek"
+    ipa: "kaˈvawɛk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest kawałek.", ipa: "tɔ jɛst kaˈvawɛk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kawałek", base: "kawałek" }] }
+  - id: "pl-1796"
+    target: "połowa"
+    ipa: "pɔˈwɔva"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest połowa.", ipa: "tɔ jɛst pɔˈwɔva", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "połowa", base: "połowa" }] }
+  - id: "pl-1797"
+    target: "ćwierć"
+    ipa: "tɕfjɛrtɕ"
+    pos: "other"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1798"
+    target: "cały"
+    ipa: "ˈtsawɨ"
+    pos: "adj"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1799"
+    target: "pełny"
+    ipa: "ˈpɛwnɨ"
+    pos: "adj"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1800"
+    target: "pusty"
+    ipa: "ˈpustɨ"
+    pos: "adj"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1801"
+    target: "więcej"
+    ipa: "ˈvjɛntsɛj"
+    pos: "adv"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1802"
+    target: "tyle"
+    ipa: "ˈtɨlɛ"
+    pos: "other"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1803"
+    target: "parę"
+    ipa: "ˈparɛ"
+    pos: "other"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1804"
+    target: "żaden"
+    ipa: "ˈʐadɛn"
+    pos: "pronoun"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1805"
+    target: "sto"
+    ipa: "stɔ"
+    pos: "other"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1806"
+    target: "tysiąc"
+    ipa: "ˈtɨɕɔnts"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest tysiąc.", ipa: "tɔ jɛst ˈtɨɕɔnts", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "tysiąc", base: "tysiąc" }] }
+  - id: "pl-1807"
+    target: "milion"
+    ipa: "ˈmiljɔn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest milion.", ipa: "tɔ jɛst ˈmiljɔn", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "milion", base: "milion" }] }
+  - id: "pl-1808"
+    target: "gram"
+    ipa: "ɡram"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest gram.", ipa: "tɔ jɛst ɡram", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "gram", base: "gram" }] }
+  - id: "pl-1809"
+    target: "puszka"
+    ipa: "ˈpuʂka"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest puszka.", ipa: "tɔ jɛst ˈpuʂka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "puszka", base: "puszka" }] }
+  - id: "pl-1810"
+    target: "butelka"
+    ipa: "buˈtɛlka"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest butelka.", ipa: "tɔ jɛst buˈtɛlka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "butelka", base: "butelka" }] }
+  - id: "pl-1811"
+    target: "paczka"
+    ipa: "ˈpatʂka"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest paczka.", ipa: "tɔ jɛst ˈpatʂka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "paczka", base: "paczka" }] }
+  - id: "pl-1812"
+    target: "część"
+    ipa: "tʂɛ̃ɕtɕ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest część.", ipa: "tɔ jɛst tʂɛ̃ɕtɕ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "część", base: "część" }] }
+  - id: "pl-1813"
+    target: "reszta"
+    ipa: "ˈrɛʂta"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest reszta.", ipa: "tɔ jɛst ˈrɛʂta", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "reszta", base: "reszta" }] }
+  - id: "pl-1814"
+    target: "kubek"
+    ipa: "ˈkubɛk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest kubek.", ipa: "tɔ jɛst ˈkubɛk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kubek", base: "kubek" }] }
+  - id: "pl-1815"
+    target: "talerz"
+    ipa: "ˈtalɛʂ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest talerz.", ipa: "tɔ jɛst ˈtalɛʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "talerz", base: "talerz" }] }
+  - id: "pl-1816"
+    target: "szklanka"
+    ipa: "ˈʂklaŋka"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest szklanka.", ipa: "tɔ jɛst ˈʂklaŋka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "szklanka", base: "szklanka" }] }
+  - id: "pl-1817"
+    target: "filiżanka"
+    ipa: "filiˈʐaŋka"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest filiżanka.", ipa: "tɔ jɛst filiˈʐaŋka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "filiżanka", base: "filiżanka" }] }
+  - id: "pl-1818"
+    target: "pół"
+    ipa: "puw"
+    pos: "other"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1819"
+    target: "słoik"
+    ipa: "ˈswɔik"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest słoik.", ipa: "tɔ jɛst ˈswɔik", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "słoik", base: "słoik" }] }
+  - id: "pl-1820"
+    target: "pudełko"
+    ipa: "puˈdɛwkɔ"
+    pos: "noun"
+    gender: "n"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest pudełko.", ipa: "tɔ jɛst puˈdɛwkɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "pudełko", base: "pudełko" }] }
+  - id: "pl-1821"
+    target: "miska"
+    ipa: "ˈmiska"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest miska.", ipa: "tɔ jɛst ˈmiska", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "miska", base: "miska" }] }
+  - id: "pl-1822"
+    target: "łyżka"
+    ipa: "ˈwɨʂka"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest łyżka.", ipa: "tɔ jɛst ˈwɨʂka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "łyżka", base: "łyżka" }] }

@@ -1,0 +1,139 @@
+schema: 1
+id: "pl-location"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "location"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "pl-2002"
+    target: "wieś"
+    ipa: "vjɛɕ"
+    pos: "noun"
+    gender: "f"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest wieś.", ipa: "tɔ jɛst vjɛɕ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "Gdzie jest wieś?", ipa: "ɡdʑɛ jɛst vjɛɕ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }] }
+  - id: "pl-2003"
+    target: "kraj"
+    ipa: "kraj"
+    pos: "noun"
+    gender: "m"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kraj.", ipa: "tɔ jɛst kraj", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "Gdzie jest kraj?", ipa: "ɡdʑɛ jɛst kraj", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }] }
+  - id: "pl-2004"
+    target: "ulica"
+    ipa: "uˈlitsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ulica.", ipa: "tɔ jɛst uˈlitsa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "Gdzie jest ulica?", ipa: "ɡdʑɛ jɛst uˈlitsa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }] }
+  - id: "pl-2005"
+    target: "pokój"
+    ipa: "ˈpɔkuj"
+    pos: "noun"
+    gender: "m"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest pokój.", ipa: "tɔ jɛst ˈpɔkuj", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "Gdzie jest pokój?", ipa: "ɡdʑɛ jɛst ˈpɔkuj", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }] }
+  - id: "pl-2006"
+    target: "róg"
+    ipa: "ruk"
+    pos: "noun"
+    gender: "m"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest róg.", ipa: "tɔ jɛst ruk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "Gdzie jest róg?", ipa: "ɡdʑɛ jɛst ruk", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }] }
+  - id: "pl-2007"
+    target: "most"
+    ipa: "mɔst"
+    pos: "noun"
+    gender: "m"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest most.", ipa: "tɔ jɛst mɔst", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "Gdzie jest most?", ipa: "ɡdʑɛ jɛst mɔst", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }] }
+  - id: "pl-2008"
+    target: "w"
+    ipa: "f"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Jestem w domu.", ipa: "ˈjɛstɛm v ˈdɔmu", bases: [{ word: "Jestem", base: "być" }, { word: "domu", base: "dom" }] }
+  - id: "pl-2009"
+    target: "pod"
+    ipa: "pɔt"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest pod domem.", ipa: "tɔ jɛst pɔt ˈdɔmɛm", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "domem", base: "dom" }] }
+  - id: "pl-2010"
+    target: "nad"
+    ipa: "nat"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest nad domem.", ipa: "tɔ jɛst nat ˈdɔmɛm", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "domem", base: "dom" }] }
+  - id: "pl-2011"
+    target: "przed"
+    ipa: "pʂɛt"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest przed domem.", ipa: "tɔ jɛst pʂɛt ˈdɔmɛm", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "domem", base: "dom" }] }
+  - id: "pl-2012"
+    target: "za"
+    ipa: "za"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest za domem.", ipa: "tɔ jɛst za ˈdɔmɛm", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "domem", base: "dom" }] }
+  - id: "pl-2013"
+    target: "między"
+    ipa: "ˈmjɛndzɨ"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest między domami.", ipa: "tɔ jɛst ˈmjɛndzɨ dɔˈmami", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "domami", base: "dom" }] }
+  - id: "pl-2014"
+    target: "obok"
+    ipa: "ˈɔbɔk"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest obok domu.", ipa: "tɔ jɛst ˈɔbɔk ˈdɔmu", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "domu", base: "dom" }] }

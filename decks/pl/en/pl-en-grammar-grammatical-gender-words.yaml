@@ -1,0 +1,113 @@
+schema: 1
+id: "pl-en-grammar-grammatical-gender-words"
+kind: "layer"
+core: "pl-grammar-grammatical-gender-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns for the three genders"
+license: "CC-BY-SA-4.0"
+description: "6 nouns the gender table needs: dom, stół and kot (masculine), noc and kobieta (feminine) and okno (neuter). Taken from Wikipedia's page on Polish grammar and each word's Wiktionary entry. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "pl-0460":
+    native: "house; home"
+    notes:
+      "n1": "dom is masculine and inanimate (a thing): it takes ten, mój and twój. It means a house and, as Wiktionary says, the place where one lives, home. The locative is w domu."
+    examples:
+      "To jest dom.":
+        native: "This is a house."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "dom": "house; home"
+      "To jest mój dom.":
+        native: "This is my house."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "dom": "house; home"
+  "pl-0461":
+    native: "table"
+    notes:
+      "n1": "stół is masculine and inanimate (a thing): it takes ten, mój and twój. The ó is said /u/ and the final ł /w/. Other forms show an o in its place: the locative is na stole."
+    examples:
+      "To jest stół.":
+        native: "This is a table."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "stół": "table"
+      "To jest twój stół.":
+        native: "This is your table."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "stół": "table"
+  "pl-0462":
+    native: "cat"
+    notes:
+      "n1": "kot is masculine and animate (an animal): it takes ten, mój and twój. Wiktionary gives the accusative kota, which ends like the genitive; the cases unit teaches it."
+    examples:
+      "To jest kot.":
+        native: "This is a cat."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kot": "cat"
+      "To jest mój kot.":
+        native: "This is my cat."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kot": "cat"
+  "pl-0463":
+    native: "window"
+    notes:
+      "n1": "okno is neuter: it ends in -o and takes to, moje and twoje. The locative is w oknie."
+    examples:
+      "To jest okno.":
+        native: "This is a window."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "okno": "window"
+      "To jest moje okno.":
+        native: "This is my window."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "moje": "my (neuter)"
+          "okno": "window"
+  "pl-0464":
+    native: "night"
+    notes:
+      "n1": "noc is feminine although it ends in a consonant: Wikipedia's page on Polish grammar lists noc among the feminine nouns that end in -c. It takes ta, moja and twoja; this has to be learnt with the word."
+    examples:
+      "To jest noc.":
+        native: "This is the night."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "noc": "night"
+      "Ta noc jest dobra.":
+        native: "This night is good."
+        bases:
+          "Ta": "this (feminine)"
+          "noc": "night"
+          "jest": "is (a form of być, to be)"
+  "pl-0465":
+    native: "woman"
+    notes:
+      "n1": "kobieta is feminine and ends in -a: it takes ta, moja and twoja. The t changes to ć (written c before the i) in the locative: o kobiecie."
+    examples:
+      "To jest kobieta.":
+        native: "This is a woman."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kobieta": "woman"
+      "Ta kobieta jest tu.":
+        native: "This woman is here."
+        bases:
+          "Ta": "this (feminine)"
+          "kobieta": "woman"
+          "jest": "is (a form of być, to be)"

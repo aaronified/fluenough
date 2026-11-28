@@ -1,0 +1,44 @@
+# Unit 21 (grammar topics nominative, accusative, locative). Words the case tables need that no earlier unit teaches. Sources read: en.wikipedia.org 'Polish grammar' and each word's en.wiktionary.org entry (senses, usage examples, declension).
+schema: 1
+id: "pl-grammar-cases-1-words"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "pl-0580"
+    target: "książka"
+    ipa: "ˈkɕɔ̃ʂka"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Polish_grammar" }
+    bases: "self"
+    examples:
+      - { target: "To jest książka.", ipa: "tɔ jɛst ˈkɕɔ̃ʂka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "książka", base: "książka" }] }
+      - { target: "Czytam książkę.", ipa: "ˈtʂɨtam ˈkɕɔ̃ʂkɛ", bases: [{ word: "Czytam", ref: "pl-1655" }, { word: "książkę", base: "książka" }] }
+  - id: "pl-0581"
+    target: "Polska"
+    ipa: "ˈpɔlska"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wiktionary.org/wiki/Polska" }
+    bases: "self"
+    examples:
+      - { target: "Mieszkam w Polsce.", ipa: "ˈmjɛʂkam f ˈpɔlstsɛ", bases: [{ word: "Mieszkam", ref: "pl-1583" }, { word: "w", ref: "pl-2008" }, { word: "Polsce", base: "Polska" }] }
+      - { target: "Jestem z Polski.", ipa: "ˈjɛstɛm s ˈpɔlski", bases: [{ word: "Jestem", base: "być" }, { word: "z", base: "z" }, { word: "Polski", base: "Polska" }] }
+  - id: "pl-0582"
+    target: "na"
+    ipa: "na"
+    pos: "other"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "usage", source: "https://en.wiktionary.org/wiki/na" }
+    bases: "self"
+    examples:
+      - { target: "Siedzę na koniu.", ipa: "ˈɕɛdzɛ na ˈkɔɲu", bases: [{ word: "Siedzę", ref: "pl-1683" }, { word: "na", base: "na" }, { word: "koniu", ref: "pl-0418" }] }
+      - { target: "Mieszkam na wsi.", ipa: "ˈmjɛʂkam na fɕi", bases: [{ word: "Mieszkam", ref: "pl-1583" }, { word: "na", base: "na" }, { word: "wsi", ref: "pl-2002" }] }

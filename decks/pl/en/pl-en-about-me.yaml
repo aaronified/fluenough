@@ -1,0 +1,109 @@
+schema: 1
+id: "pl-en-about-me"
+kind: "layer"
+core: "pl-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+description: "Words for talking about yourself: your name, age, where you live and come from, your job, your language, and what you like. Not yet checked by a Polish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "pl-1580":
+    native: "name; given name"
+    notes:
+      "n1": "imię is neuter. It is the name your parents gave you."
+    examples:
+      "Moje imię to Anna.":
+        native: "My name is Anna."
+        bases:
+          "Moje": "my; mine"
+          "imię": "name; given name"
+          "to": "this; it"
+          "Anna": "Anna"
+
+  "pl-1581":
+    native: "to call; to name"
+    notes:
+      "n1": "nazywać is imperfective (its perfective partner is nazwać). Nazywam się means I am called: the usual way to give your name."
+    examples:
+      "Nazywam się Anna.":
+        native: "My name is Anna."
+        bases:
+          "Nazywam": "to call; to name"
+          "się": "oneself"
+          "Anna": "Anna"
+
+  "pl-1582":
+    native: "age"
+    notes:
+      "n1": "wiek is masculine (inanimate)."
+    examples:
+      "Jaki jest twój wiek?":
+        native: "What is your age?"
+        bases:
+          "Jaki": "what kind of"
+          "jest": "to be"
+          "twój": "your; yours"
+          "wiek": "age"
+
+  "pl-1583":
+    native: "to live; to reside"
+    notes:
+      "n1": "mieszkać is imperfective (its perfective partner is zamieszkać). Use it for where you live for a long time."
+    examples:
+      "Mieszkam w Warszawie.":
+        native: "I live in Warsaw."
+        bases:
+          "Mieszkam": "to live; to reside"
+          "w": "in"
+          "Warszawie": "Warsaw"
+
+  "pl-1584":
+    native: "to come from"
+    notes:
+      "n1": "This card is the imperfective sense to come from, with z and a place: pochodzić z. The same spelling is a different verb meaning to walk for a while."
+    examples:
+      "Skąd pochodzisz?":
+        native: "Where do you come from?"
+        bases:
+          "Skąd": "where from"
+          "pochodzisz": "to come from"
+
+  "pl-1585":
+    native: "to like"
+    notes:
+      "n1": "lubić is imperfective."
+    examples:
+      "Lubię to.":
+        native: "I like this."
+        bases:
+          "Lubię": "to like"
+          "to": "this; it"
+
+  "pl-1586":
+    native: "profession; job"
+    notes:
+      "n1": "zawód is masculine (inanimate)."
+    examples:
+      "Jaki jest twój zawód?":
+        native: "What is your job?"
+        bases:
+          "Jaki": "what kind of"
+          "jest": "to be"
+          "twój": "your; yours"
+          "zawód": "profession; job"
+
+  "pl-1587":
+    native: "language; tongue"
+    notes:
+      "n1": "język is masculine (inanimate). It means a language, and also the tongue in the mouth."
+    examples:
+      "Jaki to jest język?":
+        native: "What language is it?"
+        bases:
+          "Jaki": "what kind of"
+          "to": "this; it"
+          "jest": "to be"
+          "język": "language; tongue"
+

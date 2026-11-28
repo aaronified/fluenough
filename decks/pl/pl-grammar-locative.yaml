@@ -1,0 +1,107 @@
+# Unit 21 grammar topic locative. Sources read: en.wikipedia.org 'Polish grammar' (the declension table of klub, mapa and mięso; the table of singular endings by case; the table of plural endings; na and w with the locative and the accusative) and 'Polish morphology' (the alternations before the endings -e and -i, and ó-o), en.wiktionary.org 'Appendix:Polish nouns' (the list of palatalizations in the dative and locative), and the declension table in the en.wiktionary.org entry of each noun.
+schema: 1
+id: "pl-grammar-locative"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["w", "na"]
+  entries:
+    - lemma: "dom"
+      key: "dom"
+      ipa: "dɔm"
+      forms:
+        "w": "w domu"
+        "na": null
+      ipas:
+        "w": "v ˈdɔmu"
+    - lemma: "stół"
+      key: "stol"
+      ipa: "stuw"
+      forms:
+        "w": null
+        "na": "na stole"
+      ipas:
+        "na": "na ˈstɔlɛ"
+    - lemma: "koń"
+      key: "kon"
+      ipa: "kɔɲ"
+      forms:
+        "w": null
+        "na": "na koniu"
+      ipas:
+        "na": "na ˈkɔɲu"
+    - lemma: "pokój"
+      key: "pokoj"
+      ipa: "ˈpɔkuj"
+      forms:
+        "w": "w pokoju"
+        "na": null
+      ipas:
+        "w": "f pɔˈkɔju"
+    - lemma: "szkoła"
+      key: "szkola"
+      ipa: "ˈʂkɔwa"
+      forms:
+        "w": "w szkole"
+        "na": null
+      ipas:
+        "w": "f ˈʂkɔlɛ"
+    - lemma: "miasto"
+      key: "miasto"
+      ipa: "ˈmjastɔ"
+      forms:
+        "w": "w mieście"
+        "na": null
+      ipas:
+        "w": "v ˈmjɛɕtɕɛ"
+    - lemma: "Polska"
+      key: "polska"
+      ipa: "ˈpɔlska"
+      forms:
+        "w": "w Polsce"
+        "na": null
+      ipas:
+        "w": "f ˈpɔlstsɛ"
+    - lemma: "ulica"
+      key: "ulica"
+      ipa: "uˈlitsa"
+      forms:
+        "w": null
+        "na": "na ulicy"
+      ipas:
+        "na": "na uˈlitsɨ"
+    - lemma: "woda"
+      key: "woda"
+      ipa: "ˈvɔda"
+      forms:
+        "w": "w wodzie"
+        "na": null
+      ipas:
+        "w": "v ˈvɔdʑɛ"
+    - lemma: "książka"
+      key: "ksiazka"
+      ipa: "ˈkɕɔ̃ʂka"
+      forms:
+        "w": "w książce"
+        "na": null
+      ipas:
+        "w": "f ˈkɕɔ̃ʂtsɛ"
+    - lemma: "okno"
+      key: "okno"
+      ipa: "ˈɔknɔ"
+      forms:
+        "w": "w oknie"
+        "na": null
+      ipas:
+        "w": "v ˈɔkɲɛ"
+    - lemma: "wieś"
+      key: "wies"
+      ipa: "vjɛɕ"
+      forms:
+        "w": null
+        "na": "na wsi"
+      ipas:
+        "na": "na fɕi"

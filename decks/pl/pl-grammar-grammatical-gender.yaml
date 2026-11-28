@@ -1,0 +1,165 @@
+# Unit 12 of the Polish A1 path (grammar topic grammatical-gender). Sources read: en.wikipedia.org 'Polish grammar' (the section on gender: masculine personal, animate and inanimate, feminine, neuter; the table with ten, ta, to; the list of endings that show the gender) and the en.wiktionary.org entries of the nouns and of ten, mój and twój (the nominative forms of their declension tables). Rows use the nouns of earlier units and of pl-grammar-grammatical-gender-words.
+schema: 1
+id: "pl-grammar-grammatical-gender"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["this", "my", "your"]
+  entries:
+    - lemma: "dom"
+      key: "dom"
+      ipa: "dɔm"
+      forms:
+        "this": "ten dom"
+        "my": "mój dom"
+        "your": "twój dom"
+      ipas:
+        "this": "tɛn dɔm"
+        "my": "muj dɔm"
+        "your": "tfuj dɔm"
+    - lemma: "stół"
+      key: "stol"
+      ipa: "stuw"
+      forms:
+        "this": "ten stół"
+        "my": "mój stół"
+        "your": "twój stół"
+      ipas:
+        "this": "tɛn stuw"
+        "my": "muj stuw"
+        "your": "tfuj stuw"
+    - lemma: "kot"
+      key: "kot"
+      ipa: "kɔt"
+      forms:
+        "this": "ten kot"
+        "my": "mój kot"
+        "your": "twój kot"
+      ipas:
+        "this": "tɛn kɔt"
+        "my": "muj kɔt"
+        "your": "tfuj kɔt"
+    - lemma: "pies"
+      key: "pies"
+      ipa: "pjɛs"
+      forms:
+        "this": "ten pies"
+        "my": "mój pies"
+        "your": "twój pies"
+      ipas:
+        "this": "tɛn pjɛs"
+        "my": "muj pjɛs"
+        "your": "tfuj pjɛs"
+    - lemma: "brat"
+      key: "brat"
+      ipa: "brat"
+      forms:
+        "this": "ten brat"
+        "my": "mój brat"
+        "your": "twój brat"
+      ipas:
+        "this": "tɛn brat"
+        "my": "muj brat"
+        "your": "tfuj brat"
+    - lemma: "tata"
+      key: "tata"
+      ipa: "ˈtata"
+      forms:
+        "this": "ten tata"
+        "my": "mój tata"
+        "your": "twój tata"
+      ipas:
+        "this": "tɛn ˈtata"
+        "my": "muj ˈtata"
+        "your": "tfuj ˈtata"
+    - lemma: "woda"
+      key: "woda"
+      ipa: "ˈvɔda"
+      forms:
+        "this": "ta woda"
+        "my": "moja woda"
+        "your": "twoja woda"
+      ipas:
+        "this": "ta ˈvɔda"
+        "my": "ˈmɔja ˈvɔda"
+        "your": "ˈtfɔja ˈvɔda"
+    - lemma: "mama"
+      key: "mama"
+      ipa: "ˈmama"
+      forms:
+        "this": "ta mama"
+        "my": "moja mama"
+        "your": "twoja mama"
+      ipas:
+        "this": "ta ˈmama"
+        "my": "ˈmɔja ˈmama"
+        "your": "ˈtfɔja ˈmama"
+    - lemma: "siostra"
+      key: "siostra"
+      ipa: "ˈɕɔstra"
+      forms:
+        "this": "ta siostra"
+        "my": "moja siostra"
+        "your": "twoja siostra"
+      ipas:
+        "this": "ta ˈɕɔstra"
+        "my": "ˈmɔja ˈɕɔstra"
+        "your": "ˈtfɔja ˈɕɔstra"
+    - lemma: "kobieta"
+      key: "kobieta"
+      ipa: "kɔˈbjɛta"
+      forms:
+        "this": "ta kobieta"
+        "my": "moja kobieta"
+        "your": "twoja kobieta"
+      ipas:
+        "this": "ta kɔˈbjɛta"
+        "my": "ˈmɔja kɔˈbjɛta"
+        "your": "ˈtfɔja kɔˈbjɛta"
+    - lemma: "noc"
+      key: "noc"
+      ipa: "nɔts"
+      forms:
+        "this": "ta noc"
+        "my": "moja noc"
+        "your": "twoja noc"
+      ipas:
+        "this": "ta nɔts"
+        "my": "ˈmɔja nɔts"
+        "your": "ˈtfɔja nɔts"
+    - lemma: "morze"
+      key: "morze"
+      ipa: "ˈmɔʐɛ"
+      forms:
+        "this": "to morze"
+        "my": "moje morze"
+        "your": "twoje morze"
+      ipas:
+        "this": "tɔ ˈmɔʐɛ"
+        "my": "ˈmɔjɛ ˈmɔʐɛ"
+        "your": "ˈtfɔjɛ ˈmɔʐɛ"
+    - lemma: "okno"
+      key: "okno"
+      ipa: "ˈɔknɔ"
+      forms:
+        "this": "to okno"
+        "my": "moje okno"
+        "your": "twoje okno"
+      ipas:
+        "this": "tɔ ˈɔknɔ"
+        "my": "ˈmɔjɛ ˈɔknɔ"
+        "your": "ˈtfɔjɛ ˈɔknɔ"
+    - lemma: "dziecko"
+      key: "dziecko"
+      ipa: "ˈdʑɛtskɔ"
+      forms:
+        "this": "to dziecko"
+        "my": "moje dziecko"
+        "your": "twoje dziecko"
+      ipas:
+        "this": "tɔ ˈdʑɛtskɔ"
+        "my": "ˈmɔjɛ ˈdʑɛtskɔ"
+        "your": "ˈtfɔjɛ ˈdʑɛtskɔ"

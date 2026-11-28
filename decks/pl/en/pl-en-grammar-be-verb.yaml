@@ -1,0 +1,25 @@
+schema: 1
+id: "pl-en-grammar-be-verb"
+kind: "layer"
+core: "pl-grammar-be-verb"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be: być, in the present"
+license: "CC-BY-SA-4.0"
+description: "Eight subjects, each with być, to be, in the present and in the negative. The forms are jestem, jesteś, jest, jesteśmy, jesteście and są; the negative puts nie before the verb. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "To be: być, in the present"
+  slot_name: "sentence"
+  slots:
+    "is": "am, is or are (być)"
+    "is-not": "is not (nie, then być)"
+  entries:
+    "ja": "I"
+    "ty": "you, one person"
+    "on": "he"
+    "ona": "she"
+    "ono": "it"
+    "my": "we"
+    "wy": "you, more than one person, or polite plural"
+    "oni": "they (a group with at least one man)"
+  notes: "The verb być, to be, is irregular, and unlike some languages Polish keeps it in the present tense: jestem, jesteś, jest, jesteśmy, jesteście, są (Wikipedia, Polish grammar). The subject pronoun is usually left out, because the ending shows the person: Jestem w domu. The table writes it for clarity. The form for on is also the form for ona and ono, and the form for oni is the form for one. To make a sentence negative, put nie directly before the verb: on jest, on nie jest (Wikipedia). To say what something is, Polish often uses the word to, this, with the verb: To jest dom, This is a house, and in the plural To są domy, with the nouns in the nominative. After być a noun that says what someone is can also take the instrumental case, as in On jest nauczycielem chemii (Wiktionary); this course leaves the instrumental for later, so it is not taught here."

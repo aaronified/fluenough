@@ -1,0 +1,86 @@
+schema: 1
+id: "pl-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "pl-1580"
+    target: "imię"
+    ipa: "ˈimjɛ"
+    pos: "noun"
+    gender: "n"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Moje imię to Anna.", ipa: "ˈmɔjɛ ˈimjɛ tɔ ˈanna", bases: [{ word: "Moje", base: "mój" }, { word: "imię", base: "imię" }, { word: "to", base: "to" }, { word: "Anna", base: "Anna" }] }
+  - id: "pl-1581"
+    target: "nazywać"
+    ipa: "naˈzɨvatɕ"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Nazywam się Anna.", ipa: "naˈzɨvam ɕɛ ˈanna", bases: [{ word: "Nazywam", base: "nazywać" }, { word: "się", base: "się" }, { word: "Anna", base: "Anna" }] }
+  - id: "pl-1582"
+    target: "wiek"
+    ipa: "vjɛk"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Jaki jest twój wiek?", ipa: "ˈjaki jɛst tfuj vjɛk", bases: [{ word: "Jaki", base: "jaki" }, { word: "jest", base: "być" }, { word: "twój", base: "twój" }, { word: "wiek", base: "wiek" }] }
+  - id: "pl-1583"
+    target: "mieszkać"
+    ipa: "ˈmjɛʂkatɕ"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Mieszkam w Warszawie.", ipa: "ˈmjɛʂkam v varˈʂavjɛ", bases: [{ word: "Mieszkam", base: "mieszkać" }, { word: "w", base: "w" }, { word: "Warszawie", base: "Warszawa" }] }
+  - id: "pl-1584"
+    target: "pochodzić"
+    ipa: "pɔˈxɔdʑitɕ"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Skąd pochodzisz?", ipa: "skɔnt pɔˈxɔdʑiʂ", bases: [{ word: "Skąd", base: "skąd" }, { word: "pochodzisz", base: "pochodzić" }] }
+  - id: "pl-1585"
+    target: "lubić"
+    ipa: "ˈlubitɕ"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Lubię to.", ipa: "ˈlubjɛ tɔ", bases: [{ word: "Lubię", base: "lubić" }, { word: "to", base: "to" }] }
+  - id: "pl-1586"
+    target: "zawód"
+    ipa: "ˈzavut"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Jaki jest twój zawód?", ipa: "ˈjaki jɛst tfuj ˈzavut", bases: [{ word: "Jaki", base: "jaki" }, { word: "jest", base: "być" }, { word: "twój", base: "twój" }, { word: "zawód", base: "zawód" }] }
+  - id: "pl-1587"
+    target: "język"
+    ipa: "ˈjɛ̃zɨk"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Jaki to jest język?", ipa: "ˈjaki tɔ jɛst ˈjɛ̃zɨk", bases: [{ word: "Jaki", base: "jaki" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "język", base: "język" }] }

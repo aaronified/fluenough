@@ -1,0 +1,29 @@
+schema: 1
+id: "pl-en-grammar-locative"
+kind: "layer"
+core: "pl-grammar-locative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The locative: in and on a place"
+license: "CC-BY-SA-4.0"
+description: "12 nouns after w, in, and na, on or at. The locative is the case after w and na for a place, and many nouns change a consonant or a vowel before its ending. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The locative: in and on a place"
+  slot_name: "preposition"
+  slots:
+    "w": "in, inside (w)"
+    "na": "on, at (na)"
+  entries:
+    "dom": "house (masculine: the ending -u)"
+    "stol": "table (masculine: the ending -e, and the ó becomes o)"
+    "kon": "horse (masculine, soft ń: the ending -u)"
+    "pokoj": "room (masculine, soft j: the ending -u)"
+    "szkola": "school (feminine: -ła becomes -le)"
+    "miasto": "city (neuter: the a becomes e and the t becomes ć, written c before the i)"
+    "polska": "Poland (feminine: -ka becomes -ce)"
+    "ulica": "street (feminine: -ca becomes -cy)"
+    "woda": "water (feminine: -da becomes -dzie)"
+    "ksiazka": "book (feminine: -ka becomes -ce)"
+    "okno": "window (neuter: the n becomes ń, written ni before the e)"
+    "wies": "village; countryside (feminine, soft ś: the ending -i, and the e drops out)"
+  notes: "To say where something is, Polish uses w, in, or na, on or at, with the locative case (Wikipedia, Polish grammar). Which of the two a place takes is learnt with the noun: w domu, w szkole, w mieście, but na stole, na ulicy, na wsi. A cell that is empty in the table is a form that is not taught here. Wikipedia's table of endings gives -e for a masculine or neuter noun after a hard consonant and -u after a soft consonant or after k, g and ch (pokój, w pokoju; koń, na koniu), and for a feminine noun -e after a hard consonant, -y after a consonant such as c, sz or rz, and -i after a soft consonant (wieś, na wsi); dom is an exception, since Wiktionary's table gives domu and also domie. The ending -e or -i also changes the consonant before it, and sometimes the vowel (Wikipedia, Polish morphology; the list of palatalizations in Wiktionary's appendix on Polish nouns): -da becomes -dzie (woda, w wodzie), -ka becomes -ce (książka, w książce; Polska, w Polsce), -ła becomes -le (szkoła, w szkole), -ca becomes -cy (ulica, na ulicy), and in miasto the t becomes ć and the a becomes e (w mieście). The ó becomes o in stół, na stole, and the e drops out in wieś, na wsi. These changes have to be learnt with the word."

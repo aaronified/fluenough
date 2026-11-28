@@ -1,0 +1,65 @@
+# Unit 26 grammar, there is and there is not. Sources read: en.wikipedia.org 'Polish grammar' (the present of być, jestem jesteś jest jesteśmy jesteście są; nie directly before the verb; jest and nie ma with the genitive; to jest; the genitive for the object of a negated verb) and the en.wiktionary.org entries być, mieć and nie ma (conjugation tables, usage examples).
+schema: 1
+id: "pl-grammar-be-verb-absence"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["is", "is-not"]
+  entries:
+    - lemma: "woda"
+      key: "woda"
+      ipa: "ˈvɔda"
+      forms:
+        "is": "jest woda"
+        "is-not": "nie ma wody"
+      ipas:
+        "is": "jɛst ˈvɔda"
+        "is-not": "ɲɛ ma ˈvɔdɨ"
+    - lemma: "chleb"
+      key: "chleb"
+      ipa: "xlɛp"
+      forms:
+        "is": "jest chleb"
+        "is-not": "nie ma chleba"
+      ipas:
+        "is": "jɛst xlɛp"
+        "is-not": "ɲɛ ma ˈxlɛba"
+    - lemma: "mleko"
+      key: "mleko"
+      ipa: "ˈmlɛkɔ"
+      forms:
+        "is": "jest mleko"
+        "is-not": "nie ma mleka"
+      ipas:
+        "is": "jɛst ˈmlɛkɔ"
+        "is-not": "ɲɛ ma ˈmlɛka"
+    - lemma: "kot"
+      key: "kot"
+      ipa: "kɔt"
+      forms:
+        "is": "jest kot"
+        "is-not": "nie ma kota"
+      ipas:
+        "is": "jɛst kɔt"
+        "is-not": "ɲɛ ma ˈkɔta"
+    - lemma: "książka"
+      key: "ksiazka"
+      ipa: "ˈkɕɔ̃ʂka"
+      forms:
+        "is": "jest książka"
+        "is-not": "nie ma książki"
+      ipas:
+        "is": "jɛst ˈkɕɔ̃ʂka"
+        "is-not": "ɲɛ ma ˈkɕɔ̃ʂkʲi"
+    - lemma: "dom"
+      key: "dom"
+      ipa: "dɔm"
+      forms:
+        "is": "jest dom"
+        "is-not": "nie ma domu"
+      ipas:
+        "is": "jɛst dɔm"
+        "is-not": "ɲɛ ma ˈdɔmu"

@@ -1,0 +1,23 @@
+schema: 1
+id: "pl-en-grammar-be-verb-absence"
+kind: "layer"
+core: "pl-grammar-be-verb-absence"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "There is and there is not: jest and nie ma"
+license: "CC-BY-SA-4.0"
+description: "Six nouns in the frame Jest and a noun, there is, and in the frame Nie ma and the same noun in the genitive, there is not. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "There is and there is not: jest and nie ma"
+  slot_name: "sentence"
+  slots:
+    "is": "there is (jest and the nominative)"
+    "is-not": "there is no (nie ma and the genitive)"
+  entries:
+    "woda": "water (feminine: -a becomes -y)"
+    "chleb": "bread (masculine: the ending -a)"
+    "mleko": "milk (neuter: -o becomes -a)"
+    "kot": "cat (masculine, an animal: the ending -a)"
+    "ksiazka": "book (feminine: -a becomes -i after k)"
+    "dom": "house (masculine, a thing: the ending -u)"
+  notes: "To say that something is there, Polish uses jest, is, with the noun in the nominative: Jest woda, There is water. To say that it is not there, Polish uses nie ma and puts the noun in the genitive: Nie ma wody, There is no water. Wikipedia's page on Polish grammar says the negative form is always singular, takes the noun in the genitive, and uses ma, not jest. Wiktionary's entry for nie ma gives Nie ma chleba, There is no bread. The genitive is not taught in this course yet, so the genitive forms here are learnt as part of the frame nie ma: wody, chleba, mleka, kota, książki, domu. The genitive of a feminine noun in -a ends in -y, or in -i after k; of a masculine thing in -u or -a; of a masculine animal in -a; and of a neuter noun in -a."

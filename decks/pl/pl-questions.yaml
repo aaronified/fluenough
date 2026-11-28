@@ -1,0 +1,119 @@
+schema: 1
+id: "pl-questions"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "pl-1300"
+    target: "kto"
+    ipa: "ktɔ"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Kto to jest?", ipa: "ktɔ tɔ jɛst", bases: [{ word: "Kto", base: "kto" }, { word: "to", base: "to" }, { word: "jest", base: "być" }] }
+  - id: "pl-1301"
+    target: "co"
+    ipa: "tsɔ"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Co to jest?", ipa: "tsɔ tɔ jɛst", bases: [{ word: "Co", base: "co" }, { word: "to", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "Co to znaczy?", ipa: "tsɔ tɔ ˈznatʂɨ", bases: [{ word: "Co", base: "co" }, { word: "to", base: "to" }, { word: "znaczy", base: "znaczyć" }] }
+  - id: "pl-1302"
+    target: "gdzie"
+    ipa: "ɡdʑɛ"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Gdzie jest dworzec?", ipa: "ɡdʑɛ jɛst ˈdvɔʐɛts", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "dworzec", base: "dworzec" }] }
+  - id: "pl-1303"
+    target: "kiedy"
+    ipa: "ˈkjɛdɨ"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Kiedy to jest?", ipa: "ˈkjɛdɨ tɔ jɛst", bases: [{ word: "Kiedy", base: "kiedy" }, { word: "to", base: "to" }, { word: "jest", base: "być" }] }
+  - id: "pl-1304"
+    target: "dlaczego"
+    ipa: "dlaˈtʂɛɡɔ"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Dlaczego nie?", ipa: "dlaˈtʂɛɡɔ ɲɛ", bases: [{ word: "Dlaczego", base: "dlaczego" }, { word: "nie", base: "nie" }] }
+  - id: "pl-1305"
+    target: "jak"
+    ipa: "jak"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Jak się masz?", ipa: "jak ɕɛ maʂ", bases: [{ word: "Jak", base: "jak" }, { word: "się", base: "się" }, { word: "masz", base: "mieć" }] }
+  - id: "pl-1306"
+    target: "ile"
+    ipa: "ˈilɛ"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ile to kosztuje?", ipa: "ˈilɛ tɔ kɔʂˈtujɛ", bases: [{ word: "Ile", base: "ile" }, { word: "to", base: "to" }, { word: "kosztuje", base: "kosztować" }] }
+  - id: "pl-1307"
+    target: "który"
+    ipa: "ˈkturɨ"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Który to jest?", ipa: "ˈkturɨ tɔ jɛst", bases: [{ word: "Który", base: "który" }, { word: "to", base: "to" }, { word: "jest", base: "być" }] }
+  - id: "pl-1308"
+    target: "czy"
+    ipa: "tʂɨ"
+    pos: "particle"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Czy mówisz po angielsku?", ipa: "tʂɨ ˈmuviʂ pɔ aŋˈɡjɛlsku", bases: [{ word: "Czy", base: "czy" }, { word: "mówisz", base: "mówić" }, { word: "po", base: "po" }, { word: "angielsku", base: "angielski" }] }
+  - id: "pl-1309"
+    target: "skąd"
+    ipa: "skɔnt"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Skąd jesteś?", ipa: "skɔnt ˈjɛstɛɕ", bases: [{ word: "Skąd", base: "skąd" }, { word: "jesteś", base: "być" }] }
+  - id: "pl-1310"
+    target: "jaki"
+    ipa: "ˈjaki"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Jaki to jest?", ipa: "ˈjaki tɔ jɛst", bases: [{ word: "Jaki", base: "jaki" }, { word: "to", base: "to" }, { word: "jest", base: "być" }] }
+  - id: "pl-1311"
+    target: "czyj"
+    ipa: "tʂɨj"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Czyj to jest?", ipa: "tʂɨj tɔ jɛst", bases: [{ word: "Czyj", base: "czyj" }, { word: "to", base: "to" }, { word: "jest", base: "być" }] }

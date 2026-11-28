@@ -1,0 +1,28 @@
+schema: 1
+id: "pl-en-grammar-accusative"
+kind: "layer"
+core: "pl-grammar-accusative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The accusative: the thing that is acted on"
+license: "CC-BY-SA-4.0"
+description: "11 nouns in the nominative and in the accusative singular. The accusative is the case of the direct object: what the verb acts on. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The accusative: the thing that is acted on"
+  slot_name: "case"
+  slots:
+    "nominative": "the subject form (nominative)"
+    "accusative": "the object form (accusative)"
+  entries:
+    "dom": "house (masculine, a thing: no change)"
+    "stol": "table (masculine, a thing: no change)"
+    "kot": "cat (masculine, an animal: the ending -a)"
+    "pies": "dog (masculine, an animal: the ending -a, and the e drops out)"
+    "brat": "brother (masculine, a person: the ending -a)"
+    "woda": "water (feminine: -a becomes -ę)"
+    "ksiazka": "book (feminine: -a becomes -ę)"
+    "kobieta": "woman (feminine: -a becomes -ę)"
+    "siostra": "sister (feminine: -a becomes -ę)"
+    "noc": "night (feminine, ends in a consonant: no change)"
+    "okno": "window (neuter: no change)"
+  notes: "The accusative is the case of the direct object, the thing the verb acts on: in Czytam książkę, the object is książkę. Wikipedia's page on Polish grammar gives the endings of the accusative singular. A feminine noun in -a changes the -a to -ę: woda, wodę; książka, książkę; kobieta, kobietę. A feminine noun that ends in a consonant does not change: noc, noc. A neuter noun does not change: okno, okno. A masculine noun that names a thing does not change either: dom, dom; stół, stół. A masculine noun that names a person or an animal is the exception: its accusative is the same as its genitive, which ends in -a: kot, kota; brat, brata; pies, psa (the e drops out). That is why Polish says Mam kota and Mam psa, but Mam dom."

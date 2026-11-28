@@ -1,0 +1,21 @@
+schema: 1
+id: "pl-en-grammar-sound-differences"
+kind: "layer"
+core: "pl-grammar-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "One letter changes the sound"
+license: "CC-BY-SA-4.0"
+description: "Four word pairs that differ by a single letter and a single sound: y and i, l and ł, s and sz, z and s. Each row gives the first word and the second word. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "One letter changes the sound"
+  slot_name: "pair"
+  slots:
+    "one": "the first word of the pair"
+    "other": "the second word of the pair"
+  entries:
+    "byc": "to be (y) and to beat (i)"
+    "laska": "walking stick (l) and grace (ł)"
+    "kasa": "till (s) and groats (sz)"
+    "koza": "goat (z) and scythe (s)"
+  notes: "Polish has word pairs that differ by one letter and so by one sound. The vowels y and i are different sounds: y is /ɨ/ and i is /i/, like the ee of English \"eat\", so być, to be, is not bić, to beat. The letter l is a plain /l/ and the crossed ł is /w/ as in English \"way\", so laska, walking stick, is not łaska, grace. The letter s is /s/ and the digraph sz is one sound, /ʂ/, like the \"sh\" of \"shore\", so kasa, till, is not kasza, groats. A voiced consonant is said with the voice on and a voiceless one with it off: z is voiced /z/ and s is voiceless /s/, so koza, goat, is not kosa, scythe. Wiktionary's Polish pronunciation appendix lists these letters and their sounds."

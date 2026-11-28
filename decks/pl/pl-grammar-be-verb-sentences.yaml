@@ -1,0 +1,142 @@
+# Unit 26 sentences. Every verb form comes from the unit's tables (być, mieć, jest and nie ma) or a Wiktionary or Wikipedia example (Nie ma chleba, On nie ma czasu, Nie ma kota); the others use the tables' forms with taught words.
+schema: 1
+id: "pl-grammar-be-verb-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "pl-4400"
+    target: "Jestem w domu."
+    ipa: "ˈjɛstɛm v ˈdɔmu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Jestem", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "domu", ref: "pl-0460" }]
+  - id: "pl-4401"
+    target: "Jesteś w szkole."
+    ipa: "ˈjɛstɛɕ f ˈʂkɔlɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Jesteś", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "szkole", ref: "pl-0413" }]
+  - id: "pl-4402"
+    target: "On jest w pokoju."
+    ipa: "ɔn jɛst f pɔˈkɔju"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "On", ref: "pl-1370" }, { word: "jest", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "pokoju", ref: "pl-2005" }]
+  - id: "pl-4403"
+    target: "Ona jest w kuchni."
+    ipa: "ˈɔna jɛst f ˈkuxɲi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Ona", ref: "pl-1371" }, { word: "jest", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "kuchni", ref: "pl-2720" }]
+  - id: "pl-4404"
+    target: "Jesteśmy w Polsce."
+    ipa: "jɛsˈtɛɕmɨ f ˈpɔlstsɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Jesteśmy", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "Polsce", ref: "pl-0581" }]
+  - id: "pl-4405"
+    target: "Jesteście tu?"
+    ipa: "jɛsˈtɛɕtɕɛ tu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Jesteście", base: "być" }, { word: "tu", ref: "pl-1720" }]
+  - id: "pl-4406"
+    target: "Oni są w mieście."
+    ipa: "ˈɔɲi sɔ̃ v ˈmjɛɕtɕɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Oni", ref: "pl-1373" }, { word: "są", base: "być" }, { word: "w", ref: "pl-2008" }, { word: "mieście", ref: "pl-0428" }]
+  - id: "pl-4407"
+    target: "To jest dom."
+    ipa: "tɔ jɛst dɔm"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "dom", ref: "pl-0460" }]
+  - id: "pl-4408"
+    target: "To nie jest mój dom."
+    ipa: "tɔ ɲɛ jɛst muj dɔm"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }, { word: "mój", ref: "pl-1391" }, { word: "dom", ref: "pl-0460" }]
+  - id: "pl-4409"
+    target: "Nie ma wody."
+    ipa: "ɲɛ ma ˈvɔdɨ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Nie", ref: "pl-0002" }, { word: "ma", base: "mieć" }, { word: "wody", ref: "pl-0008" }]
+  - id: "pl-4410"
+    target: "Nie ma chleba."
+    ipa: "ɲɛ ma ˈxlɛba"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/nie%20ma" }]
+    bases: [{ word: "Nie", ref: "pl-0002" }, { word: "ma", base: "mieć" }, { word: "chleba", ref: "pl-0424" }]
+  - id: "pl-4411"
+    target: "Nie ma mleka."
+    ipa: "ɲɛ ma ˈmlɛka"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Nie", ref: "pl-0002" }, { word: "ma", base: "mieć" }, { word: "mleka", ref: "pl-2283" }]
+  - id: "pl-4412"
+    target: "Nie ma kota."
+    ipa: "ɲɛ ma ˈkɔta"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Nie", ref: "pl-0002" }, { word: "ma", base: "mieć" }, { word: "kota", ref: "pl-0462" }]
+  - id: "pl-4413"
+    target: "Mam książkę."
+    ipa: "mam ˈkɕɔ̃ʂkɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Mam", ref: "pl-0520" }, { word: "książkę", ref: "pl-0580" }]
+  - id: "pl-4414"
+    target: "Nie mam książki."
+    ipa: "ɲɛ mam ˈkɕɔ̃ʂki"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Nie", ref: "pl-0002" }, { word: "mam", ref: "pl-0520" }, { word: "książki", base: "książka" }]
+  - id: "pl-4415"
+    target: "Nie mamy domu."
+    ipa: "ɲɛ ˈmamɨ ˈdɔmu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Nie", ref: "pl-0002" }, { word: "mamy", ref: "pl-0520" }, { word: "domu", ref: "pl-0460" }]
+  - id: "pl-4416"
+    target: "On nie ma czasu."
+    ipa: "ɔn ɲɛ ma ˈtʂasu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/nie%20ma" }]
+    bases: [{ word: "On", ref: "pl-1370" }, { word: "nie", ref: "pl-0002" }, { word: "ma", ref: "pl-0520" }, { word: "czasu", ref: "pl-0414" }]
+  - id: "pl-4417"
+    target: "Masz brata?"
+    ipa: "maʂ ˈbrata"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Masz", ref: "pl-0520" }, { word: "brata", ref: "pl-1446" }]
+  - id: "pl-4418"
+    target: "Nie, nie mam brata."
+    ipa: "ɲɛ ɲɛ mam ˈbrata"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Nie", ref: "pl-0002" }, { word: "mam", ref: "pl-0520" }, { word: "brata", ref: "pl-1446" }]

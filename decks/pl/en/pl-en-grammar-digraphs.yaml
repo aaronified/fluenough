@@ -1,0 +1,20 @@
+schema: 1
+id: "pl-en-grammar-digraphs"
+kind: "layer"
+core: "pl-grammar-digraphs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Said the same, spelled differently"
+license: "CC-BY-SA-4.0"
+description: "Three word pairs with a sound that has two spellings: rz and ż, ó and u, ń and ni. Each row gives the first word and the second word. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Said the same, spelled differently"
+  slot_name: "spelling"
+  slots:
+    "first": "the first spelling"
+    "second": "the second spelling"
+  entries:
+    "morze": "sea (rz) and maybe (ż): the same sound"
+    "bog": "god (ó) and beech (u): the same sound"
+    "kon": "horse (ń at the end of the word) and horses (ni before a vowel): the same sound"
+  notes: "Some Polish sounds have two spellings, and the spelling has to be learnt with the word. The digraph rz and the letter ż are both /ʐ/: morze, sea, and może, maybe, are said exactly alike. Wikipedia's page on Polish orthography says rz is written where related words have r (morze, morski) and ż where they have g, z, s and the like (może, mogę). The letters ó and u are both /u/: bóg, god, and buk, beech, are said exactly alike, and the final g of bóg is said /k/. The page says ó is written where other forms of the word have o, e or a (the genitive of bóg is boga). A third case is one sound written two ways by position: the soft /ɲ/ is written ń at the end of a word and ni before a vowel, so koń, horse, has the plural konie."

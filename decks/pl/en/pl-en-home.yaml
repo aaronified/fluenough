@@ -1,0 +1,368 @@
+schema: 1
+id: "pl-en-home"
+kind: "layer"
+core: "pl-home"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Home"
+license: "CC-BY-SA-4.0"
+description: "Rooms and things in a home: a flat, a corridor, a floor, a wall, a sofa, a fridge, an oven, a shower, a bath and more, with their first sentences in the examples. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "pl-2840":
+    native: "flat"
+    notes:
+      "n1": "mieszkanie is neuter."
+    examples:
+      "To jest mieszkanie.":
+        native: "This is a flat."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "mieszkanie": "flat"
+      "Gdzie jest mieszkanie?":
+        native: "Where is the flat?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "mieszkanie": "flat"
+  "pl-2841":
+    native: "living room"
+    notes:
+      "n1": "salon is masculine (inanimate). Also means a hair or beauty salon."
+    examples:
+      "To jest salon.":
+        native: "This is a living room."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "salon": "living room"
+      "Gdzie jest salon?":
+        native: "Where is the living room?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "salon": "living room"
+  "pl-2842":
+    native: "corridor"
+    notes:
+      "n1": "korytarz is masculine (inanimate)."
+    examples:
+      "To jest korytarz.":
+        native: "This is a corridor."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "korytarz": "corridor"
+      "Gdzie jest korytarz?":
+        native: "Where is the corridor?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "korytarz": "corridor"
+  "pl-2843":
+    native: "floor; storey"
+    notes:
+      "n1": "piętro is neuter. A level of a building, such as the first or second floor. Podłoga is the floor you walk on."
+    examples:
+      "To jest piętro.":
+        native: "This is a floor."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "piętro": "floor; storey"
+      "Gdzie jest piętro?":
+        native: "Where is the floor?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "piętro": "floor; storey"
+  "pl-2844":
+    native: "roof"
+    notes:
+      "n1": "dach is masculine (inanimate)."
+    examples:
+      "To jest dach.":
+        native: "This is a roof."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "dach": "roof"
+      "Gdzie jest dach?":
+        native: "Where is the roof?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "dach": "roof"
+  "pl-2845":
+    native: "wall"
+    notes:
+      "n1": "ściana is feminine."
+    examples:
+      "To jest ściana.":
+        native: "This is a wall."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "ściana": "wall"
+      "Gdzie jest ściana?":
+        native: "Where is the wall?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "ściana": "wall"
+  "pl-2846":
+    native: "floor"
+    notes:
+      "n1": "podłoga is feminine. The surface you walk on. The g changes to dz in the locative: na podłodze, on the floor."
+    examples:
+      "To jest podłoga.":
+        native: "This is a floor."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "podłoga": "floor"
+      "Gdzie jest podłoga?":
+        native: "Where is the floor?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "podłoga": "floor"
+  "pl-2847":
+    native: "ceiling"
+    notes:
+      "n1": "sufit is masculine (inanimate)."
+    examples:
+      "To jest sufit.":
+        native: "This is a ceiling."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "sufit": "ceiling"
+      "Gdzie jest sufit?":
+        native: "Where is the ceiling?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "sufit": "ceiling"
+  "pl-2848":
+    native: "sofa"
+    notes:
+      "n1": "kanapa is feminine."
+    examples:
+      "To jest kanapa.":
+        native: "This is a sofa."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "kanapa": "sofa"
+      "Gdzie jest kanapa?":
+        native: "Where is the sofa?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "kanapa": "sofa"
+  "pl-2849":
+    native: "armchair"
+    notes:
+      "n1": "fotel is masculine (inanimate). The e drops in the other cases: fotela, fotelu."
+    examples:
+      "To jest fotel.":
+        native: "This is an armchair."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "fotel": "armchair"
+      "Gdzie jest fotel?":
+        native: "Where is the armchair?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "fotel": "armchair"
+  "pl-2850":
+    native: "wardrobe; cupboard"
+    notes:
+      "n1": "szafa is feminine."
+    examples:
+      "To jest szafa.":
+        native: "This is a wardrobe."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "szafa": "wardrobe; cupboard"
+      "Gdzie jest szafa?":
+        native: "Where is the wardrobe?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "szafa": "wardrobe; cupboard"
+  "pl-2851":
+    native: "bookcase; shelf"
+    notes:
+      "n1": "regał is masculine (inanimate). Its stem changes in the other cases: regału, regale."
+    examples:
+      "To jest regał.":
+        native: "This is a bookcase."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "regał": "bookcase; shelf"
+      "Gdzie jest regał?":
+        native: "Where is the bookcase?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "regał": "bookcase; shelf"
+  "pl-2852":
+    native: "fridge"
+    notes:
+      "n1": "lodówka is feminine. Colloquial for the fridge."
+    examples:
+      "To jest lodówka.":
+        native: "This is a fridge."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "lodówka": "fridge"
+      "Gdzie jest lodówka?":
+        native: "Where is the fridge?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "lodówka": "fridge"
+  "pl-2853":
+    native: "oven"
+    notes:
+      "n1": "piekarnik is masculine (inanimate). The e drops in the other cases: piekarnika, piekarniku."
+    examples:
+      "To jest piekarnik.":
+        native: "This is an oven."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "piekarnik": "oven"
+      "Gdzie jest piekarnik?":
+        native: "Where is the oven?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "piekarnik": "oven"
+  "pl-2854":
+    native: "stove; cooker"
+    notes:
+      "n1": "kuchenka is feminine."
+    examples:
+      "To jest kuchenka.":
+        native: "This is a stove."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "kuchenka": "stove; cooker"
+      "Gdzie jest kuchenka?":
+        native: "Where is the stove?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "kuchenka": "stove; cooker"
+  "pl-2855":
+    native: "washing machine"
+    notes:
+      "n1": "pralka is feminine. The k changes to c in the locative: w pralce."
+    examples:
+      "To jest pralka.":
+        native: "This is a washing machine."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "pralka": "washing machine"
+      "Gdzie jest pralka?":
+        native: "Where is the washing machine?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "pralka": "washing machine"
+  "pl-2856":
+    native: "shower"
+    notes:
+      "n1": "prysznic is masculine (inanimate)."
+    examples:
+      "To jest prysznic.":
+        native: "This is a shower."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "prysznic": "shower"
+      "Gdzie jest prysznic?":
+        native: "Where is the shower?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "prysznic": "shower"
+  "pl-2857":
+    native: "bath; bathtub"
+    notes:
+      "n1": "wanna is feminine."
+    examples:
+      "To jest wanna.":
+        native: "This is a bath."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "wanna": "bath; bathtub"
+      "Gdzie jest wanna?":
+        native: "Where is the bath?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "wanna": "bath; bathtub"
+  "pl-2858":
+    native: "sink"
+    notes:
+      "n1": "zlew is masculine (inanimate). Its stem changes in the other cases: zlewu, zlewie."
+    examples:
+      "To jest zlew.":
+        native: "This is a sink."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "zlew": "sink"
+      "Gdzie jest zlew?":
+        native: "Where is the sink?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "zlew": "sink"
+  "pl-2859":
+    native: "radiator"
+    notes:
+      "n1": "grzejnik is masculine (inanimate). The e drops in the other cases: grzejnika, grzejniku."
+    examples:
+      "To jest grzejnik.":
+        native: "This is a radiator."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "grzejnik": "radiator"
+      "Gdzie jest grzejnik?":
+        native: "Where is the radiator?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "grzejnik": "radiator"
+  "pl-2860":
+    native: "cellar"
+    notes:
+      "n1": "piwnica is feminine. A room under a building, used for storage."
+    examples:
+      "To jest piwnica.":
+        native: "This is a cellar."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "piwnica": "cellar"
+      "Gdzie jest piwnica?":
+        native: "Where is the cellar?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "piwnica": "cellar"

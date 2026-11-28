@@ -1,0 +1,400 @@
+# Unit 2 of the Polish A1 path (pl-sound-differences). Sources read: en.wikipedia.org 'Polish phonology' and 'Polish orthography', en.wiktionary.org 'Appendix:Polish pronunciation' and each word's own en.wiktionary.org entry (senses, gender, stress).
+# The ipa of every card and example comes from tools/transcribe.py (the pl engine), never by hand; stress is the next-to-last syllable unless the word's entry shows another, which is passed to the engine as a hint.
+schema: 1
+id: "pl-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "sound-differences"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "pl-0400"
+    target: "być"
+    ipa: "bɨtɕ"
+    pos: "verb"
+    tags: ["y-i"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+      - { id: "pair", kind: "pair", ref: "pl-0401", source: "https://en.wiktionary.org/wiki/by%C4%87" }
+    bases: "self"
+    examples:
+      - { target: "Jestem Kamil, a to jest Marta.", ipa: "ˈjɛstɛm ˈkamil a tɔ jɛst ˈmarta", bases: [{ word: "Jestem", base: "być" }, { word: "Kamil", base: "Kamil" }, { word: "a", base: "a" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "Marta", base: "Marta" }] }
+      - { target: "Jutro będzie piątek.", ipa: "ˈjutrɔ ˈbɛɲdʑɛ ˈpjɔntɛk", bases: [{ word: "Jutro", base: "jutro" }, { word: "będzie", base: "być" }, { word: "piątek", base: "piątek" }] }
+  - id: "pl-0401"
+    target: "bić"
+    ipa: "bitɕ"
+    pos: "verb"
+    tags: ["y-i"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+      - { id: "pair", kind: "pair", ref: "pl-0400", source: "https://en.wiktionary.org/wiki/bi%C4%87" }
+    bases: "self"
+    examples:
+      - { target: "bić w bęben", ipa: "bitɕ v ˈbɛmbɛn", bases: [{ word: "bić", base: "bić" }, { word: "w", base: "w" }, { word: "bęben", base: "bęben" }] }
+      - { target: "bić kijem", ipa: "bitɕ ˈkijɛm", bases: [{ word: "bić", base: "bić" }, { word: "kijem", base: "kij" }] }
+  - id: "pl-0402"
+    target: "laska"
+    ipa: "ˈlaska"
+    pos: "noun"
+    gender: "f"
+    tags: ["l-ł"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+      - { id: "pair", kind: "pair", ref: "pl-0403", source: "https://en.wiktionary.org/wiki/laska" }
+    bases: "self"
+    examples:
+      - { target: "To jest laska.", ipa: "tɔ jɛst ˈlaska", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "laska", base: "laska" }] }
+      - { target: "Nie, to nie jest laska.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈlaska", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "laska", base: "laska" }] }
+  - id: "pl-0403"
+    target: "łaska"
+    ipa: "ˈwaska"
+    pos: "noun"
+    gender: "f"
+    tags: ["l-ł"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+      - { id: "pair", kind: "pair", ref: "pl-0402", source: "https://en.wiktionary.org/wiki/%C5%82aska" }
+    bases: "self"
+    examples:
+      - { target: "To jest łaska.", ipa: "tɔ jɛst ˈwaska", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "łaska", base: "łaska" }] }
+      - { target: "Nie, to nie jest łaska.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈwaska", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "łaska", base: "łaska" }] }
+  - id: "pl-0404"
+    target: "kasa"
+    ipa: "ˈkasa"
+    pos: "noun"
+    gender: "f"
+    tags: ["s-sz"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+      - { id: "pair", kind: "pair", ref: "pl-0405", source: "https://en.wiktionary.org/wiki/kasa" }
+    bases: "self"
+    examples:
+      - { target: "To jest kasa.", ipa: "tɔ jɛst ˈkasa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kasa", base: "kasa" }] }
+      - { target: "Nie, to nie jest kasa.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈkasa", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "kasa", base: "kasa" }] }
+  - id: "pl-0405"
+    target: "kasza"
+    ipa: "ˈkaʂa"
+    pos: "noun"
+    gender: "f"
+    tags: ["s-sz"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+      - { id: "pair", kind: "pair", ref: "pl-0404", source: "https://en.wiktionary.org/wiki/kasza" }
+    bases: "self"
+    examples:
+      - { target: "To jest kasza.", ipa: "tɔ jɛst ˈkaʂa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kasza", base: "kasza" }] }
+      - { target: "Nie, to nie jest kasza.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈkaʂa", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "kasza", base: "kasza" }] }
+  - id: "pl-0406"
+    target: "koza"
+    ipa: "ˈkɔza"
+    pos: "noun"
+    gender: "f"
+    tags: ["z-s"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+      - { id: "pair", kind: "pair", ref: "pl-0407", source: "https://en.wiktionary.org/wiki/koza" }
+    bases: "self"
+    examples:
+      - { target: "To jest koza.", ipa: "tɔ jɛst ˈkɔza", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "koza", base: "koza" }] }
+      - { target: "Nie, to nie jest koza.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈkɔza", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "koza", base: "koza" }] }
+  - id: "pl-0407"
+    target: "kosa"
+    ipa: "ˈkɔsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["z-s"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+      - { id: "pair", kind: "pair", ref: "pl-0406", source: "https://en.wiktionary.org/wiki/kosa" }
+    bases: "self"
+    examples:
+      - { target: "To jest kosa.", ipa: "tɔ jɛst ˈkɔsa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kosa", base: "kosa" }] }
+      - { target: "Nie, to nie jest kosa.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈkɔsa", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "kosa", base: "kosa" }] }
+  - id: "pl-0408"
+    target: "morze"
+    ipa: "ˈmɔʐɛ"
+    pos: "noun"
+    gender: "n"
+    tags: ["rz-ż"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest morze.", ipa: "tɔ jɛst ˈmɔʐɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "morze", base: "morze" }] }
+      - { target: "Nie, to nie jest morze.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈmɔʐɛ", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "morze", base: "morze" }] }
+  - id: "pl-0409"
+    target: "może"
+    ipa: "ˈmɔʐɛ"
+    pos: "particle"
+    tags: ["rz-ż"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "Może pójdziemy na lody?", ipa: "ˈmɔʐɛ pujˈdʑɛmɨ na ˈlɔdɨ", bases: [{ word: "Może", base: "może" }, { word: "pójdziemy", base: "pójść" }, { word: "na", base: "na" }, { word: "lody", base: "lody" }] }
+      - { target: "Może.", ipa: "ˈmɔʐɛ", bases: [{ word: "Może", base: "może" }] }
+  - id: "pl-0410"
+    target: "bóg"
+    ipa: "buk"
+    pos: "noun"
+    gender: "m"
+    tags: ["ó-u"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest bóg.", ipa: "tɔ jɛst buk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "bóg", base: "bóg" }] }
+      - { target: "Nie, to nie jest bóg.", ipa: "ɲɛ tɔ ɲɛ jɛst buk", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "bóg", base: "bóg" }] }
+  - id: "pl-0411"
+    target: "buk"
+    ipa: "buk"
+    pos: "noun"
+    gender: "m"
+    tags: ["ó-u"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest buk.", ipa: "tɔ jɛst buk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "buk", base: "buk" }] }
+      - { target: "Nie, to nie jest buk.", ipa: "ɲɛ tɔ ɲɛ jɛst buk", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "buk", base: "buk" }] }
+  - id: "pl-0412"
+    target: "lód"
+    ipa: "lut"
+    pos: "noun"
+    gender: "m"
+    tags: ["ó-u", "final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "To jest lód.", ipa: "tɔ jɛst lut", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "lód", base: "lód" }] }
+      - { target: "kostka lodu", ipa: "ˈkɔstka ˈlɔdu", bases: [{ word: "kostka", base: "kostka" }, { word: "lodu", base: "lód" }] }
+  - id: "pl-0413"
+    target: "szkoła"
+    ipa: "ˈʂkɔwa"
+    pos: "noun"
+    gender: "f"
+    tags: ["sz", "l-ł"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "To jest szkoła.", ipa: "tɔ jɛst ˈʂkɔwa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "szkoła", base: "szkoła" }] }
+      - { target: "Nie, to nie jest szkoła.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈʂkɔwa", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "szkoła", base: "szkoła" }] }
+  - id: "pl-0414"
+    target: "czas"
+    ipa: "tʂas"
+    pos: "noun"
+    gender: "m"
+    tags: ["cz"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "Późno już, czas mi iść do domu.", ipa: "ˈpuʑnɔ juʂ tʂas mi iɕtɕ dɔ ˈdɔmu", bases: [{ word: "Późno", base: "późno" }, { word: "już", base: "już" }, { word: "czas", base: "czas" }, { word: "mi", base: "ja" }, { word: "iść", base: "iść" }, { word: "do", base: "do" }, { word: "domu", base: "dom" }] }
+      - { target: "czas Greenwich", ipa: "tʂas ɡrɛˈɛnvix", bases: [{ word: "czas", base: "czas" }, { word: "Greenwich", base: "Greenwich" }] }
+  - id: "pl-0415"
+    target: "rzeka"
+    ipa: "ˈʐɛka"
+    pos: "noun"
+    gender: "f"
+    tags: ["rz-ż"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest rzeka.", ipa: "tɔ jɛst ˈʐɛka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "rzeka", base: "rzeka" }] }
+      - { target: "Nie, to nie jest rzeka.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈʐɛka", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "rzeka", base: "rzeka" }] }
+  - id: "pl-0416"
+    target: "żona"
+    ipa: "ˈʐɔna"
+    pos: "noun"
+    gender: "f"
+    tags: ["rz-ż"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "To jest żona.", ipa: "tɔ jɛst ˈʐɔna", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "żona", base: "żona" }] }
+      - { target: "Nie, to nie jest żona.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈʐɔna", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "żona", base: "żona" }] }
+  - id: "pl-0417"
+    target: "dzień"
+    ipa: "dʑɛɲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["dź", "ń"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "Dzień dobry.", ipa: "dʑɛɲ ˈdɔbrɨ", bases: [{ word: "Dzień", base: "dzień" }, { word: "dobry", ref: "pl-0009" }] }
+      - { target: "To jest dzień.", ipa: "tɔ jɛst dʑɛɲ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "dzień", base: "dzień" }] }
+  - id: "pl-0418"
+    target: "koń"
+    ipa: "kɔɲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["ń"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "To jest koń.", ipa: "tɔ jɛst kɔɲ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "koń", base: "koń" }] }
+      - { target: "Nie, to nie jest koń.", ipa: "ɲɛ tɔ ɲɛ jɛst kɔɲ", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "koń", base: "koń" }] }
+  - id: "pl-0419"
+    target: "ręka"
+    ipa: "ˈrɛŋka"
+    pos: "noun"
+    gender: "f"
+    tags: ["nasal"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest ręka.", ipa: "tɔ jɛst ˈrɛŋka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "ręka", base: "ręka" }] }
+      - { target: "Nie, to nie jest ręka.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈrɛŋka", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "ręka", base: "ręka" }] }
+  - id: "pl-0420"
+    target: "mąka"
+    ipa: "ˈmɔŋka"
+    pos: "noun"
+    gender: "f"
+    tags: ["nasal"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest mąka.", ipa: "tɔ jɛst ˈmɔŋka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "mąka", base: "mąka" }] }
+      - { target: "Nie, to nie jest mąka.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈmɔŋka", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "mąka", base: "mąka" }] }
+  - id: "pl-0421"
+    target: "wąż"
+    ipa: "vɔ̃ʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["nasal", "final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "To jest wąż.", ipa: "tɔ jɛst vɔ̃ʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "wąż", base: "wąż" }] }
+      - { target: "jadowity wąż", ipa: "jadɔˈvitɨ vɔ̃ʂ", bases: [{ word: "jadowity", base: "jadowity" }, { word: "wąż", base: "wąż" }] }
+  - id: "pl-0422"
+    target: "góra"
+    ipa: "ˈɡura"
+    pos: "noun"
+    gender: "f"
+    tags: ["ó-u"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest góra.", ipa: "tɔ jɛst ˈɡura", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "góra", base: "góra" }] }
+      - { target: "Nie, to nie jest góra.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈɡura", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "góra", base: "góra" }] }
+  - id: "pl-0423"
+    target: "nóż"
+    ipa: "nuʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["ó-u", "final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "To jest nóż.", ipa: "tɔ jɛst nuʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "nóż", base: "nóż" }] }
+      - { target: "Nie, to nie jest nóż.", ipa: "ɲɛ tɔ ɲɛ jɛst nuʂ", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "nóż", base: "nóż" }] }
+  - id: "pl-0424"
+    target: "chleb"
+    ipa: "xlɛp"
+    pos: "noun"
+    gender: "m"
+    tags: ["ch-h", "final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "To jest chleb.", ipa: "tɔ jɛst xlɛp", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "chleb", base: "chleb" }] }
+      - { target: "chleb razowy", ipa: "xlɛp raˈzɔvɨ", bases: [{ word: "chleb", base: "chleb" }, { word: "razowy", base: "razowy" }] }
+  - id: "pl-0425"
+    target: "ryż"
+    ipa: "rɨʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["y-i", "final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
+    bases: "self"
+    examples:
+      - { target: "To jest ryż.", ipa: "tɔ jɛst rɨʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "ryż", base: "ryż" }] }
+      - { target: "Nie, to nie jest ryż.", ipa: "ɲɛ tɔ ɲɛ jɛst rɨʂ", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "ryż", base: "ryż" }] }
+  - id: "pl-0426"
+    target: "ząb"
+    ipa: "zɔmp"
+    pos: "noun"
+    gender: "m"
+    tags: ["nasal", "final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest ząb.", ipa: "tɔ jɛst zɔmp", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "ząb", base: "ząb" }] }
+      - { target: "Nie, to nie jest ząb.", ipa: "ɲɛ tɔ ɲɛ jɛst zɔmp", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "ząb", base: "ząb" }] }
+  - id: "pl-0427"
+    target: "pies"
+    ipa: "pjɛs"
+    pos: "noun"
+    gender: "m"
+    tags: ["soft-i"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest pies.", ipa: "tɔ jɛst pjɛs", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "pies", base: "pies" }] }
+      - { target: "Nie, to nie jest pies.", ipa: "ɲɛ tɔ ɲɛ jɛst pjɛs", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "pies", base: "pies" }] }
+  - id: "pl-0428"
+    target: "miasto"
+    ipa: "ˈmjastɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["soft-i"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_orthography" }
+    bases: "self"
+    examples:
+      - { target: "To jest miasto.", ipa: "tɔ jɛst ˈmjastɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "miasto", base: "miasto" }] }
+      - { target: "Nie, to nie jest miasto.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈmjastɔ", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "miasto", base: "miasto" }] }
+  - id: "pl-0429"
+    target: "fizyka"
+    ipa: "ˈfizɨka"
+    pos: "noun"
+    gender: "f"
+    tags: ["stress"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Madlen studiuje fizykę na Uniwersytecie Wiedeńskim.", ipa: "ˈmadlɛn stuˈdjujɛ fiˈzɨkɛ na uɲivɛrsɨˈtɛtɕɛ vjɛˈdɛɲskim", bases: [{ word: "Madlen", base: "Madlen" }, { word: "studiuje", base: "studiować" }, { word: "fizykę", base: "fizyka" }, { word: "na", base: "na" }, { word: "Uniwersytecie", base: "uniwersytet" }, { word: "Wiedeńskim", base: "wiedeński" }] }
+      - { target: "To jest fizyka.", ipa: "tɔ jɛst ˈfizɨka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "fizyka", base: "fizyka" }] }
+  - id: "pl-0430"
+    target: "muzyka"
+    ipa: "ˈmuzɨka"
+    pos: "noun"
+    gender: "f"
+    tags: ["stress"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_phonology" }
+    bases: "self"
+    examples:
+      - { target: "To jest muzyka.", ipa: "tɔ jɛst ˈmuzɨka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "muzyka", base: "muzyka" }] }
+      - { target: "Nie, to nie jest muzyka.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈmuzɨka", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "muzyka", base: "muzyka" }] }
+  - id: "pl-0431"
+    target: "uniwersytet"
+    ipa: "uɲiˈvɛrsɨtɛt"
+    pos: "noun"
+    gender: "m"
+    tags: ["stress"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_phonology" }
+    bases: "self"
+    examples:
+      - { target: "To jest uniwersytet.", ipa: "tɔ jɛst uɲiˈvɛrsɨtɛt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "uniwersytet", base: "uniwersytet" }] }
+      - { target: "Madlen studiuje fizykę na Uniwersytecie Wiedeńskim.", ipa: "ˈmadlɛn stuˈdjujɛ fiˈzɨkɛ na uɲivɛrsɨˈtɛtɕɛ vjɛˈdɛɲskim", bases: [{ word: "Madlen", base: "Madlen" }, { word: "studiuje", base: "studiować" }, { word: "fizykę", ref: "pl-0429" }, { word: "na", base: "na" }, { word: "Uniwersytecie", base: "uniwersytet" }, { word: "Wiedeńskim", base: "wiedeński" }] }
