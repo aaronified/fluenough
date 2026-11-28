@@ -1,0 +1,359 @@
+schema: 1
+id: "it-more-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "more-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2070"
+    target: "cominciare"
+    ipa: "kominˈtʃare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io comincio.", ipa: "ˈio koˈmintʃo", bases: [{ word: "Io", ref: "it-0003" }, { word: "comincio", base: "cominciare" }] }
+      - { target: "Voglio cominciare.", ipa: "ˈvoʎʎo kominˈtʃare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "cominciare", base: "cominciare" }] }
+  - id: "it-2071"
+    target: "finire"
+    ipa: "fiˈnire"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io finisco.", ipa: "ˈio fiˈnisko", bases: [{ word: "Io", ref: "it-0003" }, { word: "finisco", base: "finire" }] }
+      - { target: "Voglio finire.", ipa: "ˈvoʎʎo fiˈnire", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "finire", base: "finire" }] }
+  - id: "it-2072"
+    target: "iniziare"
+    ipa: "initˈtsjare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io inizio.", ipa: "ˈio iˈnittsjo", bases: [{ word: "Io", ref: "it-0003" }, { word: "inizio", base: "iniziare" }] }
+      - { target: "Voglio iniziare.", ipa: "ˈvoʎʎo initˈtsjare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "iniziare", base: "iniziare" }] }
+  - id: "it-2073"
+    target: "provare"
+    ipa: "proˈvare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io provo.", ipa: "ˈio ˈprɔvo", bases: [{ word: "Io", ref: "it-0003" }, { word: "provo", base: "provare" }] }
+      - { target: "Voglio provare.", ipa: "ˈvoʎʎo proˈvare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "provare", base: "provare" }] }
+  - id: "it-2074"
+    target: "tornare"
+    ipa: "torˈnare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io torno.", ipa: "ˈio ˈtorno", bases: [{ word: "Io", ref: "it-0003" }, { word: "torno", base: "tornare" }] }
+      - { target: "Voglio tornare.", ipa: "ˈvoʎʎo torˈnare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "tornare", base: "tornare" }] }
+  - id: "it-2075"
+    target: "partire"
+    ipa: "parˈtire"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io parto.", ipa: "ˈio ˈparto", bases: [{ word: "Io", ref: "it-0003" }, { word: "parto", base: "partire" }] }
+      - { target: "Voglio partire.", ipa: "ˈvoʎʎo parˈtire", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "partire", base: "partire" }] }
+  - id: "it-2076"
+    target: "arrivare"
+    ipa: "arriˈvare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io arrivo.", ipa: "ˈio arˈrivo", bases: [{ word: "Io", ref: "it-0003" }, { word: "arrivo", base: "arrivare" }] }
+      - { target: "Voglio arrivare.", ipa: "ˈvoʎʎo arriˈvare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "arrivare", base: "arrivare" }] }
+  - id: "it-2077"
+    target: "restare"
+    ipa: "resˈtare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io resto.", ipa: "ˈio ˈrɛsto", bases: [{ word: "Io", ref: "it-0003" }, { word: "resto", base: "restare" }] }
+      - { target: "Voglio restare.", ipa: "ˈvoʎʎo resˈtare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "restare", base: "restare" }] }
+  - id: "it-2078"
+    target: "rimanere"
+    ipa: "rimaˈnere"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io rimango.", ipa: "ˈio riˈmanɡo", bases: [{ word: "Io", ref: "it-0003" }, { word: "rimango", base: "rimanere" }] }
+      - { target: "Voglio rimanere.", ipa: "ˈvoʎʎo rimaˈnere", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "rimanere", base: "rimanere" }] }
+  - id: "it-2079"
+    target: "uscire"
+    ipa: "uʃˈʃire"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io esco.", ipa: "ˈio ˈɛsko", bases: [{ word: "Io", ref: "it-0003" }, { word: "esco", base: "uscire" }] }
+      - { target: "Voglio uscire.", ipa: "ˈvoʎʎo uʃˈʃire", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "uscire", base: "uscire" }] }
+  - id: "it-2080"
+    target: "entrare"
+    ipa: "enˈtrare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io entro.", ipa: "ˈio ˈentro", bases: [{ word: "Io", ref: "it-0003" }, { word: "entro", base: "entrare" }] }
+      - { target: "Voglio entrare.", ipa: "ˈvoʎʎo enˈtrare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "entrare", base: "entrare" }] }
+  - id: "it-2081"
+    target: "salire"
+    ipa: "saˈlire"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io salgo.", ipa: "ˈio ˈsalɡo", bases: [{ word: "Io", ref: "it-0003" }, { word: "salgo", base: "salire" }] }
+      - { target: "Voglio salire.", ipa: "ˈvoʎʎo saˈlire", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "salire", base: "salire" }] }
+  - id: "it-2082"
+    target: "scendere"
+    ipa: "ˈʃendere"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io scendo.", ipa: "ˈio ˈʃendo", bases: [{ word: "Io", ref: "it-0003" }, { word: "scendo", base: "scendere" }] }
+      - { target: "Voglio scendere.", ipa: "ˈvoʎʎo ʃenˈdere", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "scendere", base: "scendere" }] }
+  - id: "it-2083"
+    target: "camminare"
+    ipa: "kammiˈnare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io cammino.", ipa: "ˈio kamˈmino", bases: [{ word: "Io", ref: "it-0003" }, { word: "cammino", base: "camminare" }] }
+      - { target: "Voglio camminare.", ipa: "ˈvoʎʎo kammiˈnare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "camminare", base: "camminare" }] }
+  - id: "it-2084"
+    target: "correre"
+    ipa: "ˈkorrere"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io corro.", ipa: "ˈio ˈkorro", bases: [{ word: "Io", ref: "it-0003" }, { word: "corro", base: "correre" }] }
+      - { target: "Voglio correre.", ipa: "ˈvoʎʎo korˈrere", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "correre", base: "correre" }] }
+  - id: "it-2085"
+    target: "nuotare"
+    ipa: "nwoˈtare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io nuoto.", ipa: "ˈio ˈnwɔto", bases: [{ word: "Io", ref: "it-0003" }, { word: "nuoto", base: "nuotare" }] }
+      - { target: "Voglio nuotare.", ipa: "ˈvoʎʎo nwoˈtare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "nuotare", base: "nuotare" }] }
+  - id: "it-2086"
+    target: "giocare"
+    ipa: "dʒoˈkare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io gioco.", ipa: "ˈio ˈdʒɔko", bases: [{ word: "Io", ref: "it-0003" }, { word: "gioco", base: "giocare" }] }
+      - { target: "Voglio giocare.", ipa: "ˈvoʎʎo dʒoˈkare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "giocare", base: "giocare" }] }
+  - id: "it-2087"
+    target: "ballare"
+    ipa: "balˈlare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io balla.", ipa: "ˈio ˈballa", bases: [{ word: "Io", ref: "it-0003" }, { word: "balla", base: "ballare" }] }
+      - { target: "Voglio ballare.", ipa: "ˈvoʎʎo balˈlare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "ballare", base: "ballare" }] }
+  - id: "it-2088"
+    target: "cantare"
+    ipa: "kanˈtare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io canto.", ipa: "ˈio ˈkanto", bases: [{ word: "Io", ref: "it-0003" }, { word: "canto", base: "cantare" }] }
+      - { target: "Voglio cantare.", ipa: "ˈvoʎʎo kanˈtare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "cantare", base: "cantare" }] }
+  - id: "it-2089"
+    target: "suonare"
+    ipa: "swoˈnare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io suono.", ipa: "ˈio ˈswɔno", bases: [{ word: "Io", ref: "it-0003" }, { word: "suono", base: "suonare" }] }
+      - { target: "Voglio suonare.", ipa: "ˈvoʎʎo swoˈnare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "suonare", base: "suonare" }] }
+  - id: "it-2090"
+    target: "ridere"
+    ipa: "riˈdere"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io rido.", ipa: "ˈio ˈrido", bases: [{ word: "Io", ref: "it-0003" }, { word: "rido", base: "ridere" }] }
+      - { target: "Voglio ridere.", ipa: "ˈvoʎʎo riˈdere", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "ridere", base: "ridere" }] }
+  - id: "it-2091"
+    target: "piangere"
+    ipa: "pjanˈdʒere"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io piango.", ipa: "ˈio ˈpjanɡo", bases: [{ word: "Io", ref: "it-0003" }, { word: "piango", base: "piangere" }] }
+      - { target: "Voglio piangere.", ipa: "ˈvoʎʎo pjanˈdʒere", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "piangere", base: "piangere" }] }
+  - id: "it-2092"
+    target: "baciare"
+    ipa: "baˈtʃare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io bacio.", ipa: "ˈio ˈbatʃo", bases: [{ word: "Io", ref: "it-0003" }, { word: "bacio", base: "baciare" }] }
+      - { target: "Voglio baciare.", ipa: "ˈvoʎʎo baˈtʃare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "baciare", base: "baciare" }] }
+  - id: "it-2093"
+    target: "amare"
+    ipa: "aˈmare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io amo.", ipa: "ˈio ˈamo", bases: [{ word: "Io", ref: "it-0003" }, { word: "amo", base: "amare" }] }
+      - { target: "Voglio amare.", ipa: "ˈvoʎʎo aˈmare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "amare", base: "amare" }] }
+  - id: "it-2094"
+    target: "preferire"
+    ipa: "prefeˈrire"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io preferisco.", ipa: "ˈio prefeˈrisko", bases: [{ word: "Io", ref: "it-0003" }, { word: "preferisco", base: "preferire" }] }
+      - { target: "Voglio preferire.", ipa: "ˈvoʎʎo prefeˈrire", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "preferire", base: "preferire" }] }
+  - id: "it-2095"
+    target: "desiderare"
+    ipa: "dezideˈrare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io desidero.", ipa: "ˈio deziˈdero", bases: [{ word: "Io", ref: "it-0003" }, { word: "desidero", base: "desiderare" }] }
+      - { target: "Voglio desiderare.", ipa: "ˈvoʎʎo dezideˈrare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "desiderare", base: "desiderare" }] }
+  - id: "it-2096"
+    target: "sperare"
+    ipa: "speˈrare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io spero.", ipa: "ˈio ˈspɛro", bases: [{ word: "Io", ref: "it-0003" }, { word: "spero", base: "sperare" }] }
+      - { target: "Voglio sperare.", ipa: "ˈvoʎʎo speˈrare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "sperare", base: "sperare" }] }
+  - id: "it-2097"
+    target: "ricordare"
+    ipa: "rikorˈdare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io ricordo.", ipa: "ˈio riˈkɔrdo", bases: [{ word: "Io", ref: "it-0003" }, { word: "ricordo", base: "ricordare" }] }
+      - { target: "Voglio ricordare.", ipa: "ˈvoʎʎo rikorˈdare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "ricordare", base: "ricordare" }] }
+  - id: "it-2098"
+    target: "dimenticare"
+    ipa: "dimentiˈkare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io dimentico.", ipa: "ˈio diˈmentiko", bases: [{ word: "Io", ref: "it-0003" }, { word: "dimentico", base: "dimenticare" }] }
+      - { target: "Voglio dimenticare.", ipa: "ˈvoʎʎo dimentiˈkare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "dimenticare", base: "dimenticare" }] }
+  - id: "it-2099"
+    target: "imparare"
+    ipa: "impaˈrare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io imparo.", ipa: "ˈio imˈparo", bases: [{ word: "Io", ref: "it-0003" }, { word: "imparo", base: "imparare" }] }
+      - { target: "Voglio imparare.", ipa: "ˈvoʎʎo impaˈrare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "imparare", base: "imparare" }] }
+  - id: "it-2100"
+    target: "insegnare"
+    ipa: "inseɲˈɲare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io insegno.", ipa: "ˈio inˈseɲɲo", bases: [{ word: "Io", ref: "it-0003" }, { word: "insegno", base: "insegnare" }] }
+      - { target: "Voglio insegnare.", ipa: "ˈvoʎʎo inseɲˈɲare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "insegnare", base: "insegnare" }] }
+  - id: "it-2101"
+    target: "studiare"
+    ipa: "stuˈdjare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io studio.", ipa: "ˈio ˈstudjo", bases: [{ word: "Io", ref: "it-0003" }, { word: "studio", base: "studiare" }] }
+      - { target: "Voglio studiare.", ipa: "ˈvoʎʎo stuˈdjare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "studiare", base: "studiare" }] }
+  - id: "it-2102"
+    target: "conoscere"
+    ipa: "koˈnoʃʃere"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Io conosco.", ipa: "ˈio koˈnosko", bases: [{ word: "Io", ref: "it-0003" }, { word: "conosco", base: "conoscere" }] }
+      - { target: "Voglio conoscere.", ipa: "ˈvoʎʎo konoʃˈʃere", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "conoscere", base: "conoscere" }] }
+  - id: "it-2103"
+    target: "incontrare"
+    ipa: "inkonˈtrare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io incontro.", ipa: "ˈio inˈkontro", bases: [{ word: "Io", ref: "it-0003" }, { word: "incontro", base: "incontrare" }] }
+      - { target: "Voglio incontrare.", ipa: "ˈvoʎʎo inkonˈtrare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "incontrare", base: "incontrare" }] }
+  - id: "it-2104"
+    target: "spiegare"
+    ipa: "spjeˈɡare"
+    pos: "verb"
+    tags: ["more-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io spiego.", ipa: "ˈio ˈspjɛɡo", bases: [{ word: "Io", ref: "it-0003" }, { word: "spiego", base: "spiegare" }] }
+      - { target: "Voglio spiegare.", ipa: "ˈvoʎʎo spjeˈɡare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "spiegare", base: "spiegare" }] }
