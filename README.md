@@ -196,9 +196,9 @@ below is written from `decks/index.json` each time the decks change.
 | Finnish | Uralic | Finnic | Latin | in progress |
 | French | Indo-European | Romance | Latin | B1 |
 | Garhwali | Indo-European | Indo-Aryan | Devanagari | in progress |
-| German | Indo-European | Germanic | Latin | in progress |
+| German | Indo-European | Germanic | Latin | A1 |
 | Goan Konkani | Indo-European | Indo-Aryan | Latin | in progress |
-| Greek (Modern) | Indo-European | Hellenic | Greek | in progress |
+| Greek (Modern) | Indo-European | Hellenic | Greek | A1 |
 | Gujarati | Indo-European | Indo-Aryan | Gujarati | B1 |
 | Haryanvi | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Hausa | Afro-Asiatic | Chadic | Latin | in progress |
@@ -209,14 +209,14 @@ below is written from `decks/index.json` each time the decks change.
 | Indonesian | Austronesian | Malayo-Polynesian | Latin | in progress |
 | Interslavic | Constructed | Slavic | Latin, Cyrillic | in progress |
 | Irish | Indo-European | Celtic | Latin | in progress |
-| Italian | Indo-European | Romance | Latin | in progress |
+| Italian | Indo-European | Romance | Latin | A1 |
 | Japanese | Japonic | — | Kana, Kanji | B1 |
 | Kannada | Dravidian | South | Kannada | B1 |
 | Kashmiri | Indo-European | Indo-Aryan | Perso-Arabic, Devanagari | in progress |
 | Khasi | Austroasiatic | Khasian | Latin | in progress |
 | Koine Greek | Indo-European | Hellenic | Greek | in progress |
 | Konkani | Indo-European | Indo-Aryan | Devanagari, Kannada, Malayalam | in progress |
-| Korean | Koreanic | — | Hangul | in progress |
+| Korean | Koreanic | — | Hangul | A1 |
 | Kumaoni | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Latin | Indo-European | Italic | Latin | in progress |
 | Lojban | Constructed | None | Latin | in progress |
@@ -237,20 +237,20 @@ below is written from `decks/index.json` each time the decks change.
 | Pali | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Pashto | Indo-European | Iranian | Perso-Arabic | in progress |
 | Persian | Indo-European | Iranian | Perso-Arabic | in progress |
-| Polish | Indo-European | Slavic | Latin | in progress |
+| Polish | Indo-European | Slavic | Latin | A1 |
 | Portuguese | Indo-European | Romance | Latin | in progress |
 | Proto-Indo-European | Indo-European | — | Latin | in progress |
 | Punjabi | Indo-European | Indo-Aryan | Gurmukhi, Shahmukhi | in progress |
 | Quechua | Quechuan | — | Latin | in progress |
 | Rajasthani | Indo-European | Indo-Aryan | Devanagari | in progress |
-| Russian | Indo-European | Slavic | Cyrillic | in progress |
+| Russian | Indo-European | Slavic | Cyrillic | A1 |
 | Santali | Austroasiatic | Munda | Ol Chiki, Latin, Devanagari, Eastern Nagari | in progress |
 | Serbo-Croatian | Indo-European | Slavic | Latin, Cyrillic | in progress |
 | Sindhi | Indo-European | Indo-Aryan | Perso-Arabic, Devanagari | in progress |
 | Somali | Afro-Asiatic | Cushitic | Latin | in progress |
 | Spanish | Indo-European | Romance | Latin | B1 |
 | Sumerian | Isolate | — | Cuneiform | in progress |
-| Swahili | Niger-Congo | Bantu | Latin | in progress |
+| Swahili | Niger-Congo | Bantu | Latin | A1 |
 | Swedish | Indo-European | Germanic | Latin | in progress |
 | Tamil | Dravidian | South | Tamil | B1 |
 | Telugu | Dravidian | South-Central | Telugu | B1 |
