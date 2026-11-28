@@ -377,3 +377,22 @@
     # forms.
     name: "Standard Italian; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"de":
+  dump: "German"
+  variety:
+    # Measured on 2026-11-28 by the hint pass of tools/transcribe.py: the
+    # unhinted German engine equals Wiktionary's normalised first form on
+    # 79.2% of the single-word card targets, so the engine's broad `ipa` and
+    # Wiktionary's phonemic forms agree on sounds. Wiktionary's German forms
+    # are broad `/ /` (with a few narrow `[ ]` of connected or regional
+    # speech), and none is a standard narrow form worth importing. So no
+    # Wiktionary form is taken (untagged: false, no notes, no tags): nothing
+    # is imported, and every German card gets its narrow form from
+    # decks/de/de-phonetics.yaml, in one convention (as Italian, Swahili and
+    # Santali). The broad `ipa` comes from `german_ipa()` in
+    # tools/transcribe.py. Flip `untagged` to true only with a `normalise`
+    # list and an `agree` guard, and only if Wiktionary gains standard narrow
+    # forms.
+    name: "Standard German; no Wiktionary form is taken (rules only)"
+    untagged: false
