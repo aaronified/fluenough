@@ -396,3 +396,16 @@
     # forms.
     name: "Standard German; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"ru":
+  dump: "Russian"
+  variety:
+    # Rules only, as German and Italian: no Wiktionary form is taken
+    # (untagged: false, no notes, no tags), nothing is imported, and every
+    # Russian card gets its narrow form from decks/ru/ru-phonetics.yaml, in
+    # one convention. The broad `ipa` comes from `russian_ipa()` in
+    # tools/transcribe.py. This entry was not measured against the kaikki
+    # dump: flip `untagged` to true only after such a measurement, with a
+    # `normalise` list and an `agree` guard.
+    name: "Standard Russian; no Wiktionary form is taken (rules only)"
+    untagged: false

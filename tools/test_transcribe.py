@@ -9,7 +9,8 @@ from pathlib import Path
 import transcribe_decks
 import validate_decks
 from transcribe import (BLOCKS, CannotRead, french_ipa, german_ipa,
-                        italian_ipa, spanish_ipa, swahili_ipa, transcribe)
+                        italian_ipa, russian_ipa, spanish_ipa, swahili_ipa,
+                        transcribe)
 
 
 class ReadingTest(unittest.TestCase):
@@ -2173,6 +2174,128 @@ class GujaratiHintTest(unittest.TestCase):
         t = transcribe("ઓગણીસ", "gu", "ogaṇis")
         self.assertEqual(t.reading, "ogaṇis")
         self.assertEqual(transcribe("કયું", "gu", "kayum̐").reading, "kayum̐")
+
+
+class RussianTest(unittest.TestCase):
+    """Russian (ru), broad. The forms of рассказ, нож, ложка, солнце, жена,
+    язык, чувство, счастье and the rules behind them are those that
+    en.wikipedia.org's "Russian phonology" gives (read 2026-11-28), written
+    in this engine's symbols (ɐ for ʌ, ˈ before the syllable, ɡ); the rest
+    follow the rules of that page and of Wiktionary's "Appendix:Russian
+    pronunciation" and are checked by hand, not against single entries."""
+
+    def check(self, triples):
+        for text, hint, ipa in triples:
+            with self.subTest(text=text):
+                self.assertEqual(russian_ipa(text, hint), ipa)
+
+    def test_unstressed_o_and_a_reduce_by_place(self):
+        self.check((("молоко", "молоко́", "məlɐˈko"),
+                    ("голова", "голова́", "ɡəlɐˈva"),
+                    ("вода", "вода́", "vɐˈda"),
+                    ("хорошо", "хорошо́", "xərɐˈʂo"),
+                    ("мама", "ма́ма", "ˈmamə"),
+                    ("город", "го́род", "ˈɡorət")))
+
+    def test_e_ya_and_i_reduce_to_ɪ_and_ж_ш_ц_make_ɨ(self):
+        self.check((("язык", "язы́к", "jɪˈzɨk"),
+                    ("жена", "жена́", "ʐɨˈna"),
+                    ("цена", "цена́", "tsɨˈna"),
+                    ("меня", "меня́", "mʲɪˈnʲa"),
+                    ("ночи", "но́чи", "ˈnotɕɪ")))
+
+    def test_a_consonant_is_soft_before_a_front_vowel_or_a_soft_sign(self):
+        self.check((("привет", "приве́т", "prʲɪˈvʲet"),
+                    ("мать", None, "matʲ"),
+                    ("семья", "семья́", "sʲɪˈmʲja"),
+                    ("школа", "шко́ла", "ˈʂkolə"),
+                    ("шесть", None, "ʂɛstʲ"),
+                    ("большое", "большо́е", "bɐlʲˈʂojə")))
+
+    def test_final_devoicing_and_voicing_assimilation(self):
+        self.check((("друг", None, "druk"), ("нож", None, "noʂ"),
+                    ("хлеб", None, "xlʲep"), ("ложка", "ло́жка", "ˈloʂkə"),
+                    ("всё", None, "fsʲo"),
+                    ("здравствуйте", "здра́вствуйте", "ˈzdrastvʊjtʲɪ")))
+
+    def test_silent_letters_and_changed_consonants(self):
+        self.check((("солнце", "со́лнце", "ˈsontsə"),
+                    ("сердце", "се́рдце", "ˈsʲertsə"),
+                    ("чувство", "чу́вство", "ˈtɕustvə"),
+                    ("лестный", "ле́стный", "ˈlʲesnɨj"),
+                    ("счастье", "сча́стье", "ˈɕːastʲjɪ"),
+                    ("рассказ", "расска́з", "rɐˈskas"),
+                    ("что", None, "ʂto"),
+                    ("учиться", "учи́ться", "ʊˈtɕitsə")))
+
+    def test_г_is_v_in_ого_and_его(self):
+        self.check((("того", "того́", "tɐˈvo"), ("его", "его́", "jɪˈvo"),
+                    ("большого", "большо́го", "bɐlʲˈʂovə"),
+                    ("много", "мно́го", "ˈmnoɡə")))
+
+    def test_a_doubled_consonant_is_long_only_before_a_vowel(self):
+        self.check((("Анна", "А́нна", "ˈanːə"),
+                    ("русском", "ру́сском", "ˈruskəm")))
+
+    def test_stress_from_an_acute_in_the_text_beats_the_hint(self):
+        self.assertEqual(russian_ipa("приве́т"), "prʲɪˈvʲet")
+        self.assertEqual(russian_ipa("приве́т", "при́вет"), "prʲɪˈvʲet")
+        self.assertEqual(russian_ipa("ёж"), "joʂ")
+        self.assertEqual(russian_ipa("неё"), "nʲɪˈjo")
+
+    def test_a_hint_is_used_only_if_it_is_the_text(self):
+        self.assertEqual(russian_ipa("привет", "приве́т"), "prʲɪˈvʲet")
+        self.assertEqual(russian_ipa("привет", "пока́"),
+                         russian_ipa("привет"))
+        self.assertTrue(transcribe("привет", "ru", "приве́т").fitted)
+        self.assertFalse(transcribe("привет", "ru", "пока́").fitted)
+
+    def test_a_word_of_one_vowel_needs_no_mark_and_a_guess_is_named(self):
+        self.assertEqual(russian_ipa("да"), "da")
+        t = transcribe("привет", "ru")
+        self.assertEqual(t.ipa, "ˈprʲivʲɪt")
+        self.assertEqual(len(t.notes), 1)
+        self.assertIn("guessed", t.notes[0])
+        self.assertEqual(transcribe("привет", "ru", "приве́т").notes, [])
+
+    def test_a_one_syllable_preposition_is_unstressed_in_a_phrase(self):
+        self.assertEqual(russian_ipa("на столе", "на столе́"),
+                         "nə stɐˈlʲe")
+        self.assertEqual(russian_ipa("не", None), "nʲe")
+        self.assertEqual(russian_ipa("я не знаю", "я не зна́ю"),
+                         "ja nʲɪ ˈznajʊ")
+
+    def test_the_reading_is_the_decks_transliteration(self):
+        # Every reading below is one that a card of decks/ru already has.
+        for text, reading in (
+                ("привет", "privet"), ("здравствуйте", "zdravstvuyte"),
+                ("доброе утро", "dobroye utro"),
+                ("спокойной ночи", "spokoynoy nochi"),
+                ("до свидания", "do svidaniya"),
+                ("пожалуйста", "pozhaluysta"),
+                ("большое спасибо", "bolshoye spasibo"),
+                ("я не понимаю", "ya ne ponimayu"),
+                ("я не говорю на русском", "ya ne govoryu na russkom"),
+                ("говорите медленнее, пожалуйста",
+                 "govorite medlennee, pozhaluysta"),
+                ("сколько стоит?", "skolko stoit?"),
+                ("где туалет?", "gde tualet?"),
+                ("помогите!", "pomogite!"),
+                ("меня зовут Анна", "menya zovut Anna"),
+                ("очень приятно", "ochen' priyatno"),
+                ("хорошо", "khorosho"), ("вы", "vy"), ("или", "ili"),
+                ("добрый", "dobry"), ("ночь", "noch'"),
+                ("щи", "shchi"), ("ёж", "yozh"), ("семья", "sem'ya")):
+            with self.subTest(text=text):
+                self.assertEqual(transcribe(text, "ru").reading, reading)
+
+    def test_the_stress_mark_is_not_written_in_the_reading(self):
+        self.assertEqual(transcribe("приве́т", "ru").reading, "privet")
+
+    def test_a_letter_russian_does_not_use_is_refused(self):
+        for bad in ("hello", "привет1", "іa"):
+            with self.subTest(bad=bad), self.assertRaises(CannotRead):
+                russian_ipa(bad)
 
 
 if __name__ == "__main__":
