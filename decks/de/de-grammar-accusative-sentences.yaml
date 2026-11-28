@@ -1,0 +1,148 @@
+schema: 1
+id: "de-grammar-accusative-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4400"
+    target: "Der Vater sieht den Hund."
+    ipa: "deːɐ̯ ˈfaːtɐ ziːt deːn hʊnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Vater", ref: "de-1512" }, { word: "sieht", ref: "de-1728" }, { word: "den", base: "der" }, { word: "Hund", ref: "de-0410" }]
+  - id: "de-4401"
+    target: "Der Hund sieht den Vater."
+    ipa: "deːɐ̯ hʊnt ziːt deːn ˈfaːtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Hund", ref: "de-0410" }, { word: "sieht", ref: "de-1728" }, { word: "den", base: "der" }, { word: "Vater", ref: "de-1512" }]
+  - id: "de-4402"
+    target: "Ich sehe den Hund."
+    ipa: "ɪç ˈzeːə deːn hʊnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "sehe", ref: "de-1728" }, { word: "den", base: "der" }, { word: "Hund", ref: "de-0410" }]
+  - id: "de-4403"
+    target: "Ich sehe die Mutter."
+    ipa: "ɪç ˈzeːə diː ˈmʊtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "sehe", ref: "de-1728" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }]
+  - id: "de-4404"
+    target: "Wir kennen den Bruder."
+    ipa: "viːɐ̯ ˈkɛnən deːn ˈbʁuːdɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "kennen", ref: "de-1758" }, { word: "den", base: "der" }, { word: "Bruder", ref: "de-1519" }]
+  - id: "de-4405"
+    target: "Er kennt den Namen."
+    ipa: "eːɐ̯ kɛnt deːn ˈnaːmən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "kennt", ref: "de-1758" }, { word: "den", base: "der" }, { word: "Namen", ref: "de-1373" }]
+  - id: "de-4406"
+    target: "Ich kenne den Kollegen."
+    ipa: "ɪç ˈkɛnə deːn ˈkɔləɡən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "kenne", ref: "de-1758" }, { word: "den", base: "der" }, { word: "Kollegen", ref: "de-1382" }]
+  - id: "de-4407"
+    target: "Wir besuchen den Nachbarn."
+    ipa: "viːɐ̯ bəˈzuːxən deːn ˈnaxbaʁn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "besuchen", ref: "de-2076" }, { word: "den", base: "der" }, { word: "Nachbarn", ref: "de-1384" }]
+  - id: "de-4408"
+    target: "Ich habe einen Bruder."
+    ipa: "ɪç ˈhaːbə ˈaɪnən ˈbʁuːdɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", ref: "de-0581" }, { word: "einen", base: "ein" }, { word: "Bruder", ref: "de-1519" }]
+  - id: "de-4409"
+    target: "Du hast einen Hund."
+    ipa: "duː hast ˈaɪnən hʊnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "hast", ref: "de-0581" }, { word: "einen", base: "ein" }, { word: "Hund", ref: "de-0410" }]
+  - id: "de-4410"
+    target: "Er hat einen Sohn."
+    ipa: "eːɐ̯ hat ˈaɪnən zoːn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "hat", ref: "de-0581" }, { word: "einen", base: "ein" }, { word: "Sohn", ref: "de-1517" }]
+  - id: "de-4411"
+    target: "Du hast keinen Hund."
+    ipa: "duː hast ˈkaɪnən hʊnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "hast", ref: "de-0581" }, { word: "keinen", ref: "de-0821" }, { word: "Hund", ref: "de-0410" }]
+  - id: "de-4412"
+    target: "Ich habe keinen Bruder."
+    ipa: "ɪç ˈhaːbə ˈkaɪnən ˈbʁuːdɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", ref: "de-0581" }, { word: "keinen", ref: "de-0821" }, { word: "Bruder", ref: "de-1519" }]
+  - id: "de-4413"
+    target: "Er liest das Buch."
+    ipa: "eːɐ̯ liːst das buːx"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "liest", ref: "de-1730" }, { word: "das", base: "das" }, { word: "Buch", ref: "de-0404" }]
+  - id: "de-4414"
+    target: "Ich suche den Zug."
+    ipa: "ɪç ˈzuːxə deːn tsuːk"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "suche", ref: "de-1752" }, { word: "den", base: "der" }, { word: "Zug", ref: "de-0412" }]
+  - id: "de-4415"
+    target: "Er findet den Hund."
+    ipa: "eːɐ̯ ˈfɪndət deːn hʊnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "findet", ref: "de-1737" }, { word: "den", base: "der" }, { word: "Hund", ref: "de-0410" }]
+  - id: "de-4416"
+    target: "Du brauchst einen Freund."
+    ipa: "duː bʁaʊkst ˈaɪnən fʁɔɪnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "brauchst", ref: "de-1736" }, { word: "einen", base: "ein" }, { word: "Freund", ref: "de-1380" }]
+  - id: "de-4417"
+    target: "Ich nehme den Zug."
+    ipa: "ɪç ˈneːmə deːn tsuːk"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "nehme", ref: "de-1739" }, { word: "den", base: "der" }, { word: "Zug", ref: "de-0412" }]
+  - id: "de-4418"
+    target: "Ich suche die Mutter."
+    ipa: "ɪç ˈzuːxə diː ˈmʊtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "suche", ref: "de-1752" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }]
+  - id: "de-4419"
+    target: "Er kauft das Handy."
+    ipa: "eːɐ̯ kaʊft das ˈhandy"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "kauft", ref: "de-1735" }, { word: "das", base: "das" }, { word: "Handy", ref: "de-1664" }]
