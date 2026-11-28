@@ -1,0 +1,32 @@
+schema: 1
+id: "pl-en-grammar-grammatical-gender"
+kind: "layer"
+core: "pl-grammar-grammatical-gender"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Gender: masculine, feminine and neuter"
+license: "CC-BY-SA-4.0"
+description: "14 nouns, each with this, my and your: the word changes with the noun's gender. Masculine nouns take ten, mój and twój, feminine nouns take ta, moja and twoja, and neuter nouns take to, moje and twoje. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Gender: masculine, feminine and neuter"
+  slot_name: "form"
+  slots:
+    "this": "this (ten, ta, to)"
+    "my": "my (mój, moja, moje)"
+    "your": "your, one person (twój, twoja, twoje)"
+  entries:
+    "dom": "house (masculine, a thing)"
+    "stol": "table (masculine, a thing)"
+    "kot": "cat (masculine, an animal)"
+    "pies": "dog (masculine, an animal)"
+    "brat": "brother (masculine, a person)"
+    "tata": "dad (masculine, a person, ends in -a)"
+    "woda": "water (feminine, ends in -a)"
+    "mama": "mum (feminine, ends in -a)"
+    "siostra": "sister (feminine, ends in -a)"
+    "kobieta": "woman (feminine, ends in -a)"
+    "noc": "night (feminine, ends in a consonant)"
+    "morze": "sea (neuter, ends in -e)"
+    "okno": "window (neuter, ends in -o)"
+    "dziecko": "child (neuter, ends in -o)"
+  notes: "Every Polish noun has a gender: masculine, feminine or neuter. Wikipedia's page on Polish grammar says the ending usually shows it. Masculine nouns typically end in a consonant (dom, stół, pies, brat); feminine nouns typically end in -a (woda, mama, siostra, kobieta), and some in a consonant, such as noc; neuter nouns typically end in -o or -e (okno, dziecko, morze). A few nouns that name men end in -a and are masculine: tata, dad. Masculine nouns are of three kinds: a person (brat, tata), an animal (kot, pies) or a thing (dom, stół). The kind does not change ten, mój and twój, but it shows in the accusative, which the cases unit teaches. Polish has no word for a or the. The words for this, my and your agree with the noun: ten, mój and twój go with a masculine noun, ta, moja and twoja with a feminine one, and to, moje and twoje with a neuter one. A noun that ends in a consonant can be masculine or feminine, so a word like noc is learnt with its gender."

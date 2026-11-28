@@ -1,0 +1,121 @@
+# Unit 12 sentences. Every noun and pronoun form comes from the unit's table (pl-grammar-grammatical-gender); the frames are To jest + noun, this-noun-is-mine and Gdzie jest + noun (Wikipedia 'Polish grammar'; the phrasebook).
+schema: 1
+id: "pl-grammar-grammatical-gender-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "pl-4100"
+    target: "To jest mój brat."
+    ipa: "tɔ jɛst muj brat"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "mój", ref: "pl-1391" }, { word: "brat", ref: "pl-1446" }]
+  - id: "pl-4101"
+    target: "To jest moja siostra."
+    ipa: "tɔ jɛst ˈmɔja ˈɕɔstra"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "moja", base: "mój" }, { word: "siostra", ref: "pl-1447" }]
+  - id: "pl-4102"
+    target: "To jest moje okno."
+    ipa: "tɔ jɛst ˈmɔjɛ ˈɔknɔ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "moje", base: "mój" }, { word: "okno", ref: "pl-0463" }]
+  - id: "pl-4103"
+    target: "To jest twój dom."
+    ipa: "tɔ jɛst tfuj dɔm"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "twój", ref: "pl-1392" }, { word: "dom", ref: "pl-0460" }]
+  - id: "pl-4104"
+    target: "To jest twoja mama."
+    ipa: "tɔ jɛst ˈtfɔja ˈmama"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "twoja", base: "twój" }, { word: "mama", ref: "pl-1440" }]
+  - id: "pl-4105"
+    target: "To jest twoje dziecko."
+    ipa: "tɔ jɛst ˈtfɔjɛ ˈdʑɛtskɔ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "twoje", base: "twój" }, { word: "dziecko", ref: "pl-1453" }]
+  - id: "pl-4106"
+    target: "Ten stół jest mój."
+    ipa: "tɛn stuw jɛst muj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Ten", ref: "pl-1396" }, { word: "stół", ref: "pl-0461" }, { word: "jest", base: "być" }, { word: "mój", ref: "pl-1391" }]
+  - id: "pl-4107"
+    target: "Ta woda jest twoja."
+    ipa: "ta ˈvɔda jɛst ˈtfɔja"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Ta", base: "ten" }, { word: "woda", ref: "pl-0008" }, { word: "jest", base: "być" }, { word: "twoja", base: "twój" }]
+  - id: "pl-4108"
+    target: "To okno jest twoje."
+    ipa: "tɔ ˈɔknɔ jɛst ˈtfɔjɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "To", base: "ten" }, { word: "okno", ref: "pl-0463" }, { word: "jest", base: "być" }, { word: "twoje", base: "twój" }]
+  - id: "pl-4109"
+    target: "Mój tata jest tu."
+    ipa: "muj ˈtata jɛst tu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Mój", ref: "pl-1391" }, { word: "tata", ref: "pl-1441" }, { word: "jest", base: "być" }, { word: "tu", ref: "pl-1720" }]
+  - id: "pl-4110"
+    target: "Twoja siostra jest tu."
+    ipa: "ˈtfɔja ˈɕɔstra jɛst tu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Twoja", base: "twój" }, { word: "siostra", ref: "pl-1447" }, { word: "jest", base: "być" }, { word: "tu", ref: "pl-1720" }]
+  - id: "pl-4111"
+    target: "Ten pies jest mój."
+    ipa: "tɛn pjɛs jɛst muj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Ten", ref: "pl-1396" }, { word: "pies", ref: "pl-0427" }, { word: "jest", base: "być" }, { word: "mój", ref: "pl-1391" }]
+  - id: "pl-4112"
+    target: "Ta kobieta jest tu."
+    ipa: "ta kɔˈbjɛta jɛst tu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Ta", base: "ten" }, { word: "kobieta", ref: "pl-0465" }, { word: "jest", base: "być" }, { word: "tu", ref: "pl-1720" }]
+  - id: "pl-4113"
+    target: "Gdzie jest mój kot?"
+    ipa: "ɡdʑɛ jɛst muj kɔt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Gdzie", ref: "pl-1302" }, { word: "jest", base: "być" }, { word: "mój", ref: "pl-1391" }, { word: "kot", ref: "pl-0462" }]
+  - id: "pl-4114"
+    target: "Gdzie jest twoja mama?"
+    ipa: "ɡdʑɛ jɛst ˈtfɔja ˈmama"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Gdzie", ref: "pl-1302" }, { word: "jest", base: "być" }, { word: "twoja", base: "twój" }, { word: "mama", ref: "pl-1440" }]
+  - id: "pl-4115"
+    target: "Ta noc jest moja."
+    ipa: "ta nɔts jɛst ˈmɔja"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_grammar" }]
+    bases: [{ word: "Ta", base: "ten" }, { word: "noc", ref: "pl-0464" }, { word: "jest", base: "być" }, { word: "moja", base: "mój" }]

@@ -1,0 +1,81 @@
+# Unit 12 (pl-grammar-grammatical-gender). Words the gender table needs that no earlier unit teaches. Sources read: en.wikipedia.org 'Polish grammar' (the section on gender and the list of endings) and each word's en.wiktionary.org entry (gender, senses, declension).
+schema: 1
+id: "pl-grammar-grammatical-gender-words"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "pl-0460"
+    target: "dom"
+    ipa: "dɔm"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Polish_grammar" }
+    bases: "self"
+    examples:
+      - { target: "To jest dom.", ipa: "tɔ jɛst dɔm", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "dom", base: "dom" }] }
+      - { target: "To jest mój dom.", ipa: "tɔ jɛst muj dɔm", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "mój", ref: "pl-1391" }, { word: "dom", base: "dom" }] }
+  - id: "pl-0461"
+    target: "stół"
+    ipa: "stuw"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Polish_grammar" }
+    bases: "self"
+    examples:
+      - { target: "To jest stół.", ipa: "tɔ jɛst stuw", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "stół", base: "stół" }] }
+      - { target: "To jest twój stół.", ipa: "tɔ jɛst tfuj stuw", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "twój", ref: "pl-1392" }, { word: "stół", base: "stół" }] }
+  - id: "pl-0462"
+    target: "kot"
+    ipa: "kɔt"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Polish_grammar" }
+    bases: "self"
+    examples:
+      - { target: "To jest kot.", ipa: "tɔ jɛst kɔt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kot", base: "kot" }] }
+      - { target: "To jest mój kot.", ipa: "tɔ jɛst muj kɔt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "mój", ref: "pl-1391" }, { word: "kot", base: "kot" }] }
+  - id: "pl-0463"
+    target: "okno"
+    ipa: "ˈɔknɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Polish_grammar" }
+    bases: "self"
+    examples:
+      - { target: "To jest okno.", ipa: "tɔ jɛst ˈɔknɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "okno", base: "okno" }] }
+      - { target: "To jest moje okno.", ipa: "tɔ jɛst ˈmɔjɛ ˈɔknɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "moje", base: "mój" }, { word: "okno", base: "okno" }] }
+  - id: "pl-0464"
+    target: "noc"
+    ipa: "nɔts"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Polish_grammar" }
+    bases: "self"
+    examples:
+      - { target: "To jest noc.", ipa: "tɔ jɛst nɔts", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "noc", base: "noc" }] }
+      - { target: "Ta noc jest dobra.", ipa: "ta nɔts jɛst ˈdɔbra", bases: [{ word: "Ta", base: "ten" }, { word: "noc", base: "noc" }, { word: "jest", base: "być" }, { word: "dobra", ref: "pl-0009" }] }
+  - id: "pl-0465"
+    target: "kobieta"
+    ipa: "kɔˈbjɛta"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Polish_grammar" }
+    bases: "self"
+    examples:
+      - { target: "To jest kobieta.", ipa: "tɔ jɛst kɔˈbjɛta", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kobieta", base: "kobieta" }] }
+      - { target: "Ta kobieta jest tu.", ipa: "ta kɔˈbjɛta jɛst tu", bases: [{ word: "Ta", base: "ten" }, { word: "kobieta", base: "kobieta" }, { word: "jest", base: "być" }, { word: "tu", ref: "pl-1720" }] }
