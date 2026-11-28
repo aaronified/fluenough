@@ -1,0 +1,284 @@
+schema: 1
+id: "it-family"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1440"
+    target: "padre"
+    ipa: "ˈpadre"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è mio padre.", ipa: "ˈkwesto ɛ ˈmio ˈpadre", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "padre", base: "padre" }] }
+      - { target: "Mio padre è buono.", ipa: "ˈmio ˈpadre ɛ ˈbwɔno", bases: [{ word: "Mio", ref: "it-1377" }, { word: "padre", base: "padre" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-1441"
+    target: "madre"
+    ipa: "ˈmadre"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è mia madre.", ipa: "ˈkwesta ɛ ˈmia ˈmadre", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mia", ref: "it-1377" }, { word: "madre", base: "madre" }] }
+      - { target: "Mia madre è buona.", ipa: "ˈmia ˈmadre ɛ ˈbwɔna", bases: [{ word: "Mia", ref: "it-1377" }, { word: "madre", base: "madre" }, { word: "è", base: "essere" }, { word: "buona", ref: "it-0008" }] }
+  - id: "it-1442"
+    target: "mamma"
+    ipa: "ˈmamma"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è mia mamma.", ipa: "ˈkwesta ɛ ˈmia ˈmamma", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mia", ref: "it-1377" }, { word: "mamma", base: "mamma" }] }
+      - { target: "Mia mamma è buona.", ipa: "ˈmia ˈmamma ɛ ˈbwɔna", bases: [{ word: "Mia", ref: "it-1377" }, { word: "mamma", base: "mamma" }, { word: "è", base: "essere" }, { word: "buona", ref: "it-0008" }] }
+  - id: "it-1443"
+    target: "papà"
+    ipa: "paˈpa"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è mio papà.", ipa: "ˈkwesto ɛ ˈmio paˈpa", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "papà", base: "papà" }] }
+      - { target: "Mio papà è buono.", ipa: "ˈmio paˈpa ɛ ˈbwɔno", bases: [{ word: "Mio", ref: "it-1377" }, { word: "papà", base: "papà" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-1444"
+    target: "figlio"
+    ipa: "ˈfiʎʎo"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un figlio.", ipa: "ɔ un ˈfiʎʎo", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "figlio", base: "figlio" }] }
+      - { target: "Questo è mio figlio.", ipa: "ˈkwesto ɛ ˈmio ˈfiʎʎo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "figlio", base: "figlio" }] }
+  - id: "it-1445"
+    target: "figlia"
+    ipa: "ˈfiʎʎa"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho una figlia.", ipa: "ɔ ˈuna ˈfiʎʎa", bases: [{ word: "Ho", base: "avere" }, { word: "una", ref: "it-0009" }, { word: "figlia", base: "figlia" }] }
+      - { target: "Questa è mia figlia.", ipa: "ˈkwesta ɛ ˈmia ˈfiʎʎa", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mia", ref: "it-1377" }, { word: "figlia", base: "figlia" }] }
+  - id: "it-1446"
+    target: "fratello"
+    ipa: "fraˈtɛllo"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un fratello.", ipa: "ɔ un fraˈtɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "fratello", base: "fratello" }] }
+      - { target: "Questo è mio fratello.", ipa: "ˈkwesto ɛ ˈmio fraˈtɛllo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "fratello", base: "fratello" }] }
+  - id: "it-1447"
+    target: "sorella"
+    ipa: "soˈrɛlla"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho una sorella.", ipa: "ɔ ˈuna soˈrɛlla", bases: [{ word: "Ho", base: "avere" }, { word: "una", ref: "it-0009" }, { word: "sorella", base: "sorella" }] }
+      - { target: "Questa è mia sorella.", ipa: "ˈkwesta ɛ ˈmia soˈrɛlla", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mia", ref: "it-1377" }, { word: "sorella", base: "sorella" }] }
+  - id: "it-1448"
+    target: "marito"
+    ipa: "maˈrito"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è mio marito.", ipa: "ˈkwesto ɛ ˈmio maˈrito", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "marito", base: "marito" }] }
+      - { target: "Mio marito è buono.", ipa: "ˈmio maˈrito ɛ ˈbwɔno", bases: [{ word: "Mio", ref: "it-1377" }, { word: "marito", base: "marito" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-1449"
+    target: "moglie"
+    ipa: "ˈmoʎʎe"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho una moglie.", ipa: "ɔ ˈuna ˈmoʎʎe", bases: [{ word: "Ho", base: "avere" }, { word: "una", ref: "it-0009" }, { word: "moglie", base: "moglie" }] }
+      - { target: "Questa è mia moglie.", ipa: "ˈkwesta ɛ ˈmia ˈmoʎʎe", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mia", ref: "it-1377" }, { word: "moglie", base: "moglie" }] }
+  - id: "it-1450"
+    target: "zio"
+    ipa: "ˈtsio"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è mio zio.", ipa: "ˈkwesto ɛ ˈmio ˈtsio", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "zio", base: "zio" }] }
+      - { target: "Mio zio è buono.", ipa: "ˈmio ˈtsio ɛ ˈbwɔno", bases: [{ word: "Mio", ref: "it-1377" }, { word: "zio", base: "zio" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-1451"
+    target: "zia"
+    ipa: "ˈtsia"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è mia zia.", ipa: "ˈkwesta ɛ ˈmia ˈtsia", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mia", ref: "it-1377" }, { word: "zia", base: "zia" }] }
+      - { target: "Mia zia è buona.", ipa: "ˈmia ˈtsia ɛ ˈbwɔna", bases: [{ word: "Mia", ref: "it-1377" }, { word: "zia", base: "zia" }, { word: "è", base: "essere" }, { word: "buona", ref: "it-0008" }] }
+  - id: "it-1452"
+    target: "nonno"
+    ipa: "ˈnɔnno"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è mio nonno.", ipa: "ˈkwesto ɛ ˈmio ˈnɔnno", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "nonno", base: "nonno" }] }
+      - { target: "Mio nonno è buono.", ipa: "ˈmio ˈnɔnno ɛ ˈbwɔno", bases: [{ word: "Mio", ref: "it-1377" }, { word: "nonno", base: "nonno" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-1453"
+    target: "nonna"
+    ipa: "ˈnɔnna"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è mia nonna.", ipa: "ˈkwesta ɛ ˈmia ˈnɔnna", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mia", ref: "it-1377" }, { word: "nonna", base: "nonna" }] }
+      - { target: "Mia nonna è buona.", ipa: "ˈmia ˈnɔnna ɛ ˈbwɔna", bases: [{ word: "Mia", ref: "it-1377" }, { word: "nonna", base: "nonna" }, { word: "è", base: "essere" }, { word: "buona", ref: "it-0008" }] }
+  - id: "it-1454"
+    target: "cugino"
+    ipa: "kuˈdʒino"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un cugino.", ipa: "ɔ un kuˈdʒino", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "cugino", base: "cugino" }] }
+      - { target: "Questo è mio cugino.", ipa: "ˈkwesto ɛ ˈmio kuˈdʒino", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "cugino", base: "cugino" }] }
+  - id: "it-1455"
+    target: "nipote"
+    ipa: "niˈpote"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un nipote.", ipa: "ɔ un niˈpote", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "nipote", base: "nipote" }] }
+      - { target: "Questo è mio nipote.", ipa: "ˈkwesto ɛ ˈmio niˈpote", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "nipote", base: "nipote" }] }
+  - id: "it-1456"
+    target: "famiglia"
+    ipa: "faˈmiʎʎa"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho una famiglia.", ipa: "ɔ ˈuna faˈmiʎʎa", bases: [{ word: "Ho", base: "avere" }, { word: "una", ref: "it-0009" }, { word: "famiglia", base: "famiglia" }] }
+      - { target: "La mia famiglia è buona.", ipa: "la ˈmia faˈmiʎʎa ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "mia", ref: "it-1377" }, { word: "famiglia", base: "famiglia" }, { word: "è", base: "essere" }, { word: "buona", ref: "it-0008" }] }
+  - id: "it-1457"
+    target: "genitore"
+    ipa: "dʒeniˈtore"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è un genitore.", ipa: "ˈkwesto ɛ un dʒeniˈtore", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "un", ref: "it-0009" }, { word: "genitore", base: "genitore" }] }
+      - { target: "Mio padre è un genitore.", ipa: "ˈmio ˈpadre ɛ un dʒeniˈtore", bases: [{ word: "Mio", ref: "it-1377" }, { word: "padre", ref: "it-1440" }, { word: "è", base: "essere" }, { word: "un", ref: "it-0009" }, { word: "genitore", base: "genitore" }] }
+  - id: "it-1458"
+    target: "bambino"
+    ipa: "bamˈbino"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un bambino.", ipa: "ɔ un bamˈbino", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "bambino", base: "bambino" }] }
+      - { target: "Questo è un bambino.", ipa: "ˈkwesto ɛ un bamˈbino", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "un", ref: "it-0009" }, { word: "bambino", base: "bambino" }] }
+  - id: "it-1459"
+    target: "parente"
+    ipa: "paˈrente"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è mio parente.", ipa: "ˈkwesto ɛ ˈmio paˈrente", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "parente", base: "parente" }] }
+      - { target: "Mio zio è un parente.", ipa: "ˈmio ˈtsio ɛ un paˈrente", bases: [{ word: "Mio", ref: "it-1377" }, { word: "zio", ref: "it-1450" }, { word: "è", base: "essere" }, { word: "un", ref: "it-0009" }, { word: "parente", base: "parente" }] }
+  - id: "it-1460"
+    target: "cognato"
+    ipa: "koɲˈɲato"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un cognato.", ipa: "ɔ un koɲˈɲato", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "cognato", base: "cognato" }] }
+      - { target: "Questo è mio cognato.", ipa: "ˈkwesto ɛ ˈmio koɲˈɲato", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "cognato", base: "cognato" }] }
+  - id: "it-1461"
+    target: "cognata"
+    ipa: "koɲˈɲata"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho una cognata.", ipa: "ɔ ˈuna koɲˈɲata", bases: [{ word: "Ho", base: "avere" }, { word: "una", ref: "it-0009" }, { word: "cognata", base: "cognata" }] }
+      - { target: "Questa è mia cognata.", ipa: "ˈkwesta ɛ ˈmia koɲˈɲata", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mia", ref: "it-1377" }, { word: "cognata", base: "cognata" }] }
+  - id: "it-1462"
+    target: "suocero"
+    ipa: "swoˈtʃero"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un suocero.", ipa: "ɔ un swoˈtʃero", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "suocero", base: "suocero" }] }
+      - { target: "Questo è mio suocero.", ipa: "ˈkwesto ɛ ˈmio swoˈtʃero", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "suocero", base: "suocero" }] }
+  - id: "it-1463"
+    target: "gemello"
+    ipa: "dʒeˈmɛllo"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un gemello.", ipa: "ɔ un dʒeˈmɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "gemello", base: "gemello" }] }
+      - { target: "Questo è mio gemello.", ipa: "ˈkwesto ɛ ˈmio dʒeˈmɛllo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "gemello", base: "gemello" }] }
+  - id: "it-1464"
+    target: "genero"
+    ipa: "dʒeˈnero"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un genero.", ipa: "ɔ un dʒeˈnero", bases: [{ word: "Ho", base: "avere" }, { word: "un", ref: "it-0009" }, { word: "genero", base: "genero" }] }
+      - { target: "Questo è mio genero.", ipa: "ˈkwesto ɛ ˈmio dʒeˈnero", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", ref: "it-1377" }, { word: "genero", base: "genero" }] }
