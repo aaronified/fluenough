@@ -104,27 +104,32 @@ units:
       - { id: "sounds-alike", text: { "en": "Pairs said one after the other: schon and schön, Mutter and Mütter, Stadt and Staat" } }
     reading_passages:
       - { id: "umlaut-words", text: { "en": "A short list of everyday words spelled with ä, ö, ü and ß" } }
-  - planned: { id: "de-questions", theme: "questions", words: 15 }
+  - decks: ["de-questions", "*"]
+    words: 15
     listening_passages:
       - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
     reading_passages:
       - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
-  - planned: { id: "de-addressing", theme: "addressing", words: 15 }
+  - decks: ["de-addressing", "*"]
+    words: 16
     listening_passages:
       - { id: "du-or-sie", text: { "en": "Greeting a neighbour's child with du and an older stranger with Sie" } }
     reading_passages:
       - { id: "name-badges", text: { "en": "Name badges at a meeting, with Herr, Frau and surnames" } }
-  - planned: { id: "de-pronouns", theme: "pronouns", words: 20 }
+  - decks: ["de-pronouns", "*"]
+    words: 20
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
       - { id: "seating-chart", text: { "en": "A seating chart for a party, with names and who sits where" } }
-  - planned: { id: "de-family", theme: "family", words: 30 }
+  - decks: ["de-family", "*"]
+    words: 30
     listening_passages:
       - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
     reading_passages:
       - { id: "family-tree", text: { "en": "A small family tree with names and relations" } }
-  - planned: { id: "de-numbers-1-20", theme: "numbers-1-20", words: 20 }
+  - decks: ["de-numbers-1-20", "*"]
+    words: 20
     listening_passages:
       - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
     reading_passages:
@@ -132,37 +137,44 @@ units:
   # 3. No script units: German is written in Latin letters.
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "de-about-me", theme: "about-me", words: 25 }
+  - decks: ["de-about-me", "*"]
+    words: 25
     listening_passages:
       - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
     reading_passages:
       - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
-  - planned: { id: "de-everyday-verbs", theme: "everyday-verbs", words: 40 }
+  - decks: ["de-everyday-verbs", "*"]
+    words: 40
     listening_passages:
       - { id: "morning-routine", text: { "en": "A father says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - planned: { id: "de-adverbs", theme: "adverbs", words: 35 }
+  - decks: ["de-adverbs", "*"]
+    words: 35
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "de-quantities", theme: "quantities", words: 25 }
+  - decks: ["de-quantities", "*"]
+    words: 25
     listening_passages:
       - { id: "at-the-bakery", text: { "en": "Asking how much and how many at a bakery counter" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - planned: { id: "de-describing", theme: "describing", words: 40 }
+  - decks: ["de-describing", "*"]
+    words: 41
     listening_passages:
       - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
     reading_passages:
       - { id: "postcard-from-the-sea", text: { "en": "A short postcard from the Baltic coast: the weather and the food" } }
-  - planned: { id: "de-location", theme: "location", words: 15 }
+  - decks: ["de-location", "*"]
+    words: 15
     listening_passages:
       - { id: "where-are-my-keys", text: { "en": "Looking for keys: here, there, inside, outside, above, below" } }
     reading_passages:
       - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
-  - planned: { id: "de-more-verbs", theme: "more-verbs", words: 25 }
+  - decks: ["de-more-verbs", "*"]
+    words: 25
     listening_passages:
       - { id: "after-work", text: { "en": "Two friends say what they do after work" } }
     reading_passages:
@@ -218,28 +230,33 @@ units:
       - { id: "lost-items-note", text: { "en": "A note about things left behind and whose they are" } }
   # 6. Then the other A1 themes, each its words, its rules, then its
   # sentences.
-  - planned: { id: "de-work", theme: "work", words: 35 }
+  - decks: ["de-work", "*"]
+    words: 35
     listening_passages:
       - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
     reading_passages:
       - { id: "business-card", text: { "en": "A business card and a short job description" } }
-  - planned: { id: "de-numbers-big", theme: "numbers-big", words: 35 }
+  - decks: ["de-numbers-big", "*"]
+    words: 35
     listening_passages:
       - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers, with the ones before the tens" } }
     reading_passages:
       - { id: "price-tags", text: { "en": "Price tags in euros and a bus-route number board" } }
-  - planned: { id: "de-market", theme: "market", words: 40 }
+  - decks: ["de-market", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a weekly market stall" } }
     reading_passages:
       - { id: "market-price-board", text: { "en": "A price board at a market" } }
-  - planned: { id: "de-groceries", theme: "groceries", words: 40 }
+  - decks: ["de-groceries", "*"]
+    words: 40
     listening_passages:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list" } }
     reading_passages:
       - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
   # de-food-sentences joins this unit.
-  - planned: { id: "de-food", theme: "food", words: 55 }
+  - decks: ["de-food", "*"]
+    words: 55
     listening_passages:
       - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
     reading_passages:
@@ -249,12 +266,14 @@ units:
       - { id: "can-must-may", text: { "en": "Saying what you can, must, want and may do today" } }
     reading_passages:
       - { id: "house-rules", text: { "en": "The house rules of a youth hostel" } }
-  - planned: { id: "de-transport", theme: "transport", words: 35 }
+  - decks: ["de-transport", "*"]
+    words: 35
     listening_passages:
       - { id: "tram-stop", text: { "en": "Asking which tram goes to the main station" } }
     reading_passages:
       - { id: "timetable", text: { "en": "A bus and U-Bahn timetable" } }
-  - planned: { id: "de-directions", theme: "directions", words: 30 }
+  - decks: ["de-directions", "*"]
+    words: 30
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
     reading_passages:
@@ -269,17 +288,20 @@ units:
       - { id: "with-the-bus", text: { "en": "Saying how and with whom you travel: mit dem Bus, für meine Mutter" } }
     reading_passages:
       - { id: "route-note", text: { "en": "A note on how to get to a friend's flat" } }
-  - planned: { id: "de-body", theme: "body", words: 30 }
+  - decks: ["de-body", "*"]
+    words: 30
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - planned: { id: "de-places", theme: "places", words: 40 }
+  - decks: ["de-places", "*"]
+    words: 40
     listening_passages:
       - { id: "walk-to-the-bakery", text: { "en": "A neighbour names the places you pass on the way to the bakery" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, church" } }
-  - planned: { id: "de-home", theme: "home", words: 40 }
+  - decks: ["de-home", "*"]
+    words: 40
     listening_passages:
       - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
     reading_passages:
@@ -289,7 +311,8 @@ units:
       - { id: "and-but-or", text: { "en": "Joining two things you do: und, aber, oder, denn" } }
     reading_passages:
       - { id: "short-email", text: { "en": "A short email joining plans with and, but and because" } }
-  - planned: { id: "de-time", theme: "time", words: 30 }
+  - decks: ["de-time", "*"]
+    words: 30
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time, with halb and Viertel" } }
     reading_passages:
@@ -299,7 +322,8 @@ units:
       - { id: "getting-up", text: { "en": "Saying when you get up, go out and come back: the prefix goes to the end" } }
     reading_passages:
       - { id: "day-plan", text: { "en": "A day's plan with times: aufstehen, einkaufen, anrufen" } }
-  - planned: { id: "de-help", theme: "help", words: 20 }
+  - decks: ["de-help", "*"]
+    words: 20
     listening_passages:
       - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
     reading_passages:
