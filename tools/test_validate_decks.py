@@ -1038,6 +1038,24 @@ class Transliteration(Validated):
         text = '{ en: "হ্যাঁ (hêm̐) is yes.", hi: "बांग्ला में হ্যাঁ (हैं) का अर्थ है हाँ।" }'
         self.assertValid(facts_file(29, fact(30, text=text)))
 
+    def _a_stress_mark_stays_inside_a_cyrillic_word(self) -> None:
+        self.assertEqual(
+            validate_decks._untransliterated("пры\u0301гать (prygat')", "en"), [])
+        self.assertEqual(
+            validate_decks._untransliterated("мама\u0301 (mama)", "en"), [])
+        self.assertEqual(
+            validate_decks._untransliterated("пры\u0301гать is to jump.", "en"),
+            ["пры\u0301гать"])
+
+    def _a_russian_core_reads_cyrillic_as_written(self) -> None:
+        own = validate_decks._SCRIPT_BLOCK["cyrillic"]
+        self.assertEqual(validate_decks._untransliterated("брат", "ru", own), [])
+        self.assertEqual(validate_decks._untransliterated("брат", "en"), ["брат"])
+
+    def test_cyrillic_and_stress_marks(self) -> None:
+        self._a_stress_mark_stays_inside_a_cyrillic_word()
+        self._a_russian_core_reads_cyrillic_as_written()
+
     def test_a_word_in_another_script_has_its_reading(self) -> None:
         cases = (
             self._a_word_with_its_reading_is_valid,
