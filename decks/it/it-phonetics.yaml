@@ -1,0 +1,55 @@
+schema: 1
+kind: "phonetics"
+id: "it-phonetics"
+language: "it"
+variety: "Standard Italian, as the course's broad ipa writes it (tools/transcribe.py italian_ipa(): stress marked, e ɛ o ɔ as lexical openness, geminates written doubled, ts dz tʃ dʒ as letter pairs), not a regional accent"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only attested standard Italian allophony is here: nasal place assimilation, dental t d ts dz n l, and the lengthening of a stressed open-syllable vowel at the end of a phrase. Wiktionary's narrow forms for Italian are regional or connected speech (50 of 114,267 forms, read 2026-11-27), so none is imported and every card is derived by these rules (tools/phonetic_languages.yaml). Left out, on purpose: nasalisation of vowels (not Italian); the palatalised n and l before tʃ dʒ ʃ and the velar-nasal line are tagged dubious on Wikipedia (the velar one is kept because Wiktionary lists [ŋ] and the homorganic-coda rule says it; the palatalised one is not written); s before a voiced consonant is [z], which the broad ipa already writes; the r (a trill with one or two contacts, the broad ipa writes r); /ɲ ʃ ʎ ts dz/ geminate between vowels, which the broad ipa already writes doubled (kept doubled, not ː); aspiration (none); vowel lengthening in clusters and across non-final words. Sources are Wikipedia Italian phonology and Wiktionary Appendix:Italian pronunciation, both read 2026-11-28; not verified by an Italian phonetician, so the rules ship unreviewed."
+rules:
+  # Runs first, on the broad letters, before the dental marks are added.
+  # A stressed vowel in an open, non-final syllable is long at the end of the intonational phrase (an isolated word, or the last word of a sentence). Only the plain case is written: a single consonant (or tʃ dʒ) and a vowel follow; a geminate (doubled in the broad ipa) or a cluster follows nowhere, since geminates shorten the vowel. Not in earlier words of a sentence.
+  - id: "it-vowel-length"
+    pattern: 'ˈ((?:tʃ|dʒ|[^aeiouɛɔ ˈː])*[aeiouɛɔ])(?=(?:tʃ|dʒ|[bdfɡklmnprstvzʃʒɲʎ])[aeiouɛɔ][^ ]*$)'
+    replace: 'ˈ\1ː'
+    source: "Wikipedia, \"Italian phonology\", section \"Vowels\", read 2026-11-28 (CC BY-SA 4.0): \"Normally vowels in stressed open syllables, unless word-final, are long at the end of the intonational phrase (including isolated words) or when emphasized\"; section \"Consonants\": \"Geminate consonants shorten the preceding vowel (or block phonetic lengthening)\"."
+  # n and m do not contrast before p b: they are [m]. Across a word boundary too (Wikipedia's example un poco [umˈpɔːko]).
+  - id: "it-n-bilabial"
+    pattern: 'n(?=[ ˈ]*[pbm])'
+    replace: 'm'
+    source: "Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): /m/ and /n/ \"do not contrast before /p, b/ and /f, v/, where they are pronounced [m] and [ɱ]\"; section \"Coda\": a coda nasal is \"homorganic to a following consonant\", with the example un poco [umˈpɔːko]. Standard Italian, as the course teaches it."
+  # n before f v is labiodental [ɱ].
+  - id: "it-n-labiodental"
+    pattern: 'n(?=[ ˈ]*[fv])'
+    replace: 'ɱ'
+    source: "Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): \"[m] and [ɱ]\" before /p, b/ and /f, v/ respectively; en.wiktionary.org, \"Appendix:Italian pronunciation\", the Italian consonants table, read 2026-11-28 (CC BY-SA 4.0) lists [ɱ] among the Italian nasals."
+  # n before k g is velar [ŋ]. Wikipedia tags this line [dubious - discuss]; Wiktionary's table lists [ŋ] and the coda rule (homorganic nasal) says the same, so it is kept and flagged for the review queue.
+  - id: "it-n-velar"
+    pattern: 'n(?=[ ˈ]*[kɡ])'
+    replace: 'ŋ'
+    source: "Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): \"/n/ is velar [ŋ] before /k, ɡ/\" (the line carries a [dubious - discuss] tag); section \"Coda\": a coda nasal is homorganic to a following consonant; en.wiktionary.org, \"Appendix:Italian pronunciation\", the Italian consonants table, read 2026-11-28 (CC BY-SA 4.0) lists [ŋ] among the Italian nasals."
+  # n and l are laminal denti-alveolar before the dental consonants t d ts dz s z, inside a word. Not before tʃ dʒ ʃ (Wikipedia's palatalised form there is tagged dubious, so no rule).
+  - id: "it-n-dental"
+    pattern: 'n(?=ˈ?(?:t(?!ʃ)|d(?!ʒ)|[sz]))'
+    replace: 'n̪'
+    source: "Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): \"/n, l/ ... laminal denti-alveolar [n̪, l̪] before /t, d, t͡s, d͡z, s, z/\"."
+  - id: "it-l-dental"
+    pattern: 'l(?=ˈ?(?:t(?!ʃ)|d(?!ʒ)|[sz]))'
+    replace: 'l̪'
+    source: "Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): \"/n, l/ ... laminal denti-alveolar [n̪, l̪] before /t, d, t͡s, d͡z, s, z/\"."
+  # The affricates ts dz are dental, written with a tie bar.
+  - id: "it-ts-dental"
+    pattern: 'ts'
+    replace: 't̪͡s̪'
+    source: "en.wiktionary.org, \"Appendix:Italian pronunciation\", the Italian consonants table, read 2026-11-28 (CC BY-SA 4.0): /ts/ and /dz/ have the dental variants [t̪͡s̪] and [d̪͡z̪]; Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): \"The stop component of the 'apical' affricates is actually laminal denti-alveolar\"."
+  - id: "it-dz-dental"
+    pattern: 'dz'
+    replace: 'd̪͡z̪'
+    source: "en.wiktionary.org, \"Appendix:Italian pronunciation\", the Italian consonants table, read 2026-11-28 (CC BY-SA 4.0): /ts/ and /dz/ have the dental variants [t̪͡s̪] and [d̪͡z̪]; Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): \"The stop component of the 'apical' affricates is actually laminal denti-alveolar\"."
+  # t and d are laminal denti-alveolar (called dental for simplicity), not before their own postalveolar affricate tʃ dʒ.
+  - id: "it-t-dental"
+    pattern: 't(?![ʃ̪͡])'
+    replace: 't̪'
+    source: "Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): /t, d/ are \"laminal denti-alveolar [t̪, d̪]... commonly called \"dental\" for simplicity\"; en.wiktionary.org, \"Appendix:Italian pronunciation\", the Italian consonants table, read 2026-11-28 (CC BY-SA 4.0): /t/ has the dental variant [t̪], /d/ [d̪]."
+  - id: "it-d-dental"
+    pattern: 'd(?![ʒ̪͡])'
+    replace: 'd̪'
+    source: "Wikipedia, \"Italian phonology\", section \"Consonants\" (notes on the consonant table), read 2026-11-28 (CC BY-SA 4.0): /t, d/ are \"laminal denti-alveolar [t̪, d̪]... commonly called \"dental\" for simplicity\"; en.wiktionary.org, \"Appendix:Italian pronunciation\", the Italian consonants table, read 2026-11-28 (CC BY-SA 4.0): /t/ has the dental variant [t̪], /d/ [d̪]."
