@@ -37,3 +37,5 @@ Ids (never reused, ascending inside a task; highest in use `it-0031`): grammar `
 ## 4. Progress
 
 2026-11-27: audit done, this page written; IT-110 and IT-050 launched.
+
+2026-11-28: IT-110 merged, #1755 (`italian_ipa` engine; stress by written accent, penultimate default, a hint argument and a small table of everyday words for openness; the review found six wrong test values and an elision bug, all fixed before the merge). IT-050 done (690 candidates, all 25 themes full; numbers-big extras miliardo, centinaio, migliaio to be dropped). Shared branch `decks/it-a1-wave1` created; Haiku workers it101 to it105 (word units, five each) and the Sonnet grammar builder IT-100 (six grammar units) are building and pushing after every unit. Path edits (IT-120) come last, by the architect, so that workers never conflict on `it-path.yaml`. No sentences decks for word units (no read source of Italian sentences; examples are composed from verified frames and queued).
