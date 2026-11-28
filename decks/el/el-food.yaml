@@ -1,0 +1,974 @@
+schema: 1
+id: "el-food"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "el-2700"
+    target: "ψωμί"
+    reading: "psomí"
+    ipa: "psoˈmi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ψωμί.", reading: "aftó eínai to psomí.", ipa: "afˈto ˈine to psoˈmi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "ψωμί", base: "ψωμί", reading: "psomí" }] }
+  - id: "el-2701"
+    target: "γάλα"
+    reading: "gála"
+    ipa: "ˈɣala"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το γάλα.", reading: "aftó eínai to gála.", ipa: "afˈto ˈine to ˈɣala", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "γάλα", base: "γάλα", reading: "gála" }] }
+  - id: "el-2702"
+    target: "τυρί"
+    reading: "tyrí"
+    ipa: "tiˈɾi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το τυρί.", reading: "aftó eínai to tyrí.", ipa: "afˈto ˈine to tiˈɾi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "τυρί", base: "τυρί", reading: "tyrí" }] }
+  - id: "el-2703"
+    target: "βούτυρο"
+    reading: "voútyro"
+    ipa: "ˈvutiɾo"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το βούτυρο.", reading: "aftó eínai to voútyro.", ipa: "afˈto ˈine to ˈvutiɾo", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "βούτυρο", base: "βούτυρο", reading: "voútyro" }] }
+  - id: "el-2704"
+    target: "κρέας"
+    reading: "kréas"
+    ipa: "ˈkɾeas"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κρέας.", reading: "aftó eínai to kréas.", ipa: "afˈto ˈine to ˈkɾeas", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κρέας", base: "κρέας", reading: "kréas" }] }
+  - id: "el-2705"
+    target: "κοτόπουλο"
+    reading: "kotópoulo"
+    ipa: "koˈtopulo"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κοτόπουλο.", reading: "aftó eínai to kotópoulo.", ipa: "afˈto ˈine to koˈtopulo", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κοτόπουλο", base: "κοτόπουλο", reading: "kotópoulo" }] }
+  - id: "el-2706"
+    target: "ψάρι"
+    reading: "psári"
+    ipa: "ˈpsaɾi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ψάρι.", reading: "aftó eínai to psári.", ipa: "afˈto ˈine to ˈpsaɾi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "ψάρι", base: "ψάρι", reading: "psári" }] }
+  - id: "el-2707"
+    target: "ρύζι"
+    reading: "rýzi"
+    ipa: "ˈɾizi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ρύζι.", reading: "aftó eínai to rýzi.", ipa: "afˈto ˈine to ˈɾizi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "ρύζι", base: "ρύζι", reading: "rýzi" }] }
+  - id: "el-2708"
+    target: "μακαρόνια"
+    reading: "makarónia"
+    ipa: "makaˈɾonja"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-2709"
+    target: "πατάτα"
+    reading: "patáta"
+    ipa: "paˈtata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η πατάτα.", reading: "aftí eínai i patáta.", ipa: "afˈti ˈine i paˈtata", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "πατάτα", base: "πατάτα", reading: "patáta" }] }
+  - id: "el-2710"
+    target: "ντομάτα"
+    reading: "domáta"
+    ipa: "doˈmata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η ντομάτα.", reading: "aftí eínai i domáta.", ipa: "afˈti ˈine i doˈmata", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "ντομάτα", base: "ντομάτα", reading: "domáta" }] }
+  - id: "el-2711"
+    target: "κρεμμύδι"
+    reading: "kremmýdi"
+    ipa: "kɾeˈmiði"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κρεμμύδι.", reading: "aftó eínai to kremmýdi.", ipa: "afˈto ˈine to kɾeˈmiði", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κρεμμύδι", base: "κρεμμύδι", reading: "kremmýdi" }] }
+  - id: "el-2712"
+    target: "σκόρδο"
+    reading: "skórdo"
+    ipa: "ˈskoɾðo"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το σκόρδο.", reading: "aftó eínai to skórdo.", ipa: "afˈto ˈine to ˈskoɾðo", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "σκόρδο", base: "σκόρδο", reading: "skórdo" }] }
+  - id: "el-2713"
+    target: "αγγούρι"
+    reading: "angoúri"
+    ipa: "aŋˈɡuɾi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το αγγούρι.", reading: "aftó eínai to angoúri.", ipa: "afˈto ˈine to aŋˈɡuɾi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "αγγούρι", base: "αγγούρι", reading: "angoúri" }] }
+  - id: "el-2714"
+    target: "καρότο"
+    reading: "karóto"
+    ipa: "kaˈɾoto"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το καρότο.", reading: "aftó eínai to karóto.", ipa: "afˈto ˈine to kaˈɾoto", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "καρότο", base: "καρότο", reading: "karóto" }] }
+  - id: "el-2715"
+    target: "μήλο"
+    reading: "mílo"
+    ipa: "ˈmilo"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μήλο.", reading: "aftó eínai to mílo.", ipa: "afˈto ˈine to ˈmilo", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μήλο", base: "μήλο", reading: "mílo" }] }
+  - id: "el-2716"
+    target: "πορτοκάλι"
+    reading: "portokáli"
+    ipa: "poɾtoˈkali"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πορτοκάλι.", reading: "aftó eínai to portokáli.", ipa: "afˈto ˈine to poɾtoˈkali", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "πορτοκάλι", base: "πορτοκάλι", reading: "portokáli" }] }
+  - id: "el-2717"
+    target: "μπανάνα"
+    reading: "banána"
+    ipa: "baˈnana"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η μπανάνα.", reading: "aftí eínai i banána.", ipa: "afˈti ˈine i baˈnana", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "μπανάνα", base: "μπανάνα", reading: "banána" }] }
+  - id: "el-2718"
+    target: "σταφύλι"
+    reading: "stafýli"
+    ipa: "staˈfili"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το σταφύλι.", reading: "aftó eínai to stafýli.", ipa: "afˈto ˈine to staˈfili", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "σταφύλι", base: "σταφύλι", reading: "stafýli" }] }
+  - id: "el-2719"
+    target: "φράουλα"
+    reading: "fráoula"
+    ipa: "ˈfɾaula"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η φράουλα.", reading: "aftí eínai i fráoula.", ipa: "afˈti ˈine i ˈfɾaula", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "φράουλα", base: "φράουλα", reading: "fráoula" }] }
+  - id: "el-2720"
+    target: "ροδάκινο"
+    reading: "rodákino"
+    ipa: "ɾoˈðakino"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ροδάκινο.", reading: "aftó eínai to rodákino.", ipa: "afˈto ˈine to ɾoˈðakino", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "ροδάκινο", base: "ροδάκινο", reading: "rodákino" }] }
+  - id: "el-2721"
+    target: "καρπούζι"
+    reading: "karpoúzi"
+    ipa: "kaɾˈpuzi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το καρπούζι.", reading: "aftó eínai to karpoúzi.", ipa: "afˈto ˈine to kaɾˈpuzi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "καρπούζι", base: "καρπούζι", reading: "karpoúzi" }] }
+  - id: "el-2722"
+    target: "λεμόνι"
+    reading: "lemóni"
+    ipa: "leˈmoni"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το λεμόνι.", reading: "aftó eínai to lemóni.", ipa: "afˈto ˈine to leˈmoni", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "λεμόνι", base: "λεμόνι", reading: "lemóni" }] }
+  - id: "el-2723"
+    target: "μελιτζάνα"
+    reading: "melitzána"
+    ipa: "meliˈdzana"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η μελιτζάνα.", reading: "aftí eínai i melitzána.", ipa: "afˈti ˈine i meliˈdzana", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "μελιτζάνα", base: "μελιτζάνα", reading: "melitzána" }] }
+  - id: "el-2724"
+    target: "κολοκύθι"
+    reading: "kolokýthi"
+    ipa: "koloˈkiθi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κολοκύθι.", reading: "aftó eínai to kolokýthi.", ipa: "afˈto ˈine to koloˈkiθi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κολοκύθι", base: "κολοκύθι", reading: "kolokýthi" }] }
+  - id: "el-2725"
+    target: "πιπέρι"
+    reading: "pipéri"
+    ipa: "piˈpeɾi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πιπέρι.", reading: "aftó eínai to pipéri.", ipa: "afˈto ˈine to piˈpeɾi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "πιπέρι", base: "πιπέρι", reading: "pipéri" }] }
+  - id: "el-2726"
+    target: "αλάτι"
+    reading: "aláti"
+    ipa: "aˈlati"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το αλάτι.", reading: "aftó eínai to aláti.", ipa: "afˈto ˈine to aˈlati", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "αλάτι", base: "αλάτι", reading: "aláti" }] }
+  - id: "el-2727"
+    target: "ζάχαρη"
+    reading: "záchari"
+    ipa: "ˈzaxaɾi"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η ζάχαρη.", reading: "aftí eínai i záchari.", ipa: "afˈti ˈine i ˈzaxaɾi", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "ζάχαρη", base: "ζάχαρη", reading: "záchari" }] }
+  - id: "el-2728"
+    target: "λάδι"
+    reading: "ládi"
+    ipa: "ˈlaði"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το λάδι.", reading: "aftó eínai to ládi.", ipa: "afˈto ˈine to ˈlaði", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "λάδι", base: "λάδι", reading: "ládi" }] }
+  - id: "el-2730"
+    target: "μέλι"
+    reading: "méli"
+    ipa: "ˈmeli"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μέλι.", reading: "aftó eínai to méli.", ipa: "afˈto ˈine to ˈmeli", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μέλι", base: "μέλι", reading: "méli" }] }
+  - id: "el-2731"
+    target: "γιαούρτι"
+    reading: "yaoúrti"
+    ipa: "ʝaˈuɾti"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το γιαούρτι.", reading: "aftó eínai to yaoúrti.", ipa: "afˈto ˈine to ʝaˈuɾti", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "γιαούρτι", base: "γιαούρτι", reading: "yaoúrti" }] }
+  - id: "el-2732"
+    target: "ελιά"
+    reading: "eliá"
+    ipa: "elˈja"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η ελιά.", reading: "aftí eínai i eliá.", ipa: "afˈti ˈine i elˈja", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "ελιά", base: "ελιά", reading: "eliá" }] }
+  - id: "el-2733"
+    target: "σούπα"
+    reading: "soúpa"
+    ipa: "ˈsupa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η σούπα.", reading: "aftí eínai i soúpa.", ipa: "afˈti ˈine i ˈsupa", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "σούπα", base: "σούπα", reading: "soúpa" }] }
+  - id: "el-2734"
+    target: "σαλάτα"
+    reading: "saláta"
+    ipa: "saˈlata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η σαλάτα.", reading: "aftí eínai i saláta.", ipa: "afˈti ˈine i saˈlata", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "σαλάτα", base: "σαλάτα", reading: "saláta" }] }
+  - id: "el-2735"
+    target: "πίτα"
+    reading: "píta"
+    ipa: "ˈpita"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η πίτα.", reading: "aftí eínai i píta.", ipa: "afˈti ˈine i ˈpita", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "πίτα", base: "πίτα", reading: "píta" }] }
+  - id: "el-2736"
+    target: "σάντουιτς"
+    reading: "sántouits"
+    ipa: "ˈsanduits"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το σάντουιτς.", reading: "aftó eínai to sántouits.", ipa: "afˈto ˈine to ˈsanduits", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "σάντουιτς", base: "σάντουιτς", reading: "sántouits" }] }
+  - id: "el-2737"
+    target: "ομελέτα"
+    reading: "omeléta"
+    ipa: "omeˈleta"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η ομελέτα.", reading: "aftí eínai i omeléta.", ipa: "afˈti ˈine i omeˈleta", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "ομελέτα", base: "ομελέτα", reading: "omeléta" }] }
+  - id: "el-2738"
+    target: "κέικ"
+    reading: "kéik"
+    ipa: "ˈkeik"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κέικ.", reading: "aftó eínai to kéik.", ipa: "afˈto ˈine to ˈkeik", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κέικ", base: "κέικ", reading: "kéik" }] }
+  - id: "el-2739"
+    target: "μπισκότο"
+    reading: "biskóto"
+    ipa: "biˈskoto"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μπισκότο.", reading: "aftó eínai to biskóto.", ipa: "afˈto ˈine to biˈskoto", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μπισκότο", base: "μπισκότο", reading: "biskóto" }] }
+  - id: "el-2740"
+    target: "σοκολάτα"
+    reading: "sokoláta"
+    ipa: "sokoˈlata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η σοκολάτα.", reading: "aftí eínai i sokoláta.", ipa: "afˈti ˈine i sokoˈlata", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "σοκολάτα", base: "σοκολάτα", reading: "sokoláta" }] }
+  - id: "el-2741"
+    target: "παγωτό"
+    reading: "pagotó"
+    ipa: "paɣoˈto"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το παγωτό.", reading: "aftó eínai to pagotó.", ipa: "afˈto ˈine to paɣoˈto", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "παγωτό", base: "παγωτό", reading: "pagotó" }] }
+  - id: "el-2742"
+    target: "γλυκό"
+    reading: "glykó"
+    ipa: "ɣliˈko"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το γλυκό.", reading: "aftó eínai to glykó.", ipa: "afˈto ˈine to ɣliˈko", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "γλυκό", base: "γλυκό", reading: "glykó" }] }
+  - id: "el-2743"
+    target: "φρούτο"
+    reading: "froúto"
+    ipa: "ˈfɾuto"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το φρούτο.", reading: "aftó eínai to froúto.", ipa: "afˈto ˈine to ˈfɾuto", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "φρούτο", base: "φρούτο", reading: "froúto" }] }
+  - id: "el-2744"
+    target: "λαχανικό"
+    reading: "lachanikó"
+    ipa: "laxaniˈko"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το λαχανικό.", reading: "aftó eínai to lachanikó.", ipa: "afˈto ˈine to laxaniˈko", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "λαχανικό", base: "λαχανικό", reading: "lachanikó" }] }
+  - id: "el-2745"
+    target: "ψωμάκι"
+    reading: "psomáki"
+    ipa: "psoˈmaki"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ψωμάκι.", reading: "aftó eínai to psomáki.", ipa: "afˈto ˈine to psoˈmaki", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "ψωμάκι", base: "ψωμάκι", reading: "psomáki" }] }
+  - id: "el-2746"
+    target: "καφές"
+    reading: "kafés"
+    ipa: "kaˈfes"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο καφές.", reading: "aftós eínai o kafés.", ipa: "afˈtos ˈine o kaˈfes", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "καφές", base: "καφές", reading: "kafés" }] }
+  - id: "el-2747"
+    target: "τσάι"
+    reading: "tsái"
+    ipa: "ˈtsai"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το τσάι.", reading: "aftó eínai to tsái.", ipa: "afˈto ˈine to ˈtsai", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "τσάι", base: "τσάι", reading: "tsái" }] }
+  - id: "el-2748"
+    target: "χυμός"
+    reading: "chymós"
+    ipa: "xiˈmos"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο χυμός.", reading: "aftós eínai o chymós.", ipa: "afˈtos ˈine o xiˈmos", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "χυμός", base: "χυμός", reading: "chymós" }] }
+  - id: "el-2749"
+    target: "κρασί"
+    reading: "krasí"
+    ipa: "kɾaˈsi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κρασί.", reading: "aftó eínai to krasí.", ipa: "afˈto ˈine to kɾaˈsi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κρασί", base: "κρασί", reading: "krasí" }] }
+  - id: "el-2751"
+    target: "πιάτο"
+    reading: "piáto"
+    ipa: "ˈpjato"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πιάτο.", reading: "aftó eínai to piáto.", ipa: "afˈto ˈine to ˈpjato", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "πιάτο", base: "πιάτο", reading: "piáto" }] }
+  - id: "el-2752"
+    target: "φαγητό"
+    reading: "fayitó"
+    ipa: "faʝiˈto"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το φαγητό.", reading: "aftó eínai to fayitó.", ipa: "afˈto ˈine to faʝiˈto", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "φαγητό", base: "φαγητό", reading: "fayitó" }] }
+  - id: "el-2753"
+    target: "πρωινό"
+    reading: "proinó"
+    ipa: "pɾoiˈno"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πρωινό.", reading: "aftó eínai to proinó.", ipa: "afˈto ˈine to pɾoiˈno", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "πρωινό", base: "πρωινό", reading: "proinó" }] }
+  - id: "el-2754"
+    target: "μεσημεριανό"
+    reading: "mesimerianó"
+    ipa: "mesimeɾjaˈno"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μεσημεριανό.", reading: "aftó eínai to mesimerianó.", ipa: "afˈto ˈine to mesimeɾjaˈno", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μεσημεριανό", base: "μεσημεριανό", reading: "mesimerianó" }] }
+  - id: "el-2755"
+    target: "βραδινό"
+    reading: "vradinó"
+    ipa: "vɾaðiˈno"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το βραδινό.", reading: "aftó eínai to vradinó.", ipa: "afˈto ˈine to vɾaðiˈno", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "βραδινό", base: "βραδινό", reading: "vradinó" }] }
+  - id: "el-2756"
+    target: "κουζίνα"
+    reading: "kouzína"
+    ipa: "kuˈzina"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η κουζίνα.", reading: "aftí eínai i kouzína.", ipa: "afˈti ˈine i kuˈzina", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "κουζίνα", base: "κουζίνα", reading: "kouzína" }] }
+  - id: "el-2757"
+    target: "μαχαίρι"
+    reading: "machaíri"
+    ipa: "maˈxeɾi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μαχαίρι.", reading: "aftó eínai to machaíri.", ipa: "afˈto ˈine to maˈxeɾi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μαχαίρι", base: "μαχαίρι", reading: "machaíri" }] }
+  - id: "el-2758"
+    target: "πιρούνι"
+    reading: "piroúni"
+    ipa: "piˈɾuni"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πιρούνι.", reading: "aftó eínai to piroúni.", ipa: "afˈto ˈine to piˈɾuni", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "πιρούνι", base: "πιρούνι", reading: "piroúni" }] }
+  - id: "el-2759"
+    target: "κουτάλι"
+    reading: "koutáli"
+    ipa: "kuˈtali"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κουτάλι.", reading: "aftó eínai to koutáli.", ipa: "afˈto ˈine to kuˈtali", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κουτάλι", base: "κουτάλι", reading: "koutáli" }] }
+  - id: "el-2760"
+    target: "πεπόνι"
+    reading: "pepóni"
+    ipa: "peˈponi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πεπόνι.", reading: "aftó eínai to pepóni.", ipa: "afˈto ˈine to peˈponi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "πεπόνι", base: "πεπόνι", reading: "pepóni" }] }
+  - id: "el-2761"
+    target: "κεράσι"
+    reading: "kerási"
+    ipa: "keˈɾasi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κεράσι.", reading: "aftó eínai to kerási.", ipa: "afˈto ˈine to keˈɾasi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κεράσι", base: "κεράσι", reading: "kerási" }] }
+  - id: "el-2762"
+    target: "καρύδι"
+    reading: "karýdi"
+    ipa: "kaˈɾiði"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το καρύδι.", reading: "aftó eínai to karýdi.", ipa: "afˈto ˈine to kaˈɾiði", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "καρύδι", base: "καρύδι", reading: "karýdi" }] }
+  - id: "el-2763"
+    target: "φασόλι"
+    reading: "fasóli"
+    ipa: "faˈsoli"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το φασόλι.", reading: "aftó eínai to fasóli.", ipa: "afˈto ˈine to faˈsoli", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "φασόλι", base: "φασόλι", reading: "fasóli" }] }
+  - id: "el-2764"
+    target: "μπιφτέκι"
+    reading: "biftéki"
+    ipa: "bifˈteki"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μπιφτέκι.", reading: "aftó eínai to biftéki.", ipa: "afˈto ˈine to bifˈteki", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μπιφτέκι", base: "μπιφτέκι", reading: "biftéki" }] }
+  - id: "el-2765"
+    target: "γεύμα"
+    reading: "yévma"
+    ipa: "ˈʝevma"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το γεύμα.", reading: "aftó eínai to yévma.", ipa: "afˈto ˈine to ˈʝevma", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "γεύμα", base: "γεύμα", reading: "yévma" }] }
+  - id: "el-2766"
+    target: "τηγανητά"
+    reading: "tiganitá"
+    ipa: "tiɣaniˈta"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-2767"
+    target: "κολοκυθάκι"
+    reading: "kolokytháki"
+    ipa: "kolokiˈθaki"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κολοκυθάκι.", reading: "aftó eínai to kolokytháki.", ipa: "afˈto ˈine to kolokiˈθaki", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κολοκυθάκι", base: "κολοκυθάκι", reading: "kolokytháki" }] }
+  - id: "el-2768"
+    target: "σπανάκι"
+    reading: "spanáki"
+    ipa: "spaˈnaki"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το σπανάκι.", reading: "aftó eínai to spanáki.", ipa: "afˈto ˈine to spaˈnaki", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "σπανάκι", base: "σπανάκι", reading: "spanáki" }] }
+  - id: "el-2769"
+    target: "μαρούλι"
+    reading: "maroúli"
+    ipa: "maˈɾuli"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μαρούλι.", reading: "aftó eínai to maroúli.", ipa: "afˈto ˈine to maˈɾuli", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μαρούλι", base: "μαρούλι", reading: "maroúli" }] }
+  - id: "el-2770"
+    target: "μαρμελάδα"
+    reading: "marmeláda"
+    ipa: "maɾmeˈlaða"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η μαρμελάδα.", reading: "aftí eínai i marmeláda.", ipa: "afˈti ˈine i maɾmeˈlaða", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "μαρμελάδα", base: "μαρμελάδα", reading: "marmeláda" }] }
+  - id: "el-2771"
+    target: "μαγιονέζα"
+    reading: "mayionéza"
+    ipa: "maʝoˈneza"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η μαγιονέζα.", reading: "aftí eínai i mayionéza.", ipa: "afˈti ˈine i maʝoˈneza", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "μαγιονέζα", base: "μαγιονέζα", reading: "mayionéza" }] }
+  - id: "el-2772"
+    target: "κέτσαπ"
+    reading: "kétsap"
+    ipa: "ˈketsap"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κέτσαπ.", reading: "aftó eínai to kétsap.", ipa: "afˈto ˈine to ˈketsap", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κέτσαπ", base: "κέτσαπ", reading: "kétsap" }] }
+  - id: "el-2773"
+    target: "μουστάρδα"
+    reading: "moustárda"
+    ipa: "muˈstaɾða"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η μουστάρδα.", reading: "aftí eínai i moustárda.", ipa: "afˈti ˈine i muˈstaɾða", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "μουστάρδα", base: "μουστάρδα", reading: "moustárda" }] }
+  - id: "el-2774"
+    target: "πιπεριά"
+    reading: "piperiá"
+    ipa: "pipeɾˈja"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η πιπεριά.", reading: "aftí eínai i piperiá.", ipa: "afˈti ˈine i pipeɾˈja", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "πιπεριά", base: "πιπεριά", reading: "piperiá" }] }
+  - id: "el-2775"
+    target: "μπάμια"
+    reading: "bámia"
+    ipa: "ˈbamja"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η μπάμια.", reading: "aftí eínai i bámia.", ipa: "afˈti ˈine i ˈbamja", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "μπάμια", base: "μπάμια", reading: "bámia" }] }
+  - id: "el-2776"
+    target: "αγκινάρα"
+    reading: "anginára"
+    ipa: "aŋɡiˈnaɾa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η αγκινάρα.", reading: "aftí eínai i anginára.", ipa: "afˈti ˈine i aŋɡiˈnaɾa", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "αγκινάρα", base: "αγκινάρα", reading: "anginára" }] }
+  - id: "el-2777"
+    target: "κουνουπίδι"
+    reading: "kounoupídi"
+    ipa: "kunuˈpiði"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κουνουπίδι.", reading: "aftó eínai to kounoupídi.", ipa: "afˈto ˈine to kunuˈpiði", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "κουνουπίδι", base: "κουνουπίδι", reading: "kounoupídi" }] }
+  - id: "el-2778"
+    target: "μπρόκολο"
+    reading: "brókolo"
+    ipa: "ˈbɾokolo"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μπρόκολο.", reading: "aftó eínai to brókolo.", ipa: "afˈto ˈine to ˈbɾokolo", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μπρόκολο", base: "μπρόκολο", reading: "brókolo" }] }
+  - id: "el-2779"
+    target: "ραδίκι"
+    reading: "radíki"
+    ipa: "ɾaˈðiki"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ραδίκι.", reading: "aftó eínai to radíki.", ipa: "afˈto ˈine to ɾaˈðiki", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "ραδίκι", base: "ραδίκι", reading: "radíki" }] }
+  - id: "el-2780"
+    target: "λάχανο"
+    reading: "láchano"
+    ipa: "ˈlaxano"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το λάχανο.", reading: "aftó eínai to láchano.", ipa: "afˈto ˈine to ˈlaxano", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "λάχανο", base: "λάχανο", reading: "láchano" }] }
+  - id: "el-2781"
+    target: "πράσο"
+    reading: "práso"
+    ipa: "ˈpɾaso"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πράσο.", reading: "aftó eínai to práso.", ipa: "afˈto ˈine to ˈpɾaso", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "πράσο", base: "πράσο", reading: "práso" }] }
+  - id: "el-2782"
+    target: "σπαράγγι"
+    reading: "sparángi"
+    ipa: "spaˈɾaŋɡi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το σπαράγγι.", reading: "aftó eínai to sparángi.", ipa: "afˈto ˈine to spaˈɾaŋɡi", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "σπαράγγι", base: "σπαράγγι", reading: "sparángi" }] }
+  - id: "el-2783"
+    target: "σταφίδα"
+    reading: "stafída"
+    ipa: "staˈfiða"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η σταφίδα.", reading: "aftí eínai i stafída.", ipa: "afˈti ˈine i staˈfiða", bases: [{ word: "Αυτή", base: "αυτός", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "ο", reading: "i" }, { word: "σταφίδα", base: "σταφίδα", reading: "stafída" }] }
+  - id: "el-2785"
+    target: "βύσσινο"
+    reading: "výssino"
+    ipa: "ˈvisino"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το βύσσινο.", reading: "aftó eínai to výssino.", ipa: "afˈto ˈine to ˈvisino", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "βύσσινο", base: "βύσσινο", reading: "výssino" }] }
+  - id: "el-2786"
+    target: "μανταρίνι"
+    reading: "mantaríni"
+    ipa: "mandaˈɾini"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μανταρίνι.", reading: "aftó eínai to mantaríni.", ipa: "afˈto ˈine to mandaˈɾini", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "μανταρίνι", base: "μανταρίνι", reading: "mantaríni" }] }
+  - id: "el-2787"
+    target: "αχλάδι"
+    reading: "achládi"
+    ipa: "aˈxlaði"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το αχλάδι.", reading: "aftó eínai to achládi.", ipa: "afˈto ˈine to aˈxlaði", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "ο", reading: "to" }, { word: "αχλάδι", base: "αχλάδι", reading: "achládi" }] }
+  - id: "el-2788"
+    target: "ξίδι"
+    reading: "xídi"
+    ipa: "ˈksiði"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ξίδι.", reading: "aftó íne to xídi.", ipa: "afˈto ˈine to ˈksiði", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "ο", reading: "to" }, { word: "ξίδι", base: "ξίδι", reading: "xídi" }] }
+  - id: "el-2789"
+    target: "μπίρα"
+    reading: "bíra"
+    ipa: "ˈbiɾa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η μπίρα.", reading: "aftí íne i bíra.", ipa: "afˈti ˈine i ˈbiɾa", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "μπίρα", base: "μπίρα", reading: "bíra" }] }
+  - id: "el-2790"
+    target: "ακτινίδιο"
+    reading: "aktinídio"
+    ipa: "aktiˈniðjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ακτινίδιο.", reading: "aftó íne to aktinídio.", ipa: "afˈto ˈine to aktiˈniðjo", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "ο", reading: "to" }, { word: "ακτινίδιο", base: "ακτινίδιο", reading: "aktinídio" }] }

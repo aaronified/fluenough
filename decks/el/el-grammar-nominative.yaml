@@ -1,0 +1,128 @@
+# Unit 24 grammar topic nominative. Sources read: en.wikipedia.org 'Modern Greek grammar' (the nominative is the case of the subject; the definite article and the verb agree with it in number) and the en.wiktionary.org entries of the nine nouns (nominative singular and plural). Each cell is a sentence whose subject is the noun; the verbs are those of the present-tense unit.
+schema: 1
+id: "el-grammar-nominative"
+part: "core"
+kind: "grammar"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["singular", "plural"]
+  entries:
+    - lemma: "πατέρας"
+      key: "pateras"
+      reading: "patéras"
+      ipa: "paˈteɾas"
+      forms:
+        "singular": "Ο πατέρας διαβάζει."
+        "plural": "Οι πατέρες διαβάζουν."
+      readings:
+        "singular": "O patéras diavázei."
+        "plural": "Oi patéres diavázoun."
+      ipas:
+        "singular": "o paˈteɾas ðjaˈvazi"
+        "plural": "i paˈteɾes ðjaˈvazun"
+    - lemma: "μητέρα"
+      key: "mitera"
+      reading: "mitéra"
+      ipa: "miˈteɾa"
+      forms:
+        "singular": "Η μητέρα μιλάει."
+        "plural": "Οι μητέρες μιλάνε."
+      readings:
+        "singular": "I mitéra miláei."
+        "plural": "Oi mitéres miláne."
+      ipas:
+        "singular": "i miˈteɾa miˈlai"
+        "plural": "i miˈteɾes miˈlane"
+    - lemma: "παιδί"
+      key: "paidi"
+      reading: "paidí"
+      ipa: "peˈði"
+      forms:
+        "singular": "Το παιδί παίζει."
+        "plural": "Τα παιδιά παίζουν."
+      readings:
+        "singular": "To paidí paízei."
+        "plural": "Ta paidiá paízoun."
+      ipas:
+        "singular": "to peˈði ˈpezi"
+        "plural": "ta peˈðja ˈpezun"
+    - lemma: "γιατρός"
+      key: "yiatros"
+      reading: "yiatrós"
+      ipa: "ʝaˈtɾos"
+      forms:
+        "singular": "Ο γιατρός δουλεύει."
+        "plural": "Οι γιατροί δουλεύουν."
+      readings:
+        "singular": "O yiatrós doulévei."
+        "plural": "Oi yiatroí doulévoun."
+      ipas:
+        "singular": "o ʝaˈtɾos ðuˈlevi"
+        "plural": "i ʝaˈtɾi ðuˈlevun"
+    - lemma: "δασκάλα"
+      key: "daskala"
+      reading: "daskála"
+      ipa: "ðaˈskala"
+      forms:
+        "singular": "Η δασκάλα γράφει."
+        "plural": "Οι δασκάλες γράφουν."
+      readings:
+        "singular": "I daskála gráfei."
+        "plural": "Oi daskáles gráfoun."
+      ipas:
+        "singular": "i ðaˈskala ˈɣɾafi"
+        "plural": "i ðaˈskales ˈɣɾafun"
+    - lemma: "αδελφός"
+      key: "adelfos"
+      reading: "adelfós"
+      ipa: "aðelˈfos"
+      forms:
+        "singular": "Ο αδελφός τρέχει."
+        "plural": "Οι αδελφοί τρέχουν."
+      readings:
+        "singular": "O adelfós tréchei."
+        "plural": "Oi adelfoí tréchoun."
+      ipas:
+        "singular": "o aðelˈfos ˈtɾexi"
+        "plural": "i aðelˈfi ˈtɾexun"
+    - lemma: "αδελφή"
+      key: "adelfi"
+      reading: "adelfí"
+      ipa: "aðelˈfi"
+      forms:
+        "singular": "Η αδελφή ξυπνάει."
+        "plural": "Οι αδελφές ξυπνάνε."
+      readings:
+        "singular": "I adelfí xypnáei."
+        "plural": "Oi adelfés xypnáne."
+      ipas:
+        "singular": "i aðelˈfi ksipˈnai"
+        "plural": "i aðelˈfes ksipˈnane"
+    - lemma: "μωρό"
+      key: "moro"
+      reading: "moró"
+      ipa: "moˈɾo"
+      forms:
+        "singular": "Το μωρό ακούει."
+        "plural": "Τα μωρά ακούνε."
+      readings:
+        "singular": "To moró akoúei."
+        "plural": "Ta morá akoúne."
+      ipas:
+        "singular": "to moˈɾo aˈkui"
+        "plural": "ta moˈɾa aˈkune"
+    - lemma: "γυναίκα"
+      key: "gynaika"
+      reading: "gynaíka"
+      ipa: "ʝiˈneka"
+      forms:
+        "singular": "Η γυναίκα πίνει."
+        "plural": "Οι γυναίκες πίνουν."
+      readings:
+        "singular": "I gynaíka pínei."
+        "plural": "Oi gynaíkes pínoun."
+      ipas:
+        "singular": "i ʝiˈneka ˈpini"
+        "plural": "i ʝiˈnekes ˈpinun"

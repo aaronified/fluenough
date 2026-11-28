@@ -1,0 +1,107 @@
+# Unit 29 grammar topic be-verb. Sources read: en.wikipedia.org 'Modern Greek grammar' (είμαι and έχω, the present είμαι είσαι είναι είμαστε είστε/είσαστε είναι; negation with δεν before the verb) and the en.wiktionary.org entry είμαι (present active indicative). The subject pronoun is left out, as Greek does. Rows use only words of earlier units: εδώ and the pronouns.
+schema: 1
+id: "el-grammar-be-verb"
+part: "core"
+kind: "grammar"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "negative", "question"]
+  entries:
+    - lemma: "εγώ"
+      key: "ego"
+      reading: "egó"
+      ipa: "eˈɣo"
+      forms:
+        "statement": "Είμαι εδώ."
+        "negative": "Δεν είμαι εδώ."
+        "question": "Είμαι εδώ;"
+      readings:
+        "statement": "Eímai edó."
+        "negative": "Den eímai edó."
+        "question": "Eímai edó;"
+      ipas:
+        "statement": "ˈime eˈðo"
+        "negative": "ðen ˈime eˈðo"
+        "question": "ˈime eˈðo"
+    - lemma: "εσύ"
+      key: "esy"
+      reading: "esí"
+      ipa: "eˈsi"
+      forms:
+        "statement": "Είσαι εδώ."
+        "negative": "Δεν είσαι εδώ."
+        "question": "Είσαι εδώ;"
+      readings:
+        "statement": "Eísai edó."
+        "negative": "Den eísai edó."
+        "question": "Eísai edó;"
+      ipas:
+        "statement": "ˈise eˈðo"
+        "negative": "ðen ˈise eˈðo"
+        "question": "ˈise eˈðo"
+    - lemma: "αυτός"
+      key: "aftos"
+      reading: "aftós"
+      ipa: "afˈtos"
+      forms:
+        "statement": "Είναι εδώ."
+        "negative": "Δεν είναι εδώ."
+        "question": "Είναι εδώ;"
+      readings:
+        "statement": "Eínai edó."
+        "negative": "Den eínai edó."
+        "question": "Eínai edó;"
+      ipas:
+        "statement": "ˈine eˈðo"
+        "negative": "ðen ˈine eˈðo"
+        "question": "ˈine eˈðo"
+    - lemma: "εμείς"
+      key: "emeis"
+      reading: "emeís"
+      ipa: "eˈmis"
+      forms:
+        "statement": "Είμαστε εδώ."
+        "negative": "Δεν είμαστε εδώ."
+        "question": "Είμαστε εδώ;"
+      readings:
+        "statement": "Eímaste edó."
+        "negative": "Den eímaste edó."
+        "question": "Eímaste edó;"
+      ipas:
+        "statement": "ˈimaste eˈðo"
+        "negative": "ðen ˈimaste eˈðo"
+        "question": "ˈimaste eˈðo"
+    - lemma: "εσείς"
+      key: "eseis"
+      reading: "eseís"
+      ipa: "eˈsis"
+      forms:
+        "statement": "Είστε εδώ."
+        "negative": "Δεν είστε εδώ."
+        "question": "Είστε εδώ;"
+      readings:
+        "statement": "Eíste edó."
+        "negative": "Den eíste edó."
+        "question": "Eíste edó;"
+      ipas:
+        "statement": "ˈiste eˈðo"
+        "negative": "ðen ˈiste eˈðo"
+        "question": "ˈiste eˈðo"
+    - lemma: "αυτοί"
+      key: "afti"
+      reading: "aftoí"
+      ipa: "afˈti"
+      forms:
+        "statement": "Είναι εδώ."
+        "negative": "Δεν είναι εδώ."
+        "question": "Είναι εδώ;"
+      readings:
+        "statement": "Eínai edó."
+        "negative": "Den eínai edó."
+        "question": "Eínai edó;"
+      ipas:
+        "statement": "ˈine eˈðo"
+        "negative": "ðen ˈine eˈðo"
+        "question": "ˈine eˈðo"

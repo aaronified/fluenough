@@ -1,0 +1,26 @@
+schema: 1
+id: "el-en-grammar-nominative"
+kind: "layer"
+core: "el-grammar-nominative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The nominative: the subject"
+license: "CC-BY-SA-4.0"
+description: "Nine nouns as the subject of a short sentence, in the singular and the plural. The subject is in the nominative, which is the form the dictionary gives, and the verb agrees with it in number: ο πατέρας διαβάζει (o patéras diavázei), οι πατέρες διαβάζουν (oi patéres diavázoun). Taken from Wikipedia's page on Modern Greek grammar and the Wiktionary entries of the words. Not yet checked by a Greek speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The nominative: the subject"
+  slot_name: "number"
+  slots:
+    "singular": "one subject, with a verb in the third person singular"
+    "plural": "several subjects, with a verb in the third person plural"
+  entries:
+    "pateras": "father: the subject of the verb, in the singular and the plural"
+    "mitera": "mother: the subject of the verb, in the singular and the plural"
+    "paidi": "child: the subject of the verb, in the singular and the plural"
+    "yiatros": "doctor: the subject of the verb, in the singular and the plural"
+    "daskala": "teacher (female): the subject of the verb, in the singular and the plural"
+    "adelfos": "brother: the subject of the verb, in the singular and the plural"
+    "adelfi": "sister: the subject of the verb, in the singular and the plural"
+    "moro": "baby: the subject of the verb, in the singular and the plural"
+    "gynaika": "woman: the subject of the verb, in the singular and the plural"
+  notes: "The nominative is the case of the subject: the person or thing that does the action. It is the form of the noun you find in the dictionary, with the articles ο (o), η (i), το (to) in the singular and οι (oi), οι (oi), τα (ta) in the plural. The verb agrees with the subject: a singular subject takes -ει (-ei) or -ά (-á) (the third person singular) and a plural subject takes -ουν (-oun) or -ούν (-oún) (the third person plural), as in η μητέρα μιλάει (i mitéra miláei) and οι μητέρες μιλάνε (oi mitéres miláne). Because the verb shows the person, the subject can be left out: διαβάζει (diavázei) alone means 'he reads' or 'she reads'. A noun can also follow είναι (eínai), to be, in the nominative: ο πατέρας είναι εδώ (o patéras eínai edó)."

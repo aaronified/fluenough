@@ -1,0 +1,33 @@
+schema: 1
+id: "el-en-grammar-present"
+kind: "layer"
+core: "el-grammar-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present tense: verbs in -ω (-o)"
+license: "CC-BY-SA-4.0"
+description: "Twelve verbs of the first class, which end in -ω (-o) with the stress before the ending, in the present tense for all six persons. The endings are the same for every verb: -ω (-o), -εις (-eis), -ει (-ei), -ουμε (-oume), -ετε (-ete), -ουν (-oun). Taken from Wikipedia's page on Modern Greek grammar and the Wiktionary entries of the words. Not yet checked by a Greek speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Present tense: verbs in -ω (-o)"
+  slot_name: "person"
+  slots:
+    "1sg": "I (εγώ (egó))"
+    "2sg": "you, one person (εσύ (esí))"
+    "3sg": "he, she, it (αυτός (aftós), αυτή (aftí))"
+    "1pl": "we (εμείς (emeís))"
+    "2pl": "you, many people or polite (εσείς (eseís))"
+    "3pl": "they (αυτοί (aftoí))"
+  entries:
+    "grafo": "to write"
+    "vlepo": "to see"
+    "diavazo": "to read"
+    "pino": "to drink"
+    "trecho": "to run"
+    "paizo": "to play"
+    "thelo": "to want"
+    "xero": "to know"
+    "doulevo": "to work"
+    "meno": "to stay; to live"
+    "kano": "to do; to make"
+    "anoigo": "to open"
+  notes: "Greek verbs show the person in their ending, so the pronoun is left out unless it is stressed: γράφω (gráfo) alone means 'I write'. A verb of the first class keeps its stem and its stress on the same syllable all through the present: γράφω (gráfo), γράφεις (gráfeis), γράφει (gráfei), γράφουμε (gráfoume), γράφετε (gráfete), γράφουν (gráfoun). The present tense means both 'I write' and 'I am writing'. The stress does not move, so the stem does not change: only the ending is added. Two verbs have a shorter colloquial form: θέλεις (théleis) can be said θες (thes)."

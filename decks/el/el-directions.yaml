@@ -1,0 +1,166 @@
+schema: 1
+id: "el-directions"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+theme: "directions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "el-3000"
+    target: "ευθεία"
+    reading: "eftheía"
+    ipa: "efˈθia"
+    pos: "adv"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-3001"
+    target: "διασταύρωση"
+    reading: "diastávrosi"
+    ipa: "ðjaˈstavɾosi"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η διασταύρωση.", reading: "aftí eínai i diastávrosi.", ipa: "afˈti ˈine i ðjaˈstavɾosi", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "διασταύρωση", base: "διασταύρωση", reading: "diastávrosi" }] }
+  - id: "el-3002"
+    target: "φανάρι"
+    reading: "fanári"
+    ipa: "faˈnaɾi"
+    pos: "noun"
+    gender: "n"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το φανάρι.", reading: "aftó eínai to fanári.", ipa: "afˈto ˈine to faˈnaɾi", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "το", reading: "to" }, { word: "φανάρι", base: "φανάρι", reading: "fanári" }] }
+  - id: "el-3003"
+    target: "πεζοδρόμιο"
+    reading: "pezodrómio"
+    ipa: "pezoˈðɾomjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πεζοδρόμιο.", reading: "aftó eínai to pezodrómio.", ipa: "afˈto ˈine to pezoˈðɾomjo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "το", reading: "to" }, { word: "πεζοδρόμιο", base: "πεζοδρόμιο", reading: "pezodrómio" }] }
+  - id: "el-3004"
+    target: "στροφή"
+    reading: "strofí"
+    ipa: "stɾoˈfi"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η στροφή.", reading: "aftí eínai i strofí.", ipa: "afˈti ˈine i stɾoˈfi", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "στροφή", base: "στροφή", reading: "strofí" }] }
+  - id: "el-3005"
+    target: "χάρτης"
+    reading: "chártis"
+    ipa: "ˈxaɾtis"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο χάρτης.", reading: "aftós eínai o chártis.", ipa: "afˈtos ˈine o ˈxaɾtis", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "χάρτης", base: "χάρτης", reading: "chártis" }] }
+  - id: "el-3006"
+    target: "διεύθυνση"
+    reading: "diéfthynsi"
+    ipa: "ˈðjefθinsi"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η διεύθυνση.", reading: "aftí eínai i diéfthynsi.", ipa: "afˈti ˈine i ˈðjefθinsi", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "διεύθυνση", base: "διεύθυνση", reading: "diéfthynsi" }] }
+  - id: "el-3007"
+    target: "κατεύθυνση"
+    reading: "katéfthynsi"
+    ipa: "kaˈtefθinsi"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η κατεύθυνση.", reading: "aftí eínai i katéfthynsi.", ipa: "afˈti ˈine i kaˈtefθinsi", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "κατεύθυνση", base: "κατεύθυνση", reading: "katéfthynsi" }] }
+  - id: "el-3008"
+    target: "σταθμός"
+    reading: "stathmós"
+    ipa: "staθˈmos"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο σταθμός.", reading: "aftós eínai o stathmós.", ipa: "afˈtos ˈine o staθˈmos", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "σταθμός", base: "σταθμός", reading: "stathmós" }] }
+  - id: "el-3009"
+    target: "γέφυρα"
+    reading: "yéfyra"
+    ipa: "ˈʝefiɾa"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η γέφυρα.", reading: "aftí eínai i yéfyra.", ipa: "afˈti ˈine i ˈʝefiɾa", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "γέφυρα", base: "γέφυρα", reading: "yéfyra" }] }
+  - id: "el-3010"
+    target: "οδός"
+    reading: "odós"
+    ipa: "oˈðos"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η οδός.", reading: "aftí eínai i odós.", ipa: "afˈti ˈine i oˈðos", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "οδός", base: "οδός", reading: "odós" }] }
+  - id: "el-3011"
+    target: "λεωφόρος"
+    reading: "leofóros"
+    ipa: "leoˈfoɾos"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η λεωφόρος.", reading: "aftí eínai i leofóros.", ipa: "afˈti ˈine i leoˈfoɾos", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "λεωφόρος", base: "λεωφόρος", reading: "leofóros" }] }
+  - id: "el-3012"
+    target: "πλησιέστερος"
+    reading: "plisiésteros"
+    ipa: "plisˈjesteɾos"
+    pos: "adj"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι πλησιέστερος.", reading: "aftós eínai plisiésteros.", ipa: "afˈtos ˈine plisˈjesteɾos", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "πλησιέστερος", base: "πλησιέστερος", reading: "plisiésteros" }] }
+  - id: "el-3013"
+    target: "αριστερά"
+    reading: "aristerá"
+    ipa: "aɾisteˈɾa"
+    pos: "adv"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-3014"
+    target: "δεξιά"
+    reading: "dexiá"
+    ipa: "ðeksˈja"
+    pos: "adv"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"

@@ -1,0 +1,78 @@
+# Unit 8 of the Greek A1 path (stress marks, reading): the monotonic accent and diaeresis, final sigma, the Greek question mark, ι before a vowel. Sources read: en.wikipedia.org 'Greek orthography' (monotonic system of 1982, tonos, dialytika) and 'Modern Greek phonology'.
+# The ipa of every card comes from tools/transcribe.py (the el engine); the punctuation cards have none.
+schema: 1
+id: "el-greek-reading"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "el-0350"
+    target: "ά"
+    reading: "á"
+    ipa: "a"
+    pos: "letter"
+    tags: ["accent"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_orthography" }
+  - id: "el-0351"
+    target: "Ά"
+    reading: "Á"
+    ipa: "a"
+    pos: "letter"
+    tags: ["accent"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_orthography" }
+  - id: "el-0352"
+    target: "ϊ"
+    reading: "i"
+    ipa: "i"
+    pos: "letter"
+    tags: ["diaeresis"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_orthography" }
+  - id: "el-0353"
+    target: "ΐ"
+    reading: "í"
+    ipa: "i"
+    pos: "letter"
+    tags: ["diaeresis", "accent"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_orthography" }
+  - id: "el-0354"
+    target: "ς"
+    reading: "s"
+    ipa: "s"
+    pos: "letter"
+    tags: ["final-sigma"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0355"
+    target: ";"
+    pos: "other"
+    tags: ["punctuation"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_orthography" }
+  - id: "el-0356"
+    target: "·"
+    pos: "other"
+    tags: ["punctuation"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_orthography" }
+  - id: "el-0357"
+    target: "ια"
+    reading: "ya"
+    ipa: "ja"
+    pos: "letter"
+    tags: ["glide"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_orthography" }
+  - id: "el-0358"
+    target: "ιο"
+    reading: "yo"
+    ipa: "jo"
+    pos: "letter"
+    tags: ["glide"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_orthography" }

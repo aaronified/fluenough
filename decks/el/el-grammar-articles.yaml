@@ -1,0 +1,206 @@
+# Unit 14 grammar topic articles. Sources read: en.wikipedia.org 'Modern Greek grammar' (the definite article ο η το and the indefinite article ένας μια ένα, with the nominative) and the en.wiktionary.org entries of the fifteen nouns (gender, nominative). Rows use only nouns the family unit teaches.
+schema: 1
+id: "el-grammar-articles"
+part: "core"
+kind: "grammar"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["definite", "indefinite"]
+  entries:
+    - lemma: "πατέρας"
+      key: "pateras"
+      reading: "patéras"
+      ipa: "paˈteɾas"
+      forms:
+        "definite": "ο πατέρας"
+        "indefinite": "ένας πατέρας"
+      readings:
+        "definite": "o patéras"
+        "indefinite": "énas patéras"
+      ipas:
+        "definite": "o paˈteɾas"
+        "indefinite": "ˈenas paˈteɾas"
+    - lemma: "αδελφός"
+      key: "adelfos"
+      reading: "adelfós"
+      ipa: "aðelˈfos"
+      forms:
+        "definite": "ο αδελφός"
+        "indefinite": "ένας αδελφός"
+      readings:
+        "definite": "o adelfós"
+        "indefinite": "énas adelfós"
+      ipas:
+        "definite": "o aðelˈfos"
+        "indefinite": "ˈenas aðelˈfos"
+    - lemma: "γιος"
+      key: "yios"
+      reading: "yios"
+      ipa: "ʝos"
+      forms:
+        "definite": "ο γιος"
+        "indefinite": "ένας γιος"
+      readings:
+        "definite": "o yios"
+        "indefinite": "énas yios"
+      ipas:
+        "definite": "o ʝos"
+        "indefinite": "ˈenas ʝos"
+    - lemma: "φίλος"
+      key: "filos"
+      reading: "fílos"
+      ipa: "ˈfilos"
+      forms:
+        "definite": "ο φίλος"
+        "indefinite": "ένας φίλος"
+      readings:
+        "definite": "o fílos"
+        "indefinite": "énas fílos"
+      ipas:
+        "definite": "o ˈfilos"
+        "indefinite": "ˈenas ˈfilos"
+    - lemma: "άντρας"
+      key: "antras"
+      reading: "ántras"
+      ipa: "ˈandɾas"
+      forms:
+        "definite": "ο άντρας"
+        "indefinite": "ένας άντρας"
+      readings:
+        "definite": "o ántras"
+        "indefinite": "énas ántras"
+      ipas:
+        "definite": "o ˈandɾas"
+        "indefinite": "ˈenas ˈandɾas"
+    - lemma: "μητέρα"
+      key: "mitera"
+      reading: "mitéra"
+      ipa: "miˈteɾa"
+      forms:
+        "definite": "η μητέρα"
+        "indefinite": "μια μητέρα"
+      readings:
+        "definite": "i mitéra"
+        "indefinite": "mia mitéra"
+      ipas:
+        "definite": "i miˈteɾa"
+        "indefinite": "mja miˈteɾa"
+    - lemma: "αδελφή"
+      key: "adelfi"
+      reading: "adelfí"
+      ipa: "aðelˈfi"
+      forms:
+        "definite": "η αδελφή"
+        "indefinite": "μια αδελφή"
+      readings:
+        "definite": "i adelfí"
+        "indefinite": "mia adelfí"
+      ipas:
+        "definite": "i aðelˈfi"
+        "indefinite": "mja aðelˈfi"
+    - lemma: "κόρη"
+      key: "kori"
+      reading: "kóri"
+      ipa: "ˈkoɾi"
+      forms:
+        "definite": "η κόρη"
+        "indefinite": "μια κόρη"
+      readings:
+        "definite": "i kóri"
+        "indefinite": "mia kóri"
+      ipas:
+        "definite": "i ˈkoɾi"
+        "indefinite": "mja ˈkoɾi"
+    - lemma: "γυναίκα"
+      key: "gynaika"
+      reading: "gynaíka"
+      ipa: "ʝiˈneka"
+      forms:
+        "definite": "η γυναίκα"
+        "indefinite": "μια γυναίκα"
+      readings:
+        "definite": "i gynaíka"
+        "indefinite": "mia gynaíka"
+      ipas:
+        "definite": "i ʝiˈneka"
+        "indefinite": "mja ʝiˈneka"
+    - lemma: "γιαγιά"
+      key: "yiayia"
+      reading: "yiayiá"
+      ipa: "ʝaˈʝa"
+      forms:
+        "definite": "η γιαγιά"
+        "indefinite": "μια γιαγιά"
+      readings:
+        "definite": "i yiayiá"
+        "indefinite": "mia yiayiá"
+      ipas:
+        "definite": "i ʝaˈʝa"
+        "indefinite": "mja ʝaˈʝa"
+    - lemma: "φίλη"
+      key: "fili"
+      reading: "fíli"
+      ipa: "ˈfili"
+      forms:
+        "definite": "η φίλη"
+        "indefinite": "μια φίλη"
+      readings:
+        "definite": "i fíli"
+        "indefinite": "mia fíli"
+      ipas:
+        "definite": "i ˈfili"
+        "indefinite": "mja ˈfili"
+    - lemma: "οικογένεια"
+      key: "oikoyeneia"
+      reading: "oikoyéneia"
+      ipa: "ikoˈʝenja"
+      forms:
+        "definite": "η οικογένεια"
+        "indefinite": "μια οικογένεια"
+      readings:
+        "definite": "i oikoyéneia"
+        "indefinite": "mia oikoyéneia"
+      ipas:
+        "definite": "i ikoˈʝenja"
+        "indefinite": "mja ikoˈʝenja"
+    - lemma: "παιδί"
+      key: "paidi"
+      reading: "paidí"
+      ipa: "peˈði"
+      forms:
+        "definite": "το παιδί"
+        "indefinite": "ένα παιδί"
+      readings:
+        "definite": "to paidí"
+        "indefinite": "éna paidí"
+      ipas:
+        "definite": "to peˈði"
+        "indefinite": "ˈena peˈði"
+    - lemma: "μωρό"
+      key: "moro"
+      reading: "moró"
+      ipa: "moˈɾo"
+      forms:
+        "definite": "το μωρό"
+        "indefinite": "ένα μωρό"
+      readings:
+        "definite": "to moró"
+        "indefinite": "éna moró"
+      ipas:
+        "definite": "to moˈɾo"
+        "indefinite": "ˈena moˈɾo"
+    - lemma: "μέλος"
+      key: "melos"
+      reading: "mélos"
+      ipa: "ˈmelos"
+      forms:
+        "definite": "το μέλος"
+        "indefinite": "ένα μέλος"
+      readings:
+        "definite": "to mélos"
+        "indefinite": "éna mélos"
+      ipas:
+        "definite": "to ˈmelos"
+        "indefinite": "ˈena ˈmelos"

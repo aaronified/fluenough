@@ -1,0 +1,75 @@
+# Unit 7 of the Greek A1 path (the letters of the alphabet): the vowels. Sources read: en.wikipedia.org 'Greek alphabet' (letter names) and 'Modern Greek phonology' (five vowels, /i/ spelt six ways).
+# The ipa of every card comes from tools/transcribe.py (the el engine), never by hand. Readings are based on ELOT 743, the acute marking the stress as in the existing cards.
+schema: 1
+id: "el-greek-vowels"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "el-0300"
+    target: "α"
+    alt_target: ["Α"]
+    reading: "a"
+    ipa: "a"
+    pos: "letter"
+    tags: ["vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0301"
+    target: "ε"
+    alt_target: ["Ε"]
+    reading: "e"
+    ipa: "e"
+    pos: "letter"
+    tags: ["vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0302"
+    target: "η"
+    alt_target: ["Η"]
+    reading: "i"
+    ipa: "i"
+    pos: "letter"
+    tags: ["vowel", "i-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+      - { id: "look-n", kind: "lookalike", ref: "el-0318", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0303"
+    target: "ι"
+    alt_target: ["Ι"]
+    reading: "i"
+    ipa: "i"
+    pos: "letter"
+    tags: ["vowel", "i-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0304"
+    target: "ο"
+    alt_target: ["Ο"]
+    reading: "o"
+    ipa: "o"
+    pos: "letter"
+    tags: ["vowel", "o-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0305"
+    target: "υ"
+    alt_target: ["Υ"]
+    reading: "y"
+    ipa: "i"
+    pos: "letter"
+    tags: ["vowel", "i-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+      - { id: "look-n", kind: "lookalike", ref: "el-0318", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0306"
+    target: "ω"
+    alt_target: ["Ω"]
+    reading: "o"
+    ipa: "o"
+    pos: "letter"
+    tags: ["vowel", "o-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }

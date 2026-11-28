@@ -1,0 +1,30 @@
+schema: 1
+id: "el-en-grammar-accusative"
+kind: "layer"
+core: "el-grammar-accusative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The accusative: the object"
+license: "CC-BY-SA-4.0"
+description: "Eleven nouns in the nominative (the subject) and the accusative (the object), with the article. In the accusative masculine nouns lose the final -ς (-s) (ο πατέρας (o patéras) becomes τον πατέρα (ton patéra)), feminine and neuter nouns do not change, and the article changes for the masculine and the feminine. The plural accusative is τους (tous), τις (tis), τα (ta) with the noun. Taken from Wikipedia's page on Modern Greek grammar and the Wiktionary entries of the words. Not yet checked by a Greek speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The accusative: the object"
+  slot_name: "form"
+  slots:
+    "nominative": "the nominative, the subject: ο (o), η (i), το (to)"
+    "accusative": "the accusative singular, the object: τον (ton), την (tin), το (to)"
+    "plural": "the accusative plural, the object: τους (tous), τις (tis), τα (ta)"
+    "indefinite": "the accusative with a (έναν (énan), μια (mia), ένα (éna))"
+  entries:
+    "pateras": "father (masculine)"
+    "adelfos": "brother (masculine)"
+    "filos": "friend (male) (masculine)"
+    "yios": "son (masculine)"
+    "yiatros": "doctor (masculine)"
+    "mitera": "mother (feminine)"
+    "adelfi": "sister (feminine)"
+    "kori": "daughter (feminine)"
+    "gynaika": "woman; wife (feminine)"
+    "paidi": "child (neuter)"
+    "moro": "baby (neuter)"
+  notes: "The accusative is the case of the direct object: βλέπω τον πατέρα (vlépo ton patéra) means 'I see the father'. The article shows it first: ο (o) becomes τον (ton) and η (i) becomes την (tin) (or τη (ti)), while το (to) stays το (to). The noun changes too, mostly for masculine nouns: a masculine noun in -ος (-os) ends in -ο (-o) (ο αδελφός (o adelfós), τον αδελφό (ton adelfó)), and one in -ας (-as) ends in -α (-a) (ο πατέρας (o patéras), τον πατέρα (ton patéra)). Feminine and neuter nouns look the same in the nominative and the accusative singular: η μητέρα (i mitéra), τη μητέρα (ti mitéra) and το παιδί (to paidí), το παιδί (to paidí). In the plural the accusative of masculine nouns in -ος (-os) ends in -ους (-ous) (τους αδελφούς (tous adelfoús)). The ν (n) of την (tin) is dropped before most consonants (τη μητέρα (ti mitéra)) but kept before a vowel, κ (k), π (p), τ (t), ξ (x), ψ (ps) and the pairs μπ (b), ντ (d), γκ (g), τσ (ts) and τζ (tz) (την αδελφή (tin adelfí), την κόρη (tin kóri)). The indefinite article also has an accusative: έναν (énan) for a masculine noun, μια (mia) for a feminine one and ένα (éna) for a neuter one."

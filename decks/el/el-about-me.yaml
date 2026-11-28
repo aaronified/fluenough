@@ -1,0 +1,114 @@
+schema: 1
+id: "el-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "el-1700"
+    target: "όνομα"
+    reading: "ónoma"
+    ipa: "ˈonoma"
+    pos: "noun"
+    gender: "n"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το όνομα.", reading: "Aftó íne to ónoma.", ipa: "afˈto ˈine to ˈonoma", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "όνομα", base: "όνομα", reading: "ónoma" }] }
+  - id: "el-1701"
+    target: "λέγομαι"
+    reading: "légomai"
+    ipa: "ˈleɣome"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Εγώ λέγομαι Μαρία.", reading: "egó légomai María.", ipa: "eˈɣo ˈleɣome maˈɾia", bases: [{ word: "Εγώ", base: "εγώ", reading: "egó" }, { word: "λέγομαι", base: "λέγομαι", reading: "légomai" }, { word: "Μαρία", base: "Μαρία", reading: "María" }] }
+  - id: "el-1702"
+    target: "ζω"
+    reading: "zo"
+    ipa: "zo"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Εγώ ζω.", reading: "Egó zo.", ipa: "eˈɣo zo", bases: [{ word: "Εγώ", base: "εγώ", reading: "Egó" }, { word: "ζω", base: "ζω", reading: "zo" }] }
+  - id: "el-1703"
+    target: "μένω"
+    reading: "méno"
+    ipa: "ˈmeno"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Εγώ μένω εδώ.", reading: "egó méno edó.", ipa: "eˈɣo ˈmeno eˈðo", bases: [{ word: "Εγώ", base: "εγώ", reading: "egó" }, { word: "μένω", base: "μένω", reading: "méno" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+  - id: "el-1704"
+    target: "Ελληνίδα"
+    reading: "Ellinída"
+    ipa: "eliˈniða"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η Ελληνίδα.", reading: "Aftí íne i Ellinída.", ipa: "afˈti ˈine i eliˈniða", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "Ελληνίδα", base: "Ελληνίδα", reading: "Ellinída" }] }
+  - id: "el-1705"
+    target: "δουλεύω"
+    reading: "doulévo"
+    ipa: "ðuˈlevo"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Εγώ δουλεύω.", reading: "Egó doulévo.", ipa: "eˈɣo ðuˈlevo", bases: [{ word: "Εγώ", base: "εγώ", reading: "Egó" }, { word: "δουλεύω", base: "δουλεύω", reading: "doulévo" }] }
+  - id: "el-1706"
+    target: "σπουδάζω"
+    reading: "spoudázo"
+    ipa: "spuˈðazo"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Εγώ σπουδάζω.", reading: "Egó spoudázo.", ipa: "eˈɣo spuˈðazo", bases: [{ word: "Εγώ", base: "εγώ", reading: "Egó" }, { word: "σπουδάζω", base: "σπουδάζω", reading: "spoudázo" }] }
+  - id: "el-1707"
+    target: "μιλάω"
+    reading: "miláo"
+    ipa: "miˈlao"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Εγώ μιλάω.", reading: "Egó miláo.", ipa: "eˈɣo miˈlao", bases: [{ word: "Εγώ", base: "εγώ", reading: "Egó" }, { word: "μιλάω", base: "μιλάω", reading: "miláo" }] }
+  - id: "el-1708"
+    target: "ηλικία"
+    reading: "ilikía"
+    ipa: "iliˈkia"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η ηλικία.", reading: "Aftí íne i ilikía.", ipa: "afˈti ˈine i iliˈkia", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "ηλικία", base: "ηλικία", reading: "ilikía" }] }
+  - id: "el-1709"
+    target: "χώρα"
+    reading: "chóra"
+    ipa: "ˈxoɾa"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η χώρα.", reading: "Aftí íne i chóra.", ipa: "afˈti ˈine i ˈxoɾa", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "χώρα", base: "χώρα", reading: "chóra" }] }

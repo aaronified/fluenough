@@ -1,0 +1,76 @@
+# Unit 2 grammar topic sound-differences. Sources read: en.wikipedia.org 'Modern Greek phonology' (voicing of σ before voiced consonants, αυ and ευ before voiced and voiceless sounds, μπ ντ γκ as the sounds b d g, γ and δ as fricatives) and the Wiktionary entries of the ten words. Rows use only words the unit teaches (el-sound-differences).
+schema: 1
+id: "el-grammar-sound-differences"
+part: "core"
+kind: "grammar"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["first", "second"]
+  entries:
+    - lemma: "δ και ντ"
+      key: "d-nt"
+      reading: "d kai d"
+      ipa: "ð ke d"
+      forms:
+        "first": "δέντρο"
+        "second": "ντροπή"
+      readings:
+        "first": "déntro"
+        "second": "dropí"
+      ipas:
+        "first": "ˈðendɾo"
+        "second": "dɾoˈpi"
+    - lemma: "β και μπ"
+      key: "v-mp"
+      reading: "v kai b"
+      ipa: "v ke b"
+      forms:
+        "first": "βιβλίο"
+        "second": "μπράβο"
+      readings:
+        "first": "vivlío"
+        "second": "brávo"
+      ipas:
+        "first": "viˈvlio"
+        "second": "ˈbɾavo"
+    - lemma: "γ και γκ"
+      key: "g-gk"
+      reading: "g kai g"
+      ipa: "ɣ ke ɡ"
+      forms:
+        "first": "γράμμα"
+        "second": "γκάζι"
+      readings:
+        "first": "grámma"
+        "second": "gázi"
+      ipas:
+        "first": "ˈɣɾama"
+        "second": "ˈɡazi"
+    - lemma: "ευ"
+      key: "ev-ef"
+      reading: "ef"
+      ipa: "ef"
+      forms:
+        "first": "ευρώ"
+        "second": "ευτυχία"
+      readings:
+        "first": "evró"
+        "second": "eftychía"
+      ipas:
+        "first": "eˈvɾo"
+        "second": "eftiˈxia"
+    - lemma: "σ"
+      key: "s-z"
+      reading: "s"
+      ipa: "s"
+      forms:
+        "first": "ζέστη"
+        "second": "κόσμος"
+      readings:
+        "first": "zésti"
+        "second": "kósmos"
+      ipas:
+        "first": "ˈzesti"
+        "second": "ˈkozmos"

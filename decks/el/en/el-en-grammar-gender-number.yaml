@@ -1,0 +1,31 @@
+schema: 1
+id: "el-en-grammar-gender-number"
+kind: "layer"
+core: "el-grammar-gender-number"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Singular and plural of nouns"
+license: "CC-BY-SA-4.0"
+description: "Fourteen family words in the singular and the plural, with the article. The plural ending depends on the gender and the ending of the noun, and the plural article is οι (oi) for masculine and feminine and τα (ta) for neuter. Taken from Wikipedia's page on Modern Greek grammar and the Wiktionary entries of the words. Not yet checked by a Greek speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Singular and plural of nouns"
+  slot_name: "number"
+  slots:
+    "singular": "the singular, with ο (o), η (i) or το (to)"
+    "plural": "the plural, with οι (oi) or τα (ta)"
+  entries:
+    "pateras": "father (masculine in -ας (-as): plural -ες (-es))"
+    "adelfos": "brother (masculine in -ος (-os): plural -οι (-oi))"
+    "yios": "son (masculine in -ος (-os): plural -οι (-oi))"
+    "antras": "man (masculine in -ας (-as): plural -ες (-es))"
+    "pappous": "grandfather (masculine in -ούς (-oús): plural -ούδες (-oúdes))"
+    "mitera": "mother (feminine in -α (-a): plural -ες (-es))"
+    "adelfi": "sister (feminine in -ή (-í): plural -ές (-és))"
+    "kori": "daughter (feminine in -η (-i): plural -ες (-es))"
+    "gynaika": "woman; wife (feminine in -α (-a): plural -ες (-es))"
+    "yiayia": "grandmother (feminine in -ά (-á): plural -άδες (-ádes))"
+    "oikoyeneia": "family (feminine in -εια (-eia): plural -ειες (-eies))"
+    "paidi": "child (neuter in -ί (-í): plural -ιά (-iá))"
+    "moro": "baby (neuter in -ό (-ó): plural -ά (-á))"
+    "melos": "member (neuter in -ος (-os): plural -η (-i))"
+  notes: "The plural article is οι (oi) for masculine and feminine nouns and τα (ta) for neuter ones, and the noun takes a plural ending. Masculine nouns in -ος (-os) take -οι (-oi): ο αδελφός (o adelfós), οι αδελφοί (oi adelfoí). Masculine nouns in -ας (-as) take -ες (-es): ο πατέρας (o patéras), οι πατέρες (oi patéres). Feminine nouns take -ες (-es): η μητέρα (i mitéra), οι μητέρες (oi mitéres). Neuter nouns in -ο (-o) take -α (-a), as μωρό (moró) becomes μωρά (morá), and those in -ί (-í) take -ιά (-iá), as παιδί (paidí) becomes παιδιά (paidiá); in both the stress stays on the ending. Some nouns lengthen their stem in the plural: γιαγιά (yiayiá) becomes γιαγιάδες (yiayiádes) and παππούς (pappoús) becomes παππούδες (pappoúdes), with a δ (d) added. The neuter μέλος (mélos) has the plural μέλη (méli): its ending changes and the stress stays on the first syllable."

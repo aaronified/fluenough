@@ -1,0 +1,186 @@
+schema: 1
+id: "el-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+theme: "groceries"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "el-2800"
+    target: "αγορά"
+    reading: "agorá"
+    ipa: "aɣoˈɾa"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η αγορά.", reading: "aftí eínai i agorá.", ipa: "afˈti ˈine i aɣoˈɾa", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "αγορά", base: "αγορά", reading: "agorá" }] }
+  - id: "el-2801"
+    target: "ταμείο"
+    reading: "tameío"
+    ipa: "taˈmio"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ταμείο.", reading: "aftó eínai to tameío.", ipa: "afˈto ˈine to taˈmio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "το", reading: "to" }, { word: "ταμείο", base: "ταμείο", reading: "tameío" }] }
+  - id: "el-2802"
+    target: "καλάθι"
+    reading: "kaláthi"
+    ipa: "kaˈlaθi"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το καλάθι.", reading: "aftó eínai to kaláthi.", ipa: "afˈto ˈine to kaˈlaθi", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "το", reading: "to" }, { word: "καλάθι", base: "καλάθι", reading: "kaláthi" }] }
+  - id: "el-2803"
+    target: "λίστα"
+    reading: "lísta"
+    ipa: "ˈlista"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η λίστα.", reading: "aftí eínai i lísta.", ipa: "afˈti ˈine i ˈlista", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "λίστα", base: "λίστα", reading: "lísta" }] }
+  - id: "el-2804"
+    target: "φούρνος"
+    reading: "foúrnos"
+    ipa: "ˈfuɾnos"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο φούρνος.", reading: "aftós eínai o foúrnos.", ipa: "afˈtos ˈine o ˈfuɾnos", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "φούρνος", base: "φούρνος", reading: "foúrnos" }] }
+  - id: "el-2805"
+    target: "χασάπης"
+    reading: "chasápis"
+    ipa: "xaˈsapis"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο χασάπης.", reading: "aftós eínai o chasápis.", ipa: "afˈtos ˈine o xaˈsapis", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "χασάπης", base: "χασάπης", reading: "chasápis" }] }
+  - id: "el-2806"
+    target: "ψαράς"
+    reading: "psarás"
+    ipa: "psaˈɾas"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο ψαράς.", reading: "aftós eínai o psarás.", ipa: "afˈtos ˈine o psaˈɾas", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "ψαράς", base: "ψαράς", reading: "psarás" }] }
+  - id: "el-2807"
+    target: "τιμή"
+    reading: "timí"
+    ipa: "tiˈmi"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η τιμή.", reading: "aftí eínai i timí.", ipa: "afˈti ˈine i tiˈmi", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "τιμή", base: "τιμή", reading: "timí" }] }
+  - id: "el-2809"
+    target: "απόδειξη"
+    reading: "apódeixi"
+    ipa: "aˈpoðiksi"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η απόδειξη.", reading: "aftí eínai i apódeixi.", ipa: "afˈti ˈine i aˈpoðiksi", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "απόδειξη", base: "απόδειξη", reading: "apódeixi" }] }
+  - id: "el-2810"
+    target: "ταμίας"
+    reading: "tamías"
+    ipa: "taˈmias"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο ταμίας.", reading: "aftós eínai o tamías.", ipa: "afˈtos ˈine o taˈmias", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "ταμίας", base: "ταμίας", reading: "tamías" }] }
+  - id: "el-2811"
+    target: "κατάστημα"
+    reading: "katástima"
+    ipa: "kaˈtastima"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κατάστημα.", reading: "aftó eínai to katástima.", ipa: "afˈto ˈine to kaˈtastima", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "το", reading: "to" }, { word: "κατάστημα", base: "κατάστημα", reading: "katástima" }] }
+  - id: "el-2812"
+    target: "ψυγείο"
+    reading: "psyeío"
+    ipa: "psiˈʝio"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ψυγείο.", reading: "aftó eínai to psyeío.", ipa: "afˈto ˈine to psiˈʝio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "το", reading: "to" }, { word: "ψυγείο", base: "ψυγείο", reading: "psyeío" }] }
+  - id: "el-2813"
+    target: "τσάντα"
+    reading: "tsánta"
+    ipa: "ˈtsanda"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η τσάντα.", reading: "aftí eínai i tsánta.", ipa: "afˈti ˈine i ˈtsanda", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "η", base: "η", reading: "i" }, { word: "τσάντα", base: "τσάντα", reading: "tsánta" }] }
+  - id: "el-2814"
+    target: "μπακάλης"
+    reading: "bakális"
+    ipa: "baˈkalis"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο μπακάλης.", reading: "aftós eínai o bakális.", ipa: "afˈtos ˈine o baˈkalis", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "μπακάλης", base: "μπακάλης", reading: "bakális" }] }
+  - id: "el-2815"
+    target: "παντοπωλείο"
+    reading: "pantopoleío"
+    ipa: "pandopoˈlio"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το παντοπωλείο.", reading: "aftó eínai to pantopoleío.", ipa: "afˈto ˈine to pandopoˈlio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "το", base: "το", reading: "to" }, { word: "παντοπωλείο", base: "παντοπωλείο", reading: "pantopoleío" }] }
+  - id: "el-2816"
+    target: "μανάβης"
+    reading: "manávis"
+    ipa: "maˈnavis"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο μανάβης.", reading: "aftós eínai o manávis.", ipa: "afˈtos ˈine o maˈnavis", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eínai" }, { word: "ο", base: "ο", reading: "o" }, { word: "μανάβης", base: "μανάβης", reading: "manávis" }] }

@@ -1,0 +1,165 @@
+# Unit 7 of the Greek A1 path (the letters of the alphabet): the consonants. Sources read: en.wikipedia.org 'Greek alphabet' (letter names) and 'Modern Greek phonology' (consonants, palatal allophones before front vowels).
+# The ipa of every card comes from tools/transcribe.py (the el engine), never by hand.
+schema: 1
+id: "el-greek-consonants"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "el-0310"
+    target: "β"
+    alt_target: ["Β"]
+    reading: "v"
+    ipa: "v"
+    pos: "letter"
+    tags: ["consonant", "voiced"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+      - { id: "look-b", kind: "lookalike", ref: "el-0337", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0311"
+    target: "γ"
+    alt_target: ["Γ"]
+    reading: "g"
+    ipa: "ɣ"
+    pos: "letter"
+    tags: ["consonant", "voiced"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0312"
+    target: "δ"
+    alt_target: ["Δ"]
+    reading: "d"
+    ipa: "ð"
+    pos: "letter"
+    tags: ["consonant", "voiced"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0313"
+    target: "ζ"
+    alt_target: ["Ζ"]
+    reading: "z"
+    ipa: "z"
+    pos: "letter"
+    tags: ["consonant", "voiced"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0314"
+    target: "θ"
+    alt_target: ["Θ"]
+    reading: "th"
+    ipa: "θ"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0315"
+    target: "κ"
+    alt_target: ["Κ"]
+    reading: "k"
+    ipa: "k"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0316"
+    target: "λ"
+    alt_target: ["Λ"]
+    reading: "l"
+    ipa: "l"
+    pos: "letter"
+    tags: ["consonant", "voiced"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0317"
+    target: "μ"
+    alt_target: ["Μ"]
+    reading: "m"
+    ipa: "m"
+    pos: "letter"
+    tags: ["consonant", "voiced"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0318"
+    target: "ν"
+    alt_target: ["Ν"]
+    reading: "n"
+    ipa: "n"
+    pos: "letter"
+    tags: ["consonant", "voiced"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0319"
+    target: "ξ"
+    alt_target: ["Ξ"]
+    reading: "x"
+    ipa: "ks"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0320"
+    target: "π"
+    alt_target: ["Π"]
+    reading: "p"
+    ipa: "p"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0321"
+    target: "ρ"
+    alt_target: ["Ρ"]
+    reading: "r"
+    ipa: "ɾ"
+    pos: "letter"
+    tags: ["consonant", "voiced"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+      - { id: "look-p", kind: "lookalike", ref: "el-0320", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0322"
+    target: "σ"
+    alt_target: ["Σ"]
+    reading: "s"
+    ipa: "s"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0323"
+    target: "τ"
+    alt_target: ["Τ"]
+    reading: "t"
+    ipa: "t"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0324"
+    target: "φ"
+    alt_target: ["Φ"]
+    reading: "f"
+    ipa: "f"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0325"
+    target: "χ"
+    alt_target: ["Χ"]
+    reading: "ch"
+    ipa: "x"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
+  - id: "el-0326"
+    target: "ψ"
+    alt_target: ["Ψ"]
+    reading: "ps"
+    ipa: "ps"
+    pos: "letter"
+    tags: ["consonant", "voiceless"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Greek_alphabet" }
