@@ -1,0 +1,22 @@
+schema: 1
+id: "de-en-grammar-sein-haben"
+kind: "layer"
+core: "de-grammar-sein-haben"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The verbs sein and haben"
+license: "CC-BY-SA-4.0"
+description: "The present tense of sein (to be) and haben (to have) for every person. Not yet checked by a German speaker: please report any mistake."
+pattern:
+  name: "The present of sein and haben"
+  slot_name: "person"
+  slots:
+    "ich": "I (ich)"
+    "du": "you, one person you know (du)"
+    "er-sie-es": "he, she, it (er, sie, es)"
+    "wir": "we (wir)"
+    "ihr": "you, more than one person (ihr)"
+    "sie": "they (sie); you, formal (Sie)"
+  entries:
+    "sein": "to be (irregular)"
+    "haben": "to have (the b drops in du hast, er hat)"
+  notes: "Sein (to be) and haben (to have) are irregular and are the most used verbs: learn their present forms by heart. Sein: ich bin, du bist, er ist, wir sind, ihr seid, sie sind. Haben: ich habe, du hast, er hat, wir haben, ihr habt, sie haben. The forms of er are the same for sie (she) and es (it): sie ist, es ist; sie hat, es hat. The polite you, Sie, takes the form of sie (they) and is written with a capital letter: Sie sind, Sie haben. The plural sie also takes sind and haben: sie sind, sie haben. In haben the b drops out in du hast and er hat. Wiktionary's conjugation tables of sein and haben give each form. Sources: en.wiktionary, conjugation tables of sein and haben."
