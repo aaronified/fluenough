@@ -1,0 +1,37 @@
+schema: 1
+id: "pl-en-grammar-present-tense-words"
+kind: "layer"
+core: "pl-grammar-present-tense-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs for the present tense"
+license: "CC-BY-SA-4.0"
+description: "2 verbs the present table needs and no earlier unit teaches: mieć, to have, and znać, to know. Taken from each verb's Wiktionary entry and Wikipedia's page on Polish morphology. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "pl-0520":
+    native: "to have"
+    notes:
+      "n1": "mieć is imperfective. Its present tense is mam, masz, ma, mamy, macie, mają, which Wikipedia's page on Polish morphology gives as the pattern -m, -sz, no ending, -my, -cie, -ją. Polish also says how old someone is with mieć: Mam 22 lata, I am 22 years old (Wiktionary). The thing a person has goes in the accusative: Mam kota."
+    examples:
+      "Mam kota.":
+        native: "I have a cat."
+        bases:
+          "Mam": "have (a form of mieć, to have)"
+      "Mam daleko do szkoły.":
+        native: "It is a long way to school for me."
+        bases:
+          "Mam": "have (a form of mieć, to have)"
+          "do": "to; as far as"
+  "pl-0521":
+    native: "to know (a person or a thing)"
+    notes:
+      "n1": "znać is imperfective and follows the same pattern as czytać: znam, znasz, zna, znamy, znacie, znają. Wiktionary gives the senses to know something, to know a person and to know a language: Jakie znasz języki? is What languages do you know? The thing known goes in the accusative."
+    examples:
+      "Nie znam go.":
+        native: "I do not know him."
+        bases:
+          "znam": "know (a form of znać, to know)"
+      "Znasz ją?":
+        native: "Do you know her?"
+        bases:
+          "Znasz": "know (a form of znać, to know)"

@@ -1,0 +1,107 @@
+# Unit 17 sentences. Every verb form comes from the unit's table (pl-grammar-present-tense) or a Wiktionary usage example (Mam kota, Co robisz, Mieszkam w Warszawie); the others use the table's forms with taught words and the simple order subject, verb, object (Wikipedia, Polish grammar).
+schema: 1
+id: "pl-grammar-present-tense-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "pl-4200"
+    target: "Mam kota."
+    ipa: "mam ˈkɔta"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/mie%C4%87" }]
+    bases: [{ word: "Mam", ref: "pl-0520" }, { word: "kota", ref: "pl-0462" }]
+  - id: "pl-4201"
+    target: "Co robisz?"
+    ipa: "tsɔ ˈrɔbʲiʂ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/robi%C4%87" }]
+    bases: [{ word: "Co", ref: "pl-1301" }, { word: "robisz", ref: "pl-1650" }]
+  - id: "pl-4202"
+    target: "Mieszkam w Warszawie."
+    ipa: "ˈmjɛʂkam v varˈʂavjɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/mieszka%C4%87" }]
+    bases: [{ word: "Mieszkam", ref: "pl-1583" }, { word: "w", ref: "pl-2008" }, { word: "Warszawie", base: "Warszawa" }]
+  - id: "pl-4203"
+    target: "Lubię muzykę."
+    ipa: "ˈlubjɛ muˈzɨkɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Lubię", ref: "pl-1585" }, { word: "muzykę", ref: "pl-0430" }]
+  - id: "pl-4204"
+    target: "Mówię po polsku."
+    ipa: "ˈmuvjɛ pɔ ˈpɔlsku"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Mówię", ref: "pl-1657" }, { word: "po", base: "po" }, { word: "polsku", base: "polski" }]
+  - id: "pl-4205"
+    target: "Pijemy wodę."
+    ipa: "pʲiˈjɛmɨ ˈvɔdɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Pijemy", ref: "pl-1653" }, { word: "wodę", ref: "pl-0008" }]
+  - id: "pl-4206"
+    target: "Jem chleb."
+    ipa: "jɛm xlɛp"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Jem", ref: "pl-1652" }, { word: "chleb", ref: "pl-0424" }]
+  - id: "pl-4207"
+    target: "Pracuję w szkole."
+    ipa: "praˈtsujɛ f ˈʂkɔlɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Pracuję", ref: "pl-1662" }, { word: "w", ref: "pl-2008" }, { word: "szkole", ref: "pl-0413" }]
+  - id: "pl-4208"
+    target: "Oni mieszkają w mieście."
+    ipa: "ˈɔɲi mjɛʂˈkajɔ̃ v ˈmjɛɕtɕɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Oni", ref: "pl-1373" }, { word: "mieszkają", ref: "pl-1583" }, { word: "w", ref: "pl-2008" }, { word: "mieście", ref: "pl-0428" }]
+  - id: "pl-4209"
+    target: "Czytamy w domu."
+    ipa: "tʂɨˈtamɨ v ˈdɔmu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Czytamy", ref: "pl-1655" }, { word: "w", ref: "pl-2008" }, { word: "domu", ref: "pl-0460" }]
+  - id: "pl-4210"
+    target: "Znam jego siostrę."
+    ipa: "znam ˈjɛɡɔ ˈɕɔstrɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Znam", ref: "pl-0521" }, { word: "jego", ref: "pl-1385" }, { word: "siostrę", ref: "pl-1447" }]
+  - id: "pl-4211"
+    target: "Co piszesz?"
+    ipa: "tsɔ ˈpʲiʂɛʂ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Co", ref: "pl-1301" }, { word: "piszesz", ref: "pl-1656" }]
+  - id: "pl-4212"
+    target: "Czy rozumiesz?"
+    ipa: "tʂɨ rɔˈzumjɛʂ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Czy", ref: "pl-1308" }, { word: "rozumiesz", ref: "pl-1671" }]
+  - id: "pl-4213"
+    target: "Ona lubi muzykę."
+    ipa: "ˈɔna ˈlubʲi muˈzɨkɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_morphology" }]
+    bases: [{ word: "Ona", ref: "pl-1371" }, { word: "lubi", ref: "pl-1585" }, { word: "muzykę", ref: "pl-0430" }]

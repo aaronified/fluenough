@@ -1,0 +1,33 @@
+schema: 1
+id: "pl-en-grammar-present-tense"
+kind: "layer"
+core: "pl-grammar-present-tense"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present tense"
+license: "CC-BY-SA-4.0"
+description: "12 verbs in the present tense, one form for each person: I, you (one person), he or she, we, you (more than one person) and they. The first pattern ends in -m, -sz, nothing, -my, -cie, -ją, and the second in -ę, -isz or -esz, -i or -e, -imy or -emy, -icie or -ecie, -ą or -ią. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The present tense"
+  slot_name: "person"
+  slots:
+    "ja": "I (ja)"
+    "ty": "you, one person (ty)"
+    "on": "he, she or it (on, ona, ono)"
+    "my": "we (my)"
+    "wy": "you, more than one person, or polite plural (wy)"
+    "oni": "they (oni, one)"
+  entries:
+    "byc": "to be (irregular: jestem, jesteś, jest, jesteśmy, jesteście, są)"
+    "miec": "to have (pattern -m, -sz: mam, masz, ma)"
+    "znac": "to know (first pattern, like czytać)"
+    "czytac": "to read (first pattern: -am, -asz, -a, -amy, -acie, -ają)"
+    "pisac": "to write (second pattern: s becomes sz in the stem)"
+    "robic": "to do; to make (second pattern: -ię, -isz, -i, -imy, -icie, -ią)"
+    "lubic": "to like (second pattern, like robić)"
+    "mowic": "to speak; to say (second pattern, like robić; the ó is said /u/)"
+    "rozumiec": "to understand (pattern -m, -sz, like mieć)"
+    "pic": "to drink (stem pij-)"
+    "jesc": "to eat (irregular: jem, jesz, je, jemy, jecie, jedzą)"
+    "pracowac": "to work (stem pracuj-)"
+  notes: "A Polish verb in the present tense changes its ending for each person, and the subject pronoun is usually left out because the ending shows the person (Wikipedia: Polish is a pro-drop language). The table writes the pronoun to show which person each form is. There are two main patterns (Wikipedia, Polish morphology). The first has the endings -m, -sz, none, -my, -cie, -ją, as in czytać: czytam, czytasz, czyta, czytamy, czytacie, czytają; mieć (mam), znać and rozumieć follow it too. The second has -ę, -esz or -isz, -e or -i, -emy or -imy, -ecie or -icie, -ą or -ią, as in robić: robię, robisz, robi, robimy, robicie, robią; lubić and mówić follow it, and so do pisać (piszę, piszesz) and pracować (pracuję, pracujesz), which change their stem. Two verbs are irregular: być (jestem, jesteś, jest, jesteśmy, jesteście, są) and jeść (jem, jesz, je, jemy, jecie, jedzą). The form for on is also the form for ona and ono, and the form for oni is also the form for one. The present tense says what happens now and what happens in general: czytam is I read and I am reading. A verb has an aspect, imperfective or perfective, and only an imperfective verb has a present tense; all the verbs in the table are imperfective."

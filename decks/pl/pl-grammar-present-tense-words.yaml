@@ -1,0 +1,31 @@
+# Unit 17 (pl-grammar-present-tense). Verbs the present table needs that no earlier unit teaches. Sources read: en.wikipedia.org 'Polish morphology' (the present tense of mieć and the pattern -m -sz) and each verb's en.wiktionary.org entry (senses, usage examples, conjugation table).
+schema: 1
+id: "pl-grammar-present-tense-words"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "pl-0520"
+    target: "mieć"
+    ipa: "mjɛtɕ"
+    pos: "verb"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wiktionary.org/wiki/mie%C4%87" }
+    bases: "self"
+    examples:
+      - { target: "Mam kota.", ipa: "mam ˈkɔta", bases: [{ word: "Mam", base: "mieć" }, { word: "kota", ref: "pl-0462" }] }
+      - { target: "Mam daleko do szkoły.", ipa: "mam daˈlɛkɔ dɔ ˈʂkɔwɨ", bases: [{ word: "Mam", base: "mieć" }, { word: "daleko", ref: "pl-1745" }, { word: "do", base: "do" }, { word: "szkoły", ref: "pl-0413" }] }
+  - id: "pl-0521"
+    target: "znać"
+    ipa: "znatɕ"
+    pos: "verb"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wiktionary.org/wiki/zna%C4%87" }
+    bases: "self"
+    examples:
+      - { target: "Nie znam go.", ipa: "ɲɛ znam ɡɔ", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "znam", base: "znać" }, { word: "go", ref: "pl-1384" }] }
+      - { target: "Znasz ją?", ipa: "znaʂ jɔ̃", bases: [{ word: "Znasz", base: "znać" }, { word: "ją", ref: "pl-1387" }] }
