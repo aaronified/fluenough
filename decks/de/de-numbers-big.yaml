@@ -169,7 +169,7 @@ cards:
     forms: [{ id: "pl", kind: "plural", word: "Zahlen" }]
     examples:
       - { target: "Das ist die Zahl.", ipa: "das ɪst diː tsaːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Zahl", base: "Zahl" }] }
-      - { target: "Wo ist die Zahl?", ipa: "voː ɪst diː tsaːl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Zahl", base: "Zahl" }] }
+      - { target: "Das ist keine Zahl.", ipa: "das ɪst ˈkaɪnə tsaːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "keine", base: "kein" }, { word: "Zahl", base: "Zahl" }] }
   - id: "de-2225"
     target: "Ziffer"
     ipa: "ˈtsɪfɐ"
@@ -181,7 +181,7 @@ cards:
     forms: [{ id: "pl", kind: "plural", word: "Ziffern" }]
     examples:
       - { target: "Das ist die Ziffer.", ipa: "das ɪst diː ˈtsɪfɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Ziffer", base: "Ziffer" }] }
-      - { target: "Wo ist die Ziffer?", ipa: "voː ɪst diː ˈtsɪfɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Ziffer", base: "Ziffer" }] }
+      - { target: "Das ist keine Ziffer.", ipa: "das ɪst ˈkaɪnə ˈtsɪfɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "keine", base: "kein" }, { word: "Ziffer", base: "Ziffer" }] }
   - id: "de-2226"
     target: "Prozent"
     ipa: "pʁoˈtsɛnt"
@@ -240,7 +240,7 @@ cards:
     forms: [{ id: "pl", kind: "plural", word: "Summen" }]
     examples:
       - { target: "Das ist die Summe.", ipa: "das ɪst diː ˈzʊmə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Summe", base: "Summe" }] }
-      - { target: "Wo ist die Summe?", ipa: "voː ɪst diː ˈzʊmə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Summe", base: "Summe" }] }
+      - { target: "Das ist keine Summe.", ipa: "das ɪst ˈkaɪnə ˈzʊmə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "keine", base: "kein" }, { word: "Summe", base: "Summe" }] }
   - id: "de-2231"
     target: "Rechnung"
     ipa: "ˈʁɛçnʊŋ"
@@ -276,7 +276,7 @@ cards:
     forms: [{ id: "pl", kind: "plural", word: "Größen" }]
     examples:
       - { target: "Das ist die Größe.", ipa: "das ɪst diː ˈɡʁøːsə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Größe", base: "Größe" }] }
-      - { target: "Wo ist die Größe?", ipa: "voː ɪst diː ˈɡʁøːsə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Größe", base: "Größe" }] }
+      - { target: "Das ist nicht meine Größe.", ipa: "das ɪst nɪçt ˈmaɪnə ˈɡʁøːsə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "meine", base: "mein" }, { word: "Größe", base: "Größe" }] }
   - id: "de-2234"
     target: "Länge"
     ipa: "ˈlɛŋə"
@@ -321,8 +321,8 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Zwei mal Eins.", ipa: "tsvaɪ maːl aɪns", bases: [{ word: "Zwei", base: "zwei" }, { word: "mal", base: "mal" }, { word: "Eins", base: "eins" }] }
-      - { target: "Eins mal Zwei.", ipa: "aɪns maːl tsvaɪ", bases: [{ word: "Eins", base: "eins" }, { word: "mal", base: "mal" }, { word: "Zwei", base: "zwei" }] }
+      - { target: "Zwei mal eins.", ipa: "tsvaɪ maːl aɪns", bases: [{ word: "Zwei", base: "zwei" }, { word: "mal", base: "mal" }, { word: "eins", base: "eins" }] }
+      - { target: "Eins mal zwei.", ipa: "aɪns maːl tsvaɪ", bases: [{ word: "Eins", base: "eins" }, { word: "mal", base: "mal" }, { word: "zwei", base: "zwei" }] }
   - id: "de-2238"
     target: "Pfund"
     ipa: "pfʊnt"
@@ -346,7 +346,7 @@ cards:
     forms: [{ id: "pl", kind: "plural", word: "Ergebnisse" }]
     examples:
       - { target: "Das ist ein Ergebnis.", ipa: "das ɪst aɪn ɛɐ̯ˈɡɛpnɪs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Ergebnis", base: "Ergebnis" }] }
-      - { target: "Wo ist das Ergebnis?", ipa: "voː ɪst das ɛɐ̯ˈɡɛpnɪs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Ergebnis", base: "Ergebnis" }] }
+      - { target: "Das ist kein Ergebnis.", ipa: "das ɪst kaɪn ɛɐ̯ˈɡɛpnɪs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "kein", base: "kein" }, { word: "Ergebnis", base: "Ergebnis" }] }
   - id: "de-2240"
     target: "Preis"
     ipa: "pʁaɪs"
@@ -358,4 +358,4 @@ cards:
     forms: [{ id: "pl", kind: "plural", word: "Preise" }]
     examples:
       - { target: "Das ist der Preis.", ipa: "das ɪst deːɐ̯ pʁaɪs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Preis", base: "Preis" }] }
-      - { target: "Wo ist der Preis?", ipa: "voː ɪst deːɐ̯ pʁaɪs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Preis", base: "Preis" }] }
+      - { target: "Das ist kein Preis.", ipa: "das ɪst kaɪn pʁaɪs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "kein", base: "kein" }, { word: "Preis", base: "Preis" }] }

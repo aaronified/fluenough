@@ -54,12 +54,12 @@ cards:
           "Ich": "I"
           "ende": "end"
           "hier": "here"
-      "Hier endest du.":
-        native: "Here you end."
+      "Das endet hier.":
+        native: "That ends here."
         bases:
-          "Hier": "here"
-          "endest": "end"
-          "du": "you"
+          "Das": "that"
+          "endet": "ends"
+          "hier": "here"
   "de-2073":
     native: "to happen"
     notes:
@@ -118,35 +118,39 @@ cards:
     notes:
       "n1": "Besuchen is to visit: ich besuche, du besuchst."
     examples:
-      "Ich besuche da.":
-        native: "I visit there."
+      "Ich besuche den Vater.":
+        native: "I visit the father."
         bases:
           "Ich": "I"
           "besuche": "visit"
-          "da": "there"
-      "Du besuchst hier.":
-        native: "You visit here."
+          "den": "the"
+          "Vater": "father"
+      "Du besuchst die Familie.":
+        native: "You visit the family."
         bases:
           "Du": "you"
           "besuchst": "visit"
-          "hier": "here"
+          "die": "the"
+          "Familie": "family"
   "de-2077":
     native: "to meet; to encounter"
     notes:
       "n1": "Treffen is to meet or encounter. The e becomes i in du and er: du triffst, er trifft."
     examples:
-      "Ich treffe da.":
-        native: "I meet there."
+      "Ich treffe den Freund.":
+        native: "I meet the friend."
         bases:
           "Ich": "I"
           "treffe": "meet"
-          "da": "there"
-      "Du triffst hier.":
-        native: "You meet here."
+          "den": "the"
+          "Freund": "friend"
+      "Du triffst die Freundin.":
+        native: "You meet the female friend."
         bases:
           "Du": "you"
           "triffst": "meet"
-          "hier": "here"
+          "die": "the"
+          "Freundin": "female friend"
   "de-2078":
     native: "to lose"
     notes:
@@ -185,19 +189,19 @@ cards:
     notes:
       "n1": "Kosten is to cost. Its subject is the price: das kostet, it costs."
     examples:
-      "Das kostet nicht.":
-        native: "That does not cost anything."
+      "Das kostet nichts.":
+        native: "That costs nothing."
         bases:
           "Das": "that"
           "kostet": "costs"
-          "nicht": "not"
-      "Das kostet hier nicht.":
-        native: "That is free here."
+          "nichts": "nothing"
+      "Das kostet hier nichts.":
+        native: "That costs nothing here."
         bases:
           "Das": "that"
           "kostet": "costs"
           "hier": "here"
-          "nicht": "not"
+          "nichts": "nothing"
   "de-2081":
     native: "to order"
     notes:
@@ -377,29 +381,18 @@ cards:
     notes:
       "n1": "Gehören is to belong to: ich gehöre, du gehörst."
     examples:
-      "Ich gehöre hier.":
-        native: "I belong here."
-        bases:
-          "Ich": "I"
-          "gehöre": "belong"
-          "hier": "here"
-      "Du gehörst da.":
-        native: "You belong there."
-        bases:
-          "Du": "you"
-          "gehörst": "belong"
-          "da": "there"
+      "Das Buch gehört mir.": "The book belongs to me."
+      "Ihm gehört das ganze Land.": "The whole country belongs to him."
   "de-2094":
     native: "to last, to continue, to persist"
     notes:
       "n1": "Dauern is to last or take time: das dauert, it lasts."
     examples:
-      "Das dauert nicht.":
-        native: "That does not take long."
+      "Das dauert.":
+        native: "That takes time."
         bases:
           "Das": "that"
-          "dauert": "lasts"
-          "nicht": "not"
+          "dauert": "takes time"
       "Das dauert und dauert.":
         native: "It goes on and on."
         bases:

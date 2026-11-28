@@ -36,7 +36,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Ich ende hier.", ipa: "ɪç ˈɛndə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "ende", base: "enden" }, { word: "hier", base: "hier" }] }
-      - { target: "Hier endest du.", ipa: "hiːɐ̯ ˈɛndəst duː", bases: [{ word: "Hier", base: "hier" }, { word: "endest", base: "enden" }, { word: "du", base: "du" }] }
+      - { target: "Das endet hier.", ipa: "das ˈɛndət hiːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "endet", base: "enden" }, { word: "hier", base: "hier" }] }
   - id: "de-2073"
     target: "passieren"
     ipa: "paˈsiːʁən"
@@ -75,8 +75,8 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Ich besuche da.", ipa: "ɪç bəˈzuːxə daː", bases: [{ word: "Ich", base: "ich" }, { word: "besuche", base: "besuchen" }, { word: "da", base: "da" }] }
-      - { target: "Du besuchst hier.", ipa: "duː bəˈzʊkst hiːɐ̯", bases: [{ word: "Du", base: "du" }, { word: "besuchst", base: "besuchen" }, { word: "hier", base: "hier" }] }
+      - { target: "Ich besuche den Vater.", ipa: "ɪç bəˈzuːxə deːn ˈfaːtɐ", bases: [{ word: "Ich", base: "ich" }, { word: "besuche", base: "besuchen" }, { word: "den", base: "der" }, { word: "Vater", base: "Vater" }] }
+      - { target: "Du besuchst die Familie.", ipa: "duː bəˈzʊkst diː ˈfaːmiliː", bases: [{ word: "Du", base: "du" }, { word: "besuchst", base: "besuchen" }, { word: "die", base: "der" }, { word: "Familie", base: "Familie" }] }
   - id: "de-2077"
     target: "treffen"
     ipa: "ˈtʁɛfən"
@@ -85,8 +85,8 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Ich treffe da.", ipa: "ɪç ˈtʁɛfə daː", bases: [{ word: "Ich", base: "ich" }, { word: "treffe", base: "treffen" }, { word: "da", base: "da" }] }
-      - { target: "Du triffst hier.", ipa: "duː tʁɪfst hiːɐ̯", bases: [{ word: "Du", base: "du" }, { word: "triffst", base: "treffen" }, { word: "hier", base: "hier" }] }
+      - { target: "Ich treffe den Freund.", ipa: "ɪç ˈtʁɛfə deːn fʁɔɪnt", bases: [{ word: "Ich", base: "ich" }, { word: "treffe", base: "treffen" }, { word: "den", base: "der" }, { word: "Freund", base: "Freund" }] }
+      - { target: "Du triffst die Freundin.", ipa: "duː tʁɪfst diː ˈfʁɔɪndɪn", bases: [{ word: "Du", base: "du" }, { word: "triffst", base: "treffen" }, { word: "die", base: "der" }, { word: "Freundin", base: "Freundin" }] }
   - id: "de-2078"
     target: "verlieren"
     ipa: "fɛɐ̯ˈliːʁən"
@@ -115,8 +115,8 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Das kostet nicht.", ipa: "das ˈkɔstət nɪçt", bases: [{ word: "Das", base: "das" }, { word: "kostet", base: "kosten" }, { word: "nicht", base: "nicht" }] }
-      - { target: "Das kostet hier nicht.", ipa: "das ˈkɔstət hiːɐ̯ nɪçt", bases: [{ word: "Das", base: "das" }, { word: "kostet", base: "kosten" }, { word: "hier", base: "hier" }, { word: "nicht", base: "nicht" }] }
+      - { target: "Das kostet nichts.", ipa: "das ˈkɔstət nɪçts", bases: [{ word: "Das", base: "das" }, { word: "kostet", base: "kosten" }, { word: "nichts", base: "nichts" }] }
+      - { target: "Das kostet hier nichts.", ipa: "das ˈkɔstət hiːɐ̯ nɪçts", bases: [{ word: "Das", base: "das" }, { word: "kostet", base: "kosten" }, { word: "hier", base: "hier" }, { word: "nichts", base: "nichts" }] }
   - id: "de-2081"
     target: "bestellen"
     ipa: "bəˈʃtɛlən"
@@ -225,8 +225,8 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Ich gehöre hier.", ipa: "ɪç ɡəˈhøːʁə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "gehöre", base: "gehören" }, { word: "hier", base: "hier" }] }
-      - { target: "Du gehörst da.", ipa: "duː ɡəˈhœʁst daː", bases: [{ word: "Du", base: "du" }, { word: "gehörst", base: "gehören" }, { word: "da", base: "da" }] }
+      - { target: "Das Buch gehört mir.", ipa: "das buːx ɡəˈhœʁt miːɐ̯", source: "Wiktionary" }
+      - { target: "Ihm gehört das ganze Land.", ipa: "iːm ɡəˈhœʁt das ˈɡantsə lant", source: "Wiktionary" }
   - id: "de-2094"
     target: "dauern"
     ipa: "ˈdaʊɐn"
@@ -235,5 +235,5 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Das dauert nicht.", ipa: "das ˈdaʊɐt nɪçt", bases: [{ word: "Das", base: "das" }, { word: "dauert", base: "dauern" }, { word: "nicht", base: "nicht" }] }
+      - { target: "Das dauert.", ipa: "das ˈdaʊɐt", bases: [{ word: "Das", base: "das" }, { word: "dauert", base: "dauern" }] }
       - { target: "Das dauert und dauert.", ipa: "das ˈdaʊɐt ʊnt ˈdaʊɐt", bases: [{ word: "Das", base: "das" }, { word: "dauert", base: "dauern" }, { word: "und", base: "und" }] }
