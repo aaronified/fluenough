@@ -8,8 +8,8 @@ from pathlib import Path
 
 import transcribe_decks
 import validate_decks
-from transcribe import (BLOCKS, CannotRead, french_ipa, italian_ipa,
-                        spanish_ipa, swahili_ipa, transcribe)
+from transcribe import (BLOCKS, CannotRead, french_ipa, german_ipa,
+                        italian_ipa, spanish_ipa, swahili_ipa, transcribe)
 
 
 class ReadingTest(unittest.TestCase):
@@ -903,6 +903,166 @@ class ItalianTest(unittest.TestCase):
         for bad in ("naïve", "a1", "ಕನ್ನಡ", "pkt"):
             with self.assertRaises(CannotRead):
                 italian_ipa(bad)
+
+
+class GermanTest(unittest.TestCase):
+    """German (de), broad. Every expected form is a form that the entry's
+    pronunciation section on en.wiktionary lists for the word (read
+    2026-11-28), in Wiktionary's symbols with its syllable dots, secondary
+    stress marks, glottal stops and non-syllabic marks left out, r written ʁ
+    and the diphthong of Deutsch written ɔɪ, as the engine writes them."""
+
+    def check(self, pairs):
+        for text, ipa in pairs:
+            with self.subTest(text=text):
+                self.assertEqual(german_ipa(text), ipa)
+
+    def test_ch_is_ç_after_front_vowels_and_x_after_back_ones(self):
+        self.check((("Nacht", "naxt"), ("ich", "ɪç"), ("Küche", "ˈkʏçə"),
+                    ("Milch", "mɪlç"), ("Buch", "buːx"),
+                    ("machen", "ˈmaxən"), ("Tochter", "ˈtɔxtɐ"),
+                    ("Kirche", "ˈkɪʁçə"), ("wichtig", "ˈvɪçtɪç"),
+                    ("König", "ˈkøːnɪç")))
+
+    def test_sch_sp_st_tsch_z_w_v_qu_ng_nk(self):
+        self.check((("schön", "ʃøːn"), ("Fisch", "fɪʃ"),
+                    ("Mensch", "mɛnʃ"), ("Deutsch", "dɔɪtʃ"),
+                    ("sprechen", "ˈʃpʁɛçən"), ("Stadt", "ʃtat"),
+                    ("Straße", "ˈʃtʁaːsə"), ("zwei", "tsvaɪ"),
+                    ("Zahl", "tsaːl"), ("drei", "dʁaɪ"),
+                    ("Quelle", "ˈkvɛlə"), ("Englisch", "ˈɛŋlɪʃ"),
+                    ("Bank", "baŋk"), ("trinken", "ˈtʁɪŋkən"),
+                    ("Vater", "ˈfaːtɐ"), ("Sonne", "ˈzɔnə")))
+
+    def test_final_obstruents_are_voiceless(self):
+        self.check((("Tag", "taːk"), ("gut", "ɡuːt"), ("Rad", "ʁaːt"),
+                    ("und", "ʊnt"), ("Hand", "hant"), ("Zug", "tsuːk"),
+                    ("Abend", "ˈaːbənt"), ("Ordnung", "ˈɔʁtnʊŋ")))
+
+    def test_a_vowel_is_long_before_one_consonant_short_before_more(self):
+        self.check((("Glas", "ɡlaːs"), ("Brot", "bʁoːt"),
+                    ("Kopf", "kɔpf"), ("Mutter", "ˈmʊtɐ"),
+                    ("Butter", "ˈbʊtɐ"), ("Zimmer", "ˈtsɪmɐ"),
+                    ("Nummer", "ˈnʊmɐ"), ("Bruder", "ˈbʁuːdɐ"),
+                    ("Wasser", "ˈvasɐ"), ("Hilfe", "ˈhɪlfə"),
+                    ("Schule", "ˈʃuːlə"), ("Käse", "ˈkɛːzə"),
+                    ("können", "ˈkœnən"), ("Löffel", "ˈlœfəl"),
+                    ("Zucker", "ˈtsʊkɐ"), ("Fenster", "ˈfɛnstɐ")))
+
+    def test_function_words_with_a_short_vowel(self):
+        self.check((("das", "das"), ("es", "ɛs"), ("in", "ɪn"),
+                    ("man", "man"), ("bis", "bɪs"), ("mit", "mɪt"),
+                    ("bin", "bɪn"), ("hat", "hat"), ("ist", "ɪst"),
+                    ("du", "duː")))
+
+    def test_r_is_ʁ_before_a_vowel_ɐ̯_after_a_long_vowel_ɐ_in_er(self):
+        self.check((("hier", "hiːɐ̯"), ("Jahr", "jaːɐ̯"), ("Uhr", "uːɐ̯"),
+                    ("Tür", "tyːɐ̯"), ("Natur", "naˈtuːɐ̯"),
+                    ("Kultur", "kʊlˈtuːɐ̯"), ("Lehrer", "ˈleːʁɐ"),
+                    ("Lehrerin", "ˈleːʁəʁɪn"), ("Morgen", "ˈmɔʁɡən"),
+                    ("Arbeit", "ˈaʁbaɪt"), ("Freund", "fʁɔɪnt")))
+
+    def test_an_unstressed_prefix_leaves_the_stress_to_the_stem(self):
+        self.check((("besuchen", "bəˈzuːxən"), ("vergessen", "fɛɐ̯ˈɡɛsən"),
+                    ("Gesundheit", "ɡəˈzʊnthaɪt"),
+                    ("Entschuldigung", "ɛntˈʃʊldiɡʊŋ")))
+
+    def test_endings_that_carry_the_stress(self):
+        self.check((("diskutieren", "dɪskuˈtiːʁən"),
+                    ("Information", "ɪnfɔʁmaˈtsjoːn"),
+                    ("Universität", "univɛʁziˈtɛːt"),
+                    ("Studentin", "ʃtuˈdɛntɪn"), ("Natur", "naˈtuːɐ̯")))
+
+    def test_second_part_of_a_compound_takes_the_stress(self):
+        self.check((("zurück", "tsuˈʁʏk"), ("zusammen", "tsuˈzamən"),
+                    ("wofür", "voˈfyːɐ̯")))
+
+    def test_the_first_syllable_is_the_default_stress(self):
+        self.check((("Bitte", "ˈbɪtə"), ("heißen", "ˈhaɪsən"),
+                    ("kostet", "ˈkɔstət"), ("Kinder", "ˈkɪndɐ"),
+                    ("gehen", "ˈɡeːən"), ("Zeitung", "ˈtsaɪtʊŋ"),
+                    ("Wiedersehen", "ˈviːdɐzeːən"),
+                    ("Auto", "ˈaʊto"), ("anfangen", "ˈanfaŋən"),
+                    ("Mädchen", "ˈmɛːtçən")))
+
+    def test_words_the_table_marks(self):
+        self.check((("Hallo", "haˈloː"), ("Kaffee", "kaˈfeː"),
+                    ("Hotel", "hoˈtɛl"), ("Kino", "ˈkiːnoː"),
+                    ("damit", "daˈmɪt"), ("langsam", "ˈlaŋzaːm")))
+
+    def test_sch_and_zw_stay_together_when_the_stress_is_marked(self):
+        self.check((("Schwester", "ˈʃvɛstɐ"), ("zwanzig", "ˈtsvantsɪç"),
+                    ("schlafen", "ˈʃlaːfən"), ("Schlüssel", "ˈʃlʏsəl"),
+                    ("Zwiebel", "ˈtsviːbəl"), ("schwierig", "ˈʃviːʁɪç"),
+                    ("Schlafzimmer", "ˈʃlaːftsɪmɐ"),
+                    ("schreiben", "ˈʃʁaɪbən")))
+
+    def test_ch_after_a_diphthong_or_ie_is_ç(self):
+        self.check((("leicht", "laɪçt"), ("weich", "vaɪç"),
+                    ("gleich", "ɡlaɪç"), ("Zeichen", "ˈtsaɪçən"),
+                    ("euch", "ɔɪç"), ("riechen", "ˈʁiːçən"),
+                    ("vielleicht", "fiˈlaɪçt")))
+
+    def test_stems_that_look_like_prefixed_words(self):
+        self.check((("gestern", "ˈɡɛstɐn"), ("Beere", "ˈbeːʁə"),
+                    ("Berlin", "bɛɐ̯ˈliːn"), ("Erdbeere", "ˈeːɐ̯tbeːʁə"),
+                    ("Erdgeschoss", "ˈeːɐ̯tɡəʃɔs")))
+
+    def test_n_before_k_across_a_separable_prefix_is_not_ŋ(self):
+        self.check((("einkaufen", "ˈaɪnkaʊfən"), ("ankommen", "ˈankɔmən")))
+
+    def test_the_days_and_other_long_vowels_of_a_compounds_second_part(self):
+        self.check((("Montag", "ˈmoːntaːk"), ("Sonntag", "ˈzɔntaːk"),
+                    ("Dienstag", "ˈdiːnstaːk"), ("Freitag", "ˈfʁaɪtaːk"),
+                    ("Samstag", "ˈzamstaːk"), ("Mittag", "ˈmɪtaːk"),
+                    ("Donnerstag", "ˈdɔnɐstaːk"),
+                    ("Nachmittag", "ˈnaːxmɪtaːk"),
+                    ("Vormittag", "ˈfoːɐ̯mɪtaːk"), ("Mittwoch", "ˈmɪtvɔx"),
+                    ("Bahnhof", "ˈbaːnhoːf"), ("Flughafen", "ˈfluːkhaːfən"),
+                    ("Flugzeug", "ˈfluːktsɔɪk")))
+
+    def test_a_long_vowel_before_r_and_a_consonant(self):
+        self.check((("Arzt", "aːɐ̯tst"), ("Urlaub", "ˈuːɐ̯laʊp"),
+                    ("erste", "ˈeːɐ̯stə"), ("Fahrrad", "ˈfaːɐ̯ʁaːt"),
+                    ("Geburtstag", "ɡəˈbuːɐ̯tstaːk")))
+
+    def test_loan_words_and_months_the_table_marks(self):
+        self.check((("natürlich", "naˈtyːɐ̯lɪç"),
+                    ("Apotheke", "apoˈteːkə"), ("Kartoffel", "kaʁˈtɔfəl"),
+                    ("Tomate", "toˈmaːtə"), ("Salat", "zaˈlaːt"),
+                    ("Gitarre", "ɡiˈtaʁə"), ("Minute", "miˈnuːtə"),
+                    ("Januar", "ˈjanuaːɐ̯"), ("Februar", "ˈfeːbʁuaːɐ̯"),
+                    ("April", "aˈpʁɪl"), ("Oktober", "ɔkˈtoːbɐ"),
+                    ("Dezember", "deˈtsɛmbɐ"), ("Brötchen", "ˈbʁøːtçən"),
+                    ("Obst", "oːpst"), ("vierzig", "ˈfɪʁtsɪç"),
+                    ("nämlich", "ˈnɛːmlɪç")))
+
+    def test_a_hint_gives_stress_and_length(self):
+        # Wiktionary: Banane baˈnaːnə, Sprache ˈʃpʁaːxə, Bücher ˈbyːçɐ,
+        # Mond moːnt, Telefon (ˌ)teːləˈfoːn.
+        self.assertEqual(german_ipa("Banane", "Banáne"), "baˈnaːnə")
+        self.assertEqual(german_ipa("Sprache", "Spra:che"), "ˈʃpʁaːxə")
+        self.assertEqual(german_ipa("Bücher", "Bü:cher"), "ˈbyːçɐ")
+        self.assertEqual(german_ipa("Mond", "Mo:nd"), "moːnt")
+        self.assertEqual(german_ipa("Telefon", "Te:lefón"), "teːləˈfoːn")
+
+    def test_a_hint_is_used_only_if_it_is_the_text(self):
+        self.assertEqual(german_ipa("Mond", "Tag"), german_ipa("Mond"))
+        t = transcribe("Mond", "de", "Tag")
+        self.assertFalse(t.fitted)
+        t = transcribe("Mond", "de", "Mo:nd")
+        self.assertTrue(t.fitted)
+        self.assertEqual(t.ipa, "moːnt")
+
+    def test_a_phrase_and_the_dispatch(self):
+        t = transcribe("Hier ist das Wasser.", "de")
+        self.assertEqual(t.ipa, "hiːɐ̯ ɪst das ˈvasɐ")
+        self.assertTrue(t.fitted)
+
+    def test_other_letters_and_words_without_a_vowel_cannot_be_read(self):
+        for bad in ("naïve", "a1", "ಕನ್ನಡ", "pkt"):
+            with self.assertRaises(CannotRead):
+                german_ipa(bad)
 
 
 class MalayalamTest(unittest.TestCase):

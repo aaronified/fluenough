@@ -821,6 +821,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return Transcription(text, swahili_ipa(text), True)
     if lang == "it":
         return _italian(text, hint)
+    if lang == "de":
+        return _german(text, hint)
     if lang == "ja":
         return japanese(text)
     if lang == "ko":
@@ -2436,6 +2438,633 @@ def _it_openness(s: str, vowel: str, idx: int, glide: str) -> str:
     elif glide == "w" or _IT_OPEN_O.search(rest):
         return "ɔ"
     return vowel
+
+
+# --- German ------------------------------------------------------------------
+
+# Standard German (Hochdeutsch, de-DE), broad, as the decks write it: ˈ before
+# the stressed syllable of a word of two syllables or more, ː for a long
+# vowel, ç and x for ch, ʃ for sch and for initial sp and st, ts for z and
+# tz, v for w, f for v and ph, ʁ for r (the uvular sound, as Wiktionary's
+# phonemic forms and the first cards write it) and ɐ̯ for r after a long
+# vowel or a diphthong before a consonant or the end (hiːɐ̯, aber ʁ after a
+# short one: ˈɡaʁtən), ɐ for the unstressed ending -er, ŋ for ng and nk, ɛː
+# for a long ä, final-obstruent devoicing (b d g to p t k at the end of a
+# syllable: ɡuːt, ʊnt, ɡɪpt), ə for the unstressed -e, -en, -el, -em, -es,
+# written with the schwa (ˈɡuːtən, never a syllabic n), aɪ for ei, ɔɪ for eu
+# and äu, aʊ for au. The glottal stop that begins a vowel is not written, nor
+# is secondary stress, nor the non-syllabic mark under the second part of a
+# diphthong.
+#
+# What the letters show: the consonants, the vowels and the diphthongs, the
+# length of a vowel before one consonant or before two or more (Tag, Wasser;
+# Rad against Stadt), a silent h or a doubled vowel or ie for length, and the
+# default stress on the first syllable of a word that has no prefix. What
+# they do not show, and German spelling leaves to the reader's lexicon:
+#  - stress in loan words and in compounds (Computer, Restaurant, Hotel), and
+#    the few native words with an unstressed first syllable;
+#  - the length of a vowel before ch or before a cluster that is not one
+#    (Mädchen, Sprache, Sache);
+#  - words whose h is said (Alkohol, Uhu) and the glide of -ie (Familie);
+#  - schwa deletion (the speaker says -n, -l without a vowel; the engine
+#    writes ən, əl) and which unstressed e in the middle of a word is a schwa;
+#  - whether ng is ŋ or n+ɡ, and v in native against foreign words.
+# The engine settles the stress and the length in these ways, and no more:
+#  1. a *hint*: the text with its words marked as a dictionary marks them. An
+#     acute on a vowel (á é í ó ú, or ä ö ü followed by U+0301) marks the
+#     stressed one (`Banáne`), a colon after a vowel marks it long (`Mä:dchen`,
+#     `Spra:che`) and a caret after a vowel marks it short (`Mo^nd` if a word
+#     the rules read long is short). Only the marked vowels change. A hint is
+#     used only if, with its marks removed, it is the text. A bar starts the
+#     next part of a compound (`Fahr|ra:d`): each part is read as a word;
+#  2. endings and prefixes that fix the stress: the unstressed prefixes be-
+#     ge- er- ver- zer- ent- emp- miss- (the stress goes to the stem, and the
+#     prefix is read apart, `verstehen` fɛɐ̯ˈʃteːən); -ieren verbs, -ier,
+#     -ei, -ie, -tion, -ität, -ur, -ent (Student), which carry the stress
+#     themselves; the separable and other prefixes zurück-, zusammen-,
+#     her-/hin- with a second prefix, and da-/wo- compounds (damit, wofür),
+#     which take it on their second part; every other separable prefix (an-
+#     auf- aus- ein- mit- vor- zu- ab- nach- her- hin- weg-) begins the word
+#     and so takes the default stress;
+#  3. _DE_MARKS, a short table of very frequent words that follow no rule,
+#     read as a hint is (short vowels before one consonant: und, mit, bis,
+#     das, es, in, man; the loan words of the first decks);
+#  4. otherwise the first syllable, long before a single consonant and
+#     short before two or more (a stop and l or r count as one).
+# A card whose broad `ipa` the engine misreads is given a hint.
+# Measured on 208 everyday words picked by hand and read from en.wiktionary on
+# 2026-11-28 (not a random sample): 182 are read as one of the forms the
+# entry lists, once its syllable dots, secondary stress, glottal stops and
+# non-syllabic marks are left out (many of the 208 are in _DE_MARKS, whose
+# entries were read from the same pages). The rest are the limits above: loan
+# word stress and sounds (Computer, Restaurant, Banane, Familie, November,
+# Toilette, Chef, Handy, Ferien), the length of Mond, Sprache, Bücher and of
+# the vowel of a compound's second part not listed in _DE_MARKS (Telefon,
+# Wochenende), the ɐ̯ that Wiktionary writes after a short vowel before r
+# (Schmerzen), and ʁ against χ and ɐ in its narrow forms.
+#
+# Sources: Wikipedia "Standard German phonology"; Wiktionary "Appendix:German
+# pronunciation" and its entries' pronunciations.
+_DE_VOWELS = "aeiouäöüy"
+_DE_PUNCT = set(".,?!;:\"“”«»()…-–—")
+_DE_STOPS = "pbtdkɡf"
+# Words that no rule reads, as a hint marks them (see the section header).
+_DE_MARKS = {
+    "und": "u^nd", "mit": "mi^t", "bis": "bi^s",
+    "das": "da^s", "es": "e^s", "in": "i^n", "man": "ma^n", "bin": "bi^n",
+    "hat": "ha^t", "an": "a^n", "am": "a^m", "um": "u^m", "ab": "a^b",
+    "ob": "o^b", "von": "vo^n", "vom": "vo^m", "zum": "zu^m",
+    "was": "wa^s", "ins": "i^ns", "hin": "hi^n",
+    "des": "de^s", "kaffee": "kaffeé", "hallo": "halló:", "hotel": "hoté^l",
+    "kino": "kíno:", "mädchen": "mä:dchen", "damit": "damí^t",
+    # Length before r and a consonant, and the long vowel of a compound's
+    # second part, which the letters do not show.
+    "arzt": "a:rzt", "urlaub": "u:rlaub", "erste": "e:rste",
+    "geburtstag": "gebú:rtstag", "fahrrad": "fahr|ra:d",
+    "montag": "mo:ntag", "nachmittag": "na:chmittag",
+    "vormittag": "vo:rmittag", "bahnhof": "bahnho:f",
+    "flughafen": "flu:gha:fen", "flugzeug": "flu:gzeug",
+    "schlafzimmer": "schla:fzimmer", "handtuch": "hand|tu:ch",
+    "erdbeere": "e:rdbeere", "erdgeschoss": "e:rdgeschoss",
+    "vielleicht": "vie^lléicht", "vierzig": "vie^rzig", "obst": "o:bst",
+    "brötchen": "brö:tchen", "nämlich": "nä:mlich",
+    # Loan words and others with lexical stress or length.
+    "natürlich": "natü\u0301:rlich", "apotheke": "apothé:ke",
+    "kartoffel": "kartóffel", "tomate": "tomáte", "salat": "salát",
+    "marmelade": "marmeláde", "gitarre": "gitárre", "minute": "minúte",
+    "januar": "ja^nua:r", "februar": "fe:brua:r", "april": "aprí^l",
+    "oktober": "október", "dezember": "dezémber",
+}
+# Prefixes read apart and never stressed: letters, then the phonemes.
+_DE_PREFIXES = (("miss", "mɪs"), ("emp", "ɛmp"), ("ent", "ɛnt"),
+                ("zer", "tsɛɐ̯"), ("ver", "fɛɐ̯"), ("be", "bə"),
+                ("ge", "ɡə"), ("er", "ɛɐ̯"))
+# The stress goes on the second part: the letter index where it begins.
+_DE_SECOND = re.compile(
+    r"^(?:(?:her|hin)(?=aus|ein|auf|ab|an|um|unter|über|vor|zu|durch)|"
+    r"(?:da|dar|wo|wor)(?=(?:bei|mit|von|zu|für|gegen|nach|auf|an|in|um|"
+    r"über|aus|vor|her|hin|runter)$)|zu(?=rück|sammen|erst|letzt|gleich|"
+    r"mindest|nächst))")
+# A word ending in one of these has its stress on the letter group that
+# matches, the named group `at` (the first letter of the stressed vowel).
+_DE_END_STRESS = re.compile(
+    r"(?:(?P<a>i)er(?:en|e|st|t|te|ten)?$|(?P<c>e)i(?:en)?$|"
+    r"(?:g|ph|krat|nom)(?P<d>i)e$|ti(?P<e>o)n(?:en)?$|it(?P<f>ä)t(?:en)?$|"
+    r"(?P<g>u)r$|(?<=[b-df-hj-np-tv-z])(?P<h>e)nt(?:en|in|innen)?$)")
+# An h before a vowel after zu-, da- or wo- at the start is said (zuhören,
+# daher, wohin); every other h after a vowel is silent.
+_DE_H_SAID = re.compile(r"^(?:zu|da|wo)h[aeiouäöü]")
+# -sam is long (langsam), as the rule would not say.
+_DE_SEPARABLE = ("an", "ab", "auf", "aus", "ein", "mit", "vor", "zu", "nach",
+                 "her", "hin", "weg", "zurück", "um", "bei")
+_DE_LONG_SAM = re.compile(r"sa(?=m(?:e|en|er|es|em)?$)")
+# -tag is long (Freitag, Mittag): the a of the second part.
+_DE_LONG_TAG = re.compile(r"(?<=..)ta(?=g(?:e|en|es|s)?$)")
+_DE_NO_FRONT = "aou"
+
+
+@dataclass
+class _DeTok:
+    ph: str                 # the phoneme(s)
+    kind: str               # V nucleus, C consonant
+    start: int              # letter span in the word
+    end: int
+    weight: int = 1         # consonant: letters, for the length before it
+    vowel: str = ""         # plain vowel letter whose quality the rules give
+    long: bool = False
+    fixed: bool = False     # a diphthong, ie, or a prefix: ph is final
+    src: str = ""
+    r: bool = False         # the letter r
+    sp: bool = False        # the sch of an initial sp or st
+    ch: bool = False        # the letters ch
+
+
+def german_ipa(text: str, hint: str | None = None) -> str:
+    """Standard German, broad. [hint] is the text with each word marked as a
+    dictionary marks it (see the section header): an acute on the stressed
+    vowel, a colon after a long vowel, a caret after a short one; it is used
+    only if, with its marks removed, it is the text. The limits are the
+    section header's: loan word stress, the length of a vowel before ch or
+    an odd cluster, schwa deletion, and the words whose h or ie is read
+    otherwise. Raises CannotRead for a letter German spelling does not use."""
+    text = unicodedata.normalize("NFC", text.lower())
+    for c in text:
+        if c.isspace() or c in _DE_PUNCT or c in "'’":
+            continue
+        if not ("a" <= c <= "z") and c not in "äöüß":
+            raise CannotRead(f"not a German letter: {c!r}")
+    words = [w for w in re.split(r"[\s\-–—]+", text) if w]
+    hints = _de_hint_words(words, hint)
+    out = []
+    for k, raw in enumerate(words):
+        out.append(_de_word(raw, hints[k] if hints else ""))
+    return " ".join(w for w in out if w)
+
+
+def _de_marks(hint: str) -> tuple[str, int | None, dict[int, str],
+                                  set[int]]:
+    """A hint word's letters, the index of its stressed vowel, the marks of
+    length by letter index ("L" long, "S" short) and the letter indices where
+    a compound's next part begins (a bar, `Fahr|rad`)."""
+    letters: list[str] = []
+    stress: int | None = None
+    marks: dict[int, str] = {}
+    bounds: set[int] = set()
+    for c in unicodedata.normalize("NFD", hint.lower()):
+        if c == "|" and letters:
+            bounds.add(len(letters))
+        elif c == "̈" and letters:
+            letters[-1] = unicodedata.normalize("NFC", letters[-1] + c)
+        elif c == "́" and letters:
+            stress = len(letters) - 1
+        elif c in ":^" and letters and letters[-1] in _DE_VOWELS:
+            marks[len(letters) - 1] = "L" if c == ":" else "S"
+        elif c in _DE_PUNCT or c in "'’":
+            continue
+        else:
+            letters.append(c)
+    return "".join(letters), stress, marks, bounds
+
+
+def _de_clean(word: str) -> str:
+    return "".join(c for c in word if c not in _DE_PUNCT and c not in "'’")
+
+
+def _de_hint_words(words: list[str], hint: str | None) -> list[str]:
+    """The hint's words if they are the text's words with marks, else none."""
+    if not hint:
+        return []
+    hints = [w for w in re.split(r"[\s\-–—]+",
+                                 unicodedata.normalize("NFC", hint.lower()))
+             if w]
+    if len(hints) != len(words) or any(
+            _de_marks(h)[0] != _de_clean(w) for h, w in zip(hints, words)):
+        return []
+    return hints
+
+
+def _german(text: str, hint: str | None) -> Transcription:
+    ipa = german_ipa(text, hint)
+    words = [w for w in re.split(r"[\s\-–—]+",
+                                 unicodedata.normalize("NFC", text.lower()))
+             if w]
+    fitted = not hint or bool(_de_hint_words(words, hint))
+    return Transcription(text, ipa, fitted)
+
+
+def _de_is_vowel(s: str, i: int) -> bool:
+    return 0 <= i < len(s) and s[i] in _DE_VOWELS
+
+
+def _de_prefix(word: str) -> tuple[int, str]:
+    """The length and phonemes of the unstressed prefix [word] begins with,
+    or (0, "")."""
+    if word == "berlin":
+        return 3, "bɛɐ̯"
+    for letters, ph in _DE_PREFIXES:
+        if not word.startswith(letters):
+            continue
+        rest = word[len(letters):]
+        nuclei = len(re.findall(r"[aeiouäöüy]+", rest))
+        if not nuclei:
+            continue
+        if letters in ("be", "ge") and rest[0] in "iue":
+            continue            # a diphthong or ee: geil, beuge, Beere
+        if letters == "be" and rest[0] == "r" and len(rest) > 1 and \
+                rest[1] not in _DE_VOWELS:
+            continue            # Berg, Bernd
+        if letters == "er" and re.match(r"d[^aeiouäöüy]", rest):
+            continue            # Erdbeere, Erdgeschoss
+        if letters == "miss" and rest[0] in _DE_VOWELS:
+            continue
+        # A stem that only looks like a prefix: geben, gehen, Erde, gerne.
+        if nuclei == 1 and re.fullmatch(
+                r"[^aeiouäöüy]*e(?:[nrlsm]|rn|rm|rs|ns|ls)?", rest):
+            continue
+        return len(letters), ph
+    return 0, ""
+
+
+def _de_prefix_toks(ph: str, n: int) -> list[_DeTok]:
+    """The tokens of a prefix: its consonants and its one vowel."""
+    toks: list[_DeTok] = []
+    for m in re.finditer(r"(ɛɐ̯|ɛ|ə|ɪ)|(.)", ph):
+        if m.group(1):
+            toks.append(_DeTok(m.group(1), "V", 0, n, fixed=True))
+        else:
+            toks.append(_DeTok(m.group(2), "C", 0, n))
+    return toks
+
+
+def _de_tokens(s: str, base: int, initial: bool) -> list[_DeTok]:
+    """The sounds of [s], the word from letter index [base] on. [initial]:
+    whether [s] begins a word or the part after a prefix."""
+    n = len(s)
+    toks: list[_DeTok] = []
+
+    def add(ph: str, kind: str, i: int, j: int, **kw) -> _DeTok:
+        t = _DeTok(ph, kind, base + i, base + j, src=s[i:j], **kw)
+        toks.append(t)
+        return t
+
+    def vowel_at(i: int) -> bool:
+        return i < n and s[i] in _DE_VOWELS
+
+    i = 0
+    while i < n:
+        c = s[i]
+        two = s[i:i + 2]
+        if c in _DE_VOWELS:
+            if c == "y" and i == 0 and vowel_at(1):
+                add("j", "C", i, i + 1)
+                i += 1
+                continue
+            if c == "i" and s[i:i + 2] == "ig" and (
+                    i + 2 == n or re.match(r"(?:keit|lich)", s[i + 2:])):
+                add("ɪ", "V", i, i + 1, fixed=True)
+                add("ç", "C", i + 1, i + 2, weight=1)
+                i += 2
+                continue
+            if two in ("ei", "ai", "ey", "ay"):
+                t = add("aɪ", "V", i, i + 2, fixed=True)
+                j = i + 2
+            elif two in ("eu", "äu"):
+                t = add("ɔɪ", "V", i, i + 2, fixed=True)
+                j = i + 2
+            elif two == "au":
+                t = add("aʊ", "V", i, i + 2, fixed=True)
+                j = i + 2
+            elif two == "ie":
+                t = add("iː", "V", i, i + 2, fixed=True, long=True)
+                j = i + 2
+            elif two in ("aa", "ee", "oo"):
+                t = add(c, "V", i, i + 2, vowel=c, long=True)
+                j = i + 2
+            else:
+                t = add(c, "V", i, i + 1, vowel="ü" if c == "y" else c)
+                j = i + 1
+            # An h after a vowel is silent and makes a plain vowel long.
+            if j < n and s[j] == "h" and not (
+                    base == 0 and j == 2 and _DE_H_SAID.match(s)):
+                if not t.fixed or t.ph == "iː":
+                    t.long = True
+                t.end += 1
+                j += 1
+            i = j
+            continue
+        nx = s[i + 1] if i + 1 < n else ""
+        # Letter groups of consonants, longest first.
+        if s[i:i + 4] == "tsch":
+            add("tʃ", "C", i, i + 4, weight=2)
+            i += 4
+        elif s[i:i + 4] == "tion" and i > 0:
+            add("tsj", "C", i, i + 2)
+            add("oː", "V", i + 2, i + 3, fixed=True, long=True)
+            i += 3
+        elif s[i:i + 3] == "sch":
+            add("ʃ", "C", i, i + 3, weight=2)
+            i += 3
+        elif s[i:i + 3] == "chs":
+            add("k", "C", i, i + 2, weight=2)
+            add("s", "C", i + 2, i + 3)
+            i += 3
+        elif two == "ch":
+            back = bool(toks) and toks[-1].kind == "V" and (
+                (toks[-1].vowel != "" and toks[-1].vowel in _DE_NO_FRONT)
+                or toks[-1].ph == "aʊ")
+            if i == 0 and initial and not toks:
+                ph = "k" if s[i + 2:i + 3] in ("a", "o", "u", "l", "r") \
+                    else "ç"
+            else:
+                ph = "x" if back else "ç"
+            add(ph, "C", i, i + 2, weight=2, ch=True)
+            i += 2
+        elif two == "ck":
+            add("k", "C", i, i + 2, weight=2)
+            i += 2
+        elif two == "tz":
+            add("ts", "C", i, i + 2, weight=2)
+            i += 2
+        elif two == "pf":
+            add("pf", "C", i, i + 2, weight=2)
+            i += 2
+        elif two == "ph":
+            add("f", "C", i, i + 2)
+            i += 2
+        elif two == "th":
+            add("t", "C", i, i + 2)
+            i += 2
+        elif two == "dt":
+            add("t", "C", i, i + 2, weight=2)
+            i += 2
+        elif c == "q":
+            if nx == "u":
+                add("kv", "C", i, i + 2, weight=2)
+                i += 2
+            else:
+                add("k", "C", i, i + 1)
+                i += 1
+        elif c == "n" and nx in ("g", "k") and (
+                s[:i + 1] in _DE_SEPARABLE and (
+                    nx == "k" or s[:i + 1] == "ein" or
+                    s[i + 2:i + 3] == "e")):
+            add("n", "C", i, i + 1)
+            i += 1
+        elif c == "n" and nx == "g":
+            add("ŋ", "C", i, i + 2, weight=2)
+            i += 2
+        elif c == "n" and nx == "k":
+            add("ŋ", "C", i, i + 1)
+            i += 1
+        elif c == "s":
+            if nx == "s":
+                add("s", "C", i, i + 2, weight=2)
+                i += 2
+            elif nx in ("p", "t") and (i == 0 and initial or
+                                       s[:i] in _DE_SEPARABLE):
+                add("ʃ", "C", i, i + 1, sp=True)
+                i += 1
+            elif vowel_at(i + 1):
+                add("z", "C", i, i + 1)
+                i += 1
+            else:
+                add("s", "C", i, i + 1)
+                i += 1
+        elif c == "ß":
+            add("s", "C", i, i + 1)
+            i += 1
+        elif c == "z":
+            j = i + 2 if nx == "z" else i + 1
+            add("ts", "C", i, j, weight=j - i)
+            i = j
+        elif c == "x":
+            add("ks", "C", i, i + 1, weight=2)
+            i += 1
+        elif c == "c":
+            ph = "ts" if nx in ("e", "i", "ä", "ö", "ü", "y") else "k"
+            add(ph, "C", i, i + 1)
+            i += 1
+        elif c == "v":
+            if i == 0 or not vowel_at(i + 1):
+                add("f", "C", i, i + 1)
+            else:
+                add("v", "C", i, i + 1)
+            i += 1
+        elif c == "w":
+            add("v", "C", i, i + 1)
+            i += 1
+        elif c == "j":
+            add("j", "C", i, i + 1)
+            i += 1
+        elif c == "h":
+            add("h", "C", i, i + 1)
+            i += 1
+        elif c == "r":
+            j = i + 2 if nx == "r" else i + 1
+            add("ʁ", "C", i, j, weight=j - i, r=True)
+            i = j
+        elif c in "bdfgklmnpt":
+            ph = "ɡ" if c == "g" else c
+            j = i + 2 if nx == c else i + 1
+            add(ph, "C", i, j, weight=j - i)
+            i = j
+        else:
+            raise CannotRead(f"not a German letter: {c!r}")
+    return toks
+
+
+def _de_joins(a: _DeTok, b: _DeTok) -> bool:
+    """Whether [a] and [b], two consonants before a vowel, begin the same
+    syllable: a stop or f and then l or r, ʃ and then p t l m n v or r
+    (schlafen, sprechen, Schwester), or ts and v (zwanzig)."""
+    if a.kind != "C" or b.kind != "C":
+        return False
+    if a.ph == "ʃ":
+        return b.ph in ("p", "t", "l", "m", "n", "v") or b.r
+    if a.ph == "ts":
+        return b.ph == "v"
+    return a.ph in _DE_STOPS and (b.ph == "l" or b.r)
+
+
+def _de_cluster(toks: list[_DeTok], k: int) -> list[_DeTok]:
+    """The consonants after the nucleus at [k], up to the next one."""
+    out = []
+    j = k + 1
+    while j < len(toks) and toks[j].kind == "C":
+        out.append(toks[j])
+        j += 1
+    return out
+
+
+def _de_onset_only(cluster: list[_DeTok]) -> bool:
+    """Whether the whole cluster, followed by a vowel, begins a syllable."""
+    return len(cluster) > 1 and all(
+        _de_joins(a, b) for a, b in zip(cluster, cluster[1:]))
+
+
+def _de_pick_stress(word: str, toks: list[_DeTok], off: int, k0: int,
+                    hint_at: int | None) -> int:
+    """The index in [toks] of the stressed nucleus; [off] is the length of
+    the prefix, [k0] the index of the first token after it."""
+    nuclei = [k for k, t in enumerate(toks) if t.kind == "V"]
+
+    def at(pos: int) -> int | None:
+        for k in nuclei:
+            if toks[k].end > pos:
+                return k
+        return None
+
+    if hint_at is not None and at(hint_at) is not None:
+        return at(hint_at)  # type: ignore[return-value]
+    m = _DE_SECOND.match(word)
+    if m and m.end() < len(word):
+        k = at(m.end())
+        if k is not None:
+            return k
+    m = _DE_END_STRESS.search(word)
+    if m and len(nuclei) > 1:
+        group = next(g for g, v in m.groupdict().items() if v)
+        k = at(m.start(group))
+        if k is not None and (off == 0 or toks[k].start >= off):
+            return k
+    after = [k for k in nuclei if k >= k0]
+    return after[0] if after else nuclei[0]
+
+
+def _de_word(raw: str, hint: str) -> str:
+    word = _de_clean(raw)
+    if not word:
+        return ""
+    stress_at: int | None = None
+    marks: dict[int, str] = {}
+    bounds: set[int] = set()
+    if hint:
+        _, stress_at, marks, bounds = _de_marks(hint)
+    elif word in _DE_MARKS:
+        _, stress_at, marks, bounds = _de_marks(_DE_MARKS[word])
+    n_pre, pre_ph = _de_prefix(word)
+    if n_pre and stress_at is not None and stress_at < n_pre:
+        n_pre, pre_ph = 0, ""       # a hint that stresses the prefix
+    toks = _de_prefix_toks(pre_ph, n_pre) if n_pre else []
+    k0 = len(toks)
+    edges = [n_pre] + sorted(b for b in bounds if n_pre < b < len(word)) + [
+        len(word)]
+    for a, b in zip(edges, edges[1:]):
+        toks += _de_tokens(word[a:b], a, True)
+    return _de_resolve(word, toks, n_pre, k0, stress_at, marks)
+
+
+def _de_resolve(word: str, toks: list[_DeTok], n_pre: int, k0: int,
+                stress_at: int | None, marks: dict[int, str]) -> str:
+    nuclei = [k for k, t in enumerate(toks) if t.kind == "V"]
+    if not nuclei:
+        raise CannotRead(f"no vowel to read: {word!r}")
+    stressed = _de_pick_stress(word, toks, n_pre, k0, stress_at)
+    sam = {m.start() + 1 for m in _DE_LONG_SAM.finditer(word)}
+    sam |= {m.start() + 1 for m in _DE_LONG_TAG.finditer(word)}
+    for k in nuclei:
+        t = toks[k]
+        mark = next((marks[j] for j in range(t.start, t.end) if j in marks),
+                    None)
+        if t.fixed:
+            if t.ph == "iː" and mark == "S":
+                t.ph = "ɪ" if k == stressed else "i"     # vierzig, vielleicht
+            continue
+        cl = _de_cluster(toks, k)
+        has_next = k + 1 + len(cl) < len(toks)
+        onset_only = bool(cl) and has_next and _de_onset_only(cl)
+        # The consonants that close the syllable; the last one of a cluster
+        # before a vowel begins the next.
+        coda = [] if onset_only or (
+            len(cl) == 1 and has_next and (
+                cl[0].weight == 1 or cl[0].ph in ("ʃ", "ç", "x", "tʃ"))
+        ) else (
+            cl[:-1] if has_next and len(cl) > 1 else cl)
+        if not cl:
+            w = 0
+        elif onset_only:
+            w = 1
+        elif has_next and len(cl) == 1:
+            w = cl[0].weight
+        else:
+            w = sum(c.weight for c in cl)
+        if t.vowel == "u" and len(cl) == 1 and cl[0].ch:
+            w = 1               # Buch, Tuch, Kuchen
+        if mark == "L":
+            t.long = True
+        elif mark == "S":
+            t.long = False
+        elif t.start in sam:
+            t.long = True
+        elif k == stressed and not t.long:
+            t.long = w < 2
+        v = t.vowel
+        if k == stressed or t.long or mark:
+            t.ph = _DE_LONG[v] if t.long else _DE_SHORT[v]
+            continue
+        if v == "e" and k > stressed:
+            if coda and coda[0].r:
+                t.ph = "ɐ"          # unstressed er before a consonant or end
+                coda[0].ph = ""
+                coda[0].r = False
+                continue
+            if re.fullmatch(r"[lmnstdh]{0,2}", "".join(c.src for c in coda)):
+                t.ph = "ə"
+                continue
+        elif v == "e" and k != nuclei[0] and not coda:
+            t.ph = "ə"              # the e of Telefon, Bäckerei
+            continue
+        # Any other unstressed short vowel: the tense one when the syllable
+        # is open and the vowel final, before a vowel or before the stress,
+        # else the lax one.
+        tense = not coda and (k < stressed or not cl or v == "i")
+        t.ph = _DE_TENSE[v] if tense else _DE_SHORT[v]
+    _de_consonants(toks)
+    return _de_join(toks, stressed, len(nuclei))
+
+
+_DE_LONG = {"a": "aː", "e": "eː", "i": "iː", "o": "oː", "u": "uː",
+            "ä": "ɛː", "ö": "øː", "ü": "yː"}
+_DE_SHORT = {"a": "a", "e": "ɛ", "i": "ɪ", "o": "ɔ", "u": "ʊ",
+             "ä": "ɛ", "ö": "œ", "ü": "ʏ"}
+_DE_TENSE = {"a": "a", "e": "e", "i": "i", "o": "o", "u": "u",
+             "ä": "ɛ", "ö": "ø", "ü": "y"}
+
+
+def _de_consonants(toks: list[_DeTok]) -> None:
+    """Resolve r and the voicing of b, d, g in place."""
+    for j, t in enumerate(toks):
+        if t.kind != "C":
+            continue
+        prev = toks[j - 1] if j else None
+        nxt = toks[j + 1] if j + 1 < len(toks) else None
+        if t.r:
+            if nxt is not None and nxt.kind == "V":
+                t.ph = "ʁ"
+            elif prev is not None and prev.kind == "V" and (
+                    prev.ph.endswith("ː") or prev.ph in ("aɪ", "aʊ", "ɔɪ")):
+                t.ph = "ɐ̯"
+            else:
+                t.ph = "ʁ"
+        elif t.ph in ("b", "d", "ɡ"):
+            onset = nxt is not None and nxt.kind == "C" and (
+                nxt.ph == "l" or nxt.r) and j + 2 < len(toks) and \
+                toks[j + 2].kind == "V"
+            if nxt is None or (nxt.kind == "C" and not onset):
+                t.ph = {"b": "p", "d": "t", "ɡ": "k"}[t.ph]
+
+
+def _de_join(toks: list[_DeTok], stressed: int, n_nuclei: int) -> str:
+    out = [t.ph for t in toks]
+    if n_nuclei < 2:
+        return "".join(out)
+    pos = stressed
+    if pos > 0 and toks[pos - 1].kind == "C":
+        pos -= 1
+        while pos > 0 and _de_joins(toks[pos - 1], toks[pos]):
+            pos -= 1
+    out.insert(pos, "ˈ")
+    return "".join(out)
 
 
 # --- Japanese, Korean, Mandarin and Toki Pona (#612) -------------------------
