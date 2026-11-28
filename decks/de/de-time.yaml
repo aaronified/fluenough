@@ -1,0 +1,332 @@
+schema: 1
+id: "de-time"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2840"
+    target: "heute"
+    ipa: "ˈhɔɪtə"
+    pos: "adverb"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin heute hier.", ipa: "ɪç bɪn ˈhɔɪtə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "heute", base: "heute" }, { word: "hier", base: "hier" }] }
+      - { target: "Du bist heute da.", ipa: "duː bɪst ˈhɔɪtə daː", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "heute", base: "heute" }, { word: "da", base: "da" }] }
+  - id: "de-2841"
+    target: "morgen"
+    ipa: "ˈmɔʁɡən"
+    pos: "adverb"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin morgen hier.", ipa: "ɪç bɪn ˈmɔʁɡən hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "morgen", base: "morgen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du bist morgen da.", ipa: "duː bɪst ˈmɔʁɡən daː", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "morgen", base: "morgen" }, { word: "da", base: "da" }] }
+  - id: "de-2844"
+    target: "jetzt"
+    ipa: "jɛtst"
+    pos: "adverb"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin jetzt hier.", ipa: "ɪç bɪn jɛtst hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "jetzt", base: "jetzt" }, { word: "hier", base: "hier" }] }
+      - { target: "Du bist jetzt da.", ipa: "duː bɪst jɛtst daː", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "jetzt", base: "jetzt" }, { word: "da", base: "da" }] }
+  - id: "de-2845"
+    target: "Uhr"
+    ipa: "uːɐ̯"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Uhren" }]
+    examples:
+      - { target: "Das ist die Uhr.", ipa: "das ɪst diː uːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Uhr", base: "Uhr" }] }
+      - { target: "Wo ist die Uhr?", ipa: "voː ɪst diː uːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Uhr", base: "Uhr" }] }
+  - id: "de-2846"
+    target: "Stunde"
+    ipa: "ˈʃtʊndə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Stunden" }]
+    examples:
+      - { target: "Ich habe eine Stunde.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈʃtʊndə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Stunde", base: "Stunde" }] }
+      - { target: "Das ist die Stunde.", ipa: "das ɪst diː ˈʃtʊndə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Stunde", base: "Stunde" }] }
+  - id: "de-2847"
+    target: "Minute"
+    ipa: "miˈnuːtə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Minuten" }]
+    examples:
+      - { target: "Ich habe eine Minute.", ipa: "ɪç ˈhaːbə ˈaɪnə miˈnuːtə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Minute", base: "Minute" }] }
+      - { target: "Das ist die Minute.", ipa: "das ɪst diː miˈnuːtə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Minute", base: "Minute" }] }
+  - id: "de-2848"
+    target: "Sekunde"
+    ipa: "ˈzeːkʊndə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Sekunden" }]
+    examples:
+      - { target: "Ich habe eine Sekunde.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈzeːkʊndə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Sekunde", base: "Sekunde" }] }
+      - { target: "Das ist die Sekunde.", ipa: "das ɪst diː ˈzeːkʊndə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Sekunde", base: "Sekunde" }] }
+  - id: "de-2849"
+    target: "Zeit"
+    ipa: "tsaɪt"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Zeiten" }]
+    examples:
+      - { target: "Ich habe keine Zeit.", ipa: "ɪç ˈhaːbə ˈkaɪnə tsaɪt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "keine", base: "kein" }, { word: "Zeit", base: "Zeit" }] }
+      - { target: "Das ist die Zeit.", ipa: "das ɪst diː tsaɪt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Zeit", base: "Zeit" }] }
+  - id: "de-2850"
+    target: "Tag"
+    ipa: "taːk"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Tage" }]
+    examples:
+      - { target: "Das ist der Tag.", ipa: "das ɪst deːɐ̯ taːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Tag", base: "Tag" }] }
+      - { target: "Ich habe einen Tag.", ipa: "ɪç ˈhaːbə ˈaɪnən taːk", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Tag", base: "Tag" }] }
+  - id: "de-2851"
+    target: "Woche"
+    ipa: "ˈvɔxə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Wochen" }]
+    examples:
+      - { target: "Ich habe eine Woche.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈvɔxə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Woche", base: "Woche" }] }
+      - { target: "Das ist die Woche.", ipa: "das ɪst diː ˈvɔxə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Woche", base: "Woche" }] }
+  - id: "de-2852"
+    target: "Monat"
+    ipa: "ˈmoːnat"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Monate" }]
+    examples:
+      - { target: "Das ist der Monat.", ipa: "das ɪst deːɐ̯ ˈmoːnat", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Monat", base: "Monat" }] }
+      - { target: "Ich habe einen Monat.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈmoːnat", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Monat", base: "Monat" }] }
+  - id: "de-2853"
+    target: "Jahr"
+    ipa: "jaːɐ̯"
+    pos: "noun"
+    gender: "n"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Jahre" }]
+    examples:
+      - { target: "Hier ist das Jahr.", ipa: "hiːɐ̯ ɪst das jaːɐ̯", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Jahr", base: "Jahr" }] }
+      - { target: "Ich habe ein Jahr.", ipa: "ɪç ˈhaːbə aɪn jaːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Jahr", base: "Jahr" }] }
+  - id: "de-2854"
+    target: "Abend"
+    ipa: "ˈaːbənt"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Abende" }]
+    examples:
+      - { target: "Das ist der Abend.", ipa: "das ɪst deːɐ̯ ˈaːbənt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Abend", base: "Abend" }] }
+      - { target: "Wo ist der Abend?", ipa: "voː ɪst deːɐ̯ ˈaːbənt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Abend", base: "Abend" }] }
+  - id: "de-2855"
+    target: "Mittag"
+    ipa: "ˈmɪtaːk"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Mittage" }]
+    examples:
+      - { target: "Das ist der Mittag.", ipa: "das ɪst deːɐ̯ ˈmɪtaːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Mittag", base: "Mittag" }] }
+      - { target: "Wo ist der Mittag?", ipa: "voː ɪst deːɐ̯ ˈmɪtaːk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Mittag", base: "Mittag" }] }
+  - id: "de-2856"
+    target: "Nacht"
+    ipa: "naxt"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Nächte" }]
+    examples:
+      - { target: "Das ist die Nacht.", ipa: "das ɪst diː naxt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Nacht", base: "Nacht" }] }
+      - { target: "Wo ist die Nacht?", ipa: "voː ɪst diː naxt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Nacht", base: "Nacht" }] }
+  - id: "de-2857"
+    target: "Mitternacht"
+    ipa: "ˈmɪtɐnaxt"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Mitternächte" }]
+    examples:
+      - { target: "Das ist die Mitternacht.", ipa: "das ɪst diː ˈmɪtɐnaxt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Mitternacht", base: "Mitternacht" }] }
+      - { target: "Wo ist die Mitternacht?", ipa: "voː ɪst diː ˈmɪtɐnaxt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Mitternacht", base: "Mitternacht" }] }
+  - id: "de-2858"
+    target: "Moment"
+    ipa: "moˈmɛnt"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Momente" }]
+    examples:
+      - { target: "Ich habe einen Moment.", ipa: "ɪç ˈhaːbə ˈaɪnən moˈmɛnt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Moment", base: "Moment" }] }
+      - { target: "Das ist der Moment.", ipa: "das ɪst deːɐ̯ moˈmɛnt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Moment", base: "Moment" }] }
+  - id: "de-2859"
+    target: "Viertelstunde"
+    ipa: "ˈfiːɐ̯təlstʊndə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Viertelstunden" }]
+    examples:
+      - { target: "Ich habe eine Viertelstunde.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈfiːɐ̯təlstʊndə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Viertelstunde", base: "Viertelstunde" }] }
+      - { target: "Das ist die Viertelstunde.", ipa: "das ɪst diː ˈfiːɐ̯təlstʊndə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Viertelstunde", base: "Viertelstunde" }] }
+  - id: "de-2860"
+    target: "früh"
+    ipa: "fʁyː"
+    pos: "adverb"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin früh hier.", ipa: "ɪç bɪn fʁyː hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "früh", base: "früh" }, { word: "hier", base: "hier" }] }
+      - { target: "Du bist früh da.", ipa: "duː bɪst fʁyː daː", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "früh", base: "früh" }, { word: "da", base: "da" }] }
+  - id: "de-2861"
+    target: "spät"
+    ipa: "ʃpɛːt"
+    pos: "adjective"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Du bist spät.", ipa: "duː bɪst ʃpɛːt", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "spät", base: "spät" }] }
+      - { target: "Das ist spät.", ipa: "das ɪst ʃpɛːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "spät", base: "spät" }] }
+  - id: "de-2862"
+    target: "Wochenende"
+    ipa: "ˈvɔxənəndə"
+    pos: "noun"
+    gender: "n"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Wochenenden" }]
+    examples:
+      - { target: "Hier ist das Wochenende.", ipa: "hiːɐ̯ ɪst das ˈvɔxənəndə", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wochenende", base: "Wochenende" }] }
+      - { target: "Wo ist das Wochenende?", ipa: "voː ɪst das ˈvɔxənəndə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wochenende", base: "Wochenende" }] }
+  - id: "de-2863"
+    target: "Anfang"
+    ipa: "ˈanfaŋ"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Anfänge" }]
+    examples:
+      - { target: "Das ist der Anfang.", ipa: "das ɪst deːɐ̯ ˈanfaŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Anfang", base: "Anfang" }] }
+      - { target: "Wo ist der Anfang?", ipa: "voː ɪst deːɐ̯ ˈanfaŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Anfang", base: "Anfang" }] }
+  - id: "de-2864"
+    target: "Ende"
+    ipa: "ˈɛndə"
+    pos: "noun"
+    gender: "n"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Enden" }]
+    examples:
+      - { target: "Hier ist das Ende.", ipa: "hiːɐ̯ ɪst das ˈɛndə", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Ende", base: "Ende" }] }
+      - { target: "Wo ist das Ende?", ipa: "voː ɪst das ˈɛndə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Ende", base: "Ende" }] }
+  - id: "de-2865"
+    target: "Vormittag"
+    ipa: "ˈfoːɐ̯mɪtaːk"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Vormittage" }]
+    examples:
+      - { target: "Das ist der Vormittag.", ipa: "das ɪst deːɐ̯ ˈfoːɐ̯mɪtaːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Vormittag", base: "Vormittag" }] }
+      - { target: "Wo ist der Vormittag?", ipa: "voː ɪst deːɐ̯ ˈfoːɐ̯mɪtaːk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Vormittag", base: "Vormittag" }] }
+  - id: "de-2866"
+    target: "Nachmittag"
+    ipa: "ˈnaːxmɪtaːk"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Nachmittage" }]
+    examples:
+      - { target: "Das ist der Nachmittag.", ipa: "das ɪst deːɐ̯ ˈnaːxmɪtaːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Nachmittag", base: "Nachmittag" }] }
+      - { target: "Wo ist der Nachmittag?", ipa: "voː ɪst deːɐ̯ ˈnaːxmɪtaːk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Nachmittag", base: "Nachmittag" }] }
+  - id: "de-2867"
+    target: "später"
+    ipa: "ˈʃpɛːtɐ"
+    pos: "adverb"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin später hier.", ipa: "ɪç bɪn ˈʃpɛːtɐ hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "später", base: "später" }, { word: "hier", base: "hier" }] }
+      - { target: "Du bist später da.", ipa: "duː bɪst ˈʃpɛːtɐ daː", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "später", base: "später" }, { word: "da", base: "da" }] }
+  - id: "de-2868"
+    target: "vorher"
+    ipa: "ˈfɔʁhɐ"
+    pos: "adverb"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin vorher hier.", ipa: "ɪç bɪn ˈfɔʁhɐ hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "vorher", base: "vorher" }, { word: "hier", base: "hier" }] }
+      - { target: "Du bist vorher da.", ipa: "duː bɪst ˈfɔʁhɐ daː", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "vorher", base: "vorher" }, { word: "da", base: "da" }] }
+  - id: "de-2869"
+    target: "Augenblick"
+    ipa: "ˈaʊɡɛnblɪk"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Augenblicke" }]
+    examples:
+      - { target: "Ich habe einen Augenblick.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈaʊɡɛnblɪk", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Augenblick", base: "Augenblick" }] }
+      - { target: "Das ist der Augenblick.", ipa: "das ɪst deːɐ̯ ˈaʊɡɛnblɪk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Augenblick", base: "Augenblick" }] }
