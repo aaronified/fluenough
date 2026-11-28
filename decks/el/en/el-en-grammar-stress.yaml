@@ -1,0 +1,19 @@
+schema: 1
+id: "el-en-grammar-stress"
+kind: "layer"
+core: "el-grammar-stress"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Stress changes the word"
+license: "CC-BY-SA-4.0"
+description: "Two pairs of words spelled with the same letters and said with the stress on a different syllable, with a different meaning. Each row gives the word with the stress on the first syllable and with the stress on the last."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Stress changes the word"
+  slot_name: "stress"
+  slots:
+    "first": "stress on the first syllable"
+    "last": "stress on the last syllable"
+  entries:
+    "nomos": "law (first) and prefecture (last)"
+    "oros": "term (first) and serum (last)"
+  notes: "Greek stress is free: it can fall on any of the last three syllables and it has to be learnt with each word. Every word of two or more syllables is written with an accent mark, τόνος (tónos), over the stressed vowel, and the stress sometimes changes the meaning: νόμος (nómos) is a law, and νομός (nomós) a prefecture. The accent changes no vowel sound: stressed and unstressed vowels sound alike, only the stressed syllable is longer and louder. The stress can also move when a word changes its ending, as in πατέρας (patéras), father, and πατεράδες (paterádes), fathers."

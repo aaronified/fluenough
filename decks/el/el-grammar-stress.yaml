@@ -1,0 +1,38 @@
+# Unit 2 grammar topic stress. Sources read: en.wikipedia.org 'Modern Greek phonology' (variable stress on one of the last three syllables; the monotonic accent marks it) and the en.wiktionary.org entries νόμος, νομός, όρος, ορός (headword stress, senses).
+# The forms keep the accent of the written word: without it the two forms of a row would be the same text.
+schema: 1
+id: "el-grammar-stress"
+part: "core"
+kind: "grammar"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["first", "last"]
+  entries:
+    - lemma: "νόμος"
+      key: "nomos"
+      reading: "nómos"
+      ipa: "ˈnomos"
+      forms:
+        "first": "νόμος"
+        "last": "νομός"
+      readings:
+        "first": "nómos"
+        "last": "nomós"
+      ipas:
+        "first": "ˈnomos"
+        "last": "noˈmos"
+    - lemma: "όρος"
+      key: "oros"
+      reading: "óros"
+      ipa: "ˈoɾos"
+      forms:
+        "first": "όρος"
+        "last": "ορός"
+      readings:
+        "first": "óros"
+        "last": "orós"
+      ipas:
+        "first": "ˈoɾos"
+        "last": "oˈɾos"

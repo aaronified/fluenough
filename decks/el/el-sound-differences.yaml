@@ -1,0 +1,391 @@
+# Unit 2 of the Greek A1 path (el-sound-differences). Sources read: en.wikipedia.org 'Modern Greek phonology' (consonants and their palatal forms, vowels, voicing of σ, the letter pairs) and each word's own en.wiktionary.org page (senses, gender).
+# Readings are based on ELOT 743 with the acute for the stress; ipa comes from tools/transcribe.py (the el engine), never by hand. Stress is the written tonos.
+schema: 1
+id: "el-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+theme: "sound-differences"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "el-0400"
+    target: "δέντρο"
+    reading: "déntro"
+    ipa: "ˈðendɾo"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B4%CE%AD%CE%BD%CF%84%CF%81%CE%BF" }
+    bases: "self"
+    examples:
+      - { target: "Το δέντρο είναι εδώ.", reading: "To déntro eínai edó.", ipa: "to ˈðendɾo ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "δέντρο", base: "δέντρο", reading: "déntro" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το δέντρο;", reading: "Poú eínai to déntro;", ipa: "pu ˈine to ˈðendɾo", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "δέντρο", base: "δέντρο", reading: "déntro" }] }
+  - id: "el-0401"
+    target: "γράμμα"
+    reading: "grámma"
+    ipa: "ˈɣɾama"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B3%CF%81%CE%AC%CE%BC%CE%BC%CE%B1" }
+    bases: "self"
+    examples:
+      - { target: "Το γράμμα είναι εδώ.", reading: "To grámma eínai edó.", ipa: "to ˈɣɾama ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "γράμμα", base: "γράμμα", reading: "grámma" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το γράμμα;", reading: "Poú eínai to grámma;", ipa: "pu ˈine to ˈɣɾama", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "γράμμα", base: "γράμμα", reading: "grámma" }] }
+  - id: "el-0402"
+    target: "χαρά"
+    reading: "chará"
+    ipa: "xaˈɾa"
+    pos: "noun"
+    gender: "f"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CF%87%CE%B1%CF%81%CE%AC" }
+    bases: "self"
+    examples:
+      - { target: "Τι χαρά!", reading: "Ti chará!", ipa: "ti xaˈɾa", bases: [{ word: "Τι", base: "τι", reading: "ti" }, { word: "χαρά", base: "χαρά", reading: "chará" }] }
+      - { target: "Με χαρά!", reading: "Me chará!", ipa: "me xaˈɾa", bases: [{ word: "Με", base: "με", reading: "me" }, { word: "χαρά", base: "χαρά", reading: "chará" }] }
+  - id: "el-0403"
+    target: "χιόνι"
+    reading: "chióni"
+    ipa: "ˈxjoni"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CF%87%CE%B9%CF%8C%CE%BD%CE%B9" }
+    bases: "self"
+    examples:
+      - { target: "Το χιόνι είναι εδώ.", reading: "To chióni eínai edó.", ipa: "to ˈxjoni ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "χιόνι", base: "χιόνι", reading: "chióni" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το χιόνι;", reading: "Poú eínai to chióni;", ipa: "pu ˈine to ˈxjoni", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "χιόνι", base: "χιόνι", reading: "chióni" }] }
+  - id: "el-0404"
+    target: "ουρανός"
+    reading: "ouranós"
+    ipa: "uɾaˈnos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BF%CF%85%CF%81%CE%B1%CE%BD%CF%8C%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Ο ουρανός είναι εδώ.", reading: "O ouranós eínai edó.", ipa: "o uɾaˈnos ˈine eˈðo", bases: [{ word: "Ο", base: "ο", reading: "o" }, { word: "ουρανός", base: "ουρανός", reading: "ouranós" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι ο ουρανός;", reading: "Poú eínai o ouranós;", ipa: "pu ˈine o uɾaˈnos", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "ο", base: "ο", reading: "o" }, { word: "ουρανός", base: "ουρανός", reading: "ouranós" }] }
+  - id: "el-0405"
+    target: "καιρός"
+    reading: "kairós"
+    ipa: "keˈɾos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BA%CE%B1%CE%B9%CF%81%CF%8C%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Τι καιρός!", reading: "Ti kairós!", ipa: "ti keˈɾos", bases: [{ word: "Τι", base: "τι", reading: "ti" }, { word: "καιρός", base: "καιρός", reading: "kairós" }] }
+      - { target: "Πώς είναι ο καιρός;", reading: "Pós eínai o kairós;", ipa: "pos ˈine o keˈɾos", bases: [{ word: "Πώς", base: "πώς", reading: "pós" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "ο", base: "ο", reading: "o" }, { word: "καιρός", base: "καιρός", reading: "kairós" }] }
+  - id: "el-0406"
+    target: "πείνα"
+    reading: "peína"
+    ipa: "ˈpina"
+    pos: "noun"
+    gender: "f"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CF%80%CE%B5%CE%AF%CE%BD%CE%B1" }
+    bases: "self"
+    examples:
+      - { target: "Η πείνα είναι εδώ.", reading: "I peína eínai edó.", ipa: "i ˈpina ˈine eˈðo", bases: [{ word: "Η", base: "ο", reading: "o" }, { word: "πείνα", base: "πείνα", reading: "peína" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι η πείνα;", reading: "Poú eínai i peína;", ipa: "pu ˈine i ˈpina", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "η", base: "ο", reading: "o" }, { word: "πείνα", base: "πείνα", reading: "peína" }] }
+  - id: "el-0407"
+    target: "γκάζι"
+    reading: "gázi"
+    ipa: "ˈɡazi"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B3%CE%BA%CE%AC%CE%B6%CE%B9" }
+    bases: "self"
+    examples:
+      - { target: "Το γκάζι είναι εδώ.", reading: "To gázi eínai edó.", ipa: "to ˈɡazi ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "γκάζι", base: "γκάζι", reading: "gázi" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το γκάζι;", reading: "Poú eínai to gázi;", ipa: "pu ˈine to ˈɡazi", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "γκάζι", base: "γκάζι", reading: "gázi" }] }
+  - id: "el-0408"
+    target: "τζάκι"
+    reading: "tzáki"
+    ipa: "ˈdzaki"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CF%84%CE%B6%CE%AC%CE%BA%CE%B9" }
+    bases: "self"
+    examples:
+      - { target: "Το τζάκι είναι εδώ.", reading: "To tzáki eínai edó.", ipa: "to ˈdzaki ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "τζάκι", base: "τζάκι", reading: "tzáki" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το τζάκι;", reading: "Poú eínai to tzáki;", ipa: "pu ˈine to ˈdzaki", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "τζάκι", base: "τζάκι", reading: "tzáki" }] }
+  - id: "el-0409"
+    target: "ψυχή"
+    reading: "psychí"
+    ipa: "psiˈxi"
+    pos: "noun"
+    gender: "f"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CF%88%CF%85%CF%87%CE%AE" }
+    bases: "self"
+    examples:
+      - { target: "Καλή ψυχή.", reading: "Kalí psychí.", ipa: "kaˈli psiˈxi", bases: [{ word: "Καλή", ref: "el-0009" }, { word: "ψυχή", base: "ψυχή", reading: "psychí" }] }
+      - { target: "Η ψυχή μου.", reading: "I psychí mou.", ipa: "i psiˈxi mu", bases: [{ word: "Η", base: "ο", reading: "o" }, { word: "ψυχή", base: "ψυχή", reading: "psychí" }, { word: "μου", ref: "el-0006" }] }
+  - id: "el-0410"
+    target: "ξένος"
+    reading: "xénos"
+    ipa: "ˈksenos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BE%CE%AD%CE%BD%CE%BF%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Ένας ξένος είναι εδώ.", reading: "Énas xénos eínai edó.", ipa: "ˈenas ˈksenos ˈine eˈðo", bases: [{ word: "Ένας", base: "ένας", reading: "énas" }, { word: "ξένος", base: "ξένος", reading: "xénos" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Δεν είμαι ξένος.", reading: "Den eímai xénos.", ipa: "ðen ˈime ˈksenos", bases: [{ word: "Δεν", base: "δεν", reading: "den" }, { word: "είμαι", base: "είμαι", reading: "eímai" }, { word: "ξένος", base: "ξένος", reading: "xénos" }] }
+  - id: "el-0411"
+    target: "ζέστη"
+    reading: "zésti"
+    ipa: "ˈzesti"
+    pos: "noun"
+    gender: "f"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B6%CE%AD%CF%83%CF%84%CE%B7" }
+    bases: "self"
+    examples:
+      - { target: "Τι ζέστη!", reading: "Ti zésti!", ipa: "ti ˈzesti", bases: [{ word: "Τι", base: "τι", reading: "ti" }, { word: "ζέστη", base: "ζέστη", reading: "zésti" }] }
+      - { target: "Έχει ζέστη.", reading: "Échei zésti.", ipa: "ˈexi ˈzesti", bases: [{ word: "Έχει", base: "έχω", reading: "écho" }, { word: "ζέστη", base: "ζέστη", reading: "zésti" }] }
+  - id: "el-0412"
+    target: "κόσμος"
+    reading: "kósmos"
+    ipa: "ˈkozmos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BA%CF%8C%CF%83%CE%BC%CE%BF%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Τι κόσμος!", reading: "Ti kósmos!", ipa: "ti ˈkozmos", bases: [{ word: "Τι", base: "τι", reading: "ti" }, { word: "κόσμος", base: "κόσμος", reading: "kósmos" }] }
+      - { target: "Πού είναι ο κόσμος;", reading: "Poú eínai o kósmos;", ipa: "pu ˈine o ˈkozmos", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "ο", base: "ο", reading: "o" }, { word: "κόσμος", base: "κόσμος", reading: "kósmos" }] }
+  - id: "el-0413"
+    target: "ήλιος"
+    reading: "ílios"
+    ipa: "ˈiljos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%AE%CE%BB%CE%B9%CE%BF%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Ο ήλιος είναι εδώ.", reading: "O ílios eínai edó.", ipa: "o ˈiljos ˈine eˈðo", bases: [{ word: "Ο", base: "ο", reading: "o" }, { word: "ήλιος", base: "ήλιος", reading: "ílios" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι ο ήλιος;", reading: "Poú eínai o ílios;", ipa: "pu ˈine o ˈiljos", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "ο", base: "ο", reading: "o" }, { word: "ήλιος", base: "ήλιος", reading: "ílios" }] }
+  - id: "el-0414"
+    target: "ανάγκη"
+    reading: "anágki"
+    ipa: "aˈnaŋɡi"
+    pos: "noun"
+    gender: "f"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B1%CE%BD%CE%AC%CE%B3%CE%BA%CE%B7" }
+    bases: "self"
+    examples:
+      - { target: "Έχω ανάγκη από νερό.", reading: "Écho anágki apó neró.", ipa: "ˈexo aˈnaŋɡi aˈpo neˈɾo", bases: [{ word: "Έχω", base: "έχω", reading: "écho" }, { word: "ανάγκη", base: "ανάγκη", reading: "anágki" }, { word: "από", base: "από", reading: "apó" }, { word: "νερό", ref: "el-0008" }] }
+      - { target: "Έχω ανάγκη από βοήθεια.", reading: "Écho anágki apó voítheia.", ipa: "ˈexo aˈnaŋɡi aˈpo voˈiθja", bases: [{ word: "Έχω", base: "έχω", reading: "écho" }, { word: "ανάγκη", base: "ανάγκη", reading: "anágki" }, { word: "από", base: "από", reading: "apó" }, { word: "βοήθεια", base: "βοήθεια", reading: "voítheia" }] }
+  - id: "el-0415"
+    target: "λάθος"
+    reading: "láthos"
+    ipa: "ˈlaθos"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BB%CE%AC%CE%B8%CE%BF%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι λάθος.", reading: "Aftó eínai láthos.", ipa: "afˈto ˈine ˈlaθos", bases: [{ word: "Αυτό", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "λάθος", base: "λάθος", reading: "láthos" }] }
+      - { target: "Πού είναι το λάθος;", reading: "Poú eínai to láthos;", ipa: "pu ˈine to ˈlaθos", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "λάθος", base: "λάθος", reading: "láthos" }] }
+  - id: "el-0416"
+    target: "ρόδι"
+    reading: "ródi"
+    ipa: "ˈɾoði"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CF%81%CF%8C%CE%B4%CE%B9" }
+    bases: "self"
+    examples:
+      - { target: "Το ρόδι είναι εδώ.", reading: "To ródi eínai edó.", ipa: "to ˈɾoði ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "ρόδι", base: "ρόδι", reading: "ródi" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το ρόδι;", reading: "Poú eínai to ródi;", ipa: "pu ˈine to ˈɾoði", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "ρόδι", base: "ρόδι", reading: "ródi" }] }
+  - id: "el-0417"
+    target: "αγόρι"
+    reading: "agóri"
+    ipa: "aˈɣoɾi"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B1%CE%B3%CF%8C%CF%81%CE%B9" }
+    bases: "self"
+    examples:
+      - { target: "Το αγόρι είναι εδώ.", reading: "To agóri eínai edó.", ipa: "to aˈɣoɾi ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "αγόρι", base: "αγόρι", reading: "agóri" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το αγόρι;", reading: "Poú eínai to agóri;", ipa: "pu ˈine to aˈɣoɾi", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "αγόρι", base: "αγόρι", reading: "agóri" }] }
+  - id: "el-0418"
+    target: "κορίτσι"
+    reading: "korítsi"
+    ipa: "koˈɾitsi"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BA%CE%BF%CF%81%CE%AF%CF%84%CF%83%CE%B9" }
+    bases: "self"
+    examples:
+      - { target: "Το κορίτσι είναι εδώ.", reading: "To korítsi eínai edó.", ipa: "to koˈɾitsi ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "κορίτσι", base: "κορίτσι", reading: "korítsi" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το κορίτσι;", reading: "Poú eínai to korítsi;", ipa: "pu ˈine to koˈɾitsi", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "κορίτσι", base: "κορίτσι", reading: "korítsi" }] }
+  - id: "el-0419"
+    target: "κύριος"
+    reading: "kýrios"
+    ipa: "ˈkiɾjos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BA%CF%8D%CF%81%CE%B9%CE%BF%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Καλημέρα, κύριε.", reading: "Kaliméra, kýrie.", ipa: "kaliˈmeɾa ˈkiɾje", bases: [{ word: "Καλημέρα", base: "καλημέρα", reading: "kaliméra" }, { word: "κύριε", base: "κύριος", reading: "kýrios" }] }
+      - { target: "Ο κύριος είναι εδώ.", reading: "O kýrios eínai edó.", ipa: "o ˈkiɾjos ˈine eˈðo", bases: [{ word: "Ο", base: "ο", reading: "o" }, { word: "κύριος", base: "κύριος", reading: "kýrios" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+  - id: "el-0420"
+    target: "μπράβο"
+    reading: "brávo"
+    ipa: "ˈbɾavo"
+    pos: "other"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BC%CF%80%CF%81%CE%AC%CE%B2%CE%BF" }
+    bases: "self"
+    examples:
+      - { target: "Μπράβο!", reading: "Brávo!", ipa: "ˈbɾavo", bases: [{ word: "Μπράβο", base: "μπράβο", reading: "brávo" }] }
+      - { target: "Μπράβο σου!", reading: "Brávo sou!", ipa: "ˈbɾavo su", bases: [{ word: "Μπράβο", base: "μπράβο", reading: "brávo" }, { word: "σου", ref: "el-0007" }] }
+  - id: "el-0421"
+    target: "ντροπή"
+    reading: "dropí"
+    ipa: "dɾoˈpi"
+    pos: "noun"
+    gender: "f"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BD%CF%84%CF%81%CE%BF%CF%80%CE%AE" }
+    bases: "self"
+    examples:
+      - { target: "Τι ντροπή!", reading: "Ti dropí!", ipa: "ti dɾoˈpi", bases: [{ word: "Τι", base: "τι", reading: "ti" }, { word: "ντροπή", base: "ντροπή", reading: "dropí" }] }
+      - { target: "Ντροπή σου!", reading: "Dropí sou!", ipa: "dɾoˈpi su", bases: [{ word: "Ντροπή", base: "ντροπή", reading: "dropí" }, { word: "σου", ref: "el-0007" }] }
+  - id: "el-0422"
+    target: "ευρώ"
+    reading: "evró"
+    ipa: "eˈvɾo"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B5%CF%85%CF%81%CF%8E" }
+    bases: "self"
+    examples:
+      - { target: "Ένα ευρώ.", reading: "Éna evró.", ipa: "ˈena eˈvɾo", bases: [{ word: "Ένα", base: "ένας", reading: "énas" }, { word: "ευρώ", base: "ευρώ", reading: "evró" }] }
+      - { target: "Ένα ευρώ, παρακαλώ.", reading: "Éna evró, parakaló.", ipa: "ˈena eˈvɾo paɾakaˈlo", bases: [{ word: "Ένα", base: "ένας", reading: "énas" }, { word: "ευρώ", base: "ευρώ", reading: "evró" }, { word: "παρακαλώ", ref: "el-0005" }] }
+  - id: "el-0423"
+    target: "βιβλίο"
+    reading: "vivlío"
+    ipa: "viˈvlio"
+    pos: "noun"
+    gender: "n"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B2%CE%B9%CE%B2%CE%BB%CE%AF%CE%BF" }
+    bases: "self"
+    examples:
+      - { target: "Το βιβλίο είναι εδώ.", reading: "To vivlío eínai edó.", ipa: "to viˈvlio ˈine eˈðo", bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "βιβλίο", base: "βιβλίο", reading: "vivlío" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι το βιβλίο;", reading: "Poú eínai to vivlío;", ipa: "pu ˈine to viˈvlio", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "το", base: "ο", reading: "o" }, { word: "βιβλίο", base: "βιβλίο", reading: "vivlío" }] }
+  - id: "el-0424"
+    target: "ευτυχία"
+    reading: "eftychía"
+    ipa: "eftiˈxia"
+    pos: "noun"
+    gender: "f"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%B5%CF%85%CF%84%CF%85%CF%87%CE%AF%CE%B1" }
+    bases: "self"
+    examples:
+      - { target: "Τι ευτυχία!", reading: "Ti eftychía!", ipa: "ti eftiˈxia", bases: [{ word: "Τι", base: "τι", reading: "ti" }, { word: "ευτυχία", base: "ευτυχία", reading: "eftychía" }] }
+      - { target: "Η ευτυχία είναι εδώ.", reading: "I eftychía eínai edó.", ipa: "i eftiˈxia ˈine eˈðo", bases: [{ word: "Η", base: "ο", reading: "o" }, { word: "ευτυχία", base: "ευτυχία", reading: "eftychía" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+  - id: "el-0425"
+    target: "νόμος"
+    reading: "nómos"
+    ipa: "ˈnomos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BD%CF%8C%CE%BC%CE%BF%CF%82" }
+      - { id: "pair", kind: "pair", ref: "el-0426", source: "https://en.wiktionary.org/wiki/%CE%BD%CF%8C%CE%BC%CE%BF%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Ο νόμος είναι εδώ.", reading: "O nómos eínai edó.", ipa: "o ˈnomos ˈine eˈðo", bases: [{ word: "Ο", base: "ο", reading: "o" }, { word: "νόμος", base: "νόμος", reading: "nómos" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι ο νόμος;", reading: "Poú eínai o nómos;", ipa: "pu ˈine o ˈnomos", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "ο", base: "ο", reading: "o" }, { word: "νόμος", base: "νόμος", reading: "nómos" }] }
+  - id: "el-0426"
+    target: "νομός"
+    reading: "nomós"
+    ipa: "noˈmos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BD%CE%BF%CE%BC%CF%8C%CF%82" }
+      - { id: "pair", kind: "pair", ref: "el-0425", source: "https://en.wiktionary.org/wiki/%CE%BD%CE%BF%CE%BC%CF%8C%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Ο νομός είναι εδώ.", reading: "O nomós eínai edó.", ipa: "o noˈmos ˈine eˈðo", bases: [{ word: "Ο", base: "ο", reading: "o" }, { word: "νομός", base: "νομός", reading: "nomós" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι ο νομός;", reading: "Poú eínai o nomós;", ipa: "pu ˈine o noˈmos", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "ο", base: "ο", reading: "o" }, { word: "νομός", base: "νομός", reading: "nomós" }] }
+  - id: "el-0427"
+    target: "όρος"
+    reading: "óros"
+    ipa: "ˈoɾos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CF%8C%CF%81%CE%BF%CF%82" }
+      - { id: "pair", kind: "pair", ref: "el-0428", source: "https://en.wiktionary.org/wiki/%CF%8C%CF%81%CE%BF%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Ο όρος είναι εδώ.", reading: "O óros eínai edó.", ipa: "o ˈoɾos ˈine eˈðo", bases: [{ word: "Ο", base: "ο", reading: "o" }, { word: "όρος", base: "όρος", reading: "óros" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι ο όρος;", reading: "Poú eínai o óros;", ipa: "pu ˈine o ˈoɾos", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "ο", base: "ο", reading: "o" }, { word: "όρος", base: "όρος", reading: "óros" }] }
+  - id: "el-0428"
+    target: "ορός"
+    reading: "orós"
+    ipa: "oˈɾos"
+    pos: "noun"
+    gender: "m"
+    tags: ["sound-differences"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%CE%BF%CF%81%CF%8C%CF%82" }
+      - { id: "pair", kind: "pair", ref: "el-0427", source: "https://en.wiktionary.org/wiki/%CE%BF%CF%81%CF%8C%CF%82" }
+    bases: "self"
+    examples:
+      - { target: "Ο ορός είναι εδώ.", reading: "O orós eínai edó.", ipa: "o oˈɾos ˈine eˈðo", bases: [{ word: "Ο", base: "ο", reading: "o" }, { word: "ορός", base: "ορός", reading: "orós" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "εδώ", base: "εδώ", reading: "edó" }] }
+      - { target: "Πού είναι ο ορός;", reading: "Poú eínai o orós;", ipa: "pu ˈine o oˈɾos", bases: [{ word: "Πού", base: "πού", reading: "poú" }, { word: "είναι", base: "είμαι", reading: "eímai" }, { word: "ο", base: "ο", reading: "o" }, { word: "ορός", base: "ορός", reading: "orós" }] }
