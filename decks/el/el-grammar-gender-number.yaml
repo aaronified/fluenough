@@ -1,0 +1,193 @@
+# Unit 14 grammar topic gender-number. Sources read: en.wikipedia.org 'Modern Greek grammar' (declension tables of masculine, feminine and neuter nouns: nominative plural -ες, -οι, -ες, -ά, -ιά, -η) and the en.wiktionary.org entries of the fourteen nouns (inflection tables, nominative singular and plural). Rows use only nouns the family unit teaches.
+schema: 1
+id: "el-grammar-gender-number"
+part: "core"
+kind: "grammar"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["singular", "plural"]
+  entries:
+    - lemma: "πατέρας"
+      key: "pateras"
+      reading: "patéras"
+      ipa: "paˈteɾas"
+      forms:
+        "singular": "ο πατέρας"
+        "plural": "οι πατέρες"
+      readings:
+        "singular": "o patéras"
+        "plural": "oi patéres"
+      ipas:
+        "singular": "o paˈteɾas"
+        "plural": "i paˈteɾes"
+    - lemma: "αδελφός"
+      key: "adelfos"
+      reading: "adelfós"
+      ipa: "aðelˈfos"
+      forms:
+        "singular": "ο αδελφός"
+        "plural": "οι αδελφοί"
+      readings:
+        "singular": "o adelfós"
+        "plural": "oi adelfoí"
+      ipas:
+        "singular": "o aðelˈfos"
+        "plural": "i aðelˈfi"
+    - lemma: "γιος"
+      key: "yios"
+      reading: "yios"
+      ipa: "ʝos"
+      forms:
+        "singular": "ο γιος"
+        "plural": "οι γιοι"
+      readings:
+        "singular": "o yios"
+        "plural": "oi yioi"
+      ipas:
+        "singular": "o ʝos"
+        "plural": "i ʝi"
+    - lemma: "άντρας"
+      key: "antras"
+      reading: "ántras"
+      ipa: "ˈandɾas"
+      forms:
+        "singular": "ο άντρας"
+        "plural": "οι άντρες"
+      readings:
+        "singular": "o ántras"
+        "plural": "oi ántres"
+      ipas:
+        "singular": "o ˈandɾas"
+        "plural": "i ˈandɾes"
+    - lemma: "παππούς"
+      key: "pappous"
+      reading: "pappoús"
+      ipa: "paˈpus"
+      forms:
+        "singular": "ο παππούς"
+        "plural": "οι παππούδες"
+      readings:
+        "singular": "o pappoús"
+        "plural": "oi pappoúdes"
+      ipas:
+        "singular": "o paˈpus"
+        "plural": "i paˈpuðes"
+    - lemma: "μητέρα"
+      key: "mitera"
+      reading: "mitéra"
+      ipa: "miˈteɾa"
+      forms:
+        "singular": "η μητέρα"
+        "plural": "οι μητέρες"
+      readings:
+        "singular": "i mitéra"
+        "plural": "oi mitéres"
+      ipas:
+        "singular": "i miˈteɾa"
+        "plural": "i miˈteɾes"
+    - lemma: "αδελφή"
+      key: "adelfi"
+      reading: "adelfí"
+      ipa: "aðelˈfi"
+      forms:
+        "singular": "η αδελφή"
+        "plural": "οι αδελφές"
+      readings:
+        "singular": "i adelfí"
+        "plural": "oi adelfés"
+      ipas:
+        "singular": "i aðelˈfi"
+        "plural": "i aðelˈfes"
+    - lemma: "κόρη"
+      key: "kori"
+      reading: "kóri"
+      ipa: "ˈkoɾi"
+      forms:
+        "singular": "η κόρη"
+        "plural": "οι κόρες"
+      readings:
+        "singular": "i kóri"
+        "plural": "oi kóres"
+      ipas:
+        "singular": "i ˈkoɾi"
+        "plural": "i ˈkoɾes"
+    - lemma: "γυναίκα"
+      key: "yynaika"
+      reading: "yynaíka"
+      ipa: "ʝiˈneka"
+      forms:
+        "singular": "η γυναίκα"
+        "plural": "οι γυναίκες"
+      readings:
+        "singular": "i yynaíka"
+        "plural": "oi yynaíkes"
+      ipas:
+        "singular": "i ʝiˈneka"
+        "plural": "i ʝiˈnekes"
+    - lemma: "γιαγιά"
+      key: "yiayia"
+      reading: "yiayiá"
+      ipa: "ʝaˈʝa"
+      forms:
+        "singular": "η γιαγιά"
+        "plural": "οι γιαγιάδες"
+      readings:
+        "singular": "i yiayiá"
+        "plural": "oi yiayiádes"
+      ipas:
+        "singular": "i ʝaˈʝa"
+        "plural": "i ʝaˈʝaðes"
+    - lemma: "οικογένεια"
+      key: "oikoyeneia"
+      reading: "oikoyéneia"
+      ipa: "ikoˈʝenja"
+      forms:
+        "singular": "η οικογένεια"
+        "plural": "οι οικογένειες"
+      readings:
+        "singular": "i oikoyéneia"
+        "plural": "oi oikoyéneies"
+      ipas:
+        "singular": "i ikoˈʝenja"
+        "plural": "i ikoˈʝenjes"
+    - lemma: "παιδί"
+      key: "paidi"
+      reading: "paidí"
+      ipa: "peˈði"
+      forms:
+        "singular": "το παιδί"
+        "plural": "τα παιδιά"
+      readings:
+        "singular": "to paidí"
+        "plural": "ta paidiá"
+      ipas:
+        "singular": "to peˈði"
+        "plural": "ta peˈðja"
+    - lemma: "μωρό"
+      key: "moro"
+      reading: "moró"
+      ipa: "moˈɾo"
+      forms:
+        "singular": "το μωρό"
+        "plural": "τα μωρά"
+      readings:
+        "singular": "to moró"
+        "plural": "ta morá"
+      ipas:
+        "singular": "to moˈɾo"
+        "plural": "ta moˈɾa"
+    - lemma: "μέλος"
+      key: "melos"
+      reading: "mélos"
+      ipa: "ˈmelos"
+      forms:
+        "singular": "το μέλος"
+        "plural": "τα μέλη"
+      readings:
+        "singular": "to mélos"
+        "plural": "ta méli"
+      ipas:
+        "singular": "to ˈmelos"
+        "plural": "ta ˈmeli"

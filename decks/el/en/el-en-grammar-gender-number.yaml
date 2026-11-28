@@ -1,0 +1,31 @@
+schema: 1
+id: "el-en-grammar-gender-number"
+kind: "layer"
+core: "el-grammar-gender-number"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Singular and plural of nouns"
+license: "CC-BY-SA-4.0"
+description: "Fourteen family words in the singular and the plural, with the article. The plural ending depends on the gender and the ending of the noun, and the plural article is ⟦οι⟧ for masculine and feminine and ⟦τα⟧ for neuter."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Singular and plural of nouns"
+  slot_name: "number"
+  slots:
+    "singular": "the singular, with ο (o), η (i) or το (to)"
+    "plural": "the plural, with οι (oi) or τα (ta)"
+  entries:
+    "pateras": "father (masculine in -ας: plural -ες)"
+    "adelfos": "brother (masculine in -ος: plural -οι)"
+    "yios": "son (masculine in -ος: plural -οι)"
+    "antras": "man (masculine in -ας: plural -ες)"
+    "pappous": "grandfather (masculine in -ούς: plural -ούδες)"
+    "mitera": "mother (feminine in -α: plural -ες)"
+    "adelfi": "sister (feminine in -ή: plural -ές)"
+    "kori": "daughter (feminine in -η: plural -ες)"
+    "yynaika": "woman; wife (feminine in -α: plural -ες)"
+    "yiayia": "grandmother (feminine in -ά: plural -άδες)"
+    "oikoyeneia": "family (feminine in -εια: plural -ειες)"
+    "paidi": "child (neuter in -ί: plural -ιά)"
+    "moro": "baby (neuter in -ό: plural -ά)"
+    "melos": "member (neuter in -ος: plural -η)"
+  notes: "The plural article is οι (oi) for masculine and feminine nouns and τα (ta) for neuter ones, and the noun takes a plural ending. Masculine nouns in -ος (-os) take -οι (-oi): ο αδελφός (o adelfós), οι αδελφοί (oi adelfoí). Masculine nouns in -ας (-as) take -ες (-es): ο πατέρας (o patéras), οι πατέρες (oi patéres). Feminine nouns take -ες (-es): η μητέρα (i mitéra), οι μητέρες (oi mitéres). Neuter nouns in -ο (-o) take -α (-a), as μωρό (moró) becomes μωρά (morá), and those in -ί (-í) take -ιά (-iá), as παιδί (paidí) becomes παιδιά (paidiá); in both the stress stays on the ending. Some nouns lengthen their stem in the plural: γιαγιά (yiayiá) becomes γιαγιάδες (yiayiádes) and παππούς (pappoús) becomes παππούδες (pappoúdes), with a δ added. The neuter μέλος (mélos) has the plural μέλη (méli): its ending changes and the stress stays on the first syllable."
