@@ -1,0 +1,505 @@
+schema: 1
+id: "el-places"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "el-3300"
+    target: "σχολείο"
+    reading: "scholeío"
+    ipa: "sxoˈlio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το σχολείο.", reading: "aftó íne to scholeío.", ipa: "afˈto ˈine to sxoˈlio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "σχολείο", base: "σχολείο", reading: "scholeío" }] }
+  - id: "el-3301"
+    target: "νοσοκομείο"
+    reading: "nosokomeío"
+    ipa: "nosokoˈmio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το νοσοκομείο.", reading: "aftó íne to nosokomeío.", ipa: "afˈto ˈine to nosokoˈmio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "νοσοκομείο", base: "νοσοκομείο", reading: "nosokomeío" }] }
+  - id: "el-3302"
+    target: "φαρμακείο"
+    reading: "farmakeío"
+    ipa: "faɾmaˈkio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το φαρμακείο.", reading: "aftó íne to farmakeío.", ipa: "afˈto ˈine to faɾmaˈkio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "φαρμακείο", base: "φαρμακείο", reading: "farmakeío" }] }
+  - id: "el-3303"
+    target: "τράπεζα"
+    reading: "trápeza"
+    ipa: "ˈtɾapeza"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η τράπεζα.", reading: "aftí íne i trápeza.", ipa: "afˈti ˈine i ˈtɾapeza", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "τράπεζα", base: "τράπεζα", reading: "trápeza" }] }
+  - id: "el-3304"
+    target: "εκκλησία"
+    reading: "ekklisía"
+    ipa: "ekliˈsia"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η εκκλησία.", reading: "aftí íne i ekklisía.", ipa: "afˈti ˈine i ekliˈsia", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "εκκλησία", base: "εκκλησία", reading: "ekklisía" }] }
+  - id: "el-3305"
+    target: "πάρκο"
+    reading: "párko"
+    ipa: "ˈpaɾko"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πάρκο.", reading: "aftó íne to párko.", ipa: "afˈto ˈine to ˈpaɾko", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "πάρκο", base: "πάρκο", reading: "párko" }] }
+  - id: "el-3306"
+    target: "θάλασσα"
+    reading: "thálassa"
+    ipa: "ˈθalasa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η θάλασσα.", reading: "aftí íne i thálassa.", ipa: "afˈti ˈine i ˈθalasa", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "θάλασσα", base: "θάλασσα", reading: "thálassa" }] }
+  - id: "el-3307"
+    target: "βουνό"
+    reading: "vounó"
+    ipa: "vuˈno"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το βουνό.", reading: "aftó íne to vounó.", ipa: "afˈto ˈine to vuˈno", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "βουνό", base: "βουνό", reading: "vounó" }] }
+  - id: "el-3308"
+    target: "λίμνη"
+    reading: "límni"
+    ipa: "ˈlimni"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η λίμνη.", reading: "aftí íne i límni.", ipa: "afˈti ˈine i ˈlimni", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "λίμνη", base: "λίμνη", reading: "límni" }] }
+  - id: "el-3309"
+    target: "ποτάμι"
+    reading: "potámi"
+    ipa: "poˈtami"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ποτάμι.", reading: "aftó íne to potámi.", ipa: "afˈto ˈine to poˈtami", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "ποτάμι", base: "ποτάμι", reading: "potámi" }] }
+  - id: "el-3310"
+    target: "δάσος"
+    reading: "dásos"
+    ipa: "ˈðasos"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το δάσος.", reading: "aftó íne to dásos.", ipa: "afˈto ˈine to ˈðasos", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "δάσος", base: "δάσος", reading: "dásos" }] }
+  - id: "el-3311"
+    target: "παραλία"
+    reading: "paralía"
+    ipa: "paɾaˈlia"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η παραλία.", reading: "aftí íne i paralía.", ipa: "afˈti ˈine i paɾaˈlia", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "παραλία", base: "παραλία", reading: "paralía" }] }
+  - id: "el-3312"
+    target: "χωριό"
+    reading: "chorió"
+    ipa: "xoɾˈjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το χωριό.", reading: "aftó íne to chorió.", ipa: "afˈto ˈine to xoɾˈjo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "χωριό", base: "χωριό", reading: "chorió" }] }
+  - id: "el-3313"
+    target: "νησί"
+    reading: "nisí"
+    ipa: "niˈsi"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το νησί.", reading: "aftó íne to nisí.", ipa: "afˈto ˈine to niˈsi", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "νησί", base: "νησί", reading: "nisí" }] }
+  - id: "el-3314"
+    target: "θέατρο"
+    reading: "théatro"
+    ipa: "ˈθeatɾo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το θέατρο.", reading: "aftó íne to théatro.", ipa: "afˈto ˈine to ˈθeatɾo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "θέατρο", base: "θέατρο", reading: "théatro" }] }
+  - id: "el-3315"
+    target: "σινεμά"
+    reading: "sinemá"
+    ipa: "sineˈma"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το σινεμά.", reading: "aftó íne to sinemá.", ipa: "afˈto ˈine to sineˈma", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "σινεμά", base: "σινεμά", reading: "sinemá" }] }
+  - id: "el-3316"
+    target: "μουσείο"
+    reading: "mousío"
+    ipa: "muˈsio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μουσείο.", reading: "aftó íne to mousío.", ipa: "afˈto ˈine to muˈsio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "μουσείο", base: "μουσείο", reading: "mousío" }] }
+  - id: "el-3317"
+    target: "βιβλιοθήκη"
+    reading: "vivliothíki"
+    ipa: "vivljoˈθiki"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η βιβλιοθήκη.", reading: "aftí íne i vivliothíki.", ipa: "afˈti ˈine i vivljoˈθiki", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "βιβλιοθήκη", base: "βιβλιοθήκη", reading: "vivliothíki" }] }
+  - id: "el-3318"
+    target: "καφενείο"
+    reading: "kafeneío"
+    ipa: "kafeˈnio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το καφενείο.", reading: "aftó íne to kafeneío.", ipa: "afˈto ˈine to kafeˈnio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "καφενείο", base: "καφενείο", reading: "kafeneío" }] }
+  - id: "el-3319"
+    target: "καφετέρια"
+    reading: "kafetería"
+    ipa: "kafeˈteɾja"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η καφετέρια.", reading: "aftí íne i kafetería.", ipa: "afˈti ˈine i kafeˈteɾja", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "καφετέρια", base: "καφετέρια", reading: "kafetería" }] }
+  - id: "el-3320"
+    target: "εστιατόριο"
+    reading: "estiatório"
+    ipa: "estjaˈtoɾjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το εστιατόριο.", reading: "aftó íne to estiatório.", ipa: "afˈto ˈine to estjaˈtoɾjo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "εστιατόριο", base: "εστιατόριο", reading: "estiatório" }] }
+  - id: "el-3321"
+    target: "ξενοδοχείο"
+    reading: "xenodochío"
+    ipa: "ksenoðoˈxio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ξενοδοχείο.", reading: "aftó íne to xenodochío.", ipa: "afˈto ˈine to ksenoðoˈxio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "ξενοδοχείο", base: "ξενοδοχείο", reading: "xenodochío" }] }
+  - id: "el-3322"
+    target: "ταβέρνα"
+    reading: "tavérna"
+    ipa: "taˈveɾna"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η ταβέρνα.", reading: "aftí íne i tavérna.", ipa: "afˈti ˈine i taˈveɾna", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "ταβέρνα", base: "ταβέρνα", reading: "tavérna" }] }
+  - id: "el-3323"
+    target: "μπαρ"
+    reading: "bar"
+    ipa: "baɾ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μπαρ.", reading: "aftó íne to bar.", ipa: "afˈto ˈine to baɾ", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "μπαρ", base: "μπαρ", reading: "bar" }] }
+  - id: "el-3324"
+    target: "ταχυδρομείο"
+    reading: "tachydromeío"
+    ipa: "taxiðɾoˈmio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ταχυδρομείο.", reading: "aftó íne to tachydromeío.", ipa: "afˈto ˈine to taxiðɾoˈmio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "ταχυδρομείο", base: "ταχυδρομείο", reading: "tachydromeío" }] }
+  - id: "el-3325"
+    target: "αστυνομία"
+    reading: "astynomía"
+    ipa: "astinoˈmia"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η αστυνομία.", reading: "aftí íne i astynomía.", ipa: "afˈti ˈine i astinoˈmia", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "αστυνομία", base: "αστυνομία", reading: "astynomía" }] }
+  - id: "el-3326"
+    target: "γήπεδο"
+    reading: "yípedo"
+    ipa: "ˈʝipeðo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το γήπεδο.", reading: "aftó íne to yípedo.", ipa: "afˈto ˈine to ˈʝipeðo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "γήπεδο", base: "γήπεδο", reading: "yípedo" }] }
+  - id: "el-3327"
+    target: "κτίριο"
+    reading: "ktírio"
+    ipa: "ˈktiɾjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κτίριο.", reading: "aftó íne to ktírio.", ipa: "afˈto ˈine to ˈktiɾjo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "κτίριο", base: "κτίριο", reading: "ktírio" }] }
+  - id: "el-3328"
+    target: "κήπος"
+    reading: "kípos"
+    ipa: "ˈkipos"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο κήπος.", reading: "aftós íne o kípos.", ipa: "afˈtos ˈine o ˈkipos", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "ο", base: "ο", reading: "o" }, { word: "κήπος", base: "κήπος", reading: "kípos" }] }
+  - id: "el-3329"
+    target: "αυλή"
+    reading: "avlí"
+    ipa: "aˈvli"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η αυλή.", reading: "aftí íne i avlí.", ipa: "afˈti ˈine i aˈvli", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "αυλή", base: "αυλή", reading: "avlí" }] }
+  - id: "el-3330"
+    target: "κάστρο"
+    reading: "kástro"
+    ipa: "ˈkastɾo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κάστρο.", reading: "aftó íne to kástro.", ipa: "afˈto ˈine to ˈkastɾo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "κάστρο", base: "κάστρο", reading: "kástro" }] }
+  - id: "el-3331"
+    target: "ναός"
+    reading: "naós"
+    ipa: "naˈos"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτός είναι ο ναός.", reading: "aftós íne o naós.", ipa: "afˈtos ˈine o naˈos", bases: [{ word: "Αυτός", base: "αυτός", reading: "aftós" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "ο", base: "ο", reading: "o" }, { word: "ναός", base: "ναός", reading: "naós" }] }
+  - id: "el-3332"
+    target: "έρημος"
+    reading: "éremos"
+    ipa: "ˈeɾimos"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η έρημος.", reading: "aftí íne i éremos.", ipa: "afˈti ˈine i ˈeɾimos", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "έρημος", base: "έρημος", reading: "éremos" }] }
+  - id: "el-3333"
+    target: "εργοστάσιο"
+    reading: "ergostásio"
+    ipa: "eɾɣoˈstasjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το εργοστάσιο.", reading: "aftó íne to ergostásio.", ipa: "afˈto ˈine to eɾɣoˈstasjo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "εργοστάσιο", base: "εργοστάσιο", reading: "ergostásio" }] }
+  - id: "el-3334"
+    target: "βιβλιοπωλείο"
+    reading: "vivliopoleío"
+    ipa: "vivljopoˈlio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το βιβλιοπωλείο.", reading: "aftó íne to vivliopoleío.", ipa: "afˈto ˈine to vivljopoˈlio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "βιβλιοπωλείο", base: "βιβλιοπωλείο", reading: "vivliopoleío" }] }
+  - id: "el-3335"
+    target: "κουρείο"
+    reading: "kourío"
+    ipa: "kuˈɾio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κουρείο.", reading: "aftó íne to kourío.", ipa: "afˈto ˈine to kuˈɾio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "κουρείο", base: "κουρείο", reading: "kourío" }] }
+  - id: "el-3336"
+    target: "κομμωτήριο"
+    reading: "kommotírio"
+    ipa: "komoˈtiɾjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το κομμωτήριο.", reading: "aftó íne to kommotírio.", ipa: "afˈto ˈine to komoˈtiɾjo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "κομμωτήριο", base: "κομμωτήριο", reading: "kommotírio" }] }
+  - id: "el-3337"
+    target: "λιμάνι"
+    reading: "limáni"
+    ipa: "liˈmani"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το λιμάνι.", reading: "aftó íne to limáni.", ipa: "afˈto ˈine to liˈmani", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "λιμάνι", base: "λιμάνι", reading: "limáni" }] }
+  - id: "el-3338"
+    target: "σπίτι"
+    reading: "spíti"
+    ipa: "ˈspiti"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το σπίτι.", reading: "aftó íne to spíti.", ipa: "afˈto ˈine to ˈspiti", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "σπίτι", base: "σπίτι", reading: "spíti" }] }
+  - id: "el-3339"
+    target: "μπακάλικο"
+    reading: "bakáliko"
+    ipa: "baˈkaliko"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το μπακάλικο.", reading: "aftó íne to bakáliko.", ipa: "afˈto ˈine to baˈkaliko", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "μπακάλικο", base: "μπακάλικο", reading: "bakáliko" }] }
+  - id: "el-3340"
+    target: "σχολή"
+    reading: "scholí"
+    ipa: "sxoˈli"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η σχολή.", reading: "aftí íne i scholí.", ipa: "afˈti ˈine i sxoˈli", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "σχολή", base: "σχολή", reading: "scholí" }] }
+  - id: "el-3341"
+    target: "πανεπιστήμιο"
+    reading: "panepistímio"
+    ipa: "panepiˈstimjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το πανεπιστήμιο.", reading: "aftó íne to panepistímio.", ipa: "afˈto ˈine to panepiˈstimjo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "πανεπιστήμιο", base: "πανεπιστήμιο", reading: "panepistímio" }] }
+  - id: "el-3342"
+    target: "γυμναστήριο"
+    reading: "gymnastírio"
+    ipa: "ʝimnaˈstiɾjo"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το γυμναστήριο.", reading: "aftó íne to gymnastírio.", ipa: "afˈto ˈine to ʝimnaˈstiɾjo", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "γυμναστήριο", base: "γυμναστήριο", reading: "gymnastírio" }] }
+  - id: "el-3343"
+    target: "ιατρείο"
+    reading: "iatrío"
+    ipa: "jaˈtɾio"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το ιατρείο.", reading: "aftó íne to iatrío.", ipa: "afˈto ˈine to jaˈtɾio", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "ιατρείο", base: "ιατρείο", reading: "iatrío" }] }
+  - id: "el-3344"
+    target: "κλινική"
+    reading: "klinikí"
+    ipa: "kliniˈki"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτή είναι η κλινική.", reading: "aftí íne i klinikí.", ipa: "afˈti ˈine i kliniˈki", bases: [{ word: "Αυτή", base: "αυτή", reading: "aftí" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "η", base: "η", reading: "i" }, { word: "κλινική", base: "κλινική", reading: "klinikí" }] }
