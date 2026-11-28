@@ -1,0 +1,259 @@
+schema: 1
+id: "it-en-time"
+kind: "layer"
+core: "it-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time words"
+license: "CC-BY-SA-4.0"
+description: "Words for time: today, tomorrow, now, the parts of the day, and the days, weeks, months and years. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-1930":
+    native: "today"
+    notes:
+      "n1": "Adverb; its form does not change."
+    examples:
+      "Oggi bevo molto.":
+        native: "I drink a lot today."
+      "Oggi sono stanco.":
+        native: "I am tired today."
+        bases:
+          "sono": "am"
+  "it-1931":
+    native: "tomorrow"
+    notes:
+      "n1": "Adverb; its form does not change."
+    examples:
+      "Domani compro una bicicletta.":
+        native: "Tomorrow I buy a bicycle."
+        bases:
+          "una": "a"
+      "Domani sono felice.":
+        native: "I am happy tomorrow."
+        bases:
+          "sono": "am"
+  "it-1932":
+    native: "yesterday"
+    notes:
+      "n1": "Adverb; its form does not change."
+    examples:
+      "Ieri ho bevuto molta acqua.":
+        native: "Yesterday I drank a lot of water."
+        bases:
+          "ho": "have"
+      "Ieri ho dormito.":
+        native: "I slept yesterday."
+        bases:
+          "ho": "have"
+  "it-1933":
+    native: "now"
+    notes:
+      "n1": "Adverb; its form does not change."
+    examples:
+      "Adesso mangio.":
+        native: "I am eating now."
+      "Adesso sono felice.":
+        native: "I am happy now."
+        bases:
+          "sono": "am"
+  "it-1934":
+    native: "hour"
+    notes:
+      "n1": "Feminine: l'ora, plural ore. The same spelling is also an adverb meaning now."
+    examples:
+      "Ho un'ora.":
+        native: "I have an hour."
+        bases:
+          "Ho": "have"
+          "un'ora": "an hour"
+      "Aspetto un'ora.":
+        native: "I wait an hour."
+        bases:
+          "un'ora": "an hour"
+  "it-1935":
+    native: "year"
+    notes:
+      "n1": "Masculine: l'anno, plural anni."
+    examples:
+      "Questo è un anno lungo.":
+        native: "This is a long year."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "un": "a"
+      "L'anno è lungo.":
+        native: "The year is long."
+        bases:
+          "L'anno": "the year"
+          "è": "is"
+  "it-1936":
+    native: "morning"
+    notes:
+      "n1": "Feminine: la mattina, plural mattine."
+    examples:
+      "Oggi è una bella mattina.":
+        native: "Today is a beautiful morning."
+        bases:
+          "è": "is"
+          "una": "a"
+      "La mattina è fredda.":
+        native: "The morning is cold."
+        bases:
+          "La": "the"
+          "è": "is"
+  "it-1937":
+    native: "morning"
+    notes:
+      "n1": "Masculine: il mattino, plural mattini."
+    examples:
+      "Il mattino è presto.":
+        native: "The morning is early."
+        bases:
+          "Il": "the"
+          "è": "is"
+      "Il mattino è caldo.":
+        native: "The morning is warm."
+        bases:
+          "Il": "the"
+          "è": "is"
+  "it-1938":
+    native: "evening"
+    notes:
+      "n1": "Feminine: la sera, plural sere."
+    examples:
+      "Questa sera è calda.":
+        native: "This evening is warm."
+        bases:
+          "Questa": "this"
+          "è": "is"
+      "La sera è lunga.":
+        native: "The evening is long."
+        bases:
+          "La": "the"
+          "è": "is"
+  "it-1939":
+    native: "night"
+    notes:
+      "n1": "Feminine: la notte, plural notti."
+    examples:
+      "La notte è fredda.":
+        native: "The night is cold."
+        bases:
+          "La": "the"
+          "è": "is"
+      "La notte è lunga.":
+        native: "The night is long."
+        bases:
+          "La": "the"
+          "è": "is"
+  "it-1940":
+    native: "day"
+    notes:
+      "n1": "Masculine: il giorno, plural giorni."
+    examples:
+      "Il giorno è lungo.":
+        native: "The day is long."
+        bases:
+          "Il": "the"
+          "è": "is"
+      "Il giorno è bello.":
+        native: "The day is nice."
+        bases:
+          "Il": "the"
+          "è": "is"
+  "it-1941":
+    native: "afternoon"
+    notes:
+      "n1": "Masculine: il pomeriggio, plural pomeriggi."
+    examples:
+      "Il pomeriggio è caldo.":
+        native: "The afternoon is hot."
+        bases:
+          "Il": "the"
+          "è": "is"
+      "Il pomeriggio è lungo.":
+        native: "The afternoon is long."
+        bases:
+          "Il": "the"
+          "è": "is"
+  "it-1942":
+    native: "week"
+    notes:
+      "n1": "Feminine: la settimana, plural settimane."
+    examples:
+      "Questa settimana è difficile.":
+        native: "This week is difficult."
+        bases:
+          "Questa": "this"
+          "è": "is"
+      "Questa settimana è lunga.":
+        native: "This week is long."
+        bases:
+          "Questa": "this"
+          "è": "is"
+  "it-1943":
+    native: "month"
+    notes:
+      "n1": "Masculine: il mese, plural mesi."
+    examples:
+      "Il mese è lungo.":
+        native: "The month is long."
+        bases:
+          "Il": "the"
+          "è": "is"
+      "Questo mese è molto caldo.":
+        native: "This month is very hot."
+        bases:
+          "Questo": "this"
+          "è": "is"
+  "it-1944":
+    native: "time"
+    notes:
+      "n1": "Masculine: il tempo, plural tempi."
+    examples:
+      "Ho poco tempo.":
+        native: "I have little time."
+        bases:
+          "Ho": "have"
+      "Ho tanto tempo.":
+        native: "I have a lot of time."
+        bases:
+          "Ho": "have"
+  "it-1945":
+    native: "this evening; tonight"
+    notes:
+      "n1": "Adverb; its form does not change."
+    examples:
+      "Stasera sono stanco.":
+        native: "I am tired tonight."
+        bases:
+          "sono": "am"
+      "Stasera bevo acqua.":
+        native: "I drink water tonight."
+  "it-1946":
+    native: "midday; noon"
+    notes:
+      "n1": "Masculine: il mezzogiorno, plural mezzogiorni."
+    examples:
+      "È mezzogiorno.":
+        native: "It is noon."
+        bases:
+          "È": "is"
+      "Il mezzogiorno è caldo.":
+        native: "Midday is hot."
+        bases:
+          "Il": "the"
+          "è": "is"
+  "it-1947":
+    native: "midnight"
+    notes:
+      "n1": "Feminine: la mezzanotte, plural mezzenotti."
+    examples:
+      "È mezzanotte.":
+        native: "It is midnight."
+        bases:
+          "È": "is"
+      "La mezzanotte è fredda.":
+        native: "Midnight is cold."
+        bases:
+          "La": "the"
+          "è": "is"
