@@ -2423,11 +2423,13 @@ class PolishTest(unittest.TestCase):
         self.check((("ciało", "ˈtɕawɔ"), ("dzień", "dʑɛɲ"),
                     ("siostra", "ˈɕɔstra"), ("zielony", "ʑɛˈlɔnɨ"),
                     ("rozumiem", "rɔˈzumjɛm"),
-                    ("angielski", "aŋˈɡʲɛlskʲi")))
+                    ("angielski", "aŋˈɡjɛlski")))
 
     def test_i_before_a_consonant_is_a_vowel(self):
-        self.check((("ci", "tɕi"), ("zima", "ˈʑima"), ("mi", "mʲi"),
-                    ("niski", "ˈɲiskʲi"), ("ich", "ix")))
+        self.check((("kilogram", "kiˈlɔɡram"), ("bilet", "ˈbilɛt"),
+                    ("kierunek", "kjɛˈrunɛk"), ("gips", "ɡips"),
+                    ("miło", "ˈmiwɔ"), ("mieć", "mjɛtɕ"), ("ci", "tɕi"), ("zima", "ˈʑima"), ("mi", "mi"),
+                    ("niski", "ˈɲiski"), ("ich", "ix")))
 
     def test_the_nasal_vowels_are_written_by_what_follows(self):
         self.check((("dziękuję", "dʑɛŋˈkujɛ"), ("wodę", "ˈvɔdɛ"),
@@ -2437,7 +2439,7 @@ class PolishTest(unittest.TestCase):
                     ("wzięli", "ˈvʑɛli"), ("są", "sɔ̃")))
 
     def test_o_acute_is_u_y_is_ɨ_and_l_stroke_is_w(self):
-        self.check((("mówić", "ˈmuvʲitɕ"), ("ty", "tɨ"), ("było", "ˈbɨwɔ"),
+        self.check((("mówić", "ˈmuvitɕ"), ("ty", "tɨ"), ("było", "ˈbɨwɔ"),
                     ("góra", "ˈɡura")))
 
     def test_final_devoicing_and_voicing_assimilation(self):
@@ -2457,7 +2459,7 @@ class PolishTest(unittest.TestCase):
 
     def test_a_vowelless_word_joins_the_next_one(self):
         self.check((("w porządku", "f pɔˈʐɔntku"),
-                    ("z Polski", "s ˈpɔlskʲi"), ("w domu", "v ˈdɔmu")))
+                    ("z Polski", "s ˈpɔlski"), ("w domu", "v ˈdɔmu")))
 
     def test_an_affricate_before_one_of_the_same_place_is_one_sound(self):
         self.check((("pięćdziesiąt", "pjɛɲˈdʑɛɕɔnt"),

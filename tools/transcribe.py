@@ -3830,16 +3830,16 @@ def _greek(text: str, hint: str | None) -> Transcription:
 # Standard Polish, broad, as the decks write it: ˈ before the stressed
 # syllable of a word of two syllables or more (none on a word of one), ɡ for g,
 # ɨ for y, ɛ ɔ for e o, u for u and ó, w for ł, v for w, x for ch and h, j for
-# j and for the glide of "ia ie io iu" after a lip consonant or a t d l r, ts
-# dz for c dz, tɕ dʑ ɕ ʑ ɲ for ć dź ś ź ń (and for c dz s z n before an i), tʂ
-# dʐ ʂ ʐ for cz dż sz and for rz and ż (ʂ for rz after a voiceless
-# consonant). The letter i before a vowel is a softness mark and makes no
-# syllable: after c s z dz n it makes the consonant palatal (ciało tɕawɔ, nie
-# ɲɛ); after p b f w m it is a glide (rozumiem rɔˈzumjɛm); after k g and ch
-# it is a ʲ (gie ɡʲɛ); after t d l r a glide; at the start of a word and
-# after a vowel it is j. Before a consonant or at the end of a word an i is a
-# vowel, and a lip or back consonant before it is written with ʲ (mi mʲi, ski
-# skʲi, wi vʲi), but c s z dz n become palatal (ci tɕi, zi ʑi, ni ɲi).
+# j and for the glide of "ia ie io iu" after any consonant but c s z dz n
+# (kiedy ˈkjɛdɨ, mieć mjɛtɕ, rozumiem rɔˈzumjɛm, as Wiktionary writes
+# them), ts dz for c dz, tɕ dʑ ɕ ʑ ɲ for ć dź ś ź ń (and for c dz s z n
+# before an i), tʂ dʐ ʂ ʐ for cz dż sz and for rz and ż (ʂ for rz after a
+# voiceless consonant). The letter i before a vowel is a softness mark and
+# makes no syllable: after c s z dz n it makes the consonant palatal (ciało
+# tɕawɔ, nie ɲɛ); after any other consonant it is a glide j; at the start of
+# a word and after a vowel it is j. No ʲ is written: before a vowel i the
+# consonant is plain (kilogram kiˈlɔɡram, bilet ˈbilɛt, mi mi, gips ɡips),
+# but c s z dz n before an i become palatal (ci tɕi, zi ʑi, ni ɲi).
 #
 # The nasal vowels ą and ę are written by what follows, as in the cards of
 # decks/pl (dziękuję dʑɛŋˈkujɛ): ɛm ɔm before p b, ɛn ɔn before t d ts dz tʂ dʐ,
@@ -4027,16 +4027,12 @@ def _pl_soft_i(toks: list[_PlTok], before_vowel: bool, stressed: bool
             toks.append(_PlTok("V", "i", stressed))
         return
     if not before_vowel:
-        if prev is not None and prev.ipa in _PL_LABIAL | _PL_VELAR:
-            prev.ipa += "ʲ"
         toks.append(_PlTok("V", "i", stressed))
         return
     if prev is None:
         toks.append(_PlTok("C", "j"))       # at the start or after a vowel
     elif prev.palatal or prev.ipa == "j":
         pass                                # already soft: the i is only a mark
-    elif prev.ipa in _PL_VELAR:
-        prev.ipa += "ʲ"
     else:
         toks.append(_PlTok("C", "j"))
 
