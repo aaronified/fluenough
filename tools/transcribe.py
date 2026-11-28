@@ -2418,6 +2418,8 @@ def _it_stress(toks: list[list], s: str, acc: dict[int, str]) -> str:
     if not any(t[1] in ("V", "v") for t in toks[:pos]):
         pos = 0             # a word's first s and consonant: `ˈskuzi`
     out = [t[0] for t in toks]
+    if all(t.kind == "C" for t in toks[:pos]):
+        pos = 0             # the whole initial cluster is the onset: Kneipe
     out.insert(pos, "ˈ")
     return "".join(out)
 
@@ -2875,6 +2877,9 @@ def _de_tokens(s: str, base: int, initial: bool) -> list[_DeTok]:
                                        s[:i] in _DE_SEPARABLE):
                 add("ʃ", "C", i, i + 1, sp=True)
                 i += 1
+            elif i == 1 and initial and s[0] == "p":
+                add("s", "C", i, i + 1)         # Psalm, Psychologe
+                i += 1
             elif vowel_at(i + 1):
                 add("z", "C", i, i + 1)
                 i += 1
@@ -3104,8 +3109,8 @@ def _de_consonants(toks: list[_DeTok]) -> None:
                 t.ph = "ʁ"
         elif t.ph in ("b", "d", "ɡ"):
             onset = nxt is not None and nxt.kind == "C" and (
-                nxt.ph == "l" or nxt.r) and j + 2 < len(toks) and \
-                toks[j + 2].kind == "V"
+                nxt.ph == "l" or nxt.r or (j == 0 and nxt.ph == "n")
+            ) and j + 2 < len(toks) and toks[j + 2].kind == "V"
             if nxt is None or (nxt.kind == "C" and not onset):
                 t.ph = {"b": "p", "d": "t", "ɡ": "k"}[t.ph]
 
@@ -3119,6 +3124,8 @@ def _de_join(toks: list[_DeTok], stressed: int, n_nuclei: int) -> str:
         pos -= 1
         while pos > 0 and _de_joins(toks[pos - 1], toks[pos]):
             pos -= 1
+    if all(t.kind == "C" for t in toks[:pos]):
+        pos = 0             # the whole initial cluster is the onset: Kneipe
     out.insert(pos, "ˈ")
     return "".join(out)
 
