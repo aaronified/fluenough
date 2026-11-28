@@ -16,8 +16,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Tu parli sempre italiano.", ipa: "tu ˈparli ˈsɛmpre itaˈljano", bases: [{ word: "Tu", base: "tu" }, { word: "parli", base: "parlare" }, { word: "sempre", base: "sempre" }, { word: "italiano", base: "italiano" }] }
-      - { target: "Sono sempre qui.", ipa: "ˈsono ˈsɛmpre kwi", bases: [{ word: "Sono", base: "essere" }, { word: "sempre", base: "sempre" }, { word: "qui", base: "qui" }] }
+      - { target: "Tu parli sempre italiano.", ipa: "tu ˈparli ˈsɛmpre itaˈljano", bases: [{ word: "Tu", ref: "it-0004" }, { word: "parli", ref: "it-1658" }, { word: "sempre", base: "sempre" }, { word: "italiano", ref: "it-1585" }] }
+      - { target: "Sono sempre qui.", ipa: "ˈsono ˈsɛmpre kwi", bases: [{ word: "Sono", ref: "it-0600" }, { word: "sempre", base: "sempre" }, { word: "qui", ref: "it-1725" }] }
   - id: "it-1721"
     target: "mai"
     ipa: "maj"
@@ -27,8 +27,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Non capisco mai.", ipa: "non kaˈpisko maj", bases: [{ word: "Non", base: "non" }, { word: "capisco", base: "capire" }, { word: "mai", base: "mai" }] }
-      - { target: "Non sono mai stanco.", ipa: "non ˈsono maj ˈstanko", bases: [{ word: "Non", base: "non" }, { word: "sono", base: "essere" }, { word: "mai", base: "mai" }, { word: "stanco", base: "stanco" }] }
+      - { target: "Non capisco mai.", ipa: "non kaˈpisko maj", bases: [{ word: "Non", base: "non" }, { word: "capisco", ref: "it-1659" }, { word: "mai", base: "mai" }] }
+      - { target: "Non sono mai stanco.", ipa: "non ˈsono maj ˈstanko", bases: [{ word: "Non", base: "non" }, { word: "sono", ref: "it-0600" }, { word: "mai", base: "mai" }, { word: "stanco", ref: "it-1887" }] }
   - id: "it-1722"
     target: "spesso"
     ipa: "ˈspesso"
@@ -38,8 +38,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io bevo spesso il caffè.", ipa: "ˈio ˈbevo ˈspesso il kafˈfɛ", bases: [{ word: "Io", base: "io" }, { word: "bevo", base: "bere" }, { word: "spesso", base: "spesso" }, { word: "il", base: "il" }, { word: "caffè", base: "caffè" }] }
-      - { target: "Leggo spesso.", ipa: "ˈlɛɡɡo ˈspesso", bases: [{ word: "Leggo", base: "leggere" }, { word: "spesso", base: "spesso" }] }
+      - { target: "Io bevo spesso il caffè.", ipa: "ˈio ˈbevo ˈspesso il kafˈfɛ", bases: [{ word: "Io", ref: "it-0003" }, { word: "bevo", ref: "it-1661" }, { word: "spesso", base: "spesso" }, { word: "il", base: "il" }, { word: "caffè", ref: "it-2321" }] }
+      - { target: "Leggo spesso.", ipa: "ˈlɛɡɡo ˈspesso", bases: [{ word: "Leggo", ref: "it-1680" }, { word: "spesso", base: "spesso" }] }
   - id: "it-1723"
     target: "già"
     ipa: "dʒa"
@@ -49,8 +49,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Sei già qui?", ipa: "sɛj dʒa kwi", bases: [{ word: "Sei", base: "essere" }, { word: "già", base: "già" }, { word: "qui", base: "qui" }] }
-      - { target: "Sono già a casa.", ipa: "ˈsono dʒa a ˈkaza", bases: [{ word: "Sono", base: "essere" }, { word: "già", base: "già" }, { word: "a", base: "a" }, { word: "casa", base: "casa" }] }
+      - { target: "Sei già qui?", ipa: "sɛj dʒa kwi", bases: [{ word: "Sei", ref: "it-0600" }, { word: "già", base: "già" }, { word: "qui", ref: "it-1725" }] }
+      - { target: "Sono già a casa.", ipa: "ˈsono dʒa a ˈkaza", bases: [{ word: "Sono", ref: "it-0600" }, { word: "già", base: "già" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }] }
   - id: "it-1724"
     target: "ancora"
     ipa: "anˈkora"
@@ -60,8 +60,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Parlo ancora.", ipa: "ˈparlo anˈkora", bases: [{ word: "Parlo", base: "parlare" }, { word: "ancora", base: "ancora" }] }
-      - { target: "Non capisco ancora.", ipa: "non kaˈpisko anˈkora", bases: [{ word: "Non", base: "non" }, { word: "capisco", base: "capire" }, { word: "ancora", base: "ancora" }] }
+      - { target: "Parlo ancora.", ipa: "ˈparlo anˈkora", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "ancora", base: "ancora" }] }
+      - { target: "Non capisco ancora.", ipa: "non kaˈpisko anˈkora", bases: [{ word: "Non", base: "non" }, { word: "capisco", ref: "it-1659" }, { word: "ancora", base: "ancora" }] }
   - id: "it-1725"
     target: "qui"
     ipa: "kwi"
@@ -71,8 +71,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io sono qui.", ipa: "ˈio ˈsono kwi", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "qui", base: "qui" }] }
-      - { target: "Vieni qui?", ipa: "ˈvjɛni kwi", bases: [{ word: "Vieni", base: "venire" }, { word: "qui", base: "qui" }] }
+      - { target: "Io sono qui.", ipa: "ˈio ˈsono kwi", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "qui", base: "qui" }] }
+      - { target: "Vieni qui?", ipa: "ˈvjɛni kwi", bases: [{ word: "Vieni", ref: "it-1652" }, { word: "qui", base: "qui" }] }
   - id: "it-1726"
     target: "lì"
     ipa: "li"
@@ -82,8 +82,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Il libro è lì.", ipa: "il ˈlibro ɛ li", bases: [{ word: "Il", base: "il" }, { word: "libro", base: "libro" }, { word: "è", base: "essere" }, { word: "lì", base: "lì" }] }
-      - { target: "Io vado lì.", ipa: "ˈio ˈvado li", bases: [{ word: "Io", base: "io" }, { word: "vado", base: "andare" }, { word: "lì", base: "lì" }] }
+      - { target: "Il libro è lì.", ipa: "il ˈlibro ɛ li", bases: [{ word: "Il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "è", ref: "it-0600" }, { word: "lì", base: "lì" }] }
+      - { target: "Io vado lì.", ipa: "ˈio ˈvado li", bases: [{ word: "Io", ref: "it-0003" }, { word: "vado", ref: "it-1651" }, { word: "lì", base: "lì" }] }
   - id: "it-1727"
     target: "sopra"
     ipa: "ˈsopra"
@@ -93,8 +93,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Il libro è sopra un tavolo.", ipa: "il ˈlibro ɛ ˈsopra un ˈtavolo", bases: [{ word: "Il", base: "il" }, { word: "libro", base: "libro" }, { word: "è", base: "essere" }, { word: "sopra", base: "sopra" }, { word: "un", base: "un" }, { word: "tavolo", base: "tavolo" }] }
-      - { target: "Il gatto è sopra.", ipa: "il ˈɡatto ɛ ˈsopra", bases: [{ word: "Il", base: "il" }, { word: "gatto", base: "gatto" }, { word: "è", base: "essere" }, { word: "sopra", base: "sopra" }] }
+      - { target: "Il libro è sopra un tavolo.", ipa: "il ˈlibro ɛ ˈsopra un ˈtavolo", bases: [{ word: "Il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "è", ref: "it-0600" }, { word: "sopra", base: "sopra" }, { word: "un", base: "un" }, { word: "tavolo", ref: "it-2848" }] }
+      - { target: "Il gatto è sopra.", ipa: "il ˈɡatto ɛ ˈsopra", bases: [{ word: "Il", base: "il" }, { word: "gatto", ref: "it-2981" }, { word: "è", ref: "it-0600" }, { word: "sopra", base: "sopra" }] }
   - id: "it-1728"
     target: "sotto"
     ipa: "ˈsotto"
@@ -104,8 +104,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Il gatto è sotto un tavolo.", ipa: "il ˈɡatto ɛ ˈsotto un ˈtavolo", bases: [{ word: "Il", base: "il" }, { word: "gatto", base: "gatto" }, { word: "è", base: "essere" }, { word: "sotto", base: "sotto" }, { word: "un", base: "un" }, { word: "tavolo", base: "tavolo" }] }
-      - { target: "La borsa è sotto.", ipa: "la ˈborsa ɛ ˈsotto", bases: [{ word: "La", base: "la" }, { word: "borsa", base: "borsa" }, { word: "è", base: "essere" }, { word: "sotto", base: "sotto" }] }
+      - { target: "Il gatto è sotto un tavolo.", ipa: "il ˈɡatto ɛ ˈsotto un ˈtavolo", bases: [{ word: "Il", base: "il" }, { word: "gatto", ref: "it-2981" }, { word: "è", ref: "it-0600" }, { word: "sotto", base: "sotto" }, { word: "un", base: "un" }, { word: "tavolo", ref: "it-2848" }] }
+      - { target: "La borsa è sotto.", ipa: "la ˈborsa ɛ ˈsotto", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", ref: "it-0600" }, { word: "sotto", base: "sotto" }] }
   - id: "it-1729"
     target: "dentro"
     ipa: "ˈdentro"
@@ -115,8 +115,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io sono dentro.", ipa: "ˈio ˈsono ˈdentro", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "dentro", base: "dentro" }] }
-      - { target: "Il caffè è dentro.", ipa: "il kafˈfɛ ɛ ˈdentro", bases: [{ word: "Il", base: "il" }, { word: "caffè", base: "caffè" }, { word: "è", base: "essere" }, { word: "dentro", base: "dentro" }] }
+      - { target: "Io sono dentro.", ipa: "ˈio ˈsono ˈdentro", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "dentro", base: "dentro" }] }
+      - { target: "Il caffè è dentro.", ipa: "il kafˈfɛ ɛ ˈdentro", bases: [{ word: "Il", base: "il" }, { word: "caffè", ref: "it-2321" }, { word: "è", ref: "it-0600" }, { word: "dentro", base: "dentro" }] }
   - id: "it-1730"
     target: "fuori"
     ipa: "ˈfwɔri"
@@ -126,8 +126,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io sono fuori.", ipa: "ˈio ˈsono ˈfwɔri", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "fuori", base: "fuori" }] }
-      - { target: "Aspetto fuori.", ipa: "asˈpɛtto ˈfwɔri", bases: [{ word: "Aspetto", base: "aspettare" }, { word: "fuori", base: "fuori" }] }
+      - { target: "Io sono fuori.", ipa: "ˈio ˈsono ˈfwɔri", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "fuori", base: "fuori" }] }
+      - { target: "Aspetto fuori.", ipa: "asˈpɛtto ˈfwɔri", bases: [{ word: "Aspetto", ref: "it-1683" }, { word: "fuori", base: "fuori" }] }
   - id: "it-1731"
     target: "davanti"
     ipa: "daˈvanti"
@@ -137,8 +137,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io sono davanti.", ipa: "ˈio ˈsono daˈvanti", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "davanti", base: "davanti" }] }
-      - { target: "La porta è davanti.", ipa: "la ˈpɔrta ɛ daˈvanti", bases: [{ word: "La", base: "la" }, { word: "porta", base: "porta" }, { word: "è", base: "essere" }, { word: "davanti", base: "davanti" }] }
+      - { target: "Io sono davanti.", ipa: "ˈio ˈsono daˈvanti", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "davanti", base: "davanti" }] }
+      - { target: "La porta è davanti.", ipa: "la ˈpɔrta ɛ daˈvanti", bases: [{ word: "La", base: "la" }, { word: "porta", ref: "it-2851" }, { word: "è", ref: "it-0600" }, { word: "davanti", base: "davanti" }] }
   - id: "it-1732"
     target: "dietro"
     ipa: "ˈdjɛtro"
@@ -148,8 +148,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Il gatto è dietro.", ipa: "il ˈɡatto ɛ ˈdjɛtro", bases: [{ word: "Il", base: "il" }, { word: "gatto", base: "gatto" }, { word: "è", base: "essere" }, { word: "dietro", base: "dietro" }] }
-      - { target: "Io sono dietro.", ipa: "ˈio ˈsono ˈdjɛtro", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "dietro", base: "dietro" }] }
+      - { target: "Il gatto è dietro.", ipa: "il ˈɡatto ɛ ˈdjɛtro", bases: [{ word: "Il", base: "il" }, { word: "gatto", ref: "it-2981" }, { word: "è", ref: "it-0600" }, { word: "dietro", base: "dietro" }] }
+      - { target: "Io sono dietro.", ipa: "ˈio ˈsono ˈdjɛtro", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "dietro", base: "dietro" }] }
   - id: "it-1733"
     target: "vicino"
     ipa: "viˈtʃino"
@@ -159,8 +159,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io sono vicino.", ipa: "ˈio ˈsono viˈtʃino", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "vicino", base: "vicino" }] }
-      - { target: "Il bagno è vicino.", ipa: "il ˈbaɲɲo ɛ viˈtʃino", bases: [{ word: "Il", base: "il" }, { word: "bagno", base: "bagno" }, { word: "è", base: "essere" }, { word: "vicino", base: "vicino" }] }
+      - { target: "Io sono vicino.", ipa: "ˈio ˈsono viˈtʃino", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "vicino", base: "vicino" }] }
+      - { target: "Il bagno è vicino.", ipa: "il ˈbaɲɲo ɛ viˈtʃino", bases: [{ word: "Il", base: "il" }, { word: "bagno", ref: "it-2843" }, { word: "è", ref: "it-0600" }, { word: "vicino", base: "vicino" }] }
   - id: "it-1734"
     target: "lontano"
     ipa: "lonˈtano"
@@ -170,8 +170,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Il mare è lontano.", ipa: "il ˈmare ɛ lonˈtano", bases: [{ word: "Il", base: "il" }, { word: "mare", base: "mare" }, { word: "è", base: "essere" }, { word: "lontano", base: "lontano" }] }
-      - { target: "Io sono lontano.", ipa: "ˈio ˈsono lonˈtano", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "lontano", base: "lontano" }] }
+      - { target: "Il mare è lontano.", ipa: "il ˈmare ɛ lonˈtano", bases: [{ word: "Il", base: "il" }, { word: "mare", ref: "it-2718" }, { word: "è", ref: "it-0600" }, { word: "lontano", base: "lontano" }] }
+      - { target: "Io sono lontano.", ipa: "ˈio ˈsono lonˈtano", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "lontano", base: "lontano" }] }
   - id: "it-1735"
     target: "insieme"
     ipa: "inˈsjɛme"
@@ -181,8 +181,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io e Marco siamo insieme.", ipa: "ˈio e ˈmarko ˈsjamo inˈsjɛme", bases: [{ word: "Io", base: "io" }, { word: "e", base: "e" }, { word: "Marco", base: "Marco" }, { word: "siamo", base: "essere" }, { word: "insieme", base: "insieme" }] }
-      - { target: "Mangiamo insieme.", ipa: "manˈdʒamo inˈsjɛme", bases: [{ word: "Mangiamo", base: "mangiare" }, { word: "insieme", base: "insieme" }] }
+      - { target: "Io e Marco siamo insieme.", ipa: "ˈio e ˈmarko ˈsjamo inˈsjɛme", bases: [{ word: "Io", ref: "it-0003" }, { word: "e", ref: "it-0005" }, { word: "Marco", base: "Marco" }, { word: "siamo", ref: "it-0600" }, { word: "insieme", base: "insieme" }] }
+      - { target: "Mangiamo insieme.", ipa: "manˈdʒamo inˈsjɛme", bases: [{ word: "Mangiamo", ref: "it-1660" }, { word: "insieme", base: "insieme" }] }
   - id: "it-1736"
     target: "bene"
     ipa: "ˈbɛne"
@@ -192,8 +192,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io sto bene.", ipa: "ˈio stɔ ˈbɛne", bases: [{ word: "Io", base: "io" }, { word: "sto", base: "stare" }, { word: "bene", base: "bene" }] }
-      - { target: "Parlo bene.", ipa: "ˈparlo ˈbɛne", bases: [{ word: "Parlo", base: "parlare" }, { word: "bene", base: "bene" }] }
+      - { target: "Io sto bene.", ipa: "ˈio stɔ ˈbɛne", bases: [{ word: "Io", ref: "it-0003" }, { word: "sto", ref: "it-0601" }, { word: "bene", base: "bene" }] }
+      - { target: "Parlo bene.", ipa: "ˈparlo ˈbɛne", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "bene", base: "bene" }] }
   - id: "it-1737"
     target: "male"
     ipa: "ˈmale"
@@ -203,8 +203,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io sto male.", ipa: "ˈio stɔ ˈmale", bases: [{ word: "Io", base: "io" }, { word: "sto", base: "stare" }, { word: "male", base: "male" }] }
-      - { target: "Dormo male.", ipa: "ˈdɔrmo ˈmale", bases: [{ word: "Dormo", base: "dormire" }, { word: "male", base: "male" }] }
+      - { target: "Io sto male.", ipa: "ˈio stɔ ˈmale", bases: [{ word: "Io", ref: "it-0003" }, { word: "sto", ref: "it-0601" }, { word: "male", base: "male" }] }
+      - { target: "Dormo male.", ipa: "ˈdɔrmo ˈmale", bases: [{ word: "Dormo", ref: "it-1679" }, { word: "male", base: "male" }] }
   - id: "it-1738"
     target: "meglio"
     ipa: "ˈmɛʎʎo"
@@ -214,8 +214,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Sto meglio.", ipa: "stɔ ˈmɛʎʎo", bases: [{ word: "Sto", base: "stare" }, { word: "meglio", base: "meglio" }] }
-      - { target: "Parlo meglio.", ipa: "ˈparlo ˈmɛʎʎo", bases: [{ word: "Parlo", base: "parlare" }, { word: "meglio", base: "meglio" }] }
+      - { target: "Sto meglio.", ipa: "stɔ ˈmɛʎʎo", bases: [{ word: "Sto", ref: "it-0601" }, { word: "meglio", base: "meglio" }] }
+      - { target: "Parlo meglio.", ipa: "ˈparlo ˈmɛʎʎo", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "meglio", base: "meglio" }] }
   - id: "it-1739"
     target: "peggio"
     ipa: "ˈpɛddʒo"
@@ -225,8 +225,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Sto peggio.", ipa: "stɔ ˈpɛddʒo", bases: [{ word: "Sto", base: "stare" }, { word: "peggio", base: "peggio" }] }
-      - { target: "Dormo peggio.", ipa: "ˈdɔrmo ˈpɛddʒo", bases: [{ word: "Dormo", base: "dormire" }, { word: "peggio", base: "peggio" }] }
+      - { target: "Sto peggio.", ipa: "stɔ ˈpɛddʒo", bases: [{ word: "Sto", ref: "it-0601" }, { word: "peggio", base: "peggio" }] }
+      - { target: "Dormo peggio.", ipa: "ˈdɔrmo ˈpɛddʒo", bases: [{ word: "Dormo", ref: "it-1679" }, { word: "peggio", base: "peggio" }] }
   - id: "it-1740"
     target: "presto"
     ipa: "ˈprɛsto"
@@ -236,8 +236,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Ci vediamo presto.", ipa: "tʃi veˈdjamo ˈprɛsto", bases: [{ word: "Ci", base: "ci" }, { word: "vediamo", base: "vedere" }, { word: "presto", base: "presto" }] }
-      - { target: "Mangio presto.", ipa: "ˈmandʒo ˈprɛsto", bases: [{ word: "Mangio", base: "mangiare" }, { word: "presto", base: "presto" }] }
+      - { target: "Ci vediamo presto.", ipa: "tʃi veˈdjamo ˈprɛsto", bases: [{ word: "Ci", base: "ci" }, { word: "vediamo", ref: "it-1656" }, { word: "presto", base: "presto" }] }
+      - { target: "Mangio presto.", ipa: "ˈmandʒo ˈprɛsto", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "presto", base: "presto" }] }
   - id: "it-1741"
     target: "tardi"
     ipa: "ˈtardi"
@@ -247,8 +247,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Dormo tardi.", ipa: "ˈdɔrmo ˈtardi", bases: [{ word: "Dormo", base: "dormire" }, { word: "tardi", base: "tardi" }] }
-      - { target: "Arrivo tardi.", ipa: "arˈrivo ˈtardi", bases: [{ word: "Arrivo", base: "arrivare" }, { word: "tardi", base: "tardi" }] }
+      - { target: "Dormo tardi.", ipa: "ˈdɔrmo ˈtardi", bases: [{ word: "Dormo", ref: "it-1679" }, { word: "tardi", base: "tardi" }] }
+      - { target: "Arrivo tardi.", ipa: "arˈrivo ˈtardi", bases: [{ word: "Arrivo", ref: "it-2076" }, { word: "tardi", base: "tardi" }] }
   - id: "it-1742"
     target: "subito"
     ipa: "ˈsubito"
@@ -258,8 +258,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Vengo subito.", ipa: "ˈvɛnɡo suˈbito", bases: [{ word: "Vengo", base: "venire" }, { word: "subito", base: "subito" }] }
-      - { target: "Chiamo subito.", ipa: "ˈkjamo suˈbito", bases: [{ word: "Chiamo", base: "chiamare" }, { word: "subito", base: "subito" }] }
+      - { target: "Vengo subito.", ipa: "ˈvɛnɡo suˈbito", bases: [{ word: "Vengo", ref: "it-1652" }, { word: "subito", base: "subito" }] }
+      - { target: "Chiamo subito.", ipa: "ˈkjamo suˈbito", bases: [{ word: "Chiamo", ref: "it-1684" }, { word: "subito", base: "subito" }] }
   - id: "it-1743"
     target: "solo"
     ipa: "ˈsolo"
@@ -269,8 +269,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io sono solo.", ipa: "ˈio ˈsono ˈsolo", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "solo", base: "solo" }] }
-      - { target: "Parlo solo italiano.", ipa: "ˈparlo ˈsolo itaˈljano", bases: [{ word: "Parlo", base: "parlare" }, { word: "solo", base: "solo" }, { word: "italiano", base: "italiano" }] }
+      - { target: "Io sono solo.", ipa: "ˈio ˈsono ˈsolo", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "solo", base: "solo" }] }
+      - { target: "Parlo solo italiano.", ipa: "ˈparlo ˈsolo itaˈljano", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "solo", base: "solo" }, { word: "italiano", ref: "it-1585" }] }
   - id: "it-1744"
     target: "quasi"
     ipa: "ˈkwazi"
@@ -280,8 +280,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Sono quasi a casa.", ipa: "ˈsono ˈkwazi a ˈkaza", bases: [{ word: "Sono", base: "essere" }, { word: "quasi", base: "quasi" }, { word: "a", base: "a" }, { word: "casa", base: "casa" }] }
-      - { target: "Mangio quasi sempre a casa.", ipa: "ˈmandʒo ˈkwazi ˈsɛmpre a ˈkaza", bases: [{ word: "Mangio", base: "mangiare" }, { word: "quasi", base: "quasi" }, { word: "sempre", base: "sempre" }, { word: "a", base: "a" }, { word: "casa", base: "casa" }] }
+      - { target: "Sono quasi a casa.", ipa: "ˈsono ˈkwazi a ˈkaza", bases: [{ word: "Sono", ref: "it-0600" }, { word: "quasi", base: "quasi" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }] }
+      - { target: "Mangio quasi sempre a casa.", ipa: "ˈmandʒo ˈkwazi ˈsɛmpre a ˈkaza", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "quasi", base: "quasi" }, { word: "sempre", ref: "it-1720" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }] }
   - id: "it-1745"
     target: "appena"
     ipa: "apˈpena"
@@ -291,8 +291,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Vedo appena.", ipa: "ˈvedo apˈpena", bases: [{ word: "Vedo", base: "vedere" }, { word: "appena", base: "appena" }] }
-      - { target: "Capisco appena.", ipa: "kaˈpisko apˈpena", bases: [{ word: "Capisco", base: "capire" }, { word: "appena", base: "appena" }] }
+      - { target: "Vedo appena.", ipa: "ˈvedo apˈpena", bases: [{ word: "Vedo", ref: "it-1656" }, { word: "appena", base: "appena" }] }
+      - { target: "Capisco appena.", ipa: "kaˈpisko apˈpena", bases: [{ word: "Capisco", ref: "it-1659" }, { word: "appena", base: "appena" }] }
   - id: "it-1746"
     target: "così"
     ipa: "koˈzi"
@@ -302,8 +302,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Parlo così.", ipa: "ˈparlo koˈzi", bases: [{ word: "Parlo", base: "parlare" }, { word: "così", base: "così" }] }
-      - { target: "Non è così.", ipa: "non ɛ koˈzi", bases: [{ word: "Non", base: "non" }, { word: "è", base: "essere" }, { word: "così", base: "così" }] }
+      - { target: "Parlo così.", ipa: "ˈparlo koˈzi", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "così", base: "così" }] }
+      - { target: "Non è così.", ipa: "non ɛ koˈzi", bases: [{ word: "Non", base: "non" }, { word: "è", ref: "it-0600" }, { word: "così", base: "così" }] }
   - id: "it-1747"
     target: "poi"
     ipa: "pɔj"
@@ -313,8 +313,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Prima mangio, poi dormo.", ipa: "ˈprima ˈmandʒo pɔj ˈdɔrmo", bases: [{ word: "Prima", base: "prima" }, { word: "mangio", base: "mangiare" }, { word: "poi", base: "poi" }, { word: "dormo", base: "dormire" }] }
-      - { target: "Poi capisco.", ipa: "pɔj kaˈpisko", bases: [{ word: "Poi", base: "poi" }, { word: "capisco", base: "capire" }] }
+      - { target: "Prima mangio, poi dormo.", ipa: "ˈprima ˈmandʒo pɔj ˈdɔrmo", bases: [{ word: "Prima", ref: "it-1748" }, { word: "mangio", ref: "it-1660" }, { word: "poi", base: "poi" }, { word: "dormo", ref: "it-1679" }] }
+      - { target: "Poi capisco.", ipa: "pɔj kaˈpisko", bases: [{ word: "Poi", base: "poi" }, { word: "capisco", ref: "it-1659" }] }
   - id: "it-1748"
     target: "prima"
     ipa: "ˈprima"
@@ -324,8 +324,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Prima bevo un caffè.", ipa: "ˈprima ˈbevo un kafˈfɛ", bases: [{ word: "Prima", base: "prima" }, { word: "bevo", base: "bere" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
-      - { target: "Prima mangio.", ipa: "ˈprima ˈmandʒo", bases: [{ word: "Prima", base: "prima" }, { word: "mangio", base: "mangiare" }] }
+      - { target: "Prima bevo un caffè.", ipa: "ˈprima ˈbevo un kafˈfɛ", bases: [{ word: "Prima", base: "prima" }, { word: "bevo", ref: "it-1661" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }] }
+      - { target: "Prima mangio.", ipa: "ˈprima ˈmandʒo", bases: [{ word: "Prima", base: "prima" }, { word: "mangio", ref: "it-1660" }] }
   - id: "it-1749"
     target: "dopo"
     ipa: "ˈdɔpo"
@@ -335,8 +335,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Dopo mangio.", ipa: "ˈdɔpo ˈmandʒo", bases: [{ word: "Dopo", base: "dopo" }, { word: "mangio", base: "mangiare" }] }
-      - { target: "Ci vediamo dopo.", ipa: "tʃi veˈdjamo ˈdɔpo", bases: [{ word: "Ci", base: "ci" }, { word: "vediamo", base: "vedere" }, { word: "dopo", base: "dopo" }] }
+      - { target: "Dopo mangio.", ipa: "ˈdɔpo ˈmandʒo", bases: [{ word: "Dopo", base: "dopo" }, { word: "mangio", ref: "it-1660" }] }
+      - { target: "Ci vediamo dopo.", ipa: "tʃi veˈdjamo ˈdɔpo", bases: [{ word: "Ci", base: "ci" }, { word: "vediamo", ref: "it-1656" }, { word: "dopo", base: "dopo" }] }
   - id: "it-1750"
     target: "allora"
     ipa: "alˈlora"
@@ -346,8 +346,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Allora, parliamo?", ipa: "alˈlora parˈljamo", bases: [{ word: "Allora", base: "allora" }, { word: "parliamo", base: "parlare" }] }
-      - { target: "Allora capisco.", ipa: "alˈlora kaˈpisko", bases: [{ word: "Allora", base: "allora" }, { word: "capisco", base: "capire" }] }
+      - { target: "Allora, parliamo?", ipa: "alˈlora parˈljamo", bases: [{ word: "Allora", base: "allora" }, { word: "parliamo", ref: "it-1658" }] }
+      - { target: "Allora capisco.", ipa: "alˈlora kaˈpisko", bases: [{ word: "Allora", base: "allora" }, { word: "capisco", ref: "it-1659" }] }
   - id: "it-1751"
     target: "certo"
     ipa: "ˈtʃɛrto"
@@ -357,8 +357,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Certo, grazie.", ipa: "ˈtʃɛrto ˈɡrattsje", bases: [{ word: "Certo", base: "certo" }, { word: "grazie", base: "grazie" }] }
-      - { target: "Certo, capisco.", ipa: "ˈtʃɛrto kaˈpisko", bases: [{ word: "Certo", base: "certo" }, { word: "capisco", base: "capire" }] }
+      - { target: "Certo, grazie.", ipa: "ˈtʃɛrto ˈɡrattsje", bases: [{ word: "Certo", base: "certo" }, { word: "grazie", ref: "it-0017" }] }
+      - { target: "Certo, capisco.", ipa: "ˈtʃɛrto kaˈpisko", bases: [{ word: "Certo", base: "certo" }, { word: "capisco", ref: "it-1659" }] }
   - id: "it-1752"
     target: "certamente"
     ipa: "tʃertaˈmente"
@@ -368,8 +368,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Certamente, grazie.", ipa: "tʃertaˈmente ˈɡrattsje", bases: [{ word: "Certamente", base: "certamente" }, { word: "grazie", base: "grazie" }] }
-      - { target: "Certamente capisco.", ipa: "tʃertaˈmente kaˈpisko", bases: [{ word: "Certamente", base: "certamente" }, { word: "capisco", base: "capire" }] }
+      - { target: "Certamente, grazie.", ipa: "tʃertaˈmente ˈɡrattsje", bases: [{ word: "Certamente", base: "certamente" }, { word: "grazie", ref: "it-0017" }] }
+      - { target: "Certamente capisco.", ipa: "tʃertaˈmente kaˈpisko", bases: [{ word: "Certamente", base: "certamente" }, { word: "capisco", ref: "it-1659" }] }
   - id: "it-1753"
     target: "naturalmente"
     ipa: "naturalˈmente"
@@ -379,8 +379,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Naturalmente, sì.", ipa: "naturalˈmente si", bases: [{ word: "Naturalmente", base: "naturalmente" }, { word: "sì", base: "sì" }] }
-      - { target: "Naturalmente parlo italiano.", ipa: "naturalˈmente ˈparlo itaˈljano", bases: [{ word: "Naturalmente", base: "naturalmente" }, { word: "parlo", base: "parlare" }, { word: "italiano", base: "italiano" }] }
+      - { target: "Naturalmente, sì.", ipa: "naturalˈmente si", bases: [{ word: "Naturalmente", base: "naturalmente" }, { word: "sì", ref: "it-0001" }] }
+      - { target: "Naturalmente parlo italiano.", ipa: "naturalˈmente ˈparlo itaˈljano", bases: [{ word: "Naturalmente", base: "naturalmente" }, { word: "parlo", ref: "it-1658" }, { word: "italiano", ref: "it-1585" }] }
   - id: "it-1754"
     target: "volentieri"
     ipa: "volenˈtjɛri"
@@ -390,8 +390,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Mangio volentieri.", ipa: "ˈmandʒo volenˈtjɛri", bases: [{ word: "Mangio", base: "mangiare" }, { word: "volentieri", base: "volentieri" }] }
-      - { target: "Parlo volentieri.", ipa: "ˈparlo volenˈtjɛri", bases: [{ word: "Parlo", base: "parlare" }, { word: "volentieri", base: "volentieri" }] }
+      - { target: "Mangio volentieri.", ipa: "ˈmandʒo volenˈtjɛri", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "volentieri", base: "volentieri" }] }
+      - { target: "Parlo volentieri.", ipa: "ˈparlo volenˈtjɛri", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "volentieri", base: "volentieri" }] }
   - id: "it-1755"
     target: "finalmente"
     ipa: "finalˈmente"
@@ -401,8 +401,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Finalmente capisco.", ipa: "finalˈmente kaˈpisko", bases: [{ word: "Finalmente", base: "finalmente" }, { word: "capisco", base: "capire" }] }
-      - { target: "Finalmente sono qui.", ipa: "finalˈmente ˈsono kwi", bases: [{ word: "Finalmente", base: "finalmente" }, { word: "sono", base: "essere" }, { word: "qui", base: "qui" }] }
+      - { target: "Finalmente capisco.", ipa: "finalˈmente kaˈpisko", bases: [{ word: "Finalmente", base: "finalmente" }, { word: "capisco", ref: "it-1659" }] }
+      - { target: "Finalmente sono qui.", ipa: "finalˈmente ˈsono kwi", bases: [{ word: "Finalmente", base: "finalmente" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
   - id: "it-1756"
     target: "purtroppo"
     ipa: "purˈtrɔppo"
@@ -412,5 +412,5 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Purtroppo non capisco.", ipa: "purˈtrɔppo non kaˈpisko", bases: [{ word: "Purtroppo", base: "purtroppo" }, { word: "non", base: "non" }, { word: "capisco", base: "capire" }] }
-      - { target: "Purtroppo sono stanco.", ipa: "purˈtrɔppo ˈsono ˈstanko", bases: [{ word: "Purtroppo", base: "purtroppo" }, { word: "sono", base: "essere" }, { word: "stanco", base: "stanco" }] }
+      - { target: "Purtroppo non capisco.", ipa: "purˈtrɔppo non kaˈpisko", bases: [{ word: "Purtroppo", base: "purtroppo" }, { word: "non", base: "non" }, { word: "capisco", ref: "it-1659" }] }
+      - { target: "Purtroppo sono stanco.", ipa: "purˈtrɔppo ˈsono ˈstanko", bases: [{ word: "Purtroppo", base: "purtroppo" }, { word: "sono", ref: "it-0600" }, { word: "stanco", ref: "it-1887" }] }
