@@ -2332,7 +2332,7 @@ class GreekTest(unittest.TestCase):
     def test_av_ev_are_voiced_before_a_vowel_or_a_voiced_consonant(self):
         self.check((("αυτό", "afˈto"), ("ευχαριστώ", "efxaɾiˈsto"),
                     ("ευγενικός", "evʝeniˈkos"), ("αύριο", "ˈavɾjo"),
-                    ("ευρώ", "evˈɾo")))
+                    ("ευρώ", "eˈvɾo")))
 
     def test_gamma_is_palatal_before_a_front_vowel(self):
         self.check((("γεια", "ʝa"), ("για", "ʝa"), ("γιατί", "ʝaˈti"),
