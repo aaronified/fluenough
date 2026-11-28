@@ -19,11 +19,11 @@ cards:
       - { id: "pair", kind: "pair", ref: "pl-0401", source: "https://en.wiktionary.org/wiki/by%C4%87" }
     bases: "self"
     examples:
-      - { target: "Jestem Kamil, a to jest Marta.", ipa: "ˈjɛstɛm ˈkamʲil a tɔ jɛst ˈmarta", bases: [{ word: "Jestem", base: "być" }, { word: "Kamil", base: "Kamil" }, { word: "a", base: "a" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "Marta", base: "Marta" }] }
+      - { target: "Jestem Kamil, a to jest Marta.", ipa: "ˈjɛstɛm ˈkamil a tɔ jɛst ˈmarta", bases: [{ word: "Jestem", base: "być" }, { word: "Kamil", base: "Kamil" }, { word: "a", base: "a" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "Marta", base: "Marta" }] }
       - { target: "Jutro będzie piątek.", ipa: "ˈjutrɔ ˈbɛɲdʑɛ ˈpjɔntɛk", bases: [{ word: "Jutro", base: "jutro" }, { word: "będzie", base: "być" }, { word: "piątek", base: "piątek" }] }
   - id: "pl-0401"
     target: "bić"
-    ipa: "bʲitɕ"
+    ipa: "bitɕ"
     pos: "verb"
     tags: ["y-i"]
     notes:
@@ -31,8 +31,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "pl-0400", source: "https://en.wiktionary.org/wiki/bi%C4%87" }
     bases: "self"
     examples:
-      - { target: "bić w bęben", ipa: "bʲitɕ v ˈbɛmbɛn", bases: [{ word: "bić", base: "bić" }, { word: "w", base: "w" }, { word: "bęben", base: "bęben" }] }
-      - { target: "bić kijem", ipa: "bʲitɕ ˈkʲijɛm", bases: [{ word: "bić", base: "bić" }, { word: "kijem", base: "kij" }] }
+      - { target: "bić w bęben", ipa: "bitɕ v ˈbɛmbɛn", bases: [{ word: "bić", base: "bić" }, { word: "w", base: "w" }, { word: "bęben", base: "bęben" }] }
+      - { target: "bić kijem", ipa: "bitɕ ˈkijɛm", bases: [{ word: "bić", base: "bić" }, { word: "kijem", base: "kij" }] }
   - id: "pl-0402"
     target: "laska"
     ipa: "ˈlaska"
@@ -192,8 +192,8 @@ cards:
       - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Polish_pronunciation" }
     bases: "self"
     examples:
-      - { target: "Późno już, czas mi iść do domu.", ipa: "ˈpuʑnɔ juʂ tʂas mʲi iɕtɕ dɔ ˈdɔmu", bases: [{ word: "Późno", base: "późno" }, { word: "już", base: "już" }, { word: "czas", base: "czas" }, { word: "mi", base: "ja" }, { word: "iść", base: "iść" }, { word: "do", base: "do" }, { word: "domu", base: "dom" }] }
-      - { target: "czas Greenwich", ipa: "tʂas ɡrɛˈɛnvʲix", bases: [{ word: "czas", base: "czas" }, { word: "Greenwich", base: "Greenwich" }] }
+      - { target: "Późno już, czas mi iść do domu.", ipa: "ˈpuʑnɔ juʂ tʂas mi iɕtɕ dɔ ˈdɔmu", bases: [{ word: "Późno", base: "późno" }, { word: "już", base: "już" }, { word: "czas", base: "czas" }, { word: "mi", base: "ja" }, { word: "iść", base: "iść" }, { word: "do", base: "do" }, { word: "domu", base: "dom" }] }
+      - { target: "czas Greenwich", ipa: "tʂas ɡrɛˈɛnvix", bases: [{ word: "czas", base: "czas" }, { word: "Greenwich", base: "Greenwich" }] }
   - id: "pl-0415"
     target: "rzeka"
     ipa: "ˈʐɛka"
@@ -277,7 +277,7 @@ cards:
     bases: "self"
     examples:
       - { target: "To jest wąż.", ipa: "tɔ jɛst vɔ̃ʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "wąż", base: "wąż" }] }
-      - { target: "jadowity wąż", ipa: "jadɔˈvʲitɨ vɔ̃ʂ", bases: [{ word: "jadowity", base: "jadowity" }, { word: "wąż", base: "wąż" }] }
+      - { target: "jadowity wąż", ipa: "jadɔˈvitɨ vɔ̃ʂ", bases: [{ word: "jadowity", base: "jadowity" }, { word: "wąż", base: "wąż" }] }
   - id: "pl-0422"
     target: "góra"
     ipa: "ˈɡura"
@@ -364,7 +364,7 @@ cards:
       - { target: "Nie, to nie jest miasto.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈmjastɔ", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "miasto", base: "miasto" }] }
   - id: "pl-0429"
     target: "fizyka"
-    ipa: "ˈfʲizɨka"
+    ipa: "fˈizɨka"
     pos: "noun"
     gender: "f"
     tags: ["stress"]
@@ -372,11 +372,11 @@ cards:
       - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_phonology" }
     bases: "self"
     examples:
-      - { target: "Madlen studiuje fizykę na Uniwersytecie Wiedeńskim.", ipa: "ˈmadlɛn stuˈdjujɛ fʲiˈzɨkɛ na uɲivɛrsɨˈtɛtɕɛ vjɛˈdɛɲskʲim", bases: [{ word: "Madlen", base: "Madlen" }, { word: "studiuje", base: "studiować" }, { word: "fizykę", base: "fizyka" }, { word: "na", base: "na" }, { word: "Uniwersytecie", base: "uniwersytet" }, { word: "Wiedeńskim", base: "wiedeński" }] }
-      - { target: "To jest fizyka.", ipa: "tɔ jɛst ˈfʲizɨka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "fizyka", base: "fizyka" }] }
+      - { target: "Madlen studiuje fizykę na Uniwersytecie Wiedeńskim.", ipa: "ˈmadlɛn stuˈdjujɛ fiˈzɨkɛ na uɲivɛrsɨˈtɛtɕɛ vjɛˈdɛɲskim", bases: [{ word: "Madlen", base: "Madlen" }, { word: "studiuje", base: "studiować" }, { word: "fizykę", base: "fizyka" }, { word: "na", base: "na" }, { word: "Uniwersytecie", base: "uniwersytet" }, { word: "Wiedeńskim", base: "wiedeński" }] }
+      - { target: "To jest fizyka.", ipa: "tɔ jɛst fˈizɨka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "fizyka", base: "fizyka" }] }
   - id: "pl-0430"
     target: "muzyka"
-    ipa: "ˈmuzɨka"
+    ipa: "mˈuzɨka"
     pos: "noun"
     gender: "f"
     tags: ["stress"]
@@ -384,11 +384,11 @@ cards:
       - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_phonology" }
     bases: "self"
     examples:
-      - { target: "To jest muzyka.", ipa: "tɔ jɛst ˈmuzɨka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "muzyka", base: "muzyka" }] }
-      - { target: "Nie, to nie jest muzyka.", ipa: "ɲɛ tɔ ɲɛ jɛst ˈmuzɨka", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "muzyka", base: "muzyka" }] }
+      - { target: "To jest muzyka.", ipa: "tɔ jɛst mˈuzɨka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "muzyka", base: "muzyka" }] }
+      - { target: "Nie, to nie jest muzyka.", ipa: "ɲɛ tɔ ɲɛ jɛst mˈuzɨka", bases: [{ word: "Nie", ref: "pl-0002" }, { word: "to", base: "to" }, { word: "jest", base: "być" }, { word: "muzyka", base: "muzyka" }] }
   - id: "pl-0431"
     target: "uniwersytet"
-    ipa: "uɲiˈvɛrsɨtɛt"
+    ipa: "uɲivˈɛrsɨtɛt"
     pos: "noun"
     gender: "m"
     tags: ["stress"]
@@ -396,5 +396,5 @@ cards:
       - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Polish_phonology" }
     bases: "self"
     examples:
-      - { target: "To jest uniwersytet.", ipa: "tɔ jɛst uɲiˈvɛrsɨtɛt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "uniwersytet", base: "uniwersytet" }] }
-      - { target: "Madlen studiuje fizykę na Uniwersytecie Wiedeńskim.", ipa: "ˈmadlɛn stuˈdjujɛ fʲiˈzɨkɛ na uɲivɛrsɨˈtɛtɕɛ vjɛˈdɛɲskʲim", bases: [{ word: "Madlen", base: "Madlen" }, { word: "studiuje", base: "studiować" }, { word: "fizykę", ref: "pl-0429" }, { word: "na", base: "na" }, { word: "Uniwersytecie", base: "uniwersytet" }, { word: "Wiedeńskim", base: "wiedeński" }] }
+      - { target: "To jest uniwersytet.", ipa: "tɔ jɛst uɲivˈɛrsɨtɛt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "uniwersytet", base: "uniwersytet" }] }
+      - { target: "Madlen studiuje fizykę na Uniwersytecie Wiedeńskim.", ipa: "ˈmadlɛn stuˈdjujɛ fiˈzɨkɛ na uɲivɛrsɨˈtɛtɕɛ vjɛˈdɛɲskim", bases: [{ word: "Madlen", base: "Madlen" }, { word: "studiuje", base: "studiować" }, { word: "fizykę", ref: "pl-0429" }, { word: "na", base: "na" }, { word: "Uniwersytecie", base: "uniwersytet" }, { word: "Wiedeńskim", base: "wiedeński" }] }
