@@ -2418,8 +2418,6 @@ def _it_stress(toks: list[list], s: str, acc: dict[int, str]) -> str:
     if not any(t[1] in ("V", "v") for t in toks[:pos]):
         pos = 0             # a word's first s and consonant: `ˈskuzi`
     out = [t[0] for t in toks]
-    if all(t.kind == "C" for t in toks[:pos]):
-        pos = 0             # the whole initial cluster is the onset: Kneipe
     out.insert(pos, "ˈ")
     return "".join(out)
 
