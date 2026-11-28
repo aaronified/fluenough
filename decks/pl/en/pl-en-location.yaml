@@ -1,0 +1,207 @@
+schema: 1
+id: "pl-en-location"
+kind: "layer"
+core: "pl-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Location"
+description: "Places and place words: house, city, village, country, street, room, corner, bridge, and the prepositions in, under, above, in front of, behind, between and beside. Not yet checked by a Polish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "pl-2000":
+    native: "house; home"
+    notes:
+      "n1": "Masculine (inanimate). Dom is a building to live in; the locative is w domu, at home."
+    examples:
+      "To jest dom.":
+        native: "This is a house."
+        bases:
+          "To": "this"
+          "jest": "to be"
+      "Gdzie jest dom?":
+        native: "Where is the house?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+  "pl-2001":
+    native: "city; town"
+    notes:
+      "n1": "Neuter. A small town is a miasteczko."
+    examples:
+      "To jest miasto.":
+        native: "This is a city."
+        bases:
+          "To": "this"
+          "jest": "to be"
+      "Gdzie jest miasto?":
+        native: "Where is the city?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+  "pl-2002":
+    native: "village; countryside"
+    notes:
+      "n1": "Feminine. Wieś is the countryside as opposed to towns, or a village; the locative is na wsi, in the countryside."
+    examples:
+      "To jest wieś.":
+        native: "This is a village."
+        bases:
+          "To": "this"
+          "jest": "to be"
+      "Gdzie jest wieś?":
+        native: "Where is the village?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+  "pl-2003":
+    native: "country"
+    notes:
+      "n1": "Masculine (inanimate). Kraj is a nation's territory; the locative is w kraju, in the country."
+    examples:
+      "To jest kraj.":
+        native: "This is a country."
+        bases:
+          "To": "this"
+          "jest": "to be"
+      "Gdzie jest kraj?":
+        native: "Where is the country?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+  "pl-2004":
+    native: "street"
+    notes:
+      "n1": "Feminine. A road between houses. The locative is na ulicy, on the street."
+    examples:
+      "To jest ulica.":
+        native: "This is a street."
+        bases:
+          "To": "this"
+          "jest": "to be"
+      "Gdzie jest ulica?":
+        native: "Where is the street?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+  "pl-2005":
+    native: "room"
+    notes:
+      "n1": "Masculine (inanimate). The room sense is a part of a building, such as a bedroom or living room. Pokój also means peace."
+    examples:
+      "To jest pokój.":
+        native: "This is a room."
+        bases:
+          "To": "this"
+          "jest": "to be"
+      "Gdzie jest pokój?":
+        native: "Where is the room?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+  "pl-2006":
+    native: "corner"
+    notes:
+      "n1": "Masculine (inanimate). The corner where lines or walls meet; also the horn of an animal."
+    examples:
+      "To jest róg.":
+        native: "This is a corner."
+        bases:
+          "To": "this"
+          "jest": "to be"
+      "Gdzie jest róg?":
+        native: "Where is the corner?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+  "pl-2007":
+    native: "bridge"
+    notes:
+      "n1": "Masculine (inanimate). The locative is na moście, on the bridge."
+    examples:
+      "To jest most.":
+        native: "This is a bridge."
+        bases:
+          "To": "this"
+          "jest": "to be"
+      "Gdzie jest most?":
+        native: "Where is the bridge?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+  "pl-2008":
+    native: "in; at; into"
+    notes:
+      "n1": "Takes the locative for place (w domu, in the house) and the accusative for movement into something (w lewo, to the left)."
+    examples:
+      "Jestem w domu.":
+        native: "I am at home."
+        bases:
+          "Jestem": "to be"
+          "domu": "house"
+  "pl-2009":
+    native: "under; underneath"
+    notes:
+      "n1": "Takes the instrumental for place (pod domem, under the house) and the accusative for movement to a place under something."
+    examples:
+      "To jest pod domem.":
+        native: "This is under the house."
+        bases:
+          "To": "this"
+          "jest": "to be"
+          "domem": "house"
+  "pl-2010":
+    native: "above; over"
+    notes:
+      "n1": "Takes the instrumental for place (nad domem, above the house) and the accusative for movement over something."
+    examples:
+      "To jest nad domem.":
+        native: "This is above the house."
+        bases:
+          "To": "this"
+          "jest": "to be"
+          "domem": "house"
+  "pl-2011":
+    native: "in front of; before"
+    notes:
+      "n1": "Takes the instrumental for place and time (przed domem, in front of the house; przed południem, before noon) and the accusative for movement to a place in front of something."
+    examples:
+      "To jest przed domem.":
+        native: "This is in front of the house."
+        bases:
+          "To": "this"
+          "jest": "to be"
+          "domem": "house"
+  "pl-2012":
+    native: "behind"
+    notes:
+      "n1": "Takes the instrumental for place (za domem, behind the house) and the accusative for movement past something."
+    examples:
+      "To jest za domem.":
+        native: "This is behind the house."
+        bases:
+          "To": "this"
+          "jest": "to be"
+          "domem": "house"
+  "pl-2013":
+    native: "between"
+    notes:
+      "n1": "Takes the instrumental (między domami, between the houses). With the accusative it means into a gap between things."
+    examples:
+      "To jest między domami.":
+        native: "This is between the houses."
+        bases:
+          "To": "this"
+          "jest": "to be"
+          "domami": "houses"
+  "pl-2014":
+    native: "beside; next to; near"
+    notes:
+      "n1": "Takes the genitive: obok domu, next to the house."
+    examples:
+      "To jest obok domu.":
+        native: "This is next to the house."
+        bases:
+          "To": "this"
+          "jest": "to be"
+          "domu": "house"
