@@ -3994,7 +3994,26 @@ def _pl_tokens(ls: list[str], stress: int | None) -> list[_PlTok]:
             if c == "c":
                 toks[-1].letter = "ts"
         i += 1
-    return toks
+    return _pl_merge(toks)
+
+
+_PL_AFFRICATES = ({"tɕ", "dʑ"}, {"tʂ", "dʐ"}, {"ts", "dz"})
+
+
+def _pl_merge(toks: list[_PlTok]) -> list[_PlTok]:
+    """An affricate before one of the same place is one sound (pięćdziesiąt
+    pjɛɲˈdʑɛɕɔnt, not dʑdʑ), and ć before s is ts (pięćset)."""
+    out: list[_PlTok] = []
+    for t in toks:
+        prev = out[-1] if out else None
+        if prev is not None and prev.kind == "C" and t.kind == "C":
+            if any(prev.ipa in g and t.ipa in g for g in _PL_AFFRICATES):
+                out.pop()
+            elif prev.ipa == "tɕ" and t.ipa == "s":
+                out.pop()
+                t = _PlTok("C", "ts", palatal=True)
+        out.append(t)
+    return out
 
 
 def _pl_soft_i(toks: list[_PlTok], before_vowel: bool, stressed: bool
@@ -4077,6 +4096,8 @@ def _pl_nasals(toks: list[_PlTok]) -> list[_PlTok]:
             continue
         if nxt in ("p", "b"):
             nas = "m"
+        elif nxt == "ts" and toks[j + 1].palatal:
+            nas = "ɲ"                       # pięćset: the ć shows
         elif nxt in ("t", "d", "ts", "dz", "tʂ", "dʐ"):
             nas = "n"
         elif nxt in ("tɕ", "dʑ"):

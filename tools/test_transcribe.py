@@ -2459,6 +2459,12 @@ class PolishTest(unittest.TestCase):
         self.check((("w porządku", "f pɔˈʐɔntku"),
                     ("z Polski", "s ˈpɔlskʲi"), ("w domu", "v ˈdɔmu")))
 
+    def test_an_affricate_before_one_of_the_same_place_is_one_sound(self):
+        self.check((("pięćdziesiąt", "pjɛɲˈdʑɛɕɔnt"),
+                    ("dziewięćdziesiąt", "dʑɛvjɛɲˈdʑɛɕɔnt"),
+                    ("sześćdziesiąt", "ʂɛʑˈdʑɛɕɔnt"),
+                    ("pięćset", "ˈpjɛɲtsɛt")))
+
     def test_a_phrase_stresses_each_polysyllable(self):
         self.check((("Dzień dobry.", "dʑɛɲ ˈdɔbrɨ"),
                     ("Nie rozumiem.", "ɲɛ rɔˈzumjɛm"),
