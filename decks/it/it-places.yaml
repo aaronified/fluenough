@@ -1,0 +1,568 @@
+schema: 1
+id: "it-places"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2700"
+    target: "bar"
+    ipa: "bar"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un bar.", ipa: "ˈkwesto ɛ un bar", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "bar", base: "bar" }] }
+      - { target: "Ho un bar.", ipa: "ɔ un bar", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "bar", base: "bar" }] }
+      - { target: "Dov'è il bar?", ipa: "doˈvɛ il bar", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "bar", base: "bar" }] }
+  - id: "it-2701"
+    target: "hotel"
+    ipa: "ˈotel"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un hotel.", ipa: "ˈkwesto ɛ un ˈotel", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "hotel", base: "hotel" }] }
+      - { target: "Ho un hotel.", ipa: "ɔ un ˈotel", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "hotel", base: "hotel" }] }
+      - { target: "Dov'è l'hotel?", ipa: "doˈvɛ ˈlotel", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'hotel", base: "hotel" }] }
+  - id: "it-2702"
+    target: "albergo"
+    ipa: "alˈbɛrɡo"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un albergo.", ipa: "ˈkwesto ɛ un alˈbɛrɡo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "albergo", base: "albergo" }] }
+      - { target: "Ho un albergo.", ipa: "ɔ un alˈbɛrɡo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "albergo", base: "albergo" }] }
+      - { target: "Dov'è l'albergo?", ipa: "doˈvɛ lalˈbɛrɡo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'albergo", base: "albergo" }] }
+  - id: "it-2703"
+    target: "chiesa"
+    ipa: "ˈkjɛza"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una chiesa.", ipa: "ˈkwesta ɛ ˈuna ˈkjɛza", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "chiesa", base: "chiesa" }] }
+      - { target: "Ho una chiesa.", ipa: "ɔ ˈuna ˈkjɛza", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "chiesa", base: "chiesa" }] }
+      - { target: "Dov'è la chiesa?", ipa: "doˈvɛ la ˈkjɛza", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "chiesa", base: "chiesa" }] }
+  - id: "it-2704"
+    target: "scuola"
+    ipa: "ˈskwɔla"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una scuola.", ipa: "ˈkwesta ɛ ˈuna ˈskwɔla", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "scuola", base: "scuola" }] }
+      - { target: "Ho una scuola.", ipa: "ɔ ˈuna ˈskwɔla", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "scuola", base: "scuola" }] }
+      - { target: "Dov'è la scuola?", ipa: "doˈvɛ la ˈskwɔla", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "scuola", base: "scuola" }] }
+  - id: "it-2705"
+    target: "università"
+    ipa: "universiˈta"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è un'università.", ipa: "ˈkwesta ɛ ununiversiˈta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "un'università", base: "università" }] }
+      - { target: "Ho un'università.", ipa: "ɔ ununiversiˈta", bases: [{ word: "Ho", base: "avere" }, { word: "un'università", base: "università" }] }
+      - { target: "Dov'è l'università?", ipa: "doˈvɛ luniversiˈta", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'università", base: "università" }] }
+  - id: "it-2706"
+    target: "ospedale"
+    ipa: "ospeˈdale"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un ospedale.", ipa: "ˈkwesto ɛ un ospeˈdale", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "ospedale", base: "ospedale" }] }
+      - { target: "Ho un ospedale.", ipa: "ɔ un ospeˈdale", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "ospedale", base: "ospedale" }] }
+      - { target: "Dov'è l'ospedale?", ipa: "doˈvɛ lospeˈdale", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'ospedale", base: "ospedale" }] }
+  - id: "it-2707"
+    target: "farmacia"
+    ipa: "farmaˈtʃia"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una farmacia.", ipa: "ˈkwesta ɛ ˈuna farmaˈtʃia", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "farmacia", base: "farmacia" }] }
+      - { target: "Ho una farmacia.", ipa: "ɔ ˈuna farmaˈtʃia", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "farmacia", base: "farmacia" }] }
+      - { target: "Dov'è la farmacia?", ipa: "doˈvɛ la farmaˈtʃia", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "farmacia", base: "farmacia" }] }
+  - id: "it-2708"
+    target: "banca"
+    ipa: "ˈbanka"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una banca.", ipa: "ˈkwesta ɛ ˈuna ˈbanka", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "banca", base: "banca" }] }
+      - { target: "Ho una banca.", ipa: "ɔ ˈuna ˈbanka", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "banca", base: "banca" }] }
+      - { target: "Dov'è la banca?", ipa: "doˈvɛ la ˈbanka", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "banca", base: "banca" }] }
+  - id: "it-2710"
+    target: "museo"
+    ipa: "muˈzeo"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un museo.", ipa: "ˈkwesto ɛ un muˈzeo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "museo", base: "museo" }] }
+      - { target: "Ho un museo.", ipa: "ɔ un muˈzeo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "museo", base: "museo" }] }
+      - { target: "Dov'è il museo?", ipa: "doˈvɛ il muˈzeo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "museo", base: "museo" }] }
+  - id: "it-2711"
+    target: "teatro"
+    ipa: "teˈatro"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un teatro.", ipa: "ˈkwesto ɛ un teˈatro", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "teatro", base: "teatro" }] }
+      - { target: "Ho un teatro.", ipa: "ɔ un teˈatro", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "teatro", base: "teatro" }] }
+      - { target: "Dov'è il teatro?", ipa: "doˈvɛ il teˈatro", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "teatro", base: "teatro" }] }
+  - id: "it-2712"
+    target: "cinema"
+    ipa: "tʃiˈnema"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un cinema.", ipa: "ˈkwesto ɛ un tʃiˈnema", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "cinema", base: "cinema" }] }
+      - { target: "Ho un cinema.", ipa: "ɔ un tʃiˈnema", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "cinema", base: "cinema" }] }
+      - { target: "Dov'è il cinema?", ipa: "doˈvɛ il tʃiˈnema", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "cinema", base: "cinema" }] }
+  - id: "it-2714"
+    target: "giardino"
+    ipa: "dʒarˈdino"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un giardino.", ipa: "ˈkwesto ɛ un dʒarˈdino", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "giardino", base: "giardino" }] }
+      - { target: "Ho un giardino.", ipa: "ɔ un dʒarˈdino", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "giardino", base: "giardino" }] }
+      - { target: "Dov'è il giardino?", ipa: "doˈvɛ il dʒarˈdino", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "giardino", base: "giardino" }] }
+  - id: "it-2715"
+    target: "biblioteca"
+    ipa: "bibljoˈteka"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una biblioteca.", ipa: "ˈkwesta ɛ ˈuna bibljoˈteka", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "biblioteca", base: "biblioteca" }] }
+      - { target: "Ho una biblioteca.", ipa: "ɔ ˈuna bibljoˈteka", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "biblioteca", base: "biblioteca" }] }
+      - { target: "Dov'è la biblioteca?", ipa: "doˈvɛ la bibljoˈteka", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "biblioteca", base: "biblioteca" }] }
+  - id: "it-2716"
+    target: "stadio"
+    ipa: "ˈstadjo"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è uno stadio.", ipa: "ˈkwesto ɛ ˈuno ˈstadjo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "uno", ref: "it-0009" }, { word: "stadio", base: "stadio" }] }
+      - { target: "Ho uno stadio.", ipa: "ɔ ˈuno ˈstadjo", bases: [{ word: "Ho", base: "avere" }, { word: "uno", ref: "it-0009" }, { word: "stadio", base: "stadio" }] }
+      - { target: "Dov'è lo stadio?", ipa: "doˈvɛ lo ˈstadjo", bases: [{ word: "Dov'è", base: "dove" }, { word: "lo", base: "lo" }, { word: "stadio", base: "stadio" }] }
+  - id: "it-2717"
+    target: "spiaggia"
+    ipa: "ˈspjaddʒa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una spiaggia.", ipa: "ˈkwesta ɛ ˈuna ˈspjaddʒa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "spiaggia", base: "spiaggia" }] }
+      - { target: "Ho una spiaggia.", ipa: "ɔ ˈuna ˈspjaddʒa", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "spiaggia", base: "spiaggia" }] }
+      - { target: "Dov'è la spiaggia?", ipa: "doˈvɛ la ˈspjaddʒa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "spiaggia", base: "spiaggia" }] }
+  - id: "it-2718"
+    target: "mare"
+    ipa: "ˈmare"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un mare.", ipa: "ˈkwesto ɛ un ˈmare", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "mare", base: "mare" }] }
+      - { target: "Ho un mare.", ipa: "ɔ un ˈmare", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "mare", base: "mare" }] }
+      - { target: "Dov'è il mare?", ipa: "doˈvɛ il ˈmare", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "mare", base: "mare" }] }
+  - id: "it-2719"
+    target: "montagna"
+    ipa: "monˈtaɲɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una montagna.", ipa: "ˈkwesta ɛ ˈuna monˈtaɲɲa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "montagna", base: "montagna" }] }
+      - { target: "Ho una montagna.", ipa: "ɔ ˈuna monˈtaɲɲa", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "montagna", base: "montagna" }] }
+      - { target: "Dov'è la montagna?", ipa: "doˈvɛ la monˈtaɲɲa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "montagna", base: "montagna" }] }
+  - id: "it-2720"
+    target: "campagna"
+    ipa: "kamˈpaɲɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una campagna.", ipa: "ˈkwesta ɛ ˈuna kamˈpaɲɲa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "campagna", base: "campagna" }] }
+      - { target: "Ho una campagna.", ipa: "ɔ ˈuna kamˈpaɲɲa", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "campagna", base: "campagna" }] }
+      - { target: "Dov'è la campagna?", ipa: "doˈvɛ la kamˈpaɲɲa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "campagna", base: "campagna" }] }
+  - id: "it-2721"
+    target: "villaggio"
+    ipa: "vilˈladdʒo"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un villaggio.", ipa: "ˈkwesto ɛ un vilˈladdʒo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "villaggio", base: "villaggio" }] }
+      - { target: "Ho un villaggio.", ipa: "ɔ un vilˈladdʒo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "villaggio", base: "villaggio" }] }
+      - { target: "Dov'è il villaggio?", ipa: "doˈvɛ il vilˈladdʒo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "villaggio", base: "villaggio" }] }
+  - id: "it-2722"
+    target: "aeroporto"
+    ipa: "aeroˈporto"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un aeroporto.", ipa: "ˈkwesto ɛ un aeroˈporto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "aeroporto", base: "aeroporto" }] }
+      - { target: "Ho un aeroporto.", ipa: "ɔ un aeroˈporto", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "aeroporto", base: "aeroporto" }] }
+      - { target: "Dov'è l'aeroporto?", ipa: "doˈvɛ laeroˈporto", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'aeroporto", base: "aeroporto" }] }
+  - id: "it-2724"
+    target: "porto"
+    ipa: "ˈporto"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un porto.", ipa: "ˈkwesto ɛ un ˈporto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "porto", base: "porto" }] }
+      - { target: "Ho un porto.", ipa: "ɔ un ˈporto", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "porto", base: "porto" }] }
+      - { target: "Dov'è il porto?", ipa: "doˈvɛ il ˈporto", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "porto", base: "porto" }] }
+  - id: "it-2725"
+    target: "castello"
+    ipa: "kasˈtɛllo"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un castello.", ipa: "ˈkwesto ɛ un kasˈtɛllo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "castello", base: "castello" }] }
+      - { target: "Ho un castello.", ipa: "ɔ un kasˈtɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "castello", base: "castello" }] }
+      - { target: "Dov'è il castello?", ipa: "doˈvɛ il kasˈtɛllo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "castello", base: "castello" }] }
+  - id: "it-2726"
+    target: "palestra"
+    ipa: "paˈlestra"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una palestra.", ipa: "ˈkwesta ɛ ˈuna paˈlestra", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "palestra", base: "palestra" }] }
+      - { target: "Ho una palestra.", ipa: "ɔ ˈuna paˈlestra", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "palestra", base: "palestra" }] }
+      - { target: "Dov'è la palestra?", ipa: "doˈvɛ la paˈlestra", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "palestra", base: "palestra" }] }
+  - id: "it-2727"
+    target: "fiume"
+    ipa: "ˈfjume"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un fiume.", ipa: "ˈkwesto ɛ un ˈfjume", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "fiume", base: "fiume" }] }
+      - { target: "Ho un fiume.", ipa: "ɔ un ˈfjume", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "fiume", base: "fiume" }] }
+      - { target: "Dov'è il fiume?", ipa: "doˈvɛ il ˈfjume", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "fiume", base: "fiume" }] }
+  - id: "it-2728"
+    target: "lago"
+    ipa: "ˈlaɡo"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un lago.", ipa: "ˈkwesto ɛ un ˈlaɡo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "lago", base: "lago" }] }
+      - { target: "Ho un lago.", ipa: "ɔ un ˈlaɡo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "lago", base: "lago" }] }
+      - { target: "Dov'è il lago?", ipa: "doˈvɛ il ˈlaɡo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "lago", base: "lago" }] }
+  - id: "it-2729"
+    target: "isola"
+    ipa: "iˈzola"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è un'isola.", ipa: "ˈkwesta ɛ uniˈzola", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "un'isola", base: "isola" }] }
+      - { target: "Ho un'isola.", ipa: "ɔ uniˈzola", bases: [{ word: "Ho", base: "avere" }, { word: "un'isola", base: "isola" }] }
+      - { target: "Dov'è l'isola?", ipa: "doˈvɛ liˈzola", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'isola", base: "isola" }] }
+  - id: "it-2730"
+    target: "bosco"
+    ipa: "ˈbosko"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un bosco.", ipa: "ˈkwesto ɛ un ˈbosko", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "bosco", base: "bosco" }] }
+      - { target: "Ho un bosco.", ipa: "ɔ un ˈbosko", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "bosco", base: "bosco" }] }
+      - { target: "Dov'è il bosco?", ipa: "doˈvɛ il ˈbosko", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "bosco", base: "bosco" }] }
+  - id: "it-2731"
+    target: "collina"
+    ipa: "kolˈlina"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una collina.", ipa: "ˈkwesta ɛ ˈuna kolˈlina", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "collina", base: "collina" }] }
+      - { target: "Ho una collina.", ipa: "ɔ ˈuna kolˈlina", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "collina", base: "collina" }] }
+      - { target: "Dov'è la collina?", ipa: "doˈvɛ la kolˈlina", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "collina", base: "collina" }] }
+  - id: "it-2732"
+    target: "valle"
+    ipa: "ˈvalle"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una valle.", ipa: "ˈkwesta ɛ ˈuna ˈvalle", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "valle", base: "valle" }] }
+      - { target: "Ho una valle.", ipa: "ɔ ˈuna ˈvalle", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "valle", base: "valle" }] }
+      - { target: "Dov'è la valle?", ipa: "doˈvɛ la ˈvalle", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "valle", base: "valle" }] }
+  - id: "it-2733"
+    target: "pizzeria"
+    ipa: "piddzeˈria"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una pizzeria.", ipa: "ˈkwesta ɛ ˈuna piddzeˈria", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "pizzeria", base: "pizzeria" }] }
+      - { target: "Ho una pizzeria.", ipa: "ɔ ˈuna piddzeˈria", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "pizzeria", base: "pizzeria" }] }
+      - { target: "Dov'è la pizzeria?", ipa: "doˈvɛ la piddzeˈria", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "pizzeria", base: "pizzeria" }] }
+  - id: "it-2734"
+    target: "piscina"
+    ipa: "piʃˈʃina"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una piscina.", ipa: "ˈkwesta ɛ ˈuna piʃˈʃina", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "piscina", base: "piscina" }] }
+      - { target: "Ho una piscina.", ipa: "ɔ ˈuna piʃˈʃina", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "piscina", base: "piscina" }] }
+      - { target: "Dov'è la piscina?", ipa: "doˈvɛ la piʃˈʃina", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "piscina", base: "piscina" }] }
+  - id: "it-2735"
+    target: "libreria"
+    ipa: "libreˈria"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una libreria.", ipa: "ˈkwesta ɛ ˈuna libreˈria", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "libreria", base: "libreria" }] }
+      - { target: "Ho una libreria.", ipa: "ɔ ˈuna libreˈria", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "libreria", base: "libreria" }] }
+      - { target: "Dov'è la libreria?", ipa: "doˈvɛ la libreˈria", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "libreria", base: "libreria" }] }
+  - id: "it-2736"
+    target: "edificio"
+    ipa: "ediˈfitʃo"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un edificio.", ipa: "ˈkwesto ɛ un ediˈfitʃo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "edificio", base: "edificio" }] }
+      - { target: "Ho un edificio.", ipa: "ɔ un ediˈfitʃo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "edificio", base: "edificio" }] }
+      - { target: "Dov'è l'edificio?", ipa: "doˈvɛ lediˈfitʃo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'edificio", base: "edificio" }] }
+  - id: "it-2737"
+    target: "municipio"
+    ipa: "muniˈtʃipjo"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un municipio.", ipa: "ˈkwesto ɛ un muniˈtʃipjo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "municipio", base: "municipio" }] }
+      - { target: "Ho un municipio.", ipa: "ɔ un muniˈtʃipjo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "municipio", base: "municipio" }] }
+      - { target: "Dov'è il municipio?", ipa: "doˈvɛ il muniˈtʃipjo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "municipio", base: "municipio" }] }
+  - id: "it-2738"
+    target: "cimitero"
+    ipa: "tʃimiˈtero"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un cimitero.", ipa: "ˈkwesto ɛ un tʃimiˈtero", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "cimitero", base: "cimitero" }] }
+      - { target: "Ho un cimitero.", ipa: "ɔ un tʃimiˈtero", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "cimitero", base: "cimitero" }] }
+      - { target: "Dov'è il cimitero?", ipa: "doˈvɛ il tʃimiˈtero", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "cimitero", base: "cimitero" }] }
+  - id: "it-2739"
+    target: "pasticceria"
+    ipa: "pastittʃeˈria"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una pasticceria.", ipa: "ˈkwesta ɛ ˈuna pastittʃeˈria", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "pasticceria", base: "pasticceria" }] }
+      - { target: "Ho una pasticceria.", ipa: "ɔ ˈuna pastittʃeˈria", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "pasticceria", base: "pasticceria" }] }
+      - { target: "Dov'è la pasticceria?", ipa: "doˈvɛ la pastittʃeˈria", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "pasticceria", base: "pasticceria" }] }
+  - id: "it-2740"
+    target: "gelateria"
+    ipa: "dʒelateˈria"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una gelateria.", ipa: "ˈkwesta ɛ ˈuna dʒelateˈria", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "gelateria", base: "gelateria" }] }
+      - { target: "Ho una gelateria.", ipa: "ɔ ˈuna dʒelateˈria", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "gelateria", base: "gelateria" }] }
+      - { target: "Dov'è la gelateria?", ipa: "doˈvɛ la dʒelateˈria", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "gelateria", base: "gelateria" }] }
+  - id: "it-2741"
+    target: "trattoria"
+    ipa: "tratˈtɔrja"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una trattoria.", ipa: "ˈkwesta ɛ ˈuna tratˈtɔrja", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "trattoria", base: "trattoria" }] }
+      - { target: "Ho una trattoria.", ipa: "ɔ ˈuna tratˈtɔrja", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "trattoria", base: "trattoria" }] }
+      - { target: "Dov'è la trattoria?", ipa: "doˈvɛ la tratˈtɔrja", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "trattoria", base: "trattoria" }] }
+  - id: "it-2742"
+    target: "pub"
+    ipa: "pub"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un pub.", ipa: "ˈkwesto ɛ un pub", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "pub", base: "pub" }] }
+      - { target: "Ho un pub.", ipa: "ɔ un pub", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "pub", base: "pub" }] }
+      - { target: "Dov'è il pub?", ipa: "doˈvɛ il pub", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pub", base: "pub" }] }
+  - id: "it-2743"
+    target: "quartiere"
+    ipa: "kwarˈtjɛre"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un quartiere.", ipa: "ˈkwesto ɛ un kwarˈtjɛre", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "quartiere", base: "quartiere" }] }
+      - { target: "Ho un quartiere.", ipa: "ɔ un kwarˈtjɛre", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "quartiere", base: "quartiere" }] }
+      - { target: "Dov'è il quartiere?", ipa: "doˈvɛ il kwarˈtjɛre", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "quartiere", base: "quartiere" }] }
+  - id: "it-2744"
+    target: "sala"
+    ipa: "ˈsala"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una sala.", ipa: "ˈkwesta ɛ ˈuna ˈsala", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "sala", base: "sala" }] }
+      - { target: "Ho una sala.", ipa: "ɔ ˈuna ˈsala", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "sala", base: "sala" }] }
+      - { target: "Dov'è la sala?", ipa: "doˈvɛ la ˈsala", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "sala", base: "sala" }] }
+  - id: "it-2745"
+    target: "cortile"
+    ipa: "ˈkortile"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un cortile.", ipa: "ˈkwesto ɛ un ˈkortile", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "cortile", base: "cortile" }] }
+      - { target: "Ho un cortile.", ipa: "ɔ un ˈkortile", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "cortile", base: "cortile" }] }
+      - { target: "Dov'è il cortile?", ipa: "doˈvɛ il ˈkortile", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "cortile", base: "cortile" }] }
