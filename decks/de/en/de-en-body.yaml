@@ -1,0 +1,602 @@
+schema: 1
+id: "de-en-body"
+kind: "layer"
+core: "de-body"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Body"
+description: "Parts of the body, from head to foot, and the word for pain. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "de-2630":
+    native: "body"
+    notes:
+      "n1": "Körper is body: der Körper. Its plural is also Körper."
+    examples:
+      "Das ist der Körper.":
+        native: "This is the body."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Körper": "body"
+      "Wo ist der Körper?":
+        native: "Where is the body?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Körper": "body"
+  "de-2631":
+    native: "head"
+    notes:
+      "n1": "Kopf is head: der Kopf. Its plural is Köpfe."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Kopf.":
+        native: "This is the head."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Kopf": "head"
+      "Wo ist der Kopf?":
+        native: "Where is the head?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Kopf": "head"
+  "de-2632":
+    native: "neck"
+    notes:
+      "n1": "Hals is neck: der Hals. Its plural is Hälse."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Hals.":
+        native: "This is the neck."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Hals": "neck"
+      "Wo ist der Hals?":
+        native: "Where is the neck?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Hals": "neck"
+  "de-2633":
+    native: "shoulder"
+    notes:
+      "n1": "Schulter is shoulder: die Schulter. Its plural is Schultern."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Schulter.":
+        native: "This is the shoulder."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Schulter": "shoulder"
+      "Wo ist die Schulter?":
+        native: "Where is the shoulder?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Schulter": "shoulder"
+  "de-2634":
+    native: "arm"
+    notes:
+      "n1": "Arm is arm: der Arm. Its plural is Arme."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Arm.":
+        native: "This is the arm."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Arm": "arm"
+      "Wo ist der Arm?":
+        native: "Where is the arm?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Arm": "arm"
+  "de-2635":
+    native: "hand"
+    notes:
+      "n1": "Hand is hand: die Hand. Its plural is Hände."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Hand.":
+        native: "This is the hand."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Hand": "hand"
+      "Wo ist die Hand?":
+        native: "Where is the hand?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Hand": "hand"
+  "de-2636":
+    native: "finger"
+    notes:
+      "n1": "Finger is finger: der Finger. Its plural is also Finger."
+    examples:
+      "Das ist der Finger.":
+        native: "This is the finger."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Finger": "finger"
+      "Ich habe einen Finger.":
+        native: "I have a finger."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Finger": "finger"
+  "de-2637":
+    native: "leg"
+    notes:
+      "n1": "Bein is leg: das Bein. Its plural is Beine."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Bein.":
+        native: "Here is the leg."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Bein": "leg"
+      "Wo ist das Bein?":
+        native: "Where is the leg?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Bein": "leg"
+  "de-2638":
+    native: "knee"
+    notes:
+      "n1": "Knie is knee: das Knie. Its plural is also Knie."
+    examples:
+      "Hier ist das Knie.":
+        native: "Here is the knee."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Knie": "knee"
+      "Wo ist das Knie?":
+        native: "Where is the knee?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Knie": "knee"
+  "de-2639":
+    native: "foot"
+    notes:
+      "n1": "Fuß is foot: der Fuß. Its plural is Füße."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Fuß.":
+        native: "This is the foot."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Fuß": "foot"
+      "Wo ist der Fuß?":
+        native: "Where is the foot?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Fuß": "foot"
+  "de-2640":
+    native: "back"
+    notes:
+      "n1": "Rücken is back: der Rücken. Its plural is also Rücken."
+    examples:
+      "Das ist der Rücken.":
+        native: "This is the back."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Rücken": "back"
+      "Wo ist der Rücken?":
+        native: "Where is the back?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Rücken": "back"
+  "de-2641":
+    native: "abdomen, belly"
+    notes:
+      "n1": "Bauch is abdomen: der Bauch. Its plural is Bäuche."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Bauch.":
+        native: "This is the abdomen."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Bauch": "abdomen"
+      "Wo ist der Bauch?":
+        native: "Where is the abdomen?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Bauch": "abdomen"
+  "de-2642":
+    native: "chest"
+    notes:
+      "n1": "Brust is chest: die Brust. Its plural is Brüste."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Brust.":
+        native: "This is the chest."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Brust": "chest"
+      "Wo ist die Brust?":
+        native: "Where is the chest?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Brust": "chest"
+  "de-2643":
+    native: "heart"
+    notes:
+      "n1": "Herz is heart: das Herz. Its plural is Herzen."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Herz.":
+        native: "Here is the heart."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Herz": "heart"
+      "Wo ist das Herz?":
+        native: "Where is the heart?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Herz": "heart"
+  "de-2644":
+    native: "eye"
+    notes:
+      "n1": "Auge is eye: das Auge. Its plural is Augen."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Auge.":
+        native: "Here is the eye."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Auge": "eye"
+      "Wo ist das Auge?":
+        native: "Where is the eye?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Auge": "eye"
+  "de-2645":
+    native: "ear"
+    notes:
+      "n1": "Ohr is ear: das Ohr. Its plural is Ohren."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Ohr.":
+        native: "Here is the ear."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Ohr": "ear"
+      "Wo ist das Ohr?":
+        native: "Where is the ear?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Ohr": "ear"
+  "de-2646":
+    native: "nose"
+    notes:
+      "n1": "Nase is nose: die Nase. Its plural is Nasen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Nase.":
+        native: "This is the nose."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Nase": "nose"
+      "Wo ist die Nase?":
+        native: "Where is the nose?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Nase": "nose"
+  "de-2647":
+    native: "mouth"
+    notes:
+      "n1": "Mund is mouth: der Mund. Its plural is Münder."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Mund.":
+        native: "This is the mouth."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Mund": "mouth"
+      "Wo ist der Mund?":
+        native: "Where is the mouth?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Mund": "mouth"
+  "de-2648":
+    native: "tooth"
+    notes:
+      "n1": "Zahn is tooth: der Zahn. Its plural is Zähne."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Zahn.":
+        native: "This is the tooth."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Zahn": "tooth"
+      "Wo ist der Zahn?":
+        native: "Where is the tooth?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Zahn": "tooth"
+  "de-2649":
+    native: "hair"
+    notes:
+      "n1": "Haar is hair: das Haar. Its plural is Haare."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Haar.":
+        native: "Here is the hair."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Haar": "hair"
+      "Wo ist das Haar?":
+        native: "Where is the hair?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Haar": "hair"
+  "de-2650":
+    native: "face"
+    notes:
+      "n1": "Gesicht is face: das Gesicht. Its plural is Gesichter."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Gesicht.":
+        native: "Here is the face."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Gesicht": "face"
+      "Wo ist das Gesicht?":
+        native: "Where is the face?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Gesicht": "face"
+  "de-2651":
+    native: "chin"
+    notes:
+      "n1": "Kinn is chin: das Kinn. Its plural is Kinne."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Kinn.":
+        native: "Here is the chin."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Kinn": "chin"
+      "Wo ist das Kinn?":
+        native: "Where is the chin?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Kinn": "chin"
+  "de-2652":
+    native: "forehead, brow"
+    notes:
+      "n1": "Stirn is forehead: die Stirn. Its plural is Stirnen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Stirn.":
+        native: "This is the forehead."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Stirn": "forehead"
+      "Wo ist die Stirn?":
+        native: "Where is the forehead?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Stirn": "forehead"
+  "de-2653":
+    native: "lip"
+    notes:
+      "n1": "Lippe is lip: die Lippe. Its plural is Lippen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Lippe.":
+        native: "This is the lip."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Lippe": "lip"
+      "Wo ist die Lippe?":
+        native: "Where is the lip?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Lippe": "lip"
+  "de-2654":
+    native: "wrist"
+    notes:
+      "n1": "Handgelenk is wrist: das Handgelenk. Its plural is Handgelenke."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Handgelenk.":
+        native: "Here is the wrist."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Handgelenk": "wrist"
+      "Wo ist das Handgelenk?":
+        native: "Where is the wrist?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Handgelenk": "wrist"
+  "de-2655":
+    native: "elbow"
+    notes:
+      "n1": "Ellbogen is elbow: der Ellbogen. Its plural is also Ellbogen."
+    examples:
+      "Das ist der Ellbogen.":
+        native: "This is the elbow."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Ellbogen": "elbow"
+      "Wo ist der Ellbogen?":
+        native: "Where is the elbow?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Ellbogen": "elbow"
+  "de-2656":
+    native: "thumb"
+    notes:
+      "n1": "Daumen is thumb: der Daumen. Its plural is also Daumen."
+    examples:
+      "Das ist der Daumen.":
+        native: "This is the thumb."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Daumen": "thumb"
+      "Wo ist der Daumen?":
+        native: "Where is the thumb?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Daumen": "thumb"
+  "de-2657":
+    native: "hip"
+    notes:
+      "n1": "Hüfte is hip: die Hüfte. Its plural is Hüften."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Hüfte.":
+        native: "This is the hip."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Hüfte": "hip"
+      "Wo ist die Hüfte?":
+        native: "Where is the hip?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Hüfte": "hip"
+  "de-2658":
+    native: "headache"
+    notes:
+      "n1": "Kopfschmerzen is headache. It has only a plural form, with die: die Kopfschmerzen."
+    examples:
+      "Ich habe Kopfschmerzen.":
+        native: "I have a headache."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "Kopfschmerzen": "headache"
+      "Das sind Kopfschmerzen.":
+        native: "These are headaches."
+        bases:
+          "Das": "These"
+          "sind": "are"
+          "Kopfschmerzen": "headaches"
+  "de-2659":
+    native: "pain, ache"
+    notes:
+      "n1": "Schmerz is pain: der Schmerz. Its plural is Schmerzen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Schmerz.":
+        native: "This is the pain."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Schmerz": "pain"
+      "Wo ist der Schmerz?":
+        native: "Where is the pain?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Schmerz": "pain"
