@@ -187,16 +187,16 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Toki Pona | tok | #1193 | 11th in the 2026-10-18 deck priority | no ranked priority | path of 46 units, 45 built; 152 core files |
 | Lojban | jbo | #1194 | third list and others (first words only) | no ranked priority | path of 114 units, 1 built; 3 core files |
 | Interslavic | isv | #1195 | third list and others (first words only) | no ranked priority | path of 113 units, 1 built; 3 core files |
-| Portuguese | pt | #357 | third list and others (first words only) | no ranked priority | path of 87 units, 1 built; 3 core files |
-| Italian | it | #358 | second list (to A1; Classical Sanskrit to B1) | second-list position 6 | path of 87 units, 1 built; 3 core files |
+| Portuguese | pt | #357 | third list and others (first words only) | no ranked priority | A1 built (2026-11-28, #1756, #1757): path units 1 to 32 written (25 word units, 6 grammar units); about 827 cards in decks/it, narrow `phonetic` on 823; A2 and B1 and genre decks not started (A1 only by owner order) |
+| Italian | it | #358 | second list (to A1; Classical Sanskrit to B1) | second-list position 6 | A1 built (2026-11-28, #1756, #1757): path units 1 to 32 written (25 word units, 6 grammar units); about 827 cards in decks/it, narrow `phonetic` on 823; A2 and B1 and genre decks not started (A1 only by owner order) |
 | Catalan | ca | #360 | third list and others (first words only) | no ranked priority | path of 88 units, 1 built; 3 core files |
 | Swedish | sv | #362 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
 | Norwegian (Bokmål) | nb | #363 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
 | Yiddish | yi | #364 | third list and others (first words only) | no ranked priority | path of 86 units, 1 built; 3 core files |
 | Russian | ru | #365 | second list (to A1; Classical Sanskrit to B1) | second-list position 8 | path of 88 units, 1 built; 3 core files |
-| Polish | pl | #366 | second list (to A1; Classical Sanskrit to B1) | second-list position 11 | path of 87 units, 1 built; 3 core files |
+| Polish | pl | #366 | second list (to A1; Classical Sanskrit to B1) | second-list position 11 | A1 built (2026-11-28, #1756, #1757): path units 1 to 32 written (25 word units, 6 grammar units); about 827 cards in decks/it, narrow `phonetic` on 823; A2 and B1 and genre decks not started (A1 only by owner order) |
 | Serbo-Croatian | hbs | #367 | third list and others (first words only) | no ranked priority | path of 90 units, 1 built; 3 core files |
-| Greek (Modern) | el | #368 | second list (to A1; Classical Sanskrit to B1) | second-list position 10 | path of 87 units, 1 built; 3 core files |
+| Greek (Modern) | el | #368 | second list (to A1; Classical Sanskrit to B1) | second-list position 10 | A1 built (2026-11-28, #1756, #1757): path units 1 to 32 written (25 word units, 6 grammar units); about 827 cards in decks/it, narrow `phonetic` on 823; A2 and B1 and genre decks not started (A1 only by owner order) |
 | Hebrew | he | #375 | third list and others (first words only) | no ranked priority | path of 90 units, 1 built; 3 core files |
 | Finnish | fi | #370 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
 | Hungarian | hu | #371 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
