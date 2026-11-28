@@ -1,0 +1,26 @@
+schema: 1
+id: "el-en-grammar-be-verb-where"
+kind: "layer"
+core: "el-grammar-be-verb-where"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Is here, is not here, where is?"
+license: "CC-BY-SA-4.0"
+description: "Eight family and work nouns in three sentences with είναι (eínai): the noun is here, the noun is not here, and where is the noun? The question word πού (poú) comes first and the noun follows the verb. Taken from Wikipedia's page on Modern Greek grammar and the Wiktionary entries of the words. Not yet checked by a Greek speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Is here, is not here, where is?"
+  slot_name: "sentence"
+  slots:
+    "here": "a statement: the person is here"
+    "negative": "a negative: the person is not here"
+    "where": "a question with πού (poú), where"
+  entries:
+    "pateras": "father: is here, is not here, and where is?"
+    "mitera": "mother: is here, is not here, and where is?"
+    "paidi": "child: is here, is not here, and where is?"
+    "adelfos": "brother: is here, is not here, and where is?"
+    "adelfi": "sister: is here, is not here, and where is?"
+    "yiatros": "doctor: is here, is not here, and where is?"
+    "daskala": "teacher (female): is here, is not here, and where is?"
+    "moro": "baby: is here, is not here, and where is?"
+  notes: "With a noun as the subject Greek uses the same είναι (eínai) for one or for many, and the article before the noun: ο πατέρας είναι εδώ (o patéras eínai edó). The negative puts δεν (den) between the noun and the verb: ο πατέρας δεν είναι εδώ (o patéras den eínai edó). For a question about place πού (poú) comes at the start and the verb comes next, before the subject: πού είναι ο πατέρας; (poú eínai o patéras;). This is the pattern of the phrasebook question Πού είναι ο σταθμός; (Poú eínai o stathmós;), which asks where the station is."

@@ -1,0 +1,24 @@
+schema: 1
+id: "el-en-grammar-be-verb"
+kind: "layer"
+core: "el-grammar-be-verb"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be: statements, negatives and questions"
+license: "CC-BY-SA-4.0"
+description: "Each person of είμαι (eímai), to be, as a statement, a negative and a question. The negative puts δεν (den) before the verb, and a question has the same words as the statement, with a rising voice and a question mark. Taken from Wikipedia's page on Modern Greek grammar and the Wiktionary entries of the words. Not yet checked by a Greek speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "To be: statements, negatives and questions"
+  slot_name: "sentence"
+  slots:
+    "statement": "a statement: I am here, you are here..."
+    "negative": "a negative, with δεν (den) before the verb"
+    "question": "a question: am I here? are you here?..."
+  entries:
+    "ego": "I"
+    "esy": "you (one person)"
+    "aftos": "he; she; it"
+    "emeis": "we"
+    "eseis": "you (many people, or polite)"
+    "afti": "they"
+  notes: "The present of είμαι (eímai) is είμαι (eímai), είσαι (eísai), είναι (eínai), είμαστε (eímaste), είστε (eíste) (also είσαστε (eísaste)), είναι (eínai): the third person singular and plural are the same word. The verb already shows the person, so the pronoun is left out unless it is stressed: είμαι εδώ (eímai edó) means 'I am here'. To make a verb negative Greek puts δεν (den) in front of it: δεν είμαι εδώ (den eímai edó), I am not here. A question needs no helper word and no change of word order: είσαι εδώ; (eísai edó;) is both the statement 'you are here' and the question 'are you here?', and only the voice and the question mark (which looks like the English semicolon) tell them apart."

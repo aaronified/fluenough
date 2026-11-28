@@ -1,0 +1,121 @@
+# Unit 29 sentences. Every verb form comes from the unit's tables (el-grammar-be-verb, el-grammar-be-verb-where); nouns come from earlier units.
+schema: 1
+id: "el-grammar-be-verb-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "el-4960"
+    target: "Είμαι γιατρός."
+    reading: "Eímai yiatrós."
+    ipa: "ˈime ʝaˈtɾos"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Είμαι", ref: "el-1804" }, { word: "γιατρός", ref: "el-2507" }]
+  - id: "el-4961"
+    target: "Δεν είμαι δάσκαλος."
+    reading: "Den eímai dáskalos."
+    ipa: "ðen ˈime ˈðaskalos"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "δεν", base: "δεν", reading: "den" }, { word: "είμαι", ref: "el-1804" }, { word: "δάσκαλος", ref: "el-2509" }]
+  - id: "el-4962"
+    target: "Είσαι δάσκαλος;"
+    reading: "Eísai dáskalos;"
+    ipa: "ˈise ˈðaskalos"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Είσαι", ref: "el-1804" }, { word: "δάσκαλος", ref: "el-2509" }]
+  - id: "el-4963"
+    target: "Η μητέρα είναι δασκάλα."
+    reading: "I mitéra eínai daskála."
+    ipa: "i miˈteɾa ˈine ðaˈskala"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Η", base: "ο", reading: "o" }, { word: "μητέρα", ref: "el-1500" }, { word: "είναι", ref: "el-1804" }, { word: "δασκάλα", ref: "el-2510" }]
+  - id: "el-4964"
+    target: "Είμαστε φίλοι."
+    reading: "Eímaste fíloi."
+    ipa: "ˈimaste ˈfili"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Είμαστε", ref: "el-1804" }, { word: "φίλοι", ref: "el-1522" }]
+  - id: "el-4965"
+    target: "Είναι καλός."
+    reading: "Eínai kalós."
+    ipa: "ˈine kaˈlos"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "είναι", ref: "el-1804" }, { word: "καλός", ref: "el-0009" }]
+  - id: "el-4966"
+    target: "Πού είσαι;"
+    reading: "Poú eísai;"
+    ipa: "pu ˈise"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Πού", ref: "el-1302" }, { word: "είσαι", ref: "el-1804" }]
+  - id: "el-4967"
+    target: "Πού είναι το παιδί;"
+    reading: "Poú eínai to paidí;"
+    ipa: "pu ˈine to peˈði"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Πού", ref: "el-1302" }, { word: "είναι", ref: "el-1804" }, { word: "το", base: "ο", reading: "o" }, { word: "παιδί", ref: "el-1506" }]
+  - id: "el-4968"
+    target: "Δεν είμαστε εδώ."
+    reading: "Den eímaste edó."
+    ipa: "ðen ˈimaste eˈðo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "δεν", base: "δεν", reading: "den" }, { word: "είμαστε", ref: "el-1804" }, { word: "εδώ", ref: "el-1914" }]
+  - id: "el-4969"
+    target: "Η δασκάλα είναι εδώ;"
+    reading: "I daskála eínai edó;"
+    ipa: "i ðaˈskala ˈine eˈðo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Η", base: "ο", reading: "o" }, { word: "δασκάλα", ref: "el-2510" }, { word: "είναι", ref: "el-1804" }, { word: "εδώ", ref: "el-1914" }]
+  - id: "el-4970"
+    target: "Ο γιατρός δεν είναι εδώ."
+    reading: "O yiatrós den eínai edó."
+    ipa: "o ʝaˈtɾos ðen ˈine eˈðo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ο", base: "ο", reading: "o" }, { word: "γιατρός", ref: "el-2507" }, { word: "δεν", base: "δεν", reading: "den" }, { word: "είναι", ref: "el-1804" }, { word: "εδώ", ref: "el-1914" }]
+  - id: "el-4971"
+    target: "Είστε καλά;"
+    reading: "Eíste kalá;"
+    ipa: "ˈiste kaˈla"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Είστε", ref: "el-1804" }, { word: "καλά", ref: "el-1910" }]
+  - id: "el-4972"
+    target: "Είναι ο αδελφός μου."
+    reading: "Eínai o adelfós mou."
+    ipa: "ˈine o aðelˈfos mu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "είναι", ref: "el-1804" }, { word: "ο", base: "ο", reading: "o" }, { word: "αδελφός", ref: "el-1507" }, { word: "μου", ref: "el-0006" }]
+  - id: "el-4973"
+    target: "Το νερό είναι εδώ."
+    reading: "To neró eínai edó."
+    ipa: "to neˈɾo ˈine eˈðo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Το", base: "ο", reading: "o" }, { word: "νερό", ref: "el-0008" }, { word: "είναι", ref: "el-1804" }, { word: "εδώ", ref: "el-1914" }]

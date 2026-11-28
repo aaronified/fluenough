@@ -1,0 +1,139 @@
+# Unit 29 grammar topic be-verb, where is. Sources read: en.wikipedia.org 'Modern Greek grammar' (the nominative after είναι, the article, negation with δεν) and the phrasebook question Πού είναι ο σταθμός; of this course; the en.wiktionary.org entries of the eight nouns (gender, nominative). Rows use only nouns of earlier units.
+schema: 1
+id: "el-grammar-be-verb-where"
+part: "core"
+kind: "grammar"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["here", "negative", "where"]
+  entries:
+    - lemma: "πατέρας"
+      key: "pateras"
+      reading: "patéras"
+      ipa: "paˈteɾas"
+      forms:
+        "here": "Ο πατέρας είναι εδώ."
+        "negative": "Ο πατέρας δεν είναι εδώ."
+        "where": "Πού είναι ο πατέρας;"
+      readings:
+        "here": "O patéras eínai edó."
+        "negative": "O patéras den eínai edó."
+        "where": "Poú eínai o patéras;"
+      ipas:
+        "here": "o paˈteɾas ˈine eˈðo"
+        "negative": "o paˈteɾas ðen ˈine eˈðo"
+        "where": "pu ˈine o paˈteɾas"
+    - lemma: "μητέρα"
+      key: "mitera"
+      reading: "mitéra"
+      ipa: "miˈteɾa"
+      forms:
+        "here": "Η μητέρα είναι εδώ."
+        "negative": "Η μητέρα δεν είναι εδώ."
+        "where": "Πού είναι η μητέρα;"
+      readings:
+        "here": "I mitéra eínai edó."
+        "negative": "I mitéra den eínai edó."
+        "where": "Poú eínai i mitéra;"
+      ipas:
+        "here": "i miˈteɾa ˈine eˈðo"
+        "negative": "i miˈteɾa ðen ˈine eˈðo"
+        "where": "pu ˈine i miˈteɾa"
+    - lemma: "παιδί"
+      key: "paidi"
+      reading: "paidí"
+      ipa: "peˈði"
+      forms:
+        "here": "Το παιδί είναι εδώ."
+        "negative": "Το παιδί δεν είναι εδώ."
+        "where": "Πού είναι το παιδί;"
+      readings:
+        "here": "To paidí eínai edó."
+        "negative": "To paidí den eínai edó."
+        "where": "Poú eínai to paidí;"
+      ipas:
+        "here": "to peˈði ˈine eˈðo"
+        "negative": "to peˈði ðen ˈine eˈðo"
+        "where": "pu ˈine to peˈði"
+    - lemma: "αδελφός"
+      key: "adelfos"
+      reading: "adelfós"
+      ipa: "aðelˈfos"
+      forms:
+        "here": "Ο αδελφός είναι εδώ."
+        "negative": "Ο αδελφός δεν είναι εδώ."
+        "where": "Πού είναι ο αδελφός;"
+      readings:
+        "here": "O adelfós eínai edó."
+        "negative": "O adelfós den eínai edó."
+        "where": "Poú eínai o adelfós;"
+      ipas:
+        "here": "o aðelˈfos ˈine eˈðo"
+        "negative": "o aðelˈfos ðen ˈine eˈðo"
+        "where": "pu ˈine o aðelˈfos"
+    - lemma: "αδελφή"
+      key: "adelfi"
+      reading: "adelfí"
+      ipa: "aðelˈfi"
+      forms:
+        "here": "Η αδελφή είναι εδώ."
+        "negative": "Η αδελφή δεν είναι εδώ."
+        "where": "Πού είναι η αδελφή;"
+      readings:
+        "here": "I adelfí eínai edó."
+        "negative": "I adelfí den eínai edó."
+        "where": "Poú eínai i adelfí;"
+      ipas:
+        "here": "i aðelˈfi ˈine eˈðo"
+        "negative": "i aðelˈfi ðen ˈine eˈðo"
+        "where": "pu ˈine i aðelˈfi"
+    - lemma: "γιατρός"
+      key: "yiatros"
+      reading: "yiatrós"
+      ipa: "ʝaˈtɾos"
+      forms:
+        "here": "Ο γιατρός είναι εδώ."
+        "negative": "Ο γιατρός δεν είναι εδώ."
+        "where": "Πού είναι ο γιατρός;"
+      readings:
+        "here": "O yiatrós eínai edó."
+        "negative": "O yiatrós den eínai edó."
+        "where": "Poú eínai o yiatrós;"
+      ipas:
+        "here": "o ʝaˈtɾos ˈine eˈðo"
+        "negative": "o ʝaˈtɾos ðen ˈine eˈðo"
+        "where": "pu ˈine o ʝaˈtɾos"
+    - lemma: "δασκάλα"
+      key: "daskala"
+      reading: "daskála"
+      ipa: "ðaˈskala"
+      forms:
+        "here": "Η δασκάλα είναι εδώ."
+        "negative": "Η δασκάλα δεν είναι εδώ."
+        "where": "Πού είναι η δασκάλα;"
+      readings:
+        "here": "I daskála eínai edó."
+        "negative": "I daskála den eínai edó."
+        "where": "Poú eínai i daskála;"
+      ipas:
+        "here": "i ðaˈskala ˈine eˈðo"
+        "negative": "i ðaˈskala ðen ˈine eˈðo"
+        "where": "pu ˈine i ðaˈskala"
+    - lemma: "μωρό"
+      key: "moro"
+      reading: "moró"
+      ipa: "moˈɾo"
+      forms:
+        "here": "Το μωρό είναι εδώ."
+        "negative": "Το μωρό δεν είναι εδώ."
+        "where": "Πού είναι το μωρό;"
+      readings:
+        "here": "To moró eínai edó."
+        "negative": "To moró den eínai edó."
+        "where": "Poú eínai to moró;"
+      ipas:
+        "here": "to moˈɾo ˈine eˈðo"
+        "negative": "to moˈɾo ðen ˈine eˈðo"
+        "where": "pu ˈine to moˈɾo"
