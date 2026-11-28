@@ -1,0 +1,27 @@
+schema: 1
+id: "el-en-grammar-present-irregular"
+kind: "layer"
+core: "el-grammar-present-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present tense: to be, to have and short verbs"
+license: "CC-BY-SA-4.0"
+description: "Six verbs whose present tense is not quite regular: είμαι (eímai), to be, and έχω (écho), to have, which are not regular, and four verbs that shorten in speech: λέω (léo), τρώω (tróo), ακούω (akoúo) and ζω (zo)."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Present tense: to be, to have and short verbs"
+  slot_name: "person"
+  slots:
+    "1sg": "I (εγώ (egó))"
+    "2sg": "you, one person (εσύ (esý))"
+    "3sg": "he, she, it (αυτός (aftós), αυτή (aftí))"
+    "1pl": "we (εμείς (emeís))"
+    "2pl": "you, many people or polite (εσείς (eseís))"
+    "3pl": "they (αυτοί (aftoí))"
+  entries:
+    "eimai": "to be"
+    "echo": "to have"
+    "leo": "to say; to tell"
+    "troo": "to eat"
+    "akouo": "to hear; to listen"
+    "zo": "to live"
+  notes: "είμαι (eímai) is irregular: είμαι (eímai), είσαι (eísai), είναι (eínai), είμαστε (eímaste), είστε (eíste) or είσαστε (eísaste), είναι (eínai), and the third person singular and plural are the same word. έχω (écho) is regular in the present: έχω (écho), έχεις (écheis), έχει (échei), έχουμε (échoume), έχετε (échete), έχουν (échoun). The four short verbs have a stem that loses a vowel or a consonant in speech: λέω (léo) says λες (les) and λέμε (léme), τρώω (tróo) says τρως (tros) and τρώμε (tróme), ακούω (akoúo) says ακούς (akoús) and ακούμε (akoúme), and ζω (zo) puts its stress on the ending in ζούμε (zoúme) and ζείτε (zeíte)."

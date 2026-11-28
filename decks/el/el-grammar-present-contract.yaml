@@ -1,0 +1,161 @@
+# Unit 19 grammar topic present-tense, second class. Sources read: en.wikipedia.org 'Modern Greek grammar' (second conjugation: verbs in -(ά)ω/-ώ like αγαπώ and verbs in -ώ like οδηγώ) and the en.wiktionary.org inflection tables of the six verbs (active present indicative). Rows use only verbs the units before this one teach.
+schema: 1
+id: "el-grammar-present-contract"
+part: "core"
+kind: "grammar"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["1sg", "2sg", "3sg", "1pl", "2pl", "3pl"]
+  entries:
+    - lemma: "μιλάω"
+      key: "milao"
+      reading: "miláo"
+      ipa: "miˈlao"
+      forms:
+        "1sg": ["μιλάω", "μιλώ"]
+        "2sg": "μιλάς"
+        "3sg": ["μιλάει", "μιλά"]
+        "1pl": ["μιλάμε", "μιλούμε"]
+        "2pl": "μιλάτε"
+        "3pl": ["μιλάνε", "μιλούν"]
+      readings:
+        "1sg": ["miláo", "miló"]
+        "2sg": "milás"
+        "3sg": ["miláei", "milá"]
+        "1pl": ["miláme", "miloúme"]
+        "2pl": "miláte"
+        "3pl": ["miláne", "miloún"]
+      ipas:
+        "1sg": ["miˈlao", "miˈlo"]
+        "2sg": "miˈlas"
+        "3sg": ["miˈlai", "miˈla"]
+        "1pl": ["miˈlame", "miˈlume"]
+        "2pl": "miˈlate"
+        "3pl": ["miˈlane", "miˈlun"]
+    - lemma: "ρωτάω"
+      key: "rotao"
+      reading: "rotáo"
+      ipa: "ɾoˈtao"
+      forms:
+        "1sg": ["ρωτάω", "ρωτώ"]
+        "2sg": "ρωτάς"
+        "3sg": ["ρωτάει", "ρωτά"]
+        "1pl": ["ρωτάμε", "ρωτούμε"]
+        "2pl": "ρωτάτε"
+        "3pl": ["ρωτάνε", "ρωτούν"]
+      readings:
+        "1sg": ["rotáo", "rotó"]
+        "2sg": "rotás"
+        "3sg": ["rotáei", "rotá"]
+        "1pl": ["rotáme", "rotoúme"]
+        "2pl": "rotáte"
+        "3pl": ["rotáne", "rotoún"]
+      ipas:
+        "1sg": ["ɾoˈtao", "ɾoˈto"]
+        "2sg": "ɾoˈtas"
+        "3sg": ["ɾoˈtai", "ɾoˈta"]
+        "1pl": ["ɾoˈtame", "ɾoˈtume"]
+        "2pl": "ɾoˈtate"
+        "3pl": ["ɾoˈtane", "ɾoˈtun"]
+    - lemma: "περπατάω"
+      key: "perpatao"
+      reading: "perpatáo"
+      ipa: "peɾpaˈtao"
+      forms:
+        "1sg": ["περπατάω", "περπατώ"]
+        "2sg": "περπατάς"
+        "3sg": ["περπατάει", "περπατά"]
+        "1pl": ["περπατάμε", "περπατούμε"]
+        "2pl": "περπατάτε"
+        "3pl": ["περπατάνε", "περπατούν"]
+      readings:
+        "1sg": ["perpatáo", "perpató"]
+        "2sg": "perpatás"
+        "3sg": ["perpatáei", "perpatá"]
+        "1pl": ["perpatáme", "perpatoúme"]
+        "2pl": "perpatáte"
+        "3pl": ["perpatáne", "perpatoún"]
+      ipas:
+        "1sg": ["peɾpaˈtao", "peɾpaˈto"]
+        "2sg": "peɾpaˈtas"
+        "3sg": ["peɾpaˈtai", "peɾpaˈta"]
+        "1pl": ["peɾpaˈtame", "peɾpaˈtume"]
+        "2pl": "peɾpaˈtate"
+        "3pl": ["peɾpaˈtane", "peɾpaˈtun"]
+    - lemma: "ξυπνάω"
+      key: "xypnao"
+      reading: "xypnáo"
+      ipa: "ksipˈnao"
+      forms:
+        "1sg": ["ξυπνάω", "ξυπνώ"]
+        "2sg": "ξυπνάς"
+        "3sg": ["ξυπνάει", "ξυπνά"]
+        "1pl": ["ξυπνάμε", "ξυπνούμε"]
+        "2pl": "ξυπνάτε"
+        "3pl": ["ξυπνάνε", "ξυπνούν"]
+      readings:
+        "1sg": ["xypnáo", "xypnó"]
+        "2sg": "xypnás"
+        "3sg": ["xypnáei", "xypná"]
+        "1pl": ["xypnáme", "xypnoúme"]
+        "2pl": "xypnáte"
+        "3pl": ["xypnáne", "xypnoún"]
+      ipas:
+        "1sg": ["ksipˈnao", "ksipˈno"]
+        "2sg": "ksipˈnas"
+        "3sg": ["ksipˈnai", "ksipˈna"]
+        "1pl": ["ksipˈname", "ksipˈnume"]
+        "2pl": "ksipˈnate"
+        "3pl": ["ksipˈnane", "ksipˈnun"]
+    - lemma: "ξεχνάω"
+      key: "xechnao"
+      reading: "xechnáo"
+      ipa: "ksexˈnao"
+      forms:
+        "1sg": ["ξεχνάω", "ξεχνώ"]
+        "2sg": "ξεχνάς"
+        "3sg": ["ξεχνάει", "ξεχνά"]
+        "1pl": ["ξεχνάμε", "ξεχνούμε"]
+        "2pl": "ξεχνάτε"
+        "3pl": ["ξεχνάνε", "ξεχνούν"]
+      readings:
+        "1sg": ["xechnáo", "xechnó"]
+        "2sg": "xechnás"
+        "3sg": ["xechnáei", "xechná"]
+        "1pl": ["xechnáme", "xechnoúme"]
+        "2pl": "xechnáte"
+        "3pl": ["xechnáne", "xechnoún"]
+      ipas:
+        "1sg": ["ksexˈnao", "ksexˈno"]
+        "2sg": "ksexˈnas"
+        "3sg": ["ksexˈnai", "ksexˈna"]
+        "1pl": ["ksexˈname", "ksexˈnume"]
+        "2pl": "ksexˈnate"
+        "3pl": ["ksexˈnane", "ksexˈnun"]
+    - lemma: "μπορώ"
+      key: "boro"
+      reading: "boró"
+      ipa: "boˈɾo"
+      forms:
+        "1sg": "μπορώ"
+        "2sg": "μπορείς"
+        "3sg": "μπορεί"
+        "1pl": "μπορούμε"
+        "2pl": "μπορείτε"
+        "3pl": "μπορούν"
+      readings:
+        "1sg": "boró"
+        "2sg": "boreís"
+        "3sg": "boreí"
+        "1pl": "boroúme"
+        "2pl": "boreíte"
+        "3pl": "boroún"
+      ipas:
+        "1sg": "boˈɾo"
+        "2sg": "boˈɾis"
+        "3sg": "boˈɾi"
+        "1pl": "boˈɾume"
+        "2pl": "boˈɾite"
+        "3pl": "boˈɾun"
