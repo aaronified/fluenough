@@ -332,3 +332,36 @@ cards:
       - { target: "Questo è un ombrello.", ipa: "ˈkwesto ɛ un omˈbrɛllo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "ombrello", base: "ombrello" }] }
       - { target: "Ho un ombrello.", ipa: "ɔ un omˈbrɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "ombrello", base: "ombrello" }] }
       - { target: "Dov'è l'ombrello?", ipa: "doˈvɛ lomˈbrɛllo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'ombrello", base: "ombrello" }] }
+  - id: "it-2938"
+    target: "vestito"
+    ipa: "vesˈtito"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes: [{ id: "n1", kind: "homograph" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il vestito.", ipa: "ˈkwesto ɛ il vesˈtito", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "vestito", base: "vestito" }] }
+      - { target: "Il vestito è bello.", ipa: "il vesˈtito ɛ ˈbɛllo", bases: [{ word: "Il", base: "il" }, { word: "vestito", base: "vestito" }, { word: "è", base: "essere" }, { word: "bello", ref: "it-1862" }] }
+  - id: "it-2939"
+    target: "maglia"
+    ipa: "ˈmaʎʎa"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la maglia.", ipa: "ˈkwesta ɛ la ˈmaʎʎa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "maglia", base: "maglia" }] }
+      - { target: "La maglia è bella.", ipa: "la ˈmaʎʎa ɛ ˈbɛlla", bases: [{ word: "La", base: "la" }, { word: "maglia", base: "maglia" }, { word: "è", base: "essere" }, { word: "bella", base: "bello" }] }
+  - id: "it-2940"
+    target: "costume"
+    ipa: "kosˈtume"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il costume.", ipa: "ˈkwesto ɛ il kosˈtume", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "costume", base: "costume" }] }
+      - { target: "Ho un costume.", ipa: "ɔ un kosˈtume", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "costume", base: "costume" }] }
