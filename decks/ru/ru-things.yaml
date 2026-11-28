@@ -1,0 +1,373 @@
+schema: 1
+id: "ru-things"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "things"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ru-2770"
+    target: "вещь"
+    reading: "veshch'"
+    ipa: "vʲeɕː"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это вещь.", reading: "Eto veshch'.", ipa: "ˈɛtə vʲeɕː", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "вещь", base: "вещь", reading: "veshch'" }] }
+  - id: "ru-2772"
+    target: "ручка"
+    reading: "ruchka"
+    ipa: "ˈrutɕkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это ручка.", reading: "Eto ruchka.", ipa: "ˈɛtə ˈrutɕkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "ручка", base: "ручка", reading: "ruchka" }] }
+  - id: "ru-2773"
+    target: "карандаш"
+    reading: "karandash"
+    ipa: "kərɐnˈdaʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это карандаш.", reading: "Eto karandash.", ipa: "ˈɛtə kərɐnˈdaʂ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "карандаш", base: "карандаш", reading: "karandash" }] }
+  - id: "ru-2774"
+    target: "тетрадь"
+    reading: "tetrad'"
+    ipa: "tʲɪˈtratʲ"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это тетрадь.", reading: "Eto tetrad'.", ipa: "ˈɛtə tʲɪˈtratʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "тетрадь", base: "тетрадь", reading: "tetrad'" }] }
+  - id: "ru-2776"
+    target: "стул"
+    reading: "stul"
+    ipa: "stul"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это стул.", reading: "Eto stul.", ipa: "ˈɛtə stul", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "стул", base: "стул", reading: "stul" }] }
+  - id: "ru-2778"
+    target: "дверь"
+    reading: "dver'"
+    ipa: "dvʲerʲ"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это дверь.", reading: "Eto dver'.", ipa: "ˈɛtə dvʲerʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "дверь", base: "дверь", reading: "dver'" }] }
+  - id: "ru-2779"
+    target: "ключ"
+    reading: "klyuch"
+    ipa: "klʲutɕ"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это ключ.", reading: "Eto klyuch.", ipa: "ˈɛtə klʲutɕ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "ключ", base: "ключ", reading: "klyuch" }] }
+  - id: "ru-2780"
+    target: "компьютер"
+    reading: "komp'yuter"
+    ipa: "kɐmˈpʲjutʲɪr"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это компьютер.", reading: "Eto komp'yuter.", ipa: "ˈɛtə kɐmˈpʲjutʲɪr", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "компьютер", base: "компьютер", reading: "komp'yuter" }] }
+  - id: "ru-2781"
+    target: "часы"
+    reading: "chasy"
+    ipa: "tɕɪˈsɨ"
+    pos: "noun"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "ru-2782"
+    target: "очки"
+    reading: "ochki"
+    ipa: "ɐtɕˈkʲi"
+    pos: "noun"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "ru-2783"
+    target: "зонт"
+    reading: "zont"
+    ipa: "zont"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это зонт.", reading: "Eto zont.", ipa: "ˈɛtə zont", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "зонт", base: "зонт", reading: "zont" }] }
+  - id: "ru-2784"
+    target: "чемодан"
+    reading: "chemodan"
+    ipa: "tɕɪmɐˈdan"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это чемодан.", reading: "Eto chemodan.", ipa: "ˈɛtə tɕɪmɐˈdan", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "чемодан", base: "чемодан", reading: "chemodan" }] }
+  - id: "ru-2785"
+    target: "фотография"
+    reading: "fotografiya"
+    ipa: "fətɐˈɡrafʲɪjə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это фотография.", reading: "Eto fotografiya.", ipa: "ˈɛtə fətɐˈɡrafʲɪjə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "фотография", base: "фотография", reading: "fotografiya" }] }
+  - id: "ru-2786"
+    target: "письмо"
+    reading: "pismo"
+    ipa: "pʲɪˈsʲmo"
+    pos: "noun"
+    gender: "n"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это письмо.", reading: "Eto pismo.", ipa: "ˈɛtə pʲɪˈsʲmo", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "письмо", base: "письмо", reading: "pismo" }] }
+  - id: "ru-2787"
+    target: "журнал"
+    reading: "zhurnal"
+    ipa: "ʐʊrˈnal"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это журнал.", reading: "Eto zhurnal.", ipa: "ˈɛtə ʐʊrˈnal", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "журнал", base: "журнал", reading: "zhurnal" }] }
+  - id: "ru-2788"
+    target: "газета"
+    reading: "gazeta"
+    ipa: "ɡɐˈzʲetə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это газета.", reading: "Eto gazeta.", ipa: "ˈɛtə ɡɐˈzʲetə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "газета", base: "газета", reading: "gazeta" }] }
+  - id: "ru-2789"
+    target: "словарь"
+    reading: "slovar'"
+    ipa: "slɐˈvarʲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это словарь.", reading: "Eto slovar'.", ipa: "ˈɛtə slɐˈvarʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "словарь", base: "словарь", reading: "slovar'" }] }
+  - id: "ru-2790"
+    target: "ножницы"
+    reading: "nozhnitsy"
+    ipa: "ˈnoʐnʲɪtsɨ"
+    pos: "noun"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "ru-2791"
+    target: "мяч"
+    reading: "myach"
+    ipa: "mʲatɕ"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это мяч.", reading: "Eto myach.", ipa: "ˈɛtə mʲatɕ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мяч", base: "мяч", reading: "myach" }] }
+  - id: "ru-2792"
+    target: "игрушка"
+    reading: "igrushka"
+    ipa: "ɪˈɡruʂkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это игрушка.", reading: "Eto igrushka.", ipa: "ˈɛtə ɪˈɡruʂkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "игрушка", base: "игрушка", reading: "igrushka" }] }
+  - id: "ru-2793"
+    target: "кукла"
+    reading: "kukla"
+    ipa: "ˈkuklə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это кукла.", reading: "Eto kukla.", ipa: "ˈɛtə ˈkuklə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "кукла", base: "кукла", reading: "kukla" }] }
+  - id: "ru-2794"
+    target: "картина"
+    reading: "kartina"
+    ipa: "kɐrˈtʲinə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это картина.", reading: "Eto kartina.", ipa: "ˈɛtə kɐrˈtʲinə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "картина", base: "картина", reading: "kartina" }] }
+  - id: "ru-2795"
+    target: "лампа"
+    reading: "lampa"
+    ipa: "ˈlampə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это лампа.", reading: "Eto lampa.", ipa: "ˈɛtə ˈlampə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "лампа", base: "лампа", reading: "lampa" }] }
+  - id: "ru-2796"
+    target: "свеча"
+    reading: "svecha"
+    ipa: "svʲɪˈtɕa"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это свеча.", reading: "Eto svecha.", ipa: "ˈɛtə svʲɪˈtɕa", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "свеча", base: "свеча", reading: "svecha" }] }
+  - id: "ru-2797"
+    target: "подушка"
+    reading: "podushka"
+    ipa: "pɐˈduʂkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это подушка.", reading: "Eto podushka.", ipa: "ˈɛtə pɐˈduʂkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "подушка", base: "подушка", reading: "podushka" }] }
+  - id: "ru-2798"
+    target: "одеяло"
+    reading: "odeyalo"
+    ipa: "ɐdʲɪˈjalə"
+    pos: "noun"
+    gender: "n"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это одеяло.", reading: "Eto odeyalo.", ipa: "ˈɛtə ɐdʲɪˈjalə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "одеяло", base: "одеяло", reading: "odeyalo" }] }
+  - id: "ru-2799"
+    target: "коробка"
+    reading: "korobka"
+    ipa: "kɐˈropkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это коробка.", reading: "Eto korobka.", ipa: "ˈɛtə kɐˈropkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "коробка", base: "коробка", reading: "korobka" }] }
+  - id: "ru-2800"
+    target: "бумага"
+    reading: "bumaga"
+    ipa: "bʊˈmaɡə"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это бумага.", reading: "Eto bumaga.", ipa: "ˈɛtə bʊˈmaɡə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "бумага", base: "бумага", reading: "bumaga" }] }
+  - id: "ru-2801"
+    target: "мел"
+    reading: "mel"
+    ipa: "mʲel"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это мел.", reading: "Eto mel.", ipa: "ˈɛtə mʲel", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мел", base: "мел", reading: "mel" }] }
+  - id: "ru-2802"
+    target: "доска"
+    reading: "doska"
+    ipa: "dɐˈska"
+    pos: "noun"
+    gender: "f"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это доска.", reading: "Eto doska.", ipa: "ˈɛtə dɐˈska", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "доска", base: "доска", reading: "doska" }] }
+  - id: "ru-2803"
+    target: "камень"
+    reading: "kamen'"
+    ipa: "ˈkamʲɪnʲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["things"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Это камень.", reading: "Eto kamen'.", ipa: "ˈɛtə ˈkamʲɪnʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "камень", base: "камень", reading: "kamen'" }] }
