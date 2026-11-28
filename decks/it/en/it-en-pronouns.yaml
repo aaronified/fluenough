@@ -1,0 +1,281 @@
+schema: 1
+id: "it-en-pronouns"
+kind: "layer"
+core: "it-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns"
+license: "CC-BY-SA-4.0"
+description: "Pronouns beyond I and you: he, she, we, you (plural), they, me and you (stressed), mine, yours, his, ours, this one, that one, and someone, nobody, nothing, something and other. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-1370":
+    native: "he; him"
+    notes:
+      "n1": "Lui is he, or him in the stressed form. Its plural is loro and its feminine is lei."
+    examples:
+      "Lui parla.":
+        native: "He speaks."
+        bases:
+          "Lui": "he"
+      "Lui è qui.":
+        native: "He is here."
+        bases:
+          "Lui": "he"
+          "è": "is"
+  "it-1371":
+    native: "she; her; you (formal)"
+    notes:
+      "n1": "Lei is she, or her in the stressed form. A capital Lei is the polite word for you, for one person. Its plural is loro."
+    examples:
+      "Lei parla.":
+        native: "She speaks."
+        bases:
+          "Lei": "she"
+      "Lei è qui.":
+        native: "She is here."
+        bases:
+          "Lei": "she"
+          "è": "is"
+  "it-1372":
+    native: "we; us"
+    notes:
+      "n1": "Noi means we, or us in the stressed form. It is the first-person plural."
+    examples:
+      "Noi parliamo.":
+        native: "We speak."
+        bases:
+          "Noi": "we"
+      "Noi siamo qui.":
+        native: "We are here."
+        bases:
+          "Noi": "we"
+          "siamo": "are"
+  "it-1373":
+    native: "you (plural)"
+    notes:
+      "n1": "Voi is the plural you, for more than one person. It is the second-person plural."
+    examples:
+      "Voi parlate.":
+        native: "You speak."
+        bases:
+          "Voi": "you"
+      "Voi siete qui.":
+        native: "You are here."
+        bases:
+          "Voi": "you"
+          "siete": "are"
+  "it-1374":
+    native: "they; them"
+    notes:
+      "n1": "Loro means they, or them in the stressed form. It is the plural of lui and lei, and one word for a group of men or of women."
+    examples:
+      "Loro parlano.":
+        native: "They speak."
+        bases:
+          "Loro": "they"
+      "Loro sono qui.":
+        native: "They are here."
+        bases:
+          "Loro": "they"
+          "sono": "are"
+  "it-1375":
+    native: "me"
+    notes:
+      "n1": "Me is me in the stressed form. It is used alone or for emphasis."
+    examples:
+      "Chiami me?":
+        native: "Are you calling me?"
+        bases:
+          "me": "me"
+      "Capisci me?":
+        native: "Do you understand me?"
+        bases:
+          "me": "me"
+  "it-1376":
+    native: "you (stressed)"
+    notes:
+      "n1": "Te is the stressed form of tu: you, used alone or for emphasis."
+    examples:
+      "Chiamo te.":
+        native: "I am calling you."
+        bases:
+          "te": "you"
+      "Aspetto te.":
+        native: "I am waiting for you."
+        bases:
+          "te": "you"
+  "it-1377":
+    native: "mine"
+    notes:
+      "n1": "Mio means mine, and it agrees with the thing owned: mia (feminine), miei (masculine plural), mie (feminine plural)."
+    examples:
+      "Questo è mio.":
+        native: "This is mine."
+        bases:
+          "è": "is"
+          "mio": "mine"
+      "Quello è mio.":
+        native: "That is mine."
+        bases:
+          "è": "is"
+          "mio": "mine"
+  "it-1378":
+    native: "yours (informal)"
+    notes:
+      "n1": "Tuo means yours, for one person you call tu. It agrees with the thing owned: tua, tuoi, tue."
+    examples:
+      "Questo è tuo.":
+        native: "This is yours."
+        bases:
+          "è": "is"
+          "tuo": "yours"
+      "Quella è tua.":
+        native: "That one is yours."
+        bases:
+          "è": "is"
+          "tua": "yours"
+  "it-1379":
+    native: "his; hers; its"
+    notes:
+      "n1": "Suo means his, hers or its. It agrees with the thing owned: sua (feminine), suoi (masculine plural), sue (feminine plural)."
+    examples:
+      "Questo è suo.":
+        native: "This is his."
+        bases:
+          "è": "is"
+          "suo": "his"
+      "Quello è suo.":
+        native: "That is his."
+        bases:
+          "è": "is"
+          "suo": "his"
+  "it-1380":
+    native: "ours"
+    notes:
+      "n1": "Nostro means ours. It agrees with the thing owned: nostra (feminine), nostri (masculine plural), nostre (feminine plural)."
+    examples:
+      "Questa è nostra.":
+        native: "This one is ours."
+        bases:
+          "è": "is"
+          "nostra": "ours"
+      "Quelli sono nostri.":
+        native: "Those are ours."
+        bases:
+          "sono": "are"
+          "nostri": "ours"
+  "it-1381":
+    native: "yours (plural)"
+    notes:
+      "n1": "Vostro means yours, for more than one person you call voi. It agrees with the thing owned: vostra, vostri, vostre."
+    examples:
+      "Questo è vostro.":
+        native: "This is yours."
+        bases:
+          "è": "is"
+          "vostro": "yours"
+      "Quella è vostra.":
+        native: "That one is yours."
+        bases:
+          "è": "is"
+          "vostra": "yours"
+  "it-1382":
+    native: "this one; these"
+    notes:
+      "n1": "Questo means this one as a pronoun. Its forms are questa (feminine), questi (masculine plural) and queste (feminine plural)."
+    examples:
+      "Questo è buono.":
+        native: "This is good."
+        bases:
+          "Questo": "this"
+          "è": "is"
+      "Questa è acqua.":
+        native: "This is water."
+        bases:
+          "Questa": "this"
+          "è": "is"
+  "it-1383":
+    native: "that one; those"
+    notes:
+      "n1": "Quello means that one, or those ones. It agrees: quella (feminine), quelli (masculine plural), quelle (feminine plural)."
+    examples:
+      "Quello è buono.":
+        native: "That one is good."
+        bases:
+          "Quello": "that one"
+          "è": "is"
+      "Quelli sono buoni.":
+        native: "Those are good."
+        bases:
+          "Quelli": "those"
+          "sono": "are"
+  "it-1384":
+    native: "someone; somebody"
+    notes:
+      "n1": "Qualcuno means someone or somebody. It has no plural, and its feminine is qualcuna."
+    examples:
+      "Qualcuno parla.":
+        native: "Someone speaks."
+        bases:
+          "Qualcuno": "someone"
+      "Vedo qualcuno.":
+        native: "I see someone."
+        bases:
+          "qualcuno": "someone"
+  "it-1385":
+    native: "nobody; none"
+    notes:
+      "n1": "Nessuno means nobody or none. It has only a singular form, and its feminine is nessuna."
+    examples:
+      "Nessuno parla.":
+        native: "Nobody speaks."
+        bases:
+          "Nessuno": "nobody"
+      "Non vedo nessuno.":
+        native: "I do not see anyone."
+        bases:
+          "Non": "not"
+          "nessuno": "anyone"
+  "it-1386":
+    native: "nothing"
+    notes:
+      "n1": "Niente means nothing. It does not change, and it is used with non, as in Non voglio niente (I want nothing)."
+    examples:
+      "Non voglio niente.":
+        native: "I want nothing."
+        bases:
+          "Non": "not"
+          "niente": "nothing"
+      "Non capisco niente.":
+        native: "I understand nothing."
+        bases:
+          "Non": "not"
+          "niente": "nothing"
+  "it-1387":
+    native: "another one; something else"
+    notes:
+      "n1": "Altro can mean another one, the others (in the plural), or something else (masculine singular). It agrees: altra, altri, altre."
+    examples:
+      "Voglio altro.":
+        native: "I want something else."
+        bases:
+          "altro": "something else"
+      "Altri parlano.":
+        native: "Others speak."
+        bases:
+          "Altri": "others"
+  "it-1388":
+    native: "something"
+    notes:
+      "n1": "Qualcosa means something. It is a masculine singular word, with no plural."
+    examples:
+      "Voglio qualcosa.":
+        native: "I want something."
+        bases:
+          "qualcosa": "something"
+      "Dico qualcosa.":
+        native: "I say something."
+        bases:
+          "qualcosa": "something"
+  "it-1389":
+    native: "Subject pronouns"
+    explanation: "I, you, he, she, we, you (plural) and they. Lei is the polite you for one person. Italian often leaves the subject out, because the verb ending shows the person."
