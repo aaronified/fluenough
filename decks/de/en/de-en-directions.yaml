@@ -1,0 +1,522 @@
+schema: 1
+id: "de-en-directions"
+kind: "layer"
+core: "de-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+description: "Finding your way: streets, crossings, squares and places to turn, with two verbs to follow. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "de-2560":
+    native: "path, trail, track"
+    notes:
+      "n1": "Weg is path: der Weg. Its plural is Wege."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Weg.":
+        native: "This is the path."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Weg": "path"
+      "Wo ist der Weg?":
+        native: "Where is the path?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Weg": "path"
+  "de-2561":
+    native: "street; road"
+    notes:
+      "n1": "Straße is street: die Straße. Its plural is Straßen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Straße.":
+        native: "This is the street."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Straße": "street"
+      "Wo ist die Straße?":
+        native: "Where is the street?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Straße": "street"
+  "de-2562":
+    native: "traffic light"
+    notes:
+      "n1": "Ampel is traffic light: die Ampel. Its plural is Ampeln."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Ampel.":
+        native: "This is the traffic light."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Ampel": "traffic light"
+      "Wo ist die Ampel?":
+        native: "Where is the traffic light?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Ampel": "traffic light"
+  "de-2563":
+    native: "crossing, intersection"
+    notes:
+      "n1": "Kreuzung is crossing: die Kreuzung. Its plural is Kreuzungen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Kreuzung.":
+        native: "This is the crossing."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Kreuzung": "crossing"
+      "Wo ist die Kreuzung?":
+        native: "Where is the crossing?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Kreuzung": "crossing"
+  "de-2564":
+    native: "bridge"
+    notes:
+      "n1": "Brücke is bridge: die Brücke. Its plural is Brücken."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Brücke.":
+        native: "This is the bridge."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Brücke": "bridge"
+      "Wo ist die Brücke?":
+        native: "Where is the bridge?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Brücke": "bridge"
+  "de-2565":
+    native: "entrance"
+    notes:
+      "n1": "Eingang is entrance: der Eingang. Its plural is Eingänge."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Eingang.":
+        native: "This is the entrance."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Eingang": "entrance"
+      "Wo ist der Eingang?":
+        native: "Where is the entrance?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Eingang": "entrance"
+  "de-2566":
+    native: "exit"
+    notes:
+      "n1": "Ausgang is exit: der Ausgang. Its plural is Ausgänge."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Ausgang.":
+        native: "This is the exit."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Ausgang": "exit"
+      "Wo ist der Ausgang?":
+        native: "Where is the exit?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Ausgang": "exit"
+  "de-2567":
+    native: "street map, city map"
+    notes:
+      "n1": "Stadtplan is street map: der Stadtplan. Its plural is Stadtpläne."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Stadtplan.":
+        native: "This is the street map."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Stadtplan": "street map"
+      "Ich habe einen Stadtplan.":
+        native: "I have a street map."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Stadtplan": "street map"
+  "de-2568":
+    native: "meter"
+    notes:
+      "n1": "Meter is meter: der Meter. Its plural is also Meter."
+    examples:
+      "Das ist der Meter.":
+        native: "This is the meter."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Meter": "meter"
+      "Wo ist der Meter?":
+        native: "Where is the meter?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Meter": "meter"
+  "de-2569":
+    native: "kilometer"
+    notes:
+      "n1": "Kilometer is kilometer: der Kilometer. Its plural is also Kilometer."
+    examples:
+      "Das ist der Kilometer.":
+        native: "This is the kilometer."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Kilometer": "kilometer"
+      "Wo ist der Kilometer?":
+        native: "Where is the kilometer?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Kilometer": "kilometer"
+  "de-2571":
+    native: "to follow"
+    notes:
+      "n1": "folgen is to follow: du folgst, er folgt. Its auxiliary is sein."
+    examples:
+      "Ich folge.":
+        native: "I follow."
+        bases:
+          "Ich": "I"
+          "folge": "follow"
+      "Du folgst.":
+        native: "You follow."
+        bases:
+          "Du": "you"
+          "folgst": "follow"
+  "de-2573":
+    native: "direction"
+    notes:
+      "n1": "Richtung is direction: die Richtung. Its plural is Richtungen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Richtung.":
+        native: "This is the direction."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Richtung": "direction"
+      "Wo ist die Richtung?":
+        native: "Where is the direction?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Richtung": "direction"
+  "de-2574":
+    native: "parking lot, outdoor car park"
+    notes:
+      "n1": "Parkplatz is parking lot: der Parkplatz. Its plural is Parkplätze."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Parkplatz.":
+        native: "This is the parking lot."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Parkplatz": "parking lot"
+      "Wo ist der Parkplatz?":
+        native: "Where is the parking lot?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Parkplatz": "parking lot"
+  "de-2575":
+    native: "environment"
+    notes:
+      "n1": "Umgebung is environment: die Umgebung. Its plural is Umgebungen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Umgebung.":
+        native: "This is the environment."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Umgebung": "environment"
+      "Wo ist die Umgebung?":
+        native: "Where is the environment?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Umgebung": "environment"
+  "de-2576":
+    native: "tunnel"
+    notes:
+      "n1": "Tunnel is tunnel: der Tunnel. Its plural is also Tunnel."
+    examples:
+      "Das ist der Tunnel.":
+        native: "This is the tunnel."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Tunnel": "tunnel"
+      "Wo ist der Tunnel?":
+        native: "Where is the tunnel?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Tunnel": "tunnel"
+  "de-2577":
+    native: "city center, downtown"
+    notes:
+      "n1": "Stadtmitte is city center: die Stadtmitte. Its plural is Stadtmitten."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Stadtmitte.":
+        native: "This is the city center."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Stadtmitte": "city center"
+      "Wo ist die Stadtmitte?":
+        native: "Where is the city center?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Stadtmitte": "city center"
+  "de-2578":
+    native: "bend"
+    notes:
+      "n1": "Kurve is bend: die Kurve. Its plural is Kurven."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Kurve.":
+        native: "This is the bend."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Kurve": "bend"
+      "Wo ist die Kurve?":
+        native: "Where is the bend?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Kurve": "bend"
+  "de-2579":
+    native: "alley, lane"
+    notes:
+      "n1": "Gasse is alley: die Gasse. Its plural is Gassen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Gasse.":
+        native: "This is the alley."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Gasse": "alley"
+      "Wo ist die Gasse?":
+        native: "Where is the alley?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Gasse": "alley"
+  "de-2580":
+    native: "avenue"
+    notes:
+      "n1": "Allee is avenue: die Allee. Its plural is Alleen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Allee.":
+        native: "This is the avenue."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Allee": "avenue"
+      "Wo ist die Allee?":
+        native: "Where is the avenue?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Allee": "avenue"
+  "de-2581":
+    native: "branch"
+    notes:
+      "n1": "Abzweigung is branch: die Abzweigung. Its plural is Abzweigungen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Abzweigung.":
+        native: "This is the branch."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Abzweigung": "branch"
+      "Wo ist die Abzweigung?":
+        native: "Where is the branch?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Abzweigung": "branch"
+  "de-2582":
+    native: "main street, high street"
+    notes:
+      "n1": "Hauptstraße is main street: die Hauptstraße. Its plural is Hauptstraßen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Hauptstraße.":
+        native: "This is the main street."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Hauptstraße": "main street"
+      "Wo ist die Hauptstraße?":
+        native: "Where is the main street?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Hauptstraße": "main street"
+  "de-2583":
+    native: "roundabout, traffic circle"
+    notes:
+      "n1": "Kreisel is roundabout: der Kreisel. Its plural is also Kreisel."
+    examples:
+      "Das ist der Kreisel.":
+        native: "This is the roundabout."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Kreisel": "roundabout"
+      "Wo ist der Kreisel?":
+        native: "Where is the roundabout?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Kreisel": "roundabout"
+  "de-2584":
+    native: "pedestrian zone"
+    notes:
+      "n1": "Fußgängerzone is pedestrian zone: die Fußgängerzone. Its plural is Fußgängerzonen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Fußgängerzone.":
+        native: "This is the pedestrian zone."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Fußgängerzone": "pedestrian zone"
+      "Wo ist die Fußgängerzone?":
+        native: "Where is the pedestrian zone?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Fußgängerzone": "pedestrian zone"
+  "de-2585":
+    native: "crossing"
+    notes:
+      "n1": "Übergang is crossing: der Übergang. Its plural is Übergänge."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Übergang.":
+        native: "This is the crossing."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Übergang": "crossing"
+      "Wo ist der Übergang?":
+        native: "Where is the crossing?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Übergang": "crossing"
+  "de-2586":
+    native: "parking garage, multistorey car park"
+    notes:
+      "n1": "Parkhaus is parking garage: das Parkhaus. Its plural is Parkhäuser."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Parkhaus.":
+        native: "Here is the parking garage."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Parkhaus": "parking garage"
+      "Wo ist das Parkhaus?":
+        native: "Where is the parking garage?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Parkhaus": "parking garage"
+  "de-2587":
+    native: "square, plaza, piazza"
+    notes:
+      "n1": "Platz is square: der Platz. Its plural is Plätze."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Platz.":
+        native: "This is the square."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Platz": "square"
+      "Wo ist der Platz?":
+        native: "Where is the square?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Platz": "square"
