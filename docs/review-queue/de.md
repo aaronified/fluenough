@@ -155,3 +155,9 @@ Facets a deck builder doubts, for a German reviewer. See [README](README.md). Ro
 | de-2146 | work | ipa | card has ˈçeːfɪn; Wiktionary gives ˈʃɛfɪn | DE-140 | 2026-11-28 |
 | de-2158 | work | ipa | card has ˈpʁoːbləm; Wiktionary gives pʁoˈbleːm | DE-140 | 2026-11-28 |
 | de-2161 | work | ipa | card has ɪŋəniːˈuːɐ̯; Wiktionary gives ɪnʒeˈnjøːɐ̯ | DE-140 | 2026-11-28 |
+| de-1794 | adverbs | ipa | noch [nɔχ]: uvular χ after ɔ is "often" (Wiktionary), not always | DE-160 | 2026-11-28 |
+| de-1741 | everyday-verbs | ipa | kochen [ˈkʰɔχn̩]: aspiration, χ after ɔ and syllabic n̩ together | DE-160 | 2026-11-28 |
+| de-2562 | directions | ipa | Ampel [ˈʔampl̩]: syllabic l̩ after an obstruent, schwa dropped | DE-160 | 2026-11-28 |
+| de-0003 | first-words | ipa | ich [ʔɪç]: glottal stop written before every word-initial vowel, unstressed ones too | DE-160 | 2026-11-28 |
+| de-2571 | directions | ipa | folgen [ˈfɔlɡn̩]: no assimilation of n after ɡ is written, check | DE-160 | 2026-11-28 |
+| de-1671 | about-me | ipa | card has ˈʃtaːtzaŋeːœʁɪçkaɪt, garbled at tz and eːœ; the word is ˈʃtaːtsaŋəhøːʁɪçkaɪt | DE-160 | 2026-11-28 |
