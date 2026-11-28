@@ -1,0 +1,134 @@
+schema: 1
+id: "it-en-about-me"
+kind: "layer"
+core: "it-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+license: "CC-BY-SA-4.0"
+description: "Words for talking about yourself: name, surname, age, where you live, being born and married, and being Italian. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-1580":
+    native: "name; first name"
+    notes:
+      "n1": "Nome is name, and also first name. Its plural is nomi."
+    examples:
+      "Qual è il tuo nome?":
+        native: "What is your name?"
+        bases:
+          "è": "is"
+          "il": "the"
+          "nome": "name"
+      "Il mio nome è Luca.":
+        native: "My name is Luca."
+        bases:
+          "Il": "my"
+          "nome": "name"
+          "è": "is"
+          "Luca": "Luca (a name)"
+  "it-1581":
+    native: "surname"
+    notes:
+      "n1": "Cognome is surname. Its plural is cognomi."
+    examples:
+      "Il mio cognome è Rossi.":
+        native: "My surname is Rossi."
+        bases:
+          "Il": "my"
+          "cognome": "surname"
+          "è": "is"
+          "Rossi": "Rossi (a surname)"
+      "Qual è il tuo cognome?":
+        native: "What is your surname?"
+        bases:
+          "è": "is"
+          "il": "the"
+          "cognome": "surname"
+  "it-1582":
+    native: "age"
+    notes:
+      "n1": "Età is age, and it does not change: it is invariable."
+    examples:
+      "Qual è la tua età?":
+        native: "What is your age?"
+        bases:
+          "è": "is"
+          "la": "the"
+          "età": "age"
+      "La mia età è venti.":
+        native: "My age is twenty."
+        bases:
+          "La": "my"
+          "età": "age"
+          "è": "is"
+  "it-1583":
+    native: "to live; to reside"
+    notes:
+      "n1": "Abitare is to live, or reside, in a place. Its first-person singular present is abito (I live), and its auxiliary is avere."
+    examples:
+      "Abito qui.":
+        native: "I live here."
+        bases:
+          "Abito": "I live"
+      "Abito bene qui.":
+        native: "I live well here."
+        bases:
+          "Abito": "I live"
+  "it-1584":
+    native: "to live; to be alive"
+    notes:
+      "n1": "Vivere is to be alive, or to live a life. Abitare is for living in a place."
+      "n2": "Vivere is irregular. The first-person singular present is vivo (I live); the past historic is vissi, the past participle vissuto and the future vivrò."
+    examples:
+      "Vivo qui.":
+        native: "I live here."
+        bases:
+          "Vivo": "I live"
+      "Vivo bene.":
+        native: "I live well."
+        bases:
+          "Vivo": "I live"
+  "it-1585":
+    native: "Italian"
+    notes:
+      "n1": "Italiano is Italian: masculine italiano, feminine italiana, with the plurals italiani and italiane. The same word, italiano, also means the Italian language."
+    examples:
+      "Sono italiano.":
+        native: "I am Italian."
+        bases:
+          "Sono": "am"
+          "italiano": "Italian"
+      "Lei è italiana.":
+        native: "She is Italian."
+        bases:
+          "è": "is"
+          "italiana": "Italian"
+  "it-1586":
+    native: "married"
+    notes:
+      "n1": "Sposato is married, in the masculine. Its feminine is sposata, and its plurals are sposati and sposate."
+    examples:
+      "Sono sposato.":
+        native: "I am married."
+        bases:
+          "Sono": "am"
+          "sposato": "married"
+      "Lei è sposata.":
+        native: "She is married."
+        bases:
+          "è": "is"
+          "sposata": "married"
+  "it-1587":
+    native: "born"
+    notes:
+      "n1": "Nato is born, in the masculine. Its feminine is nata, and its plurals are nati and nate. It is also the past participle of nascere (to be born)."
+    examples:
+      "Sono nato qui.":
+        native: "I was born here."
+        bases:
+          "Sono": "was"
+          "nato": "born"
+      "Lei è nata qui.":
+        native: "She was born here."
+        bases:
+          "è": "was"
+          "nata": "born"

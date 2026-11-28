@@ -1,0 +1,179 @@
+schema: 1
+id: "it-en-questions"
+kind: "layer"
+core: "it-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Question words"
+license: "CC-BY-SA-4.0"
+description: "The question words (who, what, which, how, how much, where, when, why) and three small words: also, maybe and therefore. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-1300":
+    native: "who; whom"
+    notes:
+      "n1": "Chi does not change for gender or number. It is the word for who in a question, and for whoever."
+    examples:
+      "Chi viene qui?":
+        native: "Who is coming here?"
+        bases:
+          "Chi": "who"
+      "Chi è?":
+        native: "Who is it?"
+        bases:
+          "Chi": "who"
+          "è": "is"
+  "it-1301":
+    native: "what; which"
+    notes:
+      "n1": "Che is written without an accent: the spelling ché is marked as proscribed. Alone in a question it means what, as in Che vuoi? (what do you want?)."
+    examples:
+      "Che vuoi?":
+        native: "What do you want?"
+        bases:
+          "Che": "what"
+      "Che cosa fai?":
+        native: "What are you doing?"
+        bases:
+          "Che": "what"
+  "it-1302":
+    native: "thing; what"
+    notes:
+      "n1": "Cosa is a feminine noun meaning thing, with the plural cose (una cosa, a thing). Alone in a question it means what."
+    examples:
+      "Questa è una cosa.":
+        native: "This is a thing."
+        bases:
+          "Questa": "this"
+          "è": "is"
+          "cosa": "thing"
+      "Che cosa vuoi?":
+        native: "What do you want?"
+        bases:
+          "cosa": "thing"
+  "it-1303":
+    native: "how; like"
+    notes:
+      "n1": "Come means how in a question, as in Come stai? (how are you?). It also means as or like, as in blu come il mare (blue like the sea)."
+    examples:
+      "Come stai?":
+        native: "How are you?"
+        bases:
+          "Come": "how"
+          "stai": "are"
+      "Come va?":
+        native: "How is it going?"
+        bases:
+          "Come": "how"
+  "it-1304":
+    native: "where"
+    notes:
+      "n1": "Dove means where. Before è it is shortened to dov'è, as in dov'è il bagno? (where is the toilet?)."
+    examples:
+      "Dove vai?":
+        native: "Where are you going?"
+        bases:
+          "Dove": "where"
+      "Dov'è il negozio?":
+        native: "Where is the shop?"
+        bases:
+          "Dov'è": "where"
+          "il": "the"
+  "it-1305":
+    native: "when"
+    notes:
+      "n1": "Quando means when, both in a question (Quando parti? when are you leaving?) and in a statement."
+    examples:
+      "Quando parti?":
+        native: "When are you leaving?"
+        bases:
+          "Quando": "when"
+          "parti": "are leaving"
+      "Quando vieni?":
+        native: "When are you coming?"
+        bases:
+          "Quando": "when"
+  "it-1306":
+    native: "because; why"
+    notes:
+      "n1": "Write it with an accent on the final e: perché. It asks why, and it also means because, as in L'ho fatto perché volevo (I did it because I wanted to)."
+    examples:
+      "Perché vai?":
+        native: "Why are you going?"
+        bases:
+          "Perché": "why"
+      "Non parlo perché capisco poco.":
+        native: "I do not speak because I understand little."
+        bases:
+          "Non": "not"
+          "perché": "because"
+  "it-1307":
+    native: "how much; how many"
+    notes:
+      "n1": "Quanto agrees with its noun: quanta (feminine), quanti (masculine plural), quante (feminine plural). Quanto costa? means how much does it cost?"
+    examples:
+      "Quanto costa?":
+        native: "How much does it cost?"
+        bases:
+          "Quanto": "how much"
+          "costa": "costs"
+      "Quanta acqua vuoi?":
+        native: "How much water do you want?"
+        bases:
+          "Quanta": "how much"
+  "it-1308":
+    native: "which; what"
+    notes:
+      "n1": "Quale has a plural, quali. Before è it is shortened to qual, as in Qual è buono? (which one is good?)."
+    examples:
+      "Quale vuoi?":
+        native: "Which one do you want?"
+        bases:
+          "Quale": "which"
+      "Qual è buono?":
+        native: "Which one is good?"
+        bases:
+          "Qual": "which"
+          "è": "is"
+  "it-1309":
+    native: "maybe; perhaps"
+    notes:
+      "n1": "Forse means maybe or perhaps. It is an adverb, so it never changes its ending."
+    examples:
+      "Forse vengo.":
+        native: "Maybe I am coming."
+        bases:
+          "Forse": "maybe"
+      "Forse è buono.":
+        native: "Maybe it is good."
+        bases:
+          "Forse": "maybe"
+          "è": "is"
+  "it-1310":
+    native: "also; too"
+    notes:
+      "n1": "Anche means also, too or as well, and sometimes even."
+    examples:
+      "Anche io parlo.":
+        native: "I also speak."
+        bases:
+          "Anche": "also"
+      "Anche tu parli.":
+        native: "You also speak."
+        bases:
+          "Anche": "also"
+  "it-1311":
+    native: "therefore; so"
+    notes:
+      "n1": "Quindi means therefore, hence or thus, and in some senses so."
+    examples:
+      "Non capisco, quindi parlo poco.":
+        native: "I do not understand, so I speak little."
+        bases:
+          "Non": "not"
+          "quindi": "so"
+      "Mangio poco, quindi bevo molto.":
+        native: "I eat little, so I drink a lot."
+        bases:
+          "quindi": "so"
+  "it-1312":
+    native: "Question words"
+    explanation: "The words that open a question: who, what, how, where, when, why, how much and which. This set puts them together so they can be used side by side."

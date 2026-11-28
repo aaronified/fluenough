@@ -1,0 +1,133 @@
+schema: 1
+id: "it-questions"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1300"
+    target: "chi"
+    ipa: "ki"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Chi viene qui?", ipa: "ki ˈvjɛne kwi", source: "https://en.wiktionary.org/wiki/chi", bases: [{ word: "Chi", base: "chi" }, { word: "viene", ref: "it-1652" }, { word: "qui", ref: "it-1725" }] }
+      - { target: "Chi è?", ipa: "ki ɛ", bases: [{ word: "Chi", base: "chi" }, { word: "è", base: "essere" }] }
+  - id: "it-1301"
+    target: "che"
+    ipa: "ke"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Che vuoi?", ipa: "ke vwɔj", source: "https://en.wiktionary.org/wiki/che", bases: [{ word: "Che", base: "che" }, { word: "vuoi", ref: "it-1670" }] }
+      - { target: "Che cosa fai?", ipa: "ke ˈkɔza faj", bases: [{ word: "Che", base: "che" }, { word: "cosa", ref: "it-1302" }, { word: "fai", ref: "it-1650" }] }
+  - id: "it-1302"
+    target: "cosa"
+    ipa: "ˈkɔza"
+    pos: "noun"
+    gender: "f"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è una cosa.", ipa: "ˈkwesta ɛ ˈuna ˈkɔza", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", ref: "it-0009" }, { word: "cosa", base: "cosa" }] }
+      - { target: "Che cosa vuoi?", ipa: "ke ˈkɔza vwɔj", bases: [{ word: "Che", ref: "it-1301" }, { word: "cosa", base: "cosa" }, { word: "vuoi", ref: "it-1670" }] }
+  - id: "it-1303"
+    target: "come"
+    ipa: "ˈkome"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Come stai?", ipa: "ˈkome staj", source: "https://en.wiktionary.org/wiki/come", bases: [{ word: "Come", base: "come" }, { word: "stai", base: "stare" }] }
+      - { target: "Come va?", ipa: "ˈkome va", bases: [{ word: "Come", base: "come" }, { word: "va", ref: "it-1651" }] }
+  - id: "it-1304"
+    target: "dove"
+    ipa: "ˈdove"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Dove vai?", ipa: "ˈdove vaj", source: "https://en.wiktionary.org/wiki/dove", bases: [{ word: "Dove", base: "dove" }, { word: "vai", ref: "it-1651" }] }
+      - { target: "Dov'è il negozio?", ipa: "doˈvɛ il neˈɡottsjo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "negozio", ref: "it-2351" }] }
+  - id: "it-1305"
+    target: "quando"
+    ipa: "ˈkwando"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Quando parti?", ipa: "ˈkwando ˈparti", source: "https://en.wiktionary.org/wiki/quando", bases: [{ word: "Quando", base: "quando" }, { word: "parti", base: "partire" }] }
+      - { target: "Quando vieni?", ipa: "ˈkwando ˈvjɛni", bases: [{ word: "Quando", base: "quando" }, { word: "vieni", ref: "it-1652" }] }
+  - id: "it-1306"
+    target: "perché"
+    ipa: "perˈke"
+    pos: "other"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Perché vai?", ipa: "perˈke vaj", source: "https://en.wiktionary.org/wiki/perch%C3%A9", bases: [{ word: "Perché", base: "perché" }, { word: "vai", ref: "it-1651" }] }
+      - { target: "Non parlo perché capisco poco.", ipa: "non ˈparlo perˈke kaˈpisko ˈpɔko", bases: [{ word: "Non", base: "non" }, { word: "parlo", ref: "it-1658" }, { word: "perché", base: "perché" }, { word: "capisco", ref: "it-1659" }, { word: "poco", ref: "it-1791" }] }
+  - id: "it-1307"
+    target: "quanto"
+    ipa: "ˈkwanto"
+    pos: "adj"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Quanto costa?", ipa: "ˈkwanto ˈkɔsta", source: "https://en.wiktionary.org/wiki/quanto", bases: [{ word: "Quanto", base: "quanto" }, { word: "costa", base: "costare" }] }
+      - { target: "Quanta acqua vuoi?", ipa: "ˈkwanta ˈakkwa vwɔj", bases: [{ word: "Quanta", base: "quanto" }, { word: "acqua", ref: "it-0010" }, { word: "vuoi", ref: "it-1670" }] }
+  - id: "it-1308"
+    target: "quale"
+    ipa: "ˈkwale"
+    pos: "adj"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Quale vuoi?", ipa: "ˈkwale vwɔj", bases: [{ word: "Quale", base: "quale" }, { word: "vuoi", ref: "it-1670" }] }
+      - { target: "Qual è buono?", ipa: "kwal ɛ ˈbwɔno", bases: [{ word: "Qual", base: "quale" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-1309"
+    target: "forse"
+    ipa: "ˈforse"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Forse vengo.", ipa: "ˈforse ˈvenɡo", bases: [{ word: "Forse", base: "forse" }, { word: "vengo", ref: "it-1652" }] }
+      - { target: "Forse è buono.", ipa: "ˈforse ɛ ˈbwɔno", bases: [{ word: "Forse", base: "forse" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-1310"
+    target: "anche"
+    ipa: "ˈanke"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Anche io parlo.", ipa: "ˈanke ˈio ˈparlo", bases: [{ word: "Anche", base: "anche" }, { word: "io", ref: "it-0003" }, { word: "parlo", ref: "it-1658" }] }
+      - { target: "Anche tu parli.", ipa: "ˈanke tu ˈparli", bases: [{ word: "Anche", base: "anche" }, { word: "tu", ref: "it-0004" }, { word: "parli", ref: "it-1658" }] }
+  - id: "it-1311"
+    target: "quindi"
+    ipa: "ˈkwindi"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Non capisco, quindi parlo poco.", ipa: "non kaˈpisko ˈkwindi ˈparlo ˈpɔko", bases: [{ word: "Non", base: "non" }, { word: "capisco", ref: "it-1659" }, { word: "quindi", base: "quindi" }, { word: "parlo", ref: "it-1658" }, { word: "poco", ref: "it-1791" }] }
+      - { target: "Mangio poco, quindi bevo molto.", ipa: "ˈmandʒo ˈpɔko ˈkwindi ˈbevo ˈmolto", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "poco", ref: "it-1791" }, { word: "quindi", base: "quindi" }, { word: "bevo", ref: "it-1661" }, { word: "molto", ref: "it-1790" }] }
+  - id: "it-1312"
+    kind: "set"
+    members: [{ ref: "it-1300" }, { ref: "it-1301" }, { ref: "it-1302" }, { ref: "it-1303" }, { ref: "it-1304" }, { ref: "it-1305" }, { ref: "it-1306" }, { ref: "it-1307" }, { ref: "it-1308" }]
