@@ -1,0 +1,297 @@
+schema: 1
+id: "de-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-1650"
+    target: "heißen"
+    ipa: "ˈhaɪsən"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das heißt ja.", ipa: "das haɪst jaː", bases: [{ word: "Das", base: "das" }, { word: "heißt", base: "heißen" }, { word: "ja", base: "ja" }] }
+      - { target: "Das heißt nicht gut.", ipa: "das haɪst nɪçt ɡuːt", bases: [{ word: "Das", base: "das" }, { word: "heißt", base: "heißen" }, { word: "nicht", base: "nicht" }, { word: "gut", base: "gut" }] }
+  - id: "de-1651"
+    target: "wohnen"
+    ipa: "ˈvoːnən"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich wohne hier.", ipa: "ɪç ˈvoːnə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "wohne", base: "wohnen" }, { word: "hier", base: "hier" }] }
+      - { target: "Wo wohnst du?", ipa: "voː voːnst duː", bases: [{ word: "Wo", base: "wo" }, { word: "wohnst", base: "wohnen" }, { word: "du", base: "du" }] }
+  - id: "de-1652"
+    target: "alt"
+    ipa: "alt"
+    pos: "adj"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist alt.", ipa: "das ɪst alt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "alt", base: "alt" }] }
+      - { target: "Das Wasser ist nicht alt.", ipa: "das ˈvasɐ ɪst nɪçt alt", bases: [{ word: "Das", base: "das" }, { word: "Wasser", base: "Wasser" }, { word: "ist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "alt", base: "alt" }] }
+  - id: "de-1653"
+    target: "jung"
+    ipa: "jʊŋ"
+    pos: "adj"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist jung.", ipa: "das ɪst jʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "jung", base: "jung" }] }
+      - { target: "Ich bin nicht jung.", ipa: "ɪç bɪn nɪçt jʊŋ", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "jung", base: "jung" }] }
+  - id: "de-1654"
+    target: "Alter"
+    ipa: "ˈaltɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist mein Alter.", ipa: "das ɪst maɪn ˈaltɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "mein", base: "mein" }, { word: "Alter", base: "Alter" }] }
+      - { target: "Das Alter ist nicht gut.", ipa: "das ˈaltɐ ɪst nɪçt ɡuːt", bases: [{ word: "Das", base: "das" }, { word: "Alter", base: "Alter" }, { word: "ist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "gut", base: "gut" }] }
+  - id: "de-1655"
+    target: "Land"
+    ipa: "lant"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Länder" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Land.", ipa: "das ɪst aɪn lant", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Land", base: "Land" }] }
+      - { target: "Wo ist das Land?", ipa: "voː ɪst das lant", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Land", base: "Land" }] }
+  - id: "de-1656"
+    target: "Stadt"
+    ipa: "ʃtat"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Städte" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Stadt.", ipa: "das ɪst ˈaɪnə ʃtat", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Stadt", base: "Stadt" }] }
+      - { target: "Wo ist die Stadt?", ipa: "voː ɪst diː ʃtat", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Stadt", base: "Stadt" }] }
+  - id: "de-1657"
+    target: "Adresse"
+    ipa: "ˈaːdʁəsə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Adressen" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Adresse.", ipa: "das ɪst ˈaɪnə ˈaːdʁəsə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Adresse", base: "Adresse" }] }
+      - { target: "Wo ist die Adresse?", ipa: "voː ɪst diː ˈaːdʁəsə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Adresse", base: "Adresse" }] }
+  - id: "de-1658"
+    target: "Geburtstag"
+    ipa: "ɡəˈbuːɐ̯tstaːk"
+    pos: "noun"
+    gender: "m"
+    forms: [{ id: "pl", kind: "plural", word: "Geburtstage" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Geburtstag.", ipa: "das ɪst aɪn ɡəˈbuːɐ̯tstaːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Geburtstag", base: "Geburtstag" }] }
+      - { target: "Das ist mein Geburtstag.", ipa: "das ɪst maɪn ɡəˈbuːɐ̯tstaːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "mein", base: "mein" }, { word: "Geburtstag", base: "Geburtstag" }] }
+  - id: "de-1659"
+    target: "Telefonnummer"
+    ipa: "ˈteːləfɔnʊmɐ"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Telefonnummern" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Telefonnummer.", ipa: "das ɪst ˈaɪnə ˈteːləfɔnʊmɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Telefonnummer", base: "Telefonnummer" }] }
+      - { target: "Wo ist die Telefonnummer?", ipa: "voː ɪst diː ˈteːləfɔnʊmɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Telefonnummer", base: "Telefonnummer" }] }
+  - id: "de-1660"
+    target: "Nummer"
+    ipa: "ˈnʊmɐ"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Nummern" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Nummer.", ipa: "das ɪst ˈaɪnə ˈnʊmɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Nummer", base: "Nummer" }] }
+      - { target: "Wo ist die Nummer?", ipa: "voː ɪst diː ˈnʊmɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Nummer", base: "Nummer" }] }
+  - id: "de-1661"
+    target: "Sprache"
+    ipa: "ˈʃpʁaxə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Sprachen" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Sprache.", ipa: "das ɪst ˈaɪnə ˈʃpʁaxə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Sprache", base: "Sprache" }] }
+      - { target: "Wo ist die Sprache?", ipa: "voː ɪst diː ˈʃpʁaxə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Sprache", base: "Sprache" }] }
+  - id: "de-1662"
+    target: "verheiratet"
+    ipa: "fɛɐ̯ˈhaɪʁatət"
+    pos: "adj"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin verheiratet.", ipa: "ɪç bɪn fɛɐ̯ˈhaɪʁatət", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "verheiratet", base: "verheiratet" }] }
+      - { target: "Du bist nicht verheiratet.", ipa: "duː bɪst nɪçt fɛɐ̯ˈhaɪʁatət", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "verheiratet", base: "verheiratet" }] }
+  - id: "de-1663"
+    target: "ledig"
+    ipa: "ˈleːdɪç"
+    pos: "adj"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin ledig.", ipa: "ɪç bɪn ˈleːdɪç", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "ledig", base: "ledig" }] }
+      - { target: "Du bist nicht ledig.", ipa: "duː bɪst nɪçt ˈleːdɪç", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "ledig", base: "ledig" }] }
+  - id: "de-1664"
+    target: "Handy"
+    ipa: "ˈhandy"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Handys" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Handy.", ipa: "das ɪst aɪn ˈhandy", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Handy", base: "Handy" }] }
+      - { target: "Ich habe ein Handy.", ipa: "ɪç ˈhaːbə aɪn ˈhandy", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Handy", base: "Handy" }] }
+  - id: "de-1665"
+    target: "E-Mail"
+    ipa: "eː maɪl"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "E-Mails" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine E-Mail.", ipa: "das ɪst ˈaɪnə eː maɪl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "E-Mail", base: "E-Mail" }] }
+      - { target: "Ich habe eine E-Mail.", ipa: "ɪç ˈhaːbə ˈaɪnə eː maɪl", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "E-Mail", base: "E-Mail" }] }
+  - id: "de-1666"
+    target: "Ort"
+    ipa: "ɔʁt"
+    pos: "noun"
+    gender: "m"
+    forms: [{ id: "pl", kind: "plural", word: "Orte" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Ort.", ipa: "das ɪst aɪn ɔʁt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Ort", base: "Ort" }] }
+      - { target: "Wo ist der Ort?", ipa: "voː ɪst deːɐ̯ ɔʁt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Ort", base: "Ort" }] }
+  - id: "de-1667"
+    target: "Hobby"
+    ipa: "ˈhɔby"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Hobbys" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Hobby.", ipa: "das ɪst aɪn ˈhɔby", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Hobby", base: "Hobby" }] }
+      - { target: "Ich habe ein Hobby.", ipa: "ɪç ˈhaːbə aɪn ˈhɔby", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Hobby", base: "Hobby" }] }
+  - id: "de-1668"
+    target: "Foto"
+    ipa: "ˈfoːto"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Fotos" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Foto.", ipa: "das ɪst aɪn ˈfoːto", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Foto", base: "Foto" }] }
+      - { target: "Ich habe ein Foto.", ipa: "ɪç ˈhaːbə aɪn ˈfoːto", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Foto", base: "Foto" }] }
+  - id: "de-1669"
+    target: "Geschlecht"
+    ipa: "ɡəˈʃlɛçt"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Geschlechter" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist mein Geschlecht.", ipa: "das ɪst maɪn ɡəˈʃlɛçt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "mein", base: "mein" }, { word: "Geschlecht", base: "Geschlecht" }] }
+      - { target: "Wo ist das Geschlecht?", ipa: "voː ɪst das ɡəˈʃlɛçt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Geschlecht", base: "Geschlecht" }] }
+  - id: "de-1670"
+    target: "Herkunft"
+    ipa: "ˈhɛʁkʊnft"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Herkünfte" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist die Herkunft.", ipa: "das ɪst diː ˈhɛʁkʊnft", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Herkunft", base: "Herkunft" }] }
+      - { target: "Wo ist die Herkunft?", ipa: "voː ɪst diː ˈhɛʁkʊnft", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Herkunft", base: "Herkunft" }] }
+  - id: "de-1671"
+    target: "Staatsangehörigkeit"
+    ipa: "ˈʃtaːtzaŋeːœʁɪçkaɪt"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Staatsangehörigkeiten" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Staatsangehörigkeit.", ipa: "das ɪst ˈaɪnə ˈʃtaːtzaŋeːœʁɪçkaɪt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Staatsangehörigkeit", base: "Staatsangehörigkeit" }] }
+      - { target: "Wo ist die Staatsangehörigkeit?", ipa: "voː ɪst diː ˈʃtaːtzaŋeːœʁɪçkaɪt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Staatsangehörigkeit", base: "Staatsangehörigkeit" }] }
+  - id: "de-1672"
+    target: "Muttersprache"
+    ipa: "ˈmʊtɐspʁaxə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Muttersprachen" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Muttersprache.", ipa: "das ɪst ˈaɪnə ˈmʊtɐspʁaxə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Muttersprache", base: "Muttersprache" }] }
+      - { target: "Wo ist die Muttersprache?", ipa: "voː ɪst diː ˈmʊtɐspʁaxə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Muttersprache", base: "Muttersprache" }] }
+  - id: "de-1673"
+    target: "Mensch"
+    ipa: "mɛnʃ"
+    pos: "noun"
+    gender: "m"
+    forms: [{ id: "pl", kind: "plural", word: "Menschen" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Mensch.", ipa: "das ɪst aɪn mɛnʃ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Mensch", base: "Mensch" }] }
+      - { target: "Wo ist der Mensch?", ipa: "voː ɪst deːɐ̯ mɛnʃ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Mensch", base: "Mensch" }] }
+  - id: "de-1674"
+    target: "Dorf"
+    ipa: "dɔʁf"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Dörfer" }]
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Dorf.", ipa: "das ɪst aɪn dɔʁf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Dorf", base: "Dorf" }] }
+      - { target: "Wo ist das Dorf?", ipa: "voː ɪst das dɔʁf", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Dorf", base: "Dorf" }] }

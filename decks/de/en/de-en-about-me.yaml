@@ -1,0 +1,499 @@
+schema: 1
+id: "de-en-about-me"
+kind: "layer"
+core: "de-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+description: "Words for talking about yourself: your name, age, home, family status, contact details and language. Standard German, as spoken in Germany. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "de-1650":
+    native: "to be called; to have a name; to mean"
+    notes:
+      "n1": "Heißen is to be called, to have a name. Das heißt means: it means."
+    examples:
+      "Das heißt ja.":
+        native: "That means yes."
+        bases:
+          "Das": "the; that"
+          "heißt": "means (it means)"
+          "ja": "yes"
+      "Das heißt nicht gut.":
+        native: "That does not mean it is good."
+        bases:
+          "Das": "the; that"
+          "heißt": "means (it means)"
+          "nicht": "not"
+          "gut": "good"
+  "de-1651":
+    native: "to live; to reside; to dwell"
+    notes:
+      "n1": "Wohnen is to live in a place, as in ich wohne hier: I live here."
+    examples:
+      "Ich wohne hier.":
+        native: "I live here."
+        bases:
+          "Ich": "I"
+          "wohne": "live (I live)"
+          "hier": "here"
+      "Wo wohnst du?":
+        native: "Where do you live?"
+        bases:
+          "Wo": "where"
+          "wohnst": "live (you live)"
+          "du": "you"
+  "de-1652":
+    native: "old"
+    notes:
+      "n1": "Alt is old, as in das ist alt: that is old."
+    examples:
+      "Das ist alt.":
+        native: "That is old."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "alt": "old"
+      "Das Wasser ist nicht alt.":
+        native: "The water is not old."
+        bases:
+          "Das": "the; that"
+          "Wasser": "water"
+          "ist": "to be (it is)"
+          "nicht": "not"
+          "alt": "old"
+  "de-1653":
+    native: "young"
+    notes:
+      "n1": "Jung is young. Its opposite is alt."
+    examples:
+      "Das ist jung.":
+        native: "That is young."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "jung": "young"
+      "Ich bin nicht jung.":
+        native: "I am not young."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "nicht": "not"
+          "jung": "young"
+  "de-1654":
+    native: "age; old age"
+    notes:
+      "n1": "Alter is age; old age: das Alter. Its plural is also Alter."
+    examples:
+      "Das ist mein Alter.":
+        native: "That is my age."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "mein": "my"
+          "Alter": "age; old age"
+      "Das Alter ist nicht gut.":
+        native: "Age is not good."
+        bases:
+          "Das": "the; that"
+          "Alter": "age; old age"
+          "ist": "to be (it is)"
+          "nicht": "not"
+          "gut": "good"
+  "de-1655":
+    native: "country"
+    notes:
+      "n1": "Land is country: das Land. Its plural is Länder, with an umlaut on the a."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist ein Land.":
+        native: "That is a country."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ein": "a; an"
+          "Land": "country"
+      "Wo ist das Land?":
+        native: "Where is the country?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "das": "the; that"
+          "Land": "country"
+  "de-1656":
+    native: "city"
+    notes:
+      "n1": "Stadt is city: die Stadt. Its plural is Städte, with an umlaut on the a."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist eine Stadt.":
+        native: "That is a city."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eine": "a; an"
+          "Stadt": "city"
+      "Wo ist die Stadt?":
+        native: "Where is the city?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Stadt": "city"
+  "de-1657":
+    native: "address"
+    notes:
+      "n1": "Adresse is address: die Adresse. Its plural is Adressen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist eine Adresse.":
+        native: "That is an address."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eine": "a; an"
+          "Adresse": "address"
+      "Wo ist die Adresse?":
+        native: "Where is the address?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Adresse": "address"
+  "de-1658":
+    native: "birthday"
+    notes:
+      "n1": "Geburtstag is birthday: der Geburtstag. Its plural is Geburtstage."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist ein Geburtstag.":
+        native: "That is a birthday."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ein": "a; an"
+          "Geburtstag": "birthday"
+      "Das ist mein Geburtstag.":
+        native: "That is my birthday."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "mein": "my"
+          "Geburtstag": "birthday"
+  "de-1659":
+    native: "telephone number"
+    notes:
+      "n1": "Telefonnummer is telephone number: die Telefonnummer. Its plural is Telefonnummern."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist eine Telefonnummer.":
+        native: "That is a telephone number."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eine": "a; an"
+          "Telefonnummer": "telephone number"
+      "Wo ist die Telefonnummer?":
+        native: "Where is the telephone number?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Telefonnummer": "telephone number"
+  "de-1660":
+    native: "number"
+    notes:
+      "n1": "Nummer is number: die Nummer. Its plural is Nummern."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist eine Nummer.":
+        native: "That is a number."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eine": "a; an"
+          "Nummer": "number"
+      "Wo ist die Nummer?":
+        native: "Where is the number?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Nummer": "number"
+  "de-1661":
+    native: "language"
+    notes:
+      "n1": "Sprache is language: die Sprache. Its plural is Sprachen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist eine Sprache.":
+        native: "That is a language."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eine": "a; an"
+          "Sprache": "language"
+      "Wo ist die Sprache?":
+        native: "Where is the language?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Sprache": "language"
+  "de-1662":
+    native: "married"
+    notes:
+      "n1": "Verheiratet is married, as in ich bin verheiratet: I am married."
+    examples:
+      "Ich bin verheiratet.":
+        native: "I am married."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "verheiratet": "married"
+      "Du bist nicht verheiratet.":
+        native: "You are not married."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "nicht": "not"
+          "verheiratet": "married"
+  "de-1663":
+    native: "unmarried"
+    notes:
+      "n1": "Ledig is unmarried, not married."
+    examples:
+      "Ich bin ledig.":
+        native: "I am unmarried."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "ledig": "unmarried"
+      "Du bist nicht ledig.":
+        native: "You are not unmarried."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "nicht": "not"
+          "ledig": "unmarried"
+  "de-1664":
+    native: "mobile phone"
+    notes:
+      "n1": "Handy is mobile phone: das Handy. Its plural is Handys."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist ein Handy.":
+        native: "That is a mobile phone."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ein": "a; an"
+          "Handy": "mobile phone"
+      "Ich habe ein Handy.":
+        native: "I have a mobile phone."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "ein": "a; an"
+          "Handy": "mobile phone"
+  "de-1665":
+    native: "e-mail"
+    notes:
+      "n1": "E-Mail is e-mail: die E-Mail. Its plural is E-Mails."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist eine E-Mail.":
+        native: "That is an e-mail."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eine": "a; an"
+          "E-Mail": "e-mail"
+      "Ich habe eine E-Mail.":
+        native: "I have an e-mail."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "eine": "a; an"
+          "E-Mail": "e-mail"
+  "de-1666":
+    native: "place; location"
+    notes:
+      "n1": "Ort is place; location: der Ort. Its plural is Orte."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist ein Ort.":
+        native: "That is a place."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ein": "a; an"
+          "Ort": "place; location"
+      "Wo ist der Ort?":
+        native: "Where is the place?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Ort": "place; location"
+  "de-1667":
+    native: "hobby"
+    notes:
+      "n1": "Hobby is hobby: das Hobby. Its plural is Hobbys."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist ein Hobby.":
+        native: "That is a hobby."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ein": "a; an"
+          "Hobby": "hobby"
+      "Ich habe ein Hobby.":
+        native: "I have a hobby."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "ein": "a; an"
+          "Hobby": "hobby"
+  "de-1668":
+    native: "photograph"
+    notes:
+      "n1": "Foto is photograph: das Foto. Its plural is Fotos."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist ein Foto.":
+        native: "That is a photograph."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ein": "a; an"
+          "Foto": "photograph"
+      "Ich habe ein Foto.":
+        native: "I have a photograph."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "ein": "a; an"
+          "Foto": "photograph"
+  "de-1669":
+    native: "sex"
+    notes:
+      "n1": "Geschlecht is sex: das Geschlecht. Its plural is Geschlechter."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist mein Geschlecht.":
+        native: "That is my sex."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "mein": "my"
+          "Geschlecht": "sex"
+      "Wo ist das Geschlecht?":
+        native: "Where is the sex?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "das": "the; that"
+          "Geschlecht": "sex"
+  "de-1670":
+    native: "origin; source"
+    notes:
+      "n1": "Herkunft is origin; source: die Herkunft. Its plural is Herkünfte, with an umlaut on the u."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Herkunft.":
+        native: "That is the origin."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Herkunft": "origin; source"
+      "Wo ist die Herkunft?":
+        native: "Where is the origin?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Herkunft": "origin; source"
+  "de-1671":
+    native: "nationality; citizenship"
+    notes:
+      "n1": "Staatsangehörigkeit is nationality; citizenship: die Staatsangehörigkeit. Its plural is Staatsangehörigkeiten."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist eine Staatsangehörigkeit.":
+        native: "That is a nationality."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eine": "a; an"
+          "Staatsangehörigkeit": "nationality; citizenship"
+      "Wo ist die Staatsangehörigkeit?":
+        native: "Where is the nationality?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Staatsangehörigkeit": "nationality; citizenship"
+  "de-1672":
+    native: "mother tongue; native language"
+    notes:
+      "n1": "Muttersprache is mother tongue; native language: die Muttersprache. Its plural is Muttersprachen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist eine Muttersprache.":
+        native: "That is a mother tongue."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eine": "a; an"
+          "Muttersprache": "mother tongue; native language"
+      "Wo ist die Muttersprache?":
+        native: "Where is the mother tongue?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Muttersprache": "mother tongue; native language"
+  "de-1673":
+    native: "human; human being; person"
+    notes:
+      "n1": "Mensch is human; human being; person: der Mensch. Its plural is Menschen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist ein Mensch.":
+        native: "That is a human being."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ein": "a; an"
+          "Mensch": "human; human being; person"
+      "Wo ist der Mensch?":
+        native: "Where is the person?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Mensch": "human; human being; person"
+  "de-1674":
+    native: "village"
+    notes:
+      "n1": "Dorf is village: das Dorf. Its plural is Dörfer, with an umlaut on the o."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist ein Dorf.":
+        native: "That is a village."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ein": "a; an"
+          "Dorf": "village"
+      "Wo ist das Dorf?":
+        native: "Where is the village?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "das": "the; that"
+          "Dorf": "village"
