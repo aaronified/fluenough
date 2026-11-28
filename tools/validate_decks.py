@@ -3172,7 +3172,8 @@ _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
                  "perso_arabic": 0x0600, "arabic": 0x0600, "shahmukhi": 0x0600,
                  "han": 0x4E00, "han_simplified": 0x4E00,
                  "han_traditional": 0x4E00, "kana": 0x3040, "hangul": 0xAC00,
-                 "cyrillic": 0x0400}
+                 "cyrillic": 0x0400,
+                 "greek": 0x0370}
 # Keys whose values are the word itself, not prose about it.
 # `phonetic` is IPA, which uses Greek letters (β, θ, χ) and needs no reading.
 _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas", "phonetic",
@@ -3218,6 +3219,10 @@ def _block(ch: str) -> int:
     # and on) stay in a word's run with the Russian-range letters.
     if 0x0400 <= o <= 0x04FF:
         return 0x0400 >> 7
+    # Greek (U+0370-U+03FF) counts as one: the modern letters start at
+    # U+0386, in the second block, and the archaic ones (ͷ ͻ) are in the first.
+    if 0x0370 <= o <= 0x03FF:
+        return 0x0370 >> 7
     if any(lo <= o <= hi for lo, hi in _HAN_KANA):
         return 0x4E00 >> 7
     if any(lo <= o <= hi for lo, hi in _HANGUL):

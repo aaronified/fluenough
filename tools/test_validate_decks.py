@@ -1056,6 +1056,28 @@ class Transliteration(Validated):
         self._a_stress_mark_stays_inside_a_cyrillic_word()
         self._a_russian_core_reads_cyrillic_as_written()
 
+    def _greek_words_keep_their_accents_in_one_run(self) -> None:
+        # Accented letters are precomposed (NFC), so a tonos or a diaeresis
+        # is part of the letter; a combining acute is also kept in the run.
+        for word in ("ευχαριστ\u03ce", "\u03ba\u03b1\u0390\u03ba\u03b9", "\u0390",
+                     "ευχαριστο\u0301"):
+            with self.subTest(word=word):
+                self.assertEqual(validate_decks._untransliterated(
+                    f"{word} (reading)", "en"), [])
+                self.assertEqual(validate_decks._untransliterated(
+                    f"{word} is a word.", "en"), [word])
+
+    def _a_greek_core_reads_greek_as_written(self) -> None:
+        own = validate_decks._SCRIPT_BLOCK["greek"]
+        self.assertEqual(validate_decks._block("ώ"), validate_decks._block("\u0370"))
+        self.assertEqual(validate_decks._untransliterated(
+            "Το νερό (neró) είναι κρύο.", "el", own), [])
+        self.assertEqual(validate_decks._untransliterated("νερό", "en"), ["νερό"])
+
+    def test_greek_is_a_script_and_its_own_in_a_greek_core(self) -> None:
+        self._greek_words_keep_their_accents_in_one_run()
+        self._a_greek_core_reads_greek_as_written()
+
     def test_a_word_in_another_script_has_its_reading(self) -> None:
         cases = (
             self._a_word_with_its_reading_is_valid,
