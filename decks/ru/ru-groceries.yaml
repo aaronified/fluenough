@@ -1,0 +1,213 @@
+schema: 1
+id: "ru-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "groceries"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ru-2350"
+    target: "продукты"
+    reading: "produkty"
+    ipa: "prɐˈduktɨ"
+    pos: "noun"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-2351"
+    target: "крупа"
+    reading: "krupa"
+    ipa: "krʊˈpa"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это крупа.", reading: "eto krupa.", ipa: "ˈɛtə krʊˈpa", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "крупа", base: "крупа", reading: "krupa" }] }
+  - id: "ru-2352"
+    target: "консервы"
+    reading: "konservy"
+    ipa: "kɐnˈsʲervɨ"
+    pos: "noun"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-2353"
+    target: "пакет"
+    reading: "paket"
+    ipa: "pɐˈkʲet"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это пакет.", reading: "eto paket.", ipa: "ˈɛtə pɐˈkʲet", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "пакет", base: "пакет", reading: "paket" }] }
+  - id: "ru-2354"
+    target: "сумка"
+    reading: "sumka"
+    ipa: "ˈsumkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это сумка.", reading: "eto sumka.", ipa: "ˈɛtə ˈsumkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сумка", base: "сумка", reading: "sumka" }] }
+  - id: "ru-2355"
+    target: "корзина"
+    reading: "korzina"
+    ipa: "kɐrˈzʲinə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это корзина.", reading: "eto korzina.", ipa: "ˈɛtə kɐrˈzʲinə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "корзина", base: "корзина", reading: "korzina" }] }
+  - id: "ru-2356"
+    target: "касса"
+    reading: "kassa"
+    ipa: "ˈkasːə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это касса.", reading: "eto kassa.", ipa: "ˈɛtə ˈkasːə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "касса", base: "касса", reading: "kassa" }] }
+  - id: "ru-2357"
+    target: "цена"
+    reading: "tsena"
+    ipa: "tsɨˈna"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это цена.", reading: "eto tsena.", ipa: "ˈɛtə tsɨˈna", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "цена", base: "цена", reading: "tsena" }] }
+  - id: "ru-2358"
+    target: "скидка"
+    reading: "skidka"
+    ipa: "ˈskʲitkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это скидка.", reading: "eto skidka.", ipa: "ˈɛtə ˈskʲitkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "скидка", base: "скидка", reading: "skidka" }] }
+  - id: "ru-2359"
+    target: "чек"
+    reading: "chek"
+    ipa: "tɕek"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это чек.", reading: "eto chek.", ipa: "ˈɛtə tɕek", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "чек", base: "чек", reading: "chek" }] }
+  - id: "ru-2360"
+    target: "кошелёк"
+    reading: "koshelyok"
+    ipa: "kəʂɨˈlʲok"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это кошелёк.", reading: "eto koshelyok.", ipa: "ˈɛtə kəʂɨˈlʲok", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "кошелёк", base: "кошелёк", reading: "koshelyok" }] }
+  - id: "ru-2361"
+    target: "рубль"
+    reading: "rubl'"
+    ipa: "rublʲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это рубль.", reading: "eto rubl'.", ipa: "ˈɛtə rublʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "рубль", base: "рубль", reading: "rubl'" }] }
+  - id: "ru-2362"
+    target: "копейка"
+    reading: "kopeyka"
+    ipa: "kɐˈpʲejkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это копейка.", reading: "eto kopeyka.", ipa: "ˈɛtə kɐˈpʲejkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "копейка", base: "копейка", reading: "kopeyka" }] }
+  - id: "ru-2363"
+    target: "вес"
+    reading: "ves"
+    ipa: "vʲes"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это вес.", reading: "eto ves.", ipa: "ˈɛtə vʲes", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "вес", base: "вес", reading: "ves" }] }
+  - id: "ru-2364"
+    target: "упаковка"
+    reading: "upakovka"
+    ipa: "ʊpɐˈkofkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это упаковка.", reading: "eto upakovka.", ipa: "ˈɛtə ʊpɐˈkofkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "упаковка", base: "упаковка", reading: "upakovka" }] }
+  - id: "ru-2365"
+    target: "банка"
+    reading: "banka"
+    ipa: "ˈbankə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это банка.", reading: "eto banka.", ipa: "ˈɛtə ˈbankə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "банка", base: "банка", reading: "banka" }] }
+  - id: "ru-2366"
+    target: "магазин"
+    reading: "magazin"
+    ipa: "məɡɐˈzʲin"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это магазин.", reading: "eto magazin.", ipa: "ˈɛtə məɡɐˈzʲin", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "магазин", base: "магазин", reading: "magazin" }] }
+  - id: "ru-2367"
+    target: "покупка"
+    reading: "pokupka"
+    ipa: "pɐˈkupkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это покупка.", reading: "eto pokupka.", ipa: "ˈɛtə pɐˈkupkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "покупка", base: "покупка", reading: "pokupka" }] }
+  - id: "ru-2368"
+    target: "список"
+    reading: "spisok"
+    ipa: "ˈspʲisək"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это список.", reading: "eto spisok.", ipa: "ˈɛtə ˈspʲisək", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "список", base: "список", reading: "spisok" }] }
