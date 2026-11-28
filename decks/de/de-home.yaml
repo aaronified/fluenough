@@ -1,0 +1,480 @@
+schema: 1
+id: "de-home"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2770"
+    target: "Haus"
+    ipa: "haʊs"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Häuser" }]
+    examples:
+      - { target: "Hier ist das Haus.", ipa: "hiːɐ̯ ɪst das haʊs", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Haus", base: "Haus" }] }
+      - { target: "Wo ist das Haus?", ipa: "voː ɪst das haʊs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Haus", base: "Haus" }] }
+  - id: "de-2771"
+    target: "Wohnung"
+    ipa: "ˈvoːnʊŋ"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Wohnungen" }]
+    examples:
+      - { target: "Das ist die Wohnung.", ipa: "das ɪst diː ˈvoːnʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Wohnung", base: "Wohnung" }] }
+      - { target: "Wo ist die Wohnung?", ipa: "voː ɪst diː ˈvoːnʊŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Wohnung", base: "Wohnung" }] }
+  - id: "de-2772"
+    target: "Zimmer"
+    ipa: "ˈtsɪmɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Zimmer.", ipa: "hiːɐ̯ ɪst das ˈtsɪmɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Zimmer", base: "Zimmer" }] }
+      - { target: "Wo ist das Zimmer?", ipa: "voː ɪst das ˈtsɪmɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Zimmer", base: "Zimmer" }] }
+  - id: "de-2773"
+    target: "Küche"
+    ipa: "ˈkʏçə"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Küchen" }]
+    examples:
+      - { target: "Das ist die Küche.", ipa: "das ɪst diː ˈkʏçə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Küche", base: "Küche" }] }
+      - { target: "Wo ist die Küche?", ipa: "voː ɪst diː ˈkʏçə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Küche", base: "Küche" }] }
+  - id: "de-2774"
+    target: "Bad"
+    ipa: "baːt"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Bäder" }]
+    examples:
+      - { target: "Hier ist das Bad.", ipa: "hiːɐ̯ ɪst das baːt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Bad", base: "Bad" }] }
+      - { target: "Wo ist das Bad?", ipa: "voː ɪst das baːt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Bad", base: "Bad" }] }
+  - id: "de-2775"
+    target: "Badezimmer"
+    ipa: "ˈbaːdətsɪmɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Badezimmer.", ipa: "hiːɐ̯ ɪst das ˈbaːdətsɪmɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Badezimmer", base: "Badezimmer" }] }
+      - { target: "Wo ist das Badezimmer?", ipa: "voː ɪst das ˈbaːdətsɪmɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Badezimmer", base: "Badezimmer" }] }
+  - id: "de-2776"
+    target: "Wohnzimmer"
+    ipa: "ˈvoːntsɪmɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Wohnzimmer.", ipa: "hiːɐ̯ ɪst das ˈvoːntsɪmɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wohnzimmer", base: "Wohnzimmer" }] }
+      - { target: "Wo ist das Wohnzimmer?", ipa: "voː ɪst das ˈvoːntsɪmɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wohnzimmer", base: "Wohnzimmer" }] }
+  - id: "de-2777"
+    target: "Schlafzimmer"
+    ipa: "ˈʃlaːftsɪmɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Schlafzimmer.", ipa: "hiːɐ̯ ɪst das ˈʃlaːftsɪmɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Schlafzimmer", base: "Schlafzimmer" }] }
+      - { target: "Wo ist das Schlafzimmer?", ipa: "voː ɪst das ˈʃlaːftsɪmɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Schlafzimmer", base: "Schlafzimmer" }] }
+  - id: "de-2778"
+    target: "Flur"
+    ipa: "fluːɐ̯"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Flure" }]
+    examples:
+      - { target: "Das ist der Flur.", ipa: "das ɪst deːɐ̯ fluːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Flur", base: "Flur" }] }
+      - { target: "Wo ist der Flur?", ipa: "voː ɪst deːɐ̯ fluːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Flur", base: "Flur" }] }
+  - id: "de-2779"
+    target: "Balkon"
+    ipa: "ˈbalkɔn"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Balkone" }]
+    examples:
+      - { target: "Das ist der Balkon.", ipa: "das ɪst deːɐ̯ ˈbalkɔn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Balkon", base: "Balkon" }] }
+      - { target: "Wo ist der Balkon?", ipa: "voː ɪst deːɐ̯ ˈbalkɔn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Balkon", base: "Balkon" }] }
+  - id: "de-2780"
+    target: "Keller"
+    ipa: "ˈkɛlɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Keller.", ipa: "das ɪst deːɐ̯ ˈkɛlɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Keller", base: "Keller" }] }
+      - { target: "Wo ist der Keller?", ipa: "voː ɪst deːɐ̯ ˈkɛlɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Keller", base: "Keller" }] }
+  - id: "de-2781"
+    target: "Dach"
+    ipa: "dax"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Dächer" }]
+    examples:
+      - { target: "Hier ist das Dach.", ipa: "hiːɐ̯ ɪst das dax", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Dach", base: "Dach" }] }
+      - { target: "Wo ist das Dach?", ipa: "voː ɪst das dax", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Dach", base: "Dach" }] }
+  - id: "de-2782"
+    target: "Garten"
+    ipa: "ˈɡaʁtən"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Gärten" }]
+    examples:
+      - { target: "Das ist der Garten.", ipa: "das ɪst deːɐ̯ ˈɡaʁtən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Garten", base: "Garten" }] }
+      - { target: "Wo ist der Garten?", ipa: "voː ɪst deːɐ̯ ˈɡaʁtən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Garten", base: "Garten" }] }
+  - id: "de-2783"
+    target: "Tür"
+    ipa: "tyːɐ̯"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Türen" }]
+    examples:
+      - { target: "Das ist die Tür.", ipa: "das ɪst diː tyːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Tür", base: "Tür" }] }
+      - { target: "Wo ist die Tür?", ipa: "voː ɪst diː tyːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Tür", base: "Tür" }] }
+  - id: "de-2784"
+    target: "Fenster"
+    ipa: "ˈfɛnstɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Fenster.", ipa: "hiːɐ̯ ɪst das ˈfɛnstɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Fenster", base: "Fenster" }] }
+      - { target: "Wo ist das Fenster?", ipa: "voː ɪst das ˈfɛnstɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Fenster", base: "Fenster" }] }
+  - id: "de-2785"
+    target: "Wand"
+    ipa: "vant"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Wände" }]
+    examples:
+      - { target: "Das ist die Wand.", ipa: "das ɪst diː vant", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Wand", base: "Wand" }] }
+      - { target: "Wo ist die Wand?", ipa: "voː ɪst diː vant", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Wand", base: "Wand" }] }
+  - id: "de-2786"
+    target: "Boden"
+    ipa: "ˈboːdən"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Böden" }]
+    examples:
+      - { target: "Das ist der Boden.", ipa: "das ɪst deːɐ̯ ˈboːdən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Boden", base: "Boden" }] }
+      - { target: "Wo ist der Boden?", ipa: "voː ɪst deːɐ̯ ˈboːdən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Boden", base: "Boden" }] }
+  - id: "de-2787"
+    target: "Schrank"
+    ipa: "ʃʁaŋk"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Schränke" }]
+    examples:
+      - { target: "Das ist der Schrank.", ipa: "das ɪst deːɐ̯ ʃʁaŋk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Schrank", base: "Schrank" }] }
+      - { target: "Wo ist der Schrank?", ipa: "voː ɪst deːɐ̯ ʃʁaŋk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Schrank", base: "Schrank" }] }
+  - id: "de-2788"
+    target: "Bett"
+    ipa: "bɛt"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Betten" }]
+    examples:
+      - { target: "Hier ist das Bett.", ipa: "hiːɐ̯ ɪst das bɛt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Bett", base: "Bett" }] }
+      - { target: "Wo ist das Bett?", ipa: "voː ɪst das bɛt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Bett", base: "Bett" }] }
+  - id: "de-2789"
+    target: "Sofa"
+    ipa: "ˈzoːfa"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Sofas" }]
+    examples:
+      - { target: "Hier ist das Sofa.", ipa: "hiːɐ̯ ɪst das ˈzoːfa", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Sofa", base: "Sofa" }] }
+      - { target: "Wo ist das Sofa?", ipa: "voː ɪst das ˈzoːfa", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Sofa", base: "Sofa" }] }
+  - id: "de-2790"
+    target: "Tisch"
+    ipa: "tɪʃ"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Tische" }]
+    examples:
+      - { target: "Das ist der Tisch.", ipa: "das ɪst deːɐ̯ tɪʃ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Tisch", base: "Tisch" }] }
+      - { target: "Wo ist der Tisch?", ipa: "voː ɪst deːɐ̯ tɪʃ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Tisch", base: "Tisch" }] }
+  - id: "de-2791"
+    target: "Stuhl"
+    ipa: "ʃtuːl"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Stühle" }]
+    examples:
+      - { target: "Das ist der Stuhl.", ipa: "das ɪst deːɐ̯ ʃtuːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Stuhl", base: "Stuhl" }] }
+      - { target: "Wo ist der Stuhl?", ipa: "voː ɪst deːɐ̯ ʃtuːl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Stuhl", base: "Stuhl" }] }
+  - id: "de-2792"
+    target: "Kühlschrank"
+    ipa: "ˈkyːlʃʁaŋk"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kühlschränke" }]
+    examples:
+      - { target: "Das ist der Kühlschrank.", ipa: "das ɪst deːɐ̯ ˈkyːlʃʁaŋk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kühlschrank", base: "Kühlschrank" }] }
+      - { target: "Wo ist der Kühlschrank?", ipa: "voː ɪst deːɐ̯ ˈkyːlʃʁaŋk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kühlschrank", base: "Kühlschrank" }] }
+  - id: "de-2793"
+    target: "Herd"
+    ipa: "hɛʁt"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Herde" }]
+    examples:
+      - { target: "Das ist der Herd.", ipa: "das ɪst deːɐ̯ hɛʁt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Herd", base: "Herd" }] }
+      - { target: "Wo ist der Herd?", ipa: "voː ɪst deːɐ̯ hɛʁt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Herd", base: "Herd" }] }
+  - id: "de-2794"
+    target: "Waschmaschine"
+    ipa: "ˈvaːʃmaʃinə"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Waschmaschinen" }]
+    examples:
+      - { target: "Das ist die Waschmaschine.", ipa: "das ɪst diː ˈvaːʃmaʃinə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Waschmaschine", base: "Waschmaschine" }] }
+      - { target: "Wo ist die Waschmaschine?", ipa: "voː ɪst diː ˈvaːʃmaʃinə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Waschmaschine", base: "Waschmaschine" }] }
+  - id: "de-2795"
+    target: "Lampe"
+    ipa: "ˈlampə"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Lampen" }]
+    examples:
+      - { target: "Das ist die Lampe.", ipa: "das ɪst diː ˈlampə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Lampe", base: "Lampe" }] }
+      - { target: "Wo ist die Lampe?", ipa: "voː ɪst diː ˈlampə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Lampe", base: "Lampe" }] }
+  - id: "de-2796"
+    target: "Dusche"
+    ipa: "ˈdʊʃə"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Duschen" }]
+    examples:
+      - { target: "Das ist die Dusche.", ipa: "das ɪst diː ˈdʊʃə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Dusche", base: "Dusche" }] }
+      - { target: "Wo ist die Dusche?", ipa: "voː ɪst diː ˈdʊʃə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Dusche", base: "Dusche" }] }
+  - id: "de-2797"
+    target: "Badewanne"
+    ipa: "ˈbaːdəvanə"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Badewannen" }]
+    examples:
+      - { target: "Das ist die Badewanne.", ipa: "das ɪst diː ˈbaːdəvanə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Badewanne", base: "Badewanne" }] }
+      - { target: "Wo ist die Badewanne?", ipa: "voː ɪst diː ˈbaːdəvanə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Badewanne", base: "Badewanne" }] }
+  - id: "de-2798"
+    target: "Spiegel"
+    ipa: "ˈʃpiːɡəl"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Spiegel.", ipa: "das ɪst deːɐ̯ ˈʃpiːɡəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Spiegel", base: "Spiegel" }] }
+      - { target: "Wo ist der Spiegel?", ipa: "voː ɪst deːɐ̯ ˈʃpiːɡəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Spiegel", base: "Spiegel" }] }
+  - id: "de-2799"
+    target: "Regal"
+    ipa: "ˈʁeːɡal"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Regale" }]
+    examples:
+      - { target: "Hier ist das Regal.", ipa: "hiːɐ̯ ɪst das ˈʁeːɡal", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Regal", base: "Regal" }] }
+      - { target: "Wo ist das Regal?", ipa: "voː ɪst das ˈʁeːɡal", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Regal", base: "Regal" }] }
+  - id: "de-2800"
+    target: "Miete"
+    ipa: "ˈmiːtə"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Mieten" }]
+    examples:
+      - { target: "Das ist die Miete.", ipa: "das ɪst diː ˈmiːtə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Miete", base: "Miete" }] }
+      - { target: "Wo ist die Miete?", ipa: "voː ɪst diː ˈmiːtə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Miete", base: "Miete" }] }
+  - id: "de-2801"
+    target: "Schlüssel"
+    ipa: "ˈʃlʏsəl"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Schlüssel.", ipa: "das ɪst deːɐ̯ ˈʃlʏsəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Schlüssel", base: "Schlüssel" }] }
+      - { target: "Wo ist der Schlüssel?", ipa: "voː ɪst deːɐ̯ ˈʃlʏsəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Schlüssel", base: "Schlüssel" }] }
+  - id: "de-2802"
+    target: "Treppe"
+    ipa: "ˈtʁɛpə"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Treppen" }]
+    examples:
+      - { target: "Das ist die Treppe.", ipa: "das ɪst diː ˈtʁɛpə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Treppe", base: "Treppe" }] }
+      - { target: "Wo ist die Treppe?", ipa: "voː ɪst diː ˈtʁɛpə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Treppe", base: "Treppe" }] }
+  - id: "de-2803"
+    target: "Heizung"
+    ipa: "ˈhaɪtsʊŋ"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Heizungen" }]
+    examples:
+      - { target: "Das ist die Heizung.", ipa: "das ɪst diː ˈhaɪtsʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Heizung", base: "Heizung" }] }
+      - { target: "Wo ist die Heizung?", ipa: "voː ɪst diː ˈhaɪtsʊŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Heizung", base: "Heizung" }] }
+  - id: "de-2804"
+    target: "Zuhause"
+    ipa: "ˈtsuːhaʊzə"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist mein Zuhause.", ipa: "das ɪst maɪn ˈtsuːhaʊzə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "mein", base: "mein" }, { word: "Zuhause", base: "Zuhause" }] }
+      - { target: "Hier ist mein Zuhause.", ipa: "hiːɐ̯ ɪst maɪn ˈtsuːhaʊzə", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "mein", base: "mein" }, { word: "Zuhause", base: "Zuhause" }] }
+  - id: "de-2805"
+    target: "Haustür"
+    ipa: "ˈhaʊstʏʁ"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Haustüren" }]
+    examples:
+      - { target: "Das ist die Haustür.", ipa: "das ɪst diː ˈhaʊstʏʁ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Haustür", base: "Haustür" }] }
+      - { target: "Wo ist die Haustür?", ipa: "voː ɪst diː ˈhaʊstʏʁ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Haustür", base: "Haustür" }] }
+  - id: "de-2806"
+    target: "Kissen"
+    ipa: "ˈkɪsən"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Kissen.", ipa: "hiːɐ̯ ɪst das ˈkɪsən", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Kissen", base: "Kissen" }] }
+      - { target: "Wo ist das Kissen?", ipa: "voː ɪst das ˈkɪsən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Kissen", base: "Kissen" }] }
+  - id: "de-2807"
+    target: "Teppich"
+    ipa: "ˈtɛpɪç"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Teppiche" }]
+    examples:
+      - { target: "Das ist der Teppich.", ipa: "das ɪst deːɐ̯ ˈtɛpɪç", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Teppich", base: "Teppich" }] }
+      - { target: "Wo ist der Teppich?", ipa: "voː ɪst deːɐ̯ ˈtɛpɪç", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Teppich", base: "Teppich" }] }
+  - id: "de-2808"
+    target: "Vorhang"
+    ipa: "ˈfɔʁhaŋ"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Vorhänge" }]
+    examples:
+      - { target: "Das ist der Vorhang.", ipa: "das ɪst deːɐ̯ ˈfɔʁhaŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Vorhang", base: "Vorhang" }] }
+      - { target: "Wo ist der Vorhang?", ipa: "voː ɪst deːɐ̯ ˈfɔʁhaŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Vorhang", base: "Vorhang" }] }
+  - id: "de-2809"
+    target: "Pflanze"
+    ipa: "pfˈlantsə"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Pflanzen" }]
+    examples:
+      - { target: "Das ist die Pflanze.", ipa: "das ɪst diː pfˈlantsə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Pflanze", base: "Pflanze" }] }
+      - { target: "Wo ist die Pflanze?", ipa: "voː ɪst diː pfˈlantsə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Pflanze", base: "Pflanze" }] }
