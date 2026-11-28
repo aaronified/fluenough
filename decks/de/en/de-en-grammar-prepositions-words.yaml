@@ -1,0 +1,196 @@
+schema: 1
+id: "de-en-grammar-prepositions-words"
+kind: "layer"
+core: "de-grammar-prepositions-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Prepositions"
+license: "CC-BY-SA-4.0"
+description: "Twelve prepositions, five that take the accusative (für, durch, gegen, ohne, um) and seven that take the dative (mit, nach, bei, von, zu, aus, seit), as word cards with their own examples. Not yet checked by a German speaker: please report any mistake."
+cards:
+  "de-1120":
+    native: "for"
+    notes:
+      "n1": "Für is a preposition with the accusative: für den Vater, für die Mutter, für das Kind, für die Kinder. Wiktionary gives the sense for, intended for, and marks the entry with accusative."
+    examples:
+      "Das Handy ist für den Vater.":
+        native: "The mobile phone is for the father."
+        bases:
+          "Das": "that; the (neuter)"
+          "für": "for"
+          "den": "the (masculine)"
+      "Das Buch ist für die Mutter.":
+        native: "The book is for the mother."
+        bases:
+          "Das": "that; the (neuter)"
+          "für": "for"
+          "die": "the (feminine and plural)"
+  "de-1121":
+    native: "through; by"
+    notes:
+      "n1": "Durch is a preposition with the accusative: durch den Vater, durch die Mutter, durch das Kind, durch die Kinder. Wiktionary gives through, entering and then exiting, and by means of, and marks the entry with accusative."
+    examples:
+      "Der Zug fährt durch die Stadt.":
+        native: "The train goes through the city."
+        bases:
+          "Der": "the (masculine)"
+          "durch": "through; by"
+          "die": "the (feminine and plural)"
+      "Der Hund läuft durch die Straße.":
+        native: "The dog runs through the street."
+        bases:
+          "Der": "the (masculine)"
+          "durch": "through; by"
+          "die": "the (feminine and plural)"
+  "de-1122":
+    native: "against"
+    notes:
+      "n1": "Gegen is a preposition with the accusative: gegen den Vater, gegen die Mutter, gegen das Kind, gegen die Kinder. Wiktionary gives against and towards, and marks the entry with accusative."
+    examples:
+      "Wir spielen gegen den Nachbarn.":
+        native: "We play against the neighbour."
+        bases:
+          "gegen": "against"
+          "den": "the (masculine)"
+      "Die Kinder spielen gegen die Familie.":
+        native: "The children play against the family."
+        bases:
+          "Die": "the (feminine and plural)"
+          "gegen": "against"
+  "de-1123":
+    native: "without"
+    notes:
+      "n1": "Ohne is a preposition with the accusative: ohne den Vater, ohne die Mutter, ohne das Kind, ohne die Kinder. Wiktionary gives without and marks the entry with accusative."
+    examples:
+      "Ich trinke Kaffee ohne Zucker.":
+        native: "I drink coffee without sugar."
+        bases:
+          "ohne": "without"
+      "Er kommt ohne den Hund.":
+        native: "He comes without the dog."
+        bases:
+          "ohne": "without"
+          "den": "the (masculine)"
+  "de-1124":
+    native: "around; at (a time)"
+    notes:
+      "n1": "Um is a preposition with the accusative: um den Vater, um die Mutter, um das Kind, um die Kinder. Wiktionary gives around, about, and at (when relating to time), and marks the entry with accusative."
+    examples:
+      "Die Straße ist um die Ecke.":
+        native: "The street is around the corner."
+        bases:
+          "Die": "the (feminine and plural)"
+          "um": "around; at (a time)"
+      "Wir laufen um den Bahnhof.":
+        native: "We walk around the station."
+        bases:
+          "um": "around; at (a time)"
+          "den": "the (masculine)"
+  "de-1125":
+    native: "with"
+    notes:
+      "n1": "Mit is a preposition with the dative: mit dem Vater, mit der Mutter, mit dem Kind, mit den Kindern. Wiktionary gives with, in the company of, and with, by means of, and marks the entry with dative."
+    examples:
+      "Ich fahre mit dem Zug.":
+        native: "I go by train."
+        bases:
+          "mit": "with"
+          "dem": "the (masculine)"
+      "Er kommt mit der Familie.":
+        native: "He comes with the family."
+        bases:
+          "mit": "with"
+          "der": "the (masculine)"
+  "de-1126":
+    native: "after; to (a place name)"
+    notes:
+      "n1": "Nach is a preposition with the dative: nach dem Vater, nach der Mutter, nach dem Kind, nach den Kindern. Wiktionary gives after, past, and to, towards with geographical names, and marks the entry with dative."
+      "n2": "With the name of a city or country, nach means to: nach Berlin. Wiktionary gives to, towards with geographical names."
+    examples:
+      "Nach der Arbeit esse ich.":
+        native: "After work I eat."
+        bases:
+          "Nach": "after; to (a place name)"
+          "der": "the (masculine)"
+      "Wir fahren nach Berlin.":
+        native: "We travel to Berlin."
+        bases:
+          "nach": "after; to (a place name)"
+          "Berlin": "Berlin (a city)"
+  "de-1127":
+    native: "at; near; with (a person)"
+    notes:
+      "n1": "Bei is a preposition with the dative: bei dem Vater, bei der Mutter, bei dem Kind, bei den Kindern. Wiktionary gives by, near, and at (with a person, family or shop), and marks the entry with dative."
+      "n2": "Bei and dem run together as beim. Wiktionary lists beim as a contraction of bei with dem."
+    examples:
+      "Er wohnt bei der Familie.":
+        native: "He lives with the family."
+        bases:
+          "bei": "at; near; with (a person)"
+          "der": "the (masculine)"
+      "Ich wohne bei den Eltern.":
+        native: "I live with my parents."
+        bases:
+          "bei": "at; near; with (a person)"
+          "den": "the (masculine)"
+  "de-1128":
+    native: "from; of"
+    notes:
+      "n1": "Von is a preposition with the dative: von dem Vater, von der Mutter, von dem Kind, von den Kindern. Wiktionary gives from and of, belonging to, and marks the entry with dative."
+      "n2": "Von and dem run together as vom: Ich komme vom Bahnhof. Wiktionary lists vom as a contraction of von with dem."
+    examples:
+      "Das ist ein Foto von der Familie.":
+        native: "That is a photo of the family."
+        bases:
+          "Das": "that; the (neuter)"
+          "ein": "a; an"
+          "von": "from; of"
+          "der": "the (masculine)"
+      "Wir kommen von der Arbeit.":
+        native: "We are coming from work."
+        bases:
+          "von": "from; of"
+          "der": "the (masculine)"
+  "de-1129":
+    native: "to; towards"
+    notes:
+      "n1": "Zu is a preposition with the dative: zu dem Vater, zu der Mutter, zu dem Kind, zu den Kindern. Wiktionary gives to, towards, and marks the entry with dative."
+      "n2": "Zu and the dative dem or der often run together: zu dem is zum and zu der is zur, as in Ich gehe zum Bahnhof and Ich gehe zur Arbeit. Wiktionary lists zum and zur as contractions of zu with dem and der."
+    examples:
+      "Ich gehe zum Bahnhof.":
+        native: "I am going to the station."
+        bases:
+          "zum": "to; towards"
+      "Ich gehe zur Arbeit.":
+        native: "I am going to work."
+        bases:
+          "zur": "to; towards"
+  "de-1130":
+    native: "out of; from"
+    notes:
+      "n1": "Aus is a preposition with the dative: aus dem Vater, aus der Mutter, aus dem Kind, aus den Kindern. Wiktionary marks the entry with dative; its senses for the preposition are out of and from."
+    examples:
+      "Ich komme aus der Stadt.":
+        native: "I come from the city."
+        bases:
+          "aus": "out of; from"
+          "der": "the (masculine)"
+      "Er kommt aus dem Dorf.":
+        native: "He comes from the village."
+        bases:
+          "aus": "out of; from"
+          "dem": "the (masculine)"
+  "de-1131":
+    native: "since; for (a time)"
+    notes:
+      "n1": "Seit is a preposition with the dative: seit dem Vater, seit der Mutter, seit dem Kind, seit den Kindern. Wiktionary gives since, and for some past period of time, and marks the entry with dative."
+    examples:
+      "Er ist seit dem Geburtstag krank.":
+        native: "He has been ill since the birthday."
+        bases:
+          "seit": "since; for (a time)"
+          "dem": "the (masculine)"
+      "Ich warte seit dem Frühstück.":
+        native: "I have been waiting since breakfast."
+        bases:
+          "seit": "since; for (a time)"
+          "dem": "the (masculine)"
