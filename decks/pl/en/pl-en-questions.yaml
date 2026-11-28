@@ -1,0 +1,160 @@
+schema: 1
+id: "pl-en-questions"
+kind: "layer"
+core: "pl-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions"
+description: "Question words: who, what, where, when, why, how, how much, which, whose, where from and what kind, plus the yes-or-no question word czy. Not yet checked by a Polish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "pl-1300":
+    native: "who"
+    notes:
+      "n1": "Asks about a person: who? Kto to jest? means who is this?"
+    examples:
+      "Kto to jest?":
+        native: "Who is this?"
+        bases:
+          "Kto": "who"
+          "to": "this; it"
+          "jest": "to be"
+
+  "pl-1301":
+    native: "what"
+    notes:
+      "n1": "Asks about a thing: what? Co to znaczy? means what does that mean?"
+    examples:
+      "Co to jest?":
+        native: "What is this?"
+        bases:
+          "Co": "what"
+          "to": "this; it"
+          "jest": "to be"
+      "Co to znaczy?":
+        native: "What does that mean?"
+        bases:
+          "Co": "what"
+          "to": "this; it"
+          "znaczy": "to mean"
+
+  "pl-1302":
+    native: "where"
+    notes:
+      "n1": "Asks about a place: where? Gdzie jest dworzec? means where is the station?"
+    examples:
+      "Gdzie jest dworzec?":
+        native: "Where is the station?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "dworzec": "station"
+
+  "pl-1303":
+    native: "when"
+    notes:
+      "n1": "Asks about a time: when? Kiedy to jest? means when is it?"
+    examples:
+      "Kiedy to jest?":
+        native: "When is it?"
+        bases:
+          "Kiedy": "when"
+          "to": "this; it"
+          "jest": "to be"
+
+  "pl-1304":
+    native: "why"
+    notes:
+      "n1": "Asks for a reason: why? Dlaczego nie? means why not?"
+    examples:
+      "Dlaczego nie?":
+        native: "Why not?"
+        bases:
+          "Dlaczego": "why"
+          "nie": "not"
+
+  "pl-1305":
+    native: "how"
+    notes:
+      "n1": "Asks about manner or condition: how? Jak się masz? means how are you?"
+    examples:
+      "Jak się masz?":
+        native: "How are you?"
+        bases:
+          "Jak": "how"
+          "się": "oneself"
+          "masz": "to have"
+
+  "pl-1306":
+    native: "how much; how many"
+    notes:
+      "n1": "Asks about an amount: how much? or how many? Ile to kosztuje? means how much does it cost?"
+    examples:
+      "Ile to kosztuje?":
+        native: "How much does it cost?"
+        bases:
+          "Ile": "how much; how many"
+          "to": "this; it"
+          "kosztuje": "to cost"
+
+  "pl-1307":
+    native: "which"
+    notes:
+      "n1": "Asks which one from a set. It changes with the noun: który (m), która (f), które (n)."
+    examples:
+      "Który to jest?":
+        native: "Which one is it?"
+        bases:
+          "Który": "which"
+          "to": "this; it"
+          "jest": "to be"
+
+  "pl-1308":
+    native: "whether; question word for yes or no"
+    notes:
+      "n1": "Put at the start of a yes-or-no question. It is often left out in speech."
+    examples:
+      "Czy mówisz po angielsku?":
+        native: "Do you speak English?"
+        bases:
+          "Czy": "whether"
+          "mówisz": "to speak"
+          "po": "in"
+          "angielsku": "English"
+
+  "pl-1309":
+    native: "where from"
+    notes:
+      "n1": "Asks where someone or something comes from. Skąd jesteś? means where are you from?"
+    examples:
+      "Skąd jesteś?":
+        native: "Where are you from?"
+        bases:
+          "Skąd": "where from"
+          "jesteś": "to be"
+
+  "pl-1310":
+    native: "what kind of; what... like"
+    notes:
+      "n1": "Asks about a quality: what kind? It changes with the noun: jaki (m), jaka (f), jakie (n)."
+    examples:
+      "Jaki to jest?":
+        native: "What kind is it?"
+        bases:
+          "Jaki": "what kind of"
+          "to": "this; it"
+          "jest": "to be"
+
+  "pl-1311":
+    native: "whose"
+    notes:
+      "n1": "Asks who something belongs to. It changes with the noun: czyj (m), czyja (f), czyje (n)."
+    examples:
+      "Czyj to jest?":
+        native: "Whose is this?"
+        bases:
+          "Czyj": "whose"
+          "to": "this; it"
+          "jest": "to be"
+
