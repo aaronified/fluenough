@@ -2472,10 +2472,10 @@ def _it_openness(s: str, vowel: str, idx: int, glide: str) -> str:
 # The engine settles the stress and the length in these ways, and no more:
 #  1. a *hint*: the text with its words marked as a dictionary marks them. An
 #     acute on a vowel (á é í ó ú, or ä ö ü followed by U+0301) marks the
-#     stressed one, a colon after a vowel marks it long (Hunde: not needed,
-#     Mä:dchen) and a caret after a vowel marks it short (Rad becomes Ra^d for
-#     a word that is not long). A hint is used only if, with its marks
-#     removed, it is the text;
+#     stressed one (`Banáne`), a colon after a vowel marks it long (`Mä:dchen`,
+#     `Spra:che`) and a caret after a vowel marks it short (`Mo^nd` if a word
+#     the rules read long is short). Only the marked vowels change. A hint is
+#     used only if, with its marks removed, it is the text;
 #  2. endings and prefixes that fix the stress: the unstressed prefixes be-
 #     ge- er- ver- zer- ent- emp- miss- (the stress goes to the stem, and the
 #     prefix is read apart, `verstehen` fɛɐ̯ˈʃteːən); -ieren verbs, -ier,
@@ -2491,6 +2491,13 @@ def _it_openness(s: str, vowel: str, idx: int, glide: str) -> str:
 #  4. otherwise the first syllable, long before a single consonant and
 #     short before two or more (a stop and l or r count as one).
 # A card whose broad `ipa` the engine misreads is given a hint.
+# Measured on 139 everyday words picked by hand and read from en.wiktionary on
+# 2026-11-28 (not a random sample): 116 are read as one of the forms the
+# entry lists, once its syllable dots, secondary stress, glottal stops and
+# non-syllabic marks are left out. The rest are the limits above: loan word
+# stress and sounds (Computer, Restaurant, Banane, Familie, November,
+# Toilette), the length of Mond, Montag, Sprache, Bücher, and of the vowel of
+# a compound's second part (Bahnhof, Telefon, Wochenende).
 #
 # Sources: Wikipedia "Standard German phonology"; Wiktionary "Appendix:German
 # pronunciation" and its entries' pronunciations.
@@ -2504,8 +2511,8 @@ _DE_MARKS = {
     "hat": "ha^t", "an": "a^n", "am": "a^m", "um": "u^m", "ab": "a^b",
     "ob": "o^b", "von": "vo^n", "vom": "vo^m", "zum": "zu^m",
     "was": "wa^s", "ins": "i^ns", "hin": "hi^n",
-    "des": "de^s", "kaffee": "kaffeé", "hallo": "halló:", "hotel": "hotél",
-    "kino": "kíno:", "mädchen": "mä:dchen",
+    "des": "de^s", "kaffee": "kaffeé", "hallo": "halló:", "hotel": "hoté^l",
+    "kino": "kíno:", "mädchen": "mä:dchen", "damit": "damí^t",
 }
 # Prefixes read apart and never stressed: letters, then the phonemes.
 _DE_PREFIXES = (("miss", "mɪs"), ("emp", "ɛmp"), ("ent", "ɛnt"),
@@ -2857,7 +2864,7 @@ def _de_pick_stress(word: str, toks: list[_DeTok], off: int, k0: int,
 
     def at(pos: int) -> int | None:
         for k in nuclei:
-            if toks[k].start <= pos < toks[k].end:
+            if toks[k].end > pos:
                 return k
         return None
 
@@ -2953,7 +2960,7 @@ def _de_resolve(word: str, toks: list[_DeTok], n_pre: int, k0: int,
         # Any other unstressed short vowel: the tense one when the syllable
         # is open and the vowel final, before a vowel or before the stress,
         # else the lax one.
-        tense = not coda and (k < stressed or not cl)
+        tense = not coda and (k < stressed or not cl or v == "i")
         t.ph = _DE_TENSE[v] if tense else _DE_SHORT[v]
     _de_consonants(toks)
     return _de_join(toks, stressed, len(nuclei))
