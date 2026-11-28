@@ -1,0 +1,237 @@
+schema: 1
+id: "ru-time"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ru-1930"
+    target: "вечер"
+    reading: "vecher"
+    ipa: "ˈvʲetɕɪr"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это вечер.", reading: "eto vecher.", ipa: "ˈɛtə ˈvʲetɕɪr", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "вечер", base: "вечер", reading: "vecher" }] }
+  - id: "ru-1931"
+    target: "час"
+    reading: "chas"
+    ipa: "tɕas"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это час.", reading: "eto chas.", ipa: "ˈɛtə tɕas", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "час", base: "час", reading: "chas" }] }
+  - id: "ru-1932"
+    target: "минута"
+    reading: "minuta"
+    ipa: "mʲɪˈnutə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это минута.", reading: "eto minuta.", ipa: "ˈɛtə mʲɪˈnutə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "минута", base: "минута", reading: "minuta" }] }
+  - id: "ru-1933"
+    target: "секунда"
+    reading: "sekunda"
+    ipa: "sʲɪˈkundə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это секунда.", reading: "eto sekunda.", ipa: "ˈɛtə sʲɪˈkundə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "секунда", base: "секунда", reading: "sekunda" }] }
+  - id: "ru-1934"
+    target: "неделя"
+    reading: "nedelya"
+    ipa: "nʲɪˈdʲelʲə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это неделя.", reading: "eto nedelya.", ipa: "ˈɛtə nʲɪˈdʲelʲə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "неделя", base: "неделя", reading: "nedelya" }] }
+  - id: "ru-1935"
+    target: "месяц"
+    reading: "mesyats"
+    ipa: "ˈmʲesʲəts"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это месяц.", reading: "eto mesyats.", ipa: "ˈɛtə ˈmʲesʲəts", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "месяц", base: "месяц", reading: "mesyats" }] }
+  - id: "ru-1936"
+    target: "год"
+    reading: "god"
+    ipa: "ɡot"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это год.", reading: "eto god.", ipa: "ˈɛtə ɡot", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "год", base: "год", reading: "god" }] }
+  - id: "ru-1937"
+    target: "время"
+    reading: "vremya"
+    ipa: "ˈvrʲemʲə"
+    pos: "noun"
+    gender: "n"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1938"
+    target: "понедельник"
+    reading: "ponedelnik"
+    ipa: "pənʲɪˈdʲelʲnʲɪk"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это понедельник.", reading: "eto ponedelnik.", ipa: "ˈɛtə pənʲɪˈdʲelʲnʲɪk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "понедельник", base: "понедельник", reading: "ponedelnik" }] }
+  - id: "ru-1939"
+    target: "вторник"
+    reading: "vtornik"
+    ipa: "ˈftornʲɪk"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это вторник.", reading: "eto vtornik.", ipa: "ˈɛtə ˈftornʲɪk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "вторник", base: "вторник", reading: "vtornik" }] }
+  - id: "ru-1940"
+    target: "среда"
+    reading: "sreda"
+    ipa: "srʲɪˈda"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это среда.", reading: "eto sreda.", ipa: "ˈɛtə srʲɪˈda", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "среда", base: "среда", reading: "sreda" }] }
+  - id: "ru-1941"
+    target: "четверг"
+    reading: "chetverg"
+    ipa: "tɕɪˈtvʲerk"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это четверг.", reading: "eto chetverg.", ipa: "ˈɛtə tɕɪˈtvʲerk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "четверг", base: "четверг", reading: "chetverg" }] }
+  - id: "ru-1942"
+    target: "пятница"
+    reading: "pyatnitsa"
+    ipa: "ˈpʲatnʲɪtsə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это пятница.", reading: "eto pyatnitsa.", ipa: "ˈɛtə ˈpʲatnʲɪtsə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "пятница", base: "пятница", reading: "pyatnitsa" }] }
+  - id: "ru-1943"
+    target: "суббота"
+    reading: "subbota"
+    ipa: "sʊˈbːotə"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это суббота.", reading: "eto subbota.", ipa: "ˈɛtə sʊˈbːotə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "суббота", base: "суббота", reading: "subbota" }] }
+  - id: "ru-1944"
+    target: "воскресенье"
+    reading: "voskresen'ye"
+    ipa: "vəskrʲɪˈsʲenʲjɪ"
+    pos: "noun"
+    gender: "n"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это воскресенье.", reading: "eto voskresen'ye.", ipa: "ˈɛtə vəskrʲɪˈsʲenʲjɪ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "воскресенье", base: "воскресенье", reading: "voskresen'ye" }] }
+  - id: "ru-1945"
+    target: "сегодня"
+    reading: "segodnya"
+    ipa: "sʲɪˈvodnʲə"
+    pos: "adv"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1946"
+    target: "завтра"
+    reading: "zavtra"
+    ipa: "ˈzaftrə"
+    pos: "adv"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1947"
+    target: "вчера"
+    reading: "vchera"
+    ipa: "ftɕɪˈra"
+    pos: "adv"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1948"
+    target: "сейчас"
+    reading: "seychas"
+    ipa: "sʲɪjˈtɕas"
+    pos: "adv"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1949"
+    target: "потом"
+    reading: "potom"
+    ipa: "pɐˈtom"
+    pos: "adv"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1950"
+    target: "давно"
+    reading: "davno"
+    ipa: "dɐˈvno"
+    pos: "adv"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1951"
+    target: "скоро"
+    reading: "skoro"
+    ipa: "ˈskorə"
+    pos: "adv"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1952"
+    target: "раз"
+    reading: "raz"
+    ipa: "ras"
+    pos: "noun"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
