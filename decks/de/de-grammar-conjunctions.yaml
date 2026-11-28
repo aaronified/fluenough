@@ -6,49 +6,50 @@ language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  slots: ["words", "clauses"]
+  slots: ["example-1", "example-2"]
   entries:
     - lemma: "und"
       key: "und"
       ipa: "ʊnt"
       forms:
-        "words": "Kaffee und Kuchen"
-        "clauses": "Ich arbeite und du lernst."
+        "example-1": "Kaffee und Kuchen"
+        "example-2": "Ich arbeite und du lernst."
       ipas:
-        "words": "kaˈfeː ʊnt ˈkuːxən"
-        "clauses": "ɪç ˈaʁbaɪtə ʊnt duː lɛʁnst"
+        "example-1": "kaˈfeː ʊnt ˈkuːxən"
+        "example-2": "ɪç ˈaʁbaɪtə ʊnt duː lɛʁnst"
     - lemma: "oder"
       key: "oder"
       ipa: "ˈoːdɐ"
       forms:
-        "words": "Kaffee oder Tee"
-        "clauses": "Kommst du oder bleibst du hier?"
+        "example-1": "Kaffee oder Tee"
+        "example-2": "Kommst du oder bleibst du hier?"
       ipas:
-        "words": "kaˈfeː ˈoːdɐ teː"
-        "clauses": "kɔmst duː ˈoːdɐ blaɪpst duː hiːɐ̯"
+        "example-1": "kaˈfeː ˈoːdɐ teː"
+        "example-2": "kɔmst duː ˈoːdɐ blaɪpst duː hiːɐ̯"
     - lemma: "aber"
       key: "aber"
       ipa: "ˈaːbɐ"
       forms:
-        "words": "klein, aber schön"
-        "clauses": "Ich habe keinen Kaffee, aber ich habe Tee."
+        "example-1": "klein, aber schön"
+        "example-2": "Ich habe keinen Kaffee, aber ich habe Tee."
       ipas:
-        "words": "klaɪn ˈaːbɐ ʃøːn"
-        "clauses": "ɪç ˈhaːbə ˈkaɪnən kaˈfeː ˈaːbɐ ɪç ˈhaːbə teː"
+        "example-1": "klaɪn ˈaːbɐ ʃøːn"
+        "example-2": "ɪç ˈhaːbə ˈkaɪnən kaˈfeː ˈaːbɐ ɪç ˈhaːbə teː"
     - lemma: "denn"
       key: "denn"
       ipa: "dɛn"
       forms:
-        "words": null
-        "clauses": "Ich bleibe hier, denn ich bin müde."
+        "example-1": "Ich bleibe hier, denn ich bin müde."
+        "example-2": "Er kommt nicht, denn er arbeitet."
       ipas:
-        "clauses": "ɪç ˈblaɪbə hiːɐ̯ dɛn ɪç bɪn ˈmyːdə"
+        "example-1": "ɪç ˈblaɪbə hiːɐ̯ dɛn ɪç bɪn ˈmyːdə"
+        "example-2": "eːɐ̯ kɔmt nɪçt dɛn eːɐ̯ ˈaʁbaɪtət"
     - lemma: "sondern"
       key: "sondern"
       ipa: "ˈzɔndɐn"
       forms:
-        "words": "nicht Kaffee, sondern Tee"
-        "clauses": "Ich bin nicht müde, sondern ich bin hungrig."
+        "example-1": "nicht Kaffee, sondern Tee"
+        "example-2": "Ich bin nicht müde, sondern ich bin hungrig."
       ipas:
-        "words": "nɪçt kaˈfeː ˈzɔndɐn teː"
-        "clauses": "ɪç bɪn nɪçt ˈmyːdə ˈzɔndɐn ɪç bɪn ˈhʊŋʁɪç"
+        "example-1": "nɪçt kaˈfeː ˈzɔndɐn teː"
+        "example-2": "ɪç bɪn nɪçt ˈmyːdə ˈzɔndɐn ɪç bɪn ˈhʊŋʁɪç"
