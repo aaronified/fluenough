@@ -1,0 +1,178 @@
+schema: 1
+id: "it-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "groceries"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2350"
+    target: "supermercato"
+    ipa: "supermerˈkato"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il supermercato.", ipa: "ˈkwesto ɛ il supermerˈkato", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "supermercato", base: "supermercato" }] }
+      - { target: "Dov'è il supermercato?", ipa: "doˈvɛ il supermerˈkato", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "supermercato", base: "supermercato" }] }
+      - { target: "Ho un supermercato.", ipa: "ɔ un supermerˈkato", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "supermercato", base: "supermercato" }] }
+  - id: "it-2351"
+    target: "negozio"
+    ipa: "neˈɡottsjo"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il negozio.", ipa: "ˈkwesto ɛ il neˈɡottsjo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "negozio", base: "negozio" }] }
+      - { target: "Dov'è il negozio?", ipa: "doˈvɛ il neˈɡottsjo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "negozio", base: "negozio" }] }
+      - { target: "Ho un negozio.", ipa: "ɔ un neˈɡottsjo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "negozio", base: "negozio" }] }
+  - id: "it-2352"
+    target: "carrello"
+    ipa: "karˈrɛllo"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il carrello.", ipa: "ˈkwesto ɛ il karˈrɛllo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "carrello", base: "carrello" }] }
+      - { target: "Dov'è il carrello?", ipa: "doˈvɛ il karˈrɛllo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "carrello", base: "carrello" }] }
+      - { target: "Ho un carrello.", ipa: "ɔ un karˈrɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "carrello", base: "carrello" }] }
+  - id: "it-2353"
+    target: "scontrino"
+    ipa: "skonˈtrino"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è lo scontrino.", ipa: "ˈkwesto ɛ lo skonˈtrino", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "lo", base: "lo" }, { word: "scontrino", base: "scontrino" }] }
+      - { target: "Dov'è lo scontrino?", ipa: "doˈvɛ lo skonˈtrino", bases: [{ word: "Dov'è", base: "dove" }, { word: "lo", base: "lo" }, { word: "scontrino", base: "scontrino" }] }
+      - { target: "Ho uno scontrino.", ipa: "ɔ ˈuno skonˈtrino", bases: [{ word: "Ho", base: "avere" }, { word: "uno", ref: "it-0009" }, { word: "scontrino", base: "scontrino" }] }
+  - id: "it-2354"
+    target: "sacchetto"
+    ipa: "sakˈketto"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il sacchetto.", ipa: "ˈkwesto ɛ il sakˈketto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "sacchetto", base: "sacchetto" }] }
+      - { target: "Dov'è il sacchetto?", ipa: "doˈvɛ il sakˈketto", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "sacchetto", base: "sacchetto" }] }
+      - { target: "Ho un sacchetto.", ipa: "ɔ un sakˈketto", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "sacchetto", base: "sacchetto" }] }
+  - id: "it-2355"
+    target: "borsa"
+    ipa: "ˈborsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la borsa.", ipa: "ˈkwesta ɛ la ˈborsa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "borsa", base: "borsa" }] }
+      - { target: "Dov'è la borsa?", ipa: "doˈvɛ la ˈborsa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "borsa", base: "borsa" }] }
+      - { target: "Ho una borsa.", ipa: "ɔ ˈuna ˈborsa", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "un" }, { word: "borsa", base: "borsa" }] }
+  - id: "it-2356"
+    target: "prezzo"
+    ipa: "ˈprɛttso"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il prezzo.", ipa: "ˈkwesto ɛ il ˈprɛttso", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "prezzo", base: "prezzo" }] }
+      - { target: "Dov'è il prezzo?", ipa: "doˈvɛ il ˈprɛttso", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "prezzo", base: "prezzo" }] }
+      - { target: "Il prezzo è buono.", ipa: "il ˈprɛttso ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "prezzo", base: "prezzo" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-2357"
+    target: "euro"
+    ipa: "ˈewro"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è l'euro.", ipa: "ˈkwesto ɛ ˈlewro", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'euro", base: "euro" }] }
+      - { target: "Dov'è l'euro?", ipa: "doˈvɛ ˈlewro", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'euro", base: "euro" }] }
+      - { target: "Ho un euro.", ipa: "ɔ un ˈewro", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "euro", base: "euro" }] }
+  - id: "it-2358"
+    target: "denaro"
+    ipa: "deˈnaro"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il denaro.", ipa: "ˈkwesto ɛ il deˈnaro", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "denaro", base: "denaro" }] }
+      - { target: "Dov'è il denaro?", ipa: "doˈvɛ il deˈnaro", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "denaro", base: "denaro" }] }
+      - { target: "Non ho denaro.", ipa: "non ɔ deˈnaro", bases: [{ word: "Non", base: "non" }, { word: "ho", base: "avere" }, { word: "denaro", base: "denaro" }] }
+  - id: "it-2359"
+    target: "resto"
+    ipa: "ˈresto"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il resto.", ipa: "ˈkwesto ɛ il ˈresto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "resto", base: "resto" }] }
+      - { target: "Dov'è il resto?", ipa: "doˈvɛ il ˈresto", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "resto", base: "resto" }] }
+      - { target: "Ho il resto.", ipa: "ɔ il ˈresto", bases: [{ word: "Ho", base: "avere" }, { word: "il", base: "il" }, { word: "resto", base: "resto" }] }
+  - id: "it-2360"
+    target: "offerta"
+    ipa: "ofˈferta"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è l'offerta.", ipa: "ˈkwesta ɛ lofˈferta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'offerta", base: "offerta" }] }
+      - { target: "Dov'è l'offerta?", ipa: "doˈvɛ lofˈferta", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'offerta", base: "offerta" }] }
+      - { target: "Ho un'offerta.", ipa: "ɔ unofˈferta", bases: [{ word: "Ho", base: "avere" }, { word: "un'offerta", base: "offerta" }] }
+  - id: "it-2361"
+    target: "lista"
+    ipa: "ˈlista"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la lista.", ipa: "ˈkwesta ɛ la ˈlista", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "lista", base: "lista" }] }
+      - { target: "Dov'è la lista?", ipa: "doˈvɛ la ˈlista", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "lista", base: "lista" }] }
+      - { target: "Ho una lista.", ipa: "ɔ ˈuna ˈlista", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "un" }, { word: "lista", base: "lista" }] }
+  - id: "it-2362"
+    target: "scaffale"
+    ipa: "skafˈfale"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è lo scaffale.", ipa: "ˈkwesto ɛ lo skafˈfale", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "lo", base: "lo" }, { word: "scaffale", base: "scaffale" }] }
+      - { target: "Dov'è lo scaffale?", ipa: "doˈvɛ lo skafˈfale", bases: [{ word: "Dov'è", base: "dove" }, { word: "lo", base: "lo" }, { word: "scaffale", base: "scaffale" }] }
+      - { target: "Ho uno scaffale.", ipa: "ɔ ˈuno skafˈfale", bases: [{ word: "Ho", base: "avere" }, { word: "uno", ref: "it-0009" }, { word: "scaffale", base: "scaffale" }] }

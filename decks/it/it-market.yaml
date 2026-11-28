@@ -1,0 +1,100 @@
+schema: 1
+id: "it-market"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2420"
+    target: "mercato"
+    ipa: "merˈkato"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il mercato.", ipa: "ˈkwesto ɛ il merˈkato", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "mercato", base: "mercato" }] }
+      - { target: "Dov'è il mercato?", ipa: "doˈvɛ il merˈkato", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "mercato", base: "mercato" }] }
+      - { target: "Il mercato è buono.", ipa: "il merˈkato ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "mercato", base: "mercato" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-2421"
+    target: "bancarella"
+    ipa: "bankaˈrɛlla"
+    pos: "noun"
+    gender: "f"
+    tags: ["market"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la bancarella.", ipa: "ˈkwesta ɛ la bankaˈrɛlla", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "bancarella", base: "bancarella" }] }
+      - { target: "Dov'è la bancarella?", ipa: "doˈvɛ la bankaˈrɛlla", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "bancarella", base: "bancarella" }] }
+      - { target: "La bancarella è buona.", ipa: "la bankaˈrɛlla ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "bancarella", base: "bancarella" }, { word: "è", base: "essere" }, { word: "buona", base: "buono" }] }
+  - id: "it-2422"
+    target: "pescheria"
+    ipa: "peskeˈria"
+    pos: "noun"
+    gender: "f"
+    tags: ["market"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la pescheria.", ipa: "ˈkwesta ɛ la peskeˈria", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "pescheria", base: "pescheria" }] }
+      - { target: "Dov'è la pescheria?", ipa: "doˈvɛ la peskeˈria", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "pescheria", base: "pescheria" }] }
+      - { target: "La pescheria è buona.", ipa: "la peskeˈria ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "pescheria", base: "pescheria" }, { word: "è", base: "essere" }, { word: "buona", base: "buono" }] }
+  - id: "it-2423"
+    target: "macelleria"
+    ipa: "matʃelleˈria"
+    pos: "noun"
+    gender: "f"
+    tags: ["market"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la macelleria.", ipa: "ˈkwesta ɛ la matʃelleˈria", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "macelleria", base: "macelleria" }] }
+      - { target: "Dov'è la macelleria?", ipa: "doˈvɛ la matʃelleˈria", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "macelleria", base: "macelleria" }] }
+      - { target: "La macelleria è buona.", ipa: "la matʃelleˈria ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "macelleria", base: "macelleria" }, { word: "è", base: "essere" }, { word: "buona", base: "buono" }] }
+  - id: "it-2424"
+    target: "panetteria"
+    ipa: "panetteˈria"
+    pos: "noun"
+    gender: "f"
+    tags: ["market"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la panetteria.", ipa: "ˈkwesta ɛ la panetteˈria", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "panetteria", base: "panetteria" }] }
+      - { target: "Dov'è la panetteria?", ipa: "doˈvɛ la panetteˈria", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "panetteria", base: "panetteria" }] }
+      - { target: "La panetteria è buona.", ipa: "la panetteˈria ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "panetteria", base: "panetteria" }, { word: "è", base: "essere" }, { word: "buona", base: "buono" }] }
+  - id: "it-2425"
+    target: "salumeria"
+    ipa: "salumeˈria"
+    pos: "noun"
+    gender: "f"
+    tags: ["market"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la salumeria.", ipa: "ˈkwesta ɛ la salumeˈria", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "salumeria", base: "salumeria" }] }
+      - { target: "Dov'è la salumeria?", ipa: "doˈvɛ la salumeˈria", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "salumeria", base: "salumeria" }] }
+      - { target: "La salumeria è buona.", ipa: "la salumeˈria ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "salumeria", base: "salumeria" }, { word: "è", base: "essere" }, { word: "buona", base: "buono" }] }
+  - id: "it-2426"
+    target: "fruttivendolo"
+    ipa: "fruttivenˈdolo"
+    pos: "noun"
+    gender: "m"
+    tags: ["market"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il fruttivendolo.", ipa: "ˈkwesto ɛ il fruttivenˈdolo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "fruttivendolo", base: "fruttivendolo" }] }
+      - { target: "Dov'è il fruttivendolo?", ipa: "doˈvɛ il fruttivenˈdolo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "fruttivendolo", base: "fruttivendolo" }] }
+      - { target: "Il fruttivendolo è buono.", ipa: "il fruttivenˈdolo ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "fruttivendolo", base: "fruttivendolo" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }

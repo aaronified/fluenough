@@ -1,0 +1,163 @@
+schema: 1
+id: "it-directions"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "directions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2490"
+    target: "destra"
+    ipa: "ˈdɛstra"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il supermercato è a destra.", ipa: "il supermerˈkato ɛ a ˈdɛstra", bases: [{ word: "Il", base: "il" }, { word: "supermercato", ref: "it-2350" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "destra", base: "destra" }] }
+      - { target: "Il negozio è a destra.", ipa: "il neˈɡottsjo ɛ a ˈdɛstra", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "destra", base: "destra" }] }
+      - { target: "Questa è la destra.", ipa: "ˈkwesta ɛ la ˈdɛstra", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "destra", base: "destra" }] }
+  - id: "it-2491"
+    target: "sinistra"
+    ipa: "siˈnistra"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il negozio è a sinistra.", ipa: "il neˈɡottsjo ɛ a siˈnistra", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "sinistra", base: "sinistra" }] }
+      - { target: "La borsa è a sinistra.", ipa: "la ˈborsa ɛ a siˈnistra", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "sinistra", base: "sinistra" }] }
+      - { target: "Questa è la sinistra.", ipa: "ˈkwesta ɛ la siˈnistra", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "sinistra", base: "sinistra" }] }
+  - id: "it-2492"
+    target: "dritto"
+    ipa: "ˈdritto"
+    pos: "adj"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il supermercato è dritto.", ipa: "il supermerˈkato ɛ ˈdritto", bases: [{ word: "Il", base: "il" }, { word: "supermercato", ref: "it-2350" }, { word: "è", base: "essere" }, { word: "dritto", base: "dritto" }] }
+      - { target: "La borsa è dritta.", ipa: "la ˈborsa ɛ ˈdritta", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }, { word: "dritta", base: "dritto" }] }
+      - { target: "Questo è dritto.", ipa: "ˈkwesto ɛ ˈdritto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "dritto", base: "dritto" }] }
+  - id: "it-2493"
+    target: "indietro"
+    ipa: "inˈdjɛtro"
+    pos: "adv"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il carrello è indietro.", ipa: "il karˈrɛllo ɛ inˈdjɛtro", bases: [{ word: "Il", base: "il" }, { word: "carrello", ref: "it-2352" }, { word: "è", base: "essere" }, { word: "indietro", base: "indietro" }] }
+      - { target: "Il negozio è indietro.", ipa: "il neˈɡottsjo ɛ inˈdjɛtro", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "indietro", base: "indietro" }] }
+      - { target: "Questo non è indietro.", ipa: "ˈkwesto non ɛ inˈdjɛtro", bases: [{ word: "Questo", base: "questo" }, { word: "non", base: "non" }, { word: "è", base: "essere" }, { word: "indietro", base: "indietro" }] }
+  - id: "it-2494"
+    target: "nord"
+    ipa: "nord"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il nord.", ipa: "ˈkwesto ɛ il nord", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "nord", base: "nord" }] }
+      - { target: "Dov'è il nord?", ipa: "doˈvɛ il nord", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "nord", base: "nord" }] }
+      - { target: "Il negozio è a nord.", ipa: "il neˈɡottsjo ɛ a nord", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "nord", base: "nord" }] }
+  - id: "it-2495"
+    target: "sud"
+    ipa: "sud"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il sud.", ipa: "ˈkwesto ɛ il sud", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "sud", base: "sud" }] }
+      - { target: "Dov'è il sud?", ipa: "doˈvɛ il sud", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "sud", base: "sud" }] }
+      - { target: "Il negozio è a sud.", ipa: "il neˈɡottsjo ɛ a sud", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "sud", base: "sud" }] }
+  - id: "it-2496"
+    target: "est"
+    ipa: "est"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è l'est.", ipa: "ˈkwesto ɛ lest", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'est", base: "est" }] }
+      - { target: "Dov'è l'est?", ipa: "doˈvɛ lest", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'est", base: "est" }] }
+      - { target: "Il negozio è a est.", ipa: "il neˈɡottsjo ɛ a est", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "est", base: "est" }] }
+  - id: "it-2497"
+    target: "ovest"
+    ipa: "ˈovest"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è l'ovest.", ipa: "ˈkwesto ɛ ˈlovest", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'ovest", base: "ovest" }] }
+      - { target: "Dov'è l'ovest?", ipa: "doˈvɛ ˈlovest", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'ovest", base: "ovest" }] }
+      - { target: "Il negozio è a ovest.", ipa: "il neˈɡottsjo ɛ a ˈovest", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "ovest", base: "ovest" }] }
+  - id: "it-2498"
+    target: "angolo"
+    ipa: "anˈɡolo"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è l'angolo.", ipa: "ˈkwesto ɛ lanˈɡolo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'angolo", base: "angolo" }] }
+      - { target: "Dov'è l'angolo?", ipa: "doˈvɛ lanˈɡolo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'angolo", base: "angolo" }] }
+      - { target: "Ho un angolo.", ipa: "ɔ un anˈɡolo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "angolo", base: "angolo" }] }
+  - id: "it-2499"
+    target: "incrocio"
+    ipa: "inˈkrotʃo"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è l'incrocio.", ipa: "ˈkwesto ɛ linˈkrotʃo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'incrocio", base: "incrocio" }] }
+      - { target: "Dov'è l'incrocio?", ipa: "doˈvɛ linˈkrotʃo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'incrocio", base: "incrocio" }] }
+      - { target: "Ho un incrocio.", ipa: "ɔ un inˈkrotʃo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "incrocio", base: "incrocio" }] }
+  - id: "it-2500"
+    target: "semaforo"
+    ipa: "semaˈforo"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il semaforo.", ipa: "ˈkwesto ɛ il semaˈforo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "semaforo", base: "semaforo" }] }
+      - { target: "Dov'è il semaforo?", ipa: "doˈvɛ il semaˈforo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "semaforo", base: "semaforo" }] }
+      - { target: "Il semaforo è a destra.", ipa: "il semaˈforo ɛ a ˈdɛstra", bases: [{ word: "Il", base: "il" }, { word: "semaforo", base: "semaforo" }, { word: "è", base: "essere" }, { word: "a", base: "a" }, { word: "destra", ref: "it-2490" }] }
+  - id: "it-2501"
+    target: "direzione"
+    ipa: "diretˈtsjone"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la direzione.", ipa: "ˈkwesta ɛ la diretˈtsjone", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "direzione", base: "direzione" }] }
+      - { target: "Dov'è la direzione?", ipa: "doˈvɛ la diretˈtsjone", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "direzione", base: "direzione" }] }
+      - { target: "Ho una direzione.", ipa: "ɔ ˈuna diretˈtsjone", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "un" }, { word: "direzione", base: "direzione" }] }

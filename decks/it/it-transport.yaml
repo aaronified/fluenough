@@ -1,0 +1,74 @@
+schema: 1
+id: "it-transport"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2560"
+    target: "treno"
+    ipa: "ˈtrɛno"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il treno.", ipa: "ˈkwesto ɛ il ˈtrɛno", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "treno", base: "treno" }] }
+      - { target: "Dov'è il treno?", ipa: "doˈvɛ il ˈtrɛno", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "treno", base: "treno" }] }
+      - { target: "Ho un treno.", ipa: "ɔ un ˈtrɛno", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "treno", base: "treno" }] }
+  - id: "it-2561"
+    target: "autobus"
+    ipa: "awˈtobus"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è l'autobus.", ipa: "ˈkwesto ɛ lawˈtobus", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'autobus", base: "autobus" }] }
+      - { target: "Dov'è l'autobus?", ipa: "doˈvɛ lawˈtobus", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'autobus", base: "autobus" }] }
+      - { target: "Ho un autobus.", ipa: "ɔ un awˈtobus", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "autobus", base: "autobus" }] }
+  - id: "it-2562"
+    target: "bicicletta"
+    ipa: "bitʃiˈkletta"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la bicicletta.", ipa: "ˈkwesta ɛ la bitʃiˈkletta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "bicicletta", base: "bicicletta" }] }
+      - { target: "Dov'è la bicicletta?", ipa: "doˈvɛ la bitʃiˈkletta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "bicicletta", base: "bicicletta" }] }
+      - { target: "Ho una bicicletta.", ipa: "ɔ ˈuna bitʃiˈkletta", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "un" }, { word: "bicicletta", base: "bicicletta" }] }
+  - id: "it-2563"
+    target: "nave"
+    ipa: "ˈnave"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è la nave.", ipa: "ˈkwesta ɛ la ˈnave", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "nave", base: "nave" }] }
+      - { target: "Dov'è la nave?", ipa: "doˈvɛ la ˈnave", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "nave", base: "nave" }] }
+      - { target: "Ho una nave.", ipa: "ɔ ˈuna ˈnave", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "un" }, { word: "nave", base: "nave" }] }
+  - id: "it-2564"
+    target: "taxi"
+    ipa: "ˈtaksi"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è il taxi.", ipa: "ˈkwesto ɛ il ˈtaksi", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "taxi", base: "taxi" }] }
+      - { target: "Dov'è il taxi?", ipa: "doˈvɛ il ˈtaksi", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "taxi", base: "taxi" }] }
+      - { target: "Ho un taxi.", ipa: "ɔ un ˈtaksi", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "taxi", base: "taxi" }] }

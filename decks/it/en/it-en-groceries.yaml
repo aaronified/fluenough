@@ -1,0 +1,314 @@
+schema: 1
+id: "it-en-groceries"
+kind: "layer"
+core: "it-groceries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries"
+license: "CC-BY-SA-4.0"
+description: "Words for the supermarket: the shop, the trolley, the receipt, the bag, the price and the money. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-2350":
+    native: "supermarket"
+    notes:
+      "n1": "Masculine. The plural is supermercati."
+    examples:
+      "Questo è il supermercato.":
+        native: "This is the supermarket."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "supermercato": "supermarket"
+      "Dov'è il supermercato?":
+        native: "Where is the supermarket?"
+        bases:
+          "Dov'è": "where is"
+          "il": "the"
+          "supermercato": "supermarket"
+      "Ho un supermercato.":
+        native: "I have a supermarket."
+        bases:
+          "Ho": "I have"
+          "un": "a"
+          "supermercato": "supermarket"
+  "it-2351":
+    native: "shop"
+    notes:
+      "n1": "Masculine. The plural is negozi."
+    examples:
+      "Questo è il negozio.":
+        native: "This is the shop."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "negozio": "shop"
+      "Dov'è il negozio?":
+        native: "Where is the shop?"
+        bases:
+          "Dov'è": "where is"
+          "il": "the"
+          "negozio": "shop"
+      "Ho un negozio.":
+        native: "I have a shop."
+        bases:
+          "Ho": "I have"
+          "un": "a"
+          "negozio": "shop"
+  "it-2352":
+    native: "trolley"
+    notes:
+      "n1": "Masculine. The plural is carrelli. In a supermarket it is the shopping cart."
+    examples:
+      "Questo è il carrello.":
+        native: "This is the trolley."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "carrello": "trolley"
+      "Dov'è il carrello?":
+        native: "Where is the trolley?"
+        bases:
+          "Dov'è": "where is"
+          "il": "the"
+          "carrello": "trolley"
+      "Ho un carrello.":
+        native: "I have a trolley."
+        bases:
+          "Ho": "I have"
+          "un": "a"
+          "carrello": "trolley"
+  "it-2353":
+    native: "receipt"
+    notes:
+      "n1": "Masculine. The plural is scontrini. Before s plus a consonant the article is uno or lo: uno scontrino, lo scontrino."
+    examples:
+      "Questo è lo scontrino.":
+        native: "This is the receipt."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "lo": "the"
+          "scontrino": "receipt"
+      "Dov'è lo scontrino?":
+        native: "Where is the receipt?"
+        bases:
+          "Dov'è": "where is"
+          "lo": "the"
+          "scontrino": "receipt"
+      "Ho uno scontrino.":
+        native: "I have a receipt."
+        bases:
+          "Ho": "I have"
+          "scontrino": "receipt"
+  "it-2354":
+    native: "small bag"
+    notes:
+      "n1": "Masculine. The plural is sacchetti. It is a diminutive of sacco, a bag."
+    examples:
+      "Questo è il sacchetto.":
+        native: "This is the small bag."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "sacchetto": "small bag"
+      "Dov'è il sacchetto?":
+        native: "Where is the small bag?"
+        bases:
+          "Dov'è": "where is"
+          "il": "the"
+          "sacchetto": "small bag"
+      "Ho un sacchetto.":
+        native: "I have a small bag."
+        bases:
+          "Ho": "I have"
+          "un": "a"
+          "sacchetto": "small bag"
+  "it-2355":
+    native: "bag"
+    notes:
+      "n1": "Feminine. The plural is borse. The page also gives handbag, purse and briefcase."
+    examples:
+      "Questa è la borsa.":
+        native: "This is the bag."
+        bases:
+          "Questa": "this"
+          "è": "is"
+          "la": "the"
+          "borsa": "bag"
+      "Dov'è la borsa?":
+        native: "Where is the bag?"
+        bases:
+          "Dov'è": "where is"
+          "la": "the"
+          "borsa": "bag"
+      "Ho una borsa.":
+        native: "I have a bag."
+        bases:
+          "Ho": "I have"
+          "una": "a"
+          "borsa": "bag"
+  "it-2356":
+    native: "price"
+    notes:
+      "n1": "Masculine. The plural is prezzi."
+    examples:
+      "Questo è il prezzo.":
+        native: "This is the price."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "prezzo": "price"
+      "Dov'è il prezzo?":
+        native: "Where is the price?"
+        bases:
+          "Dov'è": "where is"
+          "il": "the"
+          "prezzo": "price"
+      "Il prezzo è buono.":
+        native: "The price is good."
+        bases:
+          "Il": "the"
+          "prezzo": "price"
+          "è": "is"
+  "it-2357":
+    native: "euro"
+    notes:
+      "n1": "Masculine, and usually invariable: the plural is also euro. The plural euri is nonstandard."
+    examples:
+      "Questo è l'euro.":
+        native: "This is the euro."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "l'euro": "euro"
+      "Dov'è l'euro?":
+        native: "Where is the euro?"
+        bases:
+          "Dov'è": "where is"
+          "l'euro": "euro"
+      "Ho un euro.":
+        native: "I have an euro."
+        bases:
+          "Ho": "I have"
+          "un": "a"
+          "euro": "euro"
+  "it-2358":
+    native: "money"
+    notes:
+      "n1": "Masculine. The plural is denari."
+    examples:
+      "Questo è il denaro.":
+        native: "This is the money."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "denaro": "money"
+      "Dov'è il denaro?":
+        native: "Where is the money?"
+        bases:
+          "Dov'è": "where is"
+          "il": "the"
+          "denaro": "money"
+      "Non ho denaro.":
+        native: "I do not have money."
+        bases:
+          "Non": "not"
+          "ho": "I have"
+          "denaro": "money"
+  "it-2359":
+    native: "change"
+    notes:
+      "n1": "Masculine. The plural is resti. Its other sense is change, the money given back."
+    examples:
+      "Questo è il resto.":
+        native: "This is the change."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "resto": "change"
+      "Dov'è il resto?":
+        native: "Where is the change?"
+        bases:
+          "Dov'è": "where is"
+          "il": "the"
+          "resto": "change"
+      "Ho il resto.":
+        native: "I have the change."
+        bases:
+          "Ho": "I have"
+          "il": "the"
+          "resto": "change"
+  "it-2360":
+    native: "offer"
+    notes:
+      "n1": "Feminine. The plural is offerte."
+    examples:
+      "Questa è l'offerta.":
+        native: "This is the offer."
+        bases:
+          "Questa": "this"
+          "è": "is"
+          "l'offerta": "offer"
+      "Dov'è l'offerta?":
+        native: "Where is the offer?"
+        bases:
+          "Dov'è": "where is"
+          "l'offerta": "offer"
+      "Ho un'offerta.":
+        native: "I have an offer."
+        bases:
+          "Ho": "I have"
+          "un'offerta": "offer"
+  "it-2361":
+    native: "list"
+    notes:
+      "n1": "Feminine. The plural is liste. The page also gives strip or stripe as a sense."
+    examples:
+      "Questa è la lista.":
+        native: "This is the list."
+        bases:
+          "Questa": "this"
+          "è": "is"
+          "la": "the"
+          "lista": "list"
+      "Dov'è la lista?":
+        native: "Where is the list?"
+        bases:
+          "Dov'è": "where is"
+          "la": "the"
+          "lista": "list"
+      "Ho una lista.":
+        native: "I have a list."
+        bases:
+          "Ho": "I have"
+          "una": "a"
+          "lista": "list"
+  "it-2362":
+    native: "shelf"
+    notes:
+      "n1": "Masculine. The plural is scaffali. Before s plus a consonant the article is uno or lo: uno scaffale, lo scaffale. The page also gives bookshelf."
+    examples:
+      "Questo è lo scaffale.":
+        native: "This is the shelf."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "lo": "the"
+          "scaffale": "shelf"
+      "Dov'è lo scaffale?":
+        native: "Where is the shelf?"
+        bases:
+          "Dov'è": "where is"
+          "lo": "the"
+          "scaffale": "shelf"
+      "Ho uno scaffale.":
+        native: "I have a shelf."
+        bases:
+          "Ho": "I have"
+          "scaffale": "shelf"
