@@ -3152,7 +3152,7 @@ _SCRIPT_CHAR = re.compile(f"[{_SCRIPT}]")
 # other quote, so a stray one still ends the run.
 _NAGARI_APOSTROPHE = "(?<=[\u0980-\u09ff])['’](?=[\u0980-\u09ff])"
 _SCRIPT_RUN = re.compile(
-    rf"-?[{_SCRIPT}](?:[{_SCRIPT}‌‍]|{_NAGARI_APOSTROPHE}|[ -](?=[{_SCRIPT}]))*"
+    rf"-?[{_SCRIPT}](?:[{_SCRIPT}‌‍\u0301]|{_NAGARI_APOSTROPHE}|[ -](?=[{_SCRIPT}]))*"
     rf"(?:-(?!\w))?")
 _LATIN = "A-Za-zÀ-ɏḀ-ỿ"
 _DANDAS = "।॥"
@@ -3171,7 +3171,8 @@ _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
                  "sinhala": 0x0D80,
                  "perso_arabic": 0x0600, "arabic": 0x0600, "shahmukhi": 0x0600,
                  "han": 0x4E00, "han_simplified": 0x4E00,
-                 "han_traditional": 0x4E00, "kana": 0x3040, "hangul": 0xAC00}
+                 "han_traditional": 0x4E00, "kana": 0x3040, "hangul": 0xAC00,
+                 "cyrillic": 0x0400}
 # Keys whose values are the word itself, not prose about it.
 # `phonetic` is IPA, which uses Greek letters (β, θ, χ) and needs no reading.
 _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas", "phonetic",
@@ -3213,6 +3214,10 @@ def _block(ch: str) -> int:
         return 0x0900 >> 7
     if 0x0600 <= o <= 0x06FF or 0x0750 <= o <= 0x077F:
         return 0x0600 >> 7
+    # Cyrillic (U+0400-U+04FF) counts as one, so Ukrainian ґ є і ї (U+0490
+    # and on) stay in a word's run with the Russian-range letters.
+    if 0x0400 <= o <= 0x04FF:
+        return 0x0400 >> 7
     if any(lo <= o <= hi for lo, hi in _HAN_KANA):
         return 0x4E00 >> 7
     if any(lo <= o <= hi for lo, hi in _HANGUL):
