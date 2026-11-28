@@ -1,0 +1,197 @@
+schema: 1
+id: "pl-time"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "pl-1930"
+    target: "czas"
+    ipa: "tʂas"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest czas.", ipa: "tɔ jɛst tʂas", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "czas", base: "czas" }] }
+  - id: "pl-1931"
+    target: "godzina"
+    ipa: "ɡɔˈdʑina"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest godzina.", ipa: "tɔ jɛst ɡɔˈdʑina", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "godzina", base: "godzina" }] }
+  - id: "pl-1932"
+    target: "minuta"
+    ipa: "mʲiˈnuta"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest minuta.", ipa: "tɔ jɛst mʲiˈnuta", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "minuta", base: "minuta" }] }
+  - id: "pl-1933"
+    target: "sekunda"
+    ipa: "sɛˈkunda"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest sekunda.", ipa: "tɔ jɛst sɛˈkunda", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "sekunda", base: "sekunda" }] }
+  - id: "pl-1934"
+    target: "dzień"
+    ipa: "dʑɛɲ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest dzień.", ipa: "tɔ jɛst dʑɛɲ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "dzień", base: "dzień" }] }
+  - id: "pl-1935"
+    target: "tydzień"
+    ipa: "ˈtɨdʑɛɲ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest tydzień.", ipa: "tɔ jɛst ˈtɨdʑɛɲ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "tydzień", base: "tydzień" }] }
+  - id: "pl-1936"
+    target: "miesiąc"
+    ipa: "ˈmjɛɕɔnts"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest miesiąc.", ipa: "tɔ jɛst ˈmjɛɕɔnts", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "miesiąc", base: "miesiąc" }] }
+  - id: "pl-1937"
+    target: "rok"
+    ipa: "rɔk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest rok.", ipa: "tɔ jɛst rɔk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "rok", base: "rok" }] }
+  - id: "pl-1938"
+    target: "rano"
+    ipa: "ˈranɔ"
+    pos: "noun"
+    gender: "n"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "pl-1939"
+    target: "wieczór"
+    ipa: "ˈvjɛtʂur"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest wieczór.", ipa: "tɔ jɛst ˈvjɛtʂur", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "wieczór", base: "wieczór" }] }
+  - id: "pl-1940"
+    target: "noc"
+    ipa: "nɔts"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest noc.", ipa: "tɔ jɛst nɔts", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "noc", base: "noc" }] }
+  - id: "pl-1941"
+    target: "zegar"
+    ipa: "ˈzɛɡar"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest zegar.", ipa: "tɔ jɛst ˈzɛɡar", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "zegar", base: "zegar" }] }
+  - id: "pl-1942"
+    target: "popołudnie"
+    ipa: "pɔpɔˈwudɲɛ"
+    pos: "noun"
+    gender: "n"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest popołudnie.", ipa: "tɔ jɛst pɔpɔˈwudɲɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "popołudnie", base: "popołudnie" }] }
+  - id: "pl-1943"
+    target: "zima"
+    ipa: "ˈʑima"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest zima.", ipa: "tɔ jɛst ˈʑima", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "zima", base: "zima" }] }
+  - id: "pl-1944"
+    target: "wiosna"
+    ipa: "ˈvjɔsna"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest wiosna.", ipa: "tɔ jɛst ˈvjɔsna", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "wiosna", base: "wiosna" }] }
+  - id: "pl-1945"
+    target: "lato"
+    ipa: "ˈlatɔ"
+    pos: "noun"
+    gender: "n"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest lato.", ipa: "tɔ jɛst ˈlatɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "lato", base: "lato" }] }
+  - id: "pl-1946"
+    target: "jesień"
+    ipa: "ˈjɛɕɛɲ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest jesień.", ipa: "tɔ jɛst ˈjɛɕɛɲ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "jesień", base: "jesień" }] }
+  - id: "pl-1947"
+    target: "poniedziałek"
+    ipa: "pɔɲɛˈdʑawɛk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest poniedziałek.", ipa: "tɔ jɛst pɔɲɛˈdʑawɛk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "poniedziałek", base: "poniedziałek" }] }
+  - id: "pl-1948"
+    target: "sobota"
+    ipa: "sɔˈbɔta"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    tags: ["time"]
+    notes: [{ id: "n1", kind: "note" }]
+    examples:
+      - { target: "To jest sobota.", ipa: "tɔ jɛst sɔˈbɔta", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "sobota", base: "sobota" }] }
