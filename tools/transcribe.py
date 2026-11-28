@@ -2535,6 +2535,30 @@ _DE_MARKS = {
     "januar": "ja^nua:r", "februar": "fe:brua:r", "april": "aprí^l",
     "oktober": "október", "dezember": "dezémber",
 }
+# Whole-word forms for words the stress and length tables cannot give: loan
+# words with sounds of their own and a few exceptions. Each is the first form
+# that the word's entry on en.wiktionary lists (read 2026-11-28), in the
+# engine's conventions: ʁ for r, ɡ, and no secondary stress, glottal stop,
+# syllable dot or non-syllabic mark. A hint on the text beats an entry here.
+_DE_RESPELL = {
+    "handy": "ˈhɛndi", "chef": "ʃɛf", "ferien": "ˈfeːʁiən",
+    "china": "ˈçiːna", "chance": "ˈʃãːsə", "computer": "kɔmˈpjuːtɐ",
+    "restaurant": "ʁɛstoˈʁãː", "familie": "faˈmiːliə",
+    "banane": "baˈnaːnə", "telefon": "teːləˈfoːn",
+    "november": "noˈvɛmbɐ", "museum": "muˈzeːʊm", "toilette": "toaˈlɛtə",
+    "job": "dʒɔp", "team": "tiːm", "sport": "ʃpɔʁt", "pizza": "ˈpɪtsa",
+    "tee": "teː", "taxi": "ˈtaksi", "bus": "bʊs", "foto": "ˈfoːto",
+    "familien": "faˈmiːliən",
+}
+# The names of the letters, for a letter and a word (S-Bahn, U-Bahn): the
+# first form of each letter's entry on en.wiktionary, glottal stop left out.
+_DE_LETTER_NAMES = {
+    "a": "aː", "b": "beː", "c": "tseː", "d": "deː", "e": "eː", "f": "ɛf",
+    "g": "ɡeː", "h": "haː", "i": "iː", "j": "jɔt", "k": "kaː", "l": "ɛl",
+    "m": "ɛm", "n": "ɛn", "o": "oː", "p": "peː", "q": "kuː", "r": "ɛʁ",
+    "s": "ɛs", "t": "teː", "u": "uː", "v": "faʊ", "w": "veː", "x": "ɪks",
+    "y": "ʏpsilɔn", "z": "tsɛt",
+}
 # Prefixes read apart and never stressed: letters, then the phonemes.
 _DE_PREFIXES = (("miss", "mɪs"), ("emp", "ɛmp"), ("ent", "ɛnt"),
                 ("zer", "tsɛɐ̯"), ("ver", "fɛɐ̯"), ("be", "bə"),
@@ -2591,14 +2615,41 @@ def german_ipa(text: str, hint: str | None = None) -> str:
     for c in text:
         if c.isspace() or c in _DE_PUNCT or c in "'’":
             continue
-        if not ("a" <= c <= "z") and c not in "äöüß":
+        if not ("a" <= c <= "z") and c not in "äöüßé":
             raise CannotRead(f"not a German letter: {c!r}")
+    if re.search(r"(?<!\w)[a-z]-\w", text):
+        # A letter and a word (S-Bahn): the letter's name, then the word.
+        toks = text.split()
+        hs = hint.split() if hint else []
+        if len(hs) != len(toks):
+            hs = [""] * len(toks)
+        return " ".join(w for w in (
+            _de_letter_compound(t, h) for t, h in zip(toks, hs)) if w)
     words = [w for w in re.split(r"[\s\-–—]+", text) if w]
-    hints = _de_hint_words(words, hint)
+    plain = [w.replace("é", "e") for w in words]
+    hints = _de_hint_words(plain, hint)
     out = []
     for k, raw in enumerate(words):
-        out.append(_de_word(raw, hints[k] if hints else ""))
+        h = hints[k] if hints else ""
+        if not h and "é" in raw:
+            h = raw.replace("é", "é:")      # é is stressed and long (Café)
+        out.append(_de_word(plain[k], h))
     return " ".join(w for w in out if w)
+
+
+def _de_letter_compound(tok: str, hint: str = "") -> str:
+    """[tok] (a word of the text, a hint word for it) with its surrounding
+    punctuation left out; a letter, a hyphen and a word is read by the
+    letter's name and then the word (hint for the word, if it fits)."""
+    strip = "".join(_DE_PUNCT - {"-"}) + "'’"
+    tok = tok.strip(strip)
+    head, sep, rest = tok.partition("-")
+    if not (sep and len(head) == 1 and "a" <= head <= "z" and rest):
+        return german_ipa(tok, hint.strip(strip) or None)
+    if head not in _DE_LETTER_NAMES:
+        raise CannotRead(f"no letter name for: {head!r}")
+    h = hint.strip(strip).partition("-")[2]
+    return "ˈ" + _DE_LETTER_NAMES[head] + german_ipa(rest, h or None)
 
 
 def _de_marks(hint: str) -> tuple[str, int | None, dict[int, str],
@@ -2935,6 +2986,11 @@ def _de_word(raw: str, hint: str) -> str:
     word = _de_clean(raw)
     if not word:
         return ""
+    if not hint:
+        if word in _DE_RESPELL:
+            return _DE_RESPELL[word]
+        if word.endswith("s") and word[:-1] in _DE_RESPELL:
+            return _DE_RESPELL[word[:-1]] + "s"     # Fotos, Jobs
     stress_at: int | None = None
     marks: dict[int, str] = {}
     bounds: set[int] = set()
