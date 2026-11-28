@@ -154,3 +154,13 @@ cards:
     examples:
       - { target: "Questo è il palazzo.", ipa: "ˈkwesto ɛ il paˈlattso", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "palazzo", base: "palazzo" }] }
       - { target: "Il palazzo è vicino.", ipa: "il paˈlattso ɛ viˈtʃino", bases: [{ word: "Il", base: "il" }, { word: "palazzo", base: "palazzo" }, { word: "è", base: "essere" }, { word: "vicino", ref: "it-1733" }] }
+  - id: "it-2014"
+    target: "verso"
+    ipa: "ˈvɛrso"
+    pos: "prep"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Vado verso la piazza.", ipa: "ˈvado ˈvɛrso la ˈpjattsa", bases: [{ word: "Vado", base: "andare" }, { word: "verso", base: "verso" }, { word: "la", base: "la" }, { word: "piazza", ref: "it-2011" }] }
+      - { target: "Vieni verso di me.", ipa: "ˈvjɛni ˈvɛrso di me", bases: [{ word: "Vieni", base: "venire" }, { word: "verso", base: "verso" }, { word: "di", base: "di" }, { word: "me", ref: "it-1375" }] }
