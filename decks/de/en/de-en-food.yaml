@@ -1,0 +1,992 @@
+schema: 1
+id: "de-en-food"
+kind: "layer"
+core: "de-food"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food and drink"
+description: "Food, drink and meals: dishes, drinks, meat, bread, and the words for being hungry or thirsty. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "de-2421":
+    native: "lunch"
+    notes:
+      "n1": "Mittagessen is lunch: das Mittagessen. Its plural is also Mittagessen."
+    examples:
+      "Hier ist das Mittagessen.":
+        native: "Here is the lunch."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Mittagessen": "lunch"
+      "Ich habe ein Mittagessen.":
+        native: "I have a lunch."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Mittagessen": "lunch"
+  "de-2422":
+    native: "dinner, supper"
+    notes:
+      "n1": "Abendessen is dinner: das Abendessen. Its plural is also Abendessen."
+    examples:
+      "Hier ist das Abendessen.":
+        native: "Here is the dinner."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Abendessen": "dinner"
+      "Ich habe ein Abendessen.":
+        native: "I have a dinner."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Abendessen": "dinner"
+  "de-2423":
+    native: "breakfast"
+    notes:
+      "n1": "Frühstück is breakfast: das Frühstück. Its plural is Frühstücke."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Frühstück.":
+        native: "Here is the breakfast."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Frühstück": "breakfast"
+      "Ich habe ein Frühstück.":
+        native: "I have a breakfast."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Frühstück": "breakfast"
+  "de-2424":
+    native: "dish"
+    notes:
+      "n1": "Gericht is dish: das Gericht. Its plural is Gerichte."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Gericht.":
+        native: "Here is the dish."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Gericht": "dish"
+      "Wo ist das Gericht?":
+        native: "Where is the dish?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Gericht": "dish"
+  "de-2425":
+    native: "meal, fare"
+    notes:
+      "n1": "Speise is meal: die Speise. Its plural is Speisen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Speise.":
+        native: "This is the meal."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Speise": "meal"
+      "Wo ist die Speise?":
+        native: "Where is the meal?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Speise": "meal"
+  "de-2426":
+    native: "soup"
+    notes:
+      "n1": "Suppe is soup: die Suppe. Its plural is Suppen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Suppe.":
+        native: "This is the soup."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Suppe": "soup"
+      "Ich habe eine Suppe.":
+        native: "I have a soup."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Suppe": "soup"
+  "de-2427":
+    native: "pizza"
+    notes:
+      "n1": "Pizza is pizza: die Pizza. Its plural is Pizzen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Pizza.":
+        native: "This is the pizza."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Pizza": "pizza"
+      "Ich habe eine Pizza.":
+        native: "I have a pizza."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Pizza": "pizza"
+  "de-2429":
+    native: "cutlet, scallop, escalope"
+    notes:
+      "n1": "Schnitzel is cutlet: das Schnitzel. Its plural is also Schnitzel."
+    examples:
+      "Hier ist das Schnitzel.":
+        native: "Here is the cutlet."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Schnitzel": "cutlet"
+      "Ich habe ein Schnitzel.":
+        native: "I have a cutlet."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Schnitzel": "cutlet"
+  "de-2430":
+    native: "dessert"
+    notes:
+      "n1": "Dessert is dessert: das Dessert. Its plural is Desserts."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Dessert.":
+        native: "Here is the dessert."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Dessert": "dessert"
+      "Ich habe ein Dessert.":
+        native: "I have a dessert."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Dessert": "dessert"
+  "de-2431":
+    native: "appetizer, starter"
+    notes:
+      "n1": "Vorspeise is appetizer: die Vorspeise. Its plural is Vorspeisen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Vorspeise.":
+        native: "This is the appetizer."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Vorspeise": "appetizer"
+      "Ich habe eine Vorspeise.":
+        native: "I have an appetizer."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Vorspeise": "appetizer"
+  "de-2432":
+    native: "main dish, main course, entree"
+    notes:
+      "n1": "Hauptgericht is main dish: das Hauptgericht. Its plural is Hauptgerichte."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Hauptgericht.":
+        native: "Here is the main dish."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Hauptgericht": "main dish"
+      "Ich habe ein Hauptgericht.":
+        native: "I have a main dish."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Hauptgericht": "main dish"
+  "de-2433":
+    native: "dessert, pudding"
+    notes:
+      "n1": "Nachtisch is dessert: der Nachtisch. Its plural is Nachtische."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Nachtisch.":
+        native: "This is the dessert."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Nachtisch": "dessert"
+      "Ich habe einen Nachtisch.":
+        native: "I have a dessert."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Nachtisch": "dessert"
+  "de-2434":
+    native: "hunger"
+    notes:
+      "n1": "Hunger is hunger: der Hunger. It is uncountable, so it has no plural."
+    examples:
+      "Ich habe Hunger.":
+        native: "I am hungry."
+        bases:
+          "Ich": "I"
+          "habe": "have (as in I am hungry)"
+          "Hunger": "hunger"
+      "Das ist Hunger.":
+        native: "This is hunger."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "Hunger": "hunger"
+  "de-2435":
+    native: "thirst"
+    notes:
+      "n1": "Durst is thirst: der Durst. It is uncountable, so it has no plural."
+    examples:
+      "Ich habe Durst.":
+        native: "I am thirsty."
+        bases:
+          "Ich": "I"
+          "habe": "have (as in I am thirsty)"
+          "Durst": "thirst"
+      "Das ist Durst.":
+        native: "This is thirst."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "Durst": "thirst"
+  "de-2436":
+    native: "drink, beverage"
+    notes:
+      "n1": "Getränk is drink: das Getränk. Its plural is Getränke."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Getränk.":
+        native: "Here is the drink."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Getränk": "drink"
+      "Ich habe ein Getränk.":
+        native: "I have a drink."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Getränk": "drink"
+  "de-2437":
+    native: "beer"
+    notes:
+      "n1": "Bier is beer: das Bier. Its plural is Biere."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Bier.":
+        native: "Here is the beer."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Bier": "beer"
+      "Ich habe ein Bier.":
+        native: "I have a beer."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Bier": "beer"
+  "de-2438":
+    native: "lemonade"
+    notes:
+      "n1": "Limonade is lemonade: die Limonade. Its plural is Limonaden."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Limonade.":
+        native: "This is the lemonade."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Limonade": "lemonade"
+      "Ich habe eine Limonade.":
+        native: "I have a lemonade."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Limonade": "lemonade"
+  "de-2440":
+    native: "chicken"
+    notes:
+      "n1": "Huhn is chicken: das Huhn. Its plural is Hühner."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Huhn.":
+        native: "Here is the chicken."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Huhn": "chicken"
+      "Wo ist das Huhn?":
+        native: "Where is the chicken?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Huhn": "chicken"
+  "de-2441":
+    native: "meat"
+    notes:
+      "n1": "Fleisch is meat: das Fleisch. It is uncountable, so it has no plural."
+    examples:
+      "Das ist Fleisch.":
+        native: "This is meat."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "Fleisch": "meat"
+      "Hier ist das Fleisch.":
+        native: "Here is the meat."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Fleisch": "meat"
+  "de-2442":
+    native: "beef"
+    notes:
+      "n1": "Rind is beef: das Rind. Its plural is Rinder."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Rind.":
+        native: "Here is the beef."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Rind": "beef"
+      "Wo ist das Rind?":
+        native: "Where is the beef?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Rind": "beef"
+  "de-2443":
+    native: "pork"
+    notes:
+      "n1": "Schwein is pork: das Schwein. Its plural is Schweine."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Schwein.":
+        native: "Here is the pork."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Schwein": "pork"
+      "Wo ist das Schwein?":
+        native: "Where is the pork?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Schwein": "pork"
+  "de-2444":
+    native: "lamb"
+    notes:
+      "n1": "Lamm is lamb: das Lamm. Its plural is Lämmer."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Lamm.":
+        native: "Here is the lamb."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Lamm": "lamb"
+      "Wo ist das Lamm?":
+        native: "Where is the lamb?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Lamm": "lamb"
+  "de-2445":
+    native: "veal"
+    notes:
+      "n1": "Kalb is veal: das Kalb. Its plural is Kälber."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Kalb.":
+        native: "Here is the veal."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Kalb": "veal"
+      "Wo ist das Kalb?":
+        native: "Where is the veal?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Kalb": "veal"
+  "de-2446":
+    native: "currywurst"
+    notes:
+      "n1": "Currywurst is currywurst: die Currywurst. Its plural is Currywürste."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Currywurst.":
+        native: "This is the currywurst."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Currywurst": "currywurst"
+      "Ich habe eine Currywurst.":
+        native: "I have a currywurst."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Currywurst": "currywurst"
+  "de-2447":
+    native: "sausage"
+    notes:
+      "n1": "Wurst is sausage: die Wurst. Its plural is Würste."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Wurst.":
+        native: "This is the sausage."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Wurst": "sausage"
+      "Ich habe eine Wurst.":
+        native: "I have a sausage."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Wurst": "sausage"
+  "de-2448":
+    native: "sandwich"
+    notes:
+      "n1": "Sandwich is sandwich: das Sandwich. Its plural is Sandwichs."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Sandwich.":
+        native: "Here is the sandwich."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Sandwich": "sandwich"
+      "Ich habe ein Sandwich.":
+        native: "I have a sandwich."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Sandwich": "sandwich"
+  "de-2449":
+    native: "burger"
+    notes:
+      "n1": "Burger is burger: der Burger. Its plural is also Burger."
+    examples:
+      "Das ist der Burger.":
+        native: "This is the burger."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Burger": "burger"
+      "Ich habe einen Burger.":
+        native: "I have a burger."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Burger": "burger"
+  "de-2450":
+    native: "steak"
+    notes:
+      "n1": "Steak is steak: das Steak. Its plural is Steaks."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Steak.":
+        native: "Here is the steak."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Steak": "steak"
+      "Ich habe ein Steak.":
+        native: "I have a steak."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Steak": "steak"
+  "de-2451":
+    native: "sauce, gravy"
+    notes:
+      "n1": "Soße is sauce: die Soße. Its plural is Soßen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Soße.":
+        native: "This is the sauce."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Soße": "sauce"
+      "Ich habe eine Soße.":
+        native: "I have a sauce."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Soße": "sauce"
+  "de-2452":
+    native: "ketchup"
+    notes:
+      "n1": "Ketchup is ketchup: der Ketchup. Its plural is Ketchups."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Ketchup.":
+        native: "This is the ketchup."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Ketchup": "ketchup"
+      "Ich habe einen Ketchup.":
+        native: "I have a ketchup."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Ketchup": "ketchup"
+  "de-2453":
+    native: "mayonnaise"
+    notes:
+      "n1": "Mayonnaise is mayonnaise: die Mayonnaise. Its plural is Mayonnaisen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Mayonnaise.":
+        native: "This is the mayonnaise."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Mayonnaise": "mayonnaise"
+      "Ich habe eine Mayonnaise.":
+        native: "I have a mayonnaise."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Mayonnaise": "mayonnaise"
+  "de-2454":
+    native: "a bun, bread roll"
+    notes:
+      "n1": "Brötchen is a bun: das Brötchen. Its plural is also Brötchen."
+    examples:
+      "Hier ist das Brötchen.":
+        native: "Here is the a bun."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Brötchen": "a bun"
+      "Ich habe ein Brötchen.":
+        native: "I have an a bun."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Brötchen": "a bun"
+  "de-2455":
+    native: "fries"
+    notes:
+      "n1": "Pommes is fries. It is a plural noun: die Pommes."
+    examples:
+      "Ich habe Pommes.":
+        native: "I have fries."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "Pommes": "fries"
+      "Das sind Pommes.":
+        native: "These are fries."
+        bases:
+          "Das": "These"
+          "sind": "are"
+          "Pommes": "fries"
+  "de-2456":
+    native: "bratwurst"
+    notes:
+      "n1": "Bratwurst is bratwurst: die Bratwurst. Its plural is Bratwürste."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Bratwurst.":
+        native: "This is the bratwurst."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Bratwurst": "bratwurst"
+      "Ich habe eine Bratwurst.":
+        native: "I have a bratwurst."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Bratwurst": "bratwurst"
+  "de-2457":
+    native: "pretzel"
+    notes:
+      "n1": "Brezel is pretzel: die Brezel. Its plural is Brezeln."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Brezel.":
+        native: "This is the pretzel."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Brezel": "pretzel"
+      "Ich habe eine Brezel.":
+        native: "I have a pretzel."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Brezel": "pretzel"
+  "de-2458":
+    native: "dumpling"
+    notes:
+      "n1": "Knödel is dumpling: der Knödel. Its plural is also Knödel."
+    examples:
+      "Das ist der Knödel.":
+        native: "This is the dumpling."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Knödel": "dumpling"
+      "Wo ist der Knödel?":
+        native: "Where is the dumpling?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Knödel": "dumpling"
+  "de-2459":
+    native: "stew"
+    notes:
+      "n1": "Eintopf is stew: der Eintopf. Its plural is Eintöpfe."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Eintopf.":
+        native: "This is the stew."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Eintopf": "stew"
+      "Ich habe einen Eintopf.":
+        native: "I have a stew."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Eintopf": "stew"
+  "de-2460":
+    native: "potato salad"
+    notes:
+      "n1": "Kartoffelsalat is potato salad: der Kartoffelsalat. Its plural is Kartoffelsalate."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Kartoffelsalat.":
+        native: "This is the potato salad."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Kartoffelsalat": "potato salad"
+      "Ich habe einen Kartoffelsalat.":
+        native: "I have a potato salad."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Kartoffelsalat": "potato salad"
+  "de-2461":
+    native: "pancake"
+    notes:
+      "n1": "Pfannkuchen is pancake: der Pfannkuchen. Its plural is also Pfannkuchen."
+    examples:
+      "Das ist der Pfannkuchen.":
+        native: "This is the pancake."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Pfannkuchen": "pancake"
+      "Ich habe einen Pfannkuchen.":
+        native: "I have a pancake."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Pfannkuchen": "pancake"
+  "de-2462":
+    native: "omelette"
+    notes:
+      "n1": "Omelett is omelette: das Omelett. Its plural is Omelette."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Omelett.":
+        native: "Here is the omelette."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Omelett": "omelette"
+      "Ich habe ein Omelett.":
+        native: "I have an omelette."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Omelett": "omelette"
+  "de-2463":
+    native: "espresso"
+    notes:
+      "n1": "Espresso is espresso: der Espresso. Its plural is Espressos."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Espresso.":
+        native: "This is the espresso."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Espresso": "espresso"
+      "Ich habe einen Espresso.":
+        native: "I have an espresso."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Espresso": "espresso"
+  "de-2464":
+    native: "ice cream"
+    notes:
+      "n1": "Eiscreme is ice cream: die Eiscreme. Its plural is Eiscremes."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Eiscreme.":
+        native: "This is the ice cream."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Eiscreme": "ice cream"
+      "Ich habe eine Eiscreme.":
+        native: "I have an ice cream."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Eiscreme": "ice cream"
+  "de-2465":
+    native: "cake"
+    notes:
+      "n1": "Torte is cake: die Torte. Its plural is Torten."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Torte.":
+        native: "This is the cake."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Torte": "cake"
+      "Ich habe eine Torte.":
+        native: "I have a cake."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Torte": "cake"
+  "de-2466":
+    native: "ham"
+    notes:
+      "n1": "Schinken is ham: der Schinken. Its plural is also Schinken."
+    examples:
+      "Das ist der Schinken.":
+        native: "This is the ham."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Schinken": "ham"
+      "Wo ist der Schinken?":
+        native: "Where is the ham?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Schinken": "ham"
+  "de-2467":
+    native: "bacon"
+    notes:
+      "n1": "Speck is bacon: der Speck. Its plural is Specke."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Speck.":
+        native: "This is the bacon."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Speck": "bacon"
+      "Wo ist der Speck?":
+        native: "Where is the bacon?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Speck": "bacon"
+  "de-2468":
+    native: "salmon"
+    notes:
+      "n1": "Lachs is salmon: der Lachs. Its plural is Lachse."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Lachs.":
+        native: "This is the salmon."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Lachs": "salmon"
+      "Wo ist der Lachs?":
+        native: "Where is the salmon?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Lachs": "salmon"
+  "de-2469":
+    native: "tuna"
+    notes:
+      "n1": "Thunfisch is tuna: der Thunfisch. Its plural is Thunfische."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Thunfisch.":
+        native: "This is the tuna."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Thunfisch": "tuna"
+      "Wo ist der Thunfisch?":
+        native: "Where is the tuna?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Thunfisch": "tuna"
+  "de-2470":
+    native: "parsley"
+    notes:
+      "n1": "Petersilie is parsley: die Petersilie. Its plural is Petersilien."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Petersilie.":
+        native: "This is the parsley."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Petersilie": "parsley"
+      "Wo ist die Petersilie?":
+        native: "Where is the parsley?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Petersilie": "parsley"
+  "de-2471":
+    native: "basil"
+    notes:
+      "n1": "Basilikum is basil: das Basilikum. Its plural is Basiliken."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Basilikum.":
+        native: "Here is the basil."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Basilikum": "basil"
+      "Wo ist das Basilikum?":
+        native: "Where is the basil?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Basilikum": "basil"
+  "de-2472":
+    native: "meal"
+    notes:
+      "n1": "Mahlzeit is meal: die Mahlzeit. Its plural is Mahlzeiten."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Mahlzeit.":
+        native: "This is the meal."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Mahlzeit": "meal"
+      "Ich habe eine Mahlzeit.":
+        native: "I have a meal."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Mahlzeit": "meal"
