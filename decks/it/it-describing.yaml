@@ -1,0 +1,482 @@
+schema: 1
+id: "it-describing"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "describing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1860"
+    target: "grande"
+    ipa: "ˈɡrande"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un treno grande.", ipa: "ˈkwesto ɛ un ˈtrɛno ˈɡrande", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "un" }, { word: "treno", ref: "it-2560" }] }
+      - { target: "Il mercato è grande.", ipa: "il merˈkato ɛ ˈɡrande", bases: [{ word: "Il", base: "il" }, { word: "mercato", ref: "it-2420" }, { word: "è", base: "essere" }] }
+  - id: "it-1861"
+    target: "piccolo"
+    ipa: "ˈpikkolo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il negozio è piccolo.", ipa: "il neˈɡɔttsjo ɛ ˈpikkolo", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }] }
+      - { target: "Questa scatola è piccola.", ipa: "ˈkwesta ˈskatola ɛ ˈpikkola", bases: [{ word: "Questa", base: "questo" }, { word: "scatola", ref: "it-1816" }, { word: "è", base: "essere" }, { word: "piccola", base: "piccolo" }] }
+  - id: "it-1862"
+    target: "bello"
+    ipa: "ˈbɛllo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il mercato è bello.", ipa: "il merˈkato ɛ ˈbɛllo", bases: [{ word: "Il", base: "il" }, { word: "mercato", ref: "it-2420" }, { word: "è", base: "essere" }] }
+      - { target: "Questa borsa è bella.", ipa: "ˈkwesta ˈborsa ɛ ˈbɛlla", bases: [{ word: "Questa", base: "questo" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }, { word: "bella", base: "bello" }] }
+  - id: "it-1863"
+    target: "brutto"
+    ipa: "ˈbrutto"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il treno è brutto.", ipa: "il ˈtrɛno ɛ ˈbrutto", bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", base: "essere" }] }
+      - { target: "La borsa è brutta.", ipa: "la ˈborsa ɛ ˈbrutta", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }, { word: "brutta", base: "brutto" }] }
+  - id: "it-1864"
+    target: "cattivo"
+    ipa: "katˈtivo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il taxi è cattivo.", ipa: "il ˈtaksi ɛ katˈtivo", bases: [{ word: "Il", base: "il" }, { word: "taxi", ref: "it-2564" }, { word: "è", base: "essere" }] }
+      - { target: "Sono cattivo.", ipa: "ˈsono katˈtivo", bases: [{ word: "Sono", base: "essere" }] }
+  - id: "it-1865"
+    target: "nuovo"
+    ipa: "ˈnwɔvo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il treno è nuovo.", ipa: "il ˈtrɛno ɛ ˈnwɔvo", bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", base: "essere" }] }
+      - { target: "La bicicletta è nuova.", ipa: "la bitʃiˈkletta ɛ ˈnwɔva", bases: [{ word: "La", base: "la" }, { word: "bicicletta", ref: "it-2562" }, { word: "è", base: "essere" }, { word: "nuova", base: "nuovo" }] }
+  - id: "it-1866"
+    target: "vecchio"
+    ipa: "ˈvɛkkjo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bicicletta è vecchia.", ipa: "la bitʃiˈkletta ɛ ˈvɛkkja", bases: [{ word: "La", base: "la" }, { word: "bicicletta", ref: "it-2562" }, { word: "è", base: "essere" }, { word: "vecchia", base: "vecchio" }] }
+      - { target: "Il treno è vecchio.", ipa: "il ˈtrɛno ɛ ˈvɛkkjo", bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", base: "essere" }] }
+  - id: "it-1867"
+    target: "giovane"
+    ipa: "ˈdʒovane"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono giovane.", ipa: "ˈsono ˈdʒovane", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sono giovane e felice.", ipa: "ˈsono ˈdʒovane e feˈlitʃe", bases: [{ word: "Sono", base: "essere" }, { word: "e", ref: "it-0005" }, { word: "felice", ref: "it-1883" }] }
+  - id: "it-1868"
+    target: "caldo"
+    ipa: "ˈkaldo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'acqua è calda.", ipa: "ˈlakkwa ɛ ˈkalda", bases: [{ word: "L'acqua", ref: "it-0010" }, { word: "è", base: "essere" }, { word: "calda", base: "caldo" }] }
+      - { target: "Bevo acqua calda.", ipa: "ˈbevo ˈakkwa ˈkalda", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "acqua", ref: "it-0010" }, { word: "calda", base: "caldo" }] }
+  - id: "it-1869"
+    target: "freddo"
+    ipa: "ˈfreddo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'acqua è fredda.", ipa: "ˈlakkwa ɛ ˈfredda", bases: [{ word: "L'acqua", ref: "it-0010" }, { word: "è", base: "essere" }, { word: "fredda", base: "freddo" }] }
+      - { target: "Bevo acqua fredda.", ipa: "ˈbevo ˈakkwa ˈfredda", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "acqua", ref: "it-0010" }, { word: "fredda", base: "freddo" }] }
+  - id: "it-1870"
+    target: "alto"
+    ipa: "ˈalto"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il prezzo è alto.", ipa: "il ˈprɛttso ɛ ˈalto", bases: [{ word: "Il", base: "il" }, { word: "prezzo", ref: "it-2356" }, { word: "è", base: "essere" }] }
+      - { target: "Sono alto.", ipa: "ˈsono ˈalto", bases: [{ word: "Sono", base: "essere" }] }
+  - id: "it-1871"
+    target: "basso"
+    ipa: "ˈbasso"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il prezzo è basso.", ipa: "il ˈprɛttso ɛ ˈbasso", bases: [{ word: "Il", base: "il" }, { word: "prezzo", ref: "it-2356" }, { word: "è", base: "essere" }] }
+      - { target: "Sono basso.", ipa: "ˈsono ˈbasso", bases: [{ word: "Sono", base: "essere" }] }
+  - id: "it-1872"
+    target: "lungo"
+    ipa: "ˈlunɡo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il treno è lungo.", ipa: "il ˈtrɛno ɛ ˈlunɡo", bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", base: "essere" }] }
+      - { target: "La lista è lunga.", ipa: "la ˈlista ɛ ˈlunɡa", bases: [{ word: "La", base: "la" }, { word: "lista", ref: "it-2361" }, { word: "è", base: "essere" }, { word: "lunga", base: "lungo" }] }
+  - id: "it-1873"
+    target: "corto"
+    ipa: "ˈkorto"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La lista è corta.", ipa: "la ˈlista ɛ ˈkorta", bases: [{ word: "La", base: "la" }, { word: "lista", ref: "it-2361" }, { word: "è", base: "essere" }, { word: "corta", base: "corto" }] }
+      - { target: "Il dito è corto.", ipa: "il ˈdito ɛ ˈkorto", bases: [{ word: "Il", base: "il" }, { word: "dito", ref: "it-2641" }, { word: "è", base: "essere" }] }
+  - id: "it-1874"
+    target: "largo"
+    ipa: "ˈlarɡo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bottiglia è larga.", ipa: "la botˈtiʎʎa ɛ ˈlarɡa", bases: [{ word: "La", base: "la" }, { word: "bottiglia", ref: "it-1812" }, { word: "è", base: "essere" }, { word: "larga", base: "largo" }] }
+      - { target: "Il bicchiere è largo.", ipa: "il bikˈkjɛre ɛ ˈlarɡo", bases: [{ word: "Il", base: "il" }, { word: "bicchiere", ref: "it-1813" }, { word: "è", base: "essere" }] }
+  - id: "it-1875"
+    target: "stretto"
+    ipa: "ˈstretto"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La scatola è stretta.", ipa: "la ˈskatola ɛ ˈstretta", bases: [{ word: "La", base: "la" }, { word: "scatola", ref: "it-1816" }, { word: "è", base: "essere" }, { word: "stretta", base: "stretto" }] }
+      - { target: "La borsa è stretta.", ipa: "la ˈborsa ɛ ˈstretta", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }, { word: "stretta", base: "stretto" }] }
+  - id: "it-1876"
+    target: "pesante"
+    ipa: "peˈzante"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La borsa è pesante.", ipa: "la ˈborsa ɛ peˈzante", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }] }
+      - { target: "Il pacco è pesante.", ipa: "il ˈpakko ɛ peˈzante", bases: [{ word: "Il", base: "il" }, { word: "pacco", ref: "it-1815" }, { word: "è", base: "essere" }] }
+  - id: "it-1877"
+    target: "leggero"
+    ipa: "ledˈdʒɛro"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bicicletta è leggera.", ipa: "la bitʃiˈkletta ɛ ledˈdʒera", bases: [{ word: "La", base: "la" }, { word: "bicicletta", ref: "it-2562" }, { word: "è", base: "essere" }, { word: "leggera", base: "leggero" }] }
+      - { target: "La borsa è leggera.", ipa: "la ˈborsa ɛ ledˈdʒera", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }, { word: "leggera", base: "leggero" }] }
+  - id: "it-1878"
+    target: "facile"
+    ipa: "ˈfatʃile"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è facile.", ipa: "ˈkwesto ɛ ˈfatʃile", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }] }
+      - { target: "La lista è facile.", ipa: "la ˈlista ɛ ˈfatʃile", bases: [{ word: "La", base: "la" }, { word: "lista", ref: "it-2361" }, { word: "è", base: "essere" }] }
+  - id: "it-1879"
+    target: "difficile"
+    ipa: "difˈfitʃile"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è difficile.", ipa: "ˈkwesto ɛ difˈfitʃile", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }] }
+      - { target: "La lista è difficile.", ipa: "la ˈlista ɛ difˈfitʃile", bases: [{ word: "La", base: "la" }, { word: "lista", ref: "it-2361" }, { word: "è", base: "essere" }] }
+  - id: "it-1880"
+    target: "veloce"
+    ipa: "veˈlotʃe"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il treno è veloce.", ipa: "il ˈtrɛno ɛ veˈlotʃe", bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", base: "essere" }] }
+      - { target: "Il taxi è veloce.", ipa: "il ˈtaksi ɛ veˈlotʃe", bases: [{ word: "Il", base: "il" }, { word: "taxi", ref: "it-2564" }, { word: "è", base: "essere" }] }
+  - id: "it-1881"
+    target: "lento"
+    ipa: "ˈlɛnto"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'autobus è lento.", ipa: "ˈlawtobus ɛ ˈlɛnto", bases: [{ word: "L'autobus", ref: "it-2561" }, { word: "è", base: "essere" }] }
+      - { target: "Il treno è lento.", ipa: "il ˈtrɛno ɛ ˈlɛnto", bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", base: "essere" }] }
+  - id: "it-1882"
+    target: "bravo"
+    ipa: "ˈbravo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono bravo.", ipa: "ˈsono ˈbravo", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sei bravo.", ipa: "sɛj ˈbravo", bases: [{ word: "Sei", base: "essere" }] }
+  - id: "it-1883"
+    target: "felice"
+    ipa: "feˈlitʃe"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono felice.", ipa: "ˈsono feˈlitʃe", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sono felice e contento.", ipa: "ˈsono feˈlitʃe e konˈtɛnto", bases: [{ word: "Sono", base: "essere" }, { word: "e", ref: "it-0005" }, { word: "contento", ref: "it-1885" }] }
+  - id: "it-1884"
+    target: "triste"
+    ipa: "ˈtriste"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono triste.", ipa: "ˈsono ˈtriste", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sono triste e stanco.", ipa: "ˈsono ˈtriste e ˈstanko", bases: [{ word: "Sono", base: "essere" }, { word: "e", ref: "it-0005" }, { word: "stanco", ref: "it-1887" }] }
+  - id: "it-1885"
+    target: "contento"
+    ipa: "konˈtɛnto"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono contento.", ipa: "ˈsono konˈtɛnto", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sono contenta.", ipa: "ˈsono konˈtenta", bases: [{ word: "Sono", base: "essere" }, { word: "contenta", base: "contento" }] }
+  - id: "it-1886"
+    target: "arrabbiato"
+    ipa: "arrabˈbjato"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono arrabbiato.", ipa: "ˈsono arrabˈbjato", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sono molto arrabbiato.", ipa: "ˈsono ˈmolto arrabˈbjato", bases: [{ word: "Sono", base: "essere" }, { word: "molto", ref: "it-1790" }] }
+  - id: "it-1887"
+    target: "stanco"
+    ipa: "ˈstanko"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono stanco.", ipa: "ˈsono ˈstanko", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sono troppo stanco.", ipa: "ˈsono ˈtrɔppo ˈstanko", bases: [{ word: "Sono", base: "essere" }, { word: "troppo", ref: "it-1793" }] }
+  - id: "it-1888"
+    target: "ricco"
+    ipa: "ˈrikko"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono ricco.", ipa: "ˈsono ˈrikko", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sono ricca.", ipa: "ˈsono ˈrikka", bases: [{ word: "Sono", base: "essere" }, { word: "ricca", base: "ricco" }] }
+  - id: "it-1889"
+    target: "povero"
+    ipa: "ˈpɔvero"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono povero.", ipa: "ˈsono ˈpɔvero", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Sono povera.", ipa: "ˈsono poˈvera", bases: [{ word: "Sono", base: "essere" }, { word: "povera", base: "povero" }] }
+  - id: "it-1890"
+    target: "pulito"
+    ipa: "puˈlito"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La tazza è pulita.", ipa: "la ˈtattsa ɛ puˈlita", bases: [{ word: "La", base: "la" }, { word: "tazza", ref: "it-1814" }, { word: "è", base: "essere" }, { word: "pulita", base: "pulito" }] }
+      - { target: "Il bicchiere è pulito.", ipa: "il bikˈkjɛre ɛ puˈlito", bases: [{ word: "Il", base: "il" }, { word: "bicchiere", ref: "it-1813" }, { word: "è", base: "essere" }] }
+  - id: "it-1891"
+    target: "sporco"
+    ipa: "ˈspɔrko"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il bicchiere è sporco.", ipa: "il bikˈkjɛre ɛ ˈspɔrko", bases: [{ word: "Il", base: "il" }, { word: "bicchiere", ref: "it-1813" }, { word: "è", base: "essere" }] }
+      - { target: "La tazza è sporca.", ipa: "la ˈtattsa ɛ ˈsporka", bases: [{ word: "La", base: "la" }, { word: "tazza", ref: "it-1814" }, { word: "è", base: "essere" }, { word: "sporca", base: "sporco" }] }
+  - id: "it-1892"
+    target: "aperto"
+    ipa: "aˈpɛrto"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il negozio è aperto.", ipa: "il neˈɡɔttsjo ɛ aˈpɛrto", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }] }
+      - { target: "La scatola è aperta.", ipa: "la ˈskatola ɛ aˈpɛrta", bases: [{ word: "La", base: "la" }, { word: "scatola", ref: "it-1816" }, { word: "è", base: "essere" }, { word: "aperta", base: "aperto" }] }
+  - id: "it-1893"
+    target: "chiuso"
+    ipa: "ˈkjuzo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il negozio è chiuso.", ipa: "il neˈɡɔttsjo ɛ ˈkjuzo", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }] }
+      - { target: "La scatola è chiusa.", ipa: "la ˈskatola ɛ ˈkjuza", bases: [{ word: "La", base: "la" }, { word: "scatola", ref: "it-1816" }, { word: "è", base: "essere" }, { word: "chiusa", base: "chiuso" }] }
+  - id: "it-1894"
+    target: "forte"
+    ipa: "ˈfɔrte"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono forte.", ipa: "ˈsono ˈfɔrte", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "La borsa è forte.", ipa: "la ˈborsa ɛ ˈfɔrte", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }] }
+  - id: "it-1895"
+    target: "debole"
+    ipa: "ˈdebole"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono debole.", ipa: "ˈsono ˈdebole", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "La scatola è debole.", ipa: "la ˈskatola ɛ ˈdebole", bases: [{ word: "La", base: "la" }, { word: "scatola", ref: "it-1816" }, { word: "è", base: "essere" }] }
+  - id: "it-1896"
+    target: "sicuro"
+    ipa: "siˈkuro"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono sicuro.", ipa: "ˈsono siˈkuro", bases: [{ word: "Sono", base: "essere" }] }
+      - { target: "Il treno è sicuro.", ipa: "il ˈtrɛno ɛ siˈkuro", bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", base: "essere" }] }
+  - id: "it-1897"
+    target: "vero"
+    ipa: "ˈvero"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è vero.", ipa: "ˈkwesto ɛ ˈvero", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }] }
+      - { target: "È vero.", ipa: "ɛ ˈvero", bases: [{ word: "È", base: "essere" }] }
+  - id: "it-1898"
+    target: "falso"
+    ipa: "ˈfalso"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è falso.", ipa: "ˈkwesto ɛ ˈfalso", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }] }
+      - { target: "La lista è falsa.", ipa: "la ˈlista ɛ ˈfalsa", bases: [{ word: "La", base: "la" }, { word: "lista", ref: "it-2361" }, { word: "è", base: "essere" }, { word: "falsa", base: "falso" }] }
+  - id: "it-1899"
+    target: "importante"
+    ipa: "imporˈtante"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è importante.", ipa: "ˈkwesto ɛ imporˈtante", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }] }
+      - { target: "La lista è importante.", ipa: "la ˈlista ɛ imporˈtante", bases: [{ word: "La", base: "la" }, { word: "lista", ref: "it-2361" }, { word: "è", base: "essere" }] }
+  - id: "it-1900"
+    target: "interessante"
+    ipa: "interesˈsante"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è interessante.", ipa: "ˈkwesto ɛ interesˈsante", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }] }
+      - { target: "Il mercato è interessante.", ipa: "il merˈkato ɛ interesˈsante", bases: [{ word: "Il", base: "il" }, { word: "mercato", ref: "it-2420" }, { word: "è", base: "essere" }] }
+  - id: "it-1901"
+    target: "noioso"
+    ipa: "noˈjozo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il treno è noioso.", ipa: "il ˈtrɛno ɛ noˈjozo", bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", base: "essere" }] }
+      - { target: "Questo è noioso.", ipa: "ˈkwesto ɛ noˈjozo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }] }
+  - id: "it-1902"
+    target: "carino"
+    ipa: "kaˈrino"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il negozio è carino.", ipa: "il neˈɡɔttsjo ɛ kaˈrino", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }] }
+      - { target: "La borsa è carina.", ipa: "la ˈborsa ɛ kaˈrina", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", base: "essere" }, { word: "carina", base: "carino" }] }

@@ -1,0 +1,466 @@
+schema: 1
+id: "it-en-quantities"
+kind: "layer"
+core: "it-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Quantities"
+license: "CC-BY-SA-4.0"
+description: "How much and how many: a lot, little, too much, enough, all, half, more and less, and the words for measures and containers (a kilo, a litre, a slice, a bottle, a cup). Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-1790":
+    native: "much; very much; a lot"
+    notes:
+      "n1": "Means much, very much, a lot (with verbs). Superlative moltissimo."
+    examples:
+      "Parlo molto.":
+        native: "I speak a lot."
+        bases:
+          "molto": "a lot"
+      "Sto molto bene.":
+        native: "I am very well."
+        bases:
+          "molto": "very"
+  "it-1791":
+    native: "little; not much"
+    notes:
+      "n1": "Means little, not much."
+    examples:
+      "Parlo poco.":
+        native: "I speak little."
+        bases:
+          "poco": "little"
+      "Capisco poco.":
+        native: "I understand little."
+        bases:
+          "poco": "little"
+  "it-1792":
+    native: "so much; so many"
+    notes:
+      "n1": "Feminine tanta, masculine plural tanti, feminine plural tante. Superlative tantissimo."
+    examples:
+      "Mangio tanta pasta.":
+        native: "I eat so much pasta."
+        bases:
+          "tanta": "so much"
+      "Bevo tanta acqua.":
+        native: "I drink so much water."
+        bases:
+          "tanta": "so much"
+  "it-1793":
+    native: "too much; too many"
+    notes:
+      "n1": "Feminine troppa, masculine plural troppi, feminine plural troppe."
+    examples:
+      "Bevo troppo caffè.":
+        native: "I drink too much coffee."
+        bases:
+          "troppo": "too much"
+      "Sono troppo stanco.":
+        native: "I am too tired."
+        bases:
+          "troppo": "too"
+  "it-1794":
+    native: "more"
+    notes:
+      "n1": "Means more. It does not change form."
+    examples:
+      "Mangio più pane.":
+        native: "I eat more bread."
+        bases:
+          "più": "more"
+      "Voglio più acqua.":
+        native: "I want more water."
+        bases:
+          "più": "more"
+  "it-1795":
+    native: "less"
+    notes:
+      "n1": "Means less."
+    examples:
+      "Bevo meno caffè.":
+        native: "I drink less coffee."
+        bases:
+          "meno": "less"
+      "Dormo meno.":
+        native: "I sleep less."
+        bases:
+          "meno": "less"
+  "it-1796":
+    native: "enough; quite"
+    notes:
+      "n1": "Means enough, sufficiently."
+    examples:
+      "Parlo abbastanza bene.":
+        native: "I speak quite well."
+        bases:
+          "abbastanza": "quite"
+      "Mangio abbastanza.":
+        native: "I eat enough."
+        bases:
+          "abbastanza": "enough"
+  "it-1797":
+    native: "all; everything"
+    notes:
+      "n1": "Feminine tutta, masculine plural tutti, feminine plural tutte."
+    examples:
+      "Mangio tutto il pane.":
+        native: "I eat all the bread."
+        bases:
+          "tutto": "all"
+          "il": "the"
+      "Tutta la casa è pulita.":
+        native: "The whole house is clean."
+        bases:
+          "Tutta": "all"
+          "la": "the"
+  "it-1798":
+    native: "half"
+    notes:
+      "n1": "Feminine noun. It does not change in the plural."
+    examples:
+      "Bevo la metà.":
+        native: "I drink half."
+        bases:
+          "la": "the"
+          "metà": "half"
+      "Mangio metà pizza.":
+        native: "I eat half a pizza."
+        bases:
+          "metà": "half"
+  "it-1799":
+    native: "double; two"
+    notes:
+      "n1": "Feminine doppia, masculine plural doppi, feminine plural doppie."
+    examples:
+      "Voglio un caffè doppio.":
+        native: "I want a double coffee."
+        bases:
+          "un": "a"
+          "doppio": "double"
+      "Il caffè è doppio.":
+        native: "The coffee is double."
+        bases:
+          "Il": "the"
+          "doppio": "double"
+  "it-1800":
+    native: "full"
+    notes:
+      "n1": "Feminine piena, masculine plural pieni, feminine plural piene. Superlative pienissimo."
+    examples:
+      "Il bicchiere è pieno.":
+        native: "The glass is full."
+        bases:
+          "Il": "the"
+          "pieno": "full"
+      "La bottiglia è piena.":
+        native: "The bottle is full."
+        bases:
+          "La": "the"
+          "piena": "full"
+  "it-1801":
+    native: "empty"
+    notes:
+      "n1": "Feminine vuota, masculine plural vuoti, feminine plural vuote."
+    examples:
+      "Il bicchiere è vuoto.":
+        native: "The glass is empty."
+        bases:
+          "Il": "the"
+          "vuoto": "empty"
+      "La scatola è vuota.":
+        native: "The box is empty."
+        bases:
+          "La": "the"
+          "vuota": "empty"
+  "it-1802":
+    native: "half; middle"
+    notes:
+      "n1": "Masculine noun. Plural mezzi."
+    examples:
+      "Bevo mezzo bicchiere.":
+        native: "I drink half a glass."
+        bases:
+          "mezzo": "half"
+      "Bevo un mezzo litro.":
+        native: "I drink half a litre."
+        bases:
+          "un": "a"
+          "mezzo": "half"
+  "it-1803":
+    native: "whole; entire"
+    notes:
+      "n1": "Feminine intera, masculine plural interi, feminine plural intere."
+    examples:
+      "Mangio il pane intero.":
+        native: "I eat the whole bread."
+        bases:
+          "il": "the"
+          "intero": "whole"
+      "La pizza intera è buona.":
+        native: "The whole pizza is good."
+        bases:
+          "La": "the"
+          "intera": "whole"
+  "it-1804":
+    native: "quite a lot of"
+    notes:
+      "n1": "Feminine parecchia, masculine plural parecchi, feminine plural parecchie."
+    examples:
+      "Bevo parecchia acqua.":
+        native: "I drink quite a lot of water."
+        bases:
+          "parecchia": "quite a lot of"
+      "Leggo parecchi libri.":
+        native: "I read quite a few books."
+        bases:
+          "parecchi": "quite a few"
+  "it-1805":
+    native: "some; a few"
+    notes:
+      "n1": "Singular only and invariable: qualche libro means some book."
+    examples:
+      "Leggo qualche libro.":
+        native: "I read some books."
+        bases:
+          "qualche": "some"
+      "Scrivo qualche lettera.":
+        native: "I write some letters."
+        bases:
+          "qualche": "some"
+  "it-1806":
+    native: "different"
+    notes:
+      "n1": "Feminine diversa, masculine plural diversi, feminine plural diverse. Superlative diversissimo."
+    examples:
+      "La casa è diversa.":
+        native: "The house is different."
+        bases:
+          "La": "the"
+          "diversa": "different"
+      "Il caffè è diverso.":
+        native: "The coffee is different."
+        bases:
+          "Il": "the"
+          "diverso": "different"
+  "it-1807":
+    native: "kilo"
+    notes:
+      "n1": "Masculine noun. Plural chili."
+    examples:
+      "Compro un chilo di pane.":
+        native: "I buy a kilo of bread."
+        bases:
+          "un": "a"
+          "chilo": "kilo"
+          "di": "of"
+      "Compro due chili.":
+        native: "I buy two kilos."
+        bases:
+          "chili": "kilos"
+  "it-1808":
+    native: "litre"
+    notes:
+      "n1": "Masculine noun. Plural litri."
+    examples:
+      "Bevo un litro.":
+        native: "I drink a litre."
+        bases:
+          "un": "a"
+          "litro": "litre"
+      "Compro un litro di latte.":
+        native: "I buy a litre of milk."
+        bases:
+          "un": "a"
+          "litro": "litre"
+          "di": "of"
+  "it-1809":
+    native: "gram"
+    notes:
+      "n1": "Masculine noun. Plural grammi."
+    examples:
+      "Compro cento grammi di pane.":
+        native: "I buy a hundred grams of bread."
+        bases:
+          "grammi": "grams"
+          "di": "of"
+      "Il grammo è piccolo.":
+        native: "The gram is small."
+        bases:
+          "Il": "the"
+          "grammo": "gram"
+  "it-1810":
+    native: "piece"
+    notes:
+      "n1": "Masculine noun. Plural pezzi. The article is il: il pezzo, i pezzi."
+    examples:
+      "Mangio il pezzo di pizza.":
+        native: "I eat the piece of pizza."
+        bases:
+          "il": "the"
+          "pezzo": "piece"
+      "Il pezzo è piccolo.":
+        native: "The piece is small."
+        bases:
+          "Il": "the"
+          "pezzo": "piece"
+          "è": "is"
+  "it-1811":
+    native: "slice"
+    notes:
+      "n1": "Feminine noun. Plural fette."
+    examples:
+      "Vuoi una fetta di torta?":
+        native: "Do you want a slice of cake?"
+        bases:
+          "una": "a"
+          "fetta": "slice"
+          "di": "of"
+      "Mangio una fetta di pane.":
+        native: "I eat a slice of bread."
+        bases:
+          "una": "a"
+          "fetta": "slice"
+          "di": "of"
+  "it-1812":
+    native: "bottle"
+    notes:
+      "n1": "Feminine noun. Plural bottiglie."
+    examples:
+      "Compro una bottiglia di vino.":
+        native: "I buy a bottle of wine."
+        bases:
+          "una": "a"
+          "bottiglia": "bottle"
+          "di": "of"
+      "La bottiglia è grande.":
+        native: "The bottle is big."
+        bases:
+          "La": "the"
+          "bottiglia": "bottle"
+  "it-1813":
+    native: "glass"
+    notes:
+      "n1": "Masculine noun. Plural bicchieri."
+    examples:
+      "Bevo un bicchiere di vino.":
+        native: "I drink a glass of wine."
+        bases:
+          "un": "a"
+          "bicchiere": "glass"
+          "di": "of"
+      "Il bicchiere è grande.":
+        native: "The glass is big."
+        bases:
+          "Il": "the"
+          "bicchiere": "glass"
+  "it-1814":
+    native: "cup"
+    notes:
+      "n1": "Feminine noun. Plural tazze."
+    examples:
+      "Bevo una tazza di caffè.":
+        native: "I drink a cup of coffee."
+        bases:
+          "una": "a"
+          "tazza": "cup"
+          "di": "of"
+      "La tazza è piccola.":
+        native: "The cup is small."
+        bases:
+          "La": "the"
+          "tazza": "cup"
+  "it-1815":
+    native: "parcel; package"
+    notes:
+      "n1": "Masculine noun. Plural pacchi."
+    examples:
+      "Aspetto un pacco.":
+        native: "I wait for a parcel."
+        bases:
+          "un": "a"
+          "pacco": "parcel"
+      "Il pacco è grande.":
+        native: "The parcel is big."
+        bases:
+          "Il": "the"
+          "pacco": "parcel"
+  "it-1816":
+    native: "box"
+    notes:
+      "n1": "Feminine noun. Plural scatole."
+    examples:
+      "Compro una scatola di biscotti.":
+        native: "I buy a box of biscuits."
+        bases:
+          "una": "a"
+          "scatola": "box"
+          "di": "of"
+      "La scatola è vuota.":
+        native: "The box is empty."
+        bases:
+          "La": "the"
+          "scatola": "box"
+  "it-1817":
+    native: "couple"
+    notes:
+      "n1": "Feminine noun. Plural coppie."
+    examples:
+      "Marco e Anna sono una coppia.":
+        native: "Marco and Anna are a couple."
+        bases:
+          "Marco": "Marco"
+          "Anna": "Anna"
+          "una": "a"
+          "coppia": "couple"
+      "Siamo una coppia.":
+        native: "We are a couple."
+        bases:
+          "una": "a"
+          "coppia": "couple"
+  "it-1818":
+    native: "dozen"
+    notes:
+      "n1": "Feminine noun. Plural dozzine."
+    examples:
+      "Compro una dozzina di uova.":
+        native: "I buy a dozen eggs."
+        bases:
+          "una": "a"
+          "dozzina": "dozen"
+          "di": "of"
+      "Una dozzina è dodici.":
+        native: "A dozen is twelve."
+        bases:
+          "Una": "a"
+          "dozzina": "dozen"
+  "it-1819":
+    native: "extra"
+    notes:
+      "n1": "Invariable: extra does not change for gender or number."
+    examples:
+      "Voglio un caffè extra.":
+        native: "I want an extra coffee."
+        bases:
+          "un": "a"
+          "extra": "extra"
+      "Il pane extra è buono.":
+        native: "The extra bread is good."
+        bases:
+          "Il": "the"
+          "extra": "extra"
+  "it-1820":
+    native: "quantity"
+    notes:
+      "n1": "Feminine noun. It is invariable in the plural."
+    examples:
+      "Una grande quantità di acqua.":
+        native: "A large quantity of water."
+        bases:
+          "Una": "a"
+          "quantità": "quantity"
+          "di": "of"
+      "La quantità è piccola.":
+        native: "The quantity is small."
+        bases:
+          "La": "the"
+          "quantità": "quantity"

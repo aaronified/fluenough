@@ -1,0 +1,185 @@
+schema: 1
+id: "it-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "sound-differences"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-0400"
+    target: "pala"
+    ipa: "ˈpala"
+    pos: "noun"
+    gender: "f"
+    tags: ["double-consonants"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0401"
+    target: "caro"
+    ipa: "ˈkaro"
+    pos: "adj"
+    tags: ["double-consonants"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "it-0402", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0402"
+    target: "carro"
+    ipa: "ˈkarro"
+    pos: "noun"
+    gender: "m"
+    tags: ["double-consonants"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "it-0401", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0403"
+    target: "nono"
+    ipa: "ˈnɔno"
+    pos: "adj"
+    tags: ["double-consonants"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0405"
+    target: "sete"
+    ipa: "ˈsete"
+    pos: "noun"
+    gender: "f"
+    tags: ["double-consonants"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0406"
+    target: "ghiro"
+    ipa: "ˈɡiro"
+    pos: "noun"
+    gender: "m"
+    tags: ["soft-hard-g"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0407"
+    target: "giro"
+    ipa: "ˈdʒiro"
+    pos: "noun"
+    gender: "m"
+    tags: ["soft-hard-g"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0408"
+    target: "caramella"
+    ipa: "karaˈmɛlla"
+    pos: "noun"
+    gender: "f"
+    tags: ["soft-hard-c"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0409"
+    target: "cima"
+    ipa: "ˈtʃima"
+    pos: "noun"
+    gender: "f"
+    tags: ["soft-hard-c"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0410"
+    target: "scena"
+    ipa: "ˈʃɛna"
+    pos: "noun"
+    gender: "f"
+    tags: ["sc"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0411"
+    target: "scherzo"
+    ipa: "ˈskɛrtso"
+    pos: "noun"
+    gender: "m"
+    tags: ["sc"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0412"
+    target: "sogno"
+    ipa: "ˈsoɲɲo"
+    pos: "noun"
+    gender: "m"
+    tags: ["gn"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0413"
+    target: "gnocco"
+    ipa: "ˈɲɔkko"
+    pos: "noun"
+    gender: "m"
+    tags: ["gn"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0414"
+    target: "foglia"
+    ipa: "ˈfɔʎʎa"
+    pos: "noun"
+    gender: "f"
+    tags: ["gli"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0415"
+    target: "luglio"
+    ipa: "ˈluʎʎo"
+    pos: "noun"
+    gender: "m"
+    tags: ["gli"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0416"
+    target: "ha"
+    ipa: "a"
+    pos: "verb"
+    tags: ["silent-h"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: [{ word: "ha", base: "avere" }]
+  - id: "it-0417"
+    target: "a"
+    ipa: "a"
+    pos: "other"
+    tags: ["silent-h"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0418"
+    target: "zampa"
+    ipa: "ˈtsampa"
+    pos: "noun"
+    gender: "f"
+    tags: ["z"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0419"
+    target: "zebra"
+    ipa: "ˈdzɛbra"
+    pos: "noun"
+    gender: "f"
+    tags: ["z"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"
+  - id: "it-0420"
+    target: "zanzara"
+    ipa: "dzanˈdzara"
+    pos: "noun"
+    gender: "f"
+    tags: ["z"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Italian_orthography" }
+    bases: "self"

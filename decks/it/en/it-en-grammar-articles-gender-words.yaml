@@ -1,0 +1,147 @@
+schema: 1
+id: "it-en-grammar-articles-gender-words"
+kind: "layer"
+core: "it-grammar-articles-gender-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns for the articles"
+license: "CC-BY-SA-4.0"
+description: "Nine nouns that show the articles lo, l', gli and un': friend, tree, man, idea, zoo, psychologist and student. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-0500":
+    native: "friend (man)"
+    notes:
+      "n1": "Masculine. The plural is amici and the feminine is amica."
+      "n2": "The article is l' before the vowel: l'amico, gli amici, and un amico."
+    examples:
+      "Questo è un amico.":
+        native: "This is a friend."
+        bases:
+          "un": "a"
+          "amico": "friend"
+      "L'amico è qui.":
+        native: "The friend is here."
+        bases:
+          "L'amico": "friend (with l', the)"
+  "it-0501":
+    native: "friend (woman)"
+    notes:
+      "n1": "Feminine. The plural is amiche and the masculine is amico."
+      "n2": "The article is l' before the vowel: l'amica, le amiche, and un'amica."
+    examples:
+      "Questa è un'amica.":
+        native: "This is a friend."
+        bases:
+          "un'amica": "a friend (with un', a)"
+      "L'amica è qui.":
+        native: "The friend is here."
+        bases:
+          "L'amica": "friend (with l', the)"
+  "it-0502":
+    native: "tree"
+    notes:
+      "n1": "Masculine. The plural is alberi."
+      "n2": "The article is l' before the vowel: l'albero, gli alberi, un albero."
+    examples:
+      "Questo è un albero.":
+        native: "This is a tree."
+        bases:
+          "un": "a"
+          "albero": "tree"
+      "L'albero è qui.":
+        native: "The tree is here."
+        bases:
+          "L'albero": "tree (with l', the)"
+  "it-0503":
+    native: "man; person"
+    notes:
+      "n1": "Masculine. The plural is irregular: uomini."
+      "n2": "The article is l' before the vowel: l'uomo, and gli uomini in the plural."
+    examples:
+      "Questo è un uomo.":
+        native: "This is a man."
+        bases:
+          "un": "a"
+          "uomo": "man"
+      "Gli uomini sono qui.":
+        native: "The men are here."
+        bases:
+          "Gli": "the"
+          "uomini": "man"
+  "it-0504":
+    native: "idea"
+    notes:
+      "n1": "Feminine. The plural is idee."
+      "n2": "Before the vowel the articles are l'idea and un'idea, with an apostrophe."
+    examples:
+      "Ho un'idea.":
+        native: "I have an idea."
+        bases:
+          "un'idea": "an idea (with un', a)"
+      "Questa è un'idea.":
+        native: "This is an idea."
+        bases:
+          "un'idea": "an idea (with un', a)"
+  "it-0505":
+    native: "zoo"
+    notes:
+      "n1": "Masculine. It does not change in the plural: gli zoo."
+      "n2": "It takes lo and uno, as the z does: lo zoo, uno zoo."
+    examples:
+      "Questo è uno zoo.":
+        native: "This is a zoo."
+        bases:
+          "uno": "a"
+          "zoo": "zoo"
+      "Lo zoo è qui.":
+        native: "The zoo is here."
+        bases:
+          "Lo": "the"
+          "zoo": "zoo"
+  "it-0506":
+    native: "psychologist"
+    notes:
+      "n1": "Masculine. The plural is psicologi and the feminine is psicologa."
+      "n2": "It takes lo and uno, as ps does: lo psicologo, uno psicologo."
+    examples:
+      "Questo è uno psicologo.":
+        native: "This is a psychologist."
+        bases:
+          "uno": "a"
+          "psicologo": "psychologist"
+      "Lo psicologo è qui.":
+        native: "The psychologist is here."
+        bases:
+          "Lo": "the"
+          "psicologo": "psychologist"
+  "it-0507":
+    native: "student (man or boy)"
+    notes:
+      "n1": "Masculine. The plural is studenti and the feminine is studentessa."
+      "n2": "It takes lo and uno, as s plus a consonant does: lo studente, uno studente, gli studenti."
+    examples:
+      "Questo è uno studente.":
+        native: "This is a student."
+        bases:
+          "uno": "a"
+          "studente": "student"
+      "Gli studenti sono qui.":
+        native: "The students are here."
+        bases:
+          "Gli": "the"
+          "studenti": "student"
+  "it-0508":
+    native: "student (woman or girl)"
+    notes:
+      "n1": "Feminine. The plural is studentesse. It is the feminine of studente."
+      "n2": "The article is la before the consonant: la studentessa, le studentesse, una studentessa."
+    examples:
+      "Questa è una studentessa.":
+        native: "This is a student."
+        bases:
+          "una": "a"
+          "studentessa": "student"
+      "La studentessa è qui.":
+        native: "The student is here."
+        bases:
+          "La": "the"
+          "studentessa": "student"

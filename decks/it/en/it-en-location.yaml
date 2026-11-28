@@ -1,0 +1,280 @@
+schema: 1
+id: "it-en-location"
+kind: "layer"
+core: "it-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places and position"
+license: "CC-BY-SA-4.0"
+description: "Where things are: the small words for in, on, between, next to, against and near, and the places of a town: the centre, the town, the country, the street, the square and the palace. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-2000":
+    native: "in; into"
+    notes:
+      "n1": "Wiktionary lists its senses as in, to, into, by and on, and as a way or manner of doing something. This card teaches the basic sense: in."
+    examples:
+      "Ho un sacchetto in borsa.":
+        native: "I have a small bag in the handbag."
+        bases:
+          "Ho": "have"
+          "un": "a"
+          "in": "in; into"
+      "Lo scontrino è in borsa.":
+        native: "The receipt is in the handbag."
+        bases:
+          "Lo": "the"
+          "è": "is"
+          "in": "in; into"
+  "it-2001":
+    native: "on; upon"
+    notes:
+      "n1": "Wiktionary lists su as an adverb (up, upstairs) and as a preposition (on, upon, onto, over). This card is the preposition. The examples show it with an article."
+    examples:
+      "Il sacchetto è sul carrello.":
+        native: "The small bag is on the trolley."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "sul": "on the"
+      "Lo scontrino è sulla borsa.":
+        native: "The receipt is on the handbag."
+        bases:
+          "Lo": "the"
+          "è": "is"
+          "sulla": "on the"
+  "it-2002":
+    native: "between; among"
+    notes:
+      "n1": "Wiktionary gives between and among, and for time the sense in, as in tra due settimane, in two weeks."
+    examples:
+      "Il sacchetto è tra la borsa e un carrello.":
+        native: "The small bag is between the handbag and a trolley."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "tra": "between; among"
+          "la": "the"
+          "un": "a"
+      "Il carrello è tra lo scontrino e l'euro.":
+        native: "The trolley is between the receipt and the euro."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "tra": "between; among"
+          "lo": "the"
+  "it-2003":
+    native: "between; among"
+    notes:
+      "n1": "Its senses on Wiktionary match tra: between, among, and in for time. Both words are in use with the same meaning."
+    examples:
+      "Il sacchetto è fra la borsa e un carrello.":
+        native: "The small bag is between the handbag and a trolley."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "fra": "between; among"
+          "la": "the"
+          "un": "a"
+      "Il resto è fra lo scontrino e l'euro.":
+        native: "The change is between the receipt and the euro."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "fra": "between; among"
+          "lo": "the"
+  "it-2004":
+    native: "nearby; next door"
+    notes:
+      "n1": "An adverb: nearby, next door. Wiktionary also lists it as a preposition, beside or next to."
+    examples:
+      "Il negozio è qui accanto.":
+        native: "The shop is right here, next door."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "accanto": "nearby; next door"
+      "Il carrello è lì accanto.":
+        native: "The trolley is over there, nearby."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "accanto": "nearby; next door"
+  "it-2005":
+    native: "against"
+    notes:
+      "n1": "Wiktionary lists contro as a preposition and as an adverb, both meaning against."
+    examples:
+      "Il sacchetto è contro la borsa.":
+        native: "The small bag is against the handbag."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "contro": "against"
+          "la": "the"
+      "Lo scontrino è contro il negozio.":
+        native: "The receipt is against the shop."
+        bases:
+          "Lo": "the"
+          "è": "is"
+          "contro": "against"
+          "il": "the"
+  "it-2006":
+    native: "nearby; near"
+    notes:
+      "n1": "Wiktionary lists presso as an adverb (nearby, near, close) and as a preposition (near, beside, at)."
+    examples:
+      "Il negozio è qui presso.":
+        native: "The shop is near here."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "presso": "nearby; near"
+      "Lo scontrino è presso il negozio.":
+        native: "The receipt is near the shop."
+        bases:
+          "Lo": "the"
+          "è": "is"
+          "presso": "nearby; near"
+          "il": "the"
+  "it-2007":
+    native: "centre; middle"
+    notes:
+      "n1": "Masculine. The plural is centri. Wiktionary also gives middle and core."
+    examples:
+      "Il negozio è in centro.":
+        native: "The shop is in the centre."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "centro": "centre; middle"
+      "Questo è il centro.":
+        native: "This is the centre."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "centro": "centre; middle"
+  "it-2008":
+    native: "town; city"
+    notes:
+      "n1": "Feminine and invariable: the plural is also città."
+    examples:
+      "Questa è la città.":
+        native: "This is the town."
+        bases:
+          "Questa": "this"
+          "è": "is"
+          "la": "the"
+          "città": "town; city"
+      "Il negozio è in città.":
+        native: "The shop is in town."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "città": "town; city"
+  "it-2009":
+    native: "country; village"
+    notes:
+      "n1": "Masculine. The plural is paesi. Wiktionary gives country (nation), and also village and town."
+    examples:
+      "Questo è il paese.":
+        native: "This is the country."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "paese": "country; village"
+      "Il negozio è in paese.":
+        native: "The shop is in the village."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "paese": "country; village"
+  "it-2010":
+    native: "street; way"
+    notes:
+      "n1": "Feminine. The plural is vie. Wiktionary gives street and path, and also way, route and means."
+    examples:
+      "Questa è la via.":
+        native: "This is the street."
+        bases:
+          "Questa": "this"
+          "è": "is"
+          "la": "the"
+          "via": "street; way"
+      "Dov'è la via?":
+        native: "Where is the street?"
+        bases:
+          "Dov'è": "where is"
+          "la": "the"
+          "via": "street; way"
+  "it-2011":
+    native: "square"
+    notes:
+      "n1": "Feminine. The plural is piazze. Wiktionary also gives market and space."
+    examples:
+      "Questa è la piazza.":
+        native: "This is the square."
+        bases:
+          "Questa": "this"
+          "è": "is"
+          "la": "the"
+          "piazza": "square"
+      "Il negozio è in piazza.":
+        native: "The shop is in the square."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "piazza": "square"
+  "it-2012":
+    native: "road; street"
+    notes:
+      "n1": "Feminine. The plural is strade. Wiktionary also gives way and conduct."
+    examples:
+      "Questa è la strada.":
+        native: "This is the road."
+        bases:
+          "Questa": "this"
+          "è": "is"
+          "la": "the"
+          "strada": "road; street"
+      "Il carrello è in strada.":
+        native: "The trolley is in the street."
+        bases:
+          "Il": "the"
+          "è": "is"
+          "strada": "road; street"
+  "it-2013":
+    native: "palace; large building"
+    notes:
+      "n1": "Masculine. The plural is palazzi. Wiktionary gives a royal palace first, and a large urban building as well."
+    examples:
+      "Questo è il palazzo.":
+        native: "This is the palace."
+        bases:
+          "Questo": "this"
+          "è": "is"
+          "il": "the"
+          "palazzo": "palace; large building"
+      "Il palazzo è vicino.":
+        native: "The building is nearby."
+        bases:
+          "Il": "the"
+          "palazzo": "palace; large building"
+          "è": "is"
+  "it-2014":
+    native: "toward; in the direction of"
+    notes:
+      "n1": "A preposition, so it has no gender or plural. Wiktionary's example is vieni verso di me, come to me."
+    examples:
+      "Vado verso la piazza.":
+        native: "I go toward the square."
+        bases:
+          "Vado": "I go"
+          "verso": "toward"
+          "la": "the"
+      "Vieni verso di me.":
+        native: "Come toward me."
+        bases:
+          "Vieni": "come"
+          "verso": "toward"
+          "di": "to"

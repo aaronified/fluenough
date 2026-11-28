@@ -1,0 +1,92 @@
+schema: 1
+id: "it-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1580"
+    target: "nome"
+    ipa: "ˈnome"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Qual è il tuo nome?", ipa: "kwal ɛ il ˈtuo ˈnome", bases: [{ word: "Qual", ref: "it-1308" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "tuo", ref: "it-1378" }, { word: "nome", base: "nome" }] }
+      - { target: "Il mio nome è Luca.", ipa: "il ˈmio ˈnome ɛ ˈluka", bases: [{ word: "Il", base: "il" }, { word: "mio", ref: "it-1377" }, { word: "nome", base: "nome" }, { word: "è", base: "essere" }, { word: "Luca", base: "Luca" }] }
+  - id: "it-1581"
+    target: "cognome"
+    ipa: "koɲˈɲome"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Il mio cognome è Rossi.", ipa: "il ˈmio koɲˈɲome ɛ ˈrossi", bases: [{ word: "Il", base: "il" }, { word: "mio", ref: "it-1377" }, { word: "cognome", base: "cognome" }, { word: "è", base: "essere" }, { word: "Rossi", base: "Rossi" }] }
+      - { target: "Qual è il tuo cognome?", ipa: "kwal ɛ il ˈtuo koɲˈɲome", bases: [{ word: "Qual", ref: "it-1308" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "tuo", ref: "it-1378" }, { word: "cognome", base: "cognome" }] }
+  - id: "it-1582"
+    target: "età"
+    ipa: "eˈta"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Qual è la tua età?", ipa: "kwal ɛ la ˈtua eˈta", bases: [{ word: "Qual", ref: "it-1308" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "tua", ref: "it-1378" }, { word: "età", base: "età" }] }
+      - { target: "Ho venti anni.", ipa: "ɔ ˈvɛnti ˈanni", bases: [{ word: "Ho", base: "avere" }, { word: "venti", ref: "it-1529" }, { word: "anni", base: "anno" }] }
+  - id: "it-1583"
+    target: "abitare"
+    ipa: "abiˈtare"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "pair", ref: "it-1584" }]
+    bases: "self"
+    examples:
+      - { target: "Abito qui.", ipa: "ˈabito kwi", bases: [{ word: "Abito", base: "abitare" }, { word: "qui", ref: "it-1725" }] }
+      - { target: "Abito bene qui.", ipa: "ˈabito ˈbɛne kwi", bases: [{ word: "Abito", base: "abitare" }, { word: "bene", ref: "it-1736" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-1584"
+    target: "vivere"
+    ipa: "ˈvivere"
+    pos: "verb"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "pair", ref: "it-1583" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Vivo qui.", ipa: "ˈvivo kwi", bases: [{ word: "Vivo", base: "vivere" }, { word: "qui", ref: "it-1725" }] }
+      - { target: "Vivo bene.", ipa: "ˈvivo ˈbɛne", bases: [{ word: "Vivo", base: "vivere" }, { word: "bene", ref: "it-1736" }] }
+  - id: "it-1585"
+    target: "italiano"
+    ipa: "itaˈljano"
+    pos: "adj"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Sono italiano.", ipa: "ˈsono itaˈljano", bases: [{ word: "Sono", base: "essere" }, { word: "italiano", base: "italiano" }] }
+      - { target: "Lei è italiana.", ipa: "lɛj ɛ itaˈljana", bases: [{ word: "Lei", ref: "it-1371" }, { word: "è", base: "essere" }, { word: "italiana", base: "italiano" }] }
+  - id: "it-1586"
+    target: "sposato"
+    ipa: "spoˈzato"
+    pos: "adj"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Sono sposato.", ipa: "ˈsono spoˈzato", bases: [{ word: "Sono", base: "essere" }, { word: "sposato", base: "sposato" }] }
+      - { target: "Lei è sposata.", ipa: "lɛj ɛ spoˈzata", bases: [{ word: "Lei", ref: "it-1371" }, { word: "è", base: "essere" }, { word: "sposata", base: "sposato" }] }
+  - id: "it-1587"
+    target: "nato"
+    ipa: "ˈnato"
+    pos: "adj"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Sono nato qui.", ipa: "ˈsono ˈnato kwi", bases: [{ word: "Sono", base: "essere" }, { word: "nato", base: "nato" }, { word: "qui", ref: "it-1725" }] }
+      - { target: "Lei è nata qui.", ipa: "lɛj ɛ ˈnata kwi", bases: [{ word: "Lei", ref: "it-1371" }, { word: "è", base: "essere" }, { word: "nata", base: "nato" }, { word: "qui", ref: "it-1725" }] }

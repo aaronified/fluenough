@@ -1,0 +1,202 @@
+schema: 1
+id: "it-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1370"
+    target: "lui"
+    ipa: "ˈlui"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Lui parla.", ipa: "ˈlui ˈparla", bases: [{ word: "Lui", base: "lui" }, { word: "parla", ref: "it-1658" }] }
+      - { target: "Lui è qui.", ipa: "ˈlui ɛ kwi", bases: [{ word: "Lui", base: "lui" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-1371"
+    target: "lei"
+    ipa: "lɛj"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Lei parla.", ipa: "lɛj ˈparla", bases: [{ word: "Lei", base: "lei" }, { word: "parla", ref: "it-1658" }] }
+      - { target: "Lei è qui.", ipa: "lɛj ɛ kwi", bases: [{ word: "Lei", base: "lei" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-1372"
+    target: "noi"
+    ipa: "noj"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Noi parliamo.", ipa: "noj parˈljamo", bases: [{ word: "Noi", base: "noi" }, { word: "parliamo", ref: "it-1658" }] }
+      - { target: "Noi siamo qui.", ipa: "noj ˈsjamo kwi", bases: [{ word: "Noi", base: "noi" }, { word: "siamo", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-1373"
+    target: "voi"
+    ipa: "voj"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Voi parlate.", ipa: "voj parˈlate", bases: [{ word: "Voi", base: "voi" }, { word: "parlate", ref: "it-1658" }] }
+      - { target: "Voi siete qui.", ipa: "voj ˈsjɛte kwi", bases: [{ word: "Voi", base: "voi" }, { word: "siete", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-1374"
+    target: "loro"
+    ipa: "ˈloro"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Loro parlano.", ipa: "ˈloro ˈparlano", bases: [{ word: "Loro", base: "loro" }, { word: "parlano", ref: "it-1658" }] }
+      - { target: "Loro sono qui.", ipa: "ˈloro ˈsono kwi", bases: [{ word: "Loro", base: "loro" }, { word: "sono", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-1375"
+    target: "me"
+    ipa: "me"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Chiami me?", ipa: "ˈkjami me", bases: [{ word: "Chiami", ref: "it-1684" }, { word: "me", base: "me" }] }
+      - { target: "Capisci me?", ipa: "kaˈpiʃʃi me", bases: [{ word: "Capisci", ref: "it-1659" }, { word: "me", base: "me" }] }
+  - id: "it-1376"
+    target: "te"
+    ipa: "te"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Chiamo te.", ipa: "ˈkjamo te", bases: [{ word: "Chiamo", ref: "it-1684" }, { word: "te", base: "te" }] }
+      - { target: "Aspetto te.", ipa: "asˈpɛtto te", bases: [{ word: "Aspetto", ref: "it-1683" }, { word: "te", base: "te" }] }
+  - id: "it-1377"
+    target: "mio"
+    ipa: "ˈmio"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è mio.", ipa: "ˈkwesto ɛ ˈmio", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", base: "mio" }] }
+      - { target: "Quello è mio.", ipa: "ˈkwello ɛ ˈmio", bases: [{ word: "Quello", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "mio", base: "mio" }] }
+  - id: "it-1378"
+    target: "tuo"
+    ipa: "ˈtuo"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è tuo.", ipa: "ˈkwesto ɛ ˈtuo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "tuo", base: "tuo" }] }
+      - { target: "Quella è tua.", ipa: "ˈkwella ɛ ˈtua", bases: [{ word: "Quella", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "tua", base: "tuo" }] }
+  - id: "it-1379"
+    target: "suo"
+    ipa: "ˈsuo"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è suo.", ipa: "ˈkwesto ɛ ˈsuo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "suo", base: "suo" }] }
+      - { target: "Quello è suo.", ipa: "ˈkwello ɛ ˈsuo", bases: [{ word: "Quello", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "suo", base: "suo" }] }
+  - id: "it-1380"
+    target: "nostro"
+    ipa: "ˈnɔstro"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è nostra.", ipa: "ˈkwesta ɛ ˈnɔstra", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "nostra", base: "nostro" }] }
+      - { target: "Quelli sono nostri.", ipa: "ˈkwelli ˈsono ˈnɔstri", bases: [{ word: "Quelli", ref: "it-1383" }, { word: "sono", base: "essere" }, { word: "nostri", base: "nostro" }] }
+  - id: "it-1381"
+    target: "vostro"
+    ipa: "ˈvɔstro"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è vostro.", ipa: "ˈkwesto ɛ ˈvɔstro", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "vostro", base: "vostro" }] }
+      - { target: "Quella è vostra.", ipa: "ˈkwella ɛ ˈvɔstra", bases: [{ word: "Quella", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "vostra", base: "vostro" }] }
+  - id: "it-1382"
+    target: "questo"
+    ipa: "ˈkwesto"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è buono.", ipa: "ˈkwesto ɛ ˈbwɔno", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+      - { target: "Questa è acqua.", ipa: "ˈkwesta ɛ ˈakkwa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "acqua", ref: "it-0010" }] }
+  - id: "it-1383"
+    target: "quello"
+    ipa: "ˈkwello"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Quello è buono.", ipa: "ˈkwello ɛ ˈbwɔno", bases: [{ word: "Quello", base: "quello" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+      - { target: "Quelli sono buoni.", ipa: "ˈkwelli ˈsono ˈbwɔni", bases: [{ word: "Quelli", base: "quello" }, { word: "sono", base: "essere" }, { word: "buoni", ref: "it-0008" }] }
+  - id: "it-1384"
+    target: "qualcuno"
+    ipa: "kwalˈkuno"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Qualcuno parla.", ipa: "kwalˈkuno ˈparla", bases: [{ word: "Qualcuno", base: "qualcuno" }, { word: "parla", ref: "it-1658" }] }
+      - { target: "Vedo qualcuno.", ipa: "ˈvedo kwalˈkuno", bases: [{ word: "Vedo", ref: "it-1656" }, { word: "qualcuno", base: "qualcuno" }] }
+  - id: "it-1385"
+    target: "nessuno"
+    ipa: "nesˈsuno"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Nessuno parla.", ipa: "nesˈsuno ˈparla", bases: [{ word: "Nessuno", base: "nessuno" }, { word: "parla", ref: "it-1658" }] }
+      - { target: "Non vedo nessuno.", ipa: "non ˈvedo nesˈsuno", bases: [{ word: "Non", base: "non" }, { word: "vedo", ref: "it-1656" }, { word: "nessuno", base: "nessuno" }] }
+  - id: "it-1386"
+    target: "niente"
+    ipa: "ˈnjɛnte"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Non voglio niente.", ipa: "non ˈvɔʎʎo ˈnjɛnte", bases: [{ word: "Non", base: "non" }, { word: "voglio", ref: "it-1670" }, { word: "niente", base: "niente" }] }
+      - { target: "Non capisco niente.", ipa: "non kaˈpisko ˈnjɛnte", bases: [{ word: "Non", base: "non" }, { word: "capisco", ref: "it-1659" }, { word: "niente", base: "niente" }] }
+  - id: "it-1387"
+    target: "altro"
+    ipa: "ˈaltro"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Voglio altro.", ipa: "ˈvɔʎʎo ˈaltro", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "altro", base: "altro" }] }
+      - { target: "Altri parlano.", ipa: "ˈaltri ˈparlano", bases: [{ word: "Altri", base: "altro" }, { word: "parlano", ref: "it-1658" }] }
+  - id: "it-1388"
+    target: "qualcosa"
+    ipa: "kwalˈkɔza"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Voglio qualcosa.", ipa: "ˈvɔʎʎo kwalˈkɔza", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "qualcosa", base: "qualcosa" }] }
+      - { target: "Dico qualcosa.", ipa: "ˈdiko kwalˈkɔza", bases: [{ word: "Dico", ref: "it-1653" }, { word: "qualcosa", base: "qualcosa" }] }
+  - id: "it-1389"
+    kind: "set"
+    members: [{ ref: "it-0003" }, { ref: "it-0004" }, { ref: "it-1370" }, { ref: "it-1371" }, { ref: "it-1372" }, { ref: "it-1373" }, { ref: "it-1374" }]

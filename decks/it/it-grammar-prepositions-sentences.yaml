@@ -1,0 +1,168 @@
+schema: 1
+id: "it-grammar-prepositions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "it-4350"
+    target: "A domani!"
+    ipa: "a doˈmani"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/a" }
+    bases: [{ word: "A", ref: "it-0417" }, { word: "domani", ref: "it-1931" }]
+  - id: "it-4351"
+    target: "A dopo!"
+    ipa: "a ˈdɔpo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/a" }
+    bases: [{ word: "A", ref: "it-0417" }, { word: "dopo", ref: "it-1749" }]
+  - id: "it-4352"
+    target: "Vado a scuola in autobus."
+    ipa: "ˈvado a ˈskwɔla in awˈtobus"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/in" }
+    bases: [{ word: "Vado", ref: "it-1651" }, { word: "a", ref: "it-0417" }, { word: "scuola", ref: "it-2704" }, { word: "in", ref: "it-2000" }, { word: "autobus", ref: "it-2561" }]
+  - id: "it-4353"
+    target: "Vuoi dell'acqua?"
+    ipa: "vwɔj delˈlakkwa"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/di" }
+    bases: [{ word: "Vuoi", ref: "it-1670" }, { word: "dell'acqua", ref: "it-0010" }]
+  - id: "it-4354"
+    target: "Il libro è sulla tavola."
+    ipa: "il ˈlibro ɛ ˈsulla taˈvola"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/su" }
+    bases: [{ word: "Il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "è", ref: "it-0600" }, { word: "sulla", ref: "it-2001" }, { word: "tavola", ref: "it-2332" }]
+  - id: "it-4355"
+    target: "Ho qualcosa in tasca."
+    ipa: "ɔ kwalˈkoza in ˈtaska"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/in" }
+    bases: [{ word: "Ho", ref: "it-0800" }, { word: "qualcosa", ref: "it-1388" }, { word: "in", ref: "it-2000" }, { word: "tasca", base: "tasca" }]
+  - id: "it-4356"
+    target: "tra due settimane"
+    ipa: "tra ˈdue settiˈmane"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/tra" }
+    bases: [{ word: "tra", ref: "it-2002" }, { word: "due", ref: "it-1511" }, { word: "settimane", ref: "it-1942" }]
+  - id: "it-4357"
+    target: "la coda del cane"
+    ipa: "la ˈkoda del ˈkane"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/di" }
+    bases: [{ word: "la", base: "la" }, { word: "coda", base: "coda" }, { word: "del", ref: "it-0850" }, { word: "cane", ref: "it-2980" }]
+  - id: "it-4358"
+    target: "La casa dello zio."
+    ipa: "la ˈkaza ˈdɛllo ˈtsio"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "La", base: "la" }, { word: "casa", ref: "it-2840" }, { word: "dello", ref: "it-0850" }, { word: "zio", ref: "it-1450" }]
+  - id: "it-4359"
+    target: "La borsa della mamma."
+    ipa: "la ˈborsa ˈdɛlla ˈmamma"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "della", ref: "it-0850" }, { word: "mamma", ref: "it-1442" }]
+  - id: "it-4360"
+    target: "La casa dell'amico."
+    ipa: "la ˈkaza dellaˈmiko"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "La", base: "la" }, { word: "casa", ref: "it-2840" }, { word: "dell'amico", ref: "it-0500" }]
+  - id: "it-4361"
+    target: "Vado dal dottore."
+    ipa: "ˈvado dal dotˈtore"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Vado", ref: "it-1651" }, { word: "dal", ref: "it-0851" }, { word: "dottore", ref: "it-2155" }]
+  - id: "it-4362"
+    target: "Vado al supermercato."
+    ipa: "ˈvado al supermerˈkato"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Vado", ref: "it-1651" }, { word: "al", ref: "it-0417" }, { word: "supermercato", ref: "it-2350" }]
+  - id: "it-4363"
+    target: "Vado alla stazione."
+    ipa: "ˈvado ˈalla statˈtsjone"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Vado", ref: "it-1651" }, { word: "alla", ref: "it-0417" }, { word: "stazione", ref: "it-2746" }]
+  - id: "it-4364"
+    target: "Siamo allo zoo."
+    ipa: "ˈsjamo ˈallo ˈtsoo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Siamo", ref: "it-0600" }, { word: "allo", ref: "it-0417" }, { word: "zoo", ref: "it-0505" }]
+  - id: "it-4365"
+    target: "Sono nel negozio."
+    ipa: "ˈsono nel neˈɡottsjo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Sono", ref: "it-0600" }, { word: "nel", ref: "it-2000" }, { word: "negozio", ref: "it-2351" }]
+  - id: "it-4366"
+    target: "Il caffè è nella tazza."
+    ipa: "il kafˈfɛ ɛ ˈnɛlla ˈtattsa"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Il", base: "il" }, { word: "caffè", ref: "it-2321" }, { word: "è", ref: "it-0600" }, { word: "nella", ref: "it-2000" }, { word: "tazza", ref: "it-1814" }]
+  - id: "it-4367"
+    target: "Il libro è sul tavolo."
+    ipa: "il ˈlibro ɛ sul ˈtavolo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "è", ref: "it-0600" }, { word: "sul", ref: "it-2001" }, { word: "tavolo", ref: "it-2848" }]
+  - id: "it-4368"
+    target: "Il libro è sullo scaffale."
+    ipa: "il ˈlibro ɛ ˈsullo skafˈfale"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "è", ref: "it-0600" }, { word: "sullo", ref: "it-2001" }, { word: "scaffale", ref: "it-2362" }]
+  - id: "it-4369"
+    target: "Mangiamo con gli amici."
+    ipa: "manˈdʒamo kon ʎi aˈmitʃi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Mangiamo", ref: "it-1660" }, { word: "con", ref: "it-0852" }, { word: "gli", base: "lo" }, { word: "amici", ref: "it-0500" }]

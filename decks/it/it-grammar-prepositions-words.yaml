@@ -1,0 +1,56 @@
+schema: 1
+id: "it-grammar-prepositions-words"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "it-0850"
+    target: "di"
+    ipa: "di"
+    pos: "other"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/di" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/di" }
+    bases: "self"
+    examples:
+      - { target: "Lei è di Roma.", ipa: "lɛj ɛ di ˈrɔma", bases: [{ word: "Lei", ref: "it-1371" }, { word: "è", ref: "it-0600" }, { word: "di", base: "di" }, { word: "Roma", base: "Roma" }] }
+      - { target: "La casa di Marco.", ipa: "la ˈkaza di ˈmarko", bases: [{ word: "La", base: "la" }, { word: "casa", ref: "it-2840" }, { word: "di", base: "di" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-0851"
+    target: "da"
+    ipa: "da"
+    pos: "other"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/da" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/da" }
+    bases: "self"
+    examples:
+      - { target: "Vado da Marco.", ipa: "ˈvado da ˈmarko", bases: [{ word: "Vado", ref: "it-1651" }, { word: "da", base: "da" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Vengo dalla scuola.", ipa: "ˈvenɡo ˈdalla ˈskwɔla", bases: [{ word: "Vengo", ref: "it-1652" }, { word: "dalla", base: "da" }, { word: "scuola", ref: "it-2704" }] }
+  - id: "it-0852"
+    target: "con"
+    ipa: "kon"
+    pos: "other"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/con" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/con" }
+    bases: "self"
+    examples:
+      - { target: "Parlo con la mamma.", ipa: "ˈparlo kon la ˈmamma", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "mamma", ref: "it-1442" }] }
+      - { target: "Vado con Marco.", ipa: "ˈvado kon ˈmarko", bases: [{ word: "Vado", ref: "it-1651" }, { word: "con", base: "con" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-0853"
+    target: "per"
+    ipa: "per"
+    pos: "other"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/per" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/per" }
+    bases: "self"
+    examples:
+      - { target: "Questo è per te.", ipa: "ˈkwesto ɛ per te", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "per", base: "per" }, { word: "te", ref: "it-1376" }] }
+      - { target: "Vado a casa per dormire.", ipa: "ˈvado a ˈkaza per dorˈmire", bases: [{ word: "Vado", ref: "it-1651" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }, { word: "per", base: "per" }, { word: "dormire", ref: "it-1679" }] }

@@ -1,0 +1,512 @@
+schema: 1
+id: "it-en-adverbs"
+kind: "layer"
+core: "it-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs"
+license: "CC-BY-SA-4.0"
+description: "Common adverbs of time, place, manner and degree: always and never, here and there, inside and outside, well and badly, soon and late, then and before. Adverbs do not change for gender or number. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-1720":
+    native: "always"
+    notes:
+      "n1": "Means always."
+    examples:
+      "Tu parli sempre italiano.":
+        native: "You always speak Italian."
+        bases:
+          "sempre": "always"
+      "Sono sempre qui.":
+        native: "I am always here."
+        bases:
+          "sempre": "always"
+  "it-1721":
+    native: "never"
+    notes:
+      "n1": "Means never."
+    examples:
+      "Non capisco mai.":
+        native: "I never understand."
+        bases:
+          "Non": "not"
+          "mai": "never"
+      "Non sono mai stanco.":
+        native: "I am never tired."
+        bases:
+          "Non": "not"
+          "mai": "never"
+  "it-1722":
+    native: "often"
+    notes:
+      "n1": "Means often."
+    examples:
+      "Io bevo spesso il caffè.":
+        native: "I often drink coffee."
+        bases:
+          "spesso": "often"
+          "il": "the"
+      "Leggo spesso.":
+        native: "I often read."
+        bases:
+          "spesso": "often"
+  "it-1723":
+    native: "already; yet"
+    notes:
+      "n1": "Means already, and yet in some questions."
+    examples:
+      "Sei già qui?":
+        native: "Are you already here?"
+        bases:
+          "già": "already"
+      "Sono già a casa.":
+        native: "I am already at home."
+        bases:
+          "già": "already"
+  "it-1724":
+    native: "still"
+    notes:
+      "n1": "Means still."
+    examples:
+      "Parlo ancora.":
+        native: "I still speak."
+        bases:
+          "ancora": "still"
+      "Non capisco ancora.":
+        native: "I still don't understand."
+        bases:
+          "Non": "not"
+          "ancora": "still"
+  "it-1725":
+    native: "here"
+    notes:
+      "n1": "Means here."
+    examples:
+      "Io sono qui.":
+        native: "I am here."
+        bases:
+          "qui": "here"
+      "Vieni qui?":
+        native: "Are you coming here?"
+        bases:
+          "qui": "here"
+  "it-1726":
+    native: "there; in that place"
+    notes:
+      "n1": "Means there, in that place."
+    examples:
+      "Il libro è lì.":
+        native: "The book is there."
+        bases:
+          "Il": "the"
+          "lì": "there"
+      "Io vado lì.":
+        native: "I go there."
+        bases:
+          "lì": "there"
+  "it-1727":
+    native: "up; above"
+    notes:
+      "n1": "Means up, above, on top."
+    examples:
+      "Il libro è sopra un tavolo.":
+        native: "The book is on a table."
+        bases:
+          "Il": "the"
+          "sopra": "on"
+          "un": "a"
+      "Il gatto è sopra.":
+        native: "The cat is up."
+        bases:
+          "Il": "the"
+          "sopra": "up"
+  "it-1728":
+    native: "down; under"
+    notes:
+      "n1": "Means down, under, below."
+    examples:
+      "Il gatto è sotto un tavolo.":
+        native: "The cat is under a table."
+        bases:
+          "Il": "the"
+          "sotto": "under"
+          "un": "a"
+      "La borsa è sotto.":
+        native: "The bag is underneath."
+        bases:
+          "La": "the"
+          "sotto": "down"
+  "it-1729":
+    native: "inside"
+    notes:
+      "n1": "Means inside; indoors."
+    examples:
+      "Io sono dentro.":
+        native: "I am inside."
+        bases:
+          "dentro": "inside"
+      "Il caffè è dentro.":
+        native: "The coffee is inside."
+        bases:
+          "Il": "the"
+          "dentro": "inside"
+  "it-1730":
+    native: "outside"
+    notes:
+      "n1": "Means outside."
+    examples:
+      "Io sono fuori.":
+        native: "I am outside."
+        bases:
+          "fuori": "outside"
+      "Aspetto fuori.":
+        native: "I wait outside."
+        bases:
+          "fuori": "outside"
+  "it-1731":
+    native: "in front"
+    notes:
+      "n1": "Means at the front; in front."
+    examples:
+      "Io sono davanti.":
+        native: "I am in front."
+        bases:
+          "davanti": "in front"
+      "La porta è davanti.":
+        native: "The door is in front."
+        bases:
+          "La": "the"
+          "davanti": "in front"
+  "it-1732":
+    native: "behind"
+    notes:
+      "n1": "Means behind, at the back."
+    examples:
+      "Il gatto è dietro.":
+        native: "The cat is behind."
+        bases:
+          "Il": "the"
+          "dietro": "behind"
+      "Io sono dietro.":
+        native: "I am behind."
+        bases:
+          "dietro": "behind"
+  "it-1733":
+    native: "near"
+    notes:
+      "n1": "Means near."
+    examples:
+      "Io sono vicino.":
+        native: "I am near."
+        bases:
+          "vicino": "near"
+      "Il bagno è vicino.":
+        native: "The bathroom is near."
+        bases:
+          "Il": "the"
+          "vicino": "near"
+  "it-1734":
+    native: "far"
+    notes:
+      "n1": "Means far."
+    examples:
+      "Il mare è lontano.":
+        native: "The sea is far."
+        bases:
+          "Il": "the"
+          "lontano": "far"
+      "Io sono lontano.":
+        native: "I am far away."
+        bases:
+          "lontano": "far"
+  "it-1735":
+    native: "together"
+    notes:
+      "n1": "Means together."
+    examples:
+      "Io e Marco siamo insieme.":
+        native: "Marco and I are together."
+        bases:
+          "Marco": "Marco"
+          "insieme": "together"
+      "Mangiamo insieme.":
+        native: "We eat together."
+        bases:
+          "insieme": "together"
+  "it-1736":
+    native: "well; OK"
+    notes:
+      "n1": "Means well, nicely, OK, right. Comparative meglio (better); superlative benissimo."
+    examples:
+      "Io sto bene.":
+        native: "I am well."
+        bases:
+          "bene": "well"
+      "Parlo bene.":
+        native: "I speak well."
+        bases:
+          "bene": "well"
+  "it-1737":
+    native: "badly; wrongly"
+    notes:
+      "n1": "Means badly, wrongly. Comparative peggio (worse); superlative malissimo."
+    examples:
+      "Io sto male.":
+        native: "I feel bad."
+        bases:
+          "male": "badly"
+      "Dormo male.":
+        native: "I sleep badly."
+        bases:
+          "male": "badly"
+  "it-1738":
+    native: "better"
+    notes:
+      "n1": "Means better. It is the comparative of bene."
+    examples:
+      "Sto meglio.":
+        native: "I am better."
+        bases:
+          "meglio": "better"
+      "Parlo meglio.":
+        native: "I speak better."
+        bases:
+          "meglio": "better"
+  "it-1739":
+    native: "worse"
+    notes:
+      "n1": "Means worse. It is the comparative of male."
+    examples:
+      "Sto peggio.":
+        native: "I am worse."
+        bases:
+          "peggio": "worse"
+      "Dormo peggio.":
+        native: "I sleep worse."
+        bases:
+          "peggio": "worse"
+  "it-1740":
+    native: "soon"
+    notes:
+      "n1": "Means soon. It also means early."
+    examples:
+      "Ci vediamo presto.":
+        native: "See you soon."
+        bases:
+          "Ci": "us"
+          "presto": "soon"
+      "Mangio presto.":
+        native: "I eat early."
+        bases:
+          "presto": "early"
+  "it-1741":
+    native: "late"
+    notes:
+      "n1": "Means late."
+    examples:
+      "Dormo tardi.":
+        native: "I sleep late."
+        bases:
+          "tardi": "late"
+      "Arrivo tardi.":
+        native: "I arrive late."
+        bases:
+          "tardi": "late"
+  "it-1742":
+    native: "at once; immediately"
+    notes:
+      "n1": "Means at once, immediately, as soon as possible, shortly."
+    examples:
+      "Vengo subito.":
+        native: "I am coming right away."
+        bases:
+          "subito": "at once"
+      "Chiamo subito.":
+        native: "I call at once."
+        bases:
+          "subito": "at once"
+  "it-1743":
+    native: "only; just; alone"
+    notes:
+      "n1": "Means only, just, alone, merely."
+    examples:
+      "Io sono solo.":
+        native: "I am alone."
+        bases:
+          "solo": "alone"
+      "Parlo solo italiano.":
+        native: "I speak only Italian."
+        bases:
+          "solo": "only"
+  "it-1744":
+    native: "almost; nearly"
+    notes:
+      "n1": "Means almost, nearly."
+    examples:
+      "Sono quasi a casa.":
+        native: "I am almost home."
+        bases:
+          "quasi": "almost"
+      "Mangio quasi sempre a casa.":
+        native: "I almost always eat at home."
+        bases:
+          "quasi": "almost"
+  "it-1745":
+    native: "barely; hardly"
+    notes:
+      "n1": "Means barely, hardly."
+    examples:
+      "Vedo appena.":
+        native: "I can barely see."
+        bases:
+          "appena": "barely"
+      "Capisco appena.":
+        native: "I barely understand."
+        bases:
+          "appena": "barely"
+  "it-1746":
+    native: "so; like this"
+    notes:
+      "n1": "Means so, like this."
+    examples:
+      "Parlo così.":
+        native: "I speak like this."
+        bases:
+          "così": "like this"
+      "Non è così.":
+        native: "It is not so."
+        bases:
+          "Non": "not"
+          "così": "so"
+  "it-1747":
+    native: "then"
+    notes:
+      "n1": "Means then, afterwards."
+    examples:
+      "Prima mangio, poi dormo.":
+        native: "First I eat, then I sleep."
+        bases:
+          "poi": "then"
+      "Poi capisco.":
+        native: "Then I understand."
+        bases:
+          "Poi": "then"
+  "it-1748":
+    native: "before"
+    notes:
+      "n1": "Means before."
+    examples:
+      "Prima bevo un caffè.":
+        native: "I drink a coffee first."
+        bases:
+          "Prima": "before"
+          "un": "a"
+      "Prima mangio.":
+        native: "First I eat."
+        bases:
+          "Prima": "before"
+  "it-1749":
+    native: "later; after"
+    notes:
+      "n1": "Means later, after."
+    examples:
+      "Dopo mangio.":
+        native: "I eat later."
+        bases:
+          "Dopo": "later"
+      "Ci vediamo dopo.":
+        native: "See you later."
+        bases:
+          "Ci": "us"
+          "dopo": "later"
+  "it-1750":
+    native: "then; so"
+    notes:
+      "n1": "Means then, at that time."
+    examples:
+      "Allora, parliamo?":
+        native: "So, shall we talk?"
+        bases:
+          "Allora": "so"
+      "Allora capisco.":
+        native: "Then I understand."
+        bases:
+          "Allora": "then"
+  "it-1751":
+    native: "certainly; of course"
+    notes:
+      "n1": "Means certainly, of course, surely, definitely."
+    examples:
+      "Certo, grazie.":
+        native: "Of course, thank you."
+        bases:
+          "Certo": "of course"
+      "Certo, capisco.":
+        native: "Certainly, I understand."
+        bases:
+          "Certo": "certainly"
+  "it-1752":
+    native: "certainly"
+    notes:
+      "n1": "Means certainly, definitely, surely, of course."
+    examples:
+      "Certamente, grazie.":
+        native: "Certainly, thank you."
+        bases:
+          "Certamente": "certainly"
+      "Certamente capisco.":
+        native: "I certainly understand."
+        bases:
+          "Certamente": "certainly"
+  "it-1753":
+    native: "naturally; of course"
+    notes:
+      "n1": "Means naturally, of course, sure."
+    examples:
+      "Naturalmente, sì.":
+        native: "Of course, yes."
+        bases:
+          "Naturalmente": "of course"
+      "Naturalmente parlo italiano.":
+        native: "Of course I speak Italian."
+        bases:
+          "Naturalmente": "of course"
+  "it-1754":
+    native: "willingly; gladly"
+    notes:
+      "n1": "Means willingly, gladly, with pleasure."
+    examples:
+      "Mangio volentieri.":
+        native: "I eat gladly."
+        bases:
+          "volentieri": "gladly"
+      "Parlo volentieri.":
+        native: "I am happy to speak."
+        bases:
+          "volentieri": "gladly"
+  "it-1755":
+    native: "at last"
+    notes:
+      "n1": "Means at last."
+    examples:
+      "Finalmente capisco.":
+        native: "At last I understand."
+        bases:
+          "Finalmente": "at last"
+      "Finalmente sono qui.":
+        native: "At last I am here."
+        bases:
+          "Finalmente": "at last"
+  "it-1756":
+    native: "unfortunately"
+    notes:
+      "n1": "Means unfortunately, regretfully."
+    examples:
+      "Purtroppo non capisco.":
+        native: "Unfortunately I don't understand."
+        bases:
+          "Purtroppo": "unfortunately"
+          "non": "not"
+      "Purtroppo sono stanco.":
+        native: "Unfortunately I am tired."
+        bases:
+          "Purtroppo": "unfortunately"

@@ -1,0 +1,166 @@
+schema: 1
+id: "it-location"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "location"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2000"
+    target: "in"
+    ipa: "in"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un sacchetto in borsa.", ipa: "ɔ un sakˈketto in ˈborsa", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "sacchetto", ref: "it-2354" }, { word: "in", base: "in" }, { word: "borsa", ref: "it-2355" }] }
+      - { target: "Lo scontrino è in borsa.", ipa: "lo skonˈtrino ɛ in ˈborsa", bases: [{ word: "Lo", base: "lo" }, { word: "scontrino", ref: "it-2353" }, { word: "è", base: "essere" }, { word: "in", base: "in" }, { word: "borsa", ref: "it-2355" }] }
+  - id: "it-2001"
+    target: "su"
+    ipa: "su"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Il sacchetto è sul carrello.", ipa: "il sakˈketto ɛ sul karˈrɛllo", bases: [{ word: "Il", base: "il" }, { word: "sacchetto", ref: "it-2354" }, { word: "è", base: "essere" }, { word: "sul", base: "su" }, { word: "carrello", ref: "it-2352" }] }
+      - { target: "Lo scontrino è sulla borsa.", ipa: "lo skonˈtrino ɛ ˈsulla ˈborsa", bases: [{ word: "Lo", base: "lo" }, { word: "scontrino", ref: "it-2353" }, { word: "è", base: "essere" }, { word: "sulla", base: "su" }, { word: "borsa", ref: "it-2355" }] }
+  - id: "it-2002"
+    target: "tra"
+    ipa: "tra"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Il sacchetto è tra la borsa e un carrello.", ipa: "il sakˈketto ɛ tra la ˈborsa e un karˈrɛllo", bases: [{ word: "Il", base: "il" }, { word: "sacchetto", ref: "it-2354" }, { word: "è", base: "essere" }, { word: "tra", base: "tra" }, { word: "la", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "e", ref: "it-0005" }, { word: "un", base: "uno" }, { word: "carrello", ref: "it-2352" }] }
+      - { target: "Il carrello è tra lo scontrino e l'euro.", ipa: "il karˈrɛllo ɛ tra lo skonˈtrino e ˈlɛwro", bases: [{ word: "Il", base: "il" }, { word: "carrello", ref: "it-2352" }, { word: "è", base: "essere" }, { word: "tra", base: "tra" }, { word: "lo", base: "lo" }, { word: "scontrino", ref: "it-2353" }, { word: "e", ref: "it-0005" }, { word: "l'euro", ref: "it-2357" }] }
+  - id: "it-2003"
+    target: "fra"
+    ipa: "fra"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Il sacchetto è fra la borsa e un carrello.", ipa: "il sakˈketto ɛ fra la ˈborsa e un karˈrɛllo", bases: [{ word: "Il", base: "il" }, { word: "sacchetto", ref: "it-2354" }, { word: "è", base: "essere" }, { word: "fra", base: "fra" }, { word: "la", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "e", ref: "it-0005" }, { word: "un", base: "uno" }, { word: "carrello", ref: "it-2352" }] }
+      - { target: "Il resto è fra lo scontrino e l'euro.", ipa: "il ˈrɛsto ɛ fra lo skonˈtrino e ˈlɛwro", bases: [{ word: "Il", base: "il" }, { word: "resto", ref: "it-2359" }, { word: "è", base: "essere" }, { word: "fra", base: "fra" }, { word: "lo", base: "lo" }, { word: "scontrino", ref: "it-2353" }, { word: "e", ref: "it-0005" }, { word: "l'euro", ref: "it-2357" }] }
+  - id: "it-2004"
+    target: "accanto"
+    ipa: "akˈkanto"
+    pos: "adv"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Il negozio è qui accanto.", ipa: "il neˈɡɔttsjo ɛ kwi akˈkanto", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }, { word: "accanto", base: "accanto" }] }
+      - { target: "Il carrello è lì accanto.", ipa: "il karˈrɛllo ɛ li akˈkanto", bases: [{ word: "Il", base: "il" }, { word: "carrello", ref: "it-2352" }, { word: "è", base: "essere" }, { word: "lì", ref: "it-1726" }, { word: "accanto", base: "accanto" }] }
+  - id: "it-2005"
+    target: "contro"
+    ipa: "ˈkontro"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Il sacchetto è contro la borsa.", ipa: "il sakˈketto ɛ ˈkontro la ˈborsa", bases: [{ word: "Il", base: "il" }, { word: "sacchetto", ref: "it-2354" }, { word: "è", base: "essere" }, { word: "contro", base: "contro" }, { word: "la", base: "la" }, { word: "borsa", ref: "it-2355" }] }
+      - { target: "Lo scontrino è contro il negozio.", ipa: "lo skonˈtrino ɛ ˈkontro il neˈɡɔttsjo", bases: [{ word: "Lo", base: "lo" }, { word: "scontrino", ref: "it-2353" }, { word: "è", base: "essere" }, { word: "contro", base: "contro" }, { word: "il", base: "il" }, { word: "negozio", ref: "it-2351" }] }
+  - id: "it-2006"
+    target: "presso"
+    ipa: "ˈprɛsso"
+    pos: "adv"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Il negozio è qui presso.", ipa: "il neˈɡɔttsjo ɛ kwi ˈprɛsso", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }, { word: "presso", base: "presso" }] }
+      - { target: "Lo scontrino è presso il negozio.", ipa: "lo skonˈtrino ɛ ˈprɛsso il neˈɡɔttsjo", bases: [{ word: "Lo", base: "lo" }, { word: "scontrino", ref: "it-2353" }, { word: "è", base: "essere" }, { word: "presso", base: "presso" }, { word: "il", base: "il" }, { word: "negozio", ref: "it-2351" }] }
+  - id: "it-2007"
+    target: "centro"
+    ipa: "ˈtʃentro"
+    pos: "noun"
+    gender: "m"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Il negozio è in centro.", ipa: "il neˈɡɔttsjo ɛ in ˈtʃentro", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "centro", base: "centro" }] }
+      - { target: "Questo è il centro.", ipa: "ˈkwesto ɛ il ˈtʃentro", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "centro", base: "centro" }] }
+  - id: "it-2008"
+    target: "città"
+    ipa: "tʃitˈta"
+    pos: "noun"
+    gender: "f"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la città.", ipa: "ˈkwesta ɛ la tʃitˈta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "città", base: "città" }] }
+      - { target: "Il negozio è in città.", ipa: "il neˈɡɔttsjo ɛ in tʃitˈta", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "città", base: "città" }] }
+  - id: "it-2009"
+    target: "paese"
+    ipa: "paˈeze"
+    pos: "noun"
+    gender: "m"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il paese.", ipa: "ˈkwesto ɛ il paˈeze", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "paese", base: "paese" }] }
+      - { target: "Il negozio è in paese.", ipa: "il neˈɡɔttsjo ɛ in paˈeze", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "paese", base: "paese" }] }
+  - id: "it-2010"
+    target: "via"
+    ipa: "ˈvia"
+    pos: "noun"
+    gender: "f"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la via.", ipa: "ˈkwesta ɛ la ˈvia", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "via", base: "via" }] }
+      - { target: "Dov'è la via?", ipa: "doˈvɛ la ˈvia", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "via", base: "via" }] }
+  - id: "it-2011"
+    target: "piazza"
+    ipa: "ˈpjattsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la piazza.", ipa: "ˈkwesta ɛ la ˈpjattsa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "piazza", base: "piazza" }] }
+      - { target: "Il negozio è in piazza.", ipa: "il neˈɡɔttsjo ɛ in ˈpjattsa", bases: [{ word: "Il", base: "il" }, { word: "negozio", ref: "it-2351" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "piazza", base: "piazza" }] }
+  - id: "it-2012"
+    target: "strada"
+    ipa: "ˈstrada"
+    pos: "noun"
+    gender: "f"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la strada.", ipa: "ˈkwesta ɛ la ˈstrada", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "strada", base: "strada" }] }
+      - { target: "Il carrello è in strada.", ipa: "il karˈrɛllo ɛ in ˈstrada", bases: [{ word: "Il", base: "il" }, { word: "carrello", ref: "it-2352" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "strada", base: "strada" }] }
+  - id: "it-2013"
+    target: "palazzo"
+    ipa: "paˈlattso"
+    pos: "noun"
+    gender: "m"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il palazzo.", ipa: "ˈkwesto ɛ il paˈlattso", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "palazzo", base: "palazzo" }] }
+      - { target: "Il palazzo è vicino.", ipa: "il paˈlattso ɛ viˈtʃino", bases: [{ word: "Il", base: "il" }, { word: "palazzo", base: "palazzo" }, { word: "è", base: "essere" }, { word: "vicino", ref: "it-1733" }] }
+  - id: "it-2014"
+    target: "verso"
+    ipa: "ˈvɛrso"
+    pos: "other"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: "self"
+    examples:
+      - { target: "Vado verso la piazza.", ipa: "ˈvado ˈvɛrso la ˈpjattsa", bases: [{ word: "Vado", base: "andare" }, { word: "verso", base: "verso" }, { word: "la", base: "la" }, { word: "piazza", ref: "it-2011" }] }
+      - { target: "Vieni verso di me.", ipa: "ˈvjɛni ˈvɛrso di me", bases: [{ word: "Vieni", base: "venire" }, { word: "verso", base: "verso" }, { word: "di", base: "di" }, { word: "me", ref: "it-1375" }] }

@@ -1,0 +1,239 @@
+schema: 1
+id: "it-work"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2140"
+    target: "lavoro"
+    ipa: "laˈvoro"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il lavoro.", ipa: "ˈkwesto ɛ il laˈvoro", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "lavoro", base: "lavoro" }] }
+      - { target: "Il lavoro è buono.", ipa: "il laˈvoro ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "lavoro", base: "lavoro" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-2141"
+    target: "lavorare"
+    ipa: "lavoˈrare"
+    pos: "verb"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Io lavoro.", ipa: "ˈio laˈvoro", bases: [{ word: "Io", ref: "it-0003" }, { word: "lavoro", base: "lavorare" }] }
+      - { target: "Voglio lavorare.", ipa: "ˈvɔʎʎo lavoˈrare", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "lavorare", base: "lavorare" }] }
+  - id: "it-2142"
+    target: "impiegato"
+    ipa: "impjeˈɡato"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'impiegato.", ipa: "ˈkwesto ɛ limpjeˈɡato", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'impiegato", base: "impiegato" }] }
+      - { target: "Questa è l'impiegata.", ipa: "ˈkwesta ɛ limpjeˈɡata", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'impiegata", base: "impiegato" }] }
+  - id: "it-2143"
+    target: "capo"
+    ipa: "ˈkapo"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il capo.", ipa: "ˈkwesto ɛ il ˈkapo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "capo", base: "capo" }] }
+      - { target: "Ho un capo.", ipa: "ɔ un ˈkapo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "capo", base: "capo" }] }
+  - id: "it-2144"
+    target: "collega"
+    ipa: "kolˈlɛɡa"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il collega.", ipa: "ˈkwesto ɛ il kolˈleɡa", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "collega", base: "collega" }] }
+      - { target: "Questa è la collega.", ipa: "ˈkwesta ɛ la kolˈleɡa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "collega", base: "collega" }] }
+  - id: "it-2145"
+    target: "azienda"
+    ipa: "atˈtsjɛnda"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è l'azienda.", ipa: "ˈkwesta ɛ latˈtsjɛnda", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'azienda", base: "azienda" }] }
+      - { target: "Il lavoro è in azienda.", ipa: "il laˈvoro ɛ in atˈtsjɛnda", bases: [{ word: "Il", base: "il" }, { word: "lavoro", ref: "it-2140" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "azienda", base: "azienda" }] }
+  - id: "it-2146"
+    target: "stipendio"
+    ipa: "stiˈpɛndjo"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è lo stipendio.", ipa: "ˈkwesto ɛ lo stiˈpɛndjo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "lo", base: "lo" }, { word: "stipendio", base: "stipendio" }] }
+      - { target: "Lo stipendio è buono.", ipa: "lo stiˈpɛndjo ɛ ˈbwɔno", bases: [{ word: "Lo", base: "lo" }, { word: "stipendio", base: "stipendio" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-2147"
+    target: "riunione"
+    ipa: "riuˈnjone"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la riunione.", ipa: "ˈkwesta ɛ la riuˈnjone", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "riunione", base: "riunione" }] }
+      - { target: "La riunione è qui.", ipa: "la riuˈnjone ɛ kwi", bases: [{ word: "La", base: "la" }, { word: "riunione", base: "riunione" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-2148"
+    target: "progetto"
+    ipa: "proˈdʒɛtto"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il progetto.", ipa: "ˈkwesto ɛ il proˈdʒɛtto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "progetto", base: "progetto" }] }
+      - { target: "Il progetto è buono.", ipa: "il proˈdʒɛtto ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "progetto", base: "progetto" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-2149"
+    target: "cliente"
+    ipa: "ˈkljɛnte"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il cliente.", ipa: "ˈkwesto ɛ il ˈkljɛnte", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "cliente", base: "cliente" }] }
+      - { target: "La cliente è in negozio.", ipa: "la ˈkljɛnte ɛ in neˈɡɔttsjo", bases: [{ word: "La", base: "la" }, { word: "cliente", base: "cliente" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "negozio", ref: "it-2351" }] }
+  - id: "it-2150"
+    target: "professione"
+    ipa: "profesˈsjone"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la professione.", ipa: "ˈkwesta ɛ la profesˈsjone", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "professione", base: "professione" }] }
+      - { target: "Il lavoro è una professione.", ipa: "il laˈvoro ɛ ˈuna profesˈsjone", bases: [{ word: "Il", base: "il" }, { word: "lavoro", ref: "it-2140" }, { word: "è", base: "essere" }, { word: "una", base: "un" }, { word: "professione", base: "professione" }] }
+  - id: "it-2151"
+    target: "avvocato"
+    ipa: "avvoˈkato"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'avvocato.", ipa: "ˈkwesto ɛ lavvoˈkato", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'avvocato", base: "avvocato" }] }
+      - { target: "Questa è l'avvocata.", ipa: "ˈkwesta ɛ lavvoˈkata", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'avvocata", base: "avvocato" }] }
+  - id: "it-2152"
+    target: "ingegnere"
+    ipa: "indʒeɲˈɲɛre"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'ingegnere.", ipa: "ˈkwesto ɛ lindʒeɲˈɲɛre", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'ingegnere", base: "ingegnere" }] }
+      - { target: "Questa è l'ingegnera.", ipa: "ˈkwesta ɛ lindʒeɲˈɲɛra", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'ingegnera", base: "ingegnere" }] }
+  - id: "it-2153"
+    target: "cuoco"
+    ipa: "ˈkwɔko"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il cuoco.", ipa: "ˈkwesto ɛ il ˈkwɔko", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "cuoco", base: "cuoco" }] }
+      - { target: "Questa è la cuoca.", ipa: "ˈkwesta ɛ la ˈkwɔka", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "cuoca", base: "cuoco" }] }
+  - id: "it-2154"
+    target: "fabbrica"
+    ipa: "ˈfabbrika"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la fabbrica.", ipa: "ˈkwesta ɛ la ˈfabbrika", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "fabbrica", base: "fabbrica" }] }
+      - { target: "Il lavoro è in fabbrica.", ipa: "il laˈvoro ɛ in ˈfabbrika", bases: [{ word: "Il", base: "il" }, { word: "lavoro", ref: "it-2140" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "fabbrica", base: "fabbrica" }] }
+  - id: "it-2155"
+    target: "dottore"
+    ipa: "dotˈtore"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il dottore.", ipa: "ˈkwesto ɛ il dotˈtore", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "dottore", base: "dottore" }] }
+      - { target: "Questa è la dottoressa.", ipa: "ˈkwesta ɛ la dottoˈressa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "dottoressa", base: "dottore" }] }
+  - id: "it-2156"
+    target: "commerciante"
+    ipa: "kommerˈtʃante"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il commerciante.", ipa: "ˈkwesto ɛ il kommerˈtʃante", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "commerciante", base: "commerciante" }] }
+      - { target: "La commerciante è in negozio.", ipa: "la kommerˈtʃante ɛ in neˈɡɔttsjo", bases: [{ word: "La", base: "la" }, { word: "commerciante", base: "commerciante" }, { word: "è", base: "essere" }, { word: "in", ref: "it-2000" }, { word: "negozio", ref: "it-2351" }] }
+  - id: "it-2157"
+    target: "medico"
+    ipa: "ˈmɛdiko"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il medico.", ipa: "ˈkwesto ɛ il ˈmɛdiko", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "medico", base: "medico" }] }
+      - { target: "Il medico è qui.", ipa: "il ˈmɛdiko ɛ kwi", bases: [{ word: "Il", base: "il" }, { word: "medico", base: "medico" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-2158"
+    target: "insegnante"
+    ipa: "inseɲˈɲante"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'insegnante.", ipa: "ˈkwesto ɛ linseɲˈɲante", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'insegnante", base: "insegnante" }] }
+      - { target: "Questa è l'insegnante.", ipa: "ˈkwesta ɛ linseɲˈɲante", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'insegnante", base: "insegnante" }] }
+  - id: "it-2159"
+    target: "orario"
+    ipa: "oˈrarjo"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'orario.", ipa: "ˈkwesto ɛ loˈrarjo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'orario", base: "orario" }] }
+      - { target: "Ho un orario.", ipa: "ɔ un oˈrarjo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "orario", base: "orario" }] }
+  - id: "it-2160"
+    target: "ufficio"
+    ipa: "ufˈfitʃo"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'ufficio.", ipa: "ˈkwesto ɛ lufˈfitʃo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'ufficio", base: "ufficio" }] }
+      - { target: "L'ufficio è qui.", ipa: "lufˈfitʃo ɛ kwi", bases: [{ word: "L'ufficio", base: "ufficio" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }] }

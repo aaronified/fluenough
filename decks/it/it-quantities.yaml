@@ -1,0 +1,365 @@
+schema: 1
+id: "it-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1790"
+    target: "molto"
+    ipa: "ˈmolto"
+    pos: "adv"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Parlo molto.", ipa: "ˈparlo ˈmolto", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "molto", base: "molto" }] }
+      - { target: "Sto molto bene.", ipa: "stɔ ˈmolto ˈbɛne", bases: [{ word: "Sto", ref: "it-0601" }, { word: "molto", base: "molto" }, { word: "bene", ref: "it-1736" }] }
+  - id: "it-1791"
+    target: "poco"
+    ipa: "ˈpɔko"
+    pos: "adv"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Parlo poco.", ipa: "ˈparlo ˈpɔko", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "poco", base: "poco" }] }
+      - { target: "Capisco poco.", ipa: "kaˈpisko ˈpɔko", bases: [{ word: "Capisco", ref: "it-1659" }, { word: "poco", base: "poco" }] }
+  - id: "it-1792"
+    target: "tanto"
+    ipa: "ˈtanto"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mangio tanta pasta.", ipa: "ˈmandʒo ˈtanta ˈpasta", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "tanta", base: "tanto" }, { word: "pasta", ref: "it-2281" }] }
+      - { target: "Bevo tanta acqua.", ipa: "ˈbevo ˈtanta ˈakkwa", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "tanta", base: "tanto" }, { word: "acqua", ref: "it-0010" }] }
+  - id: "it-1793"
+    target: "troppo"
+    ipa: "ˈtrɔppo"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bevo troppo caffè.", ipa: "ˈbevo ˈtrɔppo kafˈfɛ", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "troppo", base: "troppo" }, { word: "caffè", ref: "it-2321" }] }
+      - { target: "Sono troppo stanco.", ipa: "ˈsono ˈtrɔppo ˈstanko", bases: [{ word: "Sono", ref: "it-0600" }, { word: "troppo", base: "troppo" }, { word: "stanco", ref: "it-1887" }] }
+  - id: "it-1794"
+    target: "più"
+    ipa: "pju"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mangio più pane.", ipa: "ˈmandʒo pju ˈpane", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "più", base: "più" }, { word: "pane", ref: "it-2280" }] }
+      - { target: "Voglio più acqua.", ipa: "ˈvɔʎʎo pju ˈakkwa", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "più", base: "più" }, { word: "acqua", ref: "it-0010" }] }
+  - id: "it-1795"
+    target: "meno"
+    ipa: "ˈmeno"
+    pos: "adv"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bevo meno caffè.", ipa: "ˈbevo ˈmeno kafˈfɛ", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "meno", base: "meno" }, { word: "caffè", ref: "it-2321" }] }
+      - { target: "Dormo meno.", ipa: "ˈdɔrmo ˈmeno", bases: [{ word: "Dormo", ref: "it-1679" }, { word: "meno", base: "meno" }] }
+  - id: "it-1796"
+    target: "abbastanza"
+    ipa: "abbasˈtantsa"
+    pos: "adv"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Parlo abbastanza bene.", ipa: "ˈparlo abbasˈtantsa ˈbɛne", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "abbastanza", base: "abbastanza" }, { word: "bene", ref: "it-1736" }] }
+      - { target: "Mangio abbastanza.", ipa: "ˈmandʒo abbasˈtantsa", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "abbastanza", base: "abbastanza" }] }
+  - id: "it-1797"
+    target: "tutto"
+    ipa: "ˈtutto"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mangio tutto il pane.", ipa: "ˈmandʒo ˈtutto il ˈpane", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "tutto", base: "tutto" }, { word: "il", base: "il" }, { word: "pane", ref: "it-2280" }] }
+      - { target: "Tutta la casa è pulita.", ipa: "ˈtutta la ˈkaza ɛ puˈlita", bases: [{ word: "Tutta", base: "tutto" }, { word: "la", base: "la" }, { word: "casa", ref: "it-2840" }, { word: "è", ref: "it-0600" }, { word: "pulita", ref: "it-1890" }] }
+  - id: "it-1798"
+    target: "metà"
+    ipa: "meˈta"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bevo la metà.", ipa: "ˈbevo la meˈta", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "la", base: "la" }, { word: "metà", base: "metà" }] }
+      - { target: "Mangio metà pizza.", ipa: "ˈmandʒo meˈta ˈpittsa", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "metà", base: "metà" }, { word: "pizza", ref: "it-2312" }] }
+  - id: "it-1799"
+    target: "doppio"
+    ipa: "ˈdoppjo"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Voglio un caffè doppio.", ipa: "ˈvɔʎʎo un kafˈfɛ ˈdoppjo", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }, { word: "doppio", base: "doppio" }] }
+      - { target: "Il caffè è doppio.", ipa: "il kafˈfɛ ɛ ˈdoppjo", bases: [{ word: "Il", base: "il" }, { word: "caffè", ref: "it-2321" }, { word: "è", ref: "it-0600" }, { word: "doppio", base: "doppio" }] }
+  - id: "it-1800"
+    target: "pieno"
+    ipa: "ˈpjɛno"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il bicchiere è pieno.", ipa: "il bikˈkjɛre ɛ ˈpjɛno", bases: [{ word: "Il", base: "il" }, { word: "bicchiere", ref: "it-1813" }, { word: "è", ref: "it-0600" }, { word: "pieno", base: "pieno" }] }
+      - { target: "La bottiglia è piena.", ipa: "la botˈtiʎʎa ɛ ˈpjɛna", bases: [{ word: "La", base: "la" }, { word: "bottiglia", ref: "it-1812" }, { word: "è", ref: "it-0600" }, { word: "piena", base: "pieno" }] }
+  - id: "it-1801"
+    target: "vuoto"
+    ipa: "ˈvwɔto"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il bicchiere è vuoto.", ipa: "il bikˈkjɛre ɛ ˈvwɔto", bases: [{ word: "Il", base: "il" }, { word: "bicchiere", ref: "it-1813" }, { word: "è", ref: "it-0600" }, { word: "vuoto", base: "vuoto" }] }
+      - { target: "La scatola è vuota.", ipa: "la ˈskatola ɛ ˈvwɔta", bases: [{ word: "La", base: "la" }, { word: "scatola", ref: "it-1816" }, { word: "è", ref: "it-0600" }, { word: "vuota", base: "vuoto" }] }
+  - id: "it-1802"
+    target: "mezzo"
+    ipa: "ˈmɛddzo"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bevo mezzo bicchiere.", ipa: "ˈbevo ˈmɛddzo bikˈkjɛre", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "mezzo", base: "mezzo" }, { word: "bicchiere", ref: "it-1813" }] }
+      - { target: "Bevo un mezzo litro.", ipa: "ˈbevo un ˈmɛddzo ˈlitro", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "un", base: "un" }, { word: "mezzo", base: "mezzo" }, { word: "litro", ref: "it-1808" }] }
+  - id: "it-1803"
+    target: "intero"
+    ipa: "inˈtero"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mangio il pane intero.", ipa: "ˈmandʒo il ˈpane inˈtero", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "il", base: "il" }, { word: "pane", ref: "it-2280" }, { word: "intero", base: "intero" }] }
+      - { target: "La pizza intera è buona.", ipa: "la ˈpittsa inˈtera ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "pizza", ref: "it-2312" }, { word: "intera", base: "intero" }, { word: "è", ref: "it-0600" }, { word: "buona", ref: "it-0008" }] }
+  - id: "it-1804"
+    target: "parecchio"
+    ipa: "paˈrekkjo"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bevo parecchia acqua.", ipa: "ˈbevo paˈrekkja ˈakkwa", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "parecchia", base: "parecchio" }, { word: "acqua", ref: "it-0010" }] }
+      - { target: "Leggo parecchi libri.", ipa: "ˈlɛɡɡo paˈrekki ˈlibri", bases: [{ word: "Leggo", ref: "it-1680" }, { word: "parecchi", base: "parecchio" }, { word: "libri", ref: "it-2770" }] }
+  - id: "it-1805"
+    target: "qualche"
+    ipa: "ˈkwalke"
+    pos: "other"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Leggo qualche libro.", ipa: "ˈlɛɡɡo ˈkwalke ˈlibro", bases: [{ word: "Leggo", ref: "it-1680" }, { word: "qualche", base: "qualche" }, { word: "libro", ref: "it-2770" }] }
+      - { target: "Scrivo qualche lettera.", ipa: "ˈskrivo ˈkwalke ˈlettera", bases: [{ word: "Scrivo", ref: "it-1681" }, { word: "qualche", base: "qualche" }, { word: "lettera", ref: "it-2815" }] }
+  - id: "it-1806"
+    target: "diverso"
+    ipa: "diˈvɛrso"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La casa è diversa.", ipa: "la ˈkaza ɛ diˈvɛrsa", bases: [{ word: "La", base: "la" }, { word: "casa", ref: "it-2840" }, { word: "è", ref: "it-0600" }, { word: "diversa", base: "diverso" }] }
+      - { target: "Il caffè è diverso.", ipa: "il kafˈfɛ ɛ diˈvɛrso", bases: [{ word: "Il", base: "il" }, { word: "caffè", ref: "it-2321" }, { word: "è", ref: "it-0600" }, { word: "diverso", base: "diverso" }] }
+  - id: "it-1807"
+    target: "chilo"
+    ipa: "ˈkilo"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Compro un chilo di pane.", ipa: "ˈkompro un ˈkilo di ˈpane", bases: [{ word: "Compro", ref: "it-1675" }, { word: "un", base: "un" }, { word: "chilo", base: "chilo" }, { word: "di", base: "di" }, { word: "pane", ref: "it-2280" }] }
+      - { target: "Compro due chili.", ipa: "ˈkompro ˈdue ˈkili", bases: [{ word: "Compro", ref: "it-1675" }, { word: "due", ref: "it-1511" }, { word: "chili", base: "chilo" }] }
+  - id: "it-1808"
+    target: "litro"
+    ipa: "ˈlitro"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bevo un litro.", ipa: "ˈbevo un ˈlitro", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "un", base: "un" }, { word: "litro", base: "litro" }] }
+      - { target: "Compro un litro di latte.", ipa: "ˈkompro un ˈlitro di ˈlatte", bases: [{ word: "Compro", ref: "it-1675" }, { word: "un", base: "un" }, { word: "litro", base: "litro" }, { word: "di", base: "di" }, { word: "latte", ref: "it-2289" }] }
+  - id: "it-1809"
+    target: "grammo"
+    ipa: "ˈɡrammo"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Compro cento grammi di pane.", ipa: "ˈkompro ˈtʃɛnto ˈɡrammi di ˈpane", bases: [{ word: "Compro", ref: "it-1675" }, { word: "cento", ref: "it-2218" }, { word: "grammi", base: "grammo" }, { word: "di", base: "di" }, { word: "pane", ref: "it-2280" }] }
+      - { target: "Il grammo è piccolo.", ipa: "il ˈɡrammo ɛ ˈpikkolo", bases: [{ word: "Il", base: "il" }, { word: "grammo", base: "grammo" }, { word: "è", ref: "it-0600" }, { word: "piccolo", ref: "it-1861" }] }
+  - id: "it-1810"
+    target: "pezzo"
+    ipa: "ˈpɛttso"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mangio il pezzo di pizza.", ipa: "ˈmandʒo il ˈpɛttso di ˈpittsa", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "il", base: "il" }, { word: "pezzo", base: "pezzo" }, { word: "di", ref: "it-0850" }, { word: "pizza", ref: "it-2312" }] }
+      - { target: "Il pezzo è piccolo.", ipa: "il ˈpɛttso ɛ ˈpikkolo", bases: [{ word: "Il", base: "il" }, { word: "pezzo", base: "pezzo" }, { word: "è", base: "essere" }, { word: "piccolo", ref: "it-1861" }] }
+  - id: "it-1811"
+    target: "fetta"
+    ipa: "ˈfetta"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vuoi una fetta di torta?", ipa: "vwɔj ˈuna ˈfetta di ˈtorta", bases: [{ word: "Vuoi", ref: "it-1670" }, { word: "una", base: "una" }, { word: "fetta", base: "fetta" }, { word: "di", base: "di" }, { word: "torta", ref: "it-2318" }] }
+      - { target: "Mangio una fetta di pane.", ipa: "ˈmandʒo ˈuna ˈfetta di ˈpane", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "una", base: "una" }, { word: "fetta", base: "fetta" }, { word: "di", base: "di" }, { word: "pane", ref: "it-2280" }] }
+  - id: "it-1812"
+    target: "bottiglia"
+    ipa: "botˈtiʎʎa"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Compro una bottiglia di vino.", ipa: "ˈkompro ˈuna botˈtiʎʎa di ˈvino", bases: [{ word: "Compro", ref: "it-1675" }, { word: "una", base: "una" }, { word: "bottiglia", base: "bottiglia" }, { word: "di", base: "di" }, { word: "vino", ref: "it-2323" }] }
+      - { target: "La bottiglia è grande.", ipa: "la botˈtiʎʎa ɛ ˈɡrande", bases: [{ word: "La", base: "la" }, { word: "bottiglia", base: "bottiglia" }, { word: "è", ref: "it-0600" }, { word: "grande", ref: "it-1860" }] }
+  - id: "it-1813"
+    target: "bicchiere"
+    ipa: "bikˈkjɛre"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bevo un bicchiere di vino.", ipa: "ˈbevo un bikˈkjɛre di ˈvino", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "un", base: "un" }, { word: "bicchiere", base: "bicchiere" }, { word: "di", base: "di" }, { word: "vino", ref: "it-2323" }] }
+      - { target: "Il bicchiere è grande.", ipa: "il bikˈkjɛre ɛ ˈɡrande", bases: [{ word: "Il", base: "il" }, { word: "bicchiere", base: "bicchiere" }, { word: "è", ref: "it-0600" }, { word: "grande", ref: "it-1860" }] }
+  - id: "it-1814"
+    target: "tazza"
+    ipa: "ˈtattsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bevo una tazza di caffè.", ipa: "ˈbevo ˈuna ˈtattsa di kafˈfɛ", bases: [{ word: "Bevo", ref: "it-1661" }, { word: "una", base: "una" }, { word: "tazza", base: "tazza" }, { word: "di", base: "di" }, { word: "caffè", ref: "it-2321" }] }
+      - { target: "La tazza è piccola.", ipa: "la ˈtattsa ɛ ˈpikkola", bases: [{ word: "La", base: "la" }, { word: "tazza", base: "tazza" }, { word: "è", ref: "it-0600" }, { word: "piccola", ref: "it-1861" }] }
+  - id: "it-1815"
+    target: "pacco"
+    ipa: "ˈpakko"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Aspetto un pacco.", ipa: "asˈpɛtto un ˈpakko", bases: [{ word: "Aspetto", ref: "it-1683" }, { word: "un", base: "un" }, { word: "pacco", base: "pacco" }] }
+      - { target: "Il pacco è grande.", ipa: "il ˈpakko ɛ ˈɡrande", bases: [{ word: "Il", base: "il" }, { word: "pacco", base: "pacco" }, { word: "è", ref: "it-0600" }, { word: "grande", ref: "it-1860" }] }
+  - id: "it-1816"
+    target: "scatola"
+    ipa: "ˈskatola"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Compro una scatola di biscotti.", ipa: "ˈkompro ˈuna ˈskatola di bisˈkotti", bases: [{ word: "Compro", ref: "it-1675" }, { word: "una", base: "una" }, { word: "scatola", base: "scatola" }, { word: "di", base: "di" }, { word: "biscotti", ref: "it-2319" }] }
+      - { target: "La scatola è vuota.", ipa: "la ˈskatola ɛ ˈvwɔta", bases: [{ word: "La", base: "la" }, { word: "scatola", base: "scatola" }, { word: "è", ref: "it-0600" }, { word: "vuota", ref: "it-1801" }] }
+  - id: "it-1817"
+    target: "coppia"
+    ipa: "ˈkoppja"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Marco e Anna sono una coppia.", ipa: "ˈmarko e ˈanna ˈsono ˈuna ˈkoppja", bases: [{ word: "Marco", base: "Marco" }, { word: "e", ref: "it-0005" }, { word: "Anna", base: "Anna" }, { word: "sono", ref: "it-0600" }, { word: "una", base: "una" }, { word: "coppia", base: "coppia" }] }
+      - { target: "Siamo una coppia.", ipa: "ˈsjamo ˈuna ˈkoppja", bases: [{ word: "Siamo", ref: "it-0600" }, { word: "una", base: "una" }, { word: "coppia", base: "coppia" }] }
+  - id: "it-1818"
+    target: "dozzina"
+    ipa: "dotˈtsina"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Compro una dozzina di uova.", ipa: "ˈkompro ˈuna dotˈtsina di ˈwɔva", bases: [{ word: "Compro", ref: "it-1675" }, { word: "una", base: "una" }, { word: "dozzina", base: "dozzina" }, { word: "di", base: "di" }, { word: "uova", ref: "it-2287" }] }
+      - { target: "Una dozzina è dodici.", ipa: "ˈuna dotˈtsina ɛ ˈdoditʃi", bases: [{ word: "Una", base: "una" }, { word: "dozzina", base: "dozzina" }, { word: "è", ref: "it-0600" }, { word: "dodici", ref: "it-1521" }] }
+  - id: "it-1819"
+    target: "extra"
+    ipa: "ˈɛkstra"
+    pos: "adj"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Voglio un caffè extra.", ipa: "ˈvɔʎʎo un kafˈfɛ ˈɛkstra", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }, { word: "extra", base: "extra" }] }
+      - { target: "Il pane extra è buono.", ipa: "il ˈpane ˈɛkstra ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "pane", ref: "it-2280" }, { word: "extra", base: "extra" }, { word: "è", ref: "it-0600" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-1820"
+    target: "quantità"
+    ipa: "kwantiˈta"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Una grande quantità di acqua.", ipa: "ˈuna ˈɡrande kwantiˈta di ˈakkwa", bases: [{ word: "Una", base: "una" }, { word: "grande", ref: "it-1860" }, { word: "quantità", base: "quantità" }, { word: "di", base: "di" }, { word: "acqua", ref: "it-0010" }] }
+      - { target: "La quantità è piccola.", ipa: "la kwantiˈta ɛ ˈpikkola", bases: [{ word: "La", base: "la" }, { word: "quantità", base: "quantità" }, { word: "è", ref: "it-0600" }, { word: "piccola", ref: "it-1861" }] }

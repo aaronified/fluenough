@@ -1,0 +1,125 @@
+schema: 1
+id: "it-grammar-articles-gender-words"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "it-0500"
+    target: "amico"
+    ipa: "aˈmiko"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/amico" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/amico" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un amico.", ipa: "ˈkwesto ɛ un aˈmiko", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "un", base: "un" }, { word: "amico", base: "amico" }] }
+      - { target: "L'amico è qui.", ipa: "laˈmiko ɛ kwi", bases: [{ word: "L'amico", base: "amico" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-0501"
+    target: "amica"
+    ipa: "aˈmika"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/amica" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/amica" }
+    bases: "self"
+    examples:
+      - { target: "Questa è un'amica.", ipa: "ˈkwesta ɛ unaˈmika", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "un'amica", base: "amica" }] }
+      - { target: "L'amica è qui.", ipa: "laˈmika ɛ kwi", bases: [{ word: "L'amica", base: "amica" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-0502"
+    target: "albero"
+    ipa: "alˈbero"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/albero" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/albero" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un albero.", ipa: "ˈkwesto ɛ un alˈbero", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "un", base: "un" }, { word: "albero", base: "albero" }] }
+      - { target: "L'albero è qui.", ipa: "lalˈbero ɛ kwi", bases: [{ word: "L'albero", base: "albero" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-0503"
+    target: "uomo"
+    ipa: "ˈwɔmo"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/uomo" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/uomo" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un uomo.", ipa: "ˈkwesto ɛ un ˈwɔmo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "un", base: "un" }, { word: "uomo", base: "uomo" }] }
+      - { target: "Gli uomini sono qui.", ipa: "ʎi woˈmini ˈsono kwi", bases: [{ word: "Gli", base: "lo" }, { word: "uomini", base: "uomo" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-0504"
+    target: "idea"
+    ipa: "iˈdɛa"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/idea" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/idea" }
+    bases: "self"
+    examples:
+      - { target: "Ho un'idea.", ipa: "ɔ uniˈdɛa", bases: [{ word: "Ho", ref: "it-0800" }, { word: "un'idea", base: "idea" }] }
+      - { target: "Questa è un'idea.", ipa: "ˈkwesta ɛ uniˈdɛa", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "un'idea", base: "idea" }] }
+  - id: "it-0505"
+    target: "zoo"
+    ipa: "ˈtsɔo"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/zoo" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/zoo" }
+    bases: "self"
+    examples:
+      - { target: "Questo è uno zoo.", ipa: "ˈkwesto ɛ ˈuno ˈtsɔo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "uno", base: "uno" }, { word: "zoo", base: "zoo" }] }
+      - { target: "Lo zoo è qui.", ipa: "lo ˈtsɔo ɛ kwi", bases: [{ word: "Lo", base: "lo" }, { word: "zoo", base: "zoo" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-0506"
+    target: "psicologo"
+    ipa: "psiˈkɔloɡo"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/psicologo" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/psicologo" }
+    bases: "self"
+    examples:
+      - { target: "Questo è uno psicologo.", ipa: "ˈkwesto ɛ ˈuno psiˈkɔloɡo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "uno", base: "uno" }, { word: "psicologo", base: "psicologo" }] }
+      - { target: "Lo psicologo è qui.", ipa: "lo psiˈkɔloɡo ɛ kwi", bases: [{ word: "Lo", base: "lo" }, { word: "psicologo", base: "psicologo" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-0507"
+    target: "studente"
+    ipa: "stuˈdɛnte"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/studente" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/studente" }
+    bases: "self"
+    examples:
+      - { target: "Questo è uno studente.", ipa: "ˈkwesto ɛ ˈuno stuˈdɛnte", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "uno", base: "uno" }, { word: "studente", base: "studente" }] }
+      - { target: "Gli studenti sono qui.", ipa: "ʎi stuˈdɛnti ˈsono kwi", bases: [{ word: "Gli", base: "lo" }, { word: "studenti", base: "studente" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-0508"
+    target: "studentessa"
+    ipa: "studenˈtessa"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/studentessa" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/studentessa" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una studentessa.", ipa: "ˈkwesta ɛ ˈuna studenˈtessa", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "una", base: "un" }, { word: "studentessa", base: "studentessa" }] }
+      - { target: "La studentessa è qui.", ipa: "la studenˈtessa ɛ kwi", bases: [{ word: "La", base: "la" }, { word: "studentessa", base: "studentessa" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }

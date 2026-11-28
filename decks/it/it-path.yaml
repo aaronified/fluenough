@@ -11,9 +11,10 @@
 # family; edit the generator's data, or take a unit over by hand once its
 # deck is written (#959).
 #
-# Unit 1 is written: the phrasebook and the first words (10 words). Every
-# other unit is planned, so the course teaches each as "Coming" until its
-# deck is written. The passages are placeholders: each describes its unit's
+# Units 1 to 32 (to the A1 mark) are written: the phrasebook, the first
+# words (10 words) and the A1 themes and grammar. Every other unit is
+# planned, so the course teaches each as "Coming" until its deck is
+# written. The passages are placeholders: each describes its unit's
 # theme or grammar and is reworded when the passage is written.
 #
 # From the scheme, for this language: Double consonants; essere/stare.
@@ -24,163 +25,199 @@ schema: 1
 kind: "path"
 id: "it-path"
 language: "it"
-description: "Italian: the planned path to B1. Only the phrasebook and the first words are written."
+description: "Italian: the planned path to B1. Units to A1 written."
 genders: ["m", "f"]
 alphabet: []
 units:
   - decks: ["it-phrasebook", "it-first-words", "*"]
     words: 10
-  - planned: { id: "it-sound-differences", grammar: ["sound-differences", "double-consonants"] }
+  - decks: ["it-sound-differences", "*"]
+    words: 20
     listening_passages:
       - { id: "sound-differences-heard", text: { "en": "A short spoken passage in Italian showing sound differences, double consonants" } }
     reading_passages:
       - { id: "sound-differences-text", text: { "en": "A short written text in Italian showing sound differences, double consonants" } }
-  - planned: { id: "it-questions", theme: "questions", words: 12 }
+  - decks: ["it-questions", "*"]
+    words: 12
     listening_passages:
       - { id: "questions-heard", text: { "en": "A short spoken passage in Italian on the theme yes, no and questions" } }
     reading_passages:
       - { id: "questions-text", text: { "en": "A short written text in Italian on the theme yes, no and questions" } }
-  - planned: { id: "it-pronouns", theme: "pronouns", words: 36 }
+  - decks: ["it-pronouns", "*"]
+    words: 19
     listening_passages:
       - { id: "pronouns-heard", text: { "en": "A short spoken passage in Italian on the theme pronouns and people words" } }
     reading_passages:
       - { id: "pronouns-text", text: { "en": "A short written text in Italian on the theme pronouns and people words" } }
-  - planned: { id: "it-family", theme: "family", words: 27 }
+  - decks: ["it-family", "*"]
+    words: 25
     listening_passages:
       - { id: "family-heard", text: { "en": "A short spoken passage in Italian on the theme family" } }
     reading_passages:
       - { id: "family-text", text: { "en": "A short written text in Italian on the theme family" } }
-  - planned: { id: "it-numbers-1-20", theme: "numbers-1-20", words: 22 }
+  - decks: ["it-numbers-1-20", "*"]
+    words: 22
     listening_passages:
       - { id: "numbers-1-20-heard", text: { "en": "A short spoken passage in Italian on the theme numbers 1 to 20" } }
     reading_passages:
       - { id: "numbers-1-20-text", text: { "en": "A short written text in Italian on the theme numbers 1 to 20" } }
-  - planned: { id: "it-about-me", theme: "about-me", words: 8 }
+  - decks: ["it-about-me", "*"]
+    words: 8
     listening_passages:
       - { id: "about-me-heard", text: { "en": "A short spoken passage in Italian on the theme talking about yourself" } }
     reading_passages:
       - { id: "about-me-text", text: { "en": "A short written text in Italian on the theme talking about yourself" } }
-  - planned: { id: "it-everyday-verbs", theme: "everyday-verbs", words: 36 }
+  - decks: ["it-everyday-verbs", "*"]
+    words: 36
     listening_passages:
       - { id: "everyday-verbs-heard", text: { "en": "A short spoken passage in Italian on the theme everyday verbs" } }
     reading_passages:
       - { id: "everyday-verbs-text", text: { "en": "A short written text in Italian on the theme everyday verbs" } }
-  - planned: { id: "it-adverbs", theme: "adverbs", words: 54 }
+  - decks: ["it-adverbs", "*"]
+    words: 37
     listening_passages:
       - { id: "adverbs-heard", text: { "en": "A short spoken passage in Italian on the theme adverbs" } }
     reading_passages:
       - { id: "adverbs-text", text: { "en": "A short written text in Italian on the theme adverbs" } }
-  - planned: { id: "it-quantities", theme: "quantities", words: 33 }
+  - decks: ["it-quantities", "*"]
+    words: 31
     listening_passages:
       - { id: "quantities-heard", text: { "en": "A short spoken passage in Italian on the theme quantities" } }
     reading_passages:
       - { id: "quantities-text", text: { "en": "A short written text in Italian on the theme quantities" } }
-  - planned: { id: "it-grammar-articles-gender", grammar: ["articles", "gender-number"] }
+  - decks: ["it-grammar-articles-gender", "it-grammar-articles-gender-words", "it-grammar-articles-gender-sentences"]
+    words: 0
+    grammar: ["articles-gender"]
     listening_passages:
       - { id: "grammar-articles-gender-heard", text: { "en": "A short spoken passage in Italian showing articles, gender number" } }
     reading_passages:
       - { id: "grammar-articles-gender-text", text: { "en": "A short written text in Italian showing articles, gender number" } }
-  - planned: { id: "it-describing", theme: "describing", words: 43 }
+  - decks: ["it-describing", "*"]
+    words: 43
     listening_passages:
       - { id: "describing-heard", text: { "en": "A short spoken passage in Italian on the theme describing things and feelings" } }
     reading_passages:
       - { id: "describing-text", text: { "en": "A short written text in Italian on the theme describing things and feelings" } }
-  - planned: { id: "it-time", theme: "time", words: 19 }
+  - decks: ["it-time", "*"]
+    words: 19
     listening_passages:
       - { id: "time-heard", text: { "en": "A short spoken passage in Italian on the theme time" } }
     reading_passages:
       - { id: "time-text", text: { "en": "A short written text in Italian on the theme time" } }
-  - planned: { id: "it-location", theme: "location", words: 15 }
+  - decks: ["it-location", "*"]
+    words: 15
     listening_passages:
       - { id: "location-heard", text: { "en": "A short spoken passage in Italian on the theme location" } }
     reading_passages:
       - { id: "location-text", text: { "en": "A short written text in Italian on the theme location" } }
-  - planned: { id: "it-grammar-be-verbs", grammar: ["be-verbs"] }
+  - decks: ["it-grammar-be-verbs", "it-grammar-be-verbs-words", "it-grammar-be-verbs-sentences"]
+    words: 0
+    grammar: ["be-verbs"]
     listening_passages:
       - { id: "grammar-be-verbs-heard", text: { "en": "A short spoken passage in Italian showing be verbs" } }
     reading_passages:
       - { id: "grammar-be-verbs-text", text: { "en": "A short written text in Italian showing be verbs" } }
-  - planned: { id: "it-more-verbs", theme: "more-verbs", words: 35 }
+  - decks: ["it-more-verbs", "*"]
+    words: 35
     listening_passages:
       - { id: "more-verbs-heard", text: { "en": "A short spoken passage in Italian on the theme more verbs" } }
     reading_passages:
       - { id: "more-verbs-text", text: { "en": "A short written text in Italian on the theme more verbs" } }
-  - planned: { id: "it-work", theme: "work", words: 21 }
+  - decks: ["it-work", "*"]
+    words: 21
     listening_passages:
       - { id: "work-heard", text: { "en": "A short spoken passage in Italian on the theme work" } }
     reading_passages:
       - { id: "work-text", text: { "en": "A short written text in Italian on the theme work" } }
-  - planned: { id: "it-numbers-big", theme: "numbers-big", words: 14 }
+  - decks: ["it-numbers-big", "*"]
+    words: 11
     listening_passages:
       - { id: "numbers-big-heard", text: { "en": "A short spoken passage in Italian on the theme tens and big numbers" } }
     reading_passages:
       - { id: "numbers-big-text", text: { "en": "A short written text in Italian on the theme tens and big numbers" } }
-  - planned: { id: "it-food", theme: "food", words: 69 }
+  - decks: ["it-food", "*"]
+    words: 69
     listening_passages:
       - { id: "food-heard", text: { "en": "A short spoken passage in Italian on the theme food" } }
     reading_passages:
       - { id: "food-text", text: { "en": "A short written text in Italian on the theme food" } }
-  - planned: { id: "it-grammar-present-regular", grammar: ["present-regular"] }
+  - decks: ["it-grammar-present-regular", "it-grammar-present-regular-sentences"]
+    words: 0
+    grammar: ["present-regular"]
     listening_passages:
       - { id: "grammar-present-regular-heard", text: { "en": "A short spoken passage in Italian showing present regular" } }
     reading_passages:
       - { id: "grammar-present-regular-text", text: { "en": "A short written text in Italian showing present regular" } }
-  - planned: { id: "it-groceries", theme: "groceries", words: 17 }
+  - decks: ["it-groceries", "*"]
+    words: 13
     listening_passages:
       - { id: "groceries-heard", text: { "en": "A short spoken passage in Italian on the theme groceries" } }
     reading_passages:
       - { id: "groceries-text", text: { "en": "A short written text in Italian on the theme groceries" } }
-  - planned: { id: "it-market", theme: "market", words: 8 }
+  - decks: ["it-market", "*"]
+    words: 7
     listening_passages:
       - { id: "market-heard", text: { "en": "A short spoken passage in Italian on the theme market" } }
     reading_passages:
       - { id: "market-text", text: { "en": "A short written text in Italian on the theme market" } }
-  - planned: { id: "it-directions", theme: "directions", words: 13 }
+  - decks: ["it-directions", "*"]
+    words: 12
     listening_passages:
       - { id: "directions-heard", text: { "en": "A short spoken passage in Italian on the theme directions" } }
     reading_passages:
       - { id: "directions-text", text: { "en": "A short written text in Italian on the theme directions" } }
-  - planned: { id: "it-grammar-present-irregular", grammar: ["present-irregular"] }
+  - decks: ["it-grammar-present-irregular", "it-grammar-present-irregular-words", "it-grammar-present-irregular-sentences"]
+    words: 0
+    grammar: ["present-irregular"]
     listening_passages:
       - { id: "grammar-present-irregular-heard", text: { "en": "A short spoken passage in Italian showing present irregular" } }
     reading_passages:
       - { id: "grammar-present-irregular-text", text: { "en": "A short written text in Italian showing present irregular" } }
-  - planned: { id: "it-transport", theme: "transport", words: 9 }
+  - decks: ["it-transport", "*"]
+    words: 5
     listening_passages:
       - { id: "transport-heard", text: { "en": "A short spoken passage in Italian on the theme transport" } }
     reading_passages:
       - { id: "transport-text", text: { "en": "A short written text in Italian on the theme transport" } }
-  - planned: { id: "it-body", theme: "body", words: 30 }
+  - decks: ["it-body", "*"]
+    words: 30
     listening_passages:
       - { id: "body-heard", text: { "en": "A short spoken passage in Italian on the theme body" } }
     reading_passages:
       - { id: "body-text", text: { "en": "A short written text in Italian on the theme body" } }
-  - planned: { id: "it-places", theme: "places", words: 46 }
+  - decks: ["it-places", "*"]
+    words: 46
     listening_passages:
       - { id: "places-heard", text: { "en": "A short spoken passage in Italian on the theme places" } }
     reading_passages:
       - { id: "places-text", text: { "en": "A short written text in Italian on the theme places" } }
-  - planned: { id: "it-things", theme: "things", words: 42 }
+  - decks: ["it-things", "*"]
+    words: 42
     listening_passages:
       - { id: "things-heard", text: { "en": "A short spoken passage in Italian on the theme things" } }
     reading_passages:
       - { id: "things-text", text: { "en": "A short written text in Italian on the theme things" } }
-  - planned: { id: "it-grammar-prepositions", grammar: ["prepositions"] }
+  - decks: ["it-grammar-prepositions", "it-grammar-prepositions-words", "it-grammar-prepositions-sentences"]
+    words: 0
+    grammar: ["prepositions"]
     listening_passages:
       - { id: "grammar-prepositions-heard", text: { "en": "A short spoken passage in Italian showing prepositions" } }
     reading_passages:
       - { id: "grammar-prepositions-text", text: { "en": "A short written text in Italian showing prepositions" } }
-  - planned: { id: "it-home", theme: "home", words: 21 }
+  - decks: ["it-home", "*"]
+    words: 21
     listening_passages:
       - { id: "home-heard", text: { "en": "A short spoken passage in Italian on the theme home" } }
     reading_passages:
       - { id: "home-text", text: { "en": "A short written text in Italian on the theme home" } }
-  - planned: { id: "it-clothes", theme: "clothes", words: 28 }
+  - decks: ["it-clothes", "*"]
+    words: 28
     listening_passages:
       - { id: "clothes-heard", text: { "en": "A short spoken passage in Italian on the theme clothes" } }
     reading_passages:
       - { id: "clothes-text", text: { "en": "A short written text in Italian on the theme clothes" } }
-  - planned: { id: "it-animals", theme: "animals", words: 32 }
+  - decks: ["it-animals", "*"]
+    words: 32
     listening_passages:
       - { id: "animals-heard", text: { "en": "A short spoken passage in Italian on the theme animals" } }
     reading_passages:

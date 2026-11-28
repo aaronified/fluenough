@@ -1,0 +1,416 @@
+schema: 1
+id: "it-adverbs"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "adverbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1720"
+    target: "sempre"
+    ipa: "ˈsɛmpre"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu parli sempre italiano.", ipa: "tu ˈparli ˈsɛmpre itaˈljano", bases: [{ word: "Tu", ref: "it-0004" }, { word: "parli", ref: "it-1658" }, { word: "sempre", base: "sempre" }, { word: "italiano", ref: "it-1585" }] }
+      - { target: "Sono sempre qui.", ipa: "ˈsono ˈsɛmpre kwi", bases: [{ word: "Sono", ref: "it-0600" }, { word: "sempre", base: "sempre" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-1721"
+    target: "mai"
+    ipa: "maj"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Non capisco mai.", ipa: "non kaˈpisko maj", bases: [{ word: "Non", base: "non" }, { word: "capisco", ref: "it-1659" }, { word: "mai", base: "mai" }] }
+      - { target: "Non sono mai stanco.", ipa: "non ˈsono maj ˈstanko", bases: [{ word: "Non", base: "non" }, { word: "sono", ref: "it-0600" }, { word: "mai", base: "mai" }, { word: "stanco", ref: "it-1887" }] }
+  - id: "it-1722"
+    target: "spesso"
+    ipa: "ˈspesso"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io bevo spesso il caffè.", ipa: "ˈio ˈbevo ˈspesso il kafˈfɛ", bases: [{ word: "Io", ref: "it-0003" }, { word: "bevo", ref: "it-1661" }, { word: "spesso", base: "spesso" }, { word: "il", base: "il" }, { word: "caffè", ref: "it-2321" }] }
+      - { target: "Leggo spesso.", ipa: "ˈlɛɡɡo ˈspesso", bases: [{ word: "Leggo", ref: "it-1680" }, { word: "spesso", base: "spesso" }] }
+  - id: "it-1723"
+    target: "già"
+    ipa: "dʒa"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sei già qui?", ipa: "sɛj dʒa kwi", bases: [{ word: "Sei", ref: "it-0600" }, { word: "già", base: "già" }, { word: "qui", ref: "it-1725" }] }
+      - { target: "Sono già a casa.", ipa: "ˈsono dʒa a ˈkaza", bases: [{ word: "Sono", ref: "it-0600" }, { word: "già", base: "già" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }] }
+  - id: "it-1724"
+    target: "ancora"
+    ipa: "anˈkora"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Parlo ancora.", ipa: "ˈparlo anˈkora", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "ancora", base: "ancora" }] }
+      - { target: "Non capisco ancora.", ipa: "non kaˈpisko anˈkora", bases: [{ word: "Non", base: "non" }, { word: "capisco", ref: "it-1659" }, { word: "ancora", base: "ancora" }] }
+  - id: "it-1725"
+    target: "qui"
+    ipa: "kwi"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sono qui.", ipa: "ˈio ˈsono kwi", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "qui", base: "qui" }] }
+      - { target: "Vieni qui?", ipa: "ˈvjɛni kwi", bases: [{ word: "Vieni", ref: "it-1652" }, { word: "qui", base: "qui" }] }
+  - id: "it-1726"
+    target: "lì"
+    ipa: "li"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il libro è lì.", ipa: "il ˈlibro ɛ li", bases: [{ word: "Il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "è", ref: "it-0600" }, { word: "lì", base: "lì" }] }
+      - { target: "Io vado lì.", ipa: "ˈio ˈvado li", bases: [{ word: "Io", ref: "it-0003" }, { word: "vado", ref: "it-1651" }, { word: "lì", base: "lì" }] }
+  - id: "it-1727"
+    target: "sopra"
+    ipa: "ˈsopra"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il libro è sopra un tavolo.", ipa: "il ˈlibro ɛ ˈsopra un ˈtavolo", bases: [{ word: "Il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "è", ref: "it-0600" }, { word: "sopra", base: "sopra" }, { word: "un", base: "un" }, { word: "tavolo", ref: "it-2848" }] }
+      - { target: "Il gatto è sopra.", ipa: "il ˈɡatto ɛ ˈsopra", bases: [{ word: "Il", base: "il" }, { word: "gatto", ref: "it-2981" }, { word: "è", ref: "it-0600" }, { word: "sopra", base: "sopra" }] }
+  - id: "it-1728"
+    target: "sotto"
+    ipa: "ˈsotto"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il gatto è sotto un tavolo.", ipa: "il ˈɡatto ɛ ˈsotto un ˈtavolo", bases: [{ word: "Il", base: "il" }, { word: "gatto", ref: "it-2981" }, { word: "è", ref: "it-0600" }, { word: "sotto", base: "sotto" }, { word: "un", base: "un" }, { word: "tavolo", ref: "it-2848" }] }
+      - { target: "La borsa è sotto.", ipa: "la ˈborsa ɛ ˈsotto", bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", ref: "it-0600" }, { word: "sotto", base: "sotto" }] }
+  - id: "it-1729"
+    target: "dentro"
+    ipa: "ˈdentro"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sono dentro.", ipa: "ˈio ˈsono ˈdentro", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "dentro", base: "dentro" }] }
+      - { target: "Il caffè è dentro.", ipa: "il kafˈfɛ ɛ ˈdentro", bases: [{ word: "Il", base: "il" }, { word: "caffè", ref: "it-2321" }, { word: "è", ref: "it-0600" }, { word: "dentro", base: "dentro" }] }
+  - id: "it-1730"
+    target: "fuori"
+    ipa: "ˈfwɔri"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sono fuori.", ipa: "ˈio ˈsono ˈfwɔri", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "fuori", base: "fuori" }] }
+      - { target: "Aspetto fuori.", ipa: "asˈpɛtto ˈfwɔri", bases: [{ word: "Aspetto", ref: "it-1683" }, { word: "fuori", base: "fuori" }] }
+  - id: "it-1731"
+    target: "davanti"
+    ipa: "daˈvanti"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sono davanti.", ipa: "ˈio ˈsono daˈvanti", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "davanti", base: "davanti" }] }
+      - { target: "La porta è davanti.", ipa: "la ˈpɔrta ɛ daˈvanti", bases: [{ word: "La", base: "la" }, { word: "porta", ref: "it-2851" }, { word: "è", ref: "it-0600" }, { word: "davanti", base: "davanti" }] }
+  - id: "it-1732"
+    target: "dietro"
+    ipa: "ˈdjɛtro"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il gatto è dietro.", ipa: "il ˈɡatto ɛ ˈdjɛtro", bases: [{ word: "Il", base: "il" }, { word: "gatto", ref: "it-2981" }, { word: "è", ref: "it-0600" }, { word: "dietro", base: "dietro" }] }
+      - { target: "Io sono dietro.", ipa: "ˈio ˈsono ˈdjɛtro", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "dietro", base: "dietro" }] }
+  - id: "it-1733"
+    target: "vicino"
+    ipa: "viˈtʃino"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sono vicino.", ipa: "ˈio ˈsono viˈtʃino", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "vicino", base: "vicino" }] }
+      - { target: "Il bagno è vicino.", ipa: "il ˈbaɲɲo ɛ viˈtʃino", bases: [{ word: "Il", base: "il" }, { word: "bagno", ref: "it-2843" }, { word: "è", ref: "it-0600" }, { word: "vicino", base: "vicino" }] }
+  - id: "it-1734"
+    target: "lontano"
+    ipa: "lonˈtano"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il mare è lontano.", ipa: "il ˈmare ɛ lonˈtano", bases: [{ word: "Il", base: "il" }, { word: "mare", ref: "it-2718" }, { word: "è", ref: "it-0600" }, { word: "lontano", base: "lontano" }] }
+      - { target: "Io sono lontano.", ipa: "ˈio ˈsono lonˈtano", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "lontano", base: "lontano" }] }
+  - id: "it-1735"
+    target: "insieme"
+    ipa: "inˈsjɛme"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io e Marco siamo insieme.", ipa: "ˈio e ˈmarko ˈsjamo inˈsjɛme", bases: [{ word: "Io", ref: "it-0003" }, { word: "e", ref: "it-0005" }, { word: "Marco", base: "Marco" }, { word: "siamo", ref: "it-0600" }, { word: "insieme", base: "insieme" }] }
+      - { target: "Mangiamo insieme.", ipa: "manˈdʒamo inˈsjɛme", bases: [{ word: "Mangiamo", ref: "it-1660" }, { word: "insieme", base: "insieme" }] }
+  - id: "it-1736"
+    target: "bene"
+    ipa: "ˈbɛne"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sto bene.", ipa: "ˈio stɔ ˈbɛne", bases: [{ word: "Io", ref: "it-0003" }, { word: "sto", ref: "it-0601" }, { word: "bene", base: "bene" }] }
+      - { target: "Parlo bene.", ipa: "ˈparlo ˈbɛne", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "bene", base: "bene" }] }
+  - id: "it-1737"
+    target: "male"
+    ipa: "ˈmale"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sto male.", ipa: "ˈio stɔ ˈmale", bases: [{ word: "Io", ref: "it-0003" }, { word: "sto", ref: "it-0601" }, { word: "male", base: "male" }] }
+      - { target: "Dormo male.", ipa: "ˈdɔrmo ˈmale", bases: [{ word: "Dormo", ref: "it-1679" }, { word: "male", base: "male" }] }
+  - id: "it-1738"
+    target: "meglio"
+    ipa: "ˈmɛʎʎo"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sto meglio.", ipa: "stɔ ˈmɛʎʎo", bases: [{ word: "Sto", ref: "it-0601" }, { word: "meglio", base: "meglio" }] }
+      - { target: "Parlo meglio.", ipa: "ˈparlo ˈmɛʎʎo", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "meglio", base: "meglio" }] }
+  - id: "it-1739"
+    target: "peggio"
+    ipa: "ˈpɛddʒo"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sto peggio.", ipa: "stɔ ˈpɛddʒo", bases: [{ word: "Sto", ref: "it-0601" }, { word: "peggio", base: "peggio" }] }
+      - { target: "Dormo peggio.", ipa: "ˈdɔrmo ˈpɛddʒo", bases: [{ word: "Dormo", ref: "it-1679" }, { word: "peggio", base: "peggio" }] }
+  - id: "it-1740"
+    target: "presto"
+    ipa: "ˈprɛsto"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ci vediamo presto.", ipa: "tʃi veˈdjamo ˈprɛsto", bases: [{ word: "Ci", base: "ci" }, { word: "vediamo", ref: "it-1656" }, { word: "presto", base: "presto" }] }
+      - { target: "Mangio presto.", ipa: "ˈmandʒo ˈprɛsto", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "presto", base: "presto" }] }
+  - id: "it-1741"
+    target: "tardi"
+    ipa: "ˈtardi"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dormo tardi.", ipa: "ˈdɔrmo ˈtardi", bases: [{ word: "Dormo", ref: "it-1679" }, { word: "tardi", base: "tardi" }] }
+      - { target: "Arrivo tardi.", ipa: "arˈrivo ˈtardi", bases: [{ word: "Arrivo", ref: "it-2076" }, { word: "tardi", base: "tardi" }] }
+  - id: "it-1742"
+    target: "subito"
+    ipa: "ˈsubito"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vengo subito.", ipa: "ˈvɛnɡo suˈbito", bases: [{ word: "Vengo", ref: "it-1652" }, { word: "subito", base: "subito" }] }
+      - { target: "Chiamo subito.", ipa: "ˈkjamo suˈbito", bases: [{ word: "Chiamo", ref: "it-1684" }, { word: "subito", base: "subito" }] }
+  - id: "it-1743"
+    target: "solo"
+    ipa: "ˈsolo"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sono solo.", ipa: "ˈio ˈsono ˈsolo", bases: [{ word: "Io", ref: "it-0003" }, { word: "sono", ref: "it-0600" }, { word: "solo", base: "solo" }] }
+      - { target: "Parlo solo italiano.", ipa: "ˈparlo ˈsolo itaˈljano", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "solo", base: "solo" }, { word: "italiano", ref: "it-1585" }] }
+  - id: "it-1744"
+    target: "quasi"
+    ipa: "ˈkwazi"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sono quasi a casa.", ipa: "ˈsono ˈkwazi a ˈkaza", bases: [{ word: "Sono", ref: "it-0600" }, { word: "quasi", base: "quasi" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }] }
+      - { target: "Mangio quasi sempre a casa.", ipa: "ˈmandʒo ˈkwazi ˈsɛmpre a ˈkaza", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "quasi", base: "quasi" }, { word: "sempre", ref: "it-1720" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }] }
+  - id: "it-1745"
+    target: "appena"
+    ipa: "apˈpena"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vedo appena.", ipa: "ˈvedo apˈpena", bases: [{ word: "Vedo", ref: "it-1656" }, { word: "appena", base: "appena" }] }
+      - { target: "Capisco appena.", ipa: "kaˈpisko apˈpena", bases: [{ word: "Capisco", ref: "it-1659" }, { word: "appena", base: "appena" }] }
+  - id: "it-1746"
+    target: "così"
+    ipa: "koˈzi"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Parlo così.", ipa: "ˈparlo koˈzi", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "così", base: "così" }] }
+      - { target: "Non è così.", ipa: "non ɛ koˈzi", bases: [{ word: "Non", base: "non" }, { word: "è", ref: "it-0600" }, { word: "così", base: "così" }] }
+  - id: "it-1747"
+    target: "poi"
+    ipa: "pɔj"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Prima mangio, poi dormo.", ipa: "ˈprima ˈmandʒo pɔj ˈdɔrmo", bases: [{ word: "Prima", ref: "it-1748" }, { word: "mangio", ref: "it-1660" }, { word: "poi", base: "poi" }, { word: "dormo", ref: "it-1679" }] }
+      - { target: "Poi capisco.", ipa: "pɔj kaˈpisko", bases: [{ word: "Poi", base: "poi" }, { word: "capisco", ref: "it-1659" }] }
+  - id: "it-1748"
+    target: "prima"
+    ipa: "ˈprima"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Prima bevo un caffè.", ipa: "ˈprima ˈbevo un kafˈfɛ", bases: [{ word: "Prima", base: "prima" }, { word: "bevo", ref: "it-1661" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }] }
+      - { target: "Prima mangio.", ipa: "ˈprima ˈmandʒo", bases: [{ word: "Prima", base: "prima" }, { word: "mangio", ref: "it-1660" }] }
+  - id: "it-1749"
+    target: "dopo"
+    ipa: "ˈdɔpo"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dopo mangio.", ipa: "ˈdɔpo ˈmandʒo", bases: [{ word: "Dopo", base: "dopo" }, { word: "mangio", ref: "it-1660" }] }
+      - { target: "Ci vediamo dopo.", ipa: "tʃi veˈdjamo ˈdɔpo", bases: [{ word: "Ci", base: "ci" }, { word: "vediamo", ref: "it-1656" }, { word: "dopo", base: "dopo" }] }
+  - id: "it-1750"
+    target: "allora"
+    ipa: "alˈlora"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Allora, parliamo?", ipa: "alˈlora parˈljamo", bases: [{ word: "Allora", base: "allora" }, { word: "parliamo", ref: "it-1658" }] }
+      - { target: "Allora capisco.", ipa: "alˈlora kaˈpisko", bases: [{ word: "Allora", base: "allora" }, { word: "capisco", ref: "it-1659" }] }
+  - id: "it-1751"
+    target: "certo"
+    ipa: "ˈtʃɛrto"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Certo, grazie.", ipa: "ˈtʃɛrto ˈɡrattsje", bases: [{ word: "Certo", base: "certo" }, { word: "grazie", ref: "it-0017" }] }
+      - { target: "Certo, capisco.", ipa: "ˈtʃɛrto kaˈpisko", bases: [{ word: "Certo", base: "certo" }, { word: "capisco", ref: "it-1659" }] }
+  - id: "it-1752"
+    target: "certamente"
+    ipa: "tʃertaˈmente"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Certamente, grazie.", ipa: "tʃertaˈmente ˈɡrattsje", bases: [{ word: "Certamente", base: "certamente" }, { word: "grazie", ref: "it-0017" }] }
+      - { target: "Certamente capisco.", ipa: "tʃertaˈmente kaˈpisko", bases: [{ word: "Certamente", base: "certamente" }, { word: "capisco", ref: "it-1659" }] }
+  - id: "it-1753"
+    target: "naturalmente"
+    ipa: "naturalˈmente"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Naturalmente, sì.", ipa: "naturalˈmente si", bases: [{ word: "Naturalmente", base: "naturalmente" }, { word: "sì", ref: "it-0001" }] }
+      - { target: "Naturalmente parlo italiano.", ipa: "naturalˈmente ˈparlo itaˈljano", bases: [{ word: "Naturalmente", base: "naturalmente" }, { word: "parlo", ref: "it-1658" }, { word: "italiano", ref: "it-1585" }] }
+  - id: "it-1754"
+    target: "volentieri"
+    ipa: "volenˈtjɛri"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mangio volentieri.", ipa: "ˈmandʒo volenˈtjɛri", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "volentieri", base: "volentieri" }] }
+      - { target: "Parlo volentieri.", ipa: "ˈparlo volenˈtjɛri", bases: [{ word: "Parlo", ref: "it-1658" }, { word: "volentieri", base: "volentieri" }] }
+  - id: "it-1755"
+    target: "finalmente"
+    ipa: "finalˈmente"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Finalmente capisco.", ipa: "finalˈmente kaˈpisko", bases: [{ word: "Finalmente", base: "finalmente" }, { word: "capisco", ref: "it-1659" }] }
+      - { target: "Finalmente sono qui.", ipa: "finalˈmente ˈsono kwi", bases: [{ word: "Finalmente", base: "finalmente" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-1756"
+    target: "purtroppo"
+    ipa: "purˈtrɔppo"
+    pos: "adv"
+    tags: ["adverbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Purtroppo non capisco.", ipa: "purˈtrɔppo non kaˈpisko", bases: [{ word: "Purtroppo", base: "purtroppo" }, { word: "non", base: "non" }, { word: "capisco", ref: "it-1659" }] }
+      - { target: "Purtroppo sono stanco.", ipa: "purˈtrɔppo ˈsono ˈstanko", bases: [{ word: "Purtroppo", base: "purtroppo" }, { word: "sono", ref: "it-0600" }, { word: "stanco", ref: "it-1887" }] }

@@ -1,0 +1,767 @@
+schema: 1
+id: "it-food"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2280"
+    target: "pane"
+    ipa: "ˈpane"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il pane.", ipa: "ˈkwesto ɛ il ˈpane", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "pane", base: "pane" }] }
+      - { target: "Dov'è il pane?", ipa: "doˈvɛ il ˈpane", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pane", base: "pane" }] }
+  - id: "it-2281"
+    target: "pasta"
+    ipa: "ˈpasta"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la pasta.", ipa: "ˈkwesta ɛ la ˈpasta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "pasta", base: "pasta" }] }
+      - { target: "Dov'è la pasta?", ipa: "doˈvɛ la ˈpasta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "pasta", base: "pasta" }] }
+  - id: "it-2282"
+    target: "carne"
+    ipa: "ˈkarne"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la carne.", ipa: "ˈkwesta ɛ la ˈkarne", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "carne", base: "carne" }] }
+      - { target: "Dov'è la carne?", ipa: "doˈvɛ la ˈkarne", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "carne", base: "carne" }] }
+  - id: "it-2283"
+    target: "pesce"
+    ipa: "ˈpeʃʃe"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il pesce.", ipa: "ˈkwesto ɛ il ˈpeʃʃe", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "pesce", base: "pesce" }] }
+      - { target: "Dov'è il pesce?", ipa: "doˈvɛ il ˈpeʃʃe", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pesce", base: "pesce" }] }
+  - id: "it-2284"
+    target: "pollo"
+    ipa: "ˈpollo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il pollo.", ipa: "ˈkwesto ɛ il ˈpollo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "pollo", base: "pollo" }] }
+      - { target: "Dov'è il pollo?", ipa: "doˈvɛ il ˈpollo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pollo", base: "pollo" }] }
+  - id: "it-2285"
+    target: "maiale"
+    ipa: "maˈjale"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il maiale.", ipa: "ˈkwesto ɛ il maˈjale", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "maiale", base: "maiale" }] }
+      - { target: "Dov'è il maiale?", ipa: "doˈvɛ il maˈjale", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "maiale", base: "maiale" }] }
+  - id: "it-2286"
+    target: "manzo"
+    ipa: "ˈmantso"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il manzo.", ipa: "ˈkwesto ɛ il ˈmantso", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "manzo", base: "manzo" }] }
+      - { target: "Dov'è il manzo?", ipa: "doˈvɛ il ˈmantso", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "manzo", base: "manzo" }] }
+  - id: "it-2287"
+    target: "uovo"
+    ipa: "ˈwɔvo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'uovo.", ipa: "ˈkwesto ɛ ˈlwɔvo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'uovo", base: "uovo" }] }
+      - { target: "Dov'è l'uovo?", ipa: "doˈvɛ ˈlwɔvo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'uovo", base: "uovo" }] }
+  - id: "it-2288"
+    target: "formaggio"
+    ipa: "forˈmaddʒo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il formaggio.", ipa: "ˈkwesto ɛ il forˈmaddʒo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "formaggio", base: "formaggio" }] }
+      - { target: "Dov'è il formaggio?", ipa: "doˈvɛ il forˈmaddʒo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "formaggio", base: "formaggio" }] }
+  - id: "it-2289"
+    target: "latte"
+    ipa: "ˈlatte"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il latte.", ipa: "ˈkwesto ɛ il ˈlatte", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "latte", base: "latte" }] }
+      - { target: "Dov'è il latte?", ipa: "doˈvɛ il ˈlatte", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "latte", base: "latte" }] }
+  - id: "it-2290"
+    target: "burro"
+    ipa: "ˈburro"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il burro.", ipa: "ˈkwesto ɛ il ˈburro", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "burro", base: "burro" }] }
+      - { target: "Dov'è il burro?", ipa: "doˈvɛ il ˈburro", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "burro", base: "burro" }] }
+  - id: "it-2291"
+    target: "olio"
+    ipa: "ˈɔljo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'olio.", ipa: "ˈkwesto ɛ ˈlɔljo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'olio", base: "olio" }] }
+      - { target: "Dov'è l'olio?", ipa: "doˈvɛ ˈlɔljo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'olio", base: "olio" }] }
+  - id: "it-2292"
+    target: "sale"
+    ipa: "ˈsale"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il sale.", ipa: "ˈkwesto ɛ il ˈsale", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "sale", base: "sale" }] }
+      - { target: "Dov'è il sale?", ipa: "doˈvɛ il ˈsale", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "sale", base: "sale" }] }
+  - id: "it-2293"
+    target: "pepe"
+    ipa: "ˈpepe"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il pepe.", ipa: "ˈkwesto ɛ il ˈpepe", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "pepe", base: "pepe" }] }
+      - { target: "Dov'è il pepe?", ipa: "doˈvɛ il ˈpepe", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pepe", base: "pepe" }] }
+  - id: "it-2294"
+    target: "zucchero"
+    ipa: "ˈdzukkero"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è lo zucchero.", ipa: "ˈkwesto ɛ lo ˈdzukkero", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "lo", base: "lo" }, { word: "zucchero", base: "zucchero" }] }
+      - { target: "Dov'è lo zucchero?", ipa: "doˈvɛ lo ˈdzukkero", bases: [{ word: "Dov'è", base: "dove" }, { word: "lo", base: "lo" }, { word: "zucchero", base: "zucchero" }] }
+  - id: "it-2295"
+    target: "miele"
+    ipa: "ˈmjɛle"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il miele.", ipa: "ˈkwesto ɛ il ˈmjɛle", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "miele", base: "miele" }] }
+      - { target: "Dov'è il miele?", ipa: "doˈvɛ il ˈmjɛle", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "miele", base: "miele" }] }
+  - id: "it-2296"
+    target: "frutta"
+    ipa: "ˈfrutta"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la frutta.", ipa: "ˈkwesta ɛ la ˈfrutta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "frutta", base: "frutta" }] }
+      - { target: "Dov'è la frutta?", ipa: "doˈvɛ la ˈfrutta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "frutta", base: "frutta" }] }
+  - id: "it-2297"
+    target: "verdura"
+    ipa: "verˈdura"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "La verdura è buona.", ipa: "la verˈdura ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "verdura", base: "verdura" }, { word: "è", base: "essere" }, { word: "buona", ref: "it-0008" }] }
+      - { target: "Dov'è la verdura?", ipa: "doˈvɛ la verˈdura", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "verdura", base: "verdura" }] }
+  - id: "it-2298"
+    target: "mela"
+    ipa: "ˈmela"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la mela.", ipa: "ˈkwesta ɛ la ˈmela", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "mela", base: "mela" }] }
+      - { target: "Dov'è la mela?", ipa: "doˈvɛ la ˈmela", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "mela", base: "mela" }] }
+  - id: "it-2299"
+    target: "pera"
+    ipa: "ˈpera"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la pera.", ipa: "ˈkwesta ɛ la ˈpera", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "pera", base: "pera" }] }
+      - { target: "Dov'è la pera?", ipa: "doˈvɛ la ˈpera", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "pera", base: "pera" }] }
+  - id: "it-2300"
+    target: "arancia"
+    ipa: "aˈrantʃa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è l'arancia.", ipa: "ˈkwesta ɛ laˈrantʃa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'arancia", base: "arancia" }] }
+      - { target: "Dov'è l'arancia?", ipa: "doˈvɛ laˈrantʃa", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'arancia", base: "arancia" }] }
+  - id: "it-2301"
+    target: "banana"
+    ipa: "baˈnana"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la banana.", ipa: "ˈkwesta ɛ la baˈnana", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "banana", base: "banana" }] }
+      - { target: "Dov'è la banana?", ipa: "doˈvɛ la baˈnana", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "banana", base: "banana" }] }
+  - id: "it-2302"
+    target: "fragola"
+    ipa: "ˈfraɡola"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la fragola.", ipa: "ˈkwesta ɛ la ˈfraɡola", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "fragola", base: "fragola" }] }
+      - { target: "Dov'è la fragola?", ipa: "doˈvɛ la ˈfraɡola", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "fragola", base: "fragola" }] }
+  - id: "it-2303"
+    target: "uva"
+    ipa: "ˈuva"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Mangio l'uva.", ipa: "ˈmandʒo ˈluva", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "l'uva", base: "uva" }] }
+      - { target: "Dov'è l'uva?", ipa: "doˈvɛ ˈluva", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'uva", base: "uva" }] }
+  - id: "it-2304"
+    target: "limone"
+    ipa: "liˈmone"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il limone.", ipa: "ˈkwesto ɛ il liˈmone", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "limone", base: "limone" }] }
+      - { target: "Dov'è il limone?", ipa: "doˈvɛ il liˈmone", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "limone", base: "limone" }] }
+  - id: "it-2305"
+    target: "pomodoro"
+    ipa: "pomoˈdɔro"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il pomodoro.", ipa: "ˈkwesto ɛ il pomoˈdɔro", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "pomodoro", base: "pomodoro" }] }
+      - { target: "Dov'è il pomodoro?", ipa: "doˈvɛ il pomoˈdɔro", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pomodoro", base: "pomodoro" }] }
+  - id: "it-2306"
+    target: "patata"
+    ipa: "paˈtata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la patata.", ipa: "ˈkwesta ɛ la paˈtata", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "patata", base: "patata" }] }
+      - { target: "Dov'è la patata?", ipa: "doˈvɛ la paˈtata", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "patata", base: "patata" }] }
+  - id: "it-2307"
+    target: "carota"
+    ipa: "kaˈrɔta"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la carota.", ipa: "ˈkwesta ɛ la kaˈrɔta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "carota", base: "carota" }] }
+      - { target: "Dov'è la carota?", ipa: "doˈvɛ la kaˈrɔta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "carota", base: "carota" }] }
+  - id: "it-2308"
+    target: "cipolla"
+    ipa: "tʃiˈpolla"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la cipolla.", ipa: "ˈkwesta ɛ la tʃiˈpolla", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "cipolla", base: "cipolla" }] }
+      - { target: "Dov'è la cipolla?", ipa: "doˈvɛ la tʃiˈpolla", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "cipolla", base: "cipolla" }] }
+  - id: "it-2309"
+    target: "aglio"
+    ipa: "ˈaʎʎo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è l'aglio.", ipa: "ˈkwesto ɛ ˈlaʎʎo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "l'aglio", base: "aglio" }] }
+      - { target: "Dov'è l'aglio?", ipa: "doˈvɛ ˈlaʎʎo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'aglio", base: "aglio" }] }
+  - id: "it-2310"
+    target: "insalata"
+    ipa: "insaˈlata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è l'insalata.", ipa: "ˈkwesta ɛ linsaˈlata", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'insalata", base: "insalata" }] }
+      - { target: "Dov'è l'insalata?", ipa: "doˈvɛ linsaˈlata", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'insalata", base: "insalata" }] }
+  - id: "it-2311"
+    target: "fagiolo"
+    ipa: "faˈdʒɔlo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il fagiolo.", ipa: "ˈkwesto ɛ il faˈdʒɔlo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "fagiolo", base: "fagiolo" }] }
+      - { target: "Dov'è il fagiolo?", ipa: "doˈvɛ il faˈdʒɔlo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "fagiolo", base: "fagiolo" }] }
+  - id: "it-2312"
+    target: "pizza"
+    ipa: "ˈpittsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la pizza.", ipa: "ˈkwesta ɛ la ˈpittsa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "pizza", base: "pizza" }] }
+      - { target: "Dov'è la pizza?", ipa: "doˈvɛ la ˈpittsa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "pizza", base: "pizza" }] }
+  - id: "it-2313"
+    target: "zuppa"
+    ipa: "ˈtsuppa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la zuppa.", ipa: "ˈkwesta ɛ la ˈtsuppa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "zuppa", base: "zuppa" }] }
+      - { target: "Dov'è la zuppa?", ipa: "doˈvɛ la ˈtsuppa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "zuppa", base: "zuppa" }] }
+  - id: "it-2314"
+    target: "minestra"
+    ipa: "miˈnɛstra"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la minestra.", ipa: "ˈkwesta ɛ la miˈnɛstra", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "minestra", base: "minestra" }] }
+      - { target: "Dov'è la minestra?", ipa: "doˈvɛ la miˈnɛstra", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "minestra", base: "minestra" }] }
+  - id: "it-2315"
+    target: "brodo"
+    ipa: "ˈbrɔdo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il brodo.", ipa: "ˈkwesto ɛ il ˈbrɔdo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "brodo", base: "brodo" }] }
+      - { target: "Dov'è il brodo?", ipa: "doˈvɛ il ˈbrɔdo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "brodo", base: "brodo" }] }
+  - id: "it-2316"
+    target: "panino"
+    ipa: "paˈnino"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il panino.", ipa: "ˈkwesto ɛ il paˈnino", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "panino", base: "panino" }] }
+      - { target: "Dov'è il panino?", ipa: "doˈvɛ il paˈnino", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "panino", base: "panino" }] }
+  - id: "it-2317"
+    target: "dolce"
+    ipa: "ˈdoltʃe"
+    pos: "adj"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Il caffè è dolce.", ipa: "il kafˈfɛ ɛ ˈdoltʃe", bases: [{ word: "Il", base: "il" }, { word: "caffè", ref: "it-2321" }, { word: "è", base: "essere" }, { word: "dolce", base: "dolce" }] }
+      - { target: "La torta è dolce.", ipa: "la ˈtorta ɛ ˈdoltʃe", bases: [{ word: "La", base: "la" }, { word: "torta", ref: "it-2318" }, { word: "è", base: "essere" }, { word: "dolce", base: "dolce" }] }
+  - id: "it-2318"
+    target: "torta"
+    ipa: "ˈtorta"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la torta.", ipa: "ˈkwesta ɛ la ˈtorta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "torta", base: "torta" }] }
+      - { target: "Dov'è la torta?", ipa: "doˈvɛ la ˈtorta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "torta", base: "torta" }] }
+  - id: "it-2319"
+    target: "biscotto"
+    ipa: "bisˈkɔtto"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il biscotto.", ipa: "ˈkwesto ɛ il bisˈkɔtto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "biscotto", base: "biscotto" }] }
+      - { target: "Dov'è il biscotto?", ipa: "doˈvɛ il bisˈkɔtto", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "biscotto", base: "biscotto" }] }
+  - id: "it-2320"
+    target: "cioccolato"
+    ipa: "tʃokkoˈlato"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il cioccolato.", ipa: "ˈkwesto ɛ il tʃokkoˈlato", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "cioccolato", base: "cioccolato" }] }
+      - { target: "Dov'è il cioccolato?", ipa: "doˈvɛ il tʃokkoˈlato", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "cioccolato", base: "cioccolato" }] }
+  - id: "it-2321"
+    target: "caffè"
+    ipa: "kafˈfɛ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il caffè.", ipa: "ˈkwesto ɛ il kafˈfɛ", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "caffè", base: "caffè" }] }
+      - { target: "Dov'è il caffè?", ipa: "doˈvɛ il kafˈfɛ", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "caffè", base: "caffè" }] }
+  - id: "it-2322"
+    target: "tè"
+    ipa: "tɛ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il tè.", ipa: "ˈkwesto ɛ il tɛ", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "tè", base: "tè" }] }
+      - { target: "Dov'è il tè?", ipa: "doˈvɛ il tɛ", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "tè", base: "tè" }] }
+  - id: "it-2323"
+    target: "vino"
+    ipa: "ˈvino"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il vino.", ipa: "ˈkwesto ɛ il ˈvino", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "vino", base: "vino" }] }
+      - { target: "Dov'è il vino?", ipa: "doˈvɛ il ˈvino", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "vino", base: "vino" }] }
+  - id: "it-2324"
+    target: "birra"
+    ipa: "ˈbirra"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la birra.", ipa: "ˈkwesta ɛ la ˈbirra", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "birra", base: "birra" }] }
+      - { target: "Dov'è la birra?", ipa: "doˈvɛ la ˈbirra", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "birra", base: "birra" }] }
+  - id: "it-2325"
+    target: "succo"
+    ipa: "ˈsukko"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il succo.", ipa: "ˈkwesto ɛ il ˈsukko", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "succo", base: "succo" }] }
+      - { target: "Dov'è il succo?", ipa: "doˈvɛ il ˈsukko", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "succo", base: "succo" }] }
+  - id: "it-2326"
+    target: "colazione"
+    ipa: "kolatˈtsjone"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la colazione.", ipa: "ˈkwesta ɛ la kolatˈtsjone", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "colazione", base: "colazione" }] }
+      - { target: "Dov'è la colazione?", ipa: "doˈvɛ la kolatˈtsjone", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "colazione", base: "colazione" }] }
+  - id: "it-2327"
+    target: "pranzo"
+    ipa: "ˈprandzo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il pranzo.", ipa: "ˈkwesto ɛ il ˈprandzo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "pranzo", base: "pranzo" }] }
+      - { target: "Dov'è il pranzo?", ipa: "doˈvɛ il ˈprandzo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pranzo", base: "pranzo" }] }
+  - id: "it-2328"
+    target: "cena"
+    ipa: "ˈtʃena"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la cena.", ipa: "ˈkwesta ɛ la ˈtʃena", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "cena", base: "cena" }] }
+      - { target: "Dov'è la cena?", ipa: "doˈvɛ la ˈtʃena", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "cena", base: "cena" }] }
+  - id: "it-2329"
+    target: "forchetta"
+    ipa: "forˈketta"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la forchetta.", ipa: "ˈkwesta ɛ la forˈketta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "forchetta", base: "forchetta" }] }
+      - { target: "Dov'è la forchetta?", ipa: "doˈvɛ la forˈketta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "forchetta", base: "forchetta" }] }
+  - id: "it-2330"
+    target: "coltello"
+    ipa: "kolˈtɛllo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il coltello.", ipa: "ˈkwesto ɛ il kolˈtɛllo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "coltello", base: "coltello" }] }
+      - { target: "Dov'è il coltello?", ipa: "doˈvɛ il kolˈtɛllo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "coltello", base: "coltello" }] }
+  - id: "it-2331"
+    target: "cucchiaio"
+    ipa: "kukˈkjajo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il cucchiaio.", ipa: "ˈkwesto ɛ il kukˈkjajo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "cucchiaio", base: "cucchiaio" }] }
+      - { target: "Dov'è il cucchiaio?", ipa: "doˈvɛ il kukˈkjajo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "cucchiaio", base: "cucchiaio" }] }
+  - id: "it-2332"
+    target: "tavola"
+    ipa: "ˈtavola"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la tavola.", ipa: "ˈkwesta ɛ la ˈtavola", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "tavola", base: "tavola" }] }
+      - { target: "Dov'è la tavola?", ipa: "doˈvɛ la ˈtavola", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "tavola", base: "tavola" }] }
+  - id: "it-2333"
+    target: "ristorante"
+    ipa: "ristoˈrante"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il ristorante.", ipa: "ˈkwesto ɛ il ristoˈrante", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "ristorante", base: "ristorante" }] }
+      - { target: "Dov'è il ristorante?", ipa: "doˈvɛ il ristoˈrante", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "ristorante", base: "ristorante" }] }
+  - id: "it-2334"
+    target: "prosciutto"
+    ipa: "proʃˈʃutto"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il prosciutto.", ipa: "ˈkwesto ɛ il proʃˈʃutto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "prosciutto", base: "prosciutto" }] }
+      - { target: "Dov'è il prosciutto?", ipa: "doˈvɛ il proʃˈʃutto", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "prosciutto", base: "prosciutto" }] }
+  - id: "it-2335"
+    target: "fungo"
+    ipa: "ˈfunɡo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il fungo.", ipa: "ˈkwesto ɛ il ˈfunɡo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "fungo", base: "fungo" }] }
+      - { target: "Dov'è il fungo?", ipa: "doˈvɛ il ˈfunɡo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "fungo", base: "fungo" }] }
+  - id: "it-2336"
+    target: "yogurt"
+    ipa: "ˈjɔɡurt"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è lo yogurt.", ipa: "ˈkwesto ɛ lo ˈjɔɡurt", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "lo", base: "lo" }, { word: "yogurt", base: "yogurt" }] }
+      - { target: "Dov'è lo yogurt?", ipa: "doˈvɛ lo ˈjɔɡurt", bases: [{ word: "Dov'è", base: "dove" }, { word: "lo", base: "lo" }, { word: "yogurt", base: "yogurt" }] }
+  - id: "it-2337"
+    target: "marmellata"
+    ipa: "marmelˈlata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la marmellata.", ipa: "ˈkwesta ɛ la marmelˈlata", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "marmellata", base: "marmellata" }] }
+      - { target: "Dov'è la marmellata?", ipa: "doˈvɛ la marmelˈlata", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "marmellata", base: "marmellata" }] }
+  - id: "it-2338"
+    target: "lattuga"
+    ipa: "latˈtuɡa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la lattuga.", ipa: "ˈkwesta ɛ la latˈtuɡa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "lattuga", base: "lattuga" }] }
+      - { target: "Dov'è la lattuga?", ipa: "doˈvɛ la latˈtuɡa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "lattuga", base: "lattuga" }] }
+  - id: "it-2339"
+    target: "spinaci"
+    ipa: "spiˈnatʃi"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Ho gli spinaci.", ipa: "ɔ ʎi spiˈnatʃi", bases: [{ word: "Ho", base: "avere" }, { word: "gli", base: "lo" }, { word: "spinaci", base: "spinaci" }] }
+      - { target: "Gli spinaci sono verdura.", ipa: "ʎi spiˈnatʃi ˈsono verˈdura", bases: [{ word: "Gli", base: "lo" }, { word: "spinaci", base: "spinaci" }, { word: "sono", base: "essere" }, { word: "verdura", ref: "it-2297" }] }
+  - id: "it-2340"
+    target: "zucchina"
+    ipa: "dzukˈkina"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la zucchina.", ipa: "ˈkwesta ɛ la dzukˈkina", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "zucchina", base: "zucchina" }] }
+      - { target: "Dov'è la zucchina?", ipa: "doˈvɛ la dzukˈkina", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "zucchina", base: "zucchina" }] }
+  - id: "it-2341"
+    target: "melanzana"
+    ipa: "melanˈtsana"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la melanzana.", ipa: "ˈkwesta ɛ la melanˈtsana", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "melanzana", base: "melanzana" }] }
+      - { target: "Dov'è la melanzana?", ipa: "doˈvɛ la melanˈtsana", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "melanzana", base: "melanzana" }] }
+  - id: "it-2342"
+    target: "peperone"
+    ipa: "pepeˈrone"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il peperone.", ipa: "ˈkwesto ɛ il pepeˈrone", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "peperone", base: "peperone" }] }
+      - { target: "Dov'è il peperone?", ipa: "doˈvɛ il pepeˈrone", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "peperone", base: "peperone" }] }
+  - id: "it-2343"
+    target: "noce"
+    ipa: "ˈnotʃe"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la noce.", ipa: "ˈkwesta ɛ la ˈnotʃe", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "noce", base: "noce" }] }
+      - { target: "Dov'è la noce?", ipa: "doˈvɛ la ˈnotʃe", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "noce", base: "noce" }] }
+  - id: "it-2344"
+    target: "pesca"
+    ipa: "ˈpeska"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la pesca.", ipa: "ˈkwesta ɛ la ˈpeska", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "pesca", base: "pesca" }] }
+      - { target: "Dov'è la pesca?", ipa: "doˈvɛ la ˈpeska", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "pesca", base: "pesca" }] }
+  - id: "it-2345"
+    target: "ciliegia"
+    ipa: "tʃiˈljɛdʒa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la ciliegia.", ipa: "ˈkwesta ɛ la tʃiˈljɛdʒa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "ciliegia", base: "ciliegia" }] }
+      - { target: "Dov'è la ciliegia?", ipa: "doˈvɛ la tʃiˈljɛdʒa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "ciliegia", base: "ciliegia" }] }
+  - id: "it-2346"
+    target: "riso"
+    ipa: "ˈrizo"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il riso.", ipa: "ˈkwesto ɛ il ˈrizo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "riso", base: "riso" }] }
+      - { target: "Il riso è buono.", ipa: "il ˈrizo ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "riso", base: "riso" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-2347"
+    target: "gelato"
+    ipa: "dʒeˈlato"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il gelato.", ipa: "ˈkwesto ɛ il dʒeˈlato", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "gelato", base: "gelato" }] }
+      - { target: "Il gelato è buono.", ipa: "il dʒeˈlato ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "gelato", base: "gelato" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+  - id: "it-2348"
+    target: "piatto"
+    ipa: "ˈpjatto"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ho un piatto.", ipa: "ɔ un ˈpjatto", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "piatto", base: "piatto" }] }
+      - { target: "Questo è il piatto.", ipa: "ˈkwesto ɛ il ˈpjatto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "piatto", base: "piatto" }] }

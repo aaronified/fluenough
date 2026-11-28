@@ -1,0 +1,184 @@
+schema: 1
+id: "it-grammar-present-regular-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "it-4200"
+    target: "Io parlo italiano."
+    ipa: "jo ˈparlo itaˈljano"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "parlo", ref: "it-1658" }, { word: "italiano", ref: "it-1585" }]
+  - id: "it-4201"
+    target: "Loro parlano bene."
+    ipa: "ˈloro ˈparlano ˈbene"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "parlano", ref: "it-1658" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4202"
+    target: "Lei guarda il treno."
+    ipa: "lej ˈɡwarda il ˈtreno"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lei", ref: "it-1371" }, { word: "guarda", ref: "it-1657" }, { word: "il", base: "il" }, { word: "treno", ref: "it-2560" }]
+  - id: "it-4203"
+    target: "Tu cerchi la porta."
+    ipa: "tu ˈtʃerki la ˈporta"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Tu", ref: "it-0004" }, { word: "cerchi", ref: "it-1665" }, { word: "la", base: "la" }, { word: "porta", ref: "it-2851" }]
+  - id: "it-4204"
+    target: "Noi mangiamo qui."
+    ipa: "noj manˈdʒamo kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Noi", ref: "it-1372" }, { word: "mangiamo", ref: "it-1660" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4205"
+    target: "Voi pagate bene?"
+    ipa: "voj paˈɡate ˈbene"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Voi", ref: "it-1373" }, { word: "pagate", ref: "it-1676" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4206"
+    target: "Noi paghiamo qui."
+    ipa: "noj paˈɡjamo kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Noi", ref: "it-1372" }, { word: "paghiamo", ref: "it-1676" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4207"
+    target: "Io leggo un libro."
+    ipa: "jo ˈlɛɡɡo un ˈlibro"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "leggo", ref: "it-1680" }, { word: "un", base: "un" }, { word: "libro", ref: "it-2770" }]
+  - id: "it-4208"
+    target: "Tu scrivi bene."
+    ipa: "tu ˈskrivi ˈbene"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Tu", ref: "it-0004" }, { word: "scrivi", ref: "it-1681" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4209"
+    target: "Lui prende il treno."
+    ipa: "ˈlui ˈprɛnde il ˈtreno"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lui", ref: "it-1370" }, { word: "prende", ref: "it-1662" }, { word: "il", base: "il" }, { word: "treno", ref: "it-2560" }]
+  - id: "it-4210"
+    target: "Noi vediamo la casa."
+    ipa: "noj veˈdjamo la ˈkaza"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Noi", ref: "it-1372" }, { word: "vediamo", ref: "it-1656" }, { word: "la", base: "la" }, { word: "casa", ref: "it-2840" }]
+  - id: "it-4211"
+    target: "Voi chiudete la porta."
+    ipa: "voj kjuˈdete la ˈporta"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Voi", ref: "it-1373" }, { word: "chiudete", ref: "it-1664" }, { word: "la", base: "la" }, { word: "porta", ref: "it-2851" }]
+  - id: "it-4212"
+    target: "Loro prendono un caffè."
+    ipa: "ˈloro ˈprɛndono un kafˈfɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "prendono", ref: "it-1662" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }]
+  - id: "it-4213"
+    target: "Io dormo bene."
+    ipa: "jo ˈdɔrmo ˈbene"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "dormo", ref: "it-1679" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4214"
+    target: "Voi dormite qui?"
+    ipa: "voj dorˈmite kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Voi", ref: "it-1373" }, { word: "dormite", ref: "it-1679" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4215"
+    target: "Tu apri la porta."
+    ipa: "tu ˈapri la ˈporta"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Tu", ref: "it-0004" }, { word: "apri", ref: "it-1663" }, { word: "la", base: "la" }, { word: "porta", ref: "it-2851" }]
+  - id: "it-4216"
+    target: "Noi sentiamo bene."
+    ipa: "noj senˈtjamo ˈbene"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Noi", ref: "it-1372" }, { word: "sentiamo", ref: "it-1669" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4217"
+    target: "Io capisco."
+    ipa: "jo kaˈpisko"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "capisco", ref: "it-1659" }]
+  - id: "it-4218"
+    target: "Loro capiscono bene."
+    ipa: "ˈloro kaˈpiskono ˈbene"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "capiscono", ref: "it-1659" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4219"
+    target: "Noi capiamo."
+    ipa: "noj kaˈpjamo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Noi", ref: "it-1372" }, { word: "capiamo", ref: "it-1659" }]
+  - id: "it-4220"
+    target: "Tu finisci presto."
+    ipa: "tu fiˈniʃʃi ˈpresto"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Tu", ref: "it-0004" }, { word: "finisci", ref: "it-2071" }, { word: "presto", ref: "it-1740" }]
+  - id: "it-4221"
+    target: "Lei preferisce il treno."
+    ipa: "lej prefeˈriʃʃe il ˈtreno"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lei", ref: "it-1371" }, { word: "preferisce", ref: "it-2094" }, { word: "il", base: "il" }, { word: "treno", ref: "it-2560" }]
