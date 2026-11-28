@@ -18,7 +18,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist ein Staat.", ipa: "das ɪst aɪn ʃtaːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Staat", base: "Staat" }] }
-      - { target: "Der Staat ist groß.", ipa: "deːɐ̯ ʃtaːt ɪst ɡʁoːs", bases: [{ word: "Der", base: "der" }, { word: "Staat", base: "Staat" }, { word: "ist", base: "sein" }, { word: "groß", ref: "de-1930" }] }
+      - { target: "Hier ist ein Staat.", ipa: "hiːɐ̯ ɪst aɪn ʃtaːt", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Staat", base: "Staat" }] }
   - id: "de-0401"
     target: "Beet"
     ipa: "beːt"
@@ -30,7 +30,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist ein Beet.", ipa: "das ɪst aɪn beːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Beet", base: "Beet" }] }
-      - { target: "Das Beet ist klein.", ipa: "das beːt ɪst klaɪn", bases: [{ word: "Das", base: "das" }, { word: "Beet", base: "Beet" }, { word: "ist", base: "sein" }, { word: "klein", ref: "de-1931" }] }
+      - { target: "Hier ist ein Beet.", ipa: "hiːɐ̯ ɪst aɪn beːt", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Beet", base: "Beet" }] }
   - id: "de-0402"
     target: "Ofen"
     ipa: "ˈoːfən"
@@ -42,7 +42,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist ein Ofen.", ipa: "das ɪst aɪn ˈoːfən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Ofen", base: "Ofen" }] }
-      - { target: "Der Ofen ist heiß.", ipa: "deːɐ̯ ˈoːfən ɪst haɪs", bases: [{ word: "Der", base: "der" }, { word: "Ofen", base: "Ofen" }, { word: "ist", base: "sein" }, { word: "heiß", ref: "de-1938" }] }
+      - { target: "Hier ist ein Ofen.", ipa: "hiːɐ̯ ɪst aɪn ˈoːfən", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Ofen", base: "Ofen" }] }
   - id: "de-0403"
     target: "offen"
     ipa: "ˈɔfən"
@@ -52,8 +52,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "de-0402", source: "https://en.wiktionary.org/wiki/offen" }
     bases: "self"
     examples:
-      - { target: "Die Tür ist offen.", ipa: "diː tyːɐ̯ ɪst ˈɔfən", bases: [{ word: "Die", base: "die" }, { word: "Tür", ref: "de-2783" }, { word: "ist", base: "sein" }, { word: "offen", base: "offen" }] }
-      - { target: "Das Fenster ist offen.", ipa: "das ˈfɛnstɐ ɪst ˈɔfən", bases: [{ word: "Das", base: "das" }, { word: "Fenster", ref: "de-2784" }, { word: "ist", base: "sein" }, { word: "offen", base: "offen" }] }
+      - { target: "Das ist offen.", ipa: "das ɪst ˈɔfən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "offen", base: "offen" }] }
+      - { target: "Ja, das ist offen.", ipa: "jaː das ɪst ˈɔfən", bases: [{ word: "Ja", ref: "de-0001" }, { word: "das", base: "das" }, { word: "ist", base: "sein" }, { word: "offen", base: "offen" }] }
   - id: "de-0404"
     target: "Buch"
     ipa: "buːx"
@@ -65,7 +65,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist ein Buch.", ipa: "das ɪst aɪn buːx", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Buch", base: "Buch" }] }
-      - { target: "Das Buch ist neu.", ipa: "das buːx ɪst nɔɪ", bases: [{ word: "Das", base: "das" }, { word: "Buch", base: "Buch" }, { word: "ist", base: "sein" }, { word: "neu", ref: "de-1932" }] }
+      - { target: "Ich habe ein Buch.", ipa: "ɪç ˈhaːbə aɪn buːx", bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Buch", base: "Buch" }] }
   - id: "de-0405"
     target: "Bücher"
     ipa: "ˈbʏçɐ"
@@ -76,7 +76,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das sind die Bücher.", ipa: "das zɪnt diː ˈbʏçɐ", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Bücher", base: "Buch" }] }
-      - { target: "Die Bücher sind neu.", ipa: "diː ˈbʏçɐ zɪnt nɔɪ", bases: [{ word: "Die", base: "die" }, { word: "Bücher", base: "Buch" }, { word: "sind", base: "sein" }, { word: "neu", ref: "de-1932" }] }
+      - { target: "Hier sind die Bücher.", ipa: "hiːɐ̯ zɪnt diː ˈbʏçɐ", bases: [{ word: "Hier", ref: "de-0009" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Bücher", base: "Buch" }] }
   - id: "de-0406"
     target: "Tasche"
     ipa: "ˈtaʃə"
@@ -88,7 +88,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist eine Tasche.", ipa: "das ɪst ˈaɪnə ˈtaʃə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Tasche", base: "Tasche" }] }
-      - { target: "Die Tasche ist klein.", ipa: "diː ˈtaʃə ɪst klaɪn", bases: [{ word: "Die", base: "die" }, { word: "Tasche", base: "Tasche" }, { word: "ist", base: "sein" }, { word: "klein", ref: "de-1931" }] }
+      - { target: "Ich habe eine Tasche.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈtaʃə", bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Tasche", base: "Tasche" }] }
   - id: "de-0407"
     target: "fein"
     ipa: "faɪn"
@@ -98,8 +98,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "de-2363", source: "https://en.wiktionary.org/wiki/fein" }
     bases: "self"
     examples:
-      - { target: "Das Mehl ist fein.", ipa: "das meːl ɪst faɪn", bases: [{ word: "Das", base: "das" }, { word: "Mehl", ref: "de-2359" }, { word: "ist", base: "sein" }, { word: "fein", base: "fein" }] }
-      - { target: "Der Zucker ist fein.", ipa: "deːɐ̯ ˈtsʊkɐ ɪst faɪn", bases: [{ word: "Der", base: "der" }, { word: "Zucker", ref: "de-2355" }, { word: "ist", base: "sein" }, { word: "fein", base: "fein" }] }
+      - { target: "Das ist fein.", ipa: "das ɪst faɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "fein", base: "fein" }] }
+      - { target: "Ja, das ist fein.", ipa: "jaː das ɪst faɪn", bases: [{ word: "Ja", ref: "de-0001" }, { word: "das", base: "das" }, { word: "ist", base: "sein" }, { word: "fein", base: "fein" }] }
   - id: "de-0408"
     target: "Rad"
     ipa: "ʁaːt"
@@ -111,7 +111,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist ein Rad.", ipa: "das ɪst aɪn ʁaːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Rad", base: "Rad" }] }
-      - { target: "Das Rad ist neu.", ipa: "das ʁaːt ɪst nɔɪ", bases: [{ word: "Das", base: "das" }, { word: "Rad", base: "Rad" }, { word: "ist", base: "sein" }, { word: "neu", ref: "de-1932" }] }
+      - { target: "Hier ist ein Rad.", ipa: "hiːɐ̯ ɪst aɪn ʁaːt", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Rad", base: "Rad" }] }
   - id: "de-0409"
     target: "Rat"
     ipa: "ʁaːt"
@@ -122,8 +122,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "de-0408", source: "https://en.wiktionary.org/wiki/Rat" }
     bases: "self"
     examples:
-      - { target: "Ich brauche Rat.", ipa: "ɪç ˈbʁaʊxə ʁaːt", bases: [{ word: "Ich", ref: "de-0003" }, { word: "brauche", ref: "de-1736" }, { word: "Rat", base: "Rat" }] }
-      - { target: "Der Rat ist gut.", ipa: "deːɐ̯ ʁaːt ɪst ɡuːt", bases: [{ word: "Der", base: "der" }, { word: "Rat", base: "Rat" }, { word: "ist", base: "sein" }, { word: "gut", ref: "de-0006" }] }
+      - { target: "Das ist ein Rat.", ipa: "das ɪst aɪn ʁaːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Rat", base: "Rat" }] }
+      - { target: "Hier ist ein Rat.", ipa: "hiːɐ̯ ɪst aɪn ʁaːt", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Rat", base: "Rat" }] }
   - id: "de-0410"
     target: "Hund"
     ipa: "hʊnt"
@@ -135,7 +135,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist ein Hund.", ipa: "das ɪst aɪn hʊnt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Hund", base: "Hund" }] }
-      - { target: "Der Hund ist klein.", ipa: "deːɐ̯ hʊnt ɪst klaɪn", bases: [{ word: "Der", base: "der" }, { word: "Hund", base: "Hund" }, { word: "ist", base: "sein" }, { word: "klein", ref: "de-1931" }] }
+      - { target: "Ja, das ist ein Hund.", ipa: "jaː das ɪst aɪn hʊnt", bases: [{ word: "Ja", ref: "de-0001" }, { word: "das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Hund", base: "Hund" }] }
   - id: "de-0411"
     target: "Gruß"
     ipa: "ɡʁuːs"
@@ -147,7 +147,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist ein Gruß.", ipa: "das ɪst aɪn ɡʁuːs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Gruß", base: "Gruß" }] }
-      - { target: "Der Gruß ist freundlich.", ipa: "deːɐ̯ ɡʁuːs ɪst ˈfʁɔɪndlɪç", bases: [{ word: "Der", base: "der" }, { word: "Gruß", base: "Gruß" }, { word: "ist", base: "sein" }, { word: "freundlich", ref: "de-1954" }] }
+      - { target: "Hier ist ein Gruß.", ipa: "hiːɐ̯ ɪst aɪn ɡʁuːs", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Gruß", base: "Gruß" }] }
   - id: "de-0412"
     target: "Zug"
     ipa: "tsuːk"
@@ -158,8 +158,8 @@ cards:
       - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Zug" }
     bases: "self"
     examples:
-      - { target: "Der Zug ist schnell.", ipa: "deːɐ̯ tsuːk ɪst ʃnɛl", bases: [{ word: "Der", base: "der" }, { word: "Zug", base: "Zug" }, { word: "ist", base: "sein" }, { word: "schnell", ref: "de-1806" }] }
-      - { target: "Der Zug ist da.", ipa: "deːɐ̯ tsuːk ɪst daː", bases: [{ word: "Der", base: "der" }, { word: "Zug", base: "Zug" }, { word: "ist", base: "sein" }, { word: "da", ref: "de-1811" }] }
+      - { target: "Das ist ein Zug.", ipa: "das ɪst aɪn tsuːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Zug", base: "Zug" }] }
+      - { target: "Hier ist ein Zug.", ipa: "hiːɐ̯ ɪst aɪn tsuːk", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Zug", base: "Zug" }] }
   - id: "de-0413"
     target: "Stein"
     ipa: "ʃtaɪn"
@@ -171,7 +171,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Das ist ein Stein.", ipa: "das ɪst aɪn ʃtaɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Stein", base: "Stein" }] }
-      - { target: "Der Stein ist schwer.", ipa: "deːɐ̯ ʃtaɪn ɪst ʃveːɐ̯", bases: [{ word: "Der", base: "der" }, { word: "Stein", base: "Stein" }, { word: "ist", base: "sein" }, { word: "schwer", ref: "de-1944" }] }
+      - { target: "Hier ist ein Stein.", ipa: "hiːɐ̯ ɪst aɪn ʃtaɪn", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Stein", base: "Stein" }] }
   - id: "de-0414"
     target: "Spiel"
     ipa: "ʃpiːl"
@@ -182,8 +182,8 @@ cards:
       - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Spiel" }
     bases: "self"
     examples:
-      - { target: "Das Spiel ist neu.", ipa: "das ʃpiːl ɪst nɔɪ", bases: [{ word: "Das", base: "das" }, { word: "Spiel", base: "Spiel" }, { word: "ist", base: "sein" }, { word: "neu", ref: "de-1932" }] }
       - { target: "Das ist ein Spiel.", ipa: "das ɪst aɪn ʃpiːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Spiel", base: "Spiel" }] }
+      - { target: "Hier ist ein Spiel.", ipa: "hiːɐ̯ ɪst aɪn ʃpiːl", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Spiel", base: "Spiel" }] }
   - id: "de-0415"
     target: "Fest"
     ipa: "fɛst"
@@ -194,8 +194,8 @@ cards:
       - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Fest" }
     bases: "self"
     examples:
-      - { target: "Das Fest ist heute.", ipa: "das fɛst ɪst ˈhɔɪtə", bases: [{ word: "Das", base: "das" }, { word: "Fest", base: "Fest" }, { word: "ist", base: "sein" }, { word: "heute", ref: "de-2840" }] }
       - { target: "Das ist ein Fest.", ipa: "das ɪst aɪn fɛst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Fest", base: "Fest" }] }
+      - { target: "Hier ist ein Fest.", ipa: "hiːɐ̯ ɪst aɪn fɛst", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Fest", base: "Fest" }] }
   - id: "de-0416"
     target: "Mütter"
     ipa: "ˈmʏtɐ"
@@ -205,8 +205,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "de-1511", source: "https://en.wiktionary.org/wiki/Mütter" }
     bases: "self"
     examples:
-      - { target: "Die Mütter sind hier.", ipa: "diː ˈmʏtɐ zɪnt hiːɐ̯", bases: [{ word: "Die", base: "die" }, { word: "Mütter", ref: "de-1511" }, { word: "sind", base: "sein" }, { word: "hier", ref: "de-0009" }] }
       - { target: "Das sind die Mütter.", ipa: "das zɪnt diː ˈmʏtɐ", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Mütter", ref: "de-1511" }] }
+      - { target: "Hier sind die Mütter.", ipa: "hiːɐ̯ zɪnt diː ˈmʏtɐ", bases: [{ word: "Hier", ref: "de-0009" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Mütter", ref: "de-1511" }] }
   - id: "de-0417"
     target: "Väter"
     ipa: "ˈfɛːtɐ"
@@ -216,8 +216,8 @@ cards:
       - { id: "pair", kind: "pair", ref: "de-1512", source: "https://en.wiktionary.org/wiki/Väter" }
     bases: "self"
     examples:
-      - { target: "Die Väter sind hier.", ipa: "diː ˈfɛːtɐ zɪnt hiːɐ̯", bases: [{ word: "Die", base: "die" }, { word: "Väter", ref: "de-1512" }, { word: "sind", base: "sein" }, { word: "hier", ref: "de-0009" }] }
       - { target: "Das sind die Väter.", ipa: "das zɪnt diː ˈfɛːtɐ", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Väter", ref: "de-1512" }] }
+      - { target: "Hier sind die Väter.", ipa: "hiːɐ̯ zɪnt diː ˈfɛːtɐ", bases: [{ word: "Hier", ref: "de-0009" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Väter", ref: "de-1512" }] }
   - id: "de-0418"
     target: "Söhne"
     ipa: "ˈzøːnə"
@@ -227,5 +227,5 @@ cards:
       - { id: "pair", kind: "pair", ref: "de-1517", source: "https://en.wiktionary.org/wiki/Söhne" }
     bases: "self"
     examples:
-      - { target: "Die Söhne sind hier.", ipa: "diː ˈzøːnə zɪnt hiːɐ̯", bases: [{ word: "Die", base: "die" }, { word: "Söhne", ref: "de-1517" }, { word: "sind", base: "sein" }, { word: "hier", ref: "de-0009" }] }
       - { target: "Das sind die Söhne.", ipa: "das zɪnt diː ˈzøːnə", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Söhne", ref: "de-1517" }] }
+      - { target: "Hier sind die Söhne.", ipa: "hiːɐ̯ zɪnt diː ˈzøːnə", bases: [{ word: "Hier", ref: "de-0009" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Söhne", ref: "de-1517" }] }
