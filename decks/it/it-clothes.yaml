@@ -1,0 +1,334 @@
+schema: 1
+id: "it-clothes"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "clothes"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-2911"
+    target: "abito"
+    ipa: "aˈbito"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un abito.", ipa: "ˈkwesto ɛ un aˈbito", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "abito", base: "abito" }] }
+      - { target: "Ho un abito.", ipa: "ɔ un aˈbito", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "abito", base: "abito" }] }
+      - { target: "Dov'è l'abito?", ipa: "doˈvɛ laˈbito", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'abito", base: "abito" }] }
+  - id: "it-2912"
+    target: "camicia"
+    ipa: "kaˈmitʃa"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una camicia.", ipa: "ˈkwesta ɛ ˈuna kaˈmitʃa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "camicia", base: "camicia" }] }
+      - { target: "Ho una camicia.", ipa: "ɔ ˈuna kaˈmitʃa", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "camicia", base: "camicia" }] }
+      - { target: "Dov'è la camicia?", ipa: "doˈvɛ la kaˈmitʃa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "camicia", base: "camicia" }] }
+  - id: "it-2914"
+    target: "maglietta"
+    ipa: "maʎˈʎetta"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una maglietta.", ipa: "ˈkwesta ɛ ˈuna maʎˈʎetta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "maglietta", base: "maglietta" }] }
+      - { target: "Ho una maglietta.", ipa: "ɔ ˈuna maʎˈʎetta", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "maglietta", base: "maglietta" }] }
+      - { target: "Dov'è la maglietta?", ipa: "doˈvɛ la maʎˈʎetta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "maglietta", base: "maglietta" }] }
+  - id: "it-2915"
+    target: "pantaloni"
+    ipa: "pantaˈloni"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un pantaloni.", ipa: "ˈkwesto ɛ un pantaˈloni", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "pantaloni", base: "pantaloni" }] }
+      - { target: "Ho un pantaloni.", ipa: "ɔ un pantaˈloni", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "pantaloni", base: "pantaloni" }] }
+      - { target: "Dov'è il pantaloni?", ipa: "doˈvɛ il pantaˈloni", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pantaloni", base: "pantaloni" }] }
+  - id: "it-2916"
+    target: "gonna"
+    ipa: "ˈɡonna"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una gonna.", ipa: "ˈkwesta ɛ ˈuna ˈɡonna", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "gonna", base: "gonna" }] }
+      - { target: "Ho una gonna.", ipa: "ɔ ˈuna ˈɡonna", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "gonna", base: "gonna" }] }
+      - { target: "Dov'è la gonna?", ipa: "doˈvɛ la ˈɡonna", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "gonna", base: "gonna" }] }
+  - id: "it-2917"
+    target: "giacca"
+    ipa: "ˈdʒakka"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una giacca.", ipa: "ˈkwesta ɛ ˈuna ˈdʒakka", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "giacca", base: "giacca" }] }
+      - { target: "Ho una giacca.", ipa: "ɔ ˈuna ˈdʒakka", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "giacca", base: "giacca" }] }
+      - { target: "Dov'è la giacca?", ipa: "doˈvɛ la ˈdʒakka", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "giacca", base: "giacca" }] }
+  - id: "it-2918"
+    target: "cappotto"
+    ipa: "kapˈpotto"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un cappotto.", ipa: "ˈkwesto ɛ un kapˈpotto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "cappotto", base: "cappotto" }] }
+      - { target: "Ho un cappotto.", ipa: "ɔ un kapˈpotto", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "cappotto", base: "cappotto" }] }
+      - { target: "Dov'è il cappotto?", ipa: "doˈvɛ il kapˈpotto", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "cappotto", base: "cappotto" }] }
+  - id: "it-2919"
+    target: "cappello"
+    ipa: "kapˈpɛllo"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un cappello.", ipa: "ˈkwesto ɛ un kapˈpɛllo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "cappello", base: "cappello" }] }
+      - { target: "Ho un cappello.", ipa: "ɔ un kapˈpɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "cappello", base: "cappello" }] }
+      - { target: "Dov'è il cappello?", ipa: "doˈvɛ il kapˈpɛllo", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "cappello", base: "cappello" }] }
+  - id: "it-2920"
+    target: "scarpa"
+    ipa: "ˈskarpa"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una scarpa.", ipa: "ˈkwesta ɛ ˈuna ˈskarpa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "scarpa", base: "scarpa" }] }
+      - { target: "Ho una scarpa.", ipa: "ɔ ˈuna ˈskarpa", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "scarpa", base: "scarpa" }] }
+      - { target: "Dov'è la scarpa?", ipa: "doˈvɛ la ˈskarpa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "scarpa", base: "scarpa" }] }
+  - id: "it-2921"
+    target: "stivale"
+    ipa: "stiˈvale"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è uno stivale.", ipa: "ˈkwesto ɛ ˈuno stiˈvale", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "uno", ref: "it-0009" }, { word: "stivale", base: "stivale" }] }
+      - { target: "Ho uno stivale.", ipa: "ɔ ˈuno stiˈvale", bases: [{ word: "Ho", base: "avere" }, { word: "uno", ref: "it-0009" }, { word: "stivale", base: "stivale" }] }
+      - { target: "Dov'è lo stivale?", ipa: "doˈvɛ lo stiˈvale", bases: [{ word: "Dov'è", base: "dove" }, { word: "lo", base: "lo" }, { word: "stivale", base: "stivale" }] }
+  - id: "it-2922"
+    target: "calza"
+    ipa: "ˈkaltsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una calza.", ipa: "ˈkwesta ɛ ˈuna ˈkaltsa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "calza", base: "calza" }] }
+      - { target: "Ho una calza.", ipa: "ɔ ˈuna ˈkaltsa", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "calza", base: "calza" }] }
+      - { target: "Dov'è la calza?", ipa: "doˈvɛ la ˈkaltsa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "calza", base: "calza" }] }
+  - id: "it-2923"
+    target: "calzino"
+    ipa: "kalˈtsino"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un calzino.", ipa: "ˈkwesto ɛ un kalˈtsino", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "calzino", base: "calzino" }] }
+      - { target: "Ho un calzino.", ipa: "ɔ un kalˈtsino", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "calzino", base: "calzino" }] }
+      - { target: "Dov'è il calzino?", ipa: "doˈvɛ il kalˈtsino", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "calzino", base: "calzino" }] }
+  - id: "it-2924"
+    target: "sciarpa"
+    ipa: "ˈʃarpa"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una sciarpa.", ipa: "ˈkwesta ɛ ˈuna ˈʃarpa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "sciarpa", base: "sciarpa" }] }
+      - { target: "Ho una sciarpa.", ipa: "ɔ ˈuna ˈʃarpa", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "sciarpa", base: "sciarpa" }] }
+      - { target: "Dov'è la sciarpa?", ipa: "doˈvɛ la ˈʃarpa", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "sciarpa", base: "sciarpa" }] }
+  - id: "it-2925"
+    target: "guanto"
+    ipa: "ˈɡwanto"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un guanto.", ipa: "ˈkwesto ɛ un ˈɡwanto", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "guanto", base: "guanto" }] }
+      - { target: "Ho un guanto.", ipa: "ɔ un ˈɡwanto", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "guanto", base: "guanto" }] }
+      - { target: "Dov'è il guanto?", ipa: "doˈvɛ il ˈɡwanto", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "guanto", base: "guanto" }] }
+  - id: "it-2926"
+    target: "cintura"
+    ipa: "tʃinˈtura"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una cintura.", ipa: "ˈkwesta ɛ ˈuna tʃinˈtura", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "cintura", base: "cintura" }] }
+      - { target: "Ho una cintura.", ipa: "ɔ ˈuna tʃinˈtura", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "cintura", base: "cintura" }] }
+      - { target: "Dov'è la cintura?", ipa: "doˈvɛ la tʃinˈtura", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "cintura", base: "cintura" }] }
+  - id: "it-2928"
+    target: "pigiama"
+    ipa: "piˈdʒama"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un pigiama.", ipa: "ˈkwesto ɛ un piˈdʒama", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "pigiama", base: "pigiama" }] }
+      - { target: "Ho un pigiama.", ipa: "ɔ un piˈdʒama", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "pigiama", base: "pigiama" }] }
+      - { target: "Dov'è il pigiama?", ipa: "doˈvɛ il piˈdʒama", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pigiama", base: "pigiama" }] }
+  - id: "it-2929"
+    target: "pullover"
+    ipa: "pulˈlover"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un pullover.", ipa: "ˈkwesto ɛ un pulˈlover", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "pullover", base: "pullover" }] }
+      - { target: "Ho un pullover.", ipa: "ɔ un pulˈlover", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "pullover", base: "pullover" }] }
+      - { target: "Dov'è il pullover?", ipa: "doˈvɛ il pulˈlover", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "pullover", base: "pullover" }] }
+  - id: "it-2930"
+    target: "maglione"
+    ipa: "maʎˈʎone"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un maglione.", ipa: "ˈkwesto ɛ un maʎˈʎone", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "maglione", base: "maglione" }] }
+      - { target: "Ho un maglione.", ipa: "ɔ un maʎˈʎone", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "maglione", base: "maglione" }] }
+      - { target: "Dov'è il maglione?", ipa: "doˈvɛ il maʎˈʎone", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "maglione", base: "maglione" }] }
+  - id: "it-2931"
+    target: "jeans"
+    ipa: "ˈjɛans"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un jeans.", ipa: "ˈkwesto ɛ un ˈjɛans", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "jeans", base: "jeans" }] }
+      - { target: "Ho un jeans.", ipa: "ɔ un ˈjɛans", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "jeans", base: "jeans" }] }
+      - { target: "Dov'è il jeans?", ipa: "doˈvɛ il ˈjɛans", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "jeans", base: "jeans" }] }
+  - id: "it-2932"
+    target: "cravatta"
+    ipa: "kraˈvatta"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una cravatta.", ipa: "ˈkwesta ɛ ˈuna kraˈvatta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "cravatta", base: "cravatta" }] }
+      - { target: "Ho una cravatta.", ipa: "ɔ ˈuna kraˈvatta", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "cravatta", base: "cravatta" }] }
+      - { target: "Dov'è la cravatta?", ipa: "doˈvɛ la kraˈvatta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "cravatta", base: "cravatta" }] }
+  - id: "it-2933"
+    target: "camicetta"
+    ipa: "kamiˈtʃetta"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una camicetta.", ipa: "ˈkwesta ɛ ˈuna kamiˈtʃetta", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "camicetta", base: "camicetta" }] }
+      - { target: "Ho una camicetta.", ipa: "ɔ ˈuna kamiˈtʃetta", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "camicetta", base: "camicetta" }] }
+      - { target: "Dov'è la camicetta?", ipa: "doˈvɛ la kamiˈtʃetta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "camicetta", base: "camicetta" }] }
+  - id: "it-2934"
+    target: "orologio"
+    ipa: "oroˈlodʒo"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un orologio.", ipa: "ˈkwesto ɛ un oroˈlodʒo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "orologio", base: "orologio" }] }
+      - { target: "Ho un orologio.", ipa: "ɔ un oroˈlodʒo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "orologio", base: "orologio" }] }
+      - { target: "Dov'è l'orologio?", ipa: "doˈvɛ loroˈlodʒo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'orologio", base: "orologio" }] }
+  - id: "it-2935"
+    target: "anello"
+    ipa: "aˈnɛllo"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un anello.", ipa: "ˈkwesto ɛ un aˈnɛllo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "anello", base: "anello" }] }
+      - { target: "Ho un anello.", ipa: "ɔ un aˈnɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "anello", base: "anello" }] }
+      - { target: "Dov'è l'anello?", ipa: "doˈvɛ laˈnɛllo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'anello", base: "anello" }] }
+  - id: "it-2936"
+    target: "collana"
+    ipa: "kolˈlana"
+    pos: "noun"
+    gender: "f"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa è una collana.", ipa: "ˈkwesta ɛ ˈuna kolˈlana", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "una", base: "uno" }, { word: "collana", base: "collana" }] }
+      - { target: "Ho una collana.", ipa: "ɔ ˈuna kolˈlana", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "uno" }, { word: "collana", base: "collana" }] }
+      - { target: "Dov'è la collana?", ipa: "doˈvɛ la kolˈlana", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "collana", base: "collana" }] }
+  - id: "it-2937"
+    target: "ombrello"
+    ipa: "omˈbrɛllo"
+    pos: "noun"
+    gender: "m"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un ombrello.", ipa: "ˈkwesto ɛ un omˈbrɛllo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "ombrello", base: "ombrello" }] }
+      - { target: "Ho un ombrello.", ipa: "ɔ un omˈbrɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "ombrello", base: "ombrello" }] }
+      - { target: "Dov'è l'ombrello?", ipa: "doˈvɛ lomˈbrɛllo", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'ombrello", base: "ombrello" }] }

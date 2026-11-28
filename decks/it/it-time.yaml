@@ -1,0 +1,220 @@
+schema: 1
+id: "it-time"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1930"
+    target: "oggi"
+    ipa: "ˈɔddʒi"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Oggi bevo molto.", ipa: "ˈɔddʒi ˈbevo ˈmolto", bases: [{ word: "bevo", ref: "it-1661" }, { word: "molto", ref: "it-1790" }] }
+      - { target: "Oggi sono stanco.", ipa: "ˈɔddʒi ˈsono ˈstanko", bases: [{ word: "sono", base: "essere" }, { word: "stanco", ref: "it-1887" }] }
+  - id: "it-1931"
+    target: "domani"
+    ipa: "doˈmani"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Domani compro una bicicletta.", ipa: "doˈmani ˈkompro ˈuna bitʃiˈkletta", bases: [{ word: "compro", ref: "it-1675" }, { word: "una", base: "una" }, { word: "bicicletta", ref: "it-2562" }] }
+      - { target: "Domani sono felice.", ipa: "doˈmani ˈsono feˈlitʃe", bases: [{ word: "sono", base: "essere" }, { word: "felice", ref: "it-1883" }] }
+  - id: "it-1932"
+    target: "ieri"
+    ipa: "ˈjɛri"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ieri ho bevuto molta acqua.", ipa: "ˈjɛri ɔ beˈvuto ˈmolta ˈakkwa", bases: [{ word: "ho", base: "avere" }, { word: "bevuto", ref: "it-1661" }, { word: "molta", ref: "it-1790" }, { word: "acqua", ref: "it-0010" }] }
+      - { target: "Ieri ho dormito.", ipa: "ˈjɛri ɔ dorˈmito", bases: [{ word: "ho", base: "avere" }, { word: "dormito", ref: "it-1679" }] }
+  - id: "it-1933"
+    target: "adesso"
+    ipa: "aˈdɛsso"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Adesso mangio.", ipa: "aˈdɛsso ˈmandʒo", bases: [{ word: "mangio", ref: "it-1660" }] }
+      - { target: "Adesso sono felice.", ipa: "aˈdɛsso ˈsono feˈlitʃe", bases: [{ word: "sono", base: "essere" }, { word: "felice", ref: "it-1883" }] }
+  - id: "it-1934"
+    target: "ora"
+    ipa: "ˈora"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ho un'ora.", ipa: "ɔ uˈnora", bases: [{ word: "Ho", base: "avere" }, { word: "un'ora", base: "ora" }] }
+      - { target: "Aspetto un'ora.", ipa: "asˈpetto uˈnora", bases: [{ word: "Aspetto", ref: "it-1683" }, { word: "un'ora", base: "ora" }] }
+  - id: "it-1935"
+    target: "anno"
+    ipa: "ˈanno"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questo è un anno lungo.", ipa: "ˈkwesto ɛ un ˈanno ˈlunɡo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "un" }, { word: "lungo", ref: "it-1872" }] }
+      - { target: "L'anno è lungo.", ipa: "ˈlanno ɛ ˈlunɡo", bases: [{ word: "L'anno", base: "anno" }, { word: "è", base: "essere" }, { word: "lungo", ref: "it-1872" }] }
+  - id: "it-1936"
+    target: "mattina"
+    ipa: "matˈtina"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Oggi è una bella mattina.", ipa: "ˈɔddʒi ɛ ˈuna ˈbɛlla matˈtina", bases: [{ word: "Oggi", ref: "it-1930" }, { word: "è", base: "essere" }, { word: "una", base: "una" }, { word: "bella", ref: "it-1862" }] }
+      - { target: "La mattina è fredda.", ipa: "la matˈtina ɛ ˈfredda", bases: [{ word: "La", base: "la" }, { word: "è", base: "essere" }, { word: "fredda", ref: "it-1869" }] }
+  - id: "it-1937"
+    target: "mattino"
+    ipa: "matˈtino"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il mattino è presto.", ipa: "il matˈtino ɛ ˈprɛsto", bases: [{ word: "Il", base: "il" }, { word: "è", base: "essere" }, { word: "presto", ref: "it-1740" }] }
+      - { target: "Il mattino è caldo.", ipa: "il matˈtino ɛ ˈkaldo", bases: [{ word: "Il", base: "il" }, { word: "è", base: "essere" }, { word: "caldo", ref: "it-1868" }] }
+  - id: "it-1938"
+    target: "sera"
+    ipa: "ˈsera"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa sera è calda.", ipa: "ˈkwesta ˈsera ɛ ˈkalda", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "calda", ref: "it-1868" }] }
+      - { target: "La sera è lunga.", ipa: "la ˈsera ɛ ˈlunɡa", bases: [{ word: "La", base: "la" }, { word: "è", base: "essere" }, { word: "lunga", ref: "it-1872" }] }
+  - id: "it-1939"
+    target: "notte"
+    ipa: "ˈnɔtte"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La notte è fredda.", ipa: "la ˈnɔtte ɛ ˈfredda", bases: [{ word: "La", base: "la" }, { word: "è", base: "essere" }, { word: "fredda", ref: "it-1869" }] }
+      - { target: "La notte è lunga.", ipa: "la ˈnɔtte ɛ ˈlunɡa", bases: [{ word: "La", base: "la" }, { word: "è", base: "essere" }, { word: "lunga", ref: "it-1872" }] }
+  - id: "it-1940"
+    target: "giorno"
+    ipa: "ˈdʒorno"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il giorno è lungo.", ipa: "il ˈdʒorno ɛ ˈlunɡo", bases: [{ word: "Il", base: "il" }, { word: "è", base: "essere" }, { word: "lungo", ref: "it-1872" }] }
+      - { target: "Il giorno è bello.", ipa: "il ˈdʒorno ɛ ˈbɛllo", bases: [{ word: "Il", base: "il" }, { word: "è", base: "essere" }, { word: "bello", ref: "it-1862" }] }
+  - id: "it-1941"
+    target: "pomeriggio"
+    ipa: "pomeˈriddʒo"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il pomeriggio è caldo.", ipa: "il pomeˈriddʒo ɛ ˈkaldo", bases: [{ word: "Il", base: "il" }, { word: "è", base: "essere" }, { word: "caldo", ref: "it-1868" }] }
+      - { target: "Il pomeriggio è lungo.", ipa: "il pomeˈriddʒo ɛ ˈlunɡo", bases: [{ word: "Il", base: "il" }, { word: "è", base: "essere" }, { word: "lungo", ref: "it-1872" }] }
+  - id: "it-1942"
+    target: "settimana"
+    ipa: "settiˈmana"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Questa settimana è difficile.", ipa: "ˈkwesta settiˈmana ɛ difˈfitʃile", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "difficile", ref: "it-1879" }] }
+      - { target: "Questa settimana è lunga.", ipa: "ˈkwesta settiˈmana ɛ ˈlunɡa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "lunga", ref: "it-1872" }] }
+  - id: "it-1943"
+    target: "mese"
+    ipa: "ˈmeze"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il mese è lungo.", ipa: "il ˈmeze ɛ ˈlunɡo", bases: [{ word: "Il", base: "il" }, { word: "è", base: "essere" }, { word: "lungo", ref: "it-1872" }] }
+      - { target: "Questo mese è molto caldo.", ipa: "ˈkwesto ˈmeze ɛ ˈmolto ˈkaldo", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "molto", ref: "it-1790" }, { word: "caldo", ref: "it-1868" }] }
+  - id: "it-1944"
+    target: "tempo"
+    ipa: "ˈtɛmpo"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ho poco tempo.", ipa: "ɔ ˈpɔko ˈtɛmpo", bases: [{ word: "Ho", base: "avere" }, { word: "poco", ref: "it-1791" }] }
+      - { target: "Ho tanto tempo.", ipa: "ɔ ˈtanto ˈtɛmpo", bases: [{ word: "Ho", base: "avere" }, { word: "tanto", ref: "it-1792" }] }
+  - id: "it-1945"
+    target: "stasera"
+    ipa: "staˈzera"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Stasera sono stanco.", ipa: "staˈzera ˈsono ˈstanko", bases: [{ word: "sono", base: "essere" }, { word: "stanco", ref: "it-1887" }] }
+      - { target: "Stasera bevo acqua.", ipa: "staˈzera ˈbevo ˈakkwa", bases: [{ word: "bevo", ref: "it-1661" }, { word: "acqua", ref: "it-0010" }] }
+  - id: "it-1946"
+    target: "mezzogiorno"
+    ipa: "meddzoˈdʒorno"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "È mezzogiorno.", ipa: "ɛ meddzoˈdʒorno", bases: [{ word: "È", base: "essere" }] }
+      - { target: "Il mezzogiorno è caldo.", ipa: "il meddzoˈdʒorno ɛ ˈkaldo", bases: [{ word: "Il", base: "il" }, { word: "è", base: "essere" }, { word: "caldo", ref: "it-1868" }] }
+  - id: "it-1947"
+    target: "mezzanotte"
+    ipa: "meddzaˈnotte"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "È mezzanotte.", ipa: "ɛ meddzaˈnotte", bases: [{ word: "È", base: "essere" }] }
+      - { target: "La mezzanotte è fredda.", ipa: "la meddzaˈnotte ɛ ˈfredda", bases: [{ word: "La", base: "la" }, { word: "è", base: "essere" }, { word: "fredda", ref: "it-1869" }] }
