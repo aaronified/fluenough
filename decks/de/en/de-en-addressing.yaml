@@ -1,0 +1,309 @@
+schema: 1
+id: "de-en-addressing"
+kind: "layer"
+core: "de-addressing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Addressing people"
+description: "Words for the people you talk to and about: a man, a woman, a boy, a girl, a friend, a colleague, a neighbour, the words for a name, and the polite you (Sie). Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "de-1370":
+    native: "man; gentleman"
+    notes:
+      "n1": "Herr is man or gentleman: der Herr. Its plural is Herren."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Herr.":
+        native: "That is the gentleman."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Herr": "man"
+      "Wo ist der Herr?":
+        native: "Where is the gentleman?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Herr": "man"
+  "de-1371":
+    native: "woman"
+    notes:
+      "n1": "Frau is woman: die Frau. Its plural is Frauen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Frau.":
+        native: "That is the woman."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Frau": "woman"
+      "Wo ist die Frau?":
+        native: "Where is the woman?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Frau": "woman"
+  "de-1372":
+    native: "formal you"
+    notes:
+      "n1": "Sie with a capital S is the polite word for you, for one person or for more than one. It is a different word from sie, she or they."
+    examples:
+      "Sie sind hier.":
+        native: "You are here."
+        bases:
+          "Sie": "you (formal)"
+          "sind": "are"
+          "hier": "here"
+      "Wo sind Sie?":
+        native: "Where are you?"
+        bases:
+          "Wo": "where"
+          "sind": "are"
+          "Sie": "you (formal)"
+  "de-1373":
+    native: "name"
+    notes:
+      "n1": "Name is name: der Name. Its plural is Namen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Name.":
+        native: "That is the name."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Name": "name"
+      "Ich habe einen Namen.":
+        native: "I have a name."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Namen": "name"
+  "de-1374":
+    native: "given name; first name"
+    notes:
+      "n1": "Vorname is given name, the name before the family name: der Vorname. Its plural is Vornamen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Vorname.":
+        native: "That is the given name."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Vorname": "given name"
+      "Ich habe einen Vornamen.":
+        native: "I have a given name."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Vornamen": "given name"
+  "de-1375":
+    native: "last name; surname"
+    notes:
+      "n1": "Nachname is last name, or surname: der Nachname. Its plural is Nachnamen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Nachname.":
+        native: "That is the last name."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Nachname": "last name"
+      "Ich habe einen Nachnamen.":
+        native: "I have a last name."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Nachnamen": "last name"
+  "de-1376":
+    native: "surname; family name"
+    notes:
+      "n1": "Familienname is surname, or family name: der Familienname. Its plural is Familiennamen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Familienname.":
+        native: "That is the family name."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Familienname": "family name"
+      "Ich habe einen Familiennamen.":
+        native: "I have a family name."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Familiennamen": "family name"
+  "de-1377":
+    native: "girl"
+    notes:
+      "n1": "Mädchen is girl, and it takes das: das Mädchen. Its plural is also Mädchen."
+    examples:
+      "Wo ist das Mädchen?":
+        native: "Where is the girl?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Mädchen": "girl"
+      "Das Mädchen ist hier.":
+        native: "The girl is here."
+        bases:
+          "Das": "the"
+          "Mädchen": "girl"
+          "ist": "is"
+          "hier": "here"
+  "de-1378":
+    native: "boy"
+    notes:
+      "n1": "Junge is boy: der Junge. Its plural is Jungen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Junge.":
+        native: "That is the boy."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Junge": "boy"
+      "Wo ist der Junge?":
+        native: "Where is the boy?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Junge": "boy"
+  "de-1379":
+    native: "lady"
+    notes:
+      "n1": "Dame is lady: die Dame. Its plural is Damen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Dame.":
+        native: "That is the lady."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Dame": "lady"
+      "Wo ist die Dame?":
+        native: "Where is the lady?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Dame": "lady"
+  "de-1380":
+    native: "friend"
+    notes:
+      "n1": "Freund is friend: der Freund. Its plural is Freunde."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Freund.":
+        native: "That is the friend."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Freund": "friend"
+      "Wo ist der Freund?":
+        native: "Where is the friend?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Freund": "friend"
+  "de-1381":
+    native: "female friend"
+    notes:
+      "n1": "Freundin is the female form of Freund: die Freundin. Its plural is Freundinnen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Freundin.":
+        native: "That is the female friend."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Freundin": "female friend"
+      "Wo ist die Freundin?":
+        native: "Where is the female friend?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Freundin": "female friend"
+  "de-1382":
+    native: "colleague; coworker"
+    notes:
+      "n1": "Kollege is colleague, a fellow worker: der Kollege. Its plural is Kollegen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Kollege.":
+        native: "That is the colleague."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Kollege": "colleague"
+      "Wo ist der Kollege?":
+        native: "Where is the colleague?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Kollege": "colleague"
+  "de-1383":
+    native: "female colleague"
+    notes:
+      "n1": "Kollegin is the female form of Kollege: die Kollegin. Its plural is Kolleginnen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Kollegin.":
+        native: "That is the female colleague."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Kollegin": "female colleague"
+      "Wo ist die Kollegin?":
+        native: "Where is the female colleague?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Kollegin": "female colleague"
+  "de-1384":
+    native: "neighbour"
+    notes:
+      "n1": "Nachbar is neighbour: der Nachbar. Its plural is Nachbarn."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Nachbar.":
+        native: "That is the neighbour."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Nachbar": "neighbour"
+      "Wo ist der Nachbar?":
+        native: "Where is the neighbour?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Nachbar": "neighbour"
+  "de-1385":
+    native: "Words for people and names"
+    explanation: "The words for people, and for names, in one set: a man, a woman, a boy, a girl and more, with the polite you (Sie). The set puts them side by side."

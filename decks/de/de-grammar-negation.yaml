@@ -1,0 +1,145 @@
+schema: 1
+id: "de-grammar-negation"
+part: "core"
+kind: "grammar"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["positive", "negative"]
+  entries:
+    - lemma: "wohnen"
+      key: "wohnen"
+      ipa: "ˈvoːnən"
+      forms:
+        "positive": "Ich wohne hier."
+        "negative": "Ich wohne nicht hier."
+      ipas:
+        "positive": "ɪç ˈvoːnə hiːɐ̯"
+        "negative": "ɪç ˈvoːnə nɪçt hiːɐ̯"
+    - lemma: "arbeiten"
+      key: "arbeiten"
+      ipa: "ˈaʁbaɪtən"
+      forms:
+        "positive": "Er arbeitet hier."
+        "negative": "Er arbeitet nicht hier."
+      ipas:
+        "positive": "eːɐ̯ ˈaʁbaɪtət hiːɐ̯"
+        "negative": "eːɐ̯ ˈaʁbaɪtət nɪçt hiːɐ̯"
+    - lemma: "kommen"
+      key: "kommen"
+      ipa: "ˈkɔmən"
+      forms:
+        "positive": "Der Zug kommt."
+        "negative": "Der Zug kommt nicht."
+      ipas:
+        "positive": "deːɐ̯ tsuːk kɔmt"
+        "negative": "deːɐ̯ tsuːk kɔmt nɪçt"
+    - lemma: "wissen"
+      key: "wissen"
+      ipa: "ˈvɪsən"
+      forms:
+        "positive": "Ich weiß es."
+        "negative": "Ich weiß es nicht."
+      ipas:
+        "positive": "ɪç vaɪs ɛs"
+        "negative": "ɪç vaɪs ɛs nɪçt"
+    - lemma: "müde"
+      key: "muede"
+      ipa: "ˈmyːdə"
+      forms:
+        "positive": "Ich bin müde."
+        "negative": "Ich bin nicht müde."
+      ipas:
+        "positive": "ɪç bɪn ˈmyːdə"
+        "negative": "ɪç bɪn nɪçt ˈmyːdə"
+    - lemma: "alt"
+      key: "alt"
+      ipa: "alt"
+      forms:
+        "positive": "Er ist alt."
+        "negative": "Er ist nicht alt."
+      ipas:
+        "positive": "eːɐ̯ ɪst alt"
+        "negative": "eːɐ̯ ɪst nɪçt alt"
+    - lemma: "gut"
+      key: "gut"
+      ipa: "ɡuːt"
+      forms:
+        "positive": "Das ist gut."
+        "negative": "Das ist nicht gut."
+      ipas:
+        "positive": "das ɪst ɡuːt"
+        "negative": "das ɪst nɪçt ɡuːt"
+    - lemma: "Handy"
+      key: "handy"
+      ipa: "ˈhɛndi"
+      forms:
+        "positive": "Ich habe das Handy."
+        "negative": "Ich habe das Handy nicht."
+      ipas:
+        "positive": "ɪç ˈhaːbə das ˈhɛndi"
+        "negative": "ɪç ˈhaːbə das ˈhɛndi nɪçt"
+    - lemma: "Vater"
+      key: "vater"
+      ipa: "ˈfaːtɐ"
+      forms:
+        "positive": "Das ist der Vater."
+        "negative": "Das ist nicht der Vater."
+      ipas:
+        "positive": "das ɪst deːɐ̯ ˈfaːtɐ"
+        "negative": "das ɪst nɪçt deːɐ̯ ˈfaːtɐ"
+    - lemma: "Foto"
+      key: "foto"
+      ipa: "ˈfoːto"
+      forms:
+        "positive": "Ich habe ein Foto."
+        "negative": "Ich habe kein Foto."
+      ipas:
+        "positive": "ɪç ˈhaːbə aɪn ˈfoːto"
+        "negative": "ɪç ˈhaːbə kaɪn ˈfoːto"
+    - lemma: "Schwester"
+      key: "schwester"
+      ipa: "ˈʃvɛstɐ"
+      forms:
+        "positive": "Ich habe eine Schwester."
+        "negative": "Ich habe keine Schwester."
+      ipas:
+        "positive": "ɪç ˈhaːbə ˈaɪnə ˈʃvɛstɐ"
+        "negative": "ɪç ˈhaːbə ˈkaɪnə ˈʃvɛstɐ"
+    - lemma: "Hund"
+      key: "hund"
+      ipa: "hʊnt"
+      forms:
+        "positive": "Das ist ein Hund."
+        "negative": "Das ist kein Hund."
+      ipas:
+        "positive": "das ɪst aɪn hʊnt"
+        "negative": "das ɪst kaɪn hʊnt"
+    - lemma: "Buch"
+      key: "buch"
+      ipa: "buːx"
+      forms:
+        "positive": "Das ist ein Buch."
+        "negative": "Das ist kein Buch."
+      ipas:
+        "positive": "das ɪst aɪn buːx"
+        "negative": "das ɪst kaɪn buːx"
+    - lemma: "Kind"
+      key: "kind"
+      ipa: "kɪnt"
+      forms:
+        "positive": "Wir haben ein Kind."
+        "negative": "Wir haben kein Kind."
+      ipas:
+        "positive": "viːɐ̯ ˈhaːbən aɪn kɪnt"
+        "negative": "viːɐ̯ ˈhaːbən kaɪn kɪnt"
+    - lemma: "Kinder"
+      key: "kinder"
+      ipa: "ˈkɪndɐ"
+      forms:
+        "positive": "Er hat Kinder."
+        "negative": "Er hat keine Kinder."
+      ipas:
+        "positive": "eːɐ̯ hat ˈkɪndɐ"
+        "negative": "eːɐ̯ hat ˈkaɪnə ˈkɪndɐ"

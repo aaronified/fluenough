@@ -1,0 +1,673 @@
+schema: 1
+id: "de-en-adverbs"
+kind: "layer"
+core: "de-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs"
+description: "Common adverbs of how often, how much, when and how, such as very, again, soon and of course. Standard German, as spoken in Germany. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "de-1790":
+    native: "very"
+    notes:
+      "n1": "Sehr is very: sehr gut is very good."
+    examples:
+      "Das ist sehr gut.":
+        native: "That is very good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "sehr": "very"
+          "gut": "good"
+      "Das Wasser ist sehr gut.":
+        native: "The water is very good."
+        bases:
+          "Das": "the; that"
+          "Wasser": "water"
+          "ist": "to be (it is)"
+          "sehr": "very"
+          "gut": "good"
+  "de-1791":
+    native: "also; too; as well"
+    notes:
+      "n1": "Auch is also, too: ich auch is me too."
+    examples:
+      "Ich auch.":
+        native: "Me too."
+        bases:
+          "Ich": "I"
+          "auch": "also; too; as well"
+      "Du bist auch hier.":
+        native: "You are also here."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "auch": "also; too; as well"
+          "hier": "here"
+  "de-1792":
+    native: "only; just; merely"
+    notes:
+      "n1": "Nur is only, just."
+    examples:
+      "Das ist nur Wasser.":
+        native: "That is only water."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "nur": "only; just; merely"
+          "Wasser": "water"
+      "Du bist nur hier.":
+        native: "You are only here."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "nur": "only; just; merely"
+          "hier": "here"
+  "de-1793":
+    native: "already"
+    notes:
+      "n1": "Schon is already."
+    examples:
+      "Du bist schon hier.":
+        native: "You are already here."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "schon": "already"
+          "hier": "here"
+      "Ich bin schon da.":
+        native: "I am already there."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "schon": "already"
+          "da": "there"
+  "de-1794":
+    native: "still; yet"
+    notes:
+      "n1": "Noch is still or yet. Noch nicht is not yet."
+    examples:
+      "Ich bin noch hier.":
+        native: "I am still here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "noch": "still; yet"
+          "hier": "here"
+      "Das ist noch nicht gut.":
+        native: "That is not yet good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "noch": "still; yet"
+          "nicht": "not"
+          "gut": "good"
+  "de-1795":
+    native: "always"
+    notes:
+      "n1": "Immer is always."
+    examples:
+      "Du bist immer hier.":
+        native: "You are always here."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "immer": "always"
+          "hier": "here"
+      "Ich bin immer da.":
+        native: "I am always there."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "immer": "always"
+          "da": "there"
+  "de-1796":
+    native: "never; never at all"
+    notes:
+      "n1": "Nie is never."
+    examples:
+      "Ich bin nie hier.":
+        native: "I am never here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "nie": "never; never at all"
+          "hier": "here"
+      "Du bist nie da.":
+        native: "You are never there."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "nie": "never; never at all"
+          "da": "there"
+  "de-1797":
+    native: "often"
+    notes:
+      "n1": "Oft is often."
+    examples:
+      "Ich bin oft hier.":
+        native: "I am often here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "oft": "often"
+          "hier": "here"
+      "Du bist oft da.":
+        native: "You are often there."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "oft": "often"
+          "da": "there"
+  "de-1798":
+    native: "sometimes"
+    notes:
+      "n1": "Manchmal is sometimes."
+    examples:
+      "Ich bin manchmal hier.":
+        native: "I am sometimes here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "manchmal": "sometimes"
+          "hier": "here"
+      "Manchmal ist das Wasser gut.":
+        native: "Sometimes the water is good."
+        bases:
+          "Manchmal": "sometimes"
+          "ist": "to be (it is)"
+          "das": "the; that"
+          "Wasser": "water"
+          "gut": "good"
+  "de-1799":
+    native: "seldom; rarely"
+    notes:
+      "n1": "Selten is seldom, rarely."
+    examples:
+      "Du bist selten hier.":
+        native: "You are seldom here."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "selten": "seldom; rarely"
+          "hier": "here"
+      "Ich bin selten da.":
+        native: "I am seldom there."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "selten": "seldom; rarely"
+          "da": "there"
+  "de-1800":
+    native: "willingly; gladly; with pleasure"
+    notes:
+      "n1": "Gern is gladly. Ich bin gern hier means I am glad to be here."
+    examples:
+      "Ich bin gern hier.":
+        native: "I am glad to be here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "gern": "willingly; gladly; with pleasure"
+          "hier": "here"
+      "Du bist gern da.":
+        native: "You are glad to be there."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "gern": "willingly; gladly; with pleasure"
+          "da": "there"
+  "de-1801":
+    native: "quite; rather"
+    notes:
+      "n1": "Ganz is quite, rather."
+    examples:
+      "Das ist ganz gut.":
+        native: "That is quite good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ganz": "quite; rather"
+          "gut": "good"
+      "Du bist ganz gut.":
+        native: "You are quite good."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "ganz": "quite; rather"
+          "gut": "good"
+  "de-1802":
+    native: "pretty; quite; rather; fairly"
+    notes:
+      "n1": "Ziemlich is pretty, fairly."
+    examples:
+      "Das ist ziemlich gut.":
+        native: "That is pretty good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "ziemlich": "pretty; quite; rather; fairly"
+          "gut": "good"
+      "Ich bin ziemlich gut.":
+        native: "I am pretty good."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "ziemlich": "pretty; quite; rather; fairly"
+          "gut": "good"
+  "de-1803":
+    native: "almost; nearly"
+    notes:
+      "n1": "Fast is almost, nearly."
+    examples:
+      "Das ist fast gut.":
+        native: "That is almost good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "fast": "almost; nearly"
+          "gut": "good"
+      "Ich bin fast da.":
+        native: "I am almost there."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "fast": "almost; nearly"
+          "da": "there"
+  "de-1804":
+    native: "again"
+    notes:
+      "n1": "Wieder is again."
+    examples:
+      "Ich bin wieder hier.":
+        native: "I am here again."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "wieder": "again"
+          "hier": "here"
+      "Du bist wieder da.":
+        native: "You are there again."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "wieder": "again"
+          "da": "there"
+  "de-1805":
+    native: "soon"
+    notes:
+      "n1": "Bald is soon."
+    examples:
+      "Ich bin bald da.":
+        native: "I am there soon."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "bald": "soon"
+          "da": "there"
+      "Du bist bald hier.":
+        native: "You are here soon."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "bald": "soon"
+          "hier": "here"
+  "de-1806":
+    native: "quickly; fast"
+    notes:
+      "n1": "Schnell is quickly, fast."
+    examples:
+      "Du bist schnell.":
+        native: "You are fast."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "schnell": "fast"
+      "Ich bin nicht schnell.":
+        native: "I am not fast."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "nicht": "not"
+          "schnell": "fast"
+  "de-1807":
+    native: "slowly"
+    notes:
+      "n1": "Langsam is slowly."
+    examples:
+      "Du bist langsam.":
+        native: "You are slow."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "langsam": "slow"
+      "Ich bin langsam.":
+        native: "I am slow."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "langsam": "slow"
+  "de-1808":
+    native: "together; jointly"
+    notes:
+      "n1": "Zusammen is together."
+    examples:
+      "Wir sind zusammen hier.":
+        native: "We are here together."
+        bases:
+          "Wir": "we"
+          "sind": "to be (they are)"
+          "zusammen": "together; jointly"
+          "hier": "here"
+      "Du und ich sind zusammen.":
+        native: "You and I are together."
+        bases:
+          "Du": "you"
+          "und": "and"
+          "ich": "I"
+          "sind": "to be (they are)"
+          "zusammen": "together; jointly"
+  "de-1809":
+    native: "perhaps; maybe"
+    notes:
+      "n1": "Vielleicht is perhaps, maybe."
+    examples:
+      "Vielleicht ist das gut.":
+        native: "Perhaps that is good."
+        bases:
+          "Vielleicht": "perhaps; maybe"
+          "ist": "to be (it is)"
+          "das": "the; that"
+          "gut": "good"
+      "Vielleicht bist du hier.":
+        native: "Perhaps you are here."
+        bases:
+          "Vielleicht": "perhaps; maybe"
+          "bist": "to be (you are)"
+          "du": "you"
+          "hier": "here"
+  "de-1810":
+    native: "really; actually"
+    notes:
+      "n1": "Wirklich is really."
+    examples:
+      "Das ist wirklich gut.":
+        native: "That is really good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "wirklich": "really; actually"
+          "gut": "good"
+      "Ist das wirklich Wasser?":
+        native: "Is that really water?"
+        bases:
+          "Ist": "to be (it is)"
+          "das": "the; that"
+          "wirklich": "really; actually"
+          "Wasser": "water"
+  "de-1811":
+    native: "there"
+    notes:
+      "n1": "Da is there, as in da ist, there is."
+    examples:
+      "Ich bin da.":
+        native: "I am there."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "da": "there"
+      "Da ist das Wasser.":
+        native: "There is the water."
+        bases:
+          "Da": "there"
+          "ist": "to be (it is)"
+          "das": "the; that"
+          "Wasser": "water"
+  "de-1812":
+    native: "then; after that"
+    notes:
+      "n1": "Dann is then."
+    examples:
+      "Dann bin ich da.":
+        native: "Then I am there."
+        bases:
+          "Dann": "then; after that"
+          "bin": "to be (I am)"
+          "ich": "I"
+          "da": "there"
+      "Und dann bist du hier.":
+        native: "And then you are here."
+        bases:
+          "Und": "and"
+          "dann": "then; after that"
+          "bist": "to be (you are)"
+          "du": "you"
+          "hier": "here"
+  "de-1813":
+    native: "after it; after that; thereafter"
+    notes:
+      "n1": "Danach is after that."
+    examples:
+      "Danach bin ich hier.":
+        native: "After that I am here."
+        bases:
+          "Danach": "after it; after that; thereafter"
+          "bin": "to be (I am)"
+          "ich": "I"
+          "hier": "here"
+      "Danach ist das Wasser gut.":
+        native: "After that the water is good."
+        bases:
+          "Danach": "after it; after that; thereafter"
+          "ist": "to be (it is)"
+          "das": "the; that"
+          "Wasser": "water"
+          "gut": "good"
+  "de-1814":
+    native: "mostly"
+    notes:
+      "n1": "Meistens is mostly."
+    examples:
+      "Ich bin meistens hier.":
+        native: "I am mostly here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "meistens": "mostly"
+          "hier": "here"
+      "Das Wasser ist meistens gut.":
+        native: "The water is mostly good."
+        bases:
+          "Das": "the; that"
+          "Wasser": "water"
+          "ist": "to be (it is)"
+          "meistens": "mostly"
+          "gut": "good"
+  "de-1815":
+    native: "actually"
+    notes:
+      "n1": "Eigentlich is actually, really."
+    examples:
+      "Ich bin eigentlich hier.":
+        native: "I am actually here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "eigentlich": "actually"
+          "hier": "here"
+      "Das ist eigentlich gut.":
+        native: "That is actually good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "eigentlich": "actually"
+          "gut": "good"
+  "de-1816":
+    native: "unfortunately"
+    notes:
+      "n1": "Leider is unfortunately."
+    examples:
+      "Leider bin ich nicht hier.":
+        native: "Unfortunately I am not here."
+        bases:
+          "Leider": "unfortunately"
+          "bin": "to be (I am)"
+          "ich": "I"
+          "nicht": "not"
+          "hier": "here"
+      "Das ist leider nicht gut.":
+        native: "That is unfortunately not good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "leider": "unfortunately"
+          "nicht": "not"
+          "gut": "good"
+  "de-1817":
+    native: "of course; naturally"
+    notes:
+      "n1": "Natürlich is of course."
+    examples:
+      "Natürlich bin ich hier.":
+        native: "Of course I am here."
+        bases:
+          "Natürlich": "of course; naturally"
+          "bin": "to be (I am)"
+          "ich": "I"
+          "hier": "here"
+      "Das ist natürlich gut.":
+        native: "That is of course good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "natürlich": "of course; naturally"
+          "gut": "good"
+  "de-1818":
+    native: "just; exactly"
+    notes:
+      "n1": "Genau is exactly."
+    examples:
+      "Genau, ja.":
+        native: "Exactly, yes."
+        bases:
+          "Genau": "just; exactly"
+          "ja": "yes"
+      "Ja, genau.":
+        native: "Yes, exactly."
+        bases:
+          "Ja": "yes"
+          "genau": "exactly"
+  "de-1819":
+    native: "easily; simply"
+    notes:
+      "n1": "Einfach is simply, easily."
+    examples:
+      "Das ist einfach gut.":
+        native: "That is simply good."
+        bases:
+          "Das": "the; that"
+          "ist": "to be (it is)"
+          "einfach": "easily; simply"
+          "gut": "good"
+      "Ich bin einfach hier.":
+        native: "I am simply here."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "einfach": "easily; simply"
+          "hier": "here"
+  "de-1820":
+    native: "so; therefore; thus"
+    notes:
+      "n1": "Also is so, therefore."
+    examples:
+      "Also bin ich hier.":
+        native: "So I am here."
+        bases:
+          "Also": "so; therefore; thus"
+          "bin": "to be (I am)"
+          "ich": "I"
+          "hier": "here"
+      "Du bist also hier.":
+        native: "So you are here."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "also": "so; therefore; thus"
+          "hier": "here"
+  "de-1821":
+    native: "back; backward; backwards"
+    notes:
+      "n1": "Zurück is back."
+    examples:
+      "Ich bin zurück.":
+        native: "I am back."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "zurück": "back; backward; backwards"
+      "Du bist zurück.":
+        native: "You are back."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "zurück": "back; backward; backwards"
+  "de-1822":
+    native: "first; firstly"
+    notes:
+      "n1": "Zuerst is first."
+    examples:
+      "Ich bin zuerst hier.":
+        native: "I am here first."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "zuerst": "first; firstly"
+          "hier": "here"
+      "Du bist zuerst da.":
+        native: "You are there first."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "zuerst": "first; firstly"
+          "da": "there"
+  "de-1823":
+    native: "immediately; at once"
+    notes:
+      "n1": "Sofort is at once."
+    examples:
+      "Ich bin sofort da.":
+        native: "I am there at once."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "sofort": "immediately; at once"
+          "da": "there"
+      "Du bist sofort hier.":
+        native: "You are here at once."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "sofort": "immediately; at once"
+          "hier": "here"
+  "de-1824":
+    native: "approximately"
+    notes:
+      "n1": "Etwa is about, approximately."
+    examples:
+      "Es ist etwa eins.":
+        native: "It is about one o’clock."
+        bases:
+          "Es": "it"
+          "ist": "is"
+          "etwa": "about"
+          "eins": "one"
+      "Es ist etwa zwei.":
+        native: "It is about two o’clock."
+        bases:
+          "Es": "it"
+          "ist": "is"
+          "etwa": "about"
+          "zwei": "two"

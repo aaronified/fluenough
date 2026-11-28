@@ -1,0 +1,231 @@
+schema: 1
+id: "de-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "sound-differences"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "de-0400"
+    target: "Staat"
+    ipa: "ʃtaːt"
+    pos: "noun"
+    gender: "m"
+    tags: ["long-short-vowel"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-1656", source: "https://en.wiktionary.org/wiki/Staat" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Staat.", ipa: "das ɪst aɪn ʃtaːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Staat", base: "Staat" }] }
+      - { target: "Hier ist ein Staat.", ipa: "hiːɐ̯ ɪst aɪn ʃtaːt", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Staat", base: "Staat" }] }
+  - id: "de-0401"
+    target: "Beet"
+    ipa: "beːt"
+    pos: "noun"
+    gender: "n"
+    tags: ["long-short-vowel"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-2788", source: "https://en.wiktionary.org/wiki/Beet" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Beet.", ipa: "das ɪst aɪn beːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Beet", base: "Beet" }] }
+      - { target: "Hier ist ein Beet.", ipa: "hiːɐ̯ ɪst aɪn beːt", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Beet", base: "Beet" }] }
+  - id: "de-0402"
+    target: "Ofen"
+    ipa: "ˈoːfən"
+    pos: "noun"
+    gender: "m"
+    tags: ["long-short-vowel"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-0403", source: "https://en.wiktionary.org/wiki/Ofen" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Ofen.", ipa: "das ɪst aɪn ˈoːfən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Ofen", base: "Ofen" }] }
+      - { target: "Hier ist ein Ofen.", ipa: "hiːɐ̯ ɪst aɪn ˈoːfən", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Ofen", base: "Ofen" }] }
+  - id: "de-0403"
+    target: "offen"
+    ipa: "ˈɔfən"
+    pos: "adj"
+    tags: ["long-short-vowel"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-0402", source: "https://en.wiktionary.org/wiki/offen" }
+    bases: "self"
+    examples:
+      - { target: "Das ist offen.", ipa: "das ɪst ˈɔfən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "offen", base: "offen" }] }
+      - { target: "Ja, das ist offen.", ipa: "jaː das ɪst ˈɔfən", bases: [{ word: "Ja", ref: "de-0001" }, { word: "das", base: "das" }, { word: "ist", base: "sein" }, { word: "offen", base: "offen" }] }
+  - id: "de-0404"
+    target: "Buch"
+    ipa: "buːx"
+    pos: "noun"
+    gender: "n"
+    tags: ["ach-sound"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Standard_German_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Buch.", ipa: "das ɪst aɪn buːx", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Buch", base: "Buch" }] }
+      - { target: "Ich habe ein Buch.", ipa: "ɪç ˈhaːbə aɪn buːx", bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Buch", base: "Buch" }] }
+  - id: "de-0405"
+    target: "Bücher"
+    ipa: "ˈbyːçɐ"
+    pos: "noun"
+    tags: ["ich-sound", "umlaut"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Standard_German_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Das sind die Bücher.", ipa: "das zɪnt diː ˈbyːçɐ", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Bücher", base: "Buch" }] }
+      - { target: "Hier sind die Bücher.", ipa: "hiːɐ̯ zɪnt diː ˈbyːçɐ", bases: [{ word: "Hier", ref: "de-0009" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Bücher", base: "Buch" }] }
+  - id: "de-0406"
+    target: "Tasche"
+    ipa: "ˈtaʃə"
+    pos: "noun"
+    gender: "f"
+    tags: ["sch"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Tasche" }
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Tasche.", ipa: "das ɪst ˈaɪnə ˈtaʃə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Tasche", base: "Tasche" }] }
+      - { target: "Ich habe eine Tasche.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈtaʃə", bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Tasche", base: "Tasche" }] }
+  - id: "de-0407"
+    target: "fein"
+    ipa: "faɪn"
+    pos: "adj"
+    tags: ["w-v-f"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-2363", source: "https://en.wiktionary.org/wiki/fein" }
+    bases: "self"
+    examples:
+      - { target: "Das ist fein.", ipa: "das ɪst faɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "fein", base: "fein" }] }
+      - { target: "Ja, das ist fein.", ipa: "jaː das ɪst faɪn", bases: [{ word: "Ja", ref: "de-0001" }, { word: "das", base: "das" }, { word: "ist", base: "sein" }, { word: "fein", base: "fein" }] }
+  - id: "de-0408"
+    target: "Rad"
+    ipa: "ʁaːt"
+    pos: "noun"
+    gender: "n"
+    tags: ["final-devoicing"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-0409", source: "https://en.wiktionary.org/wiki/Rad" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Rad.", ipa: "das ɪst aɪn ʁaːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Rad", base: "Rad" }] }
+      - { target: "Hier ist ein Rad.", ipa: "hiːɐ̯ ɪst aɪn ʁaːt", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Rad", base: "Rad" }] }
+  - id: "de-0409"
+    target: "Rat"
+    ipa: "ʁaːt"
+    pos: "noun"
+    gender: "m"
+    tags: ["final-devoicing"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-0408", source: "https://en.wiktionary.org/wiki/Rat" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Rat.", ipa: "das ɪst aɪn ʁaːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Rat", base: "Rat" }] }
+      - { target: "Hier ist ein Rat.", ipa: "hiːɐ̯ ɪst aɪn ʁaːt", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Rat", base: "Rat" }] }
+  - id: "de-0410"
+    target: "Hund"
+    ipa: "hʊnt"
+    pos: "noun"
+    gender: "m"
+    tags: ["final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Standard_German_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Hund.", ipa: "das ɪst aɪn hʊnt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Hund", base: "Hund" }] }
+      - { target: "Ja, das ist ein Hund.", ipa: "jaː das ɪst aɪn hʊnt", bases: [{ word: "Ja", ref: "de-0001" }, { word: "das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Hund", base: "Hund" }] }
+  - id: "de-0411"
+    target: "Gruß"
+    ipa: "ɡʁuːs"
+    pos: "noun"
+    gender: "m"
+    tags: ["eszett"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/German_orthography" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Gruß.", ipa: "das ɪst aɪn ɡʁuːs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Gruß", base: "Gruß" }] }
+      - { target: "Hier ist ein Gruß.", ipa: "hiːɐ̯ ɪst aɪn ɡʁuːs", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Gruß", base: "Gruß" }] }
+  - id: "de-0412"
+    target: "Zug"
+    ipa: "tsuːk"
+    pos: "noun"
+    gender: "m"
+    tags: ["z"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Zug" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Zug.", ipa: "das ɪst aɪn tsuːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Zug", base: "Zug" }] }
+      - { target: "Hier ist ein Zug.", ipa: "hiːɐ̯ ɪst aɪn tsuːk", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Zug", base: "Zug" }] }
+  - id: "de-0413"
+    target: "Stein"
+    ipa: "ʃtaɪn"
+    pos: "noun"
+    gender: "m"
+    tags: ["st-sp"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Stein" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Stein.", ipa: "das ɪst aɪn ʃtaɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Stein", base: "Stein" }] }
+      - { target: "Hier ist ein Stein.", ipa: "hiːɐ̯ ɪst aɪn ʃtaɪn", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Stein", base: "Stein" }] }
+  - id: "de-0414"
+    target: "Spiel"
+    ipa: "ʃpiːl"
+    pos: "noun"
+    gender: "n"
+    tags: ["st-sp"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Spiel" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Spiel.", ipa: "das ɪst aɪn ʃpiːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Spiel", base: "Spiel" }] }
+      - { target: "Hier ist ein Spiel.", ipa: "hiːɐ̯ ɪst aɪn ʃpiːl", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Spiel", base: "Spiel" }] }
+  - id: "de-0415"
+    target: "Fest"
+    ipa: "fɛst"
+    pos: "noun"
+    gender: "n"
+    tags: ["st-sp"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Fest" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Fest.", ipa: "das ɪst aɪn fɛst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Fest", base: "Fest" }] }
+      - { target: "Hier ist ein Fest.", ipa: "hiːɐ̯ ɪst aɪn fɛst", bases: [{ word: "Hier", ref: "de-0009" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Fest", base: "Fest" }] }
+  - id: "de-0416"
+    target: "Mütter"
+    ipa: "ˈmʏtɐ"
+    pos: "noun"
+    tags: ["umlaut"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-1511", source: "https://en.wiktionary.org/wiki/Mütter" }
+    bases: "self"
+    examples:
+      - { target: "Das sind die Mütter.", ipa: "das zɪnt diː ˈmʏtɐ", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Mütter", ref: "de-1511" }] }
+      - { target: "Hier sind die Mütter.", ipa: "hiːɐ̯ zɪnt diː ˈmʏtɐ", bases: [{ word: "Hier", ref: "de-0009" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Mütter", ref: "de-1511" }] }
+  - id: "de-0417"
+    target: "Väter"
+    ipa: "ˈfɛːtɐ"
+    pos: "noun"
+    tags: ["umlaut"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-1512", source: "https://en.wiktionary.org/wiki/Väter" }
+    bases: "self"
+    examples:
+      - { target: "Das sind die Väter.", ipa: "das zɪnt diː ˈfɛːtɐ", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Väter", ref: "de-1512" }] }
+      - { target: "Hier sind die Väter.", ipa: "hiːɐ̯ zɪnt diː ˈfɛːtɐ", bases: [{ word: "Hier", ref: "de-0009" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Väter", ref: "de-1512" }] }
+  - id: "de-0418"
+    target: "Söhne"
+    ipa: "ˈzøːnə"
+    pos: "noun"
+    tags: ["umlaut"]
+    notes:
+      - { id: "pair", kind: "pair", ref: "de-1517", source: "https://en.wiktionary.org/wiki/Söhne" }
+    bases: "self"
+    examples:
+      - { target: "Das sind die Söhne.", ipa: "das zɪnt diː ˈzøːnə", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Söhne", ref: "de-1517" }] }
+      - { target: "Hier sind die Söhne.", ipa: "hiːɐ̯ zɪnt diː ˈzøːnə", bases: [{ word: "Hier", ref: "de-0009" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Söhne", ref: "de-1517" }] }

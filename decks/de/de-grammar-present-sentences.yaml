@@ -1,0 +1,162 @@
+schema: 1
+id: "de-grammar-present-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4200"
+    target: "Ich wohne hier."
+    ipa: "ɪç ˈvoːnə hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "wohne", ref: "de-1651" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4201"
+    target: "Wo wohnst du?"
+    ipa: "voː voːnst duː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wo", ref: "de-1302" }, { word: "wohnst", ref: "de-1651" }, { word: "du", ref: "de-0004" }]
+  - id: "de-4202"
+    target: "Woher kommst du?"
+    ipa: "voˈheːɐ̯ kɔmst duː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Woher", ref: "de-1307" }, { word: "kommst", ref: "de-1725" }, { word: "du", ref: "de-0004" }]
+  - id: "de-4203"
+    target: "Das Kind kommt."
+    ipa: "das kɪnt kɔmt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "kommt", ref: "de-1725" }]
+  - id: "de-4204"
+    target: "Wir lernen viel."
+    ipa: "viːɐ̯ ˈlɛʁnən fiːl"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "lernen", ref: "de-1733" }, { word: "viel", ref: "de-1860" }]
+  - id: "de-4205"
+    target: "Du arbeitest viel."
+    ipa: "duː ˈaʁbaɪtəst fiːl"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "arbeitest", ref: "de-1723" }, { word: "viel", ref: "de-1860" }]
+  - id: "de-4206"
+    target: "Er arbeitet hier."
+    ipa: "eːɐ̯ ˈaʁbaɪtət hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "arbeitet", ref: "de-1723" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4207"
+    target: "Ich warte hier."
+    ipa: "ɪç ˈvaʁtə hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "warte", ref: "de-1748" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4208"
+    target: "Ihr wartet hier."
+    ipa: "iːɐ̯ ˈvaʁtət hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ihr", base: "ihr" }, { word: "wartet", ref: "de-1748" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4209"
+    target: "Das Kind spielt."
+    ipa: "das kɪnt ʃpiːlt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "spielt", ref: "de-1742" }]
+  - id: "de-4210"
+    target: "Sie spielen hier."
+    ipa: "ziː ˈʃpiːlən hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Sie", base: "sie" }, { word: "spielen", ref: "de-1742" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4211"
+    target: "Wir kaufen ein Handy."
+    ipa: "viːɐ̯ ˈkaʊfən aɪn ˈhɛndi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "kaufen", ref: "de-1735" }, { word: "ein", base: "ein" }, { word: "Handy", ref: "de-1664" }]
+  - id: "de-4212"
+    target: "Du suchst das Foto."
+    ipa: "duː zʊkst das ˈfoːto"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "suchst", ref: "de-1752" }, { word: "das", base: "das" }, { word: "Foto", ref: "de-1668" }]
+  - id: "de-4213"
+    target: "Er findet das Handy."
+    ipa: "eːɐ̯ ˈfɪndət das ˈhɛndi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "findet", ref: "de-1737" }, { word: "das", base: "das" }, { word: "Handy", ref: "de-1664" }]
+  - id: "de-4214"
+    target: "Ich öffne das Buch."
+    ipa: "ɪç ˈœfnə das buːx"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "öffne", ref: "de-1755" }, { word: "das", base: "das" }, { word: "Buch", ref: "de-0404" }]
+  - id: "de-4215"
+    target: "Der Hund trinkt Wasser."
+    ipa: "deːɐ̯ hʊnt tʁɪŋkt ˈvasɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Hund", ref: "de-0410" }, { word: "trinkt", ref: "de-1721" }, { word: "Wasser", ref: "de-0005" }]
+  - id: "de-4216"
+    target: "Wie heißt du?"
+    ipa: "viː haɪst duː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wie", ref: "de-1304" }, { word: "heißt", ref: "de-1650" }, { word: "du", ref: "de-0004" }]
+  - id: "de-4217"
+    target: "Ich heiße Anna."
+    ipa: "ɪç ˈhaɪsə ˈana"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "heiße", ref: "de-1650" }, { word: "Anna", base: "Anna" }]
+  - id: "de-4218"
+    target: "Er schreibt viel."
+    ipa: "eːɐ̯ ʃʁaɪpt fiːl"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "schreibt", ref: "de-1731" }, { word: "viel", ref: "de-1860" }]
+  - id: "de-4219"
+    target: "Ihr bleibt hier."
+    ipa: "iːɐ̯ blaɪpt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ihr", base: "ihr" }, { word: "bleibt", ref: "de-1757" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4220"
+    target: "Wir besuchen die Familie."
+    ipa: "viːɐ̯ bəˈzuːxən diː faˈmiːliə"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "besuchen", ref: "de-2076" }, { word: "die", base: "die" }, { word: "Familie", ref: "de-1510" }]
+  - id: "de-4221"
+    target: "Ich höre gut."
+    ipa: "ɪç ˈhøːʁə ɡuːt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "höre", ref: "de-1729" }, { word: "gut", ref: "de-0006" }]

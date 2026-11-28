@@ -1,0 +1,289 @@
+schema: 1
+id: "de-grammar-plural"
+part: "core"
+kind: "grammar"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["sg", "pl"]
+  entries:
+    - lemma: "Freund"
+      key: "freund"
+      ipa: "fʁɔɪnt"
+      forms:
+        "sg": "der Freund"
+        "pl": "die Freunde"
+      ipas:
+        "sg": "deːɐ̯ fʁɔɪnt"
+        "pl": "diː ˈfʁɔɪndə"
+    - lemma: "Geburtstag"
+      key: "geburtstag"
+      ipa: "ɡəˈbuːɐ̯tstaːk"
+      forms:
+        "sg": "der Geburtstag"
+        "pl": "die Geburtstage"
+      ipas:
+        "sg": "deːɐ̯ ɡəˈbuːɐ̯tstaːk"
+        "pl": "diː ɡəˈbʊʁtstaːɡə"
+    - lemma: "Sohn"
+      key: "sohn"
+      ipa: "zoːn"
+      forms:
+        "sg": "der Sohn"
+        "pl": "die Söhne"
+      ipas:
+        "sg": "deːɐ̯ zoːn"
+        "pl": "diː ˈzøːnə"
+    - lemma: "Stadt"
+      key: "stadt"
+      ipa: "ʃtat"
+      forms:
+        "sg": "die Stadt"
+        "pl": "die Städte"
+      ipas:
+        "sg": "diː ʃtat"
+        "pl": "diː ˈʃtɛtə"
+    - lemma: "Vater"
+      key: "vater"
+      ipa: "ˈfaːtɐ"
+      forms:
+        "sg": "der Vater"
+        "pl": "die Väter"
+      ipas:
+        "sg": "deːɐ̯ ˈfaːtɐ"
+        "pl": "diː ˈfɛːtɐ"
+    - lemma: "Bruder"
+      key: "bruder"
+      ipa: "ˈbʁuːdɐ"
+      forms:
+        "sg": "der Bruder"
+        "pl": "die Brüder"
+      ipas:
+        "sg": "deːɐ̯ ˈbʁuːdɐ"
+        "pl": "diː ˈbʁyːdɐ"
+    - lemma: "Mutter"
+      key: "mutter"
+      ipa: "ˈmʊtɐ"
+      forms:
+        "sg": "die Mutter"
+        "pl": "die Mütter"
+      ipas:
+        "sg": "diː ˈmʊtɐ"
+        "pl": "diː ˈmʏtɐ"
+    - lemma: "Tochter"
+      key: "tochter"
+      ipa: "ˈtɔxtɐ"
+      forms:
+        "sg": "die Tochter"
+        "pl": "die Töchter"
+      ipas:
+        "sg": "diː ˈtɔxtɐ"
+        "pl": "diː ˈtœçtɐ"
+    - lemma: "Kind"
+      key: "kind"
+      ipa: "kɪnt"
+      forms:
+        "sg": "das Kind"
+        "pl": "die Kinder"
+      ipas:
+        "sg": "das kɪnt"
+        "pl": "diː ˈkɪndɐ"
+    - lemma: "Land"
+      key: "land"
+      ipa: "lant"
+      forms:
+        "sg": "das Land"
+        "pl": "die Länder"
+      ipas:
+        "sg": "das lant"
+        "pl": "diː ˈlɛndɐ"
+    - lemma: "Dorf"
+      key: "dorf"
+      ipa: "dɔʁf"
+      forms:
+        "sg": "das Dorf"
+        "pl": "die Dörfer"
+      ipas:
+        "sg": "das dɔʁf"
+        "pl": "diː ˈdœʁfɐ"
+    - lemma: "Mann"
+      key: "mann"
+      ipa: "man"
+      forms:
+        "sg": "der Mann"
+        "pl": "die Männer"
+      ipas:
+        "sg": "deːɐ̯ man"
+        "pl": "diː ˈmɛnɐ"
+    - lemma: "Schwester"
+      key: "schwester"
+      ipa: "ˈʃvɛstɐ"
+      forms:
+        "sg": "die Schwester"
+        "pl": "die Schwestern"
+      ipas:
+        "sg": "diː ˈʃvɛstɐ"
+        "pl": "diː ˈʃvɛstɐn"
+    - lemma: "Tante"
+      key: "tante"
+      ipa: "ˈtantə"
+      forms:
+        "sg": "die Tante"
+        "pl": "die Tanten"
+      ipas:
+        "sg": "diː ˈtantə"
+        "pl": "diː ˈtantən"
+    - lemma: "Frau"
+      key: "frau"
+      ipa: "fʁaʊ"
+      forms:
+        "sg": "die Frau"
+        "pl": "die Frauen"
+      ipas:
+        "sg": "diː fʁaʊ"
+        "pl": "diː ˈfʁaʊən"
+    - lemma: "Familie"
+      key: "familie"
+      ipa: "faˈmiːliə"
+      forms:
+        "sg": "die Familie"
+        "pl": "die Familien"
+      ipas:
+        "sg": "diː faˈmiːliə"
+        "pl": "diː faˈmiːliən"
+    - lemma: "Adresse"
+      key: "adresse"
+      ipa: "ˈaːdʁəsə"
+      forms:
+        "sg": "die Adresse"
+        "pl": "die Adressen"
+      ipas:
+        "sg": "diː ˈaːdʁəsə"
+        "pl": "diː ˈaːdʁəsən"
+    - lemma: "Sprache"
+      key: "sprache"
+      ipa: "ˈʃpʁaːxə"
+      forms:
+        "sg": "die Sprache"
+        "pl": "die Sprachen"
+      ipas:
+        "sg": "diː ˈʃpʁaːxə"
+        "pl": "diː ˈʃpʁaːxən"
+    - lemma: "Name"
+      key: "name"
+      ipa: "ˈnaːmə"
+      forms:
+        "sg": "der Name"
+        "pl": "die Namen"
+      ipas:
+        "sg": "deːɐ̯ ˈnaːmə"
+        "pl": "diː ˈnaːmən"
+    - lemma: "Kollege"
+      key: "kollege"
+      ipa: "ˈkɔləɡə"
+      forms:
+        "sg": "der Kollege"
+        "pl": "die Kollegen"
+      ipas:
+        "sg": "deːɐ̯ ˈkɔləɡə"
+        "pl": "diː ˈkɔləɡən"
+    - lemma: "Nachbar"
+      key: "nachbar"
+      ipa: "ˈnaxbaːɐ̯"
+      forms:
+        "sg": "der Nachbar"
+        "pl": "die Nachbarn"
+      ipas:
+        "sg": "deːɐ̯ ˈnaxbaːɐ̯"
+        "pl": "diː ˈnaxbaːɐ̯n"
+    - lemma: "Mensch"
+      key: "mensch"
+      ipa: "mɛnʃ"
+      forms:
+        "sg": "der Mensch"
+        "pl": "die Menschen"
+      ipas:
+        "sg": "deːɐ̯ mɛnʃ"
+        "pl": "diː ˈmɛnʃən"
+    - lemma: "Dame"
+      key: "dame"
+      ipa: "ˈdaːmə"
+      forms:
+        "sg": "die Dame"
+        "pl": "die Damen"
+      ipas:
+        "sg": "diː ˈdaːmə"
+        "pl": "diː ˈdaːmən"
+    - lemma: "Nummer"
+      key: "nummer"
+      ipa: "ˈnʊmɐ"
+      forms:
+        "sg": "die Nummer"
+        "pl": "die Nummern"
+      ipas:
+        "sg": "diː ˈnʊmɐ"
+        "pl": "diː ˈnʊmɐn"
+    - lemma: "Freundin"
+      key: "freundin"
+      ipa: "ˈfʁɔɪndɪn"
+      forms:
+        "sg": "die Freundin"
+        "pl": "die Freundinnen"
+      ipas:
+        "sg": "diː ˈfʁɔɪndɪn"
+        "pl": "diː ˈfʁɔɪndɪnən"
+    - lemma: "Kollegin"
+      key: "kollegin"
+      ipa: "ˈkɔləɡɪn"
+      forms:
+        "sg": "die Kollegin"
+        "pl": "die Kolleginnen"
+      ipas:
+        "sg": "diː ˈkɔləɡɪn"
+        "pl": "diː ˈkɔləɡɪnən"
+    - lemma: "Mädchen"
+      key: "maedchen"
+      ipa: "ˈmɛːtçən"
+      forms:
+        "sg": "das Mädchen"
+        "pl": "die Mädchen"
+      ipas:
+        "sg": "das ˈmɛːtçən"
+        "pl": "diː ˈmɛːtçən"
+    - lemma: "Foto"
+      key: "foto"
+      ipa: "ˈfoːto"
+      forms:
+        "sg": "das Foto"
+        "pl": "die Fotos"
+      ipas:
+        "sg": "das ˈfoːto"
+        "pl": "diː ˈfoːtos"
+    - lemma: "Opa"
+      key: "opa"
+      ipa: "ˈoːpa"
+      forms:
+        "sg": "der Opa"
+        "pl": "die Opas"
+      ipas:
+        "sg": "deːɐ̯ ˈoːpa"
+        "pl": "diː ˈoːpas"
+    - lemma: "Oma"
+      key: "oma"
+      ipa: "ˈoːma"
+      forms:
+        "sg": "die Oma"
+        "pl": "die Omas"
+      ipas:
+        "sg": "diː ˈoːma"
+        "pl": "diː ˈoːmas"
+    - lemma: "Cousin"
+      key: "cousin"
+      ipa: "ˈkoːʊzɪn"
+      forms:
+        "sg": "der Cousin"
+        "pl": "die Cousins"
+      ipas:
+        "sg": "deːɐ̯ ˈkoːʊzɪn"
+        "pl": "diː ˈkoːʊzɪns"

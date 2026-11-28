@@ -1,0 +1,40 @@
+schema: 1
+id: "de-en-grammar-sein-haben-words"
+kind: "layer"
+core: "de-grammar-sein-haben-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The verbs sein and haben"
+license: "CC-BY-SA-4.0"
+description: "The two verbs for to be and to have, sein and haben, as word cards with their own examples. Not yet checked by a German speaker: please report any mistake."
+cards:
+  "de-0580":
+    native: "to be"
+    notes:
+      "n1": "Sein is the verb to be, and it is irregular: ich bin, du bist, er ist, wir sind, ihr seid, sie sind. Wiktionary's conjugation table gives these present forms."
+      "n2": "Sein says who or what someone or something is, what it is like, and where it is: Ich bin müde. Wo bist du? The formal Sie takes the same form as the plural sie: Sie sind."
+      "n3": "Sein is also a possessive, his or its: sein Vater is his father. The verb and the possessive are spelled the same; the possessive comes before a noun and has endings (seine Mutter), the verb has the forms ich bin, du bist, er ist."
+    examples:
+      "Ich bin müde.":
+        native: "I am tired."
+        bases:
+          "bin": "to be"
+      "Wo bist du?":
+        native: "Where are you?"
+        bases:
+          "bist": "to be"
+  "de-0581":
+    native: "to have"
+    notes:
+      "n1": "Haben is the verb to have: ich habe, du hast, er hat, wir haben, ihr habt, sie haben. It is regular except that the b drops out in du hast and er hat. Wiktionary's conjugation table gives these present forms."
+      "n2": "Haben says what someone owns or has: Ich habe eine Schwester. It also helps make the past tense, taught later."
+    examples:
+      "Ich habe eine Schwester.":
+        native: "I have a sister."
+        bases:
+          "habe": "to have"
+          "eine": "a; an"
+      "Wir haben ein Kind.":
+        native: "We have a child."
+        bases:
+          "haben": "to have"
+          "ein": "a; an"

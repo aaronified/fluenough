@@ -1,0 +1,140 @@
+schema: 1
+id: "de-questions"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-1300"
+    target: "wer"
+    ipa: "veːɐ̯"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wer ist das?", ipa: "veːɐ̯ ɪst das", bases: [{ word: "Wer", base: "wer" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Wer ist hier?", ipa: "veːɐ̯ ɪst hiːɐ̯", bases: [{ word: "Wer", base: "wer" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+  - id: "de-1301"
+    target: "was"
+    ipa: "vas"
+    pos: "pronoun"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Was ist das?", ipa: "vas ɪst das", bases: [{ word: "Was", base: "was" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Was habe ich?", ipa: "vas ˈhaːbə ɪç", bases: [{ word: "Was", base: "was" }, { word: "habe", base: "haben" }, { word: "ich", base: "ich" }] }
+  - id: "de-1302"
+    target: "wo"
+    ipa: "voː"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wo ist das?", ipa: "voː ɪst das", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Wo bist du?", ipa: "voː bɪst duː", bases: [{ word: "Wo", base: "wo" }, { word: "bist", base: "sein" }, { word: "du", base: "du" }] }
+  - id: "de-1303"
+    target: "wann"
+    ipa: "van"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wann ist das?", ipa: "van ɪst das", bases: [{ word: "Wann", base: "wann" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Wann bist du hier?", ipa: "van bɪst duː hiːɐ̯", bases: [{ word: "Wann", base: "wann" }, { word: "bist", base: "sein" }, { word: "du", base: "du" }, { word: "hier", base: "hier" }] }
+  - id: "de-1304"
+    target: "wie"
+    ipa: "viː"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wie ist das?", ipa: "viː ɪst das", bases: [{ word: "Wie", base: "wie" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Wie bist du?", ipa: "viː bɪst duː", bases: [{ word: "Wie", base: "wie" }, { word: "bist", base: "sein" }, { word: "du", base: "du" }] }
+  - id: "de-1305"
+    target: "warum"
+    ipa: "ˈvaːʁʊm"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Warum ist das?", ipa: "ˈvaːʁʊm ɪst das", bases: [{ word: "Warum", base: "warum" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Warum bist du hier?", ipa: "ˈvaːʁʊm bɪst duː hiːɐ̯", bases: [{ word: "Warum", base: "warum" }, { word: "bist", base: "sein" }, { word: "du", base: "du" }, { word: "hier", base: "hier" }] }
+  - id: "de-1307"
+    target: "woher"
+    ipa: "voˈheːɐ̯"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Woher bist du?", ipa: "voˈheːɐ̯ bɪst duː", bases: [{ word: "Woher", base: "woher" }, { word: "bist", base: "sein" }, { word: "du", base: "du" }] }
+      - { target: "Woher ist das?", ipa: "voˈheːɐ̯ ɪst das", bases: [{ word: "Woher", base: "woher" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+  - id: "de-1308"
+    target: "welcher"
+    ipa: "ˈvɛlçɐ"
+    pos: "other"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Welcher ist da?", ipa: "ˈvɛlçɐ ɪst daː", bases: [{ word: "Welcher", base: "welcher" }, { word: "ist", base: "sein" }, { word: "da", base: "da" }] }
+      - { target: "Welcher ist hier?", ipa: "ˈvɛlçɐ ɪst hiːɐ̯", bases: [{ word: "Welcher", base: "welcher" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+  - id: "de-1309"
+    target: "wofür"
+    ipa: "voˈfyːɐ̯"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wofür ist das?", ipa: "voˈfyːɐ̯ ɪst das", bases: [{ word: "Wofür", base: "wofür" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Wofür ist das Wasser?", ipa: "voˈfyːɐ̯ ɪst das ˈvasɐ", bases: [{ word: "Wofür", base: "wofür" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-1311"
+    target: "wieso"
+    ipa: "viˈzoː"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wieso ist das?", ipa: "viˈzoː ɪst das", bases: [{ word: "Wieso", base: "wieso" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Wieso bist du hier?", ipa: "viˈzoː bɪst duː hiːɐ̯", bases: [{ word: "Wieso", base: "wieso" }, { word: "bist", base: "sein" }, { word: "du", base: "du" }, { word: "hier", base: "hier" }] }
+  - id: "de-1312"
+    target: "weshalb"
+    ipa: "vɛsˈhalp"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Weshalb ist das?", ipa: "vɛsˈhalp ɪst das", bases: [{ word: "Weshalb", base: "weshalb" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Weshalb bist du hier?", ipa: "vɛsˈhalp bɪst duː hiːɐ̯", bases: [{ word: "Weshalb", base: "weshalb" }, { word: "bist", base: "sein" }, { word: "du", base: "du" }, { word: "hier", base: "hier" }] }
+  - id: "de-1313"
+    target: "wie viel"
+    ipa: "viː fiːl"
+    pos: "phrase"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wie viel ist das?", ipa: "viː fiːl ɪst das", bases: [{ word: "Wie", base: "wie" }, { word: "viel", base: "viel" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Wie viel habe ich?", ipa: "viː fiːl ˈhaːbə ɪç", bases: [{ word: "Wie", base: "wie" }, { word: "viel", base: "viel" }, { word: "habe", base: "haben" }, { word: "ich", base: "ich" }] }
+  - id: "de-1314"
+    target: "wozu"
+    ipa: "voːˈtsuː"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wozu ist das?", ipa: "voːˈtsuː ɪst das", bases: [{ word: "Wozu", base: "wozu" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }] }
+      - { target: "Wozu ist das gut?", ipa: "voːˈtsuː ɪst das ɡuːt", bases: [{ word: "Wozu", base: "wozu" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "gut", base: "gut" }] }

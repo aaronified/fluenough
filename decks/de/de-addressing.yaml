@@ -1,0 +1,190 @@
+schema: 1
+id: "de-addressing"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "addressing"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-1370"
+    target: "Herr"
+    ipa: "hɛʁ"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Herren" }]
+    examples:
+      - { target: "Das ist der Herr.", ipa: "das ɪst deːɐ̯ hɛʁ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Herr", base: "Herr" }] }
+      - { target: "Wo ist der Herr?", ipa: "voː ɪst deːɐ̯ hɛʁ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Herr", base: "Herr" }] }
+  - id: "de-1371"
+    target: "Frau"
+    ipa: "fʁaʊ"
+    pos: "noun"
+    gender: "f"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Frauen" }]
+    examples:
+      - { target: "Das ist die Frau.", ipa: "das ɪst diː fʁaʊ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Frau", base: "Frau" }] }
+      - { target: "Wo ist die Frau?", ipa: "voː ɪst diː fʁaʊ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Frau", base: "Frau" }] }
+  - id: "de-1372"
+    target: "Sie"
+    ipa: "ziː"
+    pos: "pronoun"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Sie sind hier.", ipa: "ziː zɪnt hiːɐ̯", bases: [{ word: "Sie", base: "Sie" }, { word: "sind", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Wo sind Sie?", ipa: "voː zɪnt ziː", bases: [{ word: "Wo", base: "wo" }, { word: "sind", base: "sein" }, { word: "Sie", base: "Sie" }] }
+  - id: "de-1373"
+    target: "Name"
+    ipa: "ˈnaːmə"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Namen" }]
+    examples:
+      - { target: "Das ist der Name.", ipa: "das ɪst deːɐ̯ ˈnaːmə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Name", base: "Name" }] }
+      - { target: "Ich habe einen Namen.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈnaːmən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Namen", base: "Name" }] }
+  - id: "de-1374"
+    target: "Vorname"
+    ipa: "ˈfoːɐ̯naːmə"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Vornamen" }]
+    examples:
+      - { target: "Das ist der Vorname.", ipa: "das ɪst deːɐ̯ ˈfoːɐ̯naːmə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Vorname", base: "Vorname" }] }
+      - { target: "Ich habe einen Vornamen.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈfoːɐ̯naːmən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Vornamen", base: "Vorname" }] }
+  - id: "de-1375"
+    target: "Nachname"
+    ipa: "ˈnaːxnaːmə"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Nachnamen" }]
+    examples:
+      - { target: "Das ist der Nachname.", ipa: "das ɪst deːɐ̯ ˈnaːxnaːmə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Nachname", base: "Nachname" }] }
+      - { target: "Ich habe einen Nachnamen.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈnaːxnaːmən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Nachnamen", base: "Nachname" }] }
+  - id: "de-1376"
+    target: "Familienname"
+    ipa: "ˈfaːmiliːnamə"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Familiennamen" }]
+    examples:
+      - { target: "Das ist der Familienname.", ipa: "das ɪst deːɐ̯ ˈfaːmiliːnamə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Familienname", base: "Familienname" }] }
+      - { target: "Ich habe einen Familiennamen.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈfaːmiliːnamən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Familiennamen", base: "Familienname" }] }
+  - id: "de-1377"
+    target: "Mädchen"
+    ipa: "ˈmɛːtçən"
+    pos: "noun"
+    gender: "n"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wo ist das Mädchen?", ipa: "voː ɪst das ˈmɛːtçən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Mädchen", base: "Mädchen" }] }
+      - { target: "Das Mädchen ist hier.", ipa: "das ˈmɛːtçən ɪst hiːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "Mädchen", base: "Mädchen" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+  - id: "de-1378"
+    target: "Junge"
+    ipa: "ˈjʊŋə"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Jungen" }]
+    examples:
+      - { target: "Das ist der Junge.", ipa: "das ɪst deːɐ̯ ˈjʊŋə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Junge", base: "Junge" }] }
+      - { target: "Wo ist der Junge?", ipa: "voː ɪst deːɐ̯ ˈjʊŋə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Junge", base: "Junge" }] }
+  - id: "de-1379"
+    target: "Dame"
+    ipa: "ˈdaːmə"
+    pos: "noun"
+    gender: "f"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Damen" }]
+    examples:
+      - { target: "Das ist die Dame.", ipa: "das ɪst diː ˈdaːmə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Dame", base: "Dame" }] }
+      - { target: "Wo ist die Dame?", ipa: "voː ɪst diː ˈdaːmə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Dame", base: "Dame" }] }
+  - id: "de-1380"
+    target: "Freund"
+    ipa: "fʁɔɪnt"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Freunde" }]
+    examples:
+      - { target: "Das ist der Freund.", ipa: "das ɪst deːɐ̯ fʁɔɪnt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Freund", base: "Freund" }] }
+      - { target: "Wo ist der Freund?", ipa: "voː ɪst deːɐ̯ fʁɔɪnt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Freund", base: "Freund" }] }
+  - id: "de-1381"
+    target: "Freundin"
+    ipa: "ˈfʁɔɪndɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Freundinnen" }]
+    examples:
+      - { target: "Das ist die Freundin.", ipa: "das ɪst diː ˈfʁɔɪndɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Freundin", base: "Freundin" }] }
+      - { target: "Wo ist die Freundin?", ipa: "voː ɪst diː ˈfʁɔɪndɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Freundin", base: "Freundin" }] }
+  - id: "de-1382"
+    target: "Kollege"
+    ipa: "ˈkɔləɡə"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kollegen" }]
+    examples:
+      - { target: "Das ist der Kollege.", ipa: "das ɪst deːɐ̯ ˈkɔləɡə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kollege", base: "Kollege" }] }
+      - { target: "Wo ist der Kollege?", ipa: "voː ɪst deːɐ̯ ˈkɔləɡə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kollege", base: "Kollege" }] }
+  - id: "de-1383"
+    target: "Kollegin"
+    ipa: "ˈkɔləɡɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kolleginnen" }]
+    examples:
+      - { target: "Das ist die Kollegin.", ipa: "das ɪst diː ˈkɔləɡɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kollegin", base: "Kollegin" }] }
+      - { target: "Wo ist die Kollegin?", ipa: "voː ɪst diː ˈkɔləɡɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kollegin", base: "Kollegin" }] }
+  - id: "de-1384"
+    target: "Nachbar"
+    ipa: "ˈnaxbaːɐ̯"
+    pos: "noun"
+    gender: "m"
+    tags: ["addressing"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Nachbarn" }]
+    examples:
+      - { target: "Das ist der Nachbar.", ipa: "das ɪst deːɐ̯ ˈnaxbaːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Nachbar", base: "Nachbar" }] }
+      - { target: "Wo ist der Nachbar?", ipa: "voː ɪst deːɐ̯ ˈnaxbaːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Nachbar", base: "Nachbar" }] }
+  - id: "de-1385"
+    kind: "set"
+    members: [{ ref: "de-1370" }, { ref: "de-1371" }, { ref: "de-1372" }, { ref: "de-1373" }, { ref: "de-1374" }, { ref: "de-1375" }, { ref: "de-1376" }, { ref: "de-1377" }, { ref: "de-1378" }, { ref: "de-1379" }, { ref: "de-1380" }, { ref: "de-1381" }, { ref: "de-1382" }, { ref: "de-1383" }, { ref: "de-1384" }]

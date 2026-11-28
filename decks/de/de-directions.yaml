@@ -1,0 +1,316 @@
+schema: 1
+id: "de-directions"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "directions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2560"
+    target: "Weg"
+    ipa: "vɛk"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Wege" }]
+    examples:
+      - { target: "Das ist der Weg.", ipa: "das ɪst deːɐ̯ vɛk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Weg", base: "Weg" }] }
+      - { target: "Wo ist der Weg?", ipa: "voː ɪst deːɐ̯ vɛk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Weg", base: "Weg" }] }
+  - id: "de-2561"
+    target: "Straße"
+    ipa: "ˈʃtʁaːsə"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Straßen" }]
+    examples:
+      - { target: "Das ist die Straße.", ipa: "das ɪst diː ˈʃtʁaːsə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Straße", base: "Straße" }] }
+      - { target: "Wo ist die Straße?", ipa: "voː ɪst diː ˈʃtʁaːsə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Straße", base: "Straße" }] }
+  - id: "de-2562"
+    target: "Ampel"
+    ipa: "ˈampəl"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Ampeln" }]
+    examples:
+      - { target: "Das ist die Ampel.", ipa: "das ɪst diː ˈampəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Ampel", base: "Ampel" }] }
+      - { target: "Wo ist die Ampel?", ipa: "voː ɪst diː ˈampəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Ampel", base: "Ampel" }] }
+  - id: "de-2563"
+    target: "Kreuzung"
+    ipa: "ˈkʁɔɪtsʊŋ"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kreuzungen" }]
+    examples:
+      - { target: "Das ist die Kreuzung.", ipa: "das ɪst diː ˈkʁɔɪtsʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Kreuzung", base: "Kreuzung" }] }
+      - { target: "Wo ist die Kreuzung?", ipa: "voː ɪst diː ˈkʁɔɪtsʊŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Kreuzung", base: "Kreuzung" }] }
+  - id: "de-2564"
+    target: "Brücke"
+    ipa: "ˈbʁʏkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Brücken" }]
+    examples:
+      - { target: "Das ist die Brücke.", ipa: "das ɪst diː ˈbʁʏkə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Brücke", base: "Brücke" }] }
+      - { target: "Wo ist die Brücke?", ipa: "voː ɪst diː ˈbʁʏkə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Brücke", base: "Brücke" }] }
+  - id: "de-2565"
+    target: "Eingang"
+    ipa: "ˈaɪnɡaŋ"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Eingänge" }]
+    examples:
+      - { target: "Das ist der Eingang.", ipa: "das ɪst deːɐ̯ ˈaɪnɡaŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Eingang", base: "Eingang" }] }
+      - { target: "Wo ist der Eingang?", ipa: "voː ɪst deːɐ̯ ˈaɪnɡaŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Eingang", base: "Eingang" }] }
+  - id: "de-2566"
+    target: "Ausgang"
+    ipa: "ˈaʊsɡaŋ"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Ausgänge" }]
+    examples:
+      - { target: "Das ist der Ausgang.", ipa: "das ɪst deːɐ̯ ˈaʊsɡaŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Ausgang", base: "Ausgang" }] }
+      - { target: "Wo ist der Ausgang?", ipa: "voː ɪst deːɐ̯ ˈaʊsɡaŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Ausgang", base: "Ausgang" }] }
+  - id: "de-2567"
+    target: "Stadtplan"
+    ipa: "ˈʃtatplaːn"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Stadtpläne" }]
+    examples:
+      - { target: "Das ist der Stadtplan.", ipa: "das ɪst deːɐ̯ ˈʃtatplaːn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Stadtplan", base: "Stadtplan" }] }
+      - { target: "Ich habe einen Stadtplan.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈʃtatplaːn", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Stadtplan", base: "Stadtplan" }] }
+  - id: "de-2568"
+    target: "Meter"
+    ipa: "ˈmeːtɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Meter.", ipa: "das ɪst deːɐ̯ ˈmeːtɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Meter", base: "Meter" }] }
+      - { target: "Wo ist der Meter?", ipa: "voː ɪst deːɐ̯ ˈmeːtɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Meter", base: "Meter" }] }
+  - id: "de-2569"
+    target: "Kilometer"
+    ipa: "ˈkiːlɔmətɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Kilometer.", ipa: "das ɪst deːɐ̯ ˈkiːlɔmətɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kilometer", base: "Kilometer" }] }
+      - { target: "Wo ist der Kilometer?", ipa: "voː ɪst deːɐ̯ ˈkiːlɔmətɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kilometer", base: "Kilometer" }] }
+  - id: "de-2571"
+    target: "folgen"
+    ipa: "ˈfɔlɡən"
+    pos: "verb"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich folge.", ipa: "ɪç ˈfɔlɡə", bases: [{ word: "Ich", base: "ich" }, { word: "folge", base: "folgen" }] }
+      - { target: "Du folgst.", ipa: "duː fɔlkst", bases: [{ word: "Du", base: "du" }, { word: "folgst", base: "folgen" }] }
+  - id: "de-2573"
+    target: "Richtung"
+    ipa: "ˈʁɪçtʊŋ"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Richtungen" }]
+    examples:
+      - { target: "Das ist die Richtung.", ipa: "das ɪst diː ˈʁɪçtʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Richtung", base: "Richtung" }] }
+      - { target: "Wo ist die Richtung?", ipa: "voː ɪst diː ˈʁɪçtʊŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Richtung", base: "Richtung" }] }
+  - id: "de-2574"
+    target: "Parkplatz"
+    ipa: "ˈpaʁkplats"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Parkplätze" }]
+    examples:
+      - { target: "Das ist der Parkplatz.", ipa: "das ɪst deːɐ̯ ˈpaʁkplats", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Parkplatz", base: "Parkplatz" }] }
+      - { target: "Wo ist der Parkplatz?", ipa: "voː ɪst deːɐ̯ ˈpaʁkplats", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Parkplatz", base: "Parkplatz" }] }
+  - id: "de-2575"
+    target: "Umgebung"
+    ipa: "ˈʊmɡəbʊŋ"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Umgebungen" }]
+    examples:
+      - { target: "Das ist die Umgebung.", ipa: "das ɪst diː ˈʊmɡəbʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Umgebung", base: "Umgebung" }] }
+      - { target: "Wo ist die Umgebung?", ipa: "voː ɪst diː ˈʊmɡəbʊŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Umgebung", base: "Umgebung" }] }
+  - id: "de-2576"
+    target: "Tunnel"
+    ipa: "ˈtʊnəl"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Tunnel.", ipa: "das ɪst deːɐ̯ ˈtʊnəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Tunnel", base: "Tunnel" }] }
+      - { target: "Wo ist der Tunnel?", ipa: "voː ɪst deːɐ̯ ˈtʊnəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Tunnel", base: "Tunnel" }] }
+  - id: "de-2577"
+    target: "Stadtmitte"
+    ipa: "ˈʃtatmɪtə"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Stadtmitten" }]
+    examples:
+      - { target: "Das ist die Stadtmitte.", ipa: "das ɪst diː ˈʃtatmɪtə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Stadtmitte", base: "Stadtmitte" }] }
+      - { target: "Wo ist die Stadtmitte?", ipa: "voː ɪst diː ˈʃtatmɪtə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Stadtmitte", base: "Stadtmitte" }] }
+  - id: "de-2578"
+    target: "Kurve"
+    ipa: "ˈkʊʁvə"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kurven" }]
+    examples:
+      - { target: "Das ist die Kurve.", ipa: "das ɪst diː ˈkʊʁvə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Kurve", base: "Kurve" }] }
+      - { target: "Wo ist die Kurve?", ipa: "voː ɪst diː ˈkʊʁvə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Kurve", base: "Kurve" }] }
+  - id: "de-2579"
+    target: "Gasse"
+    ipa: "ˈɡasə"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Gassen" }]
+    examples:
+      - { target: "Das ist die Gasse.", ipa: "das ɪst diː ˈɡasə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Gasse", base: "Gasse" }] }
+      - { target: "Wo ist die Gasse?", ipa: "voː ɪst diː ˈɡasə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Gasse", base: "Gasse" }] }
+  - id: "de-2580"
+    target: "Allee"
+    ipa: "aˈleː"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Alleen" }]
+    examples:
+      - { target: "Das ist die Allee.", ipa: "das ɪst diː aˈleː", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Allee", base: "Allee" }] }
+      - { target: "Wo ist die Allee?", ipa: "voː ɪst diː aˈleː", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Allee", base: "Allee" }] }
+  - id: "de-2581"
+    target: "Abzweigung"
+    ipa: "ˈaptsvaɪɡʊŋ"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Abzweigungen" }]
+    examples:
+      - { target: "Das ist die Abzweigung.", ipa: "das ɪst diː ˈaptsvaɪɡʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Abzweigung", base: "Abzweigung" }] }
+      - { target: "Wo ist die Abzweigung?", ipa: "voː ɪst diː ˈaptsvaɪɡʊŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Abzweigung", base: "Abzweigung" }] }
+  - id: "de-2582"
+    target: "Hauptstraße"
+    ipa: "ˈhaʊptstʁasə"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Hauptstraßen" }]
+    examples:
+      - { target: "Das ist die Hauptstraße.", ipa: "das ɪst diː ˈhaʊptstʁasə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Hauptstraße", base: "Hauptstraße" }] }
+      - { target: "Wo ist die Hauptstraße?", ipa: "voː ɪst diː ˈhaʊptstʁasə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Hauptstraße", base: "Hauptstraße" }] }
+  - id: "de-2583"
+    target: "Kreisel"
+    ipa: "ˈkʁaɪzəl"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Kreisel.", ipa: "das ɪst deːɐ̯ ˈkʁaɪzəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kreisel", base: "Kreisel" }] }
+      - { target: "Wo ist der Kreisel?", ipa: "voː ɪst deːɐ̯ ˈkʁaɪzəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kreisel", base: "Kreisel" }] }
+  - id: "de-2584"
+    target: "Fußgängerzone"
+    ipa: "ˈfuːsɡɛŋɐtsoːnə"
+    pos: "noun"
+    gender: "f"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Fußgängerzonen" }]
+    examples:
+      - { target: "Das ist die Fußgängerzone.", ipa: "das ɪst diː ˈfuːsɡɛŋɐtsoːnə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Fußgängerzone", base: "Fußgängerzone" }] }
+      - { target: "Wo ist die Fußgängerzone?", ipa: "voː ɪst diː ˈfuːsɡɛŋɐtsoːnə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Fußgängerzone", base: "Fußgängerzone" }] }
+  - id: "de-2585"
+    target: "Übergang"
+    ipa: "ˈyːbɐɡaŋ"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Übergänge" }]
+    examples:
+      - { target: "Das ist der Übergang.", ipa: "das ɪst deːɐ̯ ˈyːbɐɡaŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Übergang", base: "Übergang" }] }
+      - { target: "Wo ist der Übergang?", ipa: "voː ɪst deːɐ̯ ˈyːbɐɡaŋ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Übergang", base: "Übergang" }] }
+  - id: "de-2586"
+    target: "Parkhaus"
+    ipa: "ˈpaʁkhaʊs"
+    pos: "noun"
+    gender: "n"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Parkhäuser" }]
+    examples:
+      - { target: "Hier ist das Parkhaus.", ipa: "hiːɐ̯ ɪst das ˈpaʁkhaʊs", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Parkhaus", base: "Parkhaus" }] }
+      - { target: "Wo ist das Parkhaus?", ipa: "voː ɪst das ˈpaʁkhaʊs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Parkhaus", base: "Parkhaus" }] }
+  - id: "de-2587"
+    target: "Platz"
+    ipa: "plats"
+    pos: "noun"
+    gender: "m"
+    tags: ["directions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Plätze" }]
+    examples:
+      - { target: "Das ist der Platz.", ipa: "das ɪst deːɐ̯ plats", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Platz", base: "Platz" }] }
+      - { target: "Wo ist der Platz?", ipa: "voː ɪst deːɐ̯ plats", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Platz", base: "Platz" }] }

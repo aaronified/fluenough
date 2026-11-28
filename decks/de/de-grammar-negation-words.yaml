@@ -1,0 +1,32 @@
+schema: 1
+id: "de-grammar-negation-words"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-0820"
+    target: "nicht"
+    ipa: "nɪçt"
+    pos: "particle"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/nicht" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/nicht" }
+    bases: "self"
+    examples:
+      - { target: "Das ist nicht gut.", ipa: "das ɪst nɪçt ɡuːt", bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "nicht", base: "nicht" }, { word: "gut", ref: "de-0006" }] }
+      - { target: "Ich bin nicht müde.", ipa: "ɪç bɪn nɪçt ˈmyːdə", bases: [{ word: "Ich", ref: "de-0003" }, { word: "bin", ref: "de-0580" }, { word: "nicht", base: "nicht" }, { word: "müde", ref: "de-1946" }] }
+  - id: "de-0821"
+    target: "kein"
+    ipa: "kaɪn"
+    pos: "other"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/kein" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/kein" }
+    bases: "self"
+    examples:
+      - { target: "Das ist kein Hund.", ipa: "das ɪst kaɪn hʊnt", bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "kein", base: "kein" }, { word: "Hund", ref: "de-0410" }] }
+      - { target: "Ich habe kein Handy.", ipa: "ɪç ˈhaːbə kaɪn ˈhɛndi", bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", ref: "de-0581" }, { word: "kein", base: "kein" }, { word: "Handy", ref: "de-1664" }] }

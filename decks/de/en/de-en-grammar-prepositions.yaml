@@ -1,0 +1,30 @@
+schema: 1
+id: "de-en-grammar-prepositions"
+kind: "layer"
+core: "de-grammar-prepositions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Prepositions with the accusative and the dative"
+license: "CC-BY-SA-4.0"
+description: "Twelve prepositions, each with the same four nouns, to show the accusative after für, durch, gegen, ohne and um, and the dative after mit, nach, bei, von, zu, aus and seit. Not yet checked by a German speaker: please report any mistake."
+pattern:
+  name: "Prepositions and their case"
+  slot_name: "noun"
+  slots:
+    "m": "with a masculine noun (Vater)"
+    "f": "with a feminine noun (Mutter)"
+    "n": "with a neuter noun (Kind)"
+    "pl": "with a plural noun (Kinder)"
+  entries:
+    "fuer": "for (takes the accusative)"
+    "durch": "through; by (takes the accusative)"
+    "gegen": "against (takes the accusative)"
+    "ohne": "without (takes the accusative)"
+    "um": "around; at (a time) (takes the accusative)"
+    "mit": "with (takes the dative)"
+    "nach": "after; to (a place name) (takes the dative)"
+    "bei": "at; near; with (a person) (takes the dative)"
+    "von": "from; of (takes the dative)"
+    "zu": "to; towards (takes the dative)"
+    "aus": "out of; from (takes the dative)"
+    "seit": "since; for (a time) (takes the dative)"
+  notes: "A preposition makes the noun after it take a case. Five prepositions take the accusative: für, durch, gegen, ohne and um. Seven take the dative: mit, nach, bei, von, zu, aus and seit. Wiktionary marks each preposition's entry with the case it takes. Learn each preposition with its case. After an accusative preposition only the masculine changes: für den Vater, but für die Mutter, für das Kind, für die Kinder. After a dative preposition the masculine and neuter take dem, the feminine takes der, and the plural takes den with -n on the noun: mit dem Vater, mit der Mutter, mit dem Kind, mit den Kindern. Every row uses the same four nouns so the endings can be compared. Zu, bei and von often run together with dem: zum (zu dem), beim (bei dem), vom (von dem), and zur is zu der, as Wiktionary lists them. Prepositions that take either case, depending on whether the verb shows movement or position, are taught later. Sources: en.wiktionary's entries for each preposition and for zum, zur, beim and vom, and its declension tables of Vater, Mutter, Kind and Kinder."

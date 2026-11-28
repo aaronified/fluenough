@@ -1,0 +1,176 @@
+schema: 1
+id: "de-grammar-separable-verbs-words"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-1240"
+    target: "aufstehen"
+    ipa: "ˈaʊfʃteːən"
+    pos: "verb"
+    tags: ["separable-verb", "auf"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/aufstehen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/aufstehen" }
+    bases: "self"
+    examples:
+      - { target: "Ich stehe um sieben Uhr auf.", ipa: "ɪç ˈʃteːə ʊm ˈziːbən uːɐ̯ aʊf", bases: [{ word: "Ich", ref: "de-0003" }, { word: "stehe", base: "aufstehen" }, { word: "um", ref: "de-1124" }, { word: "sieben", ref: "de-1585" }, { word: "Uhr", ref: "de-2845" }, { word: "auf", base: "aufstehen" }] }
+      - { target: "Ich muss früh aufstehen.", ipa: "ɪç mʊs fʁyː ˈaʊfʃteːən", bases: [{ word: "Ich", ref: "de-0003" }, { word: "muss", ref: "de-1001" }, { word: "früh", ref: "de-2860" }, { word: "aufstehen", base: "aufstehen" }] }
+  - id: "de-1241"
+    target: "ankommen"
+    ipa: "ˈankɔmən"
+    pos: "verb"
+    tags: ["separable-verb", "an"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/ankommen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/ankommen" }
+    bases: "self"
+    examples:
+      - { target: "Der Zug kommt bald an.", ipa: "deːɐ̯ tsuːk kɔmt balt an", bases: [{ word: "Der", base: "der" }, { word: "Zug", ref: "de-0412" }, { word: "kommt", base: "ankommen" }, { word: "bald", ref: "de-1805" }, { word: "an", base: "ankommen" }] }
+      - { target: "Wann kommt der Zug an?", ipa: "van kɔmt deːɐ̯ tsuːk an", bases: [{ word: "Wann", ref: "de-1303" }, { word: "kommt", base: "ankommen" }, { word: "der", base: "der" }, { word: "Zug", ref: "de-0412" }, { word: "an", base: "ankommen" }] }
+  - id: "de-1242"
+    target: "abfahren"
+    ipa: "ˈapfaːʁən"
+    pos: "verb"
+    tags: ["separable-verb", "ab"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/abfahren" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/abfahren" }
+    bases: "self"
+    examples:
+      - { target: "Der Zug fährt um acht Uhr ab.", ipa: "deːɐ̯ tsuːk fɛːɐ̯t ʊm axt uːɐ̯ ap", bases: [{ word: "Der", base: "der" }, { word: "Zug", ref: "de-0412" }, { word: "fährt", base: "abfahren" }, { word: "um", ref: "de-1124" }, { word: "acht", ref: "de-1586" }, { word: "Uhr", ref: "de-2845" }, { word: "ab", base: "abfahren" }] }
+      - { target: "Wann fährt der Bus ab?", ipa: "van fɛːɐ̯t deːɐ̯ bʊs ap", bases: [{ word: "Wann", ref: "de-1303" }, { word: "fährt", base: "abfahren" }, { word: "der", base: "der" }, { word: "Bus", ref: "de-2490" }, { word: "ab", base: "abfahren" }] }
+  - id: "de-1243"
+    target: "einkaufen"
+    ipa: "ˈaɪnkaʊfən"
+    pos: "verb"
+    tags: ["separable-verb", "ein"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/einkaufen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/einkaufen" }
+    bases: "self"
+    examples:
+      - { target: "Ich kaufe heute ein.", ipa: "ɪç ˈkaʊfə ˈhɔɪtə aɪn", bases: [{ word: "Ich", ref: "de-0003" }, { word: "kaufe", base: "einkaufen" }, { word: "heute", ref: "de-2840" }, { word: "ein", base: "einkaufen" }] }
+      - { target: "Wir müssen einkaufen.", ipa: "viːɐ̯ ˈmʏsən ˈaɪnkaʊfən", bases: [{ word: "Wir", ref: "de-1443" }, { word: "müssen", ref: "de-1001" }, { word: "einkaufen", base: "einkaufen" }] }
+  - id: "de-1244"
+    target: "anrufen"
+    ipa: "ˈanʁʊfən"
+    pos: "verb"
+    tags: ["separable-verb", "an"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/anrufen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/anrufen" }
+    bases: "self"
+    examples:
+      - { target: "Ich rufe die Mutter an.", ipa: "ɪç ˈʁuːfə diː ˈmʊtɐ an", bases: [{ word: "Ich", ref: "de-0003" }, { word: "rufe", base: "anrufen" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }, { word: "an", base: "anrufen" }] }
+      - { target: "Er ruft den Vater an.", ipa: "eːɐ̯ ʁuːft deːn ˈfaːtɐ an", bases: [{ word: "Er", ref: "de-1440" }, { word: "ruft", base: "anrufen" }, { word: "den", base: "der" }, { word: "Vater", ref: "de-1512" }, { word: "an", base: "anrufen" }] }
+  - id: "de-1245"
+    target: "mitkommen"
+    ipa: "ˈmɪtkɔmən"
+    pos: "verb"
+    tags: ["separable-verb", "mit"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/mitkommen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/mitkommen" }
+    bases: "self"
+    examples:
+      - { target: "Kommst du mit?", ipa: "kɔmst duː mɪt", bases: [{ word: "Kommst", base: "mitkommen" }, { word: "du", ref: "de-0004" }, { word: "mit", base: "mitkommen" }] }
+      - { target: "Ich komme gern mit.", ipa: "ɪç ˈkɔmə ɡɛʁn mɪt", bases: [{ word: "Ich", ref: "de-0003" }, { word: "komme", base: "mitkommen" }, { word: "gern", ref: "de-1800" }, { word: "mit", base: "mitkommen" }] }
+  - id: "de-1246"
+    target: "anfangen"
+    ipa: "ˈanfaŋən"
+    pos: "verb"
+    tags: ["separable-verb", "an"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/anfangen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/anfangen" }
+    bases: "self"
+    examples:
+      - { target: "Die Arbeit fängt bald an.", ipa: "diː ˈaʁbaɪt fɛŋt balt an", bases: [{ word: "Die", base: "die" }, { word: "Arbeit", ref: "de-2140" }, { word: "fängt", base: "anfangen" }, { word: "bald", ref: "de-1805" }, { word: "an", base: "anfangen" }] }
+      - { target: "Wann fängt die Arbeit an?", ipa: "van fɛŋt diː ˈaʁbaɪt an", bases: [{ word: "Wann", ref: "de-1303" }, { word: "fängt", base: "anfangen" }, { word: "die", base: "die" }, { word: "Arbeit", ref: "de-2140" }, { word: "an", base: "anfangen" }] }
+  - id: "de-1247"
+    target: "einsteigen"
+    ipa: "ˈaɪnʃtaɪɡən"
+    pos: "verb"
+    tags: ["separable-verb", "ein"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/einsteigen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/einsteigen" }
+    bases: "self"
+    examples:
+      - { target: "Wir steigen hier ein.", ipa: "viːɐ̯ ˈʃtaɪɡən hiːɐ̯ aɪn", bases: [{ word: "Wir", ref: "de-1443" }, { word: "steigen", base: "einsteigen" }, { word: "hier", ref: "de-0009" }, { word: "ein", base: "einsteigen" }] }
+      - { target: "Du steigst hier ein.", ipa: "duː ʃtaɪkst hiːɐ̯ aɪn", bases: [{ word: "Du", ref: "de-0004" }, { word: "steigst", base: "einsteigen" }, { word: "hier", ref: "de-0009" }, { word: "ein", base: "einsteigen" }] }
+  - id: "de-1248"
+    target: "aussteigen"
+    ipa: "ˈaʊstaɪɡən"
+    pos: "verb"
+    tags: ["separable-verb", "aus"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/aussteigen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/aussteigen" }
+    bases: "self"
+    examples:
+      - { target: "Wir steigen hier aus.", ipa: "viːɐ̯ ˈʃtaɪɡən hiːɐ̯ aʊs", bases: [{ word: "Wir", ref: "de-1443" }, { word: "steigen", base: "aussteigen" }, { word: "hier", ref: "de-0009" }, { word: "aus", base: "aussteigen" }] }
+      - { target: "Wir müssen aussteigen.", ipa: "viːɐ̯ ˈmʏsən ˈaʊstaɪɡən", bases: [{ word: "Wir", ref: "de-1443" }, { word: "müssen", ref: "de-1001" }, { word: "aussteigen", base: "aussteigen" }] }
+  - id: "de-1249"
+    target: "umsteigen"
+    ipa: "ˈʊmʃtaɪɡən"
+    pos: "verb"
+    tags: ["separable-verb", "um"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/umsteigen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/umsteigen" }
+    bases: "self"
+    examples:
+      - { target: "Wir steigen hier um.", ipa: "viːɐ̯ ˈʃtaɪɡən hiːɐ̯ ʊm", bases: [{ word: "Wir", ref: "de-1443" }, { word: "steigen", base: "umsteigen" }, { word: "hier", ref: "de-0009" }, { word: "um", base: "umsteigen" }] }
+      - { target: "Ich muss umsteigen.", ipa: "ɪç mʊs ˈʊmʃtaɪɡən", bases: [{ word: "Ich", ref: "de-0003" }, { word: "muss", ref: "de-1001" }, { word: "umsteigen", base: "umsteigen" }] }
+  - id: "de-1250"
+    target: "aufmachen"
+    ipa: "ˈaʊfmaxən"
+    pos: "verb"
+    tags: ["separable-verb", "auf"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/aufmachen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/aufmachen" }
+    bases: "self"
+    examples:
+      - { target: "Ich mache die Tür auf.", ipa: "ɪç ˈmaxə diː tyːɐ̯ aʊf", bases: [{ word: "Ich", ref: "de-0003" }, { word: "mache", base: "aufmachen" }, { word: "die", base: "die" }, { word: "Tür", ref: "de-2783" }, { word: "auf", base: "aufmachen" }] }
+      - { target: "Wer macht die Tür auf?", ipa: "veːɐ̯ maxt diː tyːɐ̯ aʊf", bases: [{ word: "Wer", ref: "de-1300" }, { word: "macht", base: "aufmachen" }, { word: "die", base: "die" }, { word: "Tür", ref: "de-2783" }, { word: "auf", base: "aufmachen" }] }
+  - id: "de-1251"
+    target: "zumachen"
+    ipa: "ˈtsuːmaxən"
+    pos: "verb"
+    tags: ["separable-verb", "zu"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/zumachen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/zumachen" }
+    bases: "self"
+    examples:
+      - { target: "Ich mache die Tür zu.", ipa: "ɪç ˈmaxə diː tyːɐ̯ tsuː", bases: [{ word: "Ich", ref: "de-0003" }, { word: "mache", base: "zumachen" }, { word: "die", base: "die" }, { word: "Tür", ref: "de-2783" }, { word: "zu", base: "zumachen" }] }
+      - { target: "Er macht das Buch zu.", ipa: "eːɐ̯ maxt das buːx tsuː", bases: [{ word: "Er", ref: "de-1440" }, { word: "macht", base: "zumachen" }, { word: "das", base: "das" }, { word: "Buch", ref: "de-0404" }, { word: "zu", base: "zumachen" }] }
+  - id: "de-1252"
+    target: "mitbringen"
+    ipa: "ˈmɪtbʁɪŋən"
+    pos: "verb"
+    tags: ["separable-verb", "mit"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/mitbringen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/mitbringen" }
+    bases: "self"
+    examples:
+      - { target: "Ich bringe Kaffee mit.", ipa: "ɪç ˈbʁɪŋə kaˈfeː mɪt", bases: [{ word: "Ich", ref: "de-0003" }, { word: "bringe", base: "mitbringen" }, { word: "Kaffee", ref: "de-2360" }, { word: "mit", base: "mitbringen" }] }
+      - { target: "Was bringst du mit?", ipa: "vas bʁɪŋst duː mɪt", bases: [{ word: "Was", ref: "de-1301" }, { word: "bringst", base: "mitbringen" }, { word: "du", ref: "de-0004" }, { word: "mit", base: "mitbringen" }] }
+  - id: "de-1253"
+    target: "fernsehen"
+    ipa: "ˈfɛʁnzeːən"
+    pos: "verb"
+    tags: ["separable-verb", "fern"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/fernsehen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/fernsehen" }
+    bases: "self"
+    examples:
+      - { target: "Das Kind sieht fern.", ipa: "das kɪnt ziːt fɛʁn", bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "sieht", base: "fernsehen" }, { word: "fern", base: "fernsehen" }] }
+      - { target: "Wir sehen heute fern.", ipa: "viːɐ̯ ˈzeːən ˈhɔɪtə fɛʁn", bases: [{ word: "Wir", ref: "de-1443" }, { word: "sehen", base: "fernsehen" }, { word: "heute", ref: "de-2840" }, { word: "fern", base: "fernsehen" }] }

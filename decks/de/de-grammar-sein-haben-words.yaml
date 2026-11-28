@@ -1,0 +1,33 @@
+schema: 1
+id: "de-grammar-sein-haben-words"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-0580"
+    target: "sein"
+    ipa: "zaɪn"
+    pos: "verb"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/sein" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/sein" }
+      - { id: "n3", kind: "homograph", ref: "de-0942", source: "https://en.wiktionary.org/wiki/sein" }
+    bases: "self"
+    examples:
+      - { target: "Ich bin müde.", ipa: "ɪç bɪn ˈmyːdə", bases: [{ word: "Ich", ref: "de-0003" }, { word: "bin", base: "sein" }, { word: "müde", ref: "de-1946" }] }
+      - { target: "Wo bist du?", ipa: "voː bɪst duː", bases: [{ word: "Wo", ref: "de-1302" }, { word: "bist", base: "sein" }, { word: "du", ref: "de-0004" }] }
+  - id: "de-0581"
+    target: "haben"
+    ipa: "ˈhaːbən"
+    pos: "verb"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/haben" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/haben" }
+    bases: "self"
+    examples:
+      - { target: "Ich habe eine Schwester.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈʃvɛstɐ", bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Schwester", ref: "de-1520" }] }
+      - { target: "Wir haben ein Kind.", ipa: "viːɐ̯ ˈhaːbən aɪn kɪnt", bases: [{ word: "Wir", ref: "de-1443" }, { word: "haben", base: "haben" }, { word: "ein", base: "ein" }, { word: "Kind", ref: "de-1516" }] }

@@ -1,0 +1,410 @@
+schema: 1
+id: "de-everyday-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-1720"
+    target: "essen"
+    ipa: "ˈɛsən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich esse hier.", ipa: "ɪç ˈɛsə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "esse", base: "essen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du isst nicht.", ipa: "duː ɪst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "isst", base: "essen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1721"
+    target: "trinken"
+    ipa: "ˈtʁɪŋkən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich trinke Wasser.", ipa: "ɪç ˈtʁɪŋkə ˈvasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "trinke", base: "trinken" }, { word: "Wasser", base: "Wasser" }] }
+      - { target: "Du trinkst nicht.", ipa: "duː tʁɪŋkst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "trinkst", base: "trinken" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1722"
+    target: "schlafen"
+    ipa: "ˈʃlaːfən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich schlafe hier.", ipa: "ɪç ˈʃlaːfə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "schlafe", base: "schlafen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du schläfst da.", ipa: "duː ʃlɛfst daː", bases: [{ word: "Du", base: "du" }, { word: "schläfst", base: "schlafen" }, { word: "da", base: "da" }] }
+  - id: "de-1723"
+    target: "arbeiten"
+    ipa: "ˈaʁbaɪtən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich arbeite hier.", ipa: "ɪç ˈaʁbaɪtə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "arbeite", base: "arbeiten" }, { word: "hier", base: "hier" }] }
+      - { target: "Du arbeitest da.", ipa: "duː ˈaʁbaɪtəst daː", bases: [{ word: "Du", base: "du" }, { word: "arbeitest", base: "arbeiten" }, { word: "da", base: "da" }] }
+  - id: "de-1724"
+    target: "gehen"
+    ipa: "ˈɡeːən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wir gehen.", ipa: "viːɐ̯ ˈɡeːən", bases: [{ word: "Wir", base: "wir" }, { word: "gehen", base: "gehen" }] }
+      - { target: "Du gehst nicht.", ipa: "duː ɡeːst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "gehst", base: "gehen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1725"
+    target: "kommen"
+    ipa: "ˈkɔmən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich komme nicht.", ipa: "ɪç ˈkɔmə nɪçt", bases: [{ word: "Ich", base: "ich" }, { word: "komme", base: "kommen" }, { word: "nicht", base: "nicht" }] }
+      - { target: "Woher kommst du?", ipa: "voˈheːɐ̯ kɔmst duː", bases: [{ word: "Woher", base: "woher" }, { word: "kommst", base: "kommen" }, { word: "du", base: "du" }] }
+  - id: "de-1726"
+    target: "fahren"
+    ipa: "ˈfaːʁən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich fahre hier.", ipa: "ɪç ˈfaːʁə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "fahre", base: "fahren" }, { word: "hier", base: "hier" }] }
+      - { target: "Du fährst da.", ipa: "duː fɛːɐ̯st daː", bases: [{ word: "Du", base: "du" }, { word: "fährst", base: "fahren" }, { word: "da", base: "da" }] }
+  - id: "de-1727"
+    target: "machen"
+    ipa: "ˈmaxən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich mache das.", ipa: "ɪç ˈmaxə das", bases: [{ word: "Ich", base: "ich" }, { word: "mache", base: "machen" }, { word: "das", base: "das" }] }
+      - { target: "Du machst das nicht.", ipa: "duː makst das nɪçt", bases: [{ word: "Du", base: "du" }, { word: "machst", base: "machen" }, { word: "das", base: "das" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1728"
+    target: "sehen"
+    ipa: "ˈzeːən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich sehe das.", ipa: "ɪç ˈzeːə das", bases: [{ word: "Ich", base: "ich" }, { word: "sehe", base: "sehen" }, { word: "das", base: "das" }] }
+      - { target: "Du siehst nicht.", ipa: "duː ziːst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "siehst", base: "sehen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1729"
+    target: "hören"
+    ipa: "ˈhøːʁən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich höre nicht.", ipa: "ɪç ˈhøːʁə nɪçt", bases: [{ word: "Ich", base: "ich" }, { word: "höre", base: "hören" }, { word: "nicht", base: "nicht" }] }
+      - { target: "Du hörst gut.", ipa: "duː hœʁst ɡuːt", bases: [{ word: "Du", base: "du" }, { word: "hörst", base: "hören" }, { word: "gut", base: "gut" }] }
+  - id: "de-1730"
+    target: "lesen"
+    ipa: "ˈleːzən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich lese das.", ipa: "ɪç ˈleːzə das", bases: [{ word: "Ich", base: "ich" }, { word: "lese", base: "lesen" }, { word: "das", base: "das" }] }
+      - { target: "Du liest nicht.", ipa: "duː liːst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "liest", base: "lesen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1731"
+    target: "schreiben"
+    ipa: "ˈʃʁaɪbən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich schreibe das.", ipa: "ɪç ˈʃʁaɪbə das", bases: [{ word: "Ich", base: "ich" }, { word: "schreibe", base: "schreiben" }, { word: "das", base: "das" }] }
+      - { target: "Du schreibst hier.", ipa: "duː ʃʁaɪpst hiːɐ̯", bases: [{ word: "Du", base: "du" }, { word: "schreibst", base: "schreiben" }, { word: "hier", base: "hier" }] }
+  - id: "de-1732"
+    target: "sprechen"
+    ipa: "ˈʃpʁɛçən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich spreche hier.", ipa: "ɪç ˈʃpʁɛçə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "spreche", base: "sprechen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du sprichst gut.", ipa: "duː ʃpʁɪkst ɡuːt", bases: [{ word: "Du", base: "du" }, { word: "sprichst", base: "sprechen" }, { word: "gut", base: "gut" }] }
+  - id: "de-1733"
+    target: "lernen"
+    ipa: "ˈlɛʁnən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich lerne hier.", ipa: "ɪç ˈlɛʁnə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "lerne", base: "lernen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du lernst da.", ipa: "duː lɛʁnst daː", bases: [{ word: "Du", base: "du" }, { word: "lernst", base: "lernen" }, { word: "da", base: "da" }] }
+  - id: "de-1734"
+    target: "verstehen"
+    ipa: "fɛɐ̯ˈʃteːən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich verstehe nicht.", ipa: "ɪç fɛɐ̯ˈʃteːə nɪçt", bases: [{ word: "Ich", base: "ich" }, { word: "verstehe", base: "verstehen" }, { word: "nicht", base: "nicht" }] }
+      - { target: "Du verstehst gut.", ipa: "duː fɛɐ̯ˈʃteːst ɡuːt", bases: [{ word: "Du", base: "du" }, { word: "verstehst", base: "verstehen" }, { word: "gut", base: "gut" }] }
+  - id: "de-1735"
+    target: "kaufen"
+    ipa: "ˈkaʊfən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich kaufe das.", ipa: "ɪç ˈkaʊfə das", bases: [{ word: "Ich", base: "ich" }, { word: "kaufe", base: "kaufen" }, { word: "das", base: "das" }] }
+      - { target: "Du kaufst Wasser.", ipa: "duː kaʊfst ˈvasɐ", bases: [{ word: "Du", base: "du" }, { word: "kaufst", base: "kaufen" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-1736"
+    target: "brauchen"
+    ipa: "ˈbʁaʊxən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich brauche das.", ipa: "ɪç ˈbʁaʊxə das", bases: [{ word: "Ich", base: "ich" }, { word: "brauche", base: "brauchen" }, { word: "das", base: "das" }] }
+      - { target: "Du brauchst nicht.", ipa: "duː bʁaʊkst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "brauchst", base: "brauchen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1737"
+    target: "finden"
+    ipa: "ˈfɪndən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich finde das gut.", ipa: "ɪç ˈfɪndə das ɡuːt", bases: [{ word: "Ich", base: "ich" }, { word: "finde", base: "finden" }, { word: "das", base: "das" }, { word: "gut", base: "gut" }] }
+      - { target: "Du findest das nicht gut.", ipa: "duː ˈfɪndəst das nɪçt ɡuːt", bases: [{ word: "Du", base: "du" }, { word: "findest", base: "finden" }, { word: "das", base: "das" }, { word: "nicht", base: "nicht" }, { word: "gut", base: "gut" }] }
+  - id: "de-1738"
+    target: "geben"
+    ipa: "ˈɡeːbən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich gebe Wasser.", ipa: "ɪç ˈɡeːbə ˈvasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "gebe", base: "geben" }, { word: "Wasser", base: "Wasser" }] }
+      - { target: "Du gibst das.", ipa: "duː ɡiːpst das", bases: [{ word: "Du", base: "du" }, { word: "gibst", base: "geben" }, { word: "das", base: "das" }] }
+  - id: "de-1739"
+    target: "nehmen"
+    ipa: "ˈneːmən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich nehme das.", ipa: "ɪç ˈneːmə das", bases: [{ word: "Ich", base: "ich" }, { word: "nehme", base: "nehmen" }, { word: "das", base: "das" }] }
+      - { target: "Du nimmst Wasser.", ipa: "duː nɪmst ˈvasɐ", bases: [{ word: "Du", base: "du" }, { word: "nimmst", base: "nehmen" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-1740"
+    target: "bringen"
+    ipa: "ˈbʁɪŋən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bringe Wasser.", ipa: "ɪç ˈbʁɪŋə ˈvasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "bringe", base: "bringen" }, { word: "Wasser", base: "Wasser" }] }
+      - { target: "Du bringst das.", ipa: "duː bʁɪŋst das", bases: [{ word: "Du", base: "du" }, { word: "bringst", base: "bringen" }, { word: "das", base: "das" }] }
+  - id: "de-1741"
+    target: "kochen"
+    ipa: "ˈkɔxən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich koche hier.", ipa: "ɪç ˈkɔxə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "koche", base: "kochen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du kochst gut.", ipa: "duː kɔkst ɡuːt", bases: [{ word: "Du", base: "du" }, { word: "kochst", base: "kochen" }, { word: "gut", base: "gut" }] }
+  - id: "de-1742"
+    target: "spielen"
+    ipa: "ˈʃpiːlən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich spiele hier.", ipa: "ɪç ˈʃpiːlə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "spiele", base: "spielen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du spielst nicht.", ipa: "duː ʃpiːlst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "spielst", base: "spielen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1743"
+    target: "wissen"
+    ipa: "ˈvɪsən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich weiß das.", ipa: "ɪç vaɪs das", bases: [{ word: "Ich", base: "ich" }, { word: "weiß", base: "wissen" }, { word: "das", base: "das" }] }
+      - { target: "Du weißt nicht.", ipa: "duː vaɪst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "weißt", base: "wissen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1744"
+    target: "liegen"
+    ipa: "ˈliːɡən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich liege hier.", ipa: "ɪç ˈliːɡə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "liege", base: "liegen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du liegst da.", ipa: "duː liːkst daː", bases: [{ word: "Du", base: "du" }, { word: "liegst", base: "liegen" }, { word: "da", base: "da" }] }
+  - id: "de-1745"
+    target: "sitzen"
+    ipa: "ˈzɪtsən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich sitze hier.", ipa: "ɪç ˈzɪtsə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "sitze", base: "sitzen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du sitzt da.", ipa: "duː zɪtst daː", bases: [{ word: "Du", base: "du" }, { word: "sitzt", base: "sitzen" }, { word: "da", base: "da" }] }
+  - id: "de-1746"
+    target: "stehen"
+    ipa: "ˈʃteːən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich stehe hier.", ipa: "ɪç ˈʃteːə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "stehe", base: "stehen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du stehst da.", ipa: "duː ʃteːst daː", bases: [{ word: "Du", base: "du" }, { word: "stehst", base: "stehen" }, { word: "da", base: "da" }] }
+  - id: "de-1747"
+    target: "laufen"
+    ipa: "ˈlaʊfən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich laufe hier.", ipa: "ɪç ˈlaʊfə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "laufe", base: "laufen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du läufst da.", ipa: "duː lɔɪfst daː", bases: [{ word: "Du", base: "du" }, { word: "läufst", base: "laufen" }, { word: "da", base: "da" }] }
+  - id: "de-1748"
+    target: "warten"
+    ipa: "ˈvaʁtən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich warte hier.", ipa: "ɪç ˈvaʁtə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "warte", base: "warten" }, { word: "hier", base: "hier" }] }
+      - { target: "Du wartest da.", ipa: "duː ˈvaʁtəst daː", bases: [{ word: "Du", base: "du" }, { word: "wartest", base: "warten" }, { word: "da", base: "da" }] }
+  - id: "de-1749"
+    target: "zeigen"
+    ipa: "ˈtsaɪɡən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich zeige das.", ipa: "ɪç ˈtsaɪɡə das", bases: [{ word: "Ich", base: "ich" }, { word: "zeige", base: "zeigen" }, { word: "das", base: "das" }] }
+      - { target: "Du zeigst Wasser.", ipa: "duː tsaɪkst ˈvasɐ", bases: [{ word: "Du", base: "du" }, { word: "zeigst", base: "zeigen" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-1750"
+    target: "fragen"
+    ipa: "ˈfʁaːɡən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich frage hier.", ipa: "ɪç ˈfʁaːɡə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "frage", base: "fragen" }, { word: "hier", base: "hier" }] }
+      - { target: "Du fragst nicht.", ipa: "duː fʁakst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "fragst", base: "fragen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1751"
+    target: "antworten"
+    ipa: "ˈantvɔʁtən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich antworte nicht.", ipa: "ɪç ˈantvɔʁtə nɪçt", bases: [{ word: "Ich", base: "ich" }, { word: "antworte", base: "antworten" }, { word: "nicht", base: "nicht" }] }
+      - { target: "Du antwortest hier.", ipa: "duː ˈantvɔʁtəst hiːɐ̯", bases: [{ word: "Du", base: "du" }, { word: "antwortest", base: "antworten" }, { word: "hier", base: "hier" }] }
+  - id: "de-1752"
+    target: "suchen"
+    ipa: "ˈzuːxən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich suche das.", ipa: "ɪç ˈzuːxə das", bases: [{ word: "Ich", base: "ich" }, { word: "suche", base: "suchen" }, { word: "das", base: "das" }] }
+      - { target: "Du suchst Wasser.", ipa: "duː zʊkst ˈvasɐ", bases: [{ word: "Du", base: "du" }, { word: "suchst", base: "suchen" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-1753"
+    target: "helfen"
+    ipa: "ˈhɛlfən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich helfe nicht.", ipa: "ɪç ˈhɛlfə nɪçt", bases: [{ word: "Ich", base: "ich" }, { word: "helfe", base: "helfen" }, { word: "nicht", base: "nicht" }] }
+      - { target: "Du hilfst gut.", ipa: "duː hɪlfst ɡuːt", bases: [{ word: "Du", base: "du" }, { word: "hilfst", base: "helfen" }, { word: "gut", base: "gut" }] }
+  - id: "de-1754"
+    target: "waschen"
+    ipa: "ˈvaʃən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich wasche das.", ipa: "ɪç ˈvaʃə das", bases: [{ word: "Ich", base: "ich" }, { word: "wasche", base: "waschen" }, { word: "das", base: "das" }] }
+      - { target: "Du wäschst das.", ipa: "duː vɛʃst das", bases: [{ word: "Du", base: "du" }, { word: "wäschst", base: "waschen" }, { word: "das", base: "das" }] }
+  - id: "de-1755"
+    target: "öffnen"
+    ipa: "ˈœfnən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich öffne das.", ipa: "ɪç ˈœfnə das", bases: [{ word: "Ich", base: "ich" }, { word: "öffne", base: "öffnen" }, { word: "das", base: "das" }] }
+      - { target: "Du öffnest nicht.", ipa: "duː ˈœfnəst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "öffnest", base: "öffnen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1756"
+    target: "schließen"
+    ipa: "ˈʃliːsən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich schließe das.", ipa: "ɪç ˈʃliːsə das", bases: [{ word: "Ich", base: "ich" }, { word: "schließe", base: "schließen" }, { word: "das", base: "das" }] }
+      - { target: "Du schließt nicht.", ipa: "duː ʃliːst nɪçt", bases: [{ word: "Du", base: "du" }, { word: "schließt", base: "schließen" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1757"
+    target: "bleiben"
+    ipa: "ˈblaɪbən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bleibe hier.", ipa: "ɪç ˈblaɪbə hiːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "bleibe", base: "bleiben" }, { word: "hier", base: "hier" }] }
+      - { target: "Du bleibst da.", ipa: "duː blaɪpst daː", bases: [{ word: "Du", base: "du" }, { word: "bleibst", base: "bleiben" }, { word: "da", base: "da" }] }
+  - id: "de-1758"
+    target: "kennen"
+    ipa: "ˈkɛnən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich kenne das.", ipa: "ɪç ˈkɛnə das", bases: [{ word: "Ich", base: "ich" }, { word: "kenne", base: "kennen" }, { word: "das", base: "das" }] }
+      - { target: "Du kennst das nicht.", ipa: "duː kɛnst das nɪçt", bases: [{ word: "Du", base: "du" }, { word: "kennst", base: "kennen" }, { word: "das", base: "das" }, { word: "nicht", base: "nicht" }] }
+  - id: "de-1759"
+    target: "sagen"
+    ipa: "ˈzaːɡən"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich sage das.", ipa: "ɪç ˈzaːɡə das", bases: [{ word: "Ich", base: "ich" }, { word: "sage", base: "sagen" }, { word: "das", base: "das" }] }
+      - { target: "Du sagst ja.", ipa: "duː zaːkst jaː", bases: [{ word: "Du", base: "du" }, { word: "sagst", base: "sagen" }, { word: "ja", base: "ja" }] }

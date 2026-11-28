@@ -1,0 +1,562 @@
+schema: 1
+id: "de-en-time"
+kind: "layer"
+core: "de-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time"
+license: "CC-BY-SA-4.0"
+description: "Time: the clock, days, weeks and years, parts of the day, and words for now, early and late. Standard German. Not yet checked by a German speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "de-2840":
+    native: "today"
+    notes:
+      "n1": "Heute is today. Heute is an adverb: it has no article and no plural."
+    examples:
+      "Ich bin heute hier.":
+        native: "I am here today."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "heute": "today"
+          "hier": "here"
+      "Du bist heute da.":
+        native: "You are there today."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "heute": "today"
+          "da": "there"
+  "de-2841":
+    native: "tomorrow"
+    notes:
+      "n1": "Morgen is tomorrow as an adverb, written with a small m. The noun Morgen, morning, is a different word."
+    examples:
+      "Ich bin morgen hier.":
+        native: "I am here tomorrow."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "morgen": "tomorrow"
+          "hier": "here"
+      "Du bist morgen da.":
+        native: "You are there tomorrow."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "morgen": "tomorrow"
+          "da": "there"
+  "de-2844":
+    native: "now"
+    notes:
+      "n1": "Jetzt is now. It is an adverb, so it does not change."
+    examples:
+      "Ich bin jetzt hier.":
+        native: "I am here now."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "jetzt": "now"
+          "hier": "here"
+      "Du bist jetzt da.":
+        native: "You are there now."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "jetzt": "now"
+          "da": "there"
+  "de-2845":
+    native: "clock"
+    notes:
+      "n1": "Uhr is clock: die Uhr. Its plural is Uhren."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Uhr.":
+        native: "That is the clock."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Uhr": "clock"
+      "Wo ist die Uhr?":
+        native: "Where is the clock?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Uhr": "clock"
+  "de-2846":
+    native: "hour"
+    notes:
+      "n1": "Stunde is hour: die Stunde. Its plural is Stunden."
+    forms: { "pl": "plural" }
+    examples:
+      "Ich habe eine Stunde.":
+        native: "I have an hour."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "eine": "a; one"
+          "Stunde": "hour"
+      "Das ist die Stunde.":
+        native: "That is the hour."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Stunde": "hour"
+  "de-2847":
+    native: "minute"
+    notes:
+      "n1": "Minute is minute: die Minute. Its plural is Minuten."
+    forms: { "pl": "plural" }
+    examples:
+      "Ich habe eine Minute.":
+        native: "I have a minute."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "eine": "a; one"
+          "Minute": "minute"
+      "Das ist die Minute.":
+        native: "That is the minute."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Minute": "minute"
+  "de-2848":
+    native: "second"
+    notes:
+      "n1": "Sekunde is second: die Sekunde. Its plural is Sekunden."
+    forms: { "pl": "plural" }
+    examples:
+      "Ich habe eine Sekunde.":
+        native: "I have a second."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "eine": "a; one"
+          "Sekunde": "second"
+      "Das ist die Sekunde.":
+        native: "That is the second."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Sekunde": "second"
+  "de-2849":
+    native: "time"
+    notes:
+      "n1": "Zeit is time: die Zeit. Its plural is Zeiten."
+    forms: { "pl": "plural" }
+    examples:
+      "Ich habe keine Zeit.":
+        native: "I have no time."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "keine": "no; not any"
+          "Zeit": "time"
+      "Das ist die Zeit.":
+        native: "That is the time."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Zeit": "time"
+  "de-2850":
+    native: "day"
+    notes:
+      "n1": "Tag is day: der Tag. Its plural is Tage."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Tag.":
+        native: "That is the day."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Tag": "day"
+      "Ich habe einen Tag.":
+        native: "I have a day."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "einen": "a; one"
+          "Tag": "day"
+  "de-2851":
+    native: "week"
+    notes:
+      "n1": "Woche is week: die Woche. Its plural is Wochen."
+    forms: { "pl": "plural" }
+    examples:
+      "Ich habe eine Woche.":
+        native: "I have a week."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "eine": "a; one"
+          "Woche": "week"
+      "Das ist die Woche.":
+        native: "That is the week."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Woche": "week"
+  "de-2852":
+    native: "month"
+    notes:
+      "n1": "Monat is month: der Monat. Its plural is Monate."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Monat.":
+        native: "That is the month."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Monat": "month"
+      "Ich habe einen Monat.":
+        native: "I have a month."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "einen": "a; one"
+          "Monat": "month"
+  "de-2853":
+    native: "year"
+    notes:
+      "n1": "Jahr is year: das Jahr. Its plural is Jahre."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Jahr.":
+        native: "Here is the year."
+        bases:
+          "Hier": "here"
+          "ist": "to be (it is)"
+          "das": "the"
+          "Jahr": "year"
+      "Ich habe ein Jahr.":
+        native: "I have a year."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "ein": "a; one"
+          "Jahr": "year"
+  "de-2854":
+    native: "evening"
+    notes:
+      "n1": "Abend is evening: der Abend. Its plural is Abende."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Abend.":
+        native: "That is the evening."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Abend": "evening"
+      "Wo ist der Abend?":
+        native: "Where is the evening?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Abend": "evening"
+  "de-2855":
+    native: "noon"
+    notes:
+      "n1": "Mittag is noon: der Mittag. Its plural is Mittage."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Mittag.":
+        native: "That is noon."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Mittag": "noon"
+      "Wo ist der Mittag?":
+        native: "Where is noon?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Mittag": "noon"
+  "de-2856":
+    native: "night"
+    notes:
+      "n1": "Nacht is night: die Nacht. Its plural is Nächte; the vowel takes an umlaut."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Nacht.":
+        native: "That is the night."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Nacht": "night"
+      "Wo ist die Nacht?":
+        native: "Where is the night?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Nacht": "night"
+  "de-2857":
+    native: "midnight"
+    notes:
+      "n1": "Mitternacht is midnight: die Mitternacht. Its plural is Mitternächte; the vowel takes an umlaut."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Mitternacht.":
+        native: "That is midnight."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Mitternacht": "midnight"
+      "Wo ist die Mitternacht?":
+        native: "Where is midnight?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Mitternacht": "midnight"
+  "de-2858":
+    native: "moment"
+    notes:
+      "n1": "Moment is moment: der Moment. Its plural is Momente."
+    forms: { "pl": "plural" }
+    examples:
+      "Ich habe einen Moment.":
+        native: "I have a moment."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "einen": "a; one"
+          "Moment": "moment"
+      "Das ist der Moment.":
+        native: "That is the moment."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Moment": "moment"
+  "de-2859":
+    native: "quarter of an hour"
+    notes:
+      "n1": "Viertelstunde is quarter of an hour: die Viertelstunde. Its plural is Viertelstunden."
+    forms: { "pl": "plural" }
+    examples:
+      "Ich habe eine Viertelstunde.":
+        native: "I have a quarter of an hour."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "eine": "a; one"
+          "Viertelstunde": "quarter of an hour"
+      "Das ist die Viertelstunde.":
+        native: "That is the quarter of an hour."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "die": "the"
+          "Viertelstunde": "quarter of an hour"
+  "de-2860":
+    native: "early"
+    notes:
+      "n1": "Früh is early. It does not change in a sentence."
+    examples:
+      "Ich bin früh hier.":
+        native: "I am here early."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "früh": "early"
+          "hier": "here"
+      "Du bist früh da.":
+        native: "You are there early."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "früh": "early"
+          "da": "there"
+  "de-2861":
+    native: "late"
+    notes:
+      "n1": "Spät is late. In the sentence Du bist spät, it stays unchanged: a predicate adjective has no ending."
+    examples:
+      "Du bist spät.":
+        native: "You are late."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "spät": "late"
+      "Das ist spät.":
+        native: "That is late."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "spät": "late"
+  "de-2862":
+    native: "weekend"
+    notes:
+      "n1": "Wochenende is weekend: das Wochenende. Its plural is Wochenenden."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Wochenende.":
+        native: "Here is the weekend."
+        bases:
+          "Hier": "here"
+          "ist": "to be (it is)"
+          "das": "the"
+          "Wochenende": "weekend"
+      "Wo ist das Wochenende?":
+        native: "Where is the weekend?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "das": "the"
+          "Wochenende": "weekend"
+  "de-2863":
+    native: "start"
+    notes:
+      "n1": "Anfang is start: der Anfang. Its plural is Anfänge; the vowel takes an umlaut."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Anfang.":
+        native: "That is the start."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Anfang": "start"
+      "Wo ist der Anfang?":
+        native: "Where is the start?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Anfang": "start"
+  "de-2864":
+    native: "end"
+    notes:
+      "n1": "Ende is end: das Ende. Its plural is Enden."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Ende.":
+        native: "Here is the end."
+        bases:
+          "Hier": "here"
+          "ist": "to be (it is)"
+          "das": "the"
+          "Ende": "end"
+      "Wo ist das Ende?":
+        native: "Where is the end?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "das": "the"
+          "Ende": "end"
+  "de-2865":
+    native: "late morning"
+    notes:
+      "n1": "Vormittag is late morning: der Vormittag. Its plural is Vormittage."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Vormittag.":
+        native: "That is the late morning."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Vormittag": "late morning"
+      "Wo ist der Vormittag?":
+        native: "Where is the late morning?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Vormittag": "late morning"
+  "de-2866":
+    native: "afternoon"
+    notes:
+      "n1": "Nachmittag is afternoon: der Nachmittag. Its plural is Nachmittage."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Nachmittag.":
+        native: "That is the afternoon."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Nachmittag": "afternoon"
+      "Wo ist der Nachmittag?":
+        native: "Where is the afternoon?"
+        bases:
+          "Wo": "where"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Nachmittag": "afternoon"
+  "de-2867":
+    native: "later"
+    notes:
+      "n1": "Später is later. It is the comparative form of spät, late."
+    examples:
+      "Ich bin später hier.":
+        native: "I am here later."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "später": "later"
+          "hier": "here"
+      "Du bist später da.":
+        native: "You are there later."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "später": "later"
+          "da": "there"
+  "de-2868":
+    native: "beforehand"
+    notes:
+      "n1": "Vorher is beforehand, or earlier. It is an adverb."
+    examples:
+      "Ich bin vorher hier.":
+        native: "I am here beforehand."
+        bases:
+          "Ich": "I"
+          "bin": "to be (I am)"
+          "vorher": "beforehand"
+          "hier": "here"
+      "Du bist vorher da.":
+        native: "You are there beforehand."
+        bases:
+          "Du": "you"
+          "bist": "to be (you are)"
+          "vorher": "beforehand"
+          "da": "there"
+  "de-2869":
+    native: "instant"
+    notes:
+      "n1": "Augenblick is instant: der Augenblick. Its plural is Augenblicke."
+    forms: { "pl": "plural" }
+    examples:
+      "Ich habe einen Augenblick.":
+        native: "I have an instant."
+        bases:
+          "Ich": "I"
+          "habe": "to have (I have)"
+          "einen": "a; one"
+          "Augenblick": "instant"
+      "Das ist der Augenblick.":
+        native: "That is the instant."
+        bases:
+          "Das": "that"
+          "ist": "to be (it is)"
+          "der": "the"
+          "Augenblick": "instant"

@@ -1,0 +1,237 @@
+schema: 1
+id: "de-help"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2910"
+    target: "Notfall"
+    ipa: "ˈnoːtfal"
+    pos: "noun"
+    gender: "m"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Notfälle" }]
+    examples:
+      - { target: "Das ist der Notfall.", ipa: "das ɪst deːɐ̯ ˈnoːtfal", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Notfall", base: "Notfall" }] }
+      - { target: "Das ist kein Notfall.", ipa: "das ɪst kaɪn ˈnoːtfal", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "kein", base: "kein" }, { word: "Notfall", base: "Notfall" }] }
+  - id: "de-2911"
+    target: "Notruf"
+    ipa: "ˈnoːtʁʊf"
+    pos: "noun"
+    gender: "m"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Notrufe" }]
+    examples:
+      - { target: "Das ist der Notruf.", ipa: "das ɪst deːɐ̯ ˈnoːtʁʊf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Notruf", base: "Notruf" }] }
+      - { target: "Wo ist der Notruf?", ipa: "voː ɪst deːɐ̯ ˈnoːtʁʊf", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Notruf", base: "Notruf" }] }
+  - id: "de-2912"
+    target: "Krankenwagen"
+    ipa: "ˈkʁaŋkənvaːɡən"
+    pos: "noun"
+    gender: "m"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Krankenwagen.", ipa: "das ɪst deːɐ̯ ˈkʁaŋkənvaːɡən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Krankenwagen", base: "Krankenwagen" }] }
+      - { target: "Wo ist der Krankenwagen?", ipa: "voː ɪst deːɐ̯ ˈkʁaŋkənvaːɡən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Krankenwagen", base: "Krankenwagen" }] }
+  - id: "de-2913"
+    target: "Feuerwehr"
+    ipa: "ˈfɔɪɐveːɐ̯"
+    pos: "noun"
+    gender: "f"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Feuerwehren" }]
+    examples:
+      - { target: "Das ist die Feuerwehr.", ipa: "das ɪst diː ˈfɔɪɐveːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Feuerwehr", base: "Feuerwehr" }] }
+      - { target: "Wo ist die Feuerwehr?", ipa: "voː ɪst diː ˈfɔɪɐveːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Feuerwehr", base: "Feuerwehr" }] }
+  - id: "de-2914"
+    target: "Fehler"
+    ipa: "ˈfeːlɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Fehler.", ipa: "das ɪst deːɐ̯ ˈfeːlɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Fehler", base: "Fehler" }] }
+      - { target: "Wo ist der Fehler?", ipa: "voː ɪst deːɐ̯ ˈfeːlɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Fehler", base: "Fehler" }] }
+  - id: "de-2915"
+    target: "Schild"
+    ipa: "ʃɪlt"
+    pos: "noun"
+    gender: "n"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Schilder" }]
+    examples:
+      - { target: "Hier ist das Schild.", ipa: "hiːɐ̯ ɪst das ʃɪlt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Schild", base: "Schild" }] }
+      - { target: "Wo ist das Schild?", ipa: "voː ɪst das ʃɪlt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Schild", base: "Schild" }] }
+  - id: "de-2916"
+    target: "Auskunft"
+    ipa: "ˈaʊskʊnft"
+    pos: "noun"
+    gender: "f"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Auskünfte" }]
+    examples:
+      - { target: "Das ist die Auskunft.", ipa: "das ɪst diː ˈaʊskʊnft", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Auskunft", base: "Auskunft" }] }
+      - { target: "Wo ist die Auskunft?", ipa: "voː ɪst diː ˈaʊskʊnft", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Auskunft", base: "Auskunft" }] }
+  - id: "de-2917"
+    target: "Information"
+    ipa: "ɪnfɔʁmaˈtsjoːn"
+    pos: "noun"
+    gender: "f"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Informationen" }]
+    examples:
+      - { target: "Das ist die Information.", ipa: "das ɪst diː ɪnfɔʁmaˈtsjoːn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Information", base: "Information" }] }
+      - { target: "Wo ist die Information?", ipa: "voː ɪst diː ɪnfɔʁmaˈtsjoːn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Information", base: "Information" }] }
+  - id: "de-2918"
+    target: "Wort"
+    ipa: "vɔʁt"
+    pos: "noun"
+    gender: "n"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Wörter" }]
+    examples:
+      - { target: "Hier ist das Wort.", ipa: "hiːɐ̯ ɪst das vɔʁt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wort", base: "Wort" }] }
+      - { target: "Wo ist das Wort?", ipa: "voː ɪst das vɔʁt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wort", base: "Wort" }] }
+  - id: "de-2919"
+    target: "Wörterbuch"
+    ipa: "ˈvœʁtɐbuːx"
+    pos: "noun"
+    gender: "n"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Wörterbücher" }]
+    examples:
+      - { target: "Hier ist das Wörterbuch.", ipa: "hiːɐ̯ ɪst das ˈvœʁtɐbuːx", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wörterbuch", base: "Wörterbuch" }] }
+      - { target: "Wo ist das Wörterbuch?", ipa: "voː ɪst das ˈvœʁtɐbuːx", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Wörterbuch", base: "Wörterbuch" }] }
+  - id: "de-2920"
+    target: "Zettel"
+    ipa: "ˈtsɛtəl"
+    pos: "noun"
+    gender: "m"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Zettel.", ipa: "das ɪst deːɐ̯ ˈtsɛtəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Zettel", base: "Zettel" }] }
+      - { target: "Wo ist der Zettel?", ipa: "voː ɪst deːɐ̯ ˈtsɛtəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Zettel", base: "Zettel" }] }
+  - id: "de-2921"
+    target: "gefährlich"
+    ipa: "ɡəˈfɛːɐ̯lɪç"
+    pos: "adj"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist gefährlich.", ipa: "das ɪst ɡəˈfɛːɐ̯lɪç", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "gefährlich", base: "gefährlich" }] }
+      - { target: "Das ist nicht gefährlich.", ipa: "das ɪst nɪçt ɡəˈfɛːɐ̯lɪç", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "gefährlich", base: "gefährlich" }] }
+  - id: "de-2922"
+    target: "Gefahr"
+    ipa: "ɡəˈfaːɐ̯"
+    pos: "noun"
+    gender: "f"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Gefahren" }]
+    examples:
+      - { target: "Das ist die Gefahr.", ipa: "das ɪst diː ɡəˈfaːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Gefahr", base: "Gefahr" }] }
+      - { target: "Wo ist die Gefahr?", ipa: "voː ɪst diː ɡəˈfaːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Gefahr", base: "Gefahr" }] }
+  - id: "de-2923"
+    target: "Feuer"
+    ipa: "ˈfɔɪɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Feuer.", ipa: "hiːɐ̯ ɪst das ˈfɔɪɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Feuer", base: "Feuer" }] }
+      - { target: "Wo ist das Feuer?", ipa: "voː ɪst das ˈfɔɪɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Feuer", base: "Feuer" }] }
+  - id: "de-2924"
+    target: "Unfall"
+    ipa: "ˈʊnfal"
+    pos: "noun"
+    gender: "m"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Unfälle" }]
+    examples:
+      - { target: "Das ist der Unfall.", ipa: "das ɪst deːɐ̯ ˈʊnfal", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Unfall", base: "Unfall" }] }
+      - { target: "Wo ist der Unfall?", ipa: "voː ɪst deːɐ̯ ˈʊnfal", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Unfall", base: "Unfall" }] }
+  - id: "de-2925"
+    target: "verloren"
+    ipa: "fɛɐ̯ˈloːʁən"
+    pos: "adj"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist verloren.", ipa: "das ɪst fɛɐ̯ˈloːʁən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "verloren", base: "verloren" }] }
+      - { target: "Ich bin verloren.", ipa: "ɪç bɪn fɛɐ̯ˈloːʁən", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "verloren", base: "verloren" }] }
+  - id: "de-2926"
+    target: "verletzt"
+    ipa: "fɛɐ̯ˈlɛtst"
+    pos: "adj"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Du bist verletzt.", ipa: "duː bɪst fɛɐ̯ˈlɛtst", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "verletzt", base: "verletzt" }] }
+      - { target: "Ich bin verletzt.", ipa: "ɪç bɪn fɛɐ̯ˈlɛtst", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "verletzt", base: "verletzt" }] }
+  - id: "de-2927"
+    target: "vorsichtig"
+    ipa: "ˈfoːɐ̯zɪçtɪç"
+    pos: "adj"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin vorsichtig.", ipa: "ɪç bɪn ˈfoːɐ̯zɪçtɪç", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "vorsichtig", base: "vorsichtig" }] }
+      - { target: "Du bist vorsichtig.", ipa: "duː bɪst ˈfoːɐ̯zɪçtɪç", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "vorsichtig", base: "vorsichtig" }] }
+  - id: "de-2928"
+    target: "Rat"
+    ipa: "ʁaːt"
+    pos: "noun"
+    gender: "m"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Rat.", ipa: "das ɪst deːɐ̯ ʁaːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Rat", base: "Rat" }] }
+      - { target: "Das ist kein Rat.", ipa: "das ɪst kaɪn ʁaːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "kein", base: "kein" }, { word: "Rat", base: "Rat" }] }
+  - id: "de-2929"
+    target: "Polizei"
+    ipa: "poliˈtsaɪ"
+    pos: "noun"
+    gender: "f"
+    tags: ["help"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Polizeien" }]
+    examples:
+      - { target: "Das ist die Polizei.", ipa: "das ɪst diː poliˈtsaɪ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Polizei", base: "Polizei" }] }
+      - { target: "Wo ist die Polizei?", ipa: "voː ɪst diː poliˈtsaɪ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Polizei", base: "Polizei" }] }

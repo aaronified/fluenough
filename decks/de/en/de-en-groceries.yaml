@@ -1,0 +1,791 @@
+schema: 1
+id: "de-en-groceries"
+kind: "layer"
+core: "de-groceries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries"
+description: "Groceries: food, drink, baking and kitchen basics, and shopping words such as supermarket, trolley and shopping list. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "de-2350":
+    native: "food; foodstuff"
+    notes:
+      "n1": "Lebensmittel is food: das Lebensmittel. Its plural is the same."
+    examples:
+      "Das ist ein Lebensmittel.":
+        native: "This is a foodstuff."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Lebensmittel": "food"
+      "Das ist kein Lebensmittel.":
+        native: "That is not a foodstuff."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "kein": "no"
+          "Lebensmittel": "foodstuff"
+  "de-2351":
+    native: "supermarket"
+    notes:
+      "n1": "Supermarkt is supermarket: der Supermarkt. Its plural is Supermärkte. The vowel takes an umlaut."
+    examples:
+      "Das ist der Supermarkt.":
+        native: "This is the supermarket."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Supermarkt": "supermarket"
+      "Wo ist der Supermarkt?":
+        native: "Where is the supermarket?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Supermarkt": "supermarket"
+    forms: { "pl": "plural" }
+  "de-2352":
+    native: "yogurt"
+    notes:
+      "n1": "Joghurt is yogurt: der Joghurt. Its plural is Joghurts."
+    examples:
+      "Das ist der Joghurt.":
+        native: "This is the yogurt."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Joghurt": "yogurt"
+      "Wo ist der Joghurt?":
+        native: "Where is the yogurt?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Joghurt": "yogurt"
+    forms: { "pl": "plural" }
+  "de-2353":
+    native: "rice"
+    notes:
+      "n1": "Reis is rice: der Reis. The plural is rare."
+    examples:
+      "Das ist der Reis.":
+        native: "This is the rice."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Reis": "rice"
+      "Wo ist der Reis?":
+        native: "Where is the rice?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Reis": "rice"
+  "de-2354":
+    native: "noodle"
+    notes:
+      "n1": "Nudel is noodle: die Nudel. Its plural is Nudeln."
+    examples:
+      "Das ist die Nudel.":
+        native: "This is the noodle."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Nudel": "noodle"
+      "Wo ist die Nudel?":
+        native: "Where is the noodle?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Nudel": "noodle"
+    forms: { "pl": "plural" }
+  "de-2355":
+    native: "sugar"
+    notes:
+      "n1": "Zucker is sugar: der Zucker. Its plural is the same."
+    examples:
+      "Das ist der Zucker.":
+        native: "This is the sugar."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Zucker": "sugar"
+      "Wo ist der Zucker?":
+        native: "Where is the sugar?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Zucker": "sugar"
+  "de-2356":
+    native: "salt"
+    notes:
+      "n1": "Salz is salt: das Salz. The plural is rare."
+    examples:
+      "Das ist Salz.":
+        native: "This is salt."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "Salz": "salt"
+      "Wo ist das Salz?":
+        native: "Where is the salt?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Salz": "salt"
+  "de-2357":
+    native: "pepper"
+    notes:
+      "n1": "Pfeffer is pepper: der Pfeffer. Its plural is the same."
+    examples:
+      "Das ist der Pfeffer.":
+        native: "This is the pepper."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Pfeffer": "pepper"
+      "Wo ist der Pfeffer?":
+        native: "Where is the pepper?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Pfeffer": "pepper"
+  "de-2358":
+    native: "oil"
+    notes:
+      "n1": "Öl is oil: das Öl. Its plural is Öle."
+    examples:
+      "Das ist Öl.":
+        native: "This is oil."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "Öl": "oil"
+      "Wo ist das Öl?":
+        native: "Where is the oil?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Öl": "oil"
+    forms: { "pl": "plural" }
+  "de-2359":
+    native: "flour"
+    notes:
+      "n1": "Mehl is flour: das Mehl. The plural is rare."
+    examples:
+      "Das ist Mehl.":
+        native: "This is flour."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "Mehl": "flour"
+      "Wo ist das Mehl?":
+        native: "Where is the flour?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Mehl": "flour"
+  "de-2360":
+    native: "coffee"
+    notes:
+      "n1": "Kaffee is coffee: der Kaffee. Its plural is Kaffees."
+    examples:
+      "Das ist der Kaffee.":
+        native: "This is the coffee."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Kaffee": "coffee"
+      "Wo ist der Kaffee?":
+        native: "Where is the coffee?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Kaffee": "coffee"
+    forms: { "pl": "plural" }
+  "de-2361":
+    native: "tea"
+    notes:
+      "n1": "Tee is tea: der Tee. Its plural is Tees, but it is rarely used."
+    examples:
+      "Das ist der Tee.":
+        native: "This is the tea."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Tee": "tea"
+      "Wo ist der Tee?":
+        native: "Where is the tea?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Tee": "tea"
+  "de-2362":
+    native: "juice"
+    notes:
+      "n1": "Saft is juice: der Saft. Its plural is Säfte. The vowel takes an umlaut."
+    examples:
+      "Das ist der Saft.":
+        native: "This is the juice."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Saft": "juice"
+      "Wo ist der Saft?":
+        native: "Where is the juice?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Saft": "juice"
+    forms: { "pl": "plural" }
+  "de-2363":
+    native: "wine"
+    notes:
+      "n1": "Wein is wine: der Wein. Its plural is Weine."
+    examples:
+      "Das ist der Wein.":
+        native: "This is the wine."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Wein": "wine"
+      "Wo ist der Wein?":
+        native: "Where is the wine?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Wein": "wine"
+    forms: { "pl": "plural" }
+  "de-2364":
+    native: "jam"
+    notes:
+      "n1": "Marmelade is jam: die Marmelade. Its plural is Marmeladen."
+    examples:
+      "Das ist die Marmelade.":
+        native: "This is the jam."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Marmelade": "jam"
+      "Wo ist die Marmelade?":
+        native: "Where is the jam?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Marmelade": "jam"
+    forms: { "pl": "plural" }
+  "de-2365":
+    native: "chocolate"
+    notes:
+      "n1": "Schokolade is chocolate: die Schokolade. Its plural is Schokoladen."
+    examples:
+      "Das ist die Schokolade.":
+        native: "This is the chocolate."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Schokolade": "chocolate"
+      "Wo ist die Schokolade?":
+        native: "Where is the chocolate?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Schokolade": "chocolate"
+    forms: { "pl": "plural" }
+  "de-2366":
+    native: "cake"
+    notes:
+      "n1": "Kuchen is cake: der Kuchen. Its plural is the same."
+    examples:
+      "Das ist der Kuchen.":
+        native: "This is the cake."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Kuchen": "cake"
+      "Wo ist der Kuchen?":
+        native: "Where is the cake?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Kuchen": "cake"
+  "de-2367":
+    native: "cookie"
+    notes:
+      "n1": "Keks is cookie: der Keks. Its plural is Kekse."
+    examples:
+      "Das ist der Keks.":
+        native: "This is the cookie."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Keks": "cookie"
+      "Wo ist der Keks?":
+        native: "Where is the cookie?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Keks": "cookie"
+    forms: { "pl": "plural" }
+  "de-2368":
+    native: "muesli"
+    notes:
+      "n1": "Müsli is muesli: das Müsli. Its plural is rare."
+    examples:
+      "Das ist ein Müsli.":
+        native: "This is a muesli."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Müsli": "muesli"
+      "Wo ist das Müsli?":
+        native: "Where is the muesli?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Müsli": "muesli"
+  "de-2369":
+    native: "butter"
+    notes:
+      "n1": "Butter is butter: die Butter. It has no plural."
+    examples:
+      "Das ist Butter.":
+        native: "This is butter."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "Butter": "butter"
+      "Wo ist die Butter?":
+        native: "Where is the butter?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Butter": "butter"
+  "de-2370":
+    native: "milk"
+    notes:
+      "n1": "Milch is milk: die Milch. The plural is rare."
+    examples:
+      "Das ist die Milch.":
+        native: "This is the milk."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Milch": "milk"
+      "Wo ist die Milch?":
+        native: "Where is the milk?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Milch": "milk"
+  "de-2371":
+    native: "cheese"
+    notes:
+      "n1": "Käse is cheese: der Käse. Its plural is the same."
+    examples:
+      "Das ist der Käse.":
+        native: "This is the cheese."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Käse": "cheese"
+      "Wo ist der Käse?":
+        native: "Where is the cheese?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Käse": "cheese"
+  "de-2372":
+    native: "bread"
+    notes:
+      "n1": "Brot is bread: das Brot. Its plural is Brote."
+    examples:
+      "Das ist ein Brot.":
+        native: "This is a bread."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Brot": "bread"
+      "Wo ist das Brot?":
+        native: "Where is the bread?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Brot": "bread"
+    forms: { "pl": "plural" }
+  "de-2373":
+    native: "bag"
+    notes:
+      "n1": "Tüte is bag: die Tüte. Its plural is Tüten."
+    examples:
+      "Das ist die Tüte.":
+        native: "This is the bag."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Tüte": "bag"
+      "Wo ist die Tüte?":
+        native: "Where is the bag?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Tüte": "bag"
+    forms: { "pl": "plural" }
+  "de-2374":
+    native: "tin"
+    notes:
+      "n1": "Dose is tin: die Dose. Its plural is Dosen."
+    examples:
+      "Das ist die Dose.":
+        native: "This is the tin."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Dose": "tin"
+      "Wo ist die Dose?":
+        native: "Where is the tin?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Dose": "tin"
+    forms: { "pl": "plural" }
+  "de-2375":
+    native: "cash register"
+    notes:
+      "n1": "Kasse is cash register: die Kasse. Its plural is Kassen."
+    examples:
+      "Das ist die Kasse.":
+        native: "This is the cash register."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Kasse": "cash register"
+      "Wo ist die Kasse?":
+        native: "Where is the cash register?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Kasse": "cash register"
+    forms: { "pl": "plural" }
+  "de-2376":
+    native: "basket"
+    notes:
+      "n1": "Korb is basket: der Korb. Its plural is Körbe. The vowel takes an umlaut."
+    examples:
+      "Das ist der Korb.":
+        native: "This is the basket."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Korb": "basket"
+      "Wo ist der Korb?":
+        native: "Where is the basket?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Korb": "basket"
+    forms: { "pl": "plural" }
+  "de-2377":
+    native: "purchase"
+    notes:
+      "n1": "Einkauf is purchase: der Einkauf. Its plural is Einkäufe. The vowel takes an umlaut."
+    examples:
+      "Das ist der Einkauf.":
+        native: "This is the purchase."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Einkauf": "purchase"
+      "Wo ist der Einkauf?":
+        native: "Where is the purchase?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Einkauf": "purchase"
+    forms: { "pl": "plural" }
+  "de-2378":
+    native: "shopping list"
+    notes:
+      "n1": "Einkaufsliste is shopping list: die Einkaufsliste. Its plural is Einkaufslisten."
+    examples:
+      "Das ist die Einkaufsliste.":
+        native: "This is the shopping list."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Einkaufsliste": "shopping list"
+      "Wo ist die Einkaufsliste?":
+        native: "Where is the shopping list?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Einkaufsliste": "shopping list"
+    forms: { "pl": "plural" }
+  "de-2379":
+    native: "shopping trolley"
+    notes:
+      "n1": "Einkaufswagen is shopping trolley: der Einkaufswagen. Its plural is the same."
+    examples:
+      "Das ist der Einkaufswagen.":
+        native: "This is the shopping trolley."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Einkaufswagen": "shopping trolley"
+      "Wo ist der Einkaufswagen?":
+        native: "Where is the shopping trolley?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Einkaufswagen": "shopping trolley"
+  "de-2380":
+    native: "honey"
+    notes:
+      "n1": "Honig is honey: der Honig. The plural is rare."
+    examples:
+      "Das ist der Honig.":
+        native: "This is the honey."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Honig": "honey"
+      "Wo ist der Honig?":
+        native: "Where is the honey?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Honig": "honey"
+  "de-2381":
+    native: "vinegar"
+    notes:
+      "n1": "Essig is vinegar: der Essig. The plural is rare."
+    examples:
+      "Das ist der Essig.":
+        native: "This is the vinegar."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Essig": "vinegar"
+      "Wo ist der Essig?":
+        native: "Where is the vinegar?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Essig": "vinegar"
+  "de-2382":
+    native: "mustard"
+    notes:
+      "n1": "Senf is mustard: der Senf. The plural is rare."
+    examples:
+      "Das ist der Senf.":
+        native: "This is the mustard."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Senf": "mustard"
+      "Wo ist der Senf?":
+        native: "Where is the mustard?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Senf": "mustard"
+  "de-2383":
+    native: "cocoa"
+    notes:
+      "n1": "Kakao is cocoa: der Kakao. Its plural is Kakaos."
+    examples:
+      "Das ist der Kakao.":
+        native: "This is the cocoa."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Kakao": "cocoa"
+      "Wo ist der Kakao?":
+        native: "Where is the cocoa?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Kakao": "cocoa"
+    forms: { "pl": "plural" }
+  "de-2384":
+    native: "raisin"
+    notes:
+      "n1": "Rosine is raisin: die Rosine. Its plural is Rosinen."
+    examples:
+      "Das ist die Rosine.":
+        native: "This is the raisin."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Rosine": "raisin"
+      "Wo ist die Rosine?":
+        native: "Where is the raisin?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Rosine": "raisin"
+    forms: { "pl": "plural" }
+  "de-2385":
+    native: "almond"
+    notes:
+      "n1": "Mandel is almond: die Mandel. Its plural is Mandeln."
+    examples:
+      "Das ist die Mandel.":
+        native: "This is the almond."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Mandel": "almond"
+      "Wo ist die Mandel?":
+        native: "Where is the almond?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Mandel": "almond"
+    forms: { "pl": "plural" }
+  "de-2386":
+    native: "nut"
+    notes:
+      "n1": "Nuss is nut: die Nuss. Its plural is Nüsse. The vowel takes an umlaut."
+    examples:
+      "Das ist die Nuss.":
+        native: "This is the nut."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "die": "the"
+          "Nuss": "nut"
+      "Wo ist die Nuss?":
+        native: "Where is the nut?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Nuss": "nut"
+    forms: { "pl": "plural" }
+  "de-2387":
+    native: "cinnamon"
+    notes:
+      "n1": "Zimt is cinnamon: der Zimt. Its plural is Zimte."
+    examples:
+      "Das ist der Zimt.":
+        native: "This is the cinnamon."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Zimt": "cinnamon"
+      "Wo ist der Zimt?":
+        native: "Where is the cinnamon?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Zimt": "cinnamon"
+    forms: { "pl": "plural" }
+  "de-2388":
+    native: "spice"
+    notes:
+      "n1": "Gewürz is spice: das Gewürz. Its plural is Gewürze."
+    examples:
+      "Das ist ein Gewürz.":
+        native: "This is a spice."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "ein": "a"
+          "Gewürz": "spice"
+      "Wo ist das Gewürz?":
+        native: "Where is the spice?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Gewürz": "spice"
+    forms: { "pl": "plural" }
+  "de-2389":
+    native: "dough"
+    notes:
+      "n1": "Teig is dough: der Teig. Its plural is Teige."
+    examples:
+      "Das ist der Teig.":
+        native: "This is the dough."
+        bases:
+          "Das": "this"
+          "ist": "is"
+          "der": "the"
+          "Teig": "dough"
+      "Wo ist der Teig?":
+        native: "Where is the dough?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Teig": "dough"
+    forms: { "pl": "plural" }

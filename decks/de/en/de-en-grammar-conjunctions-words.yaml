@@ -1,0 +1,66 @@
+schema: 1
+id: "de-en-grammar-conjunctions-words"
+kind: "layer"
+core: "de-grammar-conjunctions-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The conjunctions oder, aber, denn and sondern"
+license: "CC-BY-SA-4.0"
+description: "Four words that join clauses and words, oder, aber, denn and sondern, as word cards with their own examples. Not yet checked by a German speaker: please report any mistake."
+cards:
+  "de-1180":
+    native: "or"
+    notes:
+      "n1": "Oder is or. Wiktionary calls it a coordinating conjunction meaning or; as a particle at the end of a question, oder? means right?, is it?"
+      "n2": "Oder joins two words, or two clauses, and does not move the verb of the second clause: Kommst du oder bleibst du hier?"
+    examples:
+      "Willst du Kaffee oder Tee?":
+        native: "Do you want coffee or tea?"
+        bases:
+          "oder": "or"
+      "Kommst du oder bleibst du hier?":
+        native: "Are you coming, or are you staying here?"
+        bases:
+          "oder": "or"
+  "de-1181":
+    native: "but; however"
+    notes:
+      "n1": "Aber is but or however. Wiktionary calls it a coordinating conjunction and gives Ich mag keine Orangen, aber ich mag Äpfel, I don't like oranges, but I like apples."
+      "n2": "After a negative, aber only sets a contrast with what was said, while sondern replaces it with what is true instead. Wiktionary's usage notes on aber explain the difference."
+    examples:
+      "Ich bin müde, aber ich arbeite.":
+        native: "I am tired, but I am working."
+        bases:
+          "aber": "but; however"
+      "Das Dorf ist klein, aber schön.":
+        native: "The village is small, but beautiful."
+        bases:
+          "Das": "that; the (neuter)"
+          "aber": "but; however"
+  "de-1182":
+    native: "because; for"
+    notes:
+      "n1": "Denn is because or for, and it gives the reason for what was just said: Ich bleibe hier, denn ich bin müde. Wiktionary gives the sense for, because, since."
+      "n2": "Denn joins two clauses only. It does not move the verb: the verb of the second clause stays in second place, as in a plain sentence. Wiktionary also lists denn as a particle in questions, a use taught later."
+    examples:
+      "Ich bleibe hier, denn ich bin müde.":
+        native: "I am staying here, because I am tired."
+        bases:
+          "denn": "because; for"
+      "Er kommt nicht, denn er arbeitet.":
+        native: "He is not coming, because he is working."
+        bases:
+          "denn": "because; for"
+  "de-1183":
+    native: "but (instead); rather"
+    notes:
+      "n1": "Sondern is but, instead, and it follows a negative: nicht müde, sondern hungrig. Wiktionary gives rather, but (instead), as a coordinating conjunction with a negative in the preceding clause."
+      "n2": "Use sondern after nicht or kein to say what is true instead: Ich trinke keinen Kaffee, sondern Tee. Aber would only set a contrast instead, as Wiktionary's usage notes on aber explain."
+    examples:
+      "Er ist nicht müde, sondern hungrig.":
+        native: "He is not tired, but hungry."
+        bases:
+          "sondern": "but (instead); rather"
+      "Ich trinke keinen Kaffee, sondern Tee.":
+        native: "I do not drink coffee, but tea."
+        bases:
+          "sondern": "but (instead); rather"

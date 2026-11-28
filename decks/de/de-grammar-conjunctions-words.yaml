@@ -1,0 +1,56 @@
+schema: 1
+id: "de-grammar-conjunctions-words"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-1180"
+    target: "oder"
+    ipa: "ˈoːdɐ"
+    pos: "particle"
+    tags: ["conjunction"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/oder" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/und" }
+    bases: "self"
+    examples:
+      - { target: "Willst du Kaffee oder Tee?", ipa: "vɪlst duː kaˈfeː ˈoːdɐ teː", bases: [{ word: "Willst", ref: "de-1002" }, { word: "du", ref: "de-0004" }, { word: "Kaffee", ref: "de-2360" }, { word: "oder", base: "oder" }, { word: "Tee", ref: "de-2361" }] }
+      - { target: "Kommst du oder bleibst du hier?", ipa: "kɔmst duː ˈoːdɐ blaɪpst duː hiːɐ̯", bases: [{ word: "Kommst", ref: "de-1725" }, { word: "du", ref: "de-0004" }, { word: "oder", base: "oder" }, { word: "bleibst", ref: "de-1757" }, { word: "hier", ref: "de-0009" }] }
+  - id: "de-1181"
+    target: "aber"
+    ipa: "ˈaːbɐ"
+    pos: "particle"
+    tags: ["conjunction"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/aber" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/aber" }
+    bases: "self"
+    examples:
+      - { target: "Ich bin müde, aber ich arbeite.", ipa: "ɪç bɪn ˈmyːdə ˈaːbɐ ɪç ˈaʁbaɪtə", bases: [{ word: "Ich", ref: "de-0003" }, { word: "bin", ref: "de-0580" }, { word: "müde", ref: "de-1946" }, { word: "aber", base: "aber" }, { word: "arbeite", ref: "de-1723" }] }
+      - { target: "Das Dorf ist klein, aber schön.", ipa: "das dɔʁf ɪst klaɪn ˈaːbɐ ʃøːn", bases: [{ word: "Das", base: "das" }, { word: "Dorf", ref: "de-1674" }, { word: "ist", ref: "de-0580" }, { word: "klein", ref: "de-1931" }, { word: "aber", base: "aber" }, { word: "schön", ref: "de-1934" }] }
+  - id: "de-1182"
+    target: "denn"
+    ipa: "dɛn"
+    pos: "particle"
+    tags: ["conjunction"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/denn" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/denn" }
+    bases: "self"
+    examples:
+      - { target: "Ich bleibe hier, denn ich bin müde.", ipa: "ɪç ˈblaɪbə hiːɐ̯ dɛn ɪç bɪn ˈmyːdə", bases: [{ word: "Ich", ref: "de-0003" }, { word: "bleibe", ref: "de-1757" }, { word: "hier", ref: "de-0009" }, { word: "denn", base: "denn" }, { word: "bin", ref: "de-0580" }, { word: "müde", ref: "de-1946" }] }
+      - { target: "Er kommt nicht, denn er arbeitet.", ipa: "eːɐ̯ kɔmt nɪçt dɛn eːɐ̯ ˈaʁbaɪtət", bases: [{ word: "Er", ref: "de-1440" }, { word: "kommt", ref: "de-1725" }, { word: "nicht", ref: "de-0820" }, { word: "denn", base: "denn" }, { word: "arbeitet", ref: "de-1723" }] }
+  - id: "de-1183"
+    target: "sondern"
+    ipa: "ˈzɔndɐn"
+    pos: "particle"
+    tags: ["conjunction"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/sondern" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/aber" }
+    bases: "self"
+    examples:
+      - { target: "Er ist nicht müde, sondern hungrig.", ipa: "eːɐ̯ ɪst nɪçt ˈmyːdə ˈzɔndɐn ˈhʊŋʁɪç", bases: [{ word: "Er", ref: "de-1440" }, { word: "ist", ref: "de-0580" }, { word: "nicht", ref: "de-0820" }, { word: "müde", ref: "de-1946" }, { word: "sondern", base: "sondern" }, { word: "hungrig", ref: "de-1947" }] }
+      - { target: "Ich trinke keinen Kaffee, sondern Tee.", ipa: "ɪç ˈtʁɪŋkə ˈkaɪnən kaˈfeː ˈzɔndɐn teː", bases: [{ word: "Ich", ref: "de-0003" }, { word: "trinke", ref: "de-1721" }, { word: "keinen", ref: "de-0821" }, { word: "Kaffee", ref: "de-2360" }, { word: "sondern", base: "sondern" }, { word: "Tee", ref: "de-2361" }] }

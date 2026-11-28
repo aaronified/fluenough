@@ -1,0 +1,55 @@
+schema: 1
+id: "de-grammar-conjunctions"
+part: "core"
+kind: "grammar"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["example-1", "example-2"]
+  entries:
+    - lemma: "und"
+      key: "und"
+      ipa: "ʊnt"
+      forms:
+        "example-1": "Kaffee und Kuchen"
+        "example-2": "Ich arbeite und du lernst."
+      ipas:
+        "example-1": "kaˈfeː ʊnt ˈkuːxən"
+        "example-2": "ɪç ˈaʁbaɪtə ʊnt duː lɛʁnst"
+    - lemma: "oder"
+      key: "oder"
+      ipa: "ˈoːdɐ"
+      forms:
+        "example-1": "Kaffee oder Tee"
+        "example-2": "Kommst du oder bleibst du hier?"
+      ipas:
+        "example-1": "kaˈfeː ˈoːdɐ teː"
+        "example-2": "kɔmst duː ˈoːdɐ blaɪpst duː hiːɐ̯"
+    - lemma: "aber"
+      key: "aber"
+      ipa: "ˈaːbɐ"
+      forms:
+        "example-1": "klein, aber schön"
+        "example-2": "Ich habe keinen Kaffee, aber ich habe Tee."
+      ipas:
+        "example-1": "klaɪn ˈaːbɐ ʃøːn"
+        "example-2": "ɪç ˈhaːbə ˈkaɪnən kaˈfeː ˈaːbɐ ɪç ˈhaːbə teː"
+    - lemma: "denn"
+      key: "denn"
+      ipa: "dɛn"
+      forms:
+        "example-1": "Ich bleibe hier, denn ich bin müde."
+        "example-2": "Er kommt nicht, denn er arbeitet."
+      ipas:
+        "example-1": "ɪç ˈblaɪbə hiːɐ̯ dɛn ɪç bɪn ˈmyːdə"
+        "example-2": "eːɐ̯ kɔmt nɪçt dɛn eːɐ̯ ˈaʁbaɪtət"
+    - lemma: "sondern"
+      key: "sondern"
+      ipa: "ˈzɔndɐn"
+      forms:
+        "example-1": "nicht Kaffee, sondern Tee"
+        "example-2": "Ich bin nicht müde, sondern ich bin hungrig."
+      ipas:
+        "example-1": "nɪçt kaˈfeː ˈzɔndɐn teː"
+        "example-2": "ɪç bɪn nɪçt ˈmyːdə ˈzɔndɐn ɪç bɪn ˈhʊŋʁɪç"

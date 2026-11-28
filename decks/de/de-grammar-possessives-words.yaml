@@ -1,0 +1,86 @@
+schema: 1
+id: "de-grammar-possessives-words"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-0940"
+    target: "mein"
+    ipa: "maɪn"
+    pos: "other"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/mein" }
+    bases: "self"
+    examples:
+      - { target: "Das ist mein Vater.", ipa: "das ɪst maɪn ˈfaːtɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "mein", base: "mein" }, { word: "Vater", ref: "de-1512" }] }
+      - { target: "Das ist meine Mutter.", ipa: "das ɪst ˈmaɪnə ˈmʊtɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "meine", base: "mein" }, { word: "Mutter", ref: "de-1511" }] }
+  - id: "de-0941"
+    target: "dein"
+    ipa: "daɪn"
+    pos: "other"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/dein" }
+    bases: "self"
+    examples:
+      - { target: "Wie heißt dein Bruder?", ipa: "viː haɪst daɪn ˈbʁuːdɐ", bases: [{ word: "Wie", ref: "de-1304" }, { word: "heißt", ref: "de-1650" }, { word: "dein", base: "dein" }, { word: "Bruder", ref: "de-1519" }] }
+      - { target: "Das ist dein Handy.", ipa: "das ɪst daɪn ˈhɛndi", bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "dein", base: "dein" }, { word: "Handy", ref: "de-1664" }] }
+  - id: "de-0942"
+    target: "sein"
+    ipa: "zaɪn"
+    pos: "other"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "homograph", ref: "de-0580", source: "https://en.wiktionary.org/wiki/sein" }
+      - { id: "n2", kind: "note", source: "https://en.wiktionary.org/wiki/sein" }
+    bases: "self"
+    examples:
+      - { target: "Sein Vater ist alt.", ipa: "zaɪn ˈfaːtɐ ɪst alt", bases: [{ word: "Sein", base: "sein" }, { word: "Vater", ref: "de-1512" }, { word: "ist", ref: "de-0580" }, { word: "alt", ref: "de-1652" }] }
+      - { target: "Seine Mutter ist jung.", ipa: "ˈzaɪnə ˈmʊtɐ ɪst jʊŋ", bases: [{ word: "Seine", base: "sein" }, { word: "Mutter", ref: "de-1511" }, { word: "ist", ref: "de-0580" }, { word: "jung", ref: "de-1653" }] }
+  - id: "de-0943"
+    target: "ihr"
+    ipa: "iːɐ̯"
+    pos: "other"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/ihr" }
+    bases: "self"
+    examples:
+      - { target: "Ihr Bruder wohnt hier.", ipa: "iːɐ̯ ˈbʁuːdɐ voːnt hiːɐ̯", bases: [{ word: "Ihr", base: "ihr" }, { word: "Bruder", ref: "de-1519" }, { word: "wohnt", ref: "de-1651" }, { word: "hier", ref: "de-0009" }] }
+      - { target: "Ihre Familie ist groß.", ipa: "ˈiːʁə faˈmiːliə ɪst ɡʁoːs", bases: [{ word: "Ihre", base: "ihr" }, { word: "Familie", ref: "de-1510" }, { word: "ist", ref: "de-0580" }, { word: "groß", ref: "de-1930" }] }
+  - id: "de-0944"
+    target: "unser"
+    ipa: "ˈʊnzɐ"
+    pos: "other"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/unser" }
+    bases: "self"
+    examples:
+      - { target: "Unser Hund schläft.", ipa: "ˈʊnzɐ hʊnt ʃlɛft", bases: [{ word: "Unser", base: "unser" }, { word: "Hund", ref: "de-0410" }, { word: "schläft", ref: "de-1722" }] }
+      - { target: "Unsere Kinder sind hier.", ipa: "ˈʊnzəʁə ˈkɪndɐ zɪnt hiːɐ̯", bases: [{ word: "Unsere", base: "unser" }, { word: "Kinder", ref: "de-1516" }, { word: "sind", ref: "de-0580" }, { word: "hier", ref: "de-0009" }] }
+  - id: "de-0945"
+    target: "euer"
+    ipa: "ˈɔɪɐ"
+    pos: "other"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/euer" }
+    bases: "self"
+    examples:
+      - { target: "Euer Vater kocht.", ipa: "ˈɔɪɐ ˈfaːtɐ kɔxt", bases: [{ word: "Euer", base: "euer" }, { word: "Vater", ref: "de-1512" }, { word: "kocht", ref: "de-1741" }] }
+      - { target: "Eure Kinder sind hier.", ipa: "ˈɔɪʁə ˈkɪndɐ zɪnt hiːɐ̯", bases: [{ word: "Eure", base: "euer" }, { word: "Kinder", ref: "de-1516" }, { word: "sind", ref: "de-0580" }, { word: "hier", ref: "de-0009" }] }
+  - id: "de-0946"
+    target: "Ihr"
+    ipa: "iːɐ̯"
+    pos: "other"
+    tags: ["possessive"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/ihr" }
+    bases: "self"
+    examples:
+      - { target: "Wie heißt Ihr Bruder?", ipa: "viː haɪst iːɐ̯ ˈbʁuːdɐ", bases: [{ word: "Wie", ref: "de-1304" }, { word: "heißt", ref: "de-1650" }, { word: "Ihr", base: "Ihr" }, { word: "Bruder", ref: "de-1519" }] }
+      - { target: "Ist das Ihre Familie?", ipa: "ɪst das ˈiːʁə faˈmiːliə", bases: [{ word: "Ist", ref: "de-0580" }, { word: "das", base: "das" }, { word: "Ihre", base: "Ihr" }, { word: "Familie", ref: "de-1510" }] }

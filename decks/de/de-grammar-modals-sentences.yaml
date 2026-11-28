@@ -1,0 +1,183 @@
+schema: 1
+id: "de-grammar-modals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4500"
+    target: "Ich kann hier warten."
+    ipa: "ɪç kan hiːɐ̯ ˈvaʁtən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "kann", ref: "de-1000" }, { word: "hier", ref: "de-0009" }, { word: "warten", ref: "de-1748" }]
+  - id: "de-4501"
+    target: "Kannst du kochen?"
+    ipa: "kanst duː ˈkɔxən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Kannst", ref: "de-1000" }, { word: "du", ref: "de-0004" }, { word: "kochen", ref: "de-1741" }]
+  - id: "de-4502"
+    target: "Er kann gut kochen."
+    ipa: "eːɐ̯ kan ɡuːt ˈkɔxən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "kann", ref: "de-1000" }, { word: "gut", ref: "de-0006" }, { word: "kochen", ref: "de-1741" }]
+  - id: "de-4503"
+    target: "Wir können hier bleiben."
+    ipa: "viːɐ̯ ˈkœnən hiːɐ̯ ˈblaɪbən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "können", ref: "de-1000" }, { word: "hier", ref: "de-0009" }, { word: "bleiben", ref: "de-1757" }]
+  - id: "de-4504"
+    target: "Ihr könnt hier schlafen."
+    ipa: "iːɐ̯ kœnt hiːɐ̯ ˈʃlaːfən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ihr", base: "ihr" }, { word: "könnt", ref: "de-1000" }, { word: "hier", ref: "de-0009" }, { word: "schlafen", ref: "de-1722" }]
+  - id: "de-4505"
+    target: "Sie können hier essen."
+    ipa: "ziː ˈkœnən hiːɐ̯ ˈɛsən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Sie", base: "sie" }, { word: "können", ref: "de-1000" }, { word: "hier", ref: "de-0009" }, { word: "essen", ref: "de-1720" }]
+  - id: "de-4506"
+    target: "Ich muss arbeiten."
+    ipa: "ɪç mʊs ˈaʁbaɪtən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "muss", ref: "de-1001" }, { word: "arbeiten", ref: "de-1723" }]
+  - id: "de-4507"
+    target: "Du musst warten."
+    ipa: "duː mʊst ˈvaʁtən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "musst", ref: "de-1001" }, { word: "warten", ref: "de-1748" }]
+  - id: "de-4508"
+    target: "Er muss viel lernen."
+    ipa: "eːɐ̯ mʊs fiːl ˈlɛʁnən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "muss", ref: "de-1001" }, { word: "viel", ref: "de-1860" }, { word: "lernen", ref: "de-1733" }]
+  - id: "de-4509"
+    target: "Wir müssen hier warten."
+    ipa: "viːɐ̯ ˈmʏsən hiːɐ̯ ˈvaʁtən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "müssen", ref: "de-1001" }, { word: "hier", ref: "de-0009" }, { word: "warten", ref: "de-1748" }]
+  - id: "de-4510"
+    target: "Ich will Kaffee trinken."
+    ipa: "ɪç vɪl kaˈfeː ˈtʁɪŋkən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "will", ref: "de-1002" }, { word: "Kaffee", ref: "de-2360" }, { word: "trinken", ref: "de-1721" }]
+  - id: "de-4511"
+    target: "Willst du Tee trinken?"
+    ipa: "vɪlst duː teː ˈtʁɪŋkən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Willst", ref: "de-1002" }, { word: "du", ref: "de-0004" }, { word: "Tee", ref: "de-2361" }, { word: "trinken", ref: "de-1721" }]
+  - id: "de-4512"
+    target: "Er will ein Handy kaufen."
+    ipa: "eːɐ̯ vɪl aɪn ˈhɛndi ˈkaʊfən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "will", ref: "de-1002" }, { word: "ein", base: "ein" }, { word: "Handy", ref: "de-1664" }, { word: "kaufen", ref: "de-1735" }]
+  - id: "de-4513"
+    target: "Ihr wollt hier wohnen."
+    ipa: "iːɐ̯ vɔlt hiːɐ̯ ˈvoːnən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ihr", base: "ihr" }, { word: "wollt", ref: "de-1002" }, { word: "hier", ref: "de-0009" }, { word: "wohnen", ref: "de-1651" }]
+  - id: "de-4514"
+    target: "Ich möchte Wasser trinken."
+    ipa: "ɪç ˈmœçtə ˈvasɐ ˈtʁɪŋkən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "möchte", ref: "de-1003" }, { word: "Wasser", ref: "de-0005" }, { word: "trinken", ref: "de-1721" }]
+  - id: "de-4515"
+    target: "Möchtest du Tee?"
+    ipa: "ˈmœçtəst duː teː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Möchtest", ref: "de-1003" }, { word: "du", ref: "de-0004" }, { word: "Tee", ref: "de-2361" }]
+  - id: "de-4516"
+    target: "Möchten Sie Kaffee?"
+    ipa: "ˈmœçtən ziː kaˈfeː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Möchten", ref: "de-1003" }, { word: "Sie", ref: "de-1372" }, { word: "Kaffee", ref: "de-2360" }]
+  - id: "de-4517"
+    target: "Wir möchten hier essen."
+    ipa: "viːɐ̯ ˈmœçtən hiːɐ̯ ˈɛsən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "möchten", ref: "de-1003" }, { word: "hier", ref: "de-0009" }, { word: "essen", ref: "de-1720" }]
+  - id: "de-4518"
+    target: "Darf ich hier sitzen?"
+    ipa: "daʁf ɪç hiːɐ̯ ˈzɪtsən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Darf", ref: "de-1004" }, { word: "ich", ref: "de-0003" }, { word: "hier", ref: "de-0009" }, { word: "sitzen", ref: "de-1745" }]
+  - id: "de-4519"
+    target: "Du darfst hier schlafen."
+    ipa: "duː daʁfst hiːɐ̯ ˈʃlaːfən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "darfst", ref: "de-1004" }, { word: "hier", ref: "de-0009" }, { word: "schlafen", ref: "de-1722" }]
+  - id: "de-4520"
+    target: "Das Kind darf spielen."
+    ipa: "das kɪnt daʁf ˈʃpiːlən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "darf", ref: "de-1004" }, { word: "spielen", ref: "de-1742" }]
+  - id: "de-4521"
+    target: "Ich soll warten."
+    ipa: "ɪç zɔl ˈvaʁtən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "soll", ref: "de-1005" }, { word: "warten", ref: "de-1748" }]
+  - id: "de-4522"
+    target: "Das Kind soll schlafen."
+    ipa: "das kɪnt zɔl ˈʃlaːfən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "soll", ref: "de-1005" }, { word: "schlafen", ref: "de-1722" }]
+  - id: "de-4523"
+    target: "Wo kann ich essen?"
+    ipa: "voː kan ɪç ˈɛsən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wo", ref: "de-1302" }, { word: "kann", ref: "de-1000" }, { word: "ich", ref: "de-0003" }, { word: "essen", ref: "de-1720" }]
+  - id: "de-4524"
+    target: "Was möchten Sie?"
+    ipa: "vas ˈmœçtən ziː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Was", ref: "de-1301" }, { word: "möchten", ref: "de-1003" }, { word: "Sie", ref: "de-1372" }]

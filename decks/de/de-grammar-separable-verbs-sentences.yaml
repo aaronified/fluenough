@@ -1,0 +1,176 @@
+schema: 1
+id: "de-grammar-separable-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4700"
+    target: "Ich stehe früh auf."
+    ipa: "ɪç ˈʃteːə fʁyː aʊf"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "stehe", ref: "de-1240" }, { word: "früh", ref: "de-2860" }, { word: "auf", ref: "de-1240" }]
+  - id: "de-4701"
+    target: "Du stehst früh auf."
+    ipa: "duː ʃteːst fʁyː aʊf"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "stehst", ref: "de-1240" }, { word: "früh", ref: "de-2860" }, { word: "auf", ref: "de-1240" }]
+  - id: "de-4702"
+    target: "Wir stehen um sieben Uhr auf."
+    ipa: "viːɐ̯ ˈʃteːən ʊm ˈziːbən uːɐ̯ aʊf"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "stehen", ref: "de-1240" }, { word: "um", ref: "de-1124" }, { word: "sieben", ref: "de-1585" }, { word: "Uhr", ref: "de-2845" }, { word: "auf", ref: "de-1240" }]
+  - id: "de-4703"
+    target: "Ich muss früh aufstehen."
+    ipa: "ɪç mʊs fʁyː ˈaʊfʃteːən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "muss", ref: "de-1001" }, { word: "früh", ref: "de-2860" }, { word: "aufstehen", ref: "de-1240" }]
+  - id: "de-4704"
+    target: "Der Zug kommt an."
+    ipa: "deːɐ̯ tsuːk kɔmt an"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Zug", ref: "de-0412" }, { word: "kommt", ref: "de-1241" }, { word: "an", ref: "de-1241" }]
+  - id: "de-4705"
+    target: "Wann kommt der Zug an?"
+    ipa: "van kɔmt deːɐ̯ tsuːk an"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wann", ref: "de-1303" }, { word: "kommt", ref: "de-1241" }, { word: "der", base: "der" }, { word: "Zug", ref: "de-0412" }, { word: "an", ref: "de-1241" }]
+  - id: "de-4706"
+    target: "Der Bus fährt ab."
+    ipa: "deːɐ̯ bʊs fɛːɐ̯t ap"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Bus", ref: "de-2490" }, { word: "fährt", ref: "de-1242" }, { word: "ab", ref: "de-1242" }]
+  - id: "de-4707"
+    target: "Wann fährt der Bus ab?"
+    ipa: "van fɛːɐ̯t deːɐ̯ bʊs ap"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wann", ref: "de-1303" }, { word: "fährt", ref: "de-1242" }, { word: "der", base: "der" }, { word: "Bus", ref: "de-2490" }, { word: "ab", ref: "de-1242" }]
+  - id: "de-4708"
+    target: "Ich kaufe heute ein."
+    ipa: "ɪç ˈkaʊfə ˈhɔɪtə aɪn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "kaufe", ref: "de-1243" }, { word: "heute", ref: "de-2840" }, { word: "ein", ref: "de-1243" }]
+  - id: "de-4709"
+    target: "Wir kaufen Brot ein."
+    ipa: "viːɐ̯ ˈkaʊfən bʁoːt aɪn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "kaufen", ref: "de-1243" }, { word: "Brot", ref: "de-2372" }, { word: "ein", ref: "de-1243" }]
+  - id: "de-4710"
+    target: "Ich rufe die Mutter an."
+    ipa: "ɪç ˈʁuːfə diː ˈmʊtɐ an"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "rufe", ref: "de-1244" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }, { word: "an", ref: "de-1244" }]
+  - id: "de-4711"
+    target: "Ich muss die Mutter anrufen."
+    ipa: "ɪç mʊs diː ˈmʊtɐ ˈanʁʊfən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "muss", ref: "de-1001" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }, { word: "anrufen", ref: "de-1244" }]
+  - id: "de-4712"
+    target: "Kommst du mit?"
+    ipa: "kɔmst duː mɪt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Kommst", ref: "de-1245" }, { word: "du", ref: "de-0004" }, { word: "mit", ref: "de-1245" }]
+  - id: "de-4713"
+    target: "Ich komme gern mit."
+    ipa: "ɪç ˈkɔmə ɡɛʁn mɪt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "komme", ref: "de-1245" }, { word: "gern", ref: "de-1800" }, { word: "mit", ref: "de-1245" }]
+  - id: "de-4714"
+    target: "Die Arbeit fängt bald an."
+    ipa: "diː ˈaʁbaɪt fɛŋt balt an"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Arbeit", ref: "de-2140" }, { word: "fängt", ref: "de-1246" }, { word: "bald", ref: "de-1805" }, { word: "an", ref: "de-1246" }]
+  - id: "de-4715"
+    target: "Wann fängt die Arbeit an?"
+    ipa: "van fɛŋt diː ˈaʁbaɪt an"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wann", ref: "de-1303" }, { word: "fängt", ref: "de-1246" }, { word: "die", base: "die" }, { word: "Arbeit", ref: "de-2140" }, { word: "an", ref: "de-1246" }]
+  - id: "de-4716"
+    target: "Wir steigen hier aus."
+    ipa: "viːɐ̯ ˈʃtaɪɡən hiːɐ̯ aʊs"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "steigen", ref: "de-1248" }, { word: "hier", ref: "de-0009" }, { word: "aus", ref: "de-1248" }]
+  - id: "de-4717"
+    target: "Wir müssen umsteigen."
+    ipa: "viːɐ̯ ˈmʏsən ˈʊmʃtaɪɡən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "müssen", ref: "de-1001" }, { word: "umsteigen", ref: "de-1249" }]
+  - id: "de-4718"
+    target: "Ich mache die Tür auf."
+    ipa: "ɪç ˈmaxə diː tyːɐ̯ aʊf"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "mache", ref: "de-1250" }, { word: "die", base: "die" }, { word: "Tür", ref: "de-2783" }, { word: "auf", ref: "de-1250" }]
+  - id: "de-4719"
+    target: "Er macht die Tür zu."
+    ipa: "eːɐ̯ maxt diː tyːɐ̯ tsuː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "macht", ref: "de-1251" }, { word: "die", base: "die" }, { word: "Tür", ref: "de-2783" }, { word: "zu", ref: "de-1251" }]
+  - id: "de-4720"
+    target: "Ich bringe Kaffee mit."
+    ipa: "ɪç ˈbʁɪŋə kaˈfeː mɪt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "bringe", ref: "de-1252" }, { word: "Kaffee", ref: "de-2360" }, { word: "mit", ref: "de-1252" }]
+  - id: "de-4721"
+    target: "Was bringst du mit?"
+    ipa: "vas bʁɪŋst duː mɪt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Was", ref: "de-1301" }, { word: "bringst", ref: "de-1252" }, { word: "du", ref: "de-0004" }, { word: "mit", ref: "de-1252" }]
+  - id: "de-4722"
+    target: "Das Kind sieht fern."
+    ipa: "das kɪnt ziːt fɛʁn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "sieht", ref: "de-1253" }, { word: "fern", ref: "de-1253" }]
+  - id: "de-4723"
+    target: "Wir sehen heute fern."
+    ipa: "viːɐ̯ ˈzeːən ˈhɔɪtə fɛʁn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "sehen", ref: "de-1253" }, { word: "heute", ref: "de-2840" }, { word: "fern", ref: "de-1253" }]

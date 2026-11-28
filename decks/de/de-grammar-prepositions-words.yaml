@@ -1,0 +1,144 @@
+schema: 1
+id: "de-grammar-prepositions-words"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-1120"
+    target: "für"
+    ipa: "fyːɐ̯"
+    pos: "other"
+    tags: ["preposition", "accusative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/für" }
+    bases: "self"
+    examples:
+      - { target: "Das Handy ist für den Vater.", ipa: "das ˈhɛndi ɪst fyːɐ̯ deːn ˈfaːtɐ", bases: [{ word: "Das", base: "das" }, { word: "Handy", ref: "de-1664" }, { word: "ist", ref: "de-0580" }, { word: "für", base: "für" }, { word: "den", base: "der" }, { word: "Vater", ref: "de-1512" }] }
+      - { target: "Das Buch ist für die Mutter.", ipa: "das buːx ɪst fyːɐ̯ diː ˈmʊtɐ", bases: [{ word: "Das", base: "das" }, { word: "Buch", ref: "de-0404" }, { word: "ist", ref: "de-0580" }, { word: "für", base: "für" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }] }
+  - id: "de-1121"
+    target: "durch"
+    ipa: "dʊʁç"
+    pos: "other"
+    tags: ["preposition", "accusative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/durch" }
+    bases: "self"
+    examples:
+      - { target: "Der Zug fährt durch die Stadt.", ipa: "deːɐ̯ tsuːk fɛːɐ̯t dʊʁç diː ʃtat", bases: [{ word: "Der", base: "der" }, { word: "Zug", ref: "de-0412" }, { word: "fährt", ref: "de-1726" }, { word: "durch", base: "durch" }, { word: "die", base: "die" }, { word: "Stadt", ref: "de-1656" }] }
+      - { target: "Der Hund läuft durch die Straße.", ipa: "deːɐ̯ hʊnt lɔɪft dʊʁç diː ˈʃtʁaːsə", bases: [{ word: "Der", base: "der" }, { word: "Hund", ref: "de-0410" }, { word: "läuft", ref: "de-1747" }, { word: "durch", base: "durch" }, { word: "die", base: "die" }, { word: "Straße", ref: "de-2561" }] }
+  - id: "de-1122"
+    target: "gegen"
+    ipa: "ˈɡeːɡən"
+    pos: "other"
+    tags: ["preposition", "accusative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/gegen" }
+    bases: "self"
+    examples:
+      - { target: "Wir spielen gegen den Nachbarn.", ipa: "viːɐ̯ ˈʃpiːlən ˈɡeːɡən deːn ˈnaxbaːɐ̯n", bases: [{ word: "Wir", ref: "de-1443" }, { word: "spielen", ref: "de-1742" }, { word: "gegen", base: "gegen" }, { word: "den", base: "der" }, { word: "Nachbarn", ref: "de-1384" }] }
+      - { target: "Die Kinder spielen gegen die Familie.", ipa: "diː ˈkɪndɐ ˈʃpiːlən ˈɡeːɡən diː faˈmiːliə", bases: [{ word: "Die", base: "die" }, { word: "Kinder", ref: "de-1516" }, { word: "spielen", ref: "de-1742" }, { word: "gegen", base: "gegen" }, { word: "Familie", ref: "de-1510" }] }
+  - id: "de-1123"
+    target: "ohne"
+    ipa: "ˈoːnə"
+    pos: "other"
+    tags: ["preposition", "accusative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/ohne" }
+    bases: "self"
+    examples:
+      - { target: "Ich trinke Kaffee ohne Zucker.", ipa: "ɪç ˈtʁɪŋkə kaˈfeː ˈoːnə ˈtsʊkɐ", bases: [{ word: "Ich", ref: "de-0003" }, { word: "trinke", ref: "de-1721" }, { word: "Kaffee", ref: "de-2360" }, { word: "ohne", base: "ohne" }, { word: "Zucker", ref: "de-2355" }] }
+      - { target: "Er kommt ohne den Hund.", ipa: "eːɐ̯ kɔmt ˈoːnə deːn hʊnt", bases: [{ word: "Er", ref: "de-1440" }, { word: "kommt", ref: "de-1725" }, { word: "ohne", base: "ohne" }, { word: "den", base: "der" }, { word: "Hund", ref: "de-0410" }] }
+  - id: "de-1124"
+    target: "um"
+    ipa: "ʊm"
+    pos: "other"
+    tags: ["preposition", "accusative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/um" }
+    bases: "self"
+    examples:
+      - { target: "Die Straße ist um die Ecke.", ipa: "diː ˈʃtʁaːsə ɪst ʊm diː ˈɛkə", bases: [{ word: "Die", base: "die" }, { word: "Straße", ref: "de-2561" }, { word: "ist", ref: "de-0580" }, { word: "um", base: "um" }, { word: "Ecke", ref: "de-2012" }] }
+      - { target: "Wir laufen um den Bahnhof.", ipa: "viːɐ̯ ˈlaʊfən ʊm deːn ˈbaːnhoːf", bases: [{ word: "Wir", ref: "de-1443" }, { word: "laufen", ref: "de-1747" }, { word: "um", base: "um" }, { word: "den", base: "der" }, { word: "Bahnhof", ref: "de-2500" }] }
+  - id: "de-1125"
+    target: "mit"
+    ipa: "mɪt"
+    pos: "other"
+    tags: ["preposition", "dative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/mit" }
+    bases: "self"
+    examples:
+      - { target: "Ich fahre mit dem Zug.", ipa: "ɪç ˈfaːʁə mɪt deːm tsuːk", bases: [{ word: "Ich", ref: "de-0003" }, { word: "fahre", ref: "de-1726" }, { word: "mit", base: "mit" }, { word: "dem", base: "der" }, { word: "Zug", ref: "de-0412" }] }
+      - { target: "Er kommt mit der Familie.", ipa: "eːɐ̯ kɔmt mɪt deːɐ̯ faˈmiːliə", bases: [{ word: "Er", ref: "de-1440" }, { word: "kommt", ref: "de-1725" }, { word: "mit", base: "mit" }, { word: "der", base: "der" }, { word: "Familie", ref: "de-1510" }] }
+  - id: "de-1126"
+    target: "nach"
+    ipa: "naːx"
+    pos: "other"
+    tags: ["preposition", "dative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/nach" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/nach" }
+    bases: "self"
+    examples:
+      - { target: "Nach der Arbeit esse ich.", ipa: "naːx deːɐ̯ ˈaʁbaɪt ˈɛsə ɪç", bases: [{ word: "Nach", base: "nach" }, { word: "der", base: "der" }, { word: "Arbeit", ref: "de-2140" }, { word: "esse", ref: "de-1720" }, { word: "ich", ref: "de-0003" }] }
+      - { target: "Wir fahren nach Berlin.", ipa: "viːɐ̯ ˈfaːʁən naːx bɛɐ̯ˈliːn", bases: [{ word: "Wir", ref: "de-1443" }, { word: "fahren", ref: "de-1726" }, { word: "nach", base: "nach" }, { word: "Berlin", base: "Berlin" }] }
+  - id: "de-1127"
+    target: "bei"
+    ipa: "baɪ"
+    pos: "other"
+    tags: ["preposition", "dative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/bei" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/beim" }
+    bases: "self"
+    examples:
+      - { target: "Er wohnt bei der Familie.", ipa: "eːɐ̯ voːnt baɪ deːɐ̯ faˈmiːliə", bases: [{ word: "Er", ref: "de-1440" }, { word: "wohnt", ref: "de-1651" }, { word: "bei", base: "bei" }, { word: "der", base: "der" }, { word: "Familie", ref: "de-1510" }] }
+      - { target: "Ich wohne bei den Eltern.", ipa: "ɪç ˈvoːnə baɪ deːn ˈɛltɐn", bases: [{ word: "Ich", ref: "de-0003" }, { word: "wohne", ref: "de-1651" }, { word: "bei", base: "bei" }, { word: "den", base: "der" }, { word: "Eltern", ref: "de-1513" }] }
+  - id: "de-1128"
+    target: "von"
+    ipa: "fɔn"
+    pos: "other"
+    tags: ["preposition", "dative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/von" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/vom" }
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Foto von der Familie.", ipa: "das ɪst aɪn ˈfoːto fɔn deːɐ̯ faˈmiːliə", bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "ein", base: "ein" }, { word: "Foto", ref: "de-1668" }, { word: "von", base: "von" }, { word: "der", base: "der" }, { word: "Familie", ref: "de-1510" }] }
+      - { target: "Wir kommen von der Arbeit.", ipa: "viːɐ̯ ˈkɔmən fɔn deːɐ̯ ˈaʁbaɪt", bases: [{ word: "Wir", ref: "de-1443" }, { word: "kommen", ref: "de-1725" }, { word: "von", base: "von" }, { word: "der", base: "der" }, { word: "Arbeit", ref: "de-2140" }] }
+  - id: "de-1129"
+    target: "zu"
+    ipa: "tsuː"
+    pos: "other"
+    tags: ["preposition", "dative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/zu" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/zum" }
+    bases: "self"
+    examples:
+      - { target: "Ich gehe zum Bahnhof.", ipa: "ɪç ˈɡeːə tsʊm ˈbaːnhoːf", bases: [{ word: "Ich", ref: "de-0003" }, { word: "gehe", ref: "de-1724" }, { word: "zum", base: "zu" }, { word: "Bahnhof", ref: "de-2500" }] }
+      - { target: "Ich gehe zur Arbeit.", ipa: "ɪç ˈɡeːə tsʊʁ ˈaʁbaɪt", bases: [{ word: "Ich", ref: "de-0003" }, { word: "gehe", ref: "de-1724" }, { word: "zur", base: "zu" }, { word: "Arbeit", ref: "de-2140" }] }
+  - id: "de-1130"
+    target: "aus"
+    ipa: "aʊs"
+    pos: "other"
+    tags: ["preposition", "dative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/aus" }
+    bases: "self"
+    examples:
+      - { target: "Ich komme aus der Stadt.", ipa: "ɪç ˈkɔmə aʊs deːɐ̯ ʃtat", bases: [{ word: "Ich", ref: "de-0003" }, { word: "komme", ref: "de-1725" }, { word: "aus", base: "aus" }, { word: "der", base: "der" }, { word: "Stadt", ref: "de-1656" }] }
+      - { target: "Er kommt aus dem Dorf.", ipa: "eːɐ̯ kɔmt aʊs deːm dɔʁf", bases: [{ word: "Er", ref: "de-1440" }, { word: "kommt", ref: "de-1725" }, { word: "aus", base: "aus" }, { word: "dem", base: "der" }, { word: "Dorf", ref: "de-1674" }] }
+  - id: "de-1131"
+    target: "seit"
+    ipa: "zaɪt"
+    pos: "other"
+    tags: ["preposition", "dative"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/seit" }
+    bases: "self"
+    examples:
+      - { target: "Er ist seit dem Geburtstag krank.", ipa: "eːɐ̯ ɪst zaɪt deːm ɡəˈbuːɐ̯tstaːk kʁaŋk", bases: [{ word: "Er", ref: "de-1440" }, { word: "ist", ref: "de-0580" }, { word: "seit", base: "seit" }, { word: "dem", base: "der" }, { word: "Geburtstag", ref: "de-1658" }, { word: "krank", ref: "de-1949" }] }
+      - { target: "Ich warte seit dem Frühstück.", ipa: "ɪç ˈvaʁtə zaɪt deːm ˈfʁyːstʏk", bases: [{ word: "Ich", ref: "de-0003" }, { word: "warte", ref: "de-1748" }, { word: "seit", base: "seit" }, { word: "dem", base: "der" }, { word: "Frühstück", ref: "de-2423" }] }

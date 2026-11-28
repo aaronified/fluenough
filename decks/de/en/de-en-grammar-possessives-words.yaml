@@ -1,0 +1,105 @@
+schema: 1
+id: "de-en-grammar-possessives-words"
+kind: "layer"
+core: "de-grammar-possessives-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Possessives"
+license: "CC-BY-SA-4.0"
+description: "The possessive words my, your, his, her, our, your and polite your, as word cards with their own examples. Not yet checked by a German speaker: please report any mistake."
+cards:
+  "de-0940":
+    native: "my"
+    notes:
+      "n1": "Mein is my. It goes before a noun and has the endings of ein: mein Vater, meine Mutter, mein Kind, meine Kinder, and meinen before a masculine object. Wiktionary's declension table of mein gives all forms."
+    examples:
+      "Das ist mein Vater.":
+        native: "That is my father."
+        bases:
+          "Das": "that; the (neuter)"
+          "mein": "my"
+      "Das ist meine Mutter.":
+        native: "That is my mother."
+        bases:
+          "Das": "that; the (neuter)"
+          "meine": "my"
+  "de-0941":
+    native: "your (one person you know)"
+    notes:
+      "n1": "Dein is your, said to one person you call du: dein Bruder, deine Schwester, dein Handy. It has the endings of ein. Wiktionary's declension table of dein gives all forms; its dictionary line for the archaic genitive of du is another word."
+    examples:
+      "Wie heißt dein Bruder?":
+        native: "What is your brother called?"
+        bases:
+          "dein": "your (one person you know)"
+      "Das ist dein Handy.":
+        native: "That is your mobile phone."
+        bases:
+          "Das": "that; the (neuter)"
+          "dein": "your (one person you know)"
+  "de-0942":
+    native: "his; its"
+    notes:
+      "n1": "Sein is his or its before a noun: sein Vater is his father, seine Mutter his mother. It is spelled like the verb sein, to be, but it stands before a noun and takes the endings of ein."
+      "n2": "It belongs to the possessor er or es. Wiktionary's declension table of sein gives the forms: sein, seine, sein, seine."
+    examples:
+      "Sein Vater ist alt.":
+        native: "His father is old."
+        bases:
+          "Sein": "his; its"
+      "Seine Mutter ist jung.":
+        native: "His mother is young."
+        bases:
+          "Seine": "his; its"
+  "de-0943":
+    native: "her; their"
+    notes:
+      "n1": "Ihr as a possessive is her, or their: ihr Bruder is her brother or their brother, ihre Familie her family. It belongs to the possessor sie, she or they. The pronoun ihr, you in the plural, is spelled the same. The possessive Ihr with a capital I means your, said to a person you call Sie. Wiktionary's declension table gives the forms."
+    examples:
+      "Ihr Bruder wohnt hier.":
+        native: "Her brother lives here."
+        bases:
+          "Ihr": "her; their"
+      "Ihre Familie ist groß.":
+        native: "Her family is big."
+        bases:
+          "Ihre": "her; their"
+  "de-0944":
+    native: "our"
+    notes:
+      "n1": "Unser is our: unser Kind, unsere Familie, and unseren before a masculine object. The e of unsere and unseren stays; the short forms unsre and unsren are also written, as Wiktionary's declension table shows."
+    examples:
+      "Unser Hund schläft.":
+        native: "Our dog is sleeping."
+        bases:
+          "Unser": "our"
+      "Unsere Kinder sind hier.":
+        native: "Our children are here."
+        bases:
+          "Unsere": "our"
+  "de-0945":
+    native: "your (more than one person you know)"
+    notes:
+      "n1": "Euer is your, said to several people you call ihr: euer Vater, eure Mutter, euren before a masculine object. The e before the r drops when an ending follows: eure, not euere in everyday writing, though Wiktionary also lists euere."
+    examples:
+      "Euer Vater kocht.":
+        native: "Your father is cooking."
+        bases:
+          "Euer": "your (more than one person you know)"
+      "Eure Kinder sind hier.":
+        native: "Your children are here."
+        bases:
+          "Eure": "your (more than one person you know)"
+  "de-0946":
+    native: "your (polite)"
+    notes:
+      "n1": "Ihr with a capital I is your when you call the person Sie: Ihr Bruder, Ihre Familie. It is written with a capital in every form, as Wiktionary's table of the possessive determiners shows."
+    examples:
+      "Wie heißt Ihr Bruder?":
+        native: "What is your brother called?"
+        bases:
+          "Ihr": "your (polite)"
+      "Ist das Ihre Familie?":
+        native: "Is that your family?"
+        bases:
+          "das": "that; the (neuter)"
+          "Ihre": "your (polite)"

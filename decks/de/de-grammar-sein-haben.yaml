@@ -1,0 +1,44 @@
+schema: 1
+id: "de-grammar-sein-haben"
+part: "core"
+kind: "grammar"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["ich", "du", "er-sie-es", "wir", "ihr", "sie"]
+  entries:
+    - lemma: "sein"
+      key: "sein"
+      ipa: "zaɪn"
+      forms:
+        "ich": "ich bin"
+        "du": "du bist"
+        "er-sie-es": "er ist"
+        "wir": "wir sind"
+        "ihr": "ihr seid"
+        "sie": "sie sind"
+      ipas:
+        "ich": "ɪç bɪn"
+        "du": "duː bɪst"
+        "er-sie-es": "eːɐ̯ ɪst"
+        "wir": "viːɐ̯ zɪnt"
+        "ihr": "iːɐ̯ zaɪt"
+        "sie": "ziː zɪnt"
+    - lemma: "haben"
+      key: "haben"
+      ipa: "ˈhaːbən"
+      forms:
+        "ich": "ich habe"
+        "du": "du hast"
+        "er-sie-es": "er hat"
+        "wir": "wir haben"
+        "ihr": "ihr habt"
+        "sie": "sie haben"
+      ipas:
+        "ich": "ɪç ˈhaːbə"
+        "du": "duː hast"
+        "er-sie-es": "eːɐ̯ hat"
+        "wir": "viːɐ̯ ˈhaːbən"
+        "ihr": "iːɐ̯ haːpt"
+        "sie": "ziː ˈhaːbən"

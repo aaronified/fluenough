@@ -1,0 +1,26 @@
+schema: 1
+id: "de-en-grammar-possessives"
+kind: "layer"
+core: "de-grammar-possessives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Possessives"
+license: "CC-BY-SA-4.0"
+description: "The possessives mein, dein, sein, ihr, unser, euer and Ihr in the nominative of each gender and the plural, and in the masculine accusative, each with a noun. Not yet checked by a German speaker: please report any mistake."
+pattern:
+  name: "The possessive and its endings"
+  slot_name: "form"
+  slots:
+    "m-nom": "masculine, as the subject (Vater)"
+    "f-nom": "feminine, as the subject (Mutter)"
+    "n-nom": "neuter, as the subject (Kind)"
+    "pl-nom": "plural, as the subject (Kinder)"
+    "m-acc": "masculine, as the object (Vater)"
+  entries:
+    "mein": "my"
+    "dein": "your (to one person you call du)"
+    "sein": "his; its"
+    "ihr": "her; their"
+    "unser": "our"
+    "euer": "your (to several people you call ihr)"
+    "ihr-formal": "your (polite, with a capital I)"
+  notes: "A possessive says who something belongs to, and it goes before the noun. It takes the same endings as ein: nothing for a masculine or neuter noun in the nominative (mein Vater, mein Kind), -e for a feminine noun and for every plural (meine Mutter, meine Kinder), and -en for a masculine noun in the accusative (Ich kenne meinen Vater). The feminine, neuter and plural accusative are the same as the nominative. The ending follows the noun owned, not the owner: his mother is seine Mutter and his father is sein Vater. The possessive is chosen by the owner: mein (my, ich), dein (your, du), sein (his or its, er and es), ihr (her, sie), unser (our, wir), euer (your, ihr, several people), ihr (their, sie) and Ihr (your, Sie, with a capital I). Euer drops its e before an ending: eure, euren. Unser keeps it in unsere and unseren, and Wiktionary also lists the short forms unsre and unsren. Sein is spelled like the verb sein, and ihr like the pronoun ihr, you in the plural; the capital Ihr shows the polite your in the middle of a sentence. Wiktionary's declension table of each possessive gives its forms. Sources: en.wiktionary's declension tables of mein, dein, sein, ihr, unser and euer."
