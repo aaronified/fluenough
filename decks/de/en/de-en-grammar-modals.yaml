@@ -1,0 +1,26 @@
+schema: 1
+id: "de-en-grammar-modals"
+kind: "layer"
+core: "de-grammar-modals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The modal verbs"
+license: "CC-BY-SA-4.0"
+description: "The present tense of the modal verbs können, müssen, wollen, möchten, dürfen and sollen for six persons. Not yet checked by a German speaker: please report any mistake."
+pattern:
+  name: "The present of the modal verbs"
+  slot_name: "person"
+  slots:
+    "ich": "I (ich)"
+    "du": "you, one person you know (du)"
+    "er-sie-es": "he, she, it (er, sie, es)"
+    "wir": "we (wir)"
+    "ihr": "you, more than one person (ihr)"
+    "sie": "they (sie); you, formal (Sie)"
+  entries:
+    "koennen": "can; to be able to"
+    "muessen": "must; to have to"
+    "wollen": "to want to"
+    "moechten": "would like to (a form of mögen)"
+    "duerfen": "may; to be allowed to (ü becomes a in the singular)"
+    "sollen": "should; to be supposed to"
+  notes: "The modal verbs können, müssen, wollen, möchten, dürfen and sollen say can, must, want, would like, may and should. In the present, ich and er, sie, es have the same form and no ending: ich kann, er kann. Können, müssen and dürfen change their vowel in the singular (können, ich kann; müssen, ich muss; dürfen, ich darf), and wollen has ich will. The wir and sie (they) forms are the infinitive, and the polite Sie takes the sie form. A modal verb is the conjugated verb, so it stands in second place, and the verb it goes with is an infinitive at the very end of the sentence: Ich kann hier warten; Wir müssen arbeiten. Wikipedia's page on German word order says a main clause with an auxiliary verb reserves the final position for the infinitive. In a question the modal comes first and the infinitive is still last: Darf ich hier sitzen? Möchten is the subjunctive II form of mögen and is taught here as a verb of its own: ich möchte, du möchtest, er möchte, wir möchten, ihr möchtet, sie möchten, as Wiktionary's conjugation table of mögen gives them. Sources: en.wiktionary's conjugation tables of können, müssen, wollen, dürfen, sollen and mögen, and the Wikipedia page German word order."

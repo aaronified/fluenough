@@ -1,0 +1,95 @@
+schema: 1
+id: "de-en-grammar-modals-words"
+kind: "layer"
+core: "de-grammar-modals-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The modal verbs"
+license: "CC-BY-SA-4.0"
+description: "The six modal verbs können, müssen, wollen, möchten, dürfen and sollen, as word cards with their own examples. Not yet checked by a German speaker: please report any mistake."
+cards:
+  "de-1000":
+    native: "can; to be able to"
+    notes:
+      "n1": "Können is can or to be able to: ich kann, du kannst, er kann, wir können, ihr könnt, sie können. Wiktionary's conjugation table gives these present forms; ich and er have no ending."
+      "n2": "A modal verb takes the infinitive of another verb, which goes to the end: Ich kann gut kochen. Wiktionary gives können the sense to be able, to have the possibility of, as an auxiliary with an infinitive."
+    examples:
+      "Ich kann gut kochen.":
+        native: "I can cook well."
+        bases:
+          "kann": "can; to be able to"
+      "Du kannst hier bleiben.":
+        native: "You can stay here."
+        bases:
+          "kannst": "can; to be able to"
+  "de-1001":
+    native: "must; to have to"
+    notes:
+      "n1": "Müssen is must or to have to: ich muss, du musst, er muss, wir müssen, ihr müsst, sie müssen. Wiktionary's conjugation table gives these present forms."
+      "n2": "Müssen says what someone has to do, with an infinitive at the end: Ich muss arbeiten. Wiktionary gives to have to, must, to be obliged."
+    examples:
+      "Ich muss arbeiten.":
+        native: "I have to work."
+        bases:
+          "muss": "must; to have to"
+      "Wir müssen hier warten.":
+        native: "We have to wait here."
+        bases:
+          "müssen": "must; to have to"
+  "de-1002":
+    native: "to want to"
+    notes:
+      "n1": "Wollen is to want: ich will, du willst, er will, wir wollen, ihr wollt, sie wollen. Wiktionary's conjugation table gives these present forms. The ich and er form will is not the English word will; it says that someone wants something."
+      "n2": "Wollen with an infinitive at the end says what someone wants to do: Er will ein Handy kaufen. Wiktionary gives it as an auxiliary to want, to intend."
+    examples:
+      "Ich will Kaffee trinken.":
+        native: "I want to drink coffee."
+        bases:
+          "will": "to want to"
+      "Er will ein Handy kaufen.":
+        native: "He wants to buy a mobile phone."
+        bases:
+          "will": "to want to"
+          "ein": "a; an"
+  "de-1003":
+    native: "would like to"
+    notes:
+      "n1": "Möchten is would like to, the polite way to say what you want: ich möchte, du möchtest, er möchte, wir möchten, ihr möchtet, sie möchten. Wiktionary lists möchte as the subjunctive II of mögen, and gives mögen in this form the senses would like and to want to; the course teaches these forms as a verb of their own."
+      "n2": "Möchten works like the other modals: Ich möchte Wasser trinken. It can also stand alone with a thing wanted: Möchten Sie Kaffee? Wiktionary's mögen entry gives the sense would like, to want."
+    examples:
+      "Ich möchte Wasser trinken.":
+        native: "I would like to drink water."
+        bases:
+          "möchte": "would like to"
+      "Möchten Sie Tee?":
+        native: "Would you like tea?"
+        bases:
+          "Möchten": "would like to"
+  "de-1004":
+    native: "may; to be allowed to"
+    notes:
+      "n1": "Dürfen is may or to be allowed to: ich darf, du darfst, er darf, wir dürfen, ihr dürft, sie dürfen. Wiktionary's conjugation table gives these present forms. The vowel changes from ü to a in the singular."
+      "n2": "Dürfen asks and gives permission, with an infinitive at the end: Darf ich hier sitzen? Wiktionary gives to be allowed, to be permitted, may."
+    examples:
+      "Darf ich hier sitzen?":
+        native: "May I sit here?"
+        bases:
+          "Darf": "may; to be allowed to"
+      "Du darfst hier schlafen.":
+        native: "You may sleep here."
+        bases:
+          "darfst": "may; to be allowed to"
+  "de-1005":
+    native: "should; to be supposed to"
+    notes:
+      "n1": "Sollen is should or to be supposed to: ich soll, du sollst, er soll, wir sollen, ihr sollt, sie sollen. Wiktionary's conjugation table gives these present forms."
+      "n2": "Sollen says what someone is meant or told to do, with an infinitive at the end: Das Kind soll schlafen. Wiktionary gives should, to be obligated, to be asked."
+    examples:
+      "Ich soll warten.":
+        native: "I am supposed to wait."
+        bases:
+          "soll": "should; to be supposed to"
+      "Das Kind soll schlafen.":
+        native: "The child is supposed to sleep."
+        bases:
+          "Das": "that; the (neuter)"
+          "soll": "should; to be supposed to"

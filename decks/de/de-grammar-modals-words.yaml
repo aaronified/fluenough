@@ -1,0 +1,80 @@
+schema: 1
+id: "de-grammar-modals-words"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-1000"
+    target: "können"
+    ipa: "ˈkœnən"
+    pos: "verb"
+    tags: ["modal"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/können" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/können" }
+    bases: "self"
+    examples:
+      - { target: "Ich kann gut kochen.", ipa: "ɪç kan ɡuːt ˈkɔxən", bases: [{ word: "Ich", ref: "de-0003" }, { word: "kann", base: "können" }, { word: "gut", ref: "de-0006" }, { word: "kochen", ref: "de-1741" }] }
+      - { target: "Du kannst hier bleiben.", ipa: "duː kanst hiːɐ̯ ˈblaɪbən", bases: [{ word: "Du", ref: "de-0004" }, { word: "kannst", base: "können" }, { word: "hier", ref: "de-0009" }, { word: "bleiben", ref: "de-1757" }] }
+  - id: "de-1001"
+    target: "müssen"
+    ipa: "ˈmʏsən"
+    pos: "verb"
+    tags: ["modal"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/müssen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/müssen" }
+    bases: "self"
+    examples:
+      - { target: "Ich muss arbeiten.", ipa: "ɪç mʊs ˈaʁbaɪtən", bases: [{ word: "Ich", ref: "de-0003" }, { word: "muss", base: "müssen" }, { word: "arbeiten", ref: "de-1723" }] }
+      - { target: "Wir müssen hier warten.", ipa: "viːɐ̯ ˈmʏsən hiːɐ̯ ˈvaʁtən", bases: [{ word: "Wir", ref: "de-1443" }, { word: "müssen", base: "müssen" }, { word: "hier", ref: "de-0009" }, { word: "warten", ref: "de-1748" }] }
+  - id: "de-1002"
+    target: "wollen"
+    ipa: "ˈvɔlən"
+    pos: "verb"
+    tags: ["modal"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/wollen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/wollen" }
+    bases: "self"
+    examples:
+      - { target: "Ich will Kaffee trinken.", ipa: "ɪç vɪl kaˈfeː ˈtʁɪŋkən", bases: [{ word: "Ich", ref: "de-0003" }, { word: "will", base: "wollen" }, { word: "Kaffee", ref: "de-2360" }, { word: "trinken", ref: "de-1721" }] }
+      - { target: "Er will ein Handy kaufen.", ipa: "eːɐ̯ vɪl aɪn ˈhandy ˈkaʊfən", bases: [{ word: "Er", ref: "de-1440" }, { word: "will", base: "wollen" }, { word: "ein", base: "ein" }, { word: "Handy", ref: "de-1664" }, { word: "kaufen", ref: "de-1735" }] }
+  - id: "de-1003"
+    target: "möchten"
+    ipa: "ˈmœçtən"
+    pos: "verb"
+    tags: ["modal"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/mögen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/mögen" }
+    bases: "self"
+    examples:
+      - { target: "Ich möchte Wasser trinken.", ipa: "ɪç ˈmœçtə ˈvasɐ ˈtʁɪŋkən", bases: [{ word: "Ich", ref: "de-0003" }, { word: "möchte", base: "möchten" }, { word: "Wasser", ref: "de-0005" }, { word: "trinken", ref: "de-1721" }] }
+      - { target: "Möchten Sie Tee?", ipa: "ˈmœçtən ziː teː", bases: [{ word: "Möchten", base: "möchten" }, { word: "Sie", ref: "de-1372" }, { word: "Tee", ref: "de-2361" }] }
+  - id: "de-1004"
+    target: "dürfen"
+    ipa: "ˈdʏʁfən"
+    pos: "verb"
+    tags: ["modal"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/dürfen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/dürfen" }
+    bases: "self"
+    examples:
+      - { target: "Darf ich hier sitzen?", ipa: "daʁf ɪç hiːɐ̯ ˈzɪtsən", bases: [{ word: "Darf", base: "dürfen" }, { word: "ich", ref: "de-0003" }, { word: "hier", ref: "de-0009" }, { word: "sitzen", ref: "de-1745" }] }
+      - { target: "Du darfst hier schlafen.", ipa: "duː daʁfst hiːɐ̯ ˈʃlaːfən", bases: [{ word: "Du", ref: "de-0004" }, { word: "darfst", base: "dürfen" }, { word: "hier", ref: "de-0009" }, { word: "schlafen", ref: "de-1722" }] }
+  - id: "de-1005"
+    target: "sollen"
+    ipa: "ˈzɔlən"
+    pos: "verb"
+    tags: ["modal"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/sollen" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/sollen" }
+    bases: "self"
+    examples:
+      - { target: "Ich soll warten.", ipa: "ɪç zɔl ˈvaʁtən", bases: [{ word: "Ich", ref: "de-0003" }, { word: "soll", base: "sollen" }, { word: "warten", ref: "de-1748" }] }
+      - { target: "Das Kind soll schlafen.", ipa: "das kɪnt zɔl ˈʃlaːfən", bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "soll", base: "sollen" }, { word: "schlafen", ref: "de-1722" }] }
