@@ -1,0 +1,150 @@
+schema: 1
+id: "ru-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ru-1580"
+    target: "имя"
+    reading: "imya"
+    ipa: "ˈimʲə"
+    pos: "noun"
+    gender: "n"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это имя.", reading: "Eto imya.", ipa: "ˈɛtə ˈimʲə", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "имя", base: "имя", reading: "imya" }] }
+  - id: "ru-1581"
+    target: "фамилия"
+    reading: "familiya"
+    ipa: "fɐˈmʲilʲɪjə"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это фамилия.", reading: "Eto familiya.", ipa: "ˈɛtə fɐˈmʲilʲɪjə", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "фамилия", base: "фамилия", reading: "familiya" }] }
+  - id: "ru-1582"
+    target: "возраст"
+    reading: "vozrast"
+    ipa: "ˈvozrəst"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это возраст.", reading: "Eto vozrast.", ipa: "ˈɛtə ˈvozrəst", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "возраст", base: "возраст", reading: "vozrast" }] }
+  - id: "ru-1583"
+    target: "адрес"
+    reading: "adres"
+    ipa: "ˈadrʲɪs"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это адрес.", reading: "Eto adres.", ipa: "ˈɛtə ˈadrʲɪs", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "адрес", base: "адрес", reading: "adres" }] }
+  - id: "ru-1585"
+    target: "страна"
+    reading: "strana"
+    ipa: "strɐˈna"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это страна.", reading: "Eto strana.", ipa: "ˈɛtə strɐˈna", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "страна", base: "страна", reading: "strana" }] }
+  - id: "ru-1586"
+    target: "национальность"
+    reading: "natsionalnost'"
+    ipa: "nətsɨɐˈnalʲnəstʲ"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это национальность.", reading: "Eto natsionalnost'.", ipa: "ˈɛtə nətsɨɐˈnalʲnəstʲ", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "национальность", base: "национальность", reading: "natsionalnost'" }] }
+  - id: "ru-1587"
+    target: "профессия"
+    reading: "professiya"
+    ipa: "prɐˈfʲesʲːɪjə"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это профессия.", reading: "Eto professiya.", ipa: "ˈɛtə prɐˈfʲesʲːɪjə", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "профессия", base: "профессия", reading: "professiya" }] }
+  - id: "ru-1588"
+    target: "отчество"
+    reading: "otchestvo"
+    ipa: "ˈottɕɪstvə"
+    pos: "noun"
+    gender: "n"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это отчество.", reading: "Eto otchestvo.", ipa: "ˈɛtə ˈottɕɪstvə", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "отчество", base: "отчество", reading: "otchestvo" }] }
+  - id: "ru-1589"
+    target: "родной"
+    reading: "rodnoy"
+    ipa: "rɐˈdnoj"
+    pos: "adj"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1590"
+    target: "студент"
+    reading: "student"
+    ipa: "stʊˈdʲent"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это студент.", reading: "Eto student.", ipa: "ˈɛtə stʊˈdʲent", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "студент", base: "студент", reading: "student" }] }
+  - id: "ru-1591"
+    target: "житель"
+    reading: "zhitel'"
+    ipa: "ˈʐɨtʲɪlʲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это житель.", reading: "Eto zhitel'.", ipa: "ˈɛtə ˈʐɨtʲɪlʲ", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "житель", base: "житель", reading: "zhitel'" }] }
+  - id: "ru-1592"
+    target: "гражданин"
+    reading: "grazhdanin"
+    ipa: "ɡrəʐdɐˈnʲin"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это гражданин.", reading: "Eto grazhdanin.", ipa: "ˈɛtə ɡrəʐdɐˈnʲin", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "гражданин", base: "гражданин", reading: "grazhdanin" }] }
+  - id: "ru-1594"
+    target: "номер"
+    reading: "nomer"
+    ipa: "ˈnomʲɪr"
+    pos: "noun"
+    gender: "m"
+    tags: ["about-me"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это номер.", reading: "Eto nomer.", ipa: "ˈɛtə ˈnomʲɪr", bases: [{ word: "Это", base: "это", reading: "Eto" }, { word: "номер", base: "номер", reading: "nomer" }] }
