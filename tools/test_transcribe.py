@@ -1083,6 +1083,15 @@ class GermanTest(unittest.TestCase):
             ("Bus", "bʊs"), ("Foto", "ˈfoːto"), ("Hotel", "hoˈtɛl"),
             ("Kino", "ˈkiːnoː")))
 
+    def test_the_stress_mark_goes_before_a_whole_initial_cluster(self):
+        # Wiktionary: Kneipe ˈknaɪ̯pə, Knödel ˈknøːdl̩, Knoblauch
+        # ˈknoːˌblaʊ̯x, Pflaume ˈpflaʊ̯mə, Pfeffer ˈpfɛfɐ, Pflanze
+        # [ˈpflantsə], Psalm /psalm/.
+        self.check((("Kneipe", "ˈknaɪpə"), ("Knödel", "ˈknøːdəl"),
+                    ("Knoblauch", "ˈknoːblaʊx"), ("Pflaume", "ˈpflaʊmə"),
+                    ("Pfeffer", "ˈpfɛfɐ"), ("Pflanze", "ˈpflantsə"),
+                    ("Psalm", "psalm")))
+
     def test_a_respelled_word_with_its_plural(self):
         # Wiktionary: Fotos ˈfoːtos, Jobs dʒɔps, Familien faˈmiːliən.
         self.check((("Fotos", "ˈfoːtos"), ("Jobs", "dʒɔps"),
