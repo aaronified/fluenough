@@ -1,0 +1,329 @@
+schema: 1
+id: "it-grammar-articles-gender"
+part: "core"
+kind: "grammar"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["def-sg", "def-pl", "indef-sg"]
+  entries:
+    - lemma: "treno"
+      key: "treno"
+      ipa: "ˈtrɛno"
+      forms:
+        "def-sg": "il treno"
+        "def-pl": "i treni"
+        "indef-sg": "un treno"
+      ipas:
+        "def-sg": "il ˈtrɛno"
+        "def-pl": "i ˈtrɛni"
+        "indef-sg": "un ˈtrɛno"
+    - lemma: "prezzo"
+      key: "prezzo"
+      ipa: "ˈprɛttso"
+      forms:
+        "def-sg": "il prezzo"
+        "def-pl": "i prezzi"
+        "indef-sg": "un prezzo"
+      ipas:
+        "def-sg": "il ˈprɛttso"
+        "def-pl": "i ˈprɛttsi"
+        "indef-sg": "un ˈprɛttso"
+    - lemma: "scontrino"
+      key: "scontrino"
+      ipa: "skonˈtrino"
+      forms:
+        "def-sg": "lo scontrino"
+        "def-pl": "gli scontrini"
+        "indef-sg": "uno scontrino"
+      ipas:
+        "def-sg": "lo skonˈtrino"
+        "def-pl": "ʎi skonˈtrini"
+        "indef-sg": "ˈuno skonˈtrino"
+    - lemma: "scaffale"
+      key: "scaffale"
+      ipa: "skafˈfale"
+      forms:
+        "def-sg": "lo scaffale"
+        "def-pl": "gli scaffali"
+        "indef-sg": "uno scaffale"
+      ipas:
+        "def-sg": "lo skafˈfale"
+        "def-pl": "ʎi skafˈfali"
+        "indef-sg": "ˈuno skafˈfale"
+    - lemma: "stomaco"
+      key: "stomaco"
+      ipa: "ˈstɔmako"
+      forms:
+        "def-sg": "lo stomaco"
+        "def-pl": ["gli stomaci", "gli stomachi"]
+        "indef-sg": "uno stomaco"
+      ipas:
+        "def-sg": "lo ˈstɔmako"
+        "def-pl": ["ʎi ˈstɔmatʃi", "ʎi ˈstɔmaki"]
+        "indef-sg": "ˈuno ˈstɔmako"
+    - lemma: "zoo"
+      key: "zoo"
+      ipa: "ˈtsɔo"
+      forms:
+        "def-sg": "lo zoo"
+        "def-pl": "gli zoo"
+        "indef-sg": "uno zoo"
+      ipas:
+        "def-sg": "lo ˈtsɔo"
+        "def-pl": "ʎi ˈtsɔo"
+        "indef-sg": "ˈuno ˈtsɔo"
+    - lemma: "psicologo"
+      key: "psicologo"
+      ipa: "psiˈkɔloɡo"
+      forms:
+        "def-sg": "lo psicologo"
+        "def-pl": "gli psicologi"
+        "indef-sg": "uno psicologo"
+      ipas:
+        "def-sg": "lo psiˈkɔloɡo"
+        "def-pl": "ʎi psiˈkɔlodʒi"
+        "indef-sg": "ˈuno psiˈkɔloɡo"
+    - lemma: "studente"
+      key: "studente"
+      ipa: "stuˈdɛnte"
+      forms:
+        "def-sg": "lo studente"
+        "def-pl": "gli studenti"
+        "indef-sg": "uno studente"
+      ipas:
+        "def-sg": "lo stuˈdɛnte"
+        "def-pl": "ʎi stuˈdɛnti"
+        "indef-sg": "ˈuno stuˈdɛnte"
+    - lemma: "amico"
+      key: "amico"
+      ipa: "aˈmiko"
+      forms:
+        "def-sg": "l'amico"
+        "def-pl": "gli amici"
+        "indef-sg": "un amico"
+      ipas:
+        "def-sg": "laˈmiko"
+        "def-pl": "ʎi aˈmitʃi"
+        "indef-sg": "un aˈmiko"
+    - lemma: "albero"
+      key: "albero"
+      ipa: "alˈbero"
+      forms:
+        "def-sg": "l'albero"
+        "def-pl": "gli alberi"
+        "indef-sg": "un albero"
+      ipas:
+        "def-sg": "lalˈbero"
+        "def-pl": "ʎi alˈberi"
+        "indef-sg": "un alˈbero"
+    - lemma: "uomo"
+      key: "uomo"
+      ipa: "ˈwɔmo"
+      forms:
+        "def-sg": "l'uomo"
+        "def-pl": "gli uomini"
+        "indef-sg": "un uomo"
+      ipas:
+        "def-sg": "ˈlwɔmo"
+        "def-pl": "ʎi woˈmini"
+        "indef-sg": "un ˈwɔmo"
+    - lemma: "occhio"
+      key: "occhio"
+      ipa: "ˈɔkkjo"
+      forms:
+        "def-sg": "l'occhio"
+        "def-pl": "gli occhi"
+        "indef-sg": "un occhio"
+      ipas:
+        "def-sg": "ˈlɔkkjo"
+        "def-pl": "ʎi ˈɔkki"
+        "indef-sg": "un ˈɔkkjo"
+    - lemma: "autobus"
+      key: "autobus"
+      ipa: "awˈtobus"
+      forms:
+        "def-sg": "l'autobus"
+        "def-pl": "gli autobus"
+        "indef-sg": "un autobus"
+      ipas:
+        "def-sg": "lawˈtobus"
+        "def-pl": "ʎi awˈtobus"
+        "indef-sg": "un awˈtobus"
+    - lemma: "euro"
+      key: "euro"
+      ipa: "ˈɛwro"
+      forms:
+        "def-sg": "l'euro"
+        "def-pl": "gli euro"
+        "indef-sg": "un euro"
+      ipas:
+        "def-sg": "ˈlɛwro"
+        "def-pl": "ʎi ˈɛwro"
+        "indef-sg": "un ˈɛwro"
+    - lemma: "borsa"
+      key: "borsa"
+      ipa: "ˈborsa"
+      forms:
+        "def-sg": "la borsa"
+        "def-pl": "le borse"
+        "indef-sg": "una borsa"
+      ipas:
+        "def-sg": "la ˈborsa"
+        "def-pl": "le ˈborse"
+        "indef-sg": "ˈuna ˈborsa"
+    - lemma: "tazza"
+      key: "tazza"
+      ipa: "ˈtattsa"
+      forms:
+        "def-sg": "la tazza"
+        "def-pl": "le tazze"
+        "indef-sg": "una tazza"
+      ipas:
+        "def-sg": "la ˈtattsa"
+        "def-pl": "le ˈtattse"
+        "indef-sg": "ˈuna ˈtattsa"
+    - lemma: "bocca"
+      key: "bocca"
+      ipa: "ˈbokka"
+      forms:
+        "def-sg": "la bocca"
+        "def-pl": "le bocche"
+        "indef-sg": "una bocca"
+      ipas:
+        "def-sg": "la ˈbokka"
+        "def-pl": "le ˈbokke"
+        "indef-sg": "ˈuna ˈbokka"
+    - lemma: "bicicletta"
+      key: "bicicletta"
+      ipa: "bitʃiˈkletta"
+      forms:
+        "def-sg": "la bicicletta"
+        "def-pl": "le biciclette"
+        "indef-sg": "una bicicletta"
+      ipas:
+        "def-sg": "la bitʃiˈkletta"
+        "def-pl": "le bitʃiˈklette"
+        "indef-sg": "ˈuna bitʃiˈkletta"
+    - lemma: "studentessa"
+      key: "studentessa"
+      ipa: "studenˈtessa"
+      forms:
+        "def-sg": "la studentessa"
+        "def-pl": "le studentesse"
+        "indef-sg": "una studentessa"
+      ipas:
+        "def-sg": "la studenˈtessa"
+        "def-pl": "le studenˈtesse"
+        "indef-sg": "ˈuna studenˈtessa"
+    - lemma: "amica"
+      key: "amica"
+      ipa: "aˈmika"
+      forms:
+        "def-sg": "l'amica"
+        "def-pl": "le amiche"
+        "indef-sg": "un'amica"
+      ipas:
+        "def-sg": "laˈmika"
+        "def-pl": "le aˈmike"
+        "indef-sg": "unaˈmika"
+    - lemma: "idea"
+      key: "idea"
+      ipa: "iˈdɛa"
+      forms:
+        "def-sg": "l'idea"
+        "def-pl": "le idee"
+        "indef-sg": "un'idea"
+      ipas:
+        "def-sg": "liˈdɛa"
+        "def-pl": "le iˈdɛe"
+        "indef-sg": "uniˈdɛa"
+    - lemma: "unghia"
+      key: "unghia"
+      ipa: "ˈunɡja"
+      forms:
+        "def-sg": "l'unghia"
+        "def-pl": "le unghie"
+        "indef-sg": "un'unghia"
+      ipas:
+        "def-sg": "ˈlunɡja"
+        "def-pl": "le ˈunɡje"
+        "indef-sg": "uˈnunɡja"
+    - lemma: "mano"
+      key: "mano"
+      ipa: "ˈmano"
+      forms:
+        "def-sg": "la mano"
+        "def-pl": "le mani"
+        "indef-sg": "una mano"
+      ipas:
+        "def-sg": "la ˈmano"
+        "def-pl": "le ˈmani"
+        "indef-sg": "ˈuna ˈmano"
+    - lemma: "nave"
+      key: "nave"
+      ipa: "ˈnave"
+      forms:
+        "def-sg": "la nave"
+        "def-pl": "le navi"
+        "indef-sg": "una nave"
+      ipas:
+        "def-sg": "la ˈnave"
+        "def-pl": "le ˈnavi"
+        "indef-sg": "ˈuna ˈnave"
+    - lemma: "dente"
+      key: "dente"
+      ipa: "ˈdɛnte"
+      forms:
+        "def-sg": "il dente"
+        "def-pl": "i denti"
+        "indef-sg": "un dente"
+      ipas:
+        "def-sg": "il ˈdɛnte"
+        "def-pl": "i ˈdɛnti"
+        "indef-sg": "un ˈdɛnte"
+    - lemma: "pelle"
+      key: "pelle"
+      ipa: "ˈpɛlle"
+      forms:
+        "def-sg": "la pelle"
+        "def-pl": "le pelli"
+        "indef-sg": "una pelle"
+      ipas:
+        "def-sg": "la ˈpɛlle"
+        "def-pl": "le ˈpɛlli"
+        "indef-sg": "ˈuna ˈpɛlle"
+    - lemma: "quantità"
+      key: "quantita"
+      ipa: "kwantiˈta"
+      forms:
+        "def-sg": "la quantità"
+        "def-pl": "le quantità"
+        "indef-sg": "una quantità"
+      ipas:
+        "def-sg": "la kwantiˈta"
+        "def-pl": "le kwantiˈta"
+        "indef-sg": "ˈuna kwantiˈta"
+    - lemma: "dito"
+      key: "dito"
+      ipa: "ˈdito"
+      forms:
+        "def-sg": "il dito"
+        "def-pl": ["le dita", "i diti"]
+        "indef-sg": "un dito"
+      ipas:
+        "def-sg": "il ˈdito"
+        "def-pl": ["le ˈdita", "i ˈditi"]
+        "indef-sg": "un ˈdito"
+    - lemma: "braccio"
+      key: "braccio"
+      ipa: "ˈbrattʃo"
+      forms:
+        "def-sg": "il braccio"
+        "def-pl": ["le braccia", "i bracci"]
+        "indef-sg": "un braccio"
+      ipas:
+        "def-sg": "il ˈbrattʃo"
+        "def-pl": ["le ˈbrattʃa", "i ˈbrattʃi"]
+        "indef-sg": "un ˈbrattʃo"

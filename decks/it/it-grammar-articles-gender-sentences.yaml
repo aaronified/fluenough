@@ -1,0 +1,216 @@
+schema: 1
+id: "it-grammar-articles-gender-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "it-4000"
+    target: "Il treno è qui."
+    ipa: "il ˈtrɛno ɛ kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Il", base: "il" }, { word: "treno", ref: "it-2560" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4001"
+    target: "I treni sono qui."
+    ipa: "i ˈtrɛni ˈsono kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "I", base: "il" }, { word: "treni", ref: "it-2560" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4002"
+    target: "Lo scontrino è qui."
+    ipa: "lo skonˈtrino ɛ kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lo", base: "lo" }, { word: "scontrino", ref: "it-2353" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4003"
+    target: "Gli scontrini sono lì."
+    ipa: "ʎi skonˈtrini ˈsono li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Gli", base: "lo" }, { word: "scontrini", ref: "it-2353" }, { word: "sono", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
+  - id: "it-4004"
+    target: "Ho uno scontrino."
+    ipa: "ɔ ˈuno skonˈtrino"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Ho", ref: "it-0800" }, { word: "uno", base: "uno" }, { word: "scontrino", ref: "it-2353" }]
+  - id: "it-4005"
+    target: "Dov'è lo scaffale?"
+    ipa: "doˈvɛ lo skafˈfale"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Dov'è", ref: "it-1304" }, { word: "lo", base: "lo" }, { word: "scaffale", ref: "it-2362" }]
+  - id: "it-4006"
+    target: "L'amico è qui."
+    ipa: "laˈmiko ɛ kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "L'amico", ref: "it-0500" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4007"
+    target: "Gli amici sono qui."
+    ipa: "ʎi aˈmitʃi ˈsono kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Gli", base: "lo" }, { word: "amici", ref: "it-0500" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4008"
+    target: "Ho un amico."
+    ipa: "ɔ un aˈmiko"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Ho", ref: "it-0800" }, { word: "un", base: "un" }, { word: "amico", ref: "it-0500" }]
+  - id: "it-4009"
+    target: "La borsa è qui."
+    ipa: "la ˈborsa ɛ kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "La", base: "la" }, { word: "borsa", ref: "it-2355" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4010"
+    target: "Le borse sono lì."
+    ipa: "le ˈborse ˈsono li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Le", base: "la" }, { word: "borse", ref: "it-2355" }, { word: "sono", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
+  - id: "it-4011"
+    target: "Ho una borsa."
+    ipa: "ɔ ˈuna ˈborsa"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Ho", ref: "it-0800" }, { word: "una", base: "un" }, { word: "borsa", ref: "it-2355" }]
+  - id: "it-4012"
+    target: "L'amica è qui."
+    ipa: "laˈmika ɛ kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "L'amica", ref: "it-0501" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4013"
+    target: "Le amiche sono lì."
+    ipa: "le aˈmike ˈsono li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Le", base: "la" }, { word: "amiche", ref: "it-0501" }, { word: "sono", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
+  - id: "it-4014"
+    target: "Ho un'amica."
+    ipa: "ɔ unaˈmika"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Ho", ref: "it-0800" }, { word: "un'amica", ref: "it-0501" }]
+  - id: "it-4015"
+    target: "Ho un'idea."
+    ipa: "ɔ uniˈdɛa"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Ho", ref: "it-0800" }, { word: "un'idea", ref: "it-0504" }]
+  - id: "it-4016"
+    target: "Lo studente è lì."
+    ipa: "lo stuˈdɛnte ɛ li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lo", base: "lo" }, { word: "studente", ref: "it-0507" }, { word: "è", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
+  - id: "it-4017"
+    target: "Gli studenti sono qui."
+    ipa: "ʎi stuˈdɛnti ˈsono kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Gli", base: "lo" }, { word: "studenti", ref: "it-0507" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4018"
+    target: "La studentessa è lì."
+    ipa: "la studenˈtessa ɛ li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "La", base: "la" }, { word: "studentessa", ref: "it-0508" }, { word: "è", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
+  - id: "it-4019"
+    target: "Questo è uno zoo."
+    ipa: "ˈkwesto ɛ ˈuno ˈtsɔo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", ref: "it-0600" }, { word: "uno", base: "uno" }, { word: "zoo", ref: "it-0505" }]
+  - id: "it-4020"
+    target: "Lo psicologo è lì."
+    ipa: "lo psiˈkɔloɡo ɛ li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lo", base: "lo" }, { word: "psicologo", ref: "it-0506" }, { word: "è", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
+  - id: "it-4021"
+    target: "Gli uomini sono lì."
+    ipa: "ʎi woˈmini ˈsono li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Gli", base: "lo" }, { word: "uomini", ref: "it-0503" }, { word: "sono", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
+  - id: "it-4022"
+    target: "L'autobus è qui."
+    ipa: "lawˈtobus ɛ kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "L'autobus", ref: "it-2561" }, { word: "è", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4023"
+    target: "Gli autobus sono lì."
+    ipa: "ʎi awˈtobus ˈsono li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Gli", base: "lo" }, { word: "autobus", ref: "it-2561" }, { word: "sono", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
+  - id: "it-4024"
+    target: "Le mani sono qui."
+    ipa: "le ˈmani ˈsono kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Le", base: "la" }, { word: "mani", ref: "it-2640" }, { word: "sono", ref: "it-0600" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4025"
+    target: "Le dita sono lì."
+    ipa: "le ˈdita ˈsono li"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Le", base: "la" }, { word: "dita", ref: "it-2641" }, { word: "sono", ref: "it-0600" }, { word: "lì", ref: "it-1726" }]
