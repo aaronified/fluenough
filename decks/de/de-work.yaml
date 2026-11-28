@@ -1,0 +1,424 @@
+schema: 1
+id: "de-work"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2140"
+    target: "Arbeit"
+    ipa: "ˈaʁbaɪt"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Arbeiten" }]
+    examples:
+      - { target: "Das ist die Arbeit.", ipa: "das ɪst diː ˈaʁbaɪt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Arbeit", base: "Arbeit" }] }
+      - { target: "Ich habe eine Arbeit.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈaʁbaɪt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Arbeit", base: "Arbeit" }] }
+  - id: "de-2141"
+    target: "Job"
+    ipa: "joːp"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Jobs" }]
+    examples:
+      - { target: "Das ist der Job.", ipa: "das ɪst deːɐ̯ joːp", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Job", base: "Job" }] }
+      - { target: "Ich habe einen Job.", ipa: "ɪç ˈhaːbə ˈaɪnən joːp", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Job", base: "Job" }] }
+  - id: "de-2142"
+    target: "Beruf"
+    ipa: "bəˈʁuːf"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Berufe" }]
+    examples:
+      - { target: "Das ist der Beruf.", ipa: "das ɪst deːɐ̯ bəˈʁuːf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Beruf", base: "Beruf" }] }
+      - { target: "Ich habe einen Beruf.", ipa: "ɪç ˈhaːbə ˈaɪnən bəˈʁuːf", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Beruf", base: "Beruf" }] }
+  - id: "de-2143"
+    target: "Firma"
+    ipa: "ˈfɪʁma"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Firmen" }]
+    examples:
+      - { target: "Das ist die Firma.", ipa: "das ɪst diː ˈfɪʁma", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Firma", base: "Firma" }] }
+      - { target: "Wo ist die Firma?", ipa: "voː ɪst diː ˈfɪʁma", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Firma", base: "Firma" }] }
+  - id: "de-2144"
+    target: "Büro"
+    ipa: "ˈbyːʁo"
+    pos: "noun"
+    gender: "n"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Büros" }]
+    examples:
+      - { target: "Das ist ein Büro.", ipa: "das ɪst aɪn ˈbyːʁo", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Büro", base: "Büro" }] }
+      - { target: "Wo ist das Büro?", ipa: "voː ɪst das ˈbyːʁo", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Büro", base: "Büro" }] }
+  - id: "de-2145"
+    target: "Chef"
+    ipa: "çeːf"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Chefs" }]
+    examples:
+      - { target: "Das ist der Chef.", ipa: "das ɪst deːɐ̯ çeːf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Chef", base: "Chef" }] }
+      - { target: "Ich habe einen Chef.", ipa: "ɪç ˈhaːbə ˈaɪnən çeːf", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Chef", base: "Chef" }] }
+  - id: "de-2146"
+    target: "Chefin"
+    ipa: "ˈçeːfɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Chefinnen" }]
+    examples:
+      - { target: "Das ist die Chefin.", ipa: "das ɪst diː ˈçeːfɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Chefin", base: "Chefin" }] }
+      - { target: "Ich habe eine Chefin.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈçeːfɪn", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Chefin", base: "Chefin" }] }
+  - id: "de-2147"
+    target: "Kunde"
+    ipa: "ˈkʊndə"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kunden" }]
+    examples:
+      - { target: "Das ist der Kunde.", ipa: "das ɪst deːɐ̯ ˈkʊndə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kunde", base: "Kunde" }] }
+      - { target: "Wo ist der Kunde?", ipa: "voː ɪst deːɐ̯ ˈkʊndə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kunde", base: "Kunde" }] }
+  - id: "de-2148"
+    target: "Kundin"
+    ipa: "ˈkʊndɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kundinnen" }]
+    examples:
+      - { target: "Das ist die Kundin.", ipa: "das ɪst diː ˈkʊndɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kundin", base: "Kundin" }] }
+      - { target: "Wo ist die Kundin?", ipa: "voː ɪst diː ˈkʊndɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kundin", base: "Kundin" }] }
+  - id: "de-2149"
+    target: "Termin"
+    ipa: "ˈtɛʁmɪn"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Termine" }]
+    examples:
+      - { target: "Das ist der Termin.", ipa: "das ɪst deːɐ̯ ˈtɛʁmɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Termin", base: "Termin" }] }
+      - { target: "Ich habe einen Termin.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈtɛʁmɪn", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Termin", base: "Termin" }] }
+  - id: "de-2150"
+    target: "Gehalt"
+    ipa: "ɡəˈhalt"
+    pos: "noun"
+    gender: "n"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Gehälter" }]
+    examples:
+      - { target: "Das ist mein Gehalt.", ipa: "das ɪst maɪn ɡəˈhalt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "mein", base: "mein" }, { word: "Gehalt", base: "Gehalt" }] }
+      - { target: "Wo ist das Gehalt?", ipa: "voː ɪst das ɡəˈhalt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Gehalt", base: "Gehalt" }] }
+  - id: "de-2151"
+    target: "Urlaub"
+    ipa: "ˈuːɐ̯laʊp"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Urlaube" }]
+    examples:
+      - { target: "Das ist der Urlaub.", ipa: "das ɪst deːɐ̯ ˈuːɐ̯laʊp", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Urlaub", base: "Urlaub" }] }
+      - { target: "Das ist mein Urlaub.", ipa: "das ɪst maɪn ˈuːɐ̯laʊp", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "mein", base: "mein" }, { word: "Urlaub", base: "Urlaub" }] }
+  - id: "de-2152"
+    target: "Pause"
+    ipa: "ˈpaʊzə"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Pausen" }]
+    examples:
+      - { target: "Das ist die Pause.", ipa: "das ɪst diː ˈpaʊzə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Pause", base: "Pause" }] }
+      - { target: "Ich habe eine Pause.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈpaʊzə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Pause", base: "Pause" }] }
+  - id: "de-2153"
+    target: "Lehrer"
+    ipa: "ˈleːʁɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Lehrer.", ipa: "das ɪst deːɐ̯ ˈleːʁɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Lehrer", base: "Lehrer" }] }
+      - { target: "Wo ist der Lehrer?", ipa: "voː ɪst deːɐ̯ ˈleːʁɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Lehrer", base: "Lehrer" }] }
+  - id: "de-2154"
+    target: "Lehrerin"
+    ipa: "ˈleːʁəʁɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Lehrerinnen" }]
+    examples:
+      - { target: "Das ist die Lehrerin.", ipa: "das ɪst diː ˈleːʁəʁɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Lehrerin", base: "Lehrerin" }] }
+      - { target: "Wo ist die Lehrerin?", ipa: "voː ɪst diː ˈleːʁəʁɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Lehrerin", base: "Lehrerin" }] }
+  - id: "de-2155"
+    target: "Student"
+    ipa: "ʃtuˈdɛnt"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Studenten" }]
+    examples:
+      - { target: "Das ist der Student.", ipa: "das ɪst deːɐ̯ ʃtuˈdɛnt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Student", base: "Student" }] }
+      - { target: "Wo ist der Student?", ipa: "voː ɪst deːɐ̯ ʃtuˈdɛnt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Student", base: "Student" }] }
+  - id: "de-2156"
+    target: "Studentin"
+    ipa: "ʃtuˈdɛntɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Studentinnen" }]
+    examples:
+      - { target: "Das ist die Studentin.", ipa: "das ɪst diː ʃtuˈdɛntɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Studentin", base: "Studentin" }] }
+      - { target: "Wo ist die Studentin?", ipa: "voː ɪst diː ʃtuˈdɛntɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Studentin", base: "Studentin" }] }
+  - id: "de-2157"
+    target: "Projekt"
+    ipa: "ˈpʁoːjɛkt"
+    pos: "noun"
+    gender: "n"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Projekte" }]
+    examples:
+      - { target: "Das ist ein Projekt.", ipa: "das ɪst aɪn ˈpʁoːjɛkt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Projekt", base: "Projekt" }] }
+      - { target: "Ich habe ein Projekt.", ipa: "ɪç ˈhaːbə aɪn ˈpʁoːjɛkt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Projekt", base: "Projekt" }] }
+  - id: "de-2158"
+    target: "Problem"
+    ipa: "ˈpʁoːbləm"
+    pos: "noun"
+    gender: "n"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Probleme" }]
+    examples:
+      - { target: "Das ist ein Problem.", ipa: "das ɪst aɪn ˈpʁoːbləm", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Problem", base: "Problem" }] }
+      - { target: "Ich habe ein Problem.", ipa: "ɪç ˈhaːbə aɪn ˈpʁoːbləm", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Problem", base: "Problem" }] }
+  - id: "de-2159"
+    target: "Verkäufer"
+    ipa: "fɛɐ̯ˈkɔɪfɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Verkäufer.", ipa: "das ɪst deːɐ̯ fɛɐ̯ˈkɔɪfɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Verkäufer", base: "Verkäufer" }] }
+      - { target: "Wo ist der Verkäufer?", ipa: "voː ɪst deːɐ̯ fɛɐ̯ˈkɔɪfɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Verkäufer", base: "Verkäufer" }] }
+  - id: "de-2160"
+    target: "Verkäuferin"
+    ipa: "fɛɐ̯ˈkɔɪfəʁɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Verkäuferinnen" }]
+    examples:
+      - { target: "Das ist die Verkäuferin.", ipa: "das ɪst diː fɛɐ̯ˈkɔɪfəʁɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Verkäuferin", base: "Verkäuferin" }] }
+      - { target: "Wo ist die Verkäuferin?", ipa: "voː ɪst diː fɛɐ̯ˈkɔɪfəʁɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Verkäuferin", base: "Verkäuferin" }] }
+  - id: "de-2161"
+    target: "Ingenieur"
+    ipa: "ɪŋəniːˈuːɐ̯"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Ingenieure" }]
+    examples:
+      - { target: "Das ist der Ingenieur.", ipa: "das ɪst deːɐ̯ ɪŋəniːˈuːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Ingenieur", base: "Ingenieur" }] }
+      - { target: "Wo ist der Ingenieur?", ipa: "voː ɪst deːɐ̯ ɪŋəniːˈuːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Ingenieur", base: "Ingenieur" }] }
+  - id: "de-2162"
+    target: "Mitarbeiter"
+    ipa: "ˈmiːtaʁbaɪtɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Mitarbeiter.", ipa: "das ɪst deːɐ̯ ˈmiːtaʁbaɪtɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Mitarbeiter", base: "Mitarbeiter" }] }
+      - { target: "Wo ist der Mitarbeiter?", ipa: "voː ɪst deːɐ̯ ˈmiːtaʁbaɪtɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Mitarbeiter", base: "Mitarbeiter" }] }
+  - id: "de-2163"
+    target: "Mitarbeiterin"
+    ipa: "ˈmiːtaʁbaɪtəʁɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Mitarbeiterinnen" }]
+    examples:
+      - { target: "Das ist die Mitarbeiterin.", ipa: "das ɪst diː ˈmiːtaʁbaɪtəʁɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Mitarbeiterin", base: "Mitarbeiterin" }] }
+      - { target: "Wo ist die Mitarbeiterin?", ipa: "voː ɪst diː ˈmiːtaʁbaɪtəʁɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Mitarbeiterin", base: "Mitarbeiterin" }] }
+  - id: "de-2164"
+    target: "Sekretärin"
+    ipa: "ˈzeːkʁətɛʁɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Sekretärinnen" }]
+    examples:
+      - { target: "Das ist die Sekretärin.", ipa: "das ɪst diː ˈzeːkʁətɛʁɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Sekretärin", base: "Sekretärin" }] }
+      - { target: "Wo ist die Sekretärin?", ipa: "voː ɪst diː ˈzeːkʁətɛʁɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Sekretärin", base: "Sekretärin" }] }
+  - id: "de-2165"
+    target: "Unternehmen"
+    ipa: "ˈʊntɐneːmən"
+    pos: "noun"
+    gender: "n"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Unternehmen.", ipa: "das ɪst aɪn ˈʊntɐneːmən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Unternehmen", base: "Unternehmen" }] }
+      - { target: "Wo ist das Unternehmen?", ipa: "voː ɪst das ˈʊntɐneːmən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Unternehmen", base: "Unternehmen" }] }
+  - id: "de-2166"
+    target: "Computer"
+    ipa: "ˈkɔmpʊtɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Computer.", ipa: "das ɪst deːɐ̯ ˈkɔmpʊtɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Computer", base: "Computer" }] }
+      - { target: "Ich habe einen Computer.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈkɔmpʊtɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Computer", base: "Computer" }] }
+  - id: "de-2167"
+    target: "Telefon"
+    ipa: "ˈteːləfɔn"
+    pos: "noun"
+    gender: "n"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Telefone" }]
+    examples:
+      - { target: "Das ist ein Telefon.", ipa: "das ɪst aɪn ˈteːləfɔn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Telefon", base: "Telefon" }] }
+      - { target: "Ich habe ein Telefon.", ipa: "ɪç ˈhaːbə aɪn ˈteːləfɔn", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Telefon", base: "Telefon" }] }
+  - id: "de-2168"
+    target: "Fabrik"
+    ipa: "ˈfaːbʁɪk"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Fabriken" }]
+    examples:
+      - { target: "Das ist die Fabrik.", ipa: "das ɪst diː ˈfaːbʁɪk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Fabrik", base: "Fabrik" }] }
+      - { target: "Wo ist die Fabrik?", ipa: "voː ɪst diː ˈfaːbʁɪk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Fabrik", base: "Fabrik" }] }
+  - id: "de-2169"
+    target: "Arzt"
+    ipa: "aːɐ̯tst"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Ärzte" }]
+    examples:
+      - { target: "Das ist der Arzt.", ipa: "das ɪst deːɐ̯ aːɐ̯tst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Arzt", base: "Arzt" }] }
+      - { target: "Wo ist der Arzt?", ipa: "voː ɪst deːɐ̯ aːɐ̯tst", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Arzt", base: "Arzt" }] }
+  - id: "de-2170"
+    target: "Ärztin"
+    ipa: "ˈɛʁtstɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Ärztinnen" }]
+    examples:
+      - { target: "Das ist die Ärztin.", ipa: "das ɪst diː ˈɛʁtstɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Ärztin", base: "Ärztin" }] }
+      - { target: "Wo ist die Ärztin?", ipa: "voː ɪst diː ˈɛʁtstɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Ärztin", base: "Ärztin" }] }
+  - id: "de-2171"
+    target: "Koch"
+    ipa: "kɔx"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Köche" }]
+    examples:
+      - { target: "Das ist der Koch.", ipa: "das ɪst deːɐ̯ kɔx", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Koch", base: "Koch" }] }
+      - { target: "Wo ist der Koch?", ipa: "voː ɪst deːɐ̯ kɔx", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Koch", base: "Koch" }] }
+  - id: "de-2172"
+    target: "Köchin"
+    ipa: "ˈkœçɪn"
+    pos: "noun"
+    gender: "f"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Köchinnen" }]
+    examples:
+      - { target: "Das ist die Köchin.", ipa: "das ɪst diː ˈkœçɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Köchin", base: "Köchin" }] }
+      - { target: "Wo ist die Köchin?", ipa: "voː ɪst diː ˈkœçɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Köchin", base: "Köchin" }] }
+  - id: "de-2173"
+    target: "Polizist"
+    ipa: "ˈpoːlitsɪst"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Polizisten" }]
+    examples:
+      - { target: "Das ist der Polizist.", ipa: "das ɪst deːɐ̯ ˈpoːlitsɪst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Polizist", base: "Polizist" }] }
+      - { target: "Wo ist der Polizist?", ipa: "voː ɪst deːɐ̯ ˈpoːlitsɪst", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Polizist", base: "Polizist" }] }
+  - id: "de-2174"
+    target: "Fahrer"
+    ipa: "ˈfaːʁɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["work"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Fahrer.", ipa: "das ɪst deːɐ̯ ˈfaːʁɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Fahrer", base: "Fahrer" }] }
+      - { target: "Wo ist der Fahrer?", ipa: "voː ɪst deːɐ̯ ˈfaːʁɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Fahrer", base: "Fahrer" }] }
