@@ -99,7 +99,8 @@ units:
   # 2. The first word units. The sounds English lacks first: ü and ö, the
   # two sounds of ch, the long and short vowels, and the final -b, -d and -g
   # said as p, t and k.
-  - planned: { id: "de-sound-differences", grammar: "sound-differences", words: 12 }
+  - decks: ["de-sound-differences", "*"]
+    words: 19
     listening_passages:
       - { id: "sounds-alike", text: { "en": "Pairs said one after the other: schon and schön, Mutter and Mütter, Stadt and Staat" } }
     reading_passages:
@@ -182,48 +183,66 @@ units:
   # 5. Rules as forms, practised on the words known: the articles and
   # gender, the plural, then the verb forms and the word order, then the
   # first two cases.
-  - planned: { id: "de-grammar-articles-gender", grammar: ["articles-gender", "nominative"] }
+  - decks: ["de-grammar-articles-gender", "de-grammar-articles-gender-sentences"]
+    grammar: ["articles-gender"]
+    words: 0
     listening_passages:
       - { id: "der-die-das", text: { "en": "Naming things around a kitchen with der, die and das" } }
     reading_passages:
       - { id: "labelled-picture", text: { "en": "A labelled picture of a room, each word with its article" } }
-  - planned: { id: "de-grammar-plural", grammar: "plural" }
+  - decks: ["de-grammar-plural", "de-grammar-plural-sentences"]
+    grammar: ["plural"]
+    words: 0
     listening_passages:
       - { id: "one-and-many", text: { "en": "Counting things in a shop: one apple, two apples, one book, three books" } }
     reading_passages:
       - { id: "stock-list", text: { "en": "A shop's stock list with how many of each" } }
-  - planned: { id: "de-grammar-sein-haben", grammar: ["sein", "haben"] }
+  - decks: ["de-grammar-sein-haben", "de-grammar-sein-haben-words", "de-grammar-sein-haben-sentences"]
+    grammar: ["sein-haben"]
+    words: 2
     listening_passages:
       - { id: "who-and-what", text: { "en": "Saying who someone is, how they are and what they have" } }
     reading_passages:
       - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, what they have" } }
   # de-pronouns-sentences and de-verbs-sentences join this unit.
-  - planned: { id: "de-grammar-present", grammar: "present-regular" }
+  - decks: ["de-grammar-present", "de-grammar-present-sentences"]
+    grammar: ["present"]
+    words: 0
     listening_passages:
       - { id: "what-we-do", text: { "en": "Friends say where they live, what they learn and what they play" } }
     reading_passages:
       - { id: "lunch-notes", text: { "en": "Short notes about who works, who cooks and who lives where" } }
-  - planned: { id: "de-grammar-present-irregular", grammar: "present-stem-change" }
+  - decks: ["de-grammar-present-irregular", "de-grammar-present-irregular-sentences"]
+    grammar: ["present-irregular"]
+    words: 0
     listening_passages:
       - { id: "what-do-you-eat", text: { "en": "Saying what you eat, read, see and take: isst, liest, sieht, nimmt" } }
     reading_passages:
       - { id: "menu-choices", text: { "en": "Short notes of who eats and drinks what at a café" } }
-  - planned: { id: "de-grammar-word-order", grammar: ["verb-second", "verb-first-questions"] }
+  - decks: ["de-grammar-word-order", "de-grammar-word-order-sentences"]
+    grammar: ["word-order"]
+    words: 0
     listening_passages:
       - { id: "today-i-work", text: { "en": "Saying what happens today, tomorrow and at the weekend: the verb comes second" } }
     reading_passages:
       - { id: "diary-week", text: { "en": "A week in a diary, each line starting with a day" } }
-  - planned: { id: "de-grammar-negation", grammar: ["nicht", "kein"] }
+  - decks: ["de-grammar-negation", "de-grammar-negation-words", "de-grammar-negation-sentences"]
+    grammar: ["negation"]
+    words: 2
     listening_passages:
       - { id: "no-thanks", text: { "en": "Saying no: no time, no money, not today, not hungry" } }
     reading_passages:
       - { id: "not-included", text: { "en": "A holiday flat's list of what is and is not included" } }
-  - planned: { id: "de-grammar-accusative", grammar: "accusative" }
+  - decks: ["de-grammar-accusative", "de-grammar-accusative-sentences"]
+    grammar: ["accusative"]
+    words: 0
     listening_passages:
       - { id: "i-need-a", text: { "en": "Saying what you need, want and buy: einen Tisch, eine Lampe, ein Bett" } }
     reading_passages:
       - { id: "moving-list", text: { "en": "A list of what to buy for a new flat" } }
-  - planned: { id: "de-grammar-possessives", grammar: "possessives" }
+  - decks: ["de-grammar-possessives", "de-grammar-possessives-words", "de-grammar-possessives-sentences"]
+    grammar: ["possessives"]
+    words: 7
     listening_passages:
       - { id: "whose-is-it", text: { "en": "Sorting out whose bag, whose coat and whose keys" } }
     reading_passages:
@@ -261,7 +280,9 @@ units:
       - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - planned: { id: "de-grammar-modals", grammar: "modal-verbs" }
+  - decks: ["de-grammar-modals", "de-grammar-modals-words", "de-grammar-modals-sentences"]
+    grammar: ["modals"]
+    words: 6
     listening_passages:
       - { id: "can-must-may", text: { "en": "Saying what you can, must, want and may do today" } }
     reading_passages:
@@ -278,12 +299,16 @@ units:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
     reading_passages:
       - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
-  - planned: { id: "de-grammar-dative", grammar: "dative" }
+  - decks: ["de-grammar-dative", "de-grammar-dative-sentences"]
+    grammar: ["dative"]
+    words: 0
     listening_passages:
       - { id: "giving-presents", text: { "en": "Saying who gives what to whom at a birthday" } }
     reading_passages:
       - { id: "gift-list", text: { "en": "A list of presents and who they are for" } }
-  - planned: { id: "de-grammar-prepositions", grammar: ["prepositions-accusative", "prepositions-dative"] }
+  - decks: ["de-grammar-prepositions", "de-grammar-prepositions-words", "de-grammar-prepositions-sentences"]
+    grammar: ["prepositions"]
+    words: 12
     listening_passages:
       - { id: "with-the-bus", text: { "en": "Saying how and with whom you travel: mit dem Bus, für meine Mutter" } }
     reading_passages:
@@ -306,7 +331,9 @@ units:
       - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
     reading_passages:
       - { id: "flat-advert", text: { "en": "A short advert for a flat to rent" } }
-  - planned: { id: "de-grammar-conjunctions", grammar: "coordinating-conjunctions" }
+  - decks: ["de-grammar-conjunctions", "de-grammar-conjunctions-words", "de-grammar-conjunctions-sentences"]
+    grammar: ["conjunctions"]
+    words: 4
     listening_passages:
       - { id: "and-but-or", text: { "en": "Joining two things you do: und, aber, oder, denn" } }
     reading_passages:
@@ -317,7 +344,9 @@ units:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time, with halb and Viertel" } }
     reading_passages:
       - { id: "opening-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "de-grammar-separable-verbs", grammar: "separable-verbs" }
+  - decks: ["de-grammar-separable-verbs", "de-grammar-separable-verbs-words", "de-grammar-separable-verbs-sentences"]
+    grammar: ["separable-verbs"]
+    words: 14
     listening_passages:
       - { id: "getting-up", text: { "en": "Saying when you get up, go out and come back: the prefix goes to the end" } }
     reading_passages:
