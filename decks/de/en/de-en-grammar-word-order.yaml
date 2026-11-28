@@ -1,0 +1,28 @@
+schema: 1
+id: "de-en-grammar-word-order"
+kind: "layer"
+core: "de-grammar-word-order"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Word order: verb second and questions"
+license: "CC-BY-SA-4.0"
+description: "Ten verbs, each in a statement with the subject first, a statement with something else first, a yes or no question and a question with a question word, to show the verb in second place or first place. Not yet checked by a German speaker: please report any mistake."
+pattern:
+  name: "Verb position"
+  slot_name: "sentence"
+  slots:
+    "statement": "a statement, the subject first"
+    "other-first": "a statement, something else first (the verb is still second)"
+    "yes-no": "a yes or no question (the verb first)"
+    "question-word": "a question with a question word (the verb second)"
+  entries:
+    "wohnen": "to live (somewhere)"
+    "arbeiten": "to work"
+    "kommen": "to come"
+    "essen": "to eat"
+    "lesen": "to read"
+    "kaufen": "to buy"
+    "spielen": "to play"
+    "lernen": "to learn"
+    "haben": "to have"
+    "sein": "to be"
+  notes: "In a German statement the verb that is conjugated stands in second position: one part of the sentence comes first, then the verb, then the rest. The first part is often the subject (Ich wohne hier), but it can be something else, and then the subject moves behind the verb: Hier wohne ich, not Hier ich wohne. The verb stays second. Wikipedia's page on German word order calls this V2 order: the verb is preceded by one and only one part, and unlike in English that part need not be the subject. A question that has a yes or no answer puts the verb first: Wohnst du hier? Wikipedia says the verb is the first word of such a question, with nothing before it. A question with a question word puts the question word first and the verb second, as in English: Wo wohnst du? Wer is the subject in Wer wohnt hier?, so the verb follows it directly. In every one of these sentences the verb has the ending for its subject (taught in the units on the present tense), and the verb never moves further back. Sources: the Wikipedia pages German word order and German grammar; the sentences are written from the patterns on those pages."

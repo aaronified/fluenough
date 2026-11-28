@@ -1,0 +1,120 @@
+schema: 1
+id: "de-grammar-word-order-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4300"
+    target: "Der Hund schläft hier."
+    ipa: "deːɐ̯ hʊnt ʃlɛft hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Hund", ref: "de-0410" }, { word: "schläft", ref: "de-1722" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4301"
+    target: "Hier schläft der Hund."
+    ipa: "hiːɐ̯ ʃlɛft deːɐ̯ hʊnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Hier", ref: "de-0009" }, { word: "schläft", ref: "de-1722" }, { word: "der", base: "der" }, { word: "Hund", ref: "de-0410" }]
+  - id: "de-4302"
+    target: "Schläft der Hund hier?"
+    ipa: "ʃlɛft deːɐ̯ hʊnt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Schläft", ref: "de-1722" }, { word: "der", base: "der" }, { word: "Hund", ref: "de-0410" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4303"
+    target: "Wo schläft der Hund?"
+    ipa: "voː ʃlɛft deːɐ̯ hʊnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wo", ref: "de-1302" }, { word: "schläft", ref: "de-1722" }, { word: "der", base: "der" }, { word: "Hund", ref: "de-0410" }]
+  - id: "de-4304"
+    target: "Die Mutter liest ein Buch."
+    ipa: "diː ˈmʊtɐ liːst aɪn buːx"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Mutter", ref: "de-1511" }, { word: "liest", ref: "de-1730" }, { word: "ein", base: "ein" }, { word: "Buch", ref: "de-0404" }]
+  - id: "de-4305"
+    target: "Oft liest die Mutter ein Buch."
+    ipa: "ɔft liːst diː ˈmʊtɐ aɪn buːx"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Oft", ref: "de-1797" }, { word: "liest", ref: "de-1730" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }, { word: "ein", base: "ein" }, { word: "Buch", ref: "de-0404" }]
+  - id: "de-4306"
+    target: "Liest die Mutter ein Buch?"
+    ipa: "liːst diː ˈmʊtɐ aɪn buːx"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Liest", ref: "de-1730" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }, { word: "ein", base: "ein" }, { word: "Buch", ref: "de-0404" }]
+  - id: "de-4307"
+    target: "Was liest die Mutter?"
+    ipa: "vas liːst diː ˈmʊtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Was", ref: "de-1301" }, { word: "liest", ref: "de-1730" }, { word: "die", base: "die" }, { word: "Mutter", ref: "de-1511" }]
+  - id: "de-4308"
+    target: "Der Vater kocht oft."
+    ipa: "deːɐ̯ ˈfaːtɐ kɔxt ɔft"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Vater", ref: "de-1512" }, { word: "kocht", ref: "de-1741" }, { word: "oft", ref: "de-1797" }]
+  - id: "de-4309"
+    target: "Oft kocht der Vater."
+    ipa: "ɔft kɔxt deːɐ̯ ˈfaːtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Oft", ref: "de-1797" }, { word: "kocht", ref: "de-1741" }, { word: "der", base: "der" }, { word: "Vater", ref: "de-1512" }]
+  - id: "de-4310"
+    target: "Kocht der Vater?"
+    ipa: "kɔxt deːɐ̯ ˈfaːtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Kocht", ref: "de-1741" }, { word: "der", base: "der" }, { word: "Vater", ref: "de-1512" }]
+  - id: "de-4311"
+    target: "Wer wohnt hier?"
+    ipa: "veːɐ̯ voːnt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wer", ref: "de-1300" }, { word: "wohnt", ref: "de-1651" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4312"
+    target: "Wer hat ein Handy?"
+    ipa: "veːɐ̯ hat aɪn ˈhandy"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wer", ref: "de-1300" }, { word: "hat", ref: "de-0581" }, { word: "ein", base: "ein" }, { word: "Handy", ref: "de-1664" }]
+  - id: "de-4313"
+    target: "Warum arbeitest du hier?"
+    ipa: "ˈvaːʁʊm ˈaʁbaɪtəst duː hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Warum", ref: "de-1305" }, { word: "arbeitest", ref: "de-1723" }, { word: "du", ref: "de-0004" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4314"
+    target: "Bald fahren wir."
+    ipa: "balt ˈfaːʁən viːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Bald", ref: "de-1805" }, { word: "fahren", ref: "de-1726" }, { word: "wir", ref: "de-1443" }]
+  - id: "de-4315"
+    target: "Wann kommst du?"
+    ipa: "van kɔmst duː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wann", ref: "de-1303" }, { word: "kommst", ref: "de-1725" }, { word: "du", ref: "de-0004" }]
