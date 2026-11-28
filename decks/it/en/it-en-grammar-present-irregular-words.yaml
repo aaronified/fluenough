@@ -1,0 +1,26 @@
+schema: 1
+id: "it-en-grammar-present-irregular-words"
+kind: "layer"
+core: "it-grammar-present-irregular-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The verb avere"
+license: "CC-BY-SA-4.0"
+description: "The verb avere, to have, as a word card with its own examples. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-0800":
+    native: "to have"
+    notes:
+      "n1": "Avere is irregular in the present: ho, hai, ha, abbiamo, avete, hanno. The h of ho, hai, ha and hanno is not said."
+      "n2": "Wiktionary gives avere as to have, and as the helper of other verbs: (io) ho fatto un errore, I have made a mistake."
+    examples:
+      "Ho una macchina.":
+        native: "I have a car."
+        bases:
+          "Ho": "to have (I have)"
+          "una": "a"
+          "macchina": "car"
+      "Ho un libro.":
+        native: "I have a book."
+        bases:
+          "Ho": "to have (I have)"
+          "un": "a"

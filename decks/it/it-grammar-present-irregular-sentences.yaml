@@ -1,0 +1,272 @@
+schema: 1
+id: "it-grammar-present-irregular-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "it-4300"
+    target: "Ho una macchina."
+    ipa: "ɔ ˈuna makˈkina"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/avere" }
+    bases: [{ word: "Ho", ref: "it-0800" }, { word: "una", base: "un" }, { word: "macchina", base: "macchina" }]
+  - id: "it-4301"
+    target: "Tu hai un libro."
+    ipa: "tu aj un ˈlibro"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Tu", ref: "it-0004" }, { word: "hai", ref: "it-0800" }, { word: "un", base: "un" }, { word: "libro", ref: "it-2770" }]
+  - id: "it-4302"
+    target: "Lei ha una casa."
+    ipa: "lej a ˈuna ˈkaza"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lei", ref: "it-1371" }, { word: "ha", ref: "it-0800" }, { word: "una", base: "un" }, { word: "casa", ref: "it-2840" }]
+  - id: "it-4303"
+    target: "Noi abbiamo il treno."
+    ipa: "noj abˈbjamo il ˈtreno"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Noi", ref: "it-1372" }, { word: "abbiamo", ref: "it-0800" }, { word: "il", base: "il" }, { word: "treno", ref: "it-2560" }]
+  - id: "it-4304"
+    target: "Loro hanno una casa."
+    ipa: "ˈloro ˈanno ˈuna ˈkaza"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "hanno", ref: "it-0800" }, { word: "una", base: "un" }, { word: "casa", ref: "it-2840" }]
+  - id: "it-4305"
+    target: "Io vado a casa."
+    ipa: "jo ˈvado a ˈkaza"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "vado", ref: "it-1651" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }]
+  - id: "it-4306"
+    target: "Andiamo a casa?"
+    ipa: "anˈdjamo a ˈkaza"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/a" }
+    bases: [{ word: "Andiamo", ref: "it-1651" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }]
+  - id: "it-4307"
+    target: "Loro vanno a scuola."
+    ipa: "ˈloro ˈvanno a ˈskwɔla"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "vanno", ref: "it-1651" }, { word: "a", ref: "it-0417" }, { word: "scuola", ref: "it-2704" }]
+  - id: "it-4308"
+    target: "Due e tre fanno cinque."
+    ipa: "ˈdue e tre ˈfanno ˈtʃinkwe"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/fare" }
+    bases: [{ word: "Due", ref: "it-1511" }, { word: "e", ref: "it-0005" }, { word: "tre", ref: "it-1512" }, { word: "fanno", ref: "it-1650" }, { word: "cinque", ref: "it-1514" }]
+  - id: "it-4309"
+    target: "Io faccio il caffè."
+    ipa: "jo ˈfattʃo il kafˈfɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "faccio", ref: "it-1650" }, { word: "il", base: "il" }, { word: "caffè", ref: "it-2321" }]
+  - id: "it-4310"
+    target: "Voi fate bene."
+    ipa: "voj ˈfate ˈbene"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Voi", ref: "it-1373" }, { word: "fate", ref: "it-1650" }, { word: "bene", ref: "it-1736" }]
+  - id: "it-4311"
+    target: "Io vengo qui."
+    ipa: "jo ˈvɛnɡo kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "vengo", ref: "it-1652" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4312"
+    target: "Tu vieni a casa?"
+    ipa: "tu ˈvjɛni a ˈkaza"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Tu", ref: "it-0004" }, { word: "vieni", ref: "it-1652" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }]
+  - id: "it-4313"
+    target: "Loro vengono presto."
+    ipa: "ˈloro ˈvɛnɡono ˈpresto"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "vengono", ref: "it-1652" }, { word: "presto", ref: "it-1740" }]
+  - id: "it-4314"
+    target: "Dico sì."
+    ipa: "ˈdiko si"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Dico", ref: "it-1653" }, { word: "sì", ref: "it-0001" }]
+  - id: "it-4315"
+    target: "Voi dite no?"
+    ipa: "voj ˈdite no"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Voi", ref: "it-1373" }, { word: "dite", ref: "it-1653" }, { word: "no", ref: "it-0002" }]
+  - id: "it-4316"
+    target: "Io do l'acqua."
+    ipa: "jo dɔ ˈlakkwa"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Io", ref: "it-0003" }, { word: "do", ref: "it-1654" }, { word: "l'acqua", ref: "it-0010" }]
+  - id: "it-4317"
+    target: "Lei dà il pane."
+    ipa: "lej da il ˈpane"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Lei", ref: "it-1371" }, { word: "dà", ref: "it-1654" }, { word: "il", base: "il" }, { word: "pane", ref: "it-2280" }]
+  - id: "it-4318"
+    target: "Posso aprire la porta?"
+    ipa: "ˈpɔsso aˈprire la ˈporta"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Posso", ref: "it-1671" }, { word: "aprire", ref: "it-1663" }, { word: "la", base: "la" }, { word: "porta", ref: "it-2851" }]
+  - id: "it-4319"
+    target: "Lei lo può fare."
+    ipa: "lej lo pwɔ ˈfare"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/potere" }
+    bases: [{ word: "Lei", ref: "it-1371" }, { word: "lo", base: "lo" }, { word: "può", ref: "it-1671" }, { word: "fare", ref: "it-1650" }]
+  - id: "it-4320"
+    target: "Possiamo mangiare qui."
+    ipa: "posˈsjamo manˈdʒare kwi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Possiamo", ref: "it-1671" }, { word: "mangiare", ref: "it-1660" }, { word: "qui", ref: "it-1725" }]
+  - id: "it-4321"
+    target: "Voglio un caffè."
+    ipa: "ˈvɔʎʎo un kafˈfɛ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Voglio", ref: "it-1670" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }]
+  - id: "it-4322"
+    target: "Vuoi l'acqua?"
+    ipa: "vwɔj ˈlakkwa"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Vuoi", ref: "it-1670" }, { word: "l'acqua", ref: "it-0010" }]
+  - id: "it-4323"
+    target: "Loro vogliono dormire."
+    ipa: "ˈloro ˈvɔʎʎono dorˈmire"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "vogliono", ref: "it-1670" }, { word: "dormire", ref: "it-1679" }]
+  - id: "it-4324"
+    target: "Devo dormire."
+    ipa: "ˈdɛvo dorˈmire"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Devo", ref: "it-1672" }, { word: "dormire", ref: "it-1679" }]
+  - id: "it-4325"
+    target: "Devi aprire la porta."
+    ipa: "ˈdɛvi aˈprire la ˈporta"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Devi", ref: "it-1672" }, { word: "aprire", ref: "it-1663" }, { word: "la", base: "la" }, { word: "porta", ref: "it-2851" }]
+  - id: "it-4326"
+    target: "Dobbiamo pagare."
+    ipa: "dobˈbjamo paˈɡare"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Dobbiamo", ref: "it-1672" }, { word: "pagare", ref: "it-1676" }]
+  - id: "it-4327"
+    target: "So nuotare."
+    ipa: "sɔ nwoˈtare"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/sapere" }
+    bases: [{ word: "So", ref: "it-1655" }, { word: "nuotare", ref: "it-2085" }]
+  - id: "it-4328"
+    target: "Sai parlare italiano?"
+    ipa: "saj parˈlare itaˈljano"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Sai", ref: "it-1655" }, { word: "parlare", ref: "it-1658" }, { word: "italiano", ref: "it-1585" }]
+  - id: "it-4329"
+    target: "Sappiamo leggere."
+    ipa: "sapˈpjamo ledˈdʒere"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Sappiamo", ref: "it-1655" }, { word: "leggere", ref: "it-1680" }]
+  - id: "it-4330"
+    target: "Esco presto."
+    ipa: "ˈɛsko ˈpresto"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Esco", ref: "it-2079" }, { word: "presto", ref: "it-1740" }]
+  - id: "it-4331"
+    target: "Noi usciamo ora."
+    ipa: "noj uʃˈʃamo ˈora"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Noi", ref: "it-1372" }, { word: "usciamo", ref: "it-2079" }, { word: "ora", ref: "it-1934" }]
+  - id: "it-4332"
+    target: "Loro escono dopo."
+    ipa: "ˈloro ˈɛskono ˈdopo"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "Loro", ref: "it-1374" }, { word: "escono", ref: "it-2079" }, { word: "dopo", ref: "it-1749" }]

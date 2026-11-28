@@ -1,0 +1,31 @@
+schema: 1
+id: "it-en-grammar-present-irregular"
+kind: "layer"
+core: "it-grammar-present-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present tense: irregular verbs"
+license: "CC-BY-SA-4.0"
+description: "The present tense of eleven everyday verbs that do not follow the regular endings: avere, andare, fare, venire, dire, dare, potere, volere, dovere, sapere and uscire. Not yet checked by an Italian speaker: please report any mistake."
+pattern:
+  name: "The present of irregular verbs"
+  slot_name: "person"
+  slots:
+    "io": "I (io)"
+    "tu": "you, one person (tu)"
+    "lui-lei": "he, she, it (lui, lei)"
+    "noi": "we (noi)"
+    "voi": "you, more than one (voi)"
+    "loro": "they (loro)"
+  entries:
+    "avere": "to have (ho, hai, ha, hanno are written with an h)"
+    "andare": "to go (the stem changes: vado, vai, va, vanno)"
+    "fare": "to do (faccio, fai, fa, facciamo, fate, fanno)"
+    "venire": "to come (vengo and vengono change the stem)"
+    "dire": "to say (dico and dicono change the stem)"
+    "dare": "to give (do, dai, dà, danno)"
+    "potere": "can (followed by an infinitive)"
+    "volere": "to want (followed by an infinitive)"
+    "dovere": "must (followed by an infinitive)"
+    "sapere": "to know (a fact) (so, sai, sa, sappiamo, sapete, sanno)"
+    "uscire": "to go out (esco, esci, esce, escono; usciamo, uscite)"
+  notes: "These eleven verbs do not follow the endings of the regular verbs, at least in some persons. Avere writes an h in ho, hai, ha and hanno, which is silent; abbiamo and avete have no h. Andare, fare, venire, dire and uscire change their stem in io and loro (vado, vanno; faccio, fanno; vengo, vengono; dico, dicono; esco, escono) and go back to the stem of the infinitive in noi and voi (andiamo, andate; facciamo, fate; veniamo, venite; diciamo, dite; usciamo, uscite). Dare is do, dai, dà, diamo, date, danno: the third person singular dà is written with an accent. Sapere is so, sai, sa, sappiamo, sapete, sanno. Potere, volere and dovere are followed by an infinitive, as in Wiktionary's Lei lo può fare, she can do it: posso, puoi, può, possiamo, potete, possono; voglio, vuoi, vuole, vogliamo, volete, vogliono; devo, devi, deve, dobbiamo, dovete, devono. Sapere with an infinitive is to know how to: So nuotare, I can swim. Sources: the conjugation tables and entries of each verb on Wiktionary."

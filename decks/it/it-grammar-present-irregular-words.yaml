@@ -1,0 +1,20 @@
+schema: 1
+id: "it-grammar-present-irregular-words"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "it-0800"
+    target: "avere"
+    ipa: "aˈvere"
+    pos: "verb"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/avere" }
+      - { id: "n2", kind: "usage", source: "https://en.wiktionary.org/wiki/avere" }
+    bases: "self"
+    examples:
+      - { target: "Ho una macchina.", ipa: "ɔ ˈuna makˈkina", source: "https://en.wiktionary.org/wiki/avere", bases: [{ word: "Ho", base: "avere" }, { word: "una", base: "un" }, { word: "macchina", base: "macchina" }] }
+      - { target: "Ho un libro.", ipa: "ɔ un ˈlibro", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "un" }, { word: "libro", ref: "it-2770" }] }
