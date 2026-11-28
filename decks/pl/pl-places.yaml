@@ -1,0 +1,516 @@
+schema: 1
+id: "pl-places"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "pl-2700"
+    target: "szkoła"
+    ipa: "ˈʂkɔwa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest szkoła.", ipa: "tɔ jɛst ˈʂkɔwa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "szkoła", base: "szkoła" }] }
+      - { target: "Gdzie jest szkoła?", ipa: "ɡdʑɛ jɛst ˈʂkɔwa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "szkoła", base: "szkoła" }] }
+  - id: "pl-2701"
+    target: "uniwersytet"
+    ipa: "uɲivɛrˈsɨtɛt"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest uniwersytet.", ipa: "tɔ jɛst uɲivɛrˈsɨtɛt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "uniwersytet", base: "uniwersytet" }] }
+      - { target: "Gdzie jest uniwersytet?", ipa: "ɡdʑɛ jɛst uɲivɛrˈsɨtɛt", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "uniwersytet", base: "uniwersytet" }] }
+  - id: "pl-2702"
+    target: "szpital"
+    ipa: "ˈʂpʲital"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest szpital.", ipa: "tɔ jɛst ˈʂpʲital", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "szpital", base: "szpital" }] }
+      - { target: "Gdzie jest szpital?", ipa: "ɡdʑɛ jɛst ˈʂpʲital", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "szpital", base: "szpital" }] }
+  - id: "pl-2703"
+    target: "apteka"
+    ipa: "apˈtɛka"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest apteka.", ipa: "tɔ jɛst apˈtɛka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "apteka", base: "apteka" }] }
+      - { target: "Gdzie jest apteka?", ipa: "ɡdʑɛ jɛst apˈtɛka", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "apteka", base: "apteka" }] }
+  - id: "pl-2704"
+    target: "bank"
+    ipa: "baŋk"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest bank.", ipa: "tɔ jɛst baŋk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "bank", base: "bank" }] }
+      - { target: "Gdzie jest bank?", ipa: "ɡdʑɛ jɛst baŋk", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "bank", base: "bank" }] }
+  - id: "pl-2705"
+    target: "poczta"
+    ipa: "ˈpɔtʂta"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest poczta.", ipa: "tɔ jɛst ˈpɔtʂta", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "poczta", base: "poczta" }] }
+      - { target: "Gdzie jest poczta?", ipa: "ɡdʑɛ jɛst ˈpɔtʂta", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "poczta", base: "poczta" }] }
+  - id: "pl-2706"
+    target: "park"
+    ipa: "park"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest park.", ipa: "tɔ jɛst park", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "park", base: "park" }] }
+      - { target: "Gdzie jest park?", ipa: "ɡdʑɛ jɛst park", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "park", base: "park" }] }
+  - id: "pl-2707"
+    target: "las"
+    ipa: "las"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest las.", ipa: "tɔ jɛst las", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "las", base: "las" }] }
+      - { target: "Gdzie jest las?", ipa: "ɡdʑɛ jɛst las", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "las", base: "las" }] }
+  - id: "pl-2708"
+    target: "morze"
+    ipa: "ˈmɔʐɛ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest morze.", ipa: "tɔ jɛst ˈmɔʐɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "morze", base: "morze" }] }
+      - { target: "Gdzie jest morze?", ipa: "ɡdʑɛ jɛst ˈmɔʐɛ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "morze", base: "morze" }] }
+  - id: "pl-2709"
+    target: "rzeka"
+    ipa: "ˈʐɛka"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest rzeka.", ipa: "tɔ jɛst ˈʐɛka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "rzeka", base: "rzeka" }] }
+      - { target: "Gdzie jest rzeka?", ipa: "ɡdʑɛ jɛst ˈʐɛka", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "rzeka", base: "rzeka" }] }
+  - id: "pl-2710"
+    target: "jezioro"
+    ipa: "jɛˈʑɔrɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest jezioro.", ipa: "tɔ jɛst jɛˈʑɔrɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "jezioro", base: "jezioro" }] }
+      - { target: "Gdzie jest jezioro?", ipa: "ɡdʑɛ jɛst jɛˈʑɔrɔ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "jezioro", base: "jezioro" }] }
+  - id: "pl-2711"
+    target: "plaża"
+    ipa: "ˈplaʐa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest plaża.", ipa: "tɔ jɛst ˈplaʐa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "plaża", base: "plaża" }] }
+      - { target: "Gdzie jest plaża?", ipa: "ɡdʑɛ jɛst ˈplaʐa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "plaża", base: "plaża" }] }
+  - id: "pl-2712"
+    target: "kościół"
+    ipa: "ˈkɔɕtɕuw"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kościół.", ipa: "tɔ jɛst ˈkɔɕtɕuw", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kościół", base: "kościół" }] }
+      - { target: "Gdzie jest kościół?", ipa: "ɡdʑɛ jɛst ˈkɔɕtɕuw", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "kościół", base: "kościół" }] }
+  - id: "pl-2713"
+    target: "muzeum"
+    ipa: "muˈzɛum"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest muzeum.", ipa: "tɔ jɛst muˈzɛum", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "muzeum", base: "muzeum" }] }
+      - { target: "Gdzie jest muzeum?", ipa: "ɡdʑɛ jɛst muˈzɛum", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "muzeum", base: "muzeum" }] }
+  - id: "pl-2714"
+    target: "kino"
+    ipa: "ˈkʲinɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kino.", ipa: "tɔ jɛst ˈkʲinɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kino", base: "kino" }] }
+      - { target: "Gdzie jest kino?", ipa: "ɡdʑɛ jɛst ˈkʲinɔ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "kino", base: "kino" }] }
+  - id: "pl-2715"
+    target: "teatr"
+    ipa: "ˈtɛatr"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest teatr.", ipa: "tɔ jɛst ˈtɛatr", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "teatr", base: "teatr" }] }
+      - { target: "Gdzie jest teatr?", ipa: "ɡdʑɛ jɛst ˈtɛatr", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "teatr", base: "teatr" }] }
+  - id: "pl-2716"
+    target: "biblioteka"
+    ipa: "bʲibljɔˈtɛka"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest biblioteka.", ipa: "tɔ jɛst bʲibljɔˈtɛka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "biblioteka", base: "biblioteka" }] }
+      - { target: "Gdzie jest biblioteka?", ipa: "ɡdʑɛ jɛst bʲibljɔˈtɛka", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "biblioteka", base: "biblioteka" }] }
+  - id: "pl-2717"
+    target: "hotel"
+    ipa: "ˈxɔtɛl"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest hotel.", ipa: "tɔ jɛst ˈxɔtɛl", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "hotel", base: "hotel" }] }
+      - { target: "Gdzie jest hotel?", ipa: "ɡdʑɛ jɛst ˈxɔtɛl", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "hotel", base: "hotel" }] }
+  - id: "pl-2718"
+    target: "stacja"
+    ipa: "ˈstatsja"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest stacja.", ipa: "tɔ jɛst ˈstatsja", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "stacja", base: "stacja" }] }
+      - { target: "Gdzie jest stacja?", ipa: "ɡdʑɛ jɛst ˈstatsja", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "stacja", base: "stacja" }] }
+  - id: "pl-2719"
+    target: "plac"
+    ipa: "plats"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest plac.", ipa: "tɔ jɛst plats", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "plac", base: "plac" }] }
+      - { target: "Gdzie jest plac?", ipa: "ɡdʑɛ jɛst plats", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "plac", base: "plac" }] }
+  - id: "pl-2720"
+    target: "kuchnia"
+    ipa: "ˈkuxɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kuchnia.", ipa: "tɔ jɛst ˈkuxɲa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kuchnia", base: "kuchnia" }] }
+      - { target: "Gdzie jest kuchnia?", ipa: "ɡdʑɛ jɛst ˈkuxɲa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "kuchnia", base: "kuchnia" }] }
+  - id: "pl-2721"
+    target: "łazienka"
+    ipa: "waˈʑɛŋka"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest łazienka.", ipa: "tɔ jɛst waˈʑɛŋka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "łazienka", base: "łazienka" }] }
+      - { target: "Gdzie jest łazienka?", ipa: "ɡdʑɛ jɛst waˈʑɛŋka", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "łazienka", base: "łazienka" }] }
+  - id: "pl-2722"
+    target: "sypialnia"
+    ipa: "sɨˈpjalɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest sypialnia.", ipa: "tɔ jɛst sɨˈpjalɲa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "sypialnia", base: "sypialnia" }] }
+      - { target: "Gdzie jest sypialnia?", ipa: "ɡdʑɛ jɛst sɨˈpjalɲa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "sypialnia", base: "sypialnia" }] }
+  - id: "pl-2723"
+    target: "ogród"
+    ipa: "ˈɔɡrut"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ogród.", ipa: "tɔ jɛst ˈɔɡrut", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "ogród", base: "ogród" }] }
+      - { target: "Gdzie jest ogród?", ipa: "ɡdʑɛ jɛst ˈɔɡrut", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "ogród", base: "ogród" }] }
+  - id: "pl-2724"
+    target: "balkon"
+    ipa: "ˈbalkɔn"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest balkon.", ipa: "tɔ jɛst ˈbalkɔn", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "balkon", base: "balkon" }] }
+      - { target: "Gdzie jest balkon?", ipa: "ɡdʑɛ jɛst ˈbalkɔn", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "balkon", base: "balkon" }] }
+  - id: "pl-2725"
+    target: "kawiarnia"
+    ipa: "kaˈvjarɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kawiarnia.", ipa: "tɔ jɛst kaˈvjarɲa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kawiarnia", base: "kawiarnia" }] }
+      - { target: "Gdzie jest kawiarnia?", ipa: "ɡdʑɛ jɛst kaˈvjarɲa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "kawiarnia", base: "kawiarnia" }] }
+  - id: "pl-2726"
+    target: "bar"
+    ipa: "bar"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest bar.", ipa: "tɔ jɛst bar", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "bar", base: "bar" }] }
+      - { target: "Gdzie jest bar?", ipa: "ɡdʑɛ jɛst bar", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "bar", base: "bar" }] }
+  - id: "pl-2727"
+    target: "zoo"
+    ipa: "ˈzɔɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest zoo.", ipa: "tɔ jɛst ˈzɔɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "zoo", base: "zoo" }] }
+      - { target: "Gdzie jest zoo?", ipa: "ɡdʑɛ jɛst ˈzɔɔ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "zoo", base: "zoo" }] }
+  - id: "pl-2728"
+    target: "stadion"
+    ipa: "ˈstadjɔn"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest stadion.", ipa: "tɔ jɛst ˈstadjɔn", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "stadion", base: "stadion" }] }
+      - { target: "Gdzie jest stadion?", ipa: "ɡdʑɛ jɛst ˈstadjɔn", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "stadion", base: "stadion" }] }
+  - id: "pl-2729"
+    target: "basen"
+    ipa: "ˈbasɛn"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest basen.", ipa: "tɔ jɛst ˈbasɛn", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "basen", base: "basen" }] }
+      - { target: "Gdzie jest basen?", ipa: "ɡdʑɛ jɛst ˈbasɛn", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "basen", base: "basen" }] }
+  - id: "pl-2730"
+    target: "siłownia"
+    ipa: "ɕiˈwɔvɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest siłownia.", ipa: "tɔ jɛst ɕiˈwɔvɲa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "siłownia", base: "siłownia" }] }
+      - { target: "Gdzie jest siłownia?", ipa: "ɡdʑɛ jɛst ɕiˈwɔvɲa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "siłownia", base: "siłownia" }] }
+  - id: "pl-2731"
+    target: "centrum"
+    ipa: "ˈtsɛntrum"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest centrum.", ipa: "tɔ jɛst ˈtsɛntrum", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "centrum", base: "centrum" }] }
+      - { target: "Gdzie jest centrum?", ipa: "ɡdʑɛ jɛst ˈtsɛntrum", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "centrum", base: "centrum" }] }
+  - id: "pl-2732"
+    target: "dzielnica"
+    ipa: "dʑɛlˈɲitsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest dzielnica.", ipa: "tɔ jɛst dʑɛlˈɲitsa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "dzielnica", base: "dzielnica" }] }
+      - { target: "Gdzie jest dzielnica?", ipa: "ɡdʑɛ jɛst dʑɛlˈɲitsa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "dzielnica", base: "dzielnica" }] }
+  - id: "pl-2733"
+    target: "wyspa"
+    ipa: "ˈvɨspa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest wyspa.", ipa: "tɔ jɛst ˈvɨspa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "wyspa", base: "wyspa" }] }
+      - { target: "Gdzie jest wyspa?", ipa: "ɡdʑɛ jɛst ˈvɨspa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "wyspa", base: "wyspa" }] }
+  - id: "pl-2734"
+    target: "pustynia"
+    ipa: "pusˈtɨɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest pustynia.", ipa: "tɔ jɛst pusˈtɨɲa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "pustynia", base: "pustynia" }] }
+      - { target: "Gdzie jest pustynia?", ipa: "ɡdʑɛ jɛst pusˈtɨɲa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "pustynia", base: "pustynia" }] }
+  - id: "pl-2735"
+    target: "dolina"
+    ipa: "dɔˈlina"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest dolina.", ipa: "tɔ jɛst dɔˈlina", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "dolina", base: "dolina" }] }
+      - { target: "Gdzie jest dolina?", ipa: "ɡdʑɛ jɛst dɔˈlina", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "dolina", base: "dolina" }] }
+  - id: "pl-2736"
+    target: "wzgórze"
+    ipa: "ˈvzɡuʐɛ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest wzgórze.", ipa: "tɔ jɛst ˈvzɡuʐɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "wzgórze", base: "wzgórze" }] }
+      - { target: "Gdzie jest wzgórze?", ipa: "ɡdʑɛ jɛst ˈvzɡuʐɛ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "wzgórze", base: "wzgórze" }] }
+  - id: "pl-2737"
+    target: "pole"
+    ipa: "ˈpɔlɛ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest pole.", ipa: "tɔ jɛst ˈpɔlɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "pole", base: "pole" }] }
+      - { target: "Gdzie jest pole?", ipa: "ɡdʑɛ jɛst ˈpɔlɛ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "pole", base: "pole" }] }
+  - id: "pl-2738"
+    target: "granica"
+    ipa: "ɡraˈɲitsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest granica.", ipa: "tɔ jɛst ɡraˈɲitsa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "granica", base: "granica" }] }
+      - { target: "Gdzie jest granica?", ipa: "ɡdʑɛ jɛst ɡraˈɲitsa", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "granica", base: "granica" }] }
+  - id: "pl-2739"
+    target: "port"
+    ipa: "pɔrt"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest port.", ipa: "tɔ jɛst pɔrt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "port", base: "port" }] }
+      - { target: "Gdzie jest port?", ipa: "ɡdʑɛ jɛst pɔrt", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "port", base: "port" }] }
+  - id: "pl-2740"
+    target: "ratusz"
+    ipa: "ˈratuʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ratusz.", ipa: "tɔ jɛst ˈratuʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "ratusz", base: "ratusz" }] }
+      - { target: "Gdzie jest ratusz?", ipa: "ɡdʑɛ jɛst ˈratuʂ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "ratusz", base: "ratusz" }] }
+  - id: "pl-2741"
+    target: "przedszkole"
+    ipa: "pʂɛtʂˈkɔlɛ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest przedszkole.", ipa: "tɔ jɛst pʂɛtʂˈkɔlɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "przedszkole", base: "przedszkole" }] }
+      - { target: "Gdzie jest przedszkole?", ipa: "ɡdʑɛ jɛst pʂɛtʂˈkɔlɛ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "przedszkole", base: "przedszkole" }] }
+  - id: "pl-2742"
+    target: "sala"
+    ipa: "ˈsala"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest sala.", ipa: "tɔ jɛst ˈsala", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "sala", base: "sala" }] }
+      - { target: "Gdzie jest sala?", ipa: "ɡdʑɛ jɛst ˈsala", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "sala", base: "sala" }] }
+  - id: "pl-2743"
+    target: "miasto"
+    ipa: "ˈmjastɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest miasto.", ipa: "tɔ jɛst ˈmjastɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "miasto", base: "miasto" }] }
+      - { target: "Gdzie jest miasto?", ipa: "ɡdʑɛ jɛst ˈmjastɔ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "miasto", base: "miasto" }] }
+  - id: "pl-2744"
+    target: "wieś"
+    ipa: "vjɛɕ"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest wieś.", ipa: "tɔ jɛst vjɛɕ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "wieś", base: "wieś" }] }
+      - { target: "Gdzie jest wieś?", ipa: "ɡdʑɛ jɛst vjɛɕ", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "wieś", base: "wieś" }] }
+  - id: "pl-2745"
+    target: "restauracja"
+    ipa: "rɛstauˈratsja"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest restauracja.", ipa: "tɔ jɛst rɛstauˈratsja", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "restauracja", base: "restauracja" }] }
+      - { target: "Gdzie jest restauracja?", ipa: "ɡdʑɛ jɛst rɛstauˈratsja", bases: [{ word: "Gdzie", base: "gdzie" }, { word: "jest", base: "być" }, { word: "restauracja", base: "restauracja" }] }

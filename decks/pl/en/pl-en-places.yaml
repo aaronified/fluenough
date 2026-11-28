@@ -1,0 +1,793 @@
+schema: 1
+id: "pl-en-places"
+kind: "layer"
+core: "pl-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+license: "CC-BY-SA-4.0"
+description: "Places: a school, a hospital, a pharmacy, a park, the sea, a beach, a museum, a cinema, a bathroom and more, with their first sentences in the examples. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "pl-2700":
+    native: "school"
+    notes:
+      "n1": "szkoła is feminine. Its stem changes in the other cases: szkoły, szkole."
+    examples:
+      "To jest szkoła.":
+        native: "This is a school."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "szkoła": "school"
+      "Gdzie jest szkoła?":
+        native: "Where is the school?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "szkoła": "school"
+  "pl-2701":
+    native: "university"
+    notes:
+      "n1": "uniwersytet is masculine (inanimate)."
+    examples:
+      "To jest uniwersytet.":
+        native: "This is a university."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "uniwersytet": "university"
+      "Gdzie jest uniwersytet?":
+        native: "Where is the university?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "uniwersytet": "university"
+  "pl-2702":
+    native: "hospital"
+    notes:
+      "n1": "szpital is masculine (inanimate)."
+    examples:
+      "To jest szpital.":
+        native: "This is a hospital."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "szpital": "hospital"
+      "Gdzie jest szpital?":
+        native: "Where is the hospital?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "szpital": "hospital"
+  "pl-2703":
+    native: "pharmacy"
+    notes:
+      "n1": "apteka is feminine. The k changes to c in the locative: w aptece."
+    examples:
+      "To jest apteka.":
+        native: "This is a pharmacy."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "apteka": "pharmacy"
+      "Gdzie jest apteka?":
+        native: "Where is the pharmacy?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "apteka": "pharmacy"
+  "pl-2704":
+    native: "bank"
+    notes:
+      "n1": "bank is masculine (inanimate)."
+    examples:
+      "To jest bank.":
+        native: "This is a bank."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "bank": "bank"
+      "Gdzie jest bank?":
+        native: "Where is the bank?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "bank": "bank"
+  "pl-2705":
+    native: "post office"
+    notes:
+      "n1": "poczta is feminine. Also means mail, the letters and parcels sent by post."
+    examples:
+      "To jest poczta.":
+        native: "This is a post office."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "poczta": "post office"
+      "Gdzie jest poczta?":
+        native: "Where is the post office?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "poczta": "post office"
+  "pl-2706":
+    native: "park"
+    notes:
+      "n1": "park is masculine (inanimate)."
+    examples:
+      "To jest park.":
+        native: "This is a park."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "park": "park"
+      "Gdzie jest park?":
+        native: "Where is the park?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "park": "park"
+  "pl-2707":
+    native: "forest"
+    notes:
+      "n1": "las is masculine (inanimate). Its stem changes in the other cases: lasu, lesie."
+    examples:
+      "To jest las.":
+        native: "This is a forest."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "las": "forest"
+      "Gdzie jest las?":
+        native: "Where is the forest?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "las": "forest"
+  "pl-2708":
+    native: "sea"
+    notes:
+      "n1": "morze is neuter. Its stem changes in the other cases: morza, morzu."
+    examples:
+      "To jest morze.":
+        native: "This is a sea."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "morze": "sea"
+      "Gdzie jest morze?":
+        native: "Where is the sea?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "morze": "sea"
+  "pl-2709":
+    native: "river"
+    notes:
+      "n1": "rzeka is feminine. The k changes to c in the locative: w rzece."
+    examples:
+      "To jest rzeka.":
+        native: "This is a river."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "rzeka": "river"
+      "Gdzie jest rzeka?":
+        native: "Where is the river?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "rzeka": "river"
+  "pl-2710":
+    native: "lake"
+    notes:
+      "n1": "jezioro is neuter."
+    examples:
+      "To jest jezioro.":
+        native: "This is a lake."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "jezioro": "lake"
+      "Gdzie jest jezioro?":
+        native: "Where is the lake?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "jezioro": "lake"
+  "pl-2711":
+    native: "beach"
+    notes:
+      "n1": "plaża is feminine. A sandy shore by the sea or a lake."
+    examples:
+      "To jest plaża.":
+        native: "This is a beach."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "plaża": "beach"
+      "Gdzie jest plaża?":
+        native: "Where is the beach?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "plaża": "beach"
+  "pl-2712":
+    native: "church"
+    notes:
+      "n1": "kościół is masculine (inanimate). The ó changes to o in the other cases: kościoła, kościele."
+    examples:
+      "To jest kościół.":
+        native: "This is a church."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "kościół": "church"
+      "Gdzie jest kościół?":
+        native: "Where is the church?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "kościół": "church"
+  "pl-2713":
+    native: "museum"
+    notes:
+      "n1": "muzeum is neuter. Indeclinable: the ending does not change."
+    examples:
+      "To jest muzeum.":
+        native: "This is a museum."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "muzeum": "museum"
+      "Gdzie jest muzeum?":
+        native: "Where is the museum?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "muzeum": "museum"
+  "pl-2714":
+    native: "cinema"
+    notes:
+      "n1": "kino is neuter. Indeclinable: the ending does not change."
+    examples:
+      "To jest kino.":
+        native: "This is a cinema."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "kino": "cinema"
+      "Gdzie jest kino?":
+        native: "Where is the cinema?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "kino": "cinema"
+  "pl-2715":
+    native: "theatre"
+    notes:
+      "n1": "teatr is masculine (inanimate)."
+    examples:
+      "To jest teatr.":
+        native: "This is a theatre."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "teatr": "theatre"
+      "Gdzie jest teatr?":
+        native: "Where is the theatre?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "teatr": "theatre"
+  "pl-2716":
+    native: "library"
+    notes:
+      "n1": "biblioteka is feminine."
+    examples:
+      "To jest biblioteka.":
+        native: "This is a library."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "biblioteka": "library"
+      "Gdzie jest biblioteka?":
+        native: "Where is the library?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "biblioteka": "library"
+  "pl-2717":
+    native: "hotel"
+    notes:
+      "n1": "hotel is masculine (inanimate)."
+    examples:
+      "To jest hotel.":
+        native: "This is a hotel."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "hotel": "hotel"
+      "Gdzie jest hotel?":
+        native: "Where is the hotel?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "hotel": "hotel"
+  "pl-2718":
+    native: "station"
+    notes:
+      "n1": "stacja is feminine. Train, bus or metro station; the word also means a radio or TV station."
+    examples:
+      "To jest stacja.":
+        native: "This is a station."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "stacja": "station"
+      "Gdzie jest stacja?":
+        native: "Where is the station?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "stacja": "station"
+  "pl-2719":
+    native: "square"
+    notes:
+      "n1": "plac is masculine (inanimate). An open space in a town, often with buildings around it."
+    examples:
+      "To jest plac.":
+        native: "This is a square."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "plac": "square"
+      "Gdzie jest plac?":
+        native: "Where is the square?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "plac": "square"
+  "pl-2720":
+    native: "kitchen"
+    notes:
+      "n1": "kuchnia is feminine."
+    examples:
+      "To jest kuchnia.":
+        native: "This is a kitchen."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "kuchnia": "kitchen"
+      "Gdzie jest kuchnia?":
+        native: "Where is the kitchen?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "kuchnia": "kitchen"
+  "pl-2721":
+    native: "bathroom"
+    notes:
+      "n1": "łazienka is feminine. The k changes to c in the locative: w łazience."
+    examples:
+      "To jest łazienka.":
+        native: "This is a bathroom."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "łazienka": "bathroom"
+      "Gdzie jest łazienka?":
+        native: "Where is the bathroom?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "łazienka": "bathroom"
+  "pl-2722":
+    native: "bedroom"
+    notes:
+      "n1": "sypialnia is feminine."
+    examples:
+      "To jest sypialnia.":
+        native: "This is a bedroom."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "sypialnia": "bedroom"
+      "Gdzie jest sypialnia?":
+        native: "Where is the bedroom?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "sypialnia": "bedroom"
+  "pl-2723":
+    native: "garden"
+    notes:
+      "n1": "ogród is masculine (inanimate). The ó changes to o in the other cases: ogrodu, ogrodzie."
+    examples:
+      "To jest ogród.":
+        native: "This is a garden."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "ogród": "garden"
+      "Gdzie jest ogród?":
+        native: "Where is the garden?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "ogród": "garden"
+  "pl-2724":
+    native: "balcony"
+    notes:
+      "n1": "balkon is masculine (inanimate)."
+    examples:
+      "To jest balkon.":
+        native: "This is a balcony."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "balkon": "balcony"
+      "Gdzie jest balkon?":
+        native: "Where is the balcony?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "balkon": "balcony"
+  "pl-2725":
+    native: "café"
+    notes:
+      "n1": "kawiarnia is feminine. A café or coffee shop where you can sit down and eat or drink."
+    examples:
+      "To jest kawiarnia.":
+        native: "This is a café."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "kawiarnia": "café"
+      "Gdzie jest kawiarnia?":
+        native: "Where is the café?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "kawiarnia": "café"
+  "pl-2726":
+    native: "bar, pub"
+    notes:
+      "n1": "bar is masculine (inanimate). A pub or a bar where alcoholic drinks are served."
+    examples:
+      "To jest bar.":
+        native: "This is a bar."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "bar": "bar, pub"
+      "Gdzie jest bar?":
+        native: "Where is the bar?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "bar": "bar, pub"
+  "pl-2727":
+    native: "zoo"
+    notes:
+      "n1": "zoo is neuter. Indeclinable: the ending does not change."
+    examples:
+      "To jest zoo.":
+        native: "This is a zoo."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "zoo": "zoo"
+      "Gdzie jest zoo?":
+        native: "Where is the zoo?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "zoo": "zoo"
+  "pl-2728":
+    native: "stadium"
+    notes:
+      "n1": "stadion is masculine (inanimate)."
+    examples:
+      "To jest stadion.":
+        native: "This is a stadium."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "stadion": "stadium"
+      "Gdzie jest stadion?":
+        native: "Where is the stadium?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "stadion": "stadium"
+  "pl-2729":
+    native: "swimming pool"
+    notes:
+      "n1": "basen is masculine (inanimate)."
+    examples:
+      "To jest basen.":
+        native: "This is a swimming pool."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "basen": "swimming pool"
+      "Gdzie jest basen?":
+        native: "Where is the swimming pool?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "basen": "swimming pool"
+  "pl-2730":
+    native: "gym"
+    notes:
+      "n1": "siłownia is feminine. Also means a power station; here it is the gym."
+    examples:
+      "To jest siłownia.":
+        native: "This is a gym."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "siłownia": "gym"
+      "Gdzie jest siłownia?":
+        native: "Where is the gym?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "siłownia": "gym"
+  "pl-2731":
+    native: "city centre"
+    notes:
+      "n1": "centrum is neuter. Indeclinable: the ending does not change, as in w centrum, in the centre."
+    examples:
+      "To jest centrum.":
+        native: "This is a city centre."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "centrum": "city centre"
+      "Gdzie jest centrum?":
+        native: "Where is the city centre?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "centrum": "city centre"
+  "pl-2732":
+    native: "district"
+    notes:
+      "n1": "dzielnica is feminine."
+    examples:
+      "To jest dzielnica.":
+        native: "This is a district."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "dzielnica": "district"
+      "Gdzie jest dzielnica?":
+        native: "Where is the district?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "dzielnica": "district"
+  "pl-2733":
+    native: "island"
+    notes:
+      "n1": "wyspa is feminine. The a changes to y in the other cases: wyspy, wyspie."
+    examples:
+      "To jest wyspa.":
+        native: "This is an island."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "wyspa": "island"
+      "Gdzie jest wyspa?":
+        native: "Where is the island?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "wyspa": "island"
+  "pl-2734":
+    native: "desert"
+    notes:
+      "n1": "pustynia is feminine."
+    examples:
+      "To jest pustynia.":
+        native: "This is a desert."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "pustynia": "desert"
+      "Gdzie jest pustynia?":
+        native: "Where is the desert?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "pustynia": "desert"
+  "pl-2735":
+    native: "valley"
+    notes:
+      "n1": "dolina is feminine."
+    examples:
+      "To jest dolina.":
+        native: "This is a valley."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "dolina": "valley"
+      "Gdzie jest dolina?":
+        native: "Where is the valley?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "dolina": "valley"
+  "pl-2736":
+    native: "hill"
+    notes:
+      "n1": "wzgórze is neuter. Its stem changes in the other cases: wzgórza, wzgórzu."
+    examples:
+      "To jest wzgórze.":
+        native: "This is a hill."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "wzgórze": "hill"
+      "Gdzie jest wzgórze?":
+        native: "Where is the hill?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "wzgórze": "hill"
+  "pl-2737":
+    native: "field"
+    notes:
+      "n1": "pole is neuter. Its stem changes in the other cases: pola, polu."
+    examples:
+      "To jest pole.":
+        native: "This is a field."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "pole": "field"
+      "Gdzie jest pole?":
+        native: "Where is the field?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "pole": "field"
+  "pl-2738":
+    native: "border"
+    notes:
+      "n1": "granica is feminine."
+    examples:
+      "To jest granica.":
+        native: "This is a border."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "granica": "border"
+      "Gdzie jest granica?":
+        native: "Where is the border?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "granica": "border"
+  "pl-2739":
+    native: "port, harbour"
+    notes:
+      "n1": "port is masculine (inanimate)."
+    examples:
+      "To jest port.":
+        native: "This is a port, harbour."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "port": "port, harbour"
+      "Gdzie jest port?":
+        native: "Where is the port, harbour?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "port": "port, harbour"
+  "pl-2740":
+    native: "town hall"
+    notes:
+      "n1": "ratusz is masculine (inanimate)."
+    examples:
+      "To jest ratusz.":
+        native: "This is a town hall."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "ratusz": "town hall"
+      "Gdzie jest ratusz?":
+        native: "Where is the town hall?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "ratusz": "town hall"
+  "pl-2741":
+    native: "preschool"
+    notes:
+      "n1": "przedszkole is neuter. For young children, before szkoła, school."
+    examples:
+      "To jest przedszkole.":
+        native: "This is a preschool."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "przedszkole": "preschool"
+      "Gdzie jest przedszkole?":
+        native: "Where is the preschool?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "przedszkole": "preschool"
+  "pl-2742":
+    native: "hall"
+    notes:
+      "n1": "sala is feminine. A large room where people gather."
+    examples:
+      "To jest sala.":
+        native: "This is a hall."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "sala": "hall"
+      "Gdzie jest sala?":
+        native: "Where is the hall?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "sala": "hall"
+  "pl-2743":
+    native: "city"
+    notes:
+      "n1": "miasto is neuter. Its stem changes in the other cases: miasta, mieście."
+    examples:
+      "To jest miasto.":
+        native: "This is a city."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "miasto": "city"
+      "Gdzie jest miasto?":
+        native: "Where is the city?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "miasto": "city"
+  "pl-2744":
+    native: "village"
+    notes:
+      "n1": "wieś is feminine. Also means the countryside. The ś changes to s in the other cases: wsi."
+    examples:
+      "To jest wieś.":
+        native: "This is a village."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "wieś": "village"
+      "Gdzie jest wieś?":
+        native: "Where is the village?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "wieś": "village"
+  "pl-2745":
+    native: "restaurant"
+    notes:
+      "n1": "restauracja is feminine."
+    examples:
+      "To jest restauracja.":
+        native: "This is a restaurant."
+        bases:
+          "To": "this, it"
+          "jest": "to be"
+          "restauracja": "restaurant"
+      "Gdzie jest restauracja?":
+        native: "Where is the restaurant?"
+        bases:
+          "Gdzie": "where"
+          "jest": "to be"
+          "restauracja": "restaurant"
