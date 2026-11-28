@@ -566,3 +566,36 @@ cards:
       - { target: "Questo è un cortile.", ipa: "ˈkwesto ɛ un ˈkortile", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "un", base: "uno" }, { word: "cortile", base: "cortile" }] }
       - { target: "Ho un cortile.", ipa: "ɔ un ˈkortile", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "cortile", base: "cortile" }] }
       - { target: "Dov'è il cortile?", ipa: "doˈvɛ il ˈkortile", bases: [{ word: "Dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "cortile", base: "cortile" }] }
+  - id: "it-2746"
+    target: "stazione"
+    ipa: "statˈtsjone"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Questa è la stazione.", ipa: "ˈkwesta ɛ la statˈtsjone", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "stazione", base: "stazione" }] }
+      - { target: "La stazione è qui.", ipa: "la statˈtsjone ɛ kwi", bases: [{ word: "La", base: "la" }, { word: "stazione", base: "stazione" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-2747"
+    target: "posta"
+    ipa: "ˈpɔsta"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Dov'è la posta?", ipa: "doˈvɛ la ˈpɔsta", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "posta", base: "posta" }] }
+      - { target: "La posta è qui.", ipa: "la ˈpɔsta ɛ kwi", bases: [{ word: "La", base: "la" }, { word: "posta", base: "posta" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }] }
+  - id: "it-2748"
+    target: "parco"
+    ipa: "ˈparko"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "homograph" }]
+    bases: "self"
+    examples:
+      - { target: "Questo è il parco.", ipa: "ˈkwesto ɛ il ˈparko", bases: [{ word: "Questo", base: "questo" }, { word: "è", base: "essere" }, { word: "il", base: "il" }, { word: "parco", base: "parco" }] }
+      - { target: "Il parco è qui.", ipa: "il ˈparko ɛ kwi", bases: [{ word: "Il", base: "il" }, { word: "parco", base: "parco" }, { word: "è", base: "essere" }, { word: "qui", ref: "it-1725" }] }
