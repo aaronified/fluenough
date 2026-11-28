@@ -1,0 +1,39 @@
+schema: 1
+id: "de-en-grammar-negation-words"
+kind: "layer"
+core: "de-grammar-negation-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nicht and kein"
+license: "CC-BY-SA-4.0"
+description: "The two words that say no: nicht and kein, as word cards with their own examples. Not yet checked by a German speaker: please report any mistake."
+cards:
+  "de-0820":
+    native: "not"
+    notes:
+      "n1": "Nicht is not: it negates a verb, an adjective or an adverb, as Wiktionary says. Das ist nicht wahr is That is not true. A noun with ein or with no article is negated with kein instead."
+      "n2": "In the sentences of this unit nicht comes after the verb (Ich wohne nicht hier), before an adjective (Ich bin nicht müde), and at the end after a definite noun or es (Ich weiß es nicht). Wiktionary's entry for nicht gives Bitte nicht stören! (please do not disturb)."
+    examples:
+      "Das ist nicht gut.":
+        native: "That is not good."
+        bases:
+          "Das": "that; the (neuter)"
+          "nicht": "not"
+      "Ich bin nicht müde.":
+        native: "I am not tired."
+        bases:
+          "nicht": "not"
+  "de-0821":
+    native: "no; not a; not any"
+    notes:
+      "n1": "Kein means no, not a, not any: it goes before a noun where you would say ein or nothing. Wiktionary's example is Das ist kein Bett, That is not a bed. It has the endings of ein: kein, keine, kein, and keine in the plural."
+      "n2": "Kein takes the place of ein: Ich habe ein Handy becomes Ich habe kein Handy. With a plural or a noun with no article it makes the plural form keine: Er hat Kinder becomes Er hat keine Kinder."
+    examples:
+      "Das ist kein Hund.":
+        native: "That is not a dog."
+        bases:
+          "Das": "that; the (neuter)"
+          "kein": "no; not a; not any"
+      "Ich habe kein Handy.":
+        native: "I do not have a mobile phone."
+        bases:
+          "kein": "no; not a; not any"

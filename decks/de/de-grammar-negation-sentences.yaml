@@ -1,0 +1,141 @@
+schema: 1
+id: "de-grammar-negation-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4350"
+    target: "Ich bin nicht müde."
+    ipa: "ɪç bɪn nɪçt ˈmyːdə"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "bin", ref: "de-0580" }, { word: "nicht", ref: "de-0820" }, { word: "müde", ref: "de-1946" }]
+  - id: "de-4351"
+    target: "Er ist nicht alt."
+    ipa: "eːɐ̯ ɪst nɪçt alt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "ist", ref: "de-0580" }, { word: "nicht", ref: "de-0820" }, { word: "alt", ref: "de-1652" }]
+  - id: "de-4352"
+    target: "Das Kind ist nicht klein."
+    ipa: "das kɪnt ɪst nɪçt klaɪn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "ist", ref: "de-0580" }, { word: "nicht", ref: "de-0820" }, { word: "klein", ref: "de-1931" }]
+  - id: "de-4353"
+    target: "Wir sind nicht hier."
+    ipa: "viːɐ̯ zɪnt nɪçt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "sind", ref: "de-0580" }, { word: "nicht", ref: "de-0820" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4354"
+    target: "Ich wohne nicht hier."
+    ipa: "ɪç ˈvoːnə nɪçt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "wohne", ref: "de-1651" }, { word: "nicht", ref: "de-0820" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4355"
+    target: "Er arbeitet nicht hier."
+    ipa: "eːɐ̯ ˈaʁbaɪtət nɪçt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "arbeitet", ref: "de-1723" }, { word: "nicht", ref: "de-0820" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4356"
+    target: "Der Zug kommt nicht."
+    ipa: "deːɐ̯ tsuːk kɔmt nɪçt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Zug", ref: "de-0412" }, { word: "kommt", ref: "de-1725" }, { word: "nicht", ref: "de-0820" }]
+  - id: "de-4357"
+    target: "Ich weiß es nicht."
+    ipa: "ɪç vaɪs ɛs nɪçt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "weiß", ref: "de-1743" }, { word: "es", ref: "de-1442" }, { word: "nicht", ref: "de-0820" }]
+  - id: "de-4358"
+    target: "Ich habe das Handy nicht."
+    ipa: "ɪç ˈhaːbə das ˈhandy nɪçt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", ref: "de-0581" }, { word: "das", base: "das" }, { word: "Handy", ref: "de-1664" }, { word: "nicht", ref: "de-0820" }]
+  - id: "de-4359"
+    target: "Das ist nicht der Vater."
+    ipa: "das ɪst nɪçt deːɐ̯ ˈfaːtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "nicht", ref: "de-0820" }, { word: "der", base: "der" }, { word: "Vater", ref: "de-1512" }]
+  - id: "de-4360"
+    target: "Das ist nicht gut."
+    ipa: "das ɪst nɪçt ɡuːt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "nicht", ref: "de-0820" }, { word: "gut", ref: "de-0006" }]
+  - id: "de-4361"
+    target: "Ich habe kein Handy."
+    ipa: "ɪç ˈhaːbə kaɪn ˈhandy"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", ref: "de-0581" }, { word: "kein", ref: "de-0821" }, { word: "Handy", ref: "de-1664" }]
+  - id: "de-4362"
+    target: "Du hast keine Schwester."
+    ipa: "duː hast ˈkaɪnə ˈʃvɛstɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "hast", ref: "de-0581" }, { word: "keine", ref: "de-0821" }, { word: "Schwester", ref: "de-1520" }]
+  - id: "de-4363"
+    target: "Das ist kein Hund."
+    ipa: "das ɪst kaɪn hʊnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "ist", ref: "de-0580" }, { word: "kein", ref: "de-0821" }, { word: "Hund", ref: "de-0410" }]
+  - id: "de-4364"
+    target: "Wir haben kein Kind."
+    ipa: "viːɐ̯ ˈhaːbən kaɪn kɪnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "haben", ref: "de-0581" }, { word: "kein", ref: "de-0821" }, { word: "Kind", ref: "de-1516" }]
+  - id: "de-4365"
+    target: "Er hat keine Kinder."
+    ipa: "eːɐ̯ hat ˈkaɪnə ˈkɪndɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "hat", ref: "de-0581" }, { word: "keine", ref: "de-0821" }, { word: "Kinder", ref: "de-1516" }]
+  - id: "de-4366"
+    target: "Das sind keine Bücher."
+    ipa: "das zɪnt ˈkaɪnə ˈbʏçɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "sind", ref: "de-0580" }, { word: "keine", ref: "de-0821" }, { word: "Bücher", ref: "de-0405" }]
+  - id: "de-4367"
+    target: "Hast du kein Handy?"
+    ipa: "hast duː kaɪn ˈhandy"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Hast", ref: "de-0581" }, { word: "du", ref: "de-0004" }, { word: "kein", ref: "de-0821" }, { word: "Handy", ref: "de-1664" }]
+  - id: "de-4368"
+    target: "Nein, ich habe kein Handy."
+    ipa: "naɪn ɪç ˈhaːbə kaɪn ˈhandy"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Nein", ref: "de-0002" }, { word: "ich", ref: "de-0003" }, { word: "habe", ref: "de-0581" }, { word: "kein", ref: "de-0821" }, { word: "Handy", ref: "de-1664" }]

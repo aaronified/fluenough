@@ -1,0 +1,31 @@
+schema: 1
+id: "de-en-grammar-negation"
+kind: "layer"
+core: "de-grammar-negation"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Saying no: nicht and kein"
+license: "CC-BY-SA-4.0"
+description: "Fifteen sentences each said in the positive and in the negative, with nicht for verbs, adjectives and nouns with der or das, and kein for nouns with ein or no article. Not yet checked by a German speaker: please report any mistake."
+pattern:
+  name: "Nicht and kein"
+  slot_name: "sentence"
+  slots:
+    "positive": "a positive sentence"
+    "negative": "the same sentence made negative"
+  entries:
+    "wohnen": "to live: nicht goes after the verb"
+    "arbeiten": "to work: nicht goes after the verb"
+    "kommen": "to come: nicht goes after the verb"
+    "wissen": "to know: nicht goes at the end after es"
+    "muede": "tired: nicht goes before the adjective"
+    "alt": "old: nicht goes before the adjective"
+    "gut": "good: nicht goes before the adjective"
+    "handy": "mobile phone: nicht goes at the end after a noun with das"
+    "vater": "father: nicht goes before a noun with der"
+    "foto": "photo: ein becomes kein"
+    "schwester": "sister: eine becomes keine"
+    "hund": "dog: ein becomes kein"
+    "buch": "book: ein becomes kein"
+    "kind": "child: ein becomes kein"
+    "kinder": "children: no article becomes keine"
+  notes: "German has two words for not. Kein negates a noun that has ein or no article: Ich habe ein Foto becomes Ich habe kein Foto. Wiktionary gives kein the meaning no, not a, not any, with the example Das ist kein Bett (That is not a bed). Kein has the endings of ein in the singular, kein for masculine and neuter and keine for feminine, and it has a plural, keine, which ein lacks: Er hat Kinder becomes Er hat keine Kinder. Wiktionary's declension table of kein gives the forms. The masculine accusative is keinen, taught with the accusative. Nicht negates everything else: a verb, an adjective, an adverb, or a noun with der, das, die or a possessive. It goes after the verb in Ich wohne nicht hier and Der Zug kommt nicht, before an adjective in Ich bin nicht müde, and at the end of a short sentence after a definite noun or es in Ich habe das Handy nicht and Ich weiß es nicht. Before the noun it can also negate one thing, as in Das ist nicht der Vater. Wiktionary says nicht negates a verb, an adjective or an adverb and gives Das ist nicht wahr. Sources: en.wiktionary entries for nicht and kein, and Wiktionary's declension table of kein."
