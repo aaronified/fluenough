@@ -1,0 +1,126 @@
+# Unit 14 (ru-grammar-grammatical-gender). Words the gender table needs that no earlier unit teaches. Sources read: en.wikipedia.org 'Russian grammar' (declension tables: nouns in а or я of both genders, masculine nouns in a consonant or soft sign, neuter nouns, feminine nouns in ь) and each word's en.wiktionary.org entry (headword stress, gender).
+schema: 1
+id: "ru-grammar-grammatical-gender-words"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ru-0460"
+    target: "стол"
+    reading: "stol"
+    ipa: "stol"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это стол.", reading: "Eto stol.", ipa: "ˈɛtə stol", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "стол", base: "стол", reading: "stol" }] }
+      - { target: "Это мой стол.", reading: "Eto moy stol.", ipa: "ˈɛtə moj stol", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мой", base: "мой", reading: "moy" }, { word: "стол", base: "стол", reading: "stol" }] }
+  - id: "ru-0461"
+    target: "дом"
+    reading: "dom"
+    ipa: "dom"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это дом.", reading: "Eto dom.", ipa: "ˈɛtə dom", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "дом", base: "дом", reading: "dom" }] }
+      - { target: "Твой дом здесь.", reading: "Tvoy dom zdes'.", ipa: "tvoj dom zdʲesʲ", bases: [{ word: "Твой", base: "твой", reading: "tvoy" }, { word: "дом", base: "дом", reading: "dom" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }
+  - id: "ru-0462"
+    target: "день"
+    reading: "den'"
+    ipa: "dʲenʲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Добрый день!", reading: "Dobry den'!", ipa: "ˈdobrɨj dʲenʲ", bases: [{ word: "Добрый", base: "добрый", reading: "dobry" }, { word: "день", base: "день", reading: "den'" }] }
+      - { target: "Это мой день.", reading: "Eto moy den'.", ipa: "ˈɛtə moj dʲenʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мой", base: "мой", reading: "moy" }, { word: "день", base: "день", reading: "den'" }] }
+  - id: "ru-0463"
+    target: "папа"
+    reading: "papa"
+    ipa: "ˈpapə"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это мой папа.", reading: "Eto moy papa.", ipa: "ˈɛtə moj ˈpapə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мой", base: "мой", reading: "moy" }, { word: "папа", base: "папа", reading: "papa" }] }
+      - { target: "Мой папа здесь.", reading: "Moy papa zdes'.", ipa: "moj ˈpapə zdʲesʲ", bases: [{ word: "Мой", base: "мой", reading: "moy" }, { word: "папа", base: "папа", reading: "papa" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }
+  - id: "ru-0464"
+    target: "дядя"
+    reading: "dyadya"
+    ipa: "ˈdʲadʲə"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это мой дядя.", reading: "Eto moy dyadya.", ipa: "ˈɛtə moj ˈdʲadʲə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мой", base: "мой", reading: "moy" }, { word: "дядя", base: "дядя", reading: "dyadya" }] }
+      - { target: "Твой дядя здесь.", reading: "Tvoy dyadya zdes'.", ipa: "tvoj ˈdʲadʲə zdʲesʲ", bases: [{ word: "Твой", base: "твой", reading: "tvoy" }, { word: "дядя", base: "дядя", reading: "dyadya" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }
+  - id: "ru-0465"
+    target: "сестра"
+    reading: "sestra"
+    ipa: "sʲɪˈstra"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это моя сестра.", reading: "Eto moya sestra.", ipa: "ˈɛtə mɐˈja sʲɪˈstra", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "моя", base: "мой", reading: "moy" }, { word: "сестра", base: "сестра", reading: "sestra" }] }
+      - { target: "Твоя сестра здесь.", reading: "Tvoya sestra zdes'.", ipa: "tvɐˈja sʲɪˈstra zdʲesʲ", bases: [{ word: "Твоя", base: "твой", reading: "tvoy" }, { word: "сестра", base: "сестра", reading: "sestra" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }
+  - id: "ru-0466"
+    target: "ночь"
+    reading: "noch'"
+    ipa: "notɕ"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это ночь.", reading: "Eto noch'.", ipa: "ˈɛtə notɕ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "ночь", base: "ночь", reading: "noch'" }] }
+      - { target: "Эта ночь хорошая.", reading: "Eta noch' khoroshaya.", ipa: "ˈɛtə notɕ xɐˈroʂəjə", bases: [{ word: "Эта", base: "этот", reading: "etot" }, { word: "ночь", base: "ночь", reading: "noch'" }, { word: "хорошая", base: "хороший", reading: "khoroshiy" }] }
+  - id: "ru-0467"
+    target: "окно"
+    reading: "okno"
+    ipa: "ɐˈkno"
+    pos: "noun"
+    gender: "n"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это окно.", reading: "Eto okno.", ipa: "ˈɛtə ɐˈkno", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "окно", base: "окно", reading: "okno" }] }
+      - { target: "Это твоё окно.", reading: "Eto tvoyo okno.", ipa: "ˈɛtə tvɐˈjo ɐˈkno", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "твоё", base: "твой", reading: "tvoy" }, { word: "окно", base: "окно", reading: "okno" }] }
+  - id: "ru-0468"
+    target: "море"
+    reading: "more"
+    ipa: "ˈmorʲɪ"
+    pos: "noun"
+    gender: "n"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это море.", reading: "Eto more.", ipa: "ˈɛtə ˈmorʲɪ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "море", base: "море", reading: "more" }] }
+      - { target: "Это моё море.", reading: "Eto moyo more.", ipa: "ˈɛtə mɐˈjo ˈmorʲɪ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "моё", base: "мой", reading: "moy" }, { word: "море", base: "море", reading: "more" }] }

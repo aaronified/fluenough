@@ -1,0 +1,29 @@
+schema: 1
+id: "ru-en-grammar-accusative"
+kind: "layer"
+core: "ru-grammar-accusative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The accusative: the thing that is acted on"
+license: "CC-BY-SA-4.0"
+description: "Twelve nouns in the nominative and in the accusative singular. The accusative is the case of the direct object: what the verb acts on."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The accusative: the thing that is acted on"
+  slot_name: "case"
+  slots:
+    "nominative": "the subject form (nominative)"
+    "accusative": "the object form (accusative)"
+  entries:
+    "stol": "table (a masculine thing: no change)"
+    "dom": "house (a masculine thing: no change)"
+    "brat": "brother (a masculine person: the ending а (a))"
+    "drug": "friend (a masculine person: the ending а (a))"
+    "kniga": "book (feminine: а (a) becomes у (u))"
+    "voda": "water (feminine: а (a) becomes у (u))"
+    "zhena": "wife (feminine: а (a) becomes у (u))"
+    "sestra": "sister (feminine: а (a) becomes у (u))"
+    "semya": "family (feminine: я (ya) becomes ю (yu))"
+    "noch": "night (feminine in a soft sign: no change)"
+    "okno": "window (neuter: no change)"
+    "moloko": "milk (neuter: no change)"
+  notes: "The accusative is the case of the direct object, the thing the verb acts on: in я читаю книгу (ya chitayu knigu) the object is книгу (knigu). A feminine noun in а (a) changes the а (a) to у (u), and one in я (ya) changes it to ю (yu): книга (kniga), книгу (knigu); семья (sem'ya), семью (sem'yu). A masculine noun that names a thing, a neuter noun and a feminine noun in ь (soft sign) do not change: я знаю стол (ya znayu stol). A masculine noun that names a person is the exception: its accusative is the same as its genitive, which adds а (a) (or я (ya)): брат (brat), брата (brata), and друг (drug), друга (druga). Wikipedia's table gives the accusative of masculine nouns as the same as the nominative or the genitive, and the accusative of feminine nouns in а (a) as у (u) (or ю (yu)). Two notes about the stress: it moves in вода (voda), воду (vodu) and in жена (zhena), жену (zhenu)."

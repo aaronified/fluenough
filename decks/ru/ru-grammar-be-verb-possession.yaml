@@ -1,0 +1,102 @@
+# Unit 29 grammar, the possession frame. Sources read: en.wikipedia.org 'Russian grammar' (the personal pronouns' genitive меня́, тебя́, его́, её, нас, вас, их; the н- before a third-person pronoun after a preposition, у него; the present of быть is есть; the genitive of nouns in -а is -ы or -и) and the en.wiktionary.org entry нет (there is no, with the genitive). The genitive of книга is the only genitive noun in these tables.
+schema: 1
+id: "ru-grammar-be-verb-possession"
+part: "core"
+kind: "grammar"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["have", "not"]
+  entries:
+    - lemma: "у меня"
+      key: "u-menya"
+      reading: "u menya"
+      ipa: "ʊ mʲɪˈnʲa"
+      forms:
+        "have": "у меня есть книга"
+        "not": "у меня нет книги"
+      readings:
+        "have": "u menya yest' kniga"
+        "not": "u menya net knigi"
+      ipas:
+        "have": "ʊ mʲɪˈnʲa jestʲ ˈknʲiɡə"
+        "not": "ʊ mʲɪˈnʲa nʲet ˈknʲiɡʲɪ"
+    - lemma: "у тебя"
+      key: "u-tebya"
+      reading: "u tebya"
+      ipa: "ʊ tʲɪˈbʲa"
+      forms:
+        "have": "у тебя есть книга"
+        "not": "у тебя нет книги"
+      readings:
+        "have": "u tebya yest' kniga"
+        "not": "u tebya net knigi"
+      ipas:
+        "have": "ʊ tʲɪˈbʲa jestʲ ˈknʲiɡə"
+        "not": "ʊ tʲɪˈbʲa nʲet ˈknʲiɡʲɪ"
+    - lemma: "у него"
+      key: "u-nego"
+      reading: "u nego"
+      ipa: "ʊ nʲɪˈvo"
+      forms:
+        "have": "у него есть книга"
+        "not": "у него нет книги"
+      readings:
+        "have": "u nego yest' kniga"
+        "not": "u nego net knigi"
+      ipas:
+        "have": "ʊ nʲɪˈvo jestʲ ˈknʲiɡə"
+        "not": "ʊ nʲɪˈvo nʲet ˈknʲiɡʲɪ"
+    - lemma: "у неё"
+      key: "u-neyo"
+      reading: "u neyo"
+      ipa: "ʊ nʲɪˈjo"
+      forms:
+        "have": "у неё есть книга"
+        "not": "у неё нет книги"
+      readings:
+        "have": "u neyo yest' kniga"
+        "not": "u neyo net knigi"
+      ipas:
+        "have": "ʊ nʲɪˈjo jestʲ ˈknʲiɡə"
+        "not": "ʊ nʲɪˈjo nʲet ˈknʲiɡʲɪ"
+    - lemma: "у нас"
+      key: "u-nas"
+      reading: "u nas"
+      ipa: "ʊ nas"
+      forms:
+        "have": "у нас есть книга"
+        "not": "у нас нет книги"
+      readings:
+        "have": "u nas yest' kniga"
+        "not": "u nas net knigi"
+      ipas:
+        "have": "ʊ nas jestʲ ˈknʲiɡə"
+        "not": "ʊ nas nʲet ˈknʲiɡʲɪ"
+    - lemma: "у вас"
+      key: "u-vas"
+      reading: "u vas"
+      ipa: "ʊ vas"
+      forms:
+        "have": "у вас есть книга"
+        "not": "у вас нет книги"
+      readings:
+        "have": "u vas yest' kniga"
+        "not": "u vas net knigi"
+      ipas:
+        "have": "ʊ vas jestʲ ˈknʲiɡə"
+        "not": "ʊ vas nʲet ˈknʲiɡʲɪ"
+    - lemma: "у них"
+      key: "u-nih"
+      reading: "u nikh"
+      ipa: "ʊ nʲix"
+      forms:
+        "have": "у них есть книга"
+        "not": "у них нет книги"
+      readings:
+        "have": "u nikh yest' kniga"
+        "not": "u nikh net knigi"
+      ipas:
+        "have": "ʊ nʲix jestʲ ˈknʲiɡə"
+        "not": "ʊ nʲix nʲet ˈknʲiɡʲɪ"

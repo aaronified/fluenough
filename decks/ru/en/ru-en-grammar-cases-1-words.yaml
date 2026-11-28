@@ -1,0 +1,70 @@
+schema: 1
+id: "ru-en-grammar-cases-1-words"
+kind: "layer"
+core: "ru-grammar-cases-1-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns for the first cases"
+license: "CC-BY-SA-4.0"
+description: "4 nouns used in the first cases: the nominative, the accusative and the prepositional. Taken from Wikipedia's page on Russian grammar and each word's Wiktionary entry. Not yet checked by a Russian speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "ru-0580":
+    native: "book"
+    notes:
+      "n1": "книга (kniga) ends in а (a) and is feminine. Its accusative is книгу (knigu), its plural is книги (knigi), and in the prepositional it is в книге (v knige)."
+    examples:
+      "Это книга.":
+        native: "This is a book."
+        bases:
+          "Это": "this; it; this is"
+          "книга": "book"
+      "Я читаю книгу.":
+        native: "I am reading a book."
+        bases:
+          "книгу": "book (accusative)"
+  "ru-0581":
+    native: "school"
+    notes:
+      "n1": "школа (shkola) ends in а (a) and is feminine. In the prepositional it is в школе (v shkole), with the ending е (ye)."
+    examples:
+      "Это школа.":
+        native: "This is a school."
+        bases:
+          "Это": "this; it; this is"
+          "школа": "school"
+      "Сестра в школе.":
+        native: "My sister is in the school."
+        bases:
+          "в": "in; into"
+          "школе": "school (prepositional)"
+  "ru-0582":
+    native: "city; town"
+    notes:
+      "n1": "город (gorod) ends in a consonant and is masculine. In the prepositional it is в городе (v gorode), with the ending е (ye); its plural is irregular, города (goroda), with the stress on the ending."
+    examples:
+      "Это город.":
+        native: "This is a city."
+        bases:
+          "Это": "this; it; this is"
+          "город": "city; town"
+      "Мы живём в городе.":
+        native: "We live in the city."
+        bases:
+          "Мы": "we"
+          "в": "in; into"
+          "городе": "city (prepositional)"
+  "ru-0583":
+    native: "street"
+    notes:
+      "n1": "улица (ulitsa) ends in а (a) and is feminine. It is used with на (na): на улице (na ulitse), in the street (outdoors)."
+    examples:
+      "Это улица.":
+        native: "This is a street."
+        bases:
+          "Это": "this; it; this is"
+          "улица": "street"
+      "Брат на улице.":
+        native: "My brother is in the street."
+        bases:
+          "на": "on; at"
+          "улице": "street (prepositional)"

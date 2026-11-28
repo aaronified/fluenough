@@ -1,0 +1,115 @@
+# Unit 24 grammar topic nominative. Sources read: en.wikipedia.org 'Russian grammar' (nominative: main subject and dictionary form; the declension tables: masculine in a consonant -ы or -и, feminine in -а -ы or -и, neuter -о to -а) and the en.wiktionary.org entries of the eight nouns (plural and stress).
+schema: 1
+id: "ru-grammar-nominative"
+part: "core"
+kind: "grammar"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["singular", "plural"]
+  entries:
+    - lemma: "стол"
+      key: "stol"
+      reading: "stol"
+      ipa: "stol"
+      forms:
+        "singular": "стол"
+        "plural": "столы"
+      readings:
+        "singular": "stol"
+        "plural": "stoly"
+      ipas:
+        "singular": "stol"
+        "plural": "stɐˈlɨ"
+    - lemma: "дом"
+      key: "dom"
+      reading: "dom"
+      ipa: "dom"
+      forms:
+        "singular": "дом"
+        "plural": "дома"
+      readings:
+        "singular": "dom"
+        "plural": "doma"
+      ipas:
+        "singular": "dom"
+        "plural": "dɐˈma"
+    - lemma: "сад"
+      key: "sad"
+      reading: "sad"
+      ipa: "sat"
+      forms:
+        "singular": "сад"
+        "plural": "сады"
+      readings:
+        "singular": "sad"
+        "plural": "sady"
+      ipas:
+        "singular": "sat"
+        "plural": "sɐˈdɨ"
+    - lemma: "книга"
+      key: "kniga"
+      reading: "kniga"
+      ipa: "ˈknʲiɡə"
+      forms:
+        "singular": "книга"
+        "plural": "книги"
+      readings:
+        "singular": "kniga"
+        "plural": "knigi"
+      ipas:
+        "singular": "ˈknʲiɡə"
+        "plural": "ˈknʲiɡʲɪ"
+    - lemma: "школа"
+      key: "shkola"
+      reading: "shkola"
+      ipa: "ˈʂkolə"
+      forms:
+        "singular": "школа"
+        "plural": "школы"
+      readings:
+        "singular": "shkola"
+        "plural": "shkoly"
+      ipas:
+        "singular": "ˈʂkolə"
+        "plural": "ˈʂkolɨ"
+    - lemma: "окно"
+      key: "okno"
+      reading: "okno"
+      ipa: "ɐˈkno"
+      forms:
+        "singular": "окно"
+        "plural": "окна"
+      readings:
+        "singular": "okno"
+        "plural": "okna"
+      ipas:
+        "singular": "ɐˈkno"
+        "plural": "ˈoknə"
+    - lemma: "друг"
+      key: "drug"
+      reading: "drug"
+      ipa: "druk"
+      forms:
+        "singular": "друг"
+        "plural": "друзья"
+      readings:
+        "singular": "drug"
+        "plural": "druz'ya"
+      ipas:
+        "singular": "druk"
+        "plural": "drʊˈzʲja"
+    - lemma: "город"
+      key: "gorod"
+      reading: "gorod"
+      ipa: "ˈɡorət"
+      forms:
+        "singular": "город"
+        "plural": "города"
+      readings:
+        "singular": "gorod"
+        "plural": "goroda"
+      ipas:
+        "singular": "ˈɡorət"
+        "plural": "ɡərɐˈda"

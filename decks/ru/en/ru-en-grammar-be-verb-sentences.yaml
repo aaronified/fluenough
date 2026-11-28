@@ -1,0 +1,114 @@
+schema: 1
+id: "ru-en-grammar-be-verb-sentences"
+kind: "layer"
+core: "ru-grammar-be-verb-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be in sentences"
+license: "CC-BY-SA-4.0"
+description: "16 short sentences with the verb to be: the present without a verb, the past, the future, and the frame for I have. Not yet checked by a Russian speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ru-4150":
+    native: "I am a student."
+    notes:
+      "n1": "There is no word for am in the present tense: быть (byt') is left out, so the sentence is я (ya) and студент (student)."
+    bases:
+      "студент": "student (a man)"
+  "ru-4151":
+    native: "My brother is a student."
+    notes:
+      "n1": "There is no word for is in the present tense: быть (byt') is left out."
+    bases:
+      "Мой": "my; mine"
+      "студент": "student (a man)"
+  "ru-4152":
+    native: "I was here (a man speaking)."
+    notes:
+      "n1": "был (byl) is the masculine past of быть (byt'): a man says я был (ya byl)."
+    bases:
+      "здесь": "here"
+  "ru-4153":
+    native: "I was here (a woman speaking)."
+    notes:
+      "n1": "была (byla) is the feminine past of быть (byt'): a woman says я была (ya byla)."
+    bases:
+      "здесь": "here"
+  "ru-4154":
+    native: "My sister was here."
+    notes:
+      "n1": "была (byla) is the feminine past of быть (byt'), and it agrees with сестра (sestra), which is feminine."
+    bases:
+      "здесь": "here"
+  "ru-4155":
+    native: "My brother was at school."
+    notes:
+      "n1": "был (byl) is the masculine past of быть (byt'), and it agrees with брат (brat)."
+    bases:
+      "в": "in; into"
+  "ru-4156":
+    native: "We were in the city."
+    notes:
+      "n1": "были (byli) is the plural past of быть (byt'), and it is the same for every person in the plural."
+    bases:
+      "Мы": "we"
+      "в": "in; into"
+  "ru-4157":
+    native: "I will be here."
+    notes:
+      "n1": "буду (budu) is the я (ya) form of the future of быть (byt')."
+    bases:
+      "здесь": "here"
+  "ru-4158":
+    native: "Will you be at school?"
+    notes:
+      "n1": "будешь (budesh') is the ты (ty) form of the future of быть (byt')."
+    bases:
+      "Ты": "you (one person)"
+      "в": "in; into"
+  "ru-4159":
+    native: "He will be in the city."
+    notes:
+      "n1": "будет (budet) is the он (on) form of the future of быть (byt')."
+    bases:
+      "Он": "he; it"
+      "в": "in; into"
+  "ru-4160":
+    native: "They will be in the garden."
+    notes:
+      "n1": "будут (budut) is the они (oni) form of the future of быть (byt')."
+    bases:
+      "Они": "they"
+      "в": "in; into"
+  "ru-4161":
+    native: "I have a book."
+    notes:
+      "n1": "у меня есть (u menya yest') is the frame for I have: у (u), the genitive меня (menya), and есть (yest')."
+    bases:
+      "У": "by; at (with the owner)"
+  "ru-4162":
+    native: "I have no sister."
+    notes:
+      "n1": "After нет (net) the thing is in the genitive: сестры (sestry) is the genitive of сестра (sestra)."
+    bases:
+      "У": "by; at (with the owner)"
+  "ru-4163":
+    native: "You have a brother."
+    notes:
+      "n1": "у тебя есть (u tebya yest') is you have, said to one person."
+    bases:
+      "У": "by; at (with the owner)"
+      "тебя": "you (genitive)"
+  "ru-4164":
+    native: "He has no house."
+    notes:
+      "n1": "у него (u nego) has an н (n) because it follows a preposition; after нет (net) the genitive of дом (dom) is дома (doma)."
+    bases:
+      "У": "by; at (with the owner)"
+      "него": "him (genitive, after a preposition)"
+  "ru-4165":
+    native: "We have tea."
+    notes:
+      "n1": "у нас есть (u nas yest') is we have."
+    bases:
+      "У": "by; at (with the owner)"
+      "нас": "us (genitive)"

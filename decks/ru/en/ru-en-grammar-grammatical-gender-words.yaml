@@ -1,0 +1,157 @@
+schema: 1
+id: "ru-en-grammar-grammatical-gender-words"
+kind: "layer"
+core: "ru-grammar-grammatical-gender-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns for the three genders"
+license: "CC-BY-SA-4.0"
+description: "9 nouns that show the three genders and their endings: masculine in a consonant, soft sign, а (a) or я (ya); feminine in а (a) or a soft sign; neuter in о (o) or е (ye). Taken from Wikipedia's page on Russian grammar and each word's Wiktionary entry. Not yet checked by a Russian speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "ru-0460":
+    native: "table"
+    notes:
+      "n1": "стол (stol) is masculine: it ends in a consonant. Masculine nouns that end in a consonant take мой (мой (moy)), твой (твой (tvoy)) and этот (этот (etot))."
+    examples:
+      "Это стол.":
+        native: "This is a table."
+        bases:
+          "Это": "this; it; this is"
+          "стол": "table"
+      "Это мой стол.":
+        native: "This is my table."
+        bases:
+          "Это": "this; it; this is"
+          "мой": "my; mine"
+          "стол": "table"
+  "ru-0461":
+    native: "house; home"
+    notes:
+      "n1": "дом (dom) is masculine: it ends in a consonant, so it goes with the masculine forms мой (moy), твой (tvoy) and этот (etot)."
+    examples:
+      "Это дом.":
+        native: "This is a house."
+        bases:
+          "Это": "this; it; this is"
+          "дом": "house; home"
+      "Твой дом здесь.":
+        native: "Your house is here."
+        bases:
+          "Твой": "your; yours (one person)"
+          "дом": "house; home"
+          "здесь": "here"
+  "ru-0462":
+    native: "day"
+    notes:
+      "n1": "день (den') ends in the soft sign ь (soft sign) and is masculine. A noun in ь (soft sign) can be masculine or feminine, so each has to be learnt: день (den') is masculine, and ночь (noch'), night is feminine. день (den') also loses its е (ye) in other forms."
+    examples:
+      "Добрый день!":
+        native: "Good day!"
+        bases:
+          "Добрый": "good; kind"
+          "день": "day"
+      "Это мой день.":
+        native: "This is my day."
+        bases:
+          "Это": "this; it; this is"
+          "мой": "my; mine"
+          "день": "day"
+  "ru-0463":
+    native: "dad"
+    notes:
+      "n1": "папа (papa) ends in а (a) like a feminine noun, but it names a man and is masculine, so it takes the masculine forms: мой папа (moy papa). Wikipedia's table of the first declension covers feminine and masculine nouns that end in а (a) or я (ya)."
+    examples:
+      "Это мой папа.":
+        native: "This is my dad."
+        bases:
+          "Это": "this; it; this is"
+          "мой": "my; mine"
+          "папа": "dad"
+      "Мой папа здесь.":
+        native: "My dad is here."
+        bases:
+          "Мой": "my; mine"
+          "папа": "dad"
+          "здесь": "here"
+  "ru-0464":
+    native: "uncle"
+    notes:
+      "n1": "дядя (dyadya) ends in я (ya) like a feminine noun, but it names a man and is masculine, so it takes the masculine forms: твой дядя (tvoy dyadya)."
+    examples:
+      "Это мой дядя.":
+        native: "This is my uncle."
+        bases:
+          "Это": "this; it; this is"
+          "мой": "my; mine"
+          "дядя": "uncle"
+      "Твой дядя здесь.":
+        native: "Your uncle is here."
+        bases:
+          "Твой": "your; yours (one person)"
+          "дядя": "uncle"
+          "здесь": "here"
+  "ru-0465":
+    native: "sister"
+    notes:
+      "n1": "сестра (sestra) ends in а (a) and is feminine, so it goes with the feminine forms моя (moya), твоя (tvoya) and эта (eta)."
+    examples:
+      "Это моя сестра.":
+        native: "This is my sister."
+        bases:
+          "Это": "this; it; this is"
+          "моя": "my (feminine)"
+          "сестра": "sister"
+      "Твоя сестра здесь.":
+        native: "Your sister is here."
+        bases:
+          "Твоя": "your (feminine)"
+          "сестра": "sister"
+          "здесь": "here"
+  "ru-0466":
+    native: "night"
+    notes:
+      "n1": "ночь (noch') ends in the soft sign ь (soft sign) and is feminine, so it takes моя (moya), твоя (tvoya) and эта (eta). Compare день (den'), which ends in ь (soft sign) too and is masculine."
+    examples:
+      "Это ночь.":
+        native: "This is night."
+        bases:
+          "Это": "this; it; this is"
+          "ночь": "night"
+      "Эта ночь хорошая.":
+        native: "This night is good."
+        bases:
+          "Эта": "this (feminine)"
+          "ночь": "night"
+          "хорошая": "good (feminine)"
+  "ru-0467":
+    native: "window"
+    notes:
+      "n1": "окно (okno) ends in о (o) and is neuter, so it goes with the neuter forms моё (moyo), твоё (tvoyo) and это (eto)."
+    examples:
+      "Это окно.":
+        native: "This is a window."
+        bases:
+          "Это": "this; it; this is"
+          "окно": "window"
+      "Это твоё окно.":
+        native: "This is your window."
+        bases:
+          "Это": "this; it; this is"
+          "твоё": "your (neuter)"
+          "окно": "window"
+  "ru-0468":
+    native: "sea"
+    notes:
+      "n1": "море (more) ends in е (ye) and is neuter. Neuter nouns end in о (o) or е (ye), and they take the neuter forms моё (moyo) and твоё (tvoyo)."
+    examples:
+      "Это море.":
+        native: "This is the sea."
+        bases:
+          "Это": "this; it; this is"
+          "море": "sea"
+      "Это моё море.":
+        native: "This is my sea."
+        bases:
+          "Это": "this; it; this is"
+          "моё": "my (neuter)"
+          "море": "sea"

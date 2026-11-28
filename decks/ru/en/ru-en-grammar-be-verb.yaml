@@ -1,0 +1,25 @@
+schema: 1
+id: "ru-en-grammar-be-verb"
+kind: "layer"
+core: "ru-grammar-be-verb"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be: past and future"
+license: "CC-BY-SA-4.0"
+description: "Eight subjects, each with быть (byt'), to be in the past and in the future. The past agrees with the gender of the subject: был (byl), была (byla), было (bylo), были (byli). The future has one form for each person: буду (budu), будешь (budesh'), будет (budet), будем (budem), будете (budete), будут (budut)."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "To be: past and future"
+  slot_name: "tense"
+  slots:
+    "past": "was or were (past)"
+    "future": "will be (future)"
+  entries:
+    "ya": "I (a man says я был (ya byl), a woman я была (ya byla))"
+    "ty": "you, one person (to a man ты был (ty byl), to a woman ты была (ty byla))"
+    "on": "he"
+    "ona": "she"
+    "ono": "it"
+    "my": "we"
+    "vy": "you, more than one person or polite"
+    "oni": "they"
+  notes: "Russian has no word for am, is or are in the present tense: the verb быть (byt') is left out, and a sentence is just two parts, as in я студент (ya student), I am a student. Wikipedia's page on Russian grammar says that the present tense of быть (byt') is today used only in the third person singular, есть (yest'), and that есть (yest') is often used for all persons. In the past tense the verb is used, and it takes the ending of the gender of the subject: был (byl) for a masculine subject, была (byla) for a feminine one, было (bylo) for a neuter one and были (byli) for a plural one, for every person: a man says я был (ya byl) and a woman says я была (ya byla). The past tense ends in л (l), ла (la), ло (lo) and ли (li), as the page's table of past forms shows. In the future tense быть (byt') has its own forms: буду (budu), будешь (budesh'), будет (budet), будем (budem), будете (budete), будут (budut). With an imperfective verb these forms make the future: она будет читать (ona budet chitat'), she will be reading."

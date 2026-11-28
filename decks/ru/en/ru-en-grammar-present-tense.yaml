@@ -1,0 +1,31 @@
+schema: 1
+id: "ru-en-grammar-present-tense"
+kind: "layer"
+core: "ru-grammar-present-tense"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present tense"
+license: "CC-BY-SA-4.0"
+description: "Ten verbs in the present tense, one form for each person: I, you (one person), he or she, we, you (more than one person, or polite), and they. Verbs of the first conjugation end in ю (yu), ешь (yesh'), ет (yet), ем (yem), ете (yete), ют (yut), and verbs of the second in ю (yu), ишь (ish'), ит (it), им (im), ите (ite), ят (yat). Not yet checked by a Russian speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The present tense"
+  slot_name: "person"
+  slots:
+    "ya": "I (я (ya))"
+    "ty": "you, one person (ты (ty))"
+    "on": "he, she or it (он (on), она (ona), оно (ono))"
+    "my": "we (мы (my))"
+    "vy": "you, more than one person or polite (вы (vy))"
+    "oni": "they (они (oni))"
+  entries:
+    "znat": "to know (first conjugation)"
+    "ponimat": "to understand (first conjugation)"
+    "delat": "to do; to make (first conjugation)"
+    "rabotat": "to work (first conjugation)"
+    "chitat": "to read (first conjugation)"
+    "govorit": "to speak; to say (second conjugation)"
+    "lyubit": "to love; to like (second conjugation)"
+    "hotet": "to want (mixed: second-conjugation endings in the plural, first-conjugation in the singular, and a changed stem)"
+    "moch": "to be able; can (first conjugation with a changed stem)"
+    "zhit": "to live (first conjugation with the stress on the ending)"
+  notes: "A Russian verb in the present tense changes its ending for each person. There are two sets of endings. The first conjugation: ю (yu) (or у (u)), ешь (yesh'), ет (yet), ем (yem), ете (yete), ют (yut) (or ут (ut)), as in читать (chitat'). The second conjugation: ю (yu) (or у (u)), ишь (ish'), ит (it), им (im), ите (ite), ят (yat) (or ат (at)), as in говорить (govorit'). The endings у (u), ут (ut) and ат (at) are used after a hard consonant or after ж (zh), ш (sh), щ (shch) and ч (ch); otherwise ю (yu), ют (yut) and ят (yat). A stressed е (ye) in an ending becomes ё (yo): живёшь (zhivyosh'). The stress can stay on the stem (знаю (znayu)), stay on the ending (живу (zhivu)), or move (говорю (govoryu), говоришь (govorish')). Some verbs change their stem: любить (lyubit') adds an л (l) in the я (ya) form, and хотеть (khotet') and мочь (moch') have a different stem in the singular and the plural. Russian has no word for am, is or are in the present: the verb быть (byt') is left out, as in я студент (ya student). A sentence that says what is happening now and what happens in general uses the same form: я читаю (ya chitayu) is I read and I am reading. The forms of он (on) are the same for она (ona) and оно (ono)."

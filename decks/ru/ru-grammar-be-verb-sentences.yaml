@@ -1,0 +1,137 @@
+# Unit 29 sentences. Every form comes from the unit's tables (ru-grammar-be-verb and ru-grammar-be-verb-possession).
+schema: 1
+id: "ru-grammar-be-verb-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ru-4150"
+    target: "Я студент."
+    reading: "Ya student."
+    ipa: "ja stʊˈdʲent"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Я", ref: "ru-0003" }, { word: "студент", base: "студент", reading: "student" }]
+  - id: "ru-4151"
+    target: "Мой брат студент."
+    reading: "Moy brat student."
+    ipa: "moj brat stʊˈdʲent"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Мой", base: "мой", reading: "moy" }, { word: "брат", ref: "ru-0400" }, { word: "студент", base: "студент", reading: "student" }]
+  - id: "ru-4152"
+    target: "Я был здесь."
+    reading: "Ya byl zdes'."
+    ipa: "ja bɨl zdʲesʲ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Я", ref: "ru-0003" }, { word: "был", ref: "ru-0408" }, { word: "здесь", base: "здесь", reading: "zdes'" }]
+  - id: "ru-4153"
+    target: "Я была здесь."
+    reading: "Ya byla zdes'."
+    ipa: "ja bɨˈla zdʲesʲ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Я", ref: "ru-0003" }, { word: "была", ref: "ru-0408" }, { word: "здесь", base: "здесь", reading: "zdes'" }]
+  - id: "ru-4154"
+    target: "Сестра была здесь."
+    reading: "Sestra byla zdes'."
+    ipa: "sʲɪˈstra bɨˈla zdʲesʲ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Сестра", ref: "ru-0465" }, { word: "была", ref: "ru-0408" }, { word: "здесь", base: "здесь", reading: "zdes'" }]
+  - id: "ru-4155"
+    target: "Брат был в школе."
+    reading: "Brat byl v shkole."
+    ipa: "brat bɨl f ˈʂkolʲɪ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Брат", ref: "ru-0400" }, { word: "был", ref: "ru-0408" }, { word: "в", base: "в", reading: "v" }, { word: "школе", ref: "ru-0581" }]
+  - id: "ru-4156"
+    target: "Мы были в городе."
+    reading: "My byli v gorode."
+    ipa: "mɨ ˈbɨlʲɪ f ˈɡorədʲɪ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "были", ref: "ru-0408" }, { word: "в", base: "в", reading: "v" }, { word: "городе", ref: "ru-0582" }]
+  - id: "ru-4157"
+    target: "Я буду здесь."
+    reading: "Ya budu zdes'."
+    ipa: "ja ˈbudʊ zdʲesʲ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Я", ref: "ru-0003" }, { word: "буду", ref: "ru-0408" }, { word: "здесь", base: "здесь", reading: "zdes'" }]
+  - id: "ru-4158"
+    target: "Ты будешь в школе?"
+    reading: "Ty budesh' v shkole?"
+    ipa: "tɨ ˈbudʲɪʂ f ˈʂkolʲɪ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ты", base: "ты", reading: "ty" }, { word: "будешь", ref: "ru-0408" }, { word: "в", base: "в", reading: "v" }, { word: "школе", ref: "ru-0581" }]
+  - id: "ru-4159"
+    target: "Он будет в городе."
+    reading: "On budet v gorode."
+    ipa: "on ˈbudʲɪt f ˈɡorədʲɪ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Он", base: "он", reading: "on" }, { word: "будет", ref: "ru-0408" }, { word: "в", base: "в", reading: "v" }, { word: "городе", ref: "ru-0582" }]
+  - id: "ru-4160"
+    target: "Они будут в саду."
+    reading: "Oni budut v sadu."
+    ipa: "ɐˈnʲi ˈbudʊt f sɐˈdu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Они", base: "они", reading: "oni" }, { word: "будут", ref: "ru-0408" }, { word: "в", base: "в", reading: "v" }, { word: "саду", ref: "ru-0421" }]
+  - id: "ru-4161"
+    target: "У меня есть книга."
+    reading: "U menya yest' kniga."
+    ipa: "ʊ mʲɪˈnʲa jestʲ ˈknʲiɡə"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "У", base: "у", reading: "u" }, { word: "меня", ref: "ru-0003" }, { word: "есть", ref: "ru-0408" }, { word: "книга", ref: "ru-0580" }]
+  - id: "ru-4162"
+    target: "У меня нет сестры."
+    reading: "U menya net sestry."
+    ipa: "ʊ mʲɪˈnʲa nʲet sʲɪˈstrɨ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "У", base: "у", reading: "u" }, { word: "меня", ref: "ru-0003" }, { word: "нет", ref: "ru-0002" }, { word: "сестры", ref: "ru-0465" }]
+  - id: "ru-4163"
+    target: "У тебя есть брат."
+    reading: "U tebya yest' brat."
+    ipa: "ʊ tʲɪˈbʲa jestʲ brat"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "У", base: "у", reading: "u" }, { word: "тебя", base: "ты", reading: "ty" }, { word: "есть", ref: "ru-0408" }, { word: "брат", ref: "ru-0400" }]
+  - id: "ru-4164"
+    target: "У него нет дома."
+    reading: "U nego net doma."
+    ipa: "ʊ nʲɪˈvo nʲet ˈdomə"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "У", base: "у", reading: "u" }, { word: "него", base: "он", reading: "on" }, { word: "нет", ref: "ru-0002" }, { word: "дома", ref: "ru-0461" }]
+  - id: "ru-4165"
+    target: "У нас есть чай."
+    reading: "U nas yest' chay."
+    ipa: "ʊ nas jestʲ tɕaj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "У", base: "у", reading: "u" }, { word: "нас", base: "мы", reading: "my" }, { word: "есть", ref: "ru-0408" }, { word: "чай", ref: "ru-0423" }]

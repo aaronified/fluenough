@@ -1,0 +1,24 @@
+schema: 1
+id: "ru-en-grammar-be-verb-possession"
+kind: "layer"
+core: "ru-grammar-be-verb-possession"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "I have: у меня есть (u menya yest')"
+license: "CC-BY-SA-4.0"
+description: "Seven ways of saying who has a book: у меня есть книга (u menya yest' kniga) and, for no book, у меня нет книги (u menya net knigi). Russian has no verb for have here: it says 'by me there is a book'."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "I have: у меня есть (u menya yest')"
+  slot_name: "sentence"
+  slots:
+    "have": "has a book (есть (yest'))"
+    "not": "has no book (нет (net))"
+  entries:
+    "u-menya": "I have (with me)"
+    "u-tebya": "you have (one person)"
+    "u-nego": "he has"
+    "u-neyo": "she has"
+    "u-nas": "we have"
+    "u-vas": "you have (more than one person, or polite)"
+    "u-nih": "they have"
+  notes: "Russian says I have with у (u), the genitive form of the person, and есть (yest'): у меня есть книга (u menya yest' kniga), literally 'by me is a book'. The words after у (u) are the genitive forms меня (menya), тебя (tebya), него (nego), неё (neyo), нас (nas), вас (vas) and них (nikh). A third-person pronoun starts with н (n) after a preposition: у него (u nego) and not у его (u yego), as Wikipedia's page on Russian grammar says. To say that the person does not have something, есть (yest') is replaced by нет (net), and the thing changes to the genitive: книга (kniga) becomes книги (knigi), so у меня нет книги (u menya net knigi). This course teaches нет (net) with the genitive as a fixed phrase for now. The thing that is owned stays in the nominative after есть (yest')."
