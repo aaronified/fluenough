@@ -1,0 +1,293 @@
+schema: 1
+id: "de-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "de-1860"
+    target: "viel"
+    ipa: "fiːl"
+    pos: "other"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich habe viel Wasser.", ipa: "ɪç ˈhaːbə fiːl ˈvasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "viel", base: "viel" }, { word: "Wasser", base: "Wasser" }] }
+      - { target: "Das ist nicht viel.", ipa: "das ɪst nɪçt fiːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "viel", base: "viel" }] }
+  - id: "de-1861"
+    target: "wenig"
+    ipa: "ˈveːnɪç"
+    pos: "adjective"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist wenig.", ipa: "das ɪst ˈveːnɪç", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "wenig", base: "wenig" }] }
+      - { target: "Ich habe wenig.", ipa: "ɪç ˈhaːbə ˈveːnɪç", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "wenig", base: "wenig" }] }
+  - id: "de-1862"
+    target: "mehr"
+    ipa: "meːɐ̯"
+    pos: "adverb"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist mehr.", ipa: "das ɪst meːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "mehr", base: "mehr" }] }
+      - { target: "Ich habe nicht mehr.", ipa: "ɪç ˈhaːbə nɪçt meːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "nicht", base: "nicht" }, { word: "mehr", base: "mehr" }] }
+  - id: "de-1863"
+    target: "weniger"
+    ipa: "ˈveːniɡɐ"
+    pos: "adverb"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich habe weniger.", ipa: "ɪç ˈhaːbə ˈveːniɡɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "weniger", base: "weniger" }] }
+      - { target: "Das ist weniger.", ipa: "das ɪst ˈveːniɡɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "weniger", base: "weniger" }] }
+  - id: "de-1864"
+    target: "genug"
+    ipa: "ɡəˈnuːk"
+    pos: "adverb"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist genug.", ipa: "das ɪst ɡəˈnuːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "genug", base: "genug" }] }
+      - { target: "Das ist nicht genug.", ipa: "das ɪst nɪçt ɡəˈnuːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "genug", base: "genug" }] }
+  - id: "de-1865"
+    target: "jeder"
+    ipa: "ˈjeːdɐ"
+    pos: "other"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Jeder ist hier.", ipa: "ˈjeːdɐ ɪst hiːɐ̯", bases: [{ word: "Jeder", base: "jeder" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Jeder ist da.", ipa: "ˈjeːdɐ ɪst daː", bases: [{ word: "Jeder", base: "jeder" }, { word: "ist", base: "sein" }, { word: "da", base: "da" }] }
+  - id: "de-1866"
+    target: "bisschen"
+    ipa: "ˈbɪsçən"
+    pos: "adverb"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein bisschen.", ipa: "das ɪst aɪn ˈbɪsçən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "bisschen", base: "bisschen" }] }
+      - { target: "Ich habe ein bisschen Wasser.", ipa: "ɪç ˈhaːbə aɪn ˈbɪsçən ˈvasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "bisschen", base: "bisschen" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-1867"
+    target: "Menge"
+    ipa: "ˈmɛŋə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Mengen", ipa: "ˈmɛŋən" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich habe eine Menge.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈmɛŋə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Menge", base: "Menge" }] }
+      - { target: "Ich habe eine Menge Wasser.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈmɛŋə ˈvasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Menge", base: "Menge" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-1868"
+    target: "Stück"
+    ipa: "ʃtʏk"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Stücke", ipa: "ˈʃtʏkə" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Stück.", ipa: "das ɪst aɪn ʃtʏk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Stück", base: "Stück" }] }
+      - { target: "Das Stück ist gut.", ipa: "das ʃtʏk ɪst ɡuːt", bases: [{ word: "Das", base: "das" }, { word: "Stück", base: "Stück" }, { word: "ist", base: "sein" }, { word: "gut", base: "gut" }] }
+  - id: "de-1869"
+    target: "Paar"
+    ipa: "paːɐ̯"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Paare", ipa: "ˈpaːʁə" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Paar.", ipa: "das ɪst aɪn paːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Paar", base: "Paar" }] }
+      - { target: "Das Paar ist hier.", ipa: "das paːɐ̯ ɪst hiːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "Paar", base: "Paar" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+  - id: "de-1870"
+    target: "Dutzend"
+    ipa: "ˈdʊtsənt"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Dutzende", ipa: "ˈdʊtsəndə" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Dutzend.", ipa: "das ɪst aɪn ˈdʊtsənt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Dutzend", base: "Dutzend" }] }
+      - { target: "Das Dutzend ist hier.", ipa: "das ˈdʊtsənt ɪst hiːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "Dutzend", base: "Dutzend" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+  - id: "de-1871"
+    target: "Liter"
+    ipa: "ˈliːtɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich habe einen Liter.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈliːtɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Liter", base: "Liter" }] }
+      - { target: "Ein Liter Wasser, bitte.", ipa: "aɪn ˈliːtɐ ˈvasɐ ˈbɪtə", bases: [{ word: "Ein", base: "ein" }, { word: "Liter", base: "Liter" }, { word: "Wasser", base: "Wasser" }, { word: "bitte", base: "bitte" }] }
+  - id: "de-1872"
+    target: "Kilo"
+    ipa: "ˈkiːlo"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Kilos", ipa: "ˈkiːlɔs" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Kilo.", ipa: "das ɪst aɪn ˈkiːlo", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Kilo", base: "Kilo" }] }
+      - { target: "Das Kilo ist nicht hier.", ipa: "das ˈkiːlo ɪst nɪçt hiːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "Kilo", base: "Kilo" }, { word: "ist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "hier", base: "hier" }] }
+  - id: "de-1873"
+    target: "Gramm"
+    ipa: "ɡʁam"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Gramme", ipa: "ˈɡʁamə" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Gramm.", ipa: "das ɪst aɪn ɡʁam", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Gramm", base: "Gramm" }] }
+      - { target: "Das Gramm ist hier.", ipa: "das ɡʁam ɪst hiːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "Gramm", base: "Gramm" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+  - id: "de-1874"
+    target: "Portion"
+    ipa: "pɔʁˈtsjoːn"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Portionen", ipa: "pɔʁˈtsjoːnən" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich habe eine Portion.", ipa: "ɪç ˈhaːbə ˈaɪnə pɔʁˈtsjoːn", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Portion", base: "Portion" }] }
+      - { target: "Die Portion ist gut.", ipa: "diː pɔʁˈtsjoːn ɪst ɡuːt", bases: [{ word: "Die", base: "die" }, { word: "Portion", base: "Portion" }, { word: "ist", base: "sein" }, { word: "gut", base: "gut" }] }
+  - id: "de-1875"
+    target: "Packung"
+    ipa: "ˈpakʊŋ"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Packungen", ipa: "ˈpakʊŋən" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Packung.", ipa: "das ɪst ˈaɪnə ˈpakʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Packung", base: "Packung" }] }
+      - { target: "Ich habe eine Packung.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈpakʊŋ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Packung", base: "Packung" }] }
+  - id: "de-1876"
+    target: "Flasche"
+    ipa: "ˈflaʃə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Flaschen", ipa: "ˈflaʃən" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Flasche.", ipa: "das ɪst ˈaɪnə ˈflaʃə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Flasche", base: "Flasche" }] }
+      - { target: "Ich habe eine Flasche Wasser.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈflaʃə ˈvasɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Flasche", base: "Flasche" }, { word: "Wasser", base: "Wasser" }] }
+  - id: "de-1877"
+    target: "Tasse"
+    ipa: "ˈtasə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Tassen", ipa: "ˈtasən" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Tasse.", ipa: "das ɪst ˈaɪnə ˈtasə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Tasse", base: "Tasse" }] }
+      - { target: "Die Tasse ist hier.", ipa: "diː ˈtasə ɪst hiːɐ̯", bases: [{ word: "Die", base: "die" }, { word: "Tasse", base: "Tasse" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+  - id: "de-1878"
+    target: "Glas"
+    ipa: "ɡlaːs"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Gläser", ipa: "ˈɡlɛːzɐ" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Glas.", ipa: "das ɪst aɪn ɡlaːs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Glas", base: "Glas" }] }
+      - { target: "Das Glas ist hier.", ipa: "das ɡlaːs ɪst hiːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "Glas", base: "Glas" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+  - id: "de-1879"
+    target: "Scheibe"
+    ipa: "ˈʃaɪbə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Scheiben", ipa: "ˈʃaɪbən" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist eine Scheibe.", ipa: "das ɪst ˈaɪnə ˈʃaɪbə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Scheibe", base: "Scheibe" }] }
+      - { target: "Ich habe eine Scheibe.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈʃaɪbə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Scheibe", base: "Scheibe" }] }
+  - id: "de-1880"
+    target: "Hälfte"
+    ipa: "ˈhɛlftə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Hälften", ipa: "ˈhɛlftən" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist die Hälfte.", ipa: "das ɪst diː ˈhɛlftə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Hälfte", base: "Hälfte" }] }
+      - { target: "Ich habe die Hälfte.", ipa: "ɪç ˈhaːbə diː ˈhɛlftə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "die", base: "die" }, { word: "Hälfte", base: "Hälfte" }] }
+  - id: "de-1881"
+    target: "Teil"
+    ipa: "taɪl"
+    pos: "noun"
+    gender: "m"
+    forms: [{ id: "pl", kind: "plural", word: "Teile", ipa: "ˈtaɪlə" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Teil.", ipa: "das ɪst aɪn taɪl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Teil", base: "Teil" }] }
+      - { target: "Ich habe einen Teil.", ipa: "ɪç ˈhaːbə ˈaɪnən taɪl", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Teil", base: "Teil" }] }
+  - id: "de-1882"
+    target: "Anzahl"
+    ipa: "ˈantsaːl"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist die Anzahl.", ipa: "das ɪst diː ˈantsaːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Anzahl", base: "Anzahl" }] }
+      - { target: "Die Anzahl ist gut.", ipa: "diː ˈantsaːl ɪst ɡuːt", bases: [{ word: "Die", base: "die" }, { word: "Anzahl", base: "Anzahl" }, { word: "ist", base: "sein" }, { word: "gut", base: "gut" }] }
+  - id: "de-1883"
+    target: "Rest"
+    ipa: "ʁɛst"
+    pos: "noun"
+    gender: "m"
+    forms: [{ id: "pl", kind: "plural", word: "Reste", ipa: "ˈʁɛstə" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Rest.", ipa: "das ɪst deːɐ̯ ʁɛst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Rest", base: "Rest" }] }
+      - { target: "Ich habe einen Rest.", ipa: "ɪç ˈhaːbə ˈaɪnən ʁɛst", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Rest", base: "Rest" }] }
+  - id: "de-1884"
+    target: "Gewicht"
+    ipa: "ɡəˈvɪçt"
+    pos: "noun"
+    gender: "n"
+    forms: [{ id: "pl", kind: "plural", word: "Gewichte", ipa: "ɡəˈvɪçtə" }]
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist das Gewicht.", ipa: "das ɪst das ɡəˈvɪçt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Gewicht", base: "Gewicht" }] }
+      - { target: "Das Gewicht ist gut.", ipa: "das ɡəˈvɪçt ɪst ɡuːt", bases: [{ word: "Das", base: "das" }, { word: "Gewicht", base: "Gewicht" }, { word: "ist", base: "sein" }, { word: "gut", base: "gut" }] }

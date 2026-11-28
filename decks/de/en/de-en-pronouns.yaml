@@ -1,0 +1,232 @@
+schema: 1
+id: "de-en-pronouns"
+kind: "layer"
+core: "de-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns"
+description: "Small words that stand in for a person or thing: he, it, we, someone, nobody, something, nothing, everything, none, both, one, this one, and anyone. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "de-1440":
+    native: "he"
+    notes:
+      "n1": "Er is he. It also stands for a masculine noun, such as der Mann."
+    examples:
+      "Er ist hier.":
+        native: "He is here."
+        bases:
+          "Er": "he"
+          "ist": "is"
+          "hier": "here"
+      "Wo ist er?":
+        native: "Where is he?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "er": "he"
+  "de-1442":
+    native: "it"
+    notes:
+      "n1": "Es is it. It stands for a neuter noun, such as das Wasser."
+    examples:
+      "Es ist hier.":
+        native: "It is here."
+        bases:
+          "Es": "it"
+          "ist": "is"
+          "hier": "here"
+      "Wo ist es?":
+        native: "Where is it?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "es": "it"
+  "de-1443":
+    native: "we"
+    notes:
+      "n1": "Wir is we. With sind it takes the plural form of the verb for are: Wir sind hier."
+    examples:
+      "Wir sind hier.":
+        native: "We are here."
+        bases:
+          "Wir": "we"
+          "sind": "are"
+          "hier": "here"
+      "Wo sind wir?":
+        native: "Where are we?"
+        bases:
+          "Wo": "where"
+          "sind": "are"
+          "wir": "we"
+  "de-1446":
+    native: "someone; somebody"
+    notes:
+      "n1": "Jemand is someone or somebody."
+    examples:
+      "Ist jemand hier?":
+        native: "Is someone here?"
+        bases:
+          "Ist": "is"
+          "jemand": "someone"
+          "hier": "here"
+      "Da ist jemand.":
+        native: "There is someone."
+        bases:
+          "Da": "there"
+          "ist": "is"
+          "jemand": "someone"
+  "de-1447":
+    native: "nobody; no one"
+    notes:
+      "n1": "Niemand is nobody or no one."
+    examples:
+      "Hier ist niemand.":
+        native: "There is no one here."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "niemand": "nobody"
+      "Da ist niemand.":
+        native: "There is nobody there."
+        bases:
+          "Da": "there"
+          "ist": "is"
+          "niemand": "nobody"
+  "de-1448":
+    native: "something"
+    notes:
+      "n1": "Etwas is something. It is written with a small e."
+    examples:
+      "Das ist etwas.":
+        native: "That is something."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "etwas": "something"
+      "Ich habe etwas.":
+        native: "I have something."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "etwas": "something"
+  "de-1449":
+    native: "nothing"
+    notes:
+      "n1": "Nichts is nothing."
+    examples:
+      "Das ist nichts.":
+        native: "That is nothing."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "nichts": "nothing"
+      "Ich habe nichts.":
+        native: "I have nothing."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "nichts": "nothing"
+  "de-1450":
+    native: "everything; all"
+    notes:
+      "n1": "Alles is everything, or all."
+    examples:
+      "Das ist alles.":
+        native: "That is all."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "alles": "all"
+      "Ich habe alles.":
+        native: "I have everything."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "alles": "everything"
+  "de-1451":
+    native: "none; no one"
+    notes:
+      "n1": "Keiner is none, or no one. It is the negative of einer."
+    examples:
+      "Keiner ist hier.":
+        native: "No one is here."
+        bases:
+          "Keiner": "no one"
+          "ist": "is"
+          "hier": "here"
+      "Da ist keiner.":
+        native: "There is no one there."
+        bases:
+          "Da": "there"
+          "ist": "is"
+          "keiner": "no one"
+  "de-1452":
+    native: "both"
+    notes:
+      "n1": "Beide is both. It is used for two people or two things."
+    examples:
+      "Wir beide sind hier.":
+        native: "We both are here."
+        bases:
+          "Wir": "we"
+          "beide": "both"
+          "sind": "are"
+          "hier": "here"
+      "Ich habe beide.":
+        native: "I have both."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "beide": "both"
+  "de-1454":
+    native: "one"
+    notes:
+      "n1": "Einer is one, meaning one of a group, as in einer von ihnen."
+    examples:
+      "Einer ist hier.":
+        native: "One is here."
+        bases:
+          "Einer": "one"
+          "ist": "is"
+          "hier": "here"
+      "Ich habe einen.":
+        native: "I have one."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "one"
+  "de-1455":
+    native: "this one; this"
+    notes:
+      "n1": "Dieser is this one. Used alone, it stands for a masculine noun."
+    examples:
+      "Dieser ist hier.":
+        native: "This one is here."
+        bases:
+          "Dieser": "this one"
+          "ist": "is"
+          "hier": "here"
+      "Wo ist dieser?":
+        native: "Where is this one?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "dieser": "this one"
+  "de-1456":
+    native: "someone; anyone"
+    notes:
+      "n1": "Irgendwer is someone or anyone. It is colloquial."
+    examples:
+      "Ist irgendwer hier?":
+        native: "Is anyone here?"
+        bases:
+          "Ist": "is"
+          "irgendwer": "anyone"
+          "hier": "here"
+      "Irgendwer ist hier.":
+        native: "Someone is here."
+        bases:
+          "Irgendwer": "someone"
+          "ist": "is"
+          "hier": "here"

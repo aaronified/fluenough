@@ -1,0 +1,512 @@
+schema: 1
+id: "de-en-quantities"
+kind: "layer"
+core: "de-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Quantities"
+description: "Words for amounts: much and little, more and less, enough and each, and the units people count and measure in: a bit, a lot, a piece, a pair, a dozen, a litre, a kilo, a gram, a portion, a pack, a bottle, a cup, a glass, a slice, half, a part, the rest and weight. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "de-1860":
+    native: "much, many"
+    notes:
+      "n1": "Viel is much or many, as in viel Wasser, much water."
+    examples:
+      "Ich habe viel Wasser.":
+        native: "I have a lot of water."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "viel": "much"
+          "Wasser": "water"
+      "Das ist nicht viel.":
+        native: "That is not much."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "nicht": "not"
+          "viel": "much"
+  "de-1861":
+    native: "little, few"
+    notes:
+      "n1": "Wenig is little or few: das ist wenig, that is little."
+    examples:
+      "Das ist wenig.":
+        native: "That is little."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "wenig": "little"
+      "Ich habe wenig.":
+        native: "I have little."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "wenig": "little"
+  "de-1862":
+    native: "more"
+    notes:
+      "n1": "Mehr is more. It never changes its form."
+    examples:
+      "Das ist mehr.":
+        native: "That is more."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "mehr": "more"
+      "Ich habe nicht mehr.":
+        native: "I have no more."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "nicht": "not"
+          "mehr": "more"
+  "de-1863":
+    native: "less"
+    notes:
+      "n1": "Weniger is less, the opposite of mehr."
+    examples:
+      "Ich habe weniger.":
+        native: "I have less."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "weniger": "less"
+      "Das ist weniger.":
+        native: "That is less."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "weniger": "less"
+  "de-1864":
+    native: "enough, sufficiently, in an adequate way"
+    notes:
+      "n1": "Genug is enough. It can stand alone, as in das ist genug."
+    examples:
+      "Das ist genug.":
+        native: "That is enough."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "genug": "enough"
+      "Das ist nicht genug.":
+        native: "That is not enough."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "nicht": "not"
+          "genug": "enough"
+  "de-1865":
+    native: "each, every"
+    notes:
+      "n1": "Jeder is each or every. Before a noun it takes endings; on its own, as here, it means each one."
+    examples:
+      "Jeder ist hier.":
+        native: "Each one is here."
+        bases:
+          "Jeder": "each"
+          "ist": "is"
+          "hier": "here"
+      "Jeder ist da.":
+        native: "Each one is there."
+        bases:
+          "Jeder": "each"
+          "ist": "is"
+          "da": "there"
+  "de-1866":
+    native: "(a) bit; (a) little"
+    notes:
+      "n1": "Bisschen is a bit or a little. Ein bisschen is the usual form."
+    examples:
+      "Das ist ein bisschen.":
+        native: "That is a bit."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "ein": "a"
+          "bisschen": "a bit"
+      "Ich habe ein bisschen Wasser.":
+        native: "I have a little water."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "bisschen": "a bit"
+          "Wasser": "water"
+  "de-1867":
+    native: "quantity"
+    notes:
+      "n1": "Menge is quantity, feminine: die Menge. Its plural is Mengen. Eine Menge means a lot."
+    forms:
+      "pl": "plural"
+    examples:
+      "Ich habe eine Menge.":
+        native: "I have a lot."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Menge": "quantity"
+      "Ich habe eine Menge Wasser.":
+        native: "I have a lot of water."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Menge": "quantity"
+          "Wasser": "water"
+  "de-1868":
+    native: "one, item, piece, unit"
+    notes:
+      "n1": "Stück is piece, neuter: das Stück. Its plural is Stücke."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist ein Stück.":
+        native: "That is a piece."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "ein": "a"
+          "Stück": "piece"
+      "Das Stück ist gut.":
+        native: "The piece is good."
+        bases:
+          "Das": "that"
+          "Stück": "piece"
+          "ist": "is"
+          "gut": "good"
+  "de-1869":
+    native: "pair, couple"
+    notes:
+      "n1": "Paar is pair or couple, neuter: das Paar. Its plural is Paare."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist ein Paar.":
+        native: "That is a pair."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "ein": "a"
+          "Paar": "pair"
+      "Das Paar ist hier.":
+        native: "The couple is here."
+        bases:
+          "Das": "that"
+          "Paar": "pair"
+          "ist": "is"
+          "hier": "here"
+  "de-1870":
+    native: "dozen"
+    notes:
+      "n1": "Dutzend is dozen, neuter: das Dutzend. Its plural is Dutzende."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist ein Dutzend.":
+        native: "That is a dozen."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "ein": "a"
+          "Dutzend": "dozen"
+      "Das Dutzend ist hier.":
+        native: "The dozen is here."
+        bases:
+          "Das": "that"
+          "Dutzend": "dozen"
+          "ist": "is"
+          "hier": "here"
+  "de-1871":
+    native: "liter, litre"
+    notes:
+      "n1": "Liter is litre: der Liter. Its plural is also Liter."
+    examples:
+      "Ich habe einen Liter.":
+        native: "I have a litre."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Liter": "litre"
+      "Ein Liter Wasser, bitte.":
+        native: "A litre of water, please."
+        bases:
+          "Ein": "a"
+          "Liter": "litre"
+          "Wasser": "water"
+          "bitte": "please"
+  "de-1872":
+    native: "kilo"
+    notes:
+      "n1": "Kilo is kilo, neuter: das Kilo. Its plural is Kilos."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist ein Kilo.":
+        native: "That is a kilo."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "ein": "a"
+          "Kilo": "kilo"
+      "Das Kilo ist nicht hier.":
+        native: "The kilo is not here."
+        bases:
+          "Das": "that"
+          "Kilo": "kilo"
+          "ist": "is"
+          "nicht": "not"
+          "hier": "here"
+  "de-1873":
+    native: "gram"
+    notes:
+      "n1": "Gramm is gram, neuter: das Gramm. Its plural is Gramme."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist ein Gramm.":
+        native: "That is a gram."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "ein": "a"
+          "Gramm": "gram"
+      "Das Gramm ist hier.":
+        native: "The gram is here."
+        bases:
+          "Das": "that"
+          "Gramm": "gram"
+          "ist": "is"
+          "hier": "here"
+  "de-1874":
+    native: "portion, an allocated amount"
+    notes:
+      "n1": "Portion is portion, feminine: die Portion. Its plural is Portionen."
+    forms:
+      "pl": "plural"
+    examples:
+      "Ich habe eine Portion.":
+        native: "I have a portion."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Portion": "portion"
+      "Die Portion ist gut.":
+        native: "The portion is good."
+        bases:
+          "Die": "the"
+          "Portion": "portion"
+          "ist": "is"
+          "gut": "good"
+  "de-1875":
+    native: "pack, package, packet"
+    notes:
+      "n1": "Packung is pack or packet, feminine: die Packung. Its plural is Packungen."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist eine Packung.":
+        native: "That is a pack."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "eine": "a"
+          "Packung": "pack"
+      "Ich habe eine Packung.":
+        native: "I have a pack."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Packung": "pack"
+  "de-1876":
+    native: "bottle; flask; flagon"
+    notes:
+      "n1": "Flasche is bottle, feminine: die Flasche. Its plural is Flaschen."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist eine Flasche.":
+        native: "That is a bottle."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "eine": "a"
+          "Flasche": "bottle"
+      "Ich habe eine Flasche Wasser.":
+        native: "I have a bottle of water."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Flasche": "bottle"
+          "Wasser": "water"
+  "de-1877":
+    native: "cup, mug"
+    notes:
+      "n1": "Tasse is cup, feminine: die Tasse. Its plural is Tassen."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist eine Tasse.":
+        native: "That is a cup."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "eine": "a"
+          "Tasse": "cup"
+      "Die Tasse ist hier.":
+        native: "The cup is here."
+        bases:
+          "Die": "the"
+          "Tasse": "cup"
+          "ist": "is"
+          "hier": "here"
+  "de-1878":
+    native: "glass"
+    notes:
+      "n1": "Glas is glass, neuter: das Glas. Its plural is Gläser, with an umlaut over the a."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist ein Glas.":
+        native: "That is a glass."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "ein": "a"
+          "Glas": "glass"
+      "Das Glas ist hier.":
+        native: "The glass is here."
+        bases:
+          "Das": "that"
+          "Glas": "glass"
+          "ist": "is"
+          "hier": "here"
+  "de-1879":
+    native: "flat piece or surface"
+    notes:
+      "n1": "Scheibe is slice or disc, feminine: die Scheibe. Its plural is Scheiben."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist eine Scheibe.":
+        native: "That is a slice."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "eine": "a"
+          "Scheibe": "slice"
+      "Ich habe eine Scheibe.":
+        native: "I have a slice."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Scheibe": "slice"
+  "de-1880":
+    native: "half; fifty percent of something"
+    notes:
+      "n1": "Hälfte is half, feminine: die Hälfte. Its plural is Hälften."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist die Hälfte.":
+        native: "That is half."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Hälfte": "half"
+      "Ich habe die Hälfte.":
+        native: "I have half."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "die": "the"
+          "Hälfte": "half"
+  "de-1881":
+    native: "part, piece"
+    notes:
+      "n1": "Teil is part, masculine: der Teil. Its plural is Teile."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist ein Teil.":
+        native: "That is a part."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "ein": "a"
+          "Teil": "part"
+      "Ich habe einen Teil.":
+        native: "I have a part."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Teil": "part"
+  "de-1882":
+    native: "number, an amount; a few"
+    notes:
+      "n1": "Anzahl is number or amount, feminine: die Anzahl. It is used in the singular only."
+    examples:
+      "Das ist die Anzahl.":
+        native: "That is the number."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Anzahl": "number"
+      "Die Anzahl ist gut.":
+        native: "The number is good."
+        bases:
+          "Die": "the"
+          "Anzahl": "number"
+          "ist": "is"
+          "gut": "good"
+  "de-1883":
+    native: "rest, remainder, remnant"
+    notes:
+      "n1": "Rest is rest or remainder, masculine: der Rest. Its plural is Reste."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist der Rest.":
+        native: "That is the rest."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "der": "the"
+          "Rest": "rest"
+      "Ich habe einen Rest.":
+        native: "I have a remainder."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "einen": "a"
+          "Rest": "rest"
+  "de-1884":
+    native: "weight"
+    notes:
+      "n1": "Gewicht is weight, neuter: das Gewicht. Its plural is Gewichte."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist das Gewicht.":
+        native: "That is the weight."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "Gewicht": "weight"
+      "Das Gewicht ist gut.":
+        native: "The weight is good."
+        bases:
+          "Das": "that"
+          "Gewicht": "weight"
+          "ist": "is"
+          "gut": "good"
