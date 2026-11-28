@@ -1,0 +1,134 @@
+schema: 1
+id: "de-grammar-dative-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4550"
+    target: "Ich helfe dem Vater."
+    ipa: "ɪç ˈhɛlfə deːm ˈfaːtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "helfe", ref: "de-1753" }, { word: "dem", base: "der" }, { word: "Vater", ref: "de-1512" }]
+  - id: "de-4551"
+    target: "Ich helfe der Mutter."
+    ipa: "ɪç ˈhɛlfə deːɐ̯ ˈmʊtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "helfe", ref: "de-1753" }, { word: "der", base: "der" }, { word: "Mutter", ref: "de-1511" }]
+  - id: "de-4552"
+    target: "Er hilft dem Kind."
+    ipa: "eːɐ̯ hɪlft deːm kɪnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "hilft", ref: "de-1753" }, { word: "dem", base: "der" }, { word: "Kind", ref: "de-1516" }]
+  - id: "de-4553"
+    target: "Wir helfen den Kindern."
+    ipa: "viːɐ̯ ˈhɛlfən deːn ˈkɪndɐn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "helfen", ref: "de-1753" }, { word: "den", base: "der" }, { word: "Kindern", ref: "de-1516" }]
+  - id: "de-4554"
+    target: "Wir helfen den Freunden."
+    ipa: "viːɐ̯ ˈhɛlfən deːn ˈfʁɔɪndən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "helfen", ref: "de-1753" }, { word: "den", base: "der" }, { word: "Freunden", ref: "de-1380" }]
+  - id: "de-4555"
+    target: "Er hilft einer Freundin."
+    ipa: "eːɐ̯ hɪlft ˈaɪnɐ ˈfʁɔɪndɪn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "hilft", ref: "de-1753" }, { word: "einer", base: "ein" }, { word: "Freundin", ref: "de-1381" }]
+  - id: "de-4556"
+    target: "Du hilfst dem Nachbarn."
+    ipa: "duː hɪlfst deːm ˈnaxbaʁn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Du", ref: "de-0004" }, { word: "hilfst", ref: "de-1753" }, { word: "dem", base: "der" }, { word: "Nachbarn", ref: "de-1384" }]
+  - id: "de-4557"
+    target: "Das Handy gehört dem Kind."
+    ipa: "das ˈhandy ɡəˈhœʁt deːm kɪnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Handy", ref: "de-1664" }, { word: "gehört", ref: "de-2093" }, { word: "dem", base: "der" }, { word: "Kind", ref: "de-1516" }]
+  - id: "de-4558"
+    target: "Das Buch gehört der Mutter."
+    ipa: "das buːx ɡəˈhœʁt deːɐ̯ ˈmʊtɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Buch", ref: "de-0404" }, { word: "gehört", ref: "de-2093" }, { word: "der", base: "der" }, { word: "Mutter", ref: "de-1511" }]
+  - id: "de-4559"
+    target: "Der Hund gehört dem Bruder."
+    ipa: "deːɐ̯ hʊnt ɡəˈhœʁt deːm ˈbʁuːdɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Hund", ref: "de-0410" }, { word: "gehört", ref: "de-2093" }, { word: "dem", base: "der" }, { word: "Bruder", ref: "de-1519" }]
+  - id: "de-4560"
+    target: "Das Handy gehört einem Freund."
+    ipa: "das ˈhandy ɡəˈhœʁt ˈaɪnəm fʁɔɪnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Handy", ref: "de-1664" }, { word: "gehört", ref: "de-2093" }, { word: "einem", base: "ein" }, { word: "Freund", ref: "de-1380" }]
+  - id: "de-4561"
+    target: "Ich gebe dem Kind das Buch."
+    ipa: "ɪç ˈɡeːbə deːm kɪnt das buːx"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "gebe", ref: "de-1738" }, { word: "dem", base: "der" }, { word: "Kind", ref: "de-1516" }, { word: "das", base: "das" }, { word: "Buch", ref: "de-0404" }]
+  - id: "de-4562"
+    target: "Er gibt der Mutter das Handy."
+    ipa: "eːɐ̯ ɡɪpt deːɐ̯ ˈmʊtɐ das ˈhandy"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "gibt", ref: "de-1738" }, { word: "der", base: "der" }, { word: "Mutter", ref: "de-1511" }, { word: "das", base: "das" }, { word: "Handy", ref: "de-1664" }]
+  - id: "de-4563"
+    target: "Ich gebe dem Hund Wasser."
+    ipa: "ɪç ˈɡeːbə deːm hʊnt ˈvasɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "gebe", ref: "de-1738" }, { word: "dem", base: "der" }, { word: "Hund", ref: "de-0410" }, { word: "Wasser", ref: "de-0005" }]
+  - id: "de-4564"
+    target: "Sie gibt dem Bruder das Foto."
+    ipa: "ziː ɡɪpt deːm ˈbʁuːdɐ das ˈfoːto"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Sie", base: "sie" }, { word: "gibt", ref: "de-1738" }, { word: "dem", base: "der" }, { word: "Bruder", ref: "de-1519" }, { word: "das", base: "das" }, { word: "Foto", ref: "de-1668" }]
+  - id: "de-4565"
+    target: "Er antwortet dem Kollegen."
+    ipa: "eːɐ̯ ˈantvɔʁtət deːm ˈkɔləɡən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Er", ref: "de-1440" }, { word: "antwortet", ref: "de-1751" }, { word: "dem", base: "der" }, { word: "Kollegen", ref: "de-1382" }]
+  - id: "de-4566"
+    target: "Ich antworte der Frau."
+    ipa: "ɪç ˈantvɔʁtə deːɐ̯ fʁaʊ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "antworte", ref: "de-1751" }, { word: "der", base: "der" }, { word: "Frau", ref: "de-1371" }]
+  - id: "de-4567"
+    target: "Wir antworten den Eltern."
+    ipa: "viːɐ̯ ˈantvɔʁtən deːn ˈɛltɐn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wir", ref: "de-1443" }, { word: "antworten", ref: "de-1751" }, { word: "den", base: "der" }, { word: "Eltern", ref: "de-1513" }]
