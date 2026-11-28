@@ -1,0 +1,764 @@
+schema: 1
+id: "pl-food"
+part: "core"
+kind: "vocab"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "pl-2280"
+    target: "chleb"
+    ipa: "xlɛp"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest chleb.", ipa: "tɔ jɛst xlɛp", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest chleb.", ipa: "tɔ ɲɛ jɛst xlɛp", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2281"
+    target: "masło"
+    ipa: "ˈmaswɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest masło.", ipa: "tɔ jɛst ˈmaswɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest masło.", ipa: "tɔ ɲɛ jɛst ˈmaswɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2282"
+    target: "ser"
+    ipa: "sɛr"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ser.", ipa: "tɔ jɛst sɛr", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest ser.", ipa: "tɔ ɲɛ jɛst sɛr", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2283"
+    target: "mleko"
+    ipa: "ˈmlɛkɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest mleko.", ipa: "tɔ jɛst ˈmlɛkɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest mleko.", ipa: "tɔ ɲɛ jɛst ˈmlɛkɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2284"
+    target: "jajko"
+    ipa: "ˈjajkɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest jajko.", ipa: "tɔ jɛst ˈjajkɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest jajko.", ipa: "tɔ ɲɛ jɛst ˈjajkɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2285"
+    target: "mięso"
+    ipa: "ˈmjɛ̃sɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest mięso.", ipa: "tɔ jɛst ˈmjɛ̃sɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest mięso.", ipa: "tɔ ɲɛ jɛst ˈmjɛ̃sɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2286"
+    target: "kurczak"
+    ipa: "ˈkurtʂak"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kurczak.", ipa: "tɔ jɛst ˈkurtʂak", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest kurczak.", ipa: "tɔ ɲɛ jɛst ˈkurtʂak", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2287"
+    target: "wołowina"
+    ipa: "vɔwɔˈvʲina"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest wołowina.", ipa: "tɔ jɛst vɔwɔˈvʲina", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest wołowina.", ipa: "tɔ ɲɛ jɛst vɔwɔˈvʲina", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2288"
+    target: "ryba"
+    ipa: "ˈrɨba"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ryba.", ipa: "tɔ jɛst ˈrɨba", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest ryba.", ipa: "tɔ ɲɛ jɛst ˈrɨba", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2289"
+    target: "zupa"
+    ipa: "ˈzupa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest zupa.", ipa: "tɔ jɛst ˈzupa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest zupa.", ipa: "tɔ ɲɛ jɛst ˈzupa", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2290"
+    target: "sałata"
+    ipa: "saˈwata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest sałata.", ipa: "tɔ jɛst saˈwata", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest sałata.", ipa: "tɔ ɲɛ jɛst saˈwata", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2291"
+    target: "pomidor"
+    ipa: "pɔˈmʲidɔr"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest pomidor.", ipa: "tɔ jɛst pɔˈmʲidɔr", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest pomidor.", ipa: "tɔ ɲɛ jɛst pɔˈmʲidɔr", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2292"
+    target: "ogórek"
+    ipa: "ɔˈɡurɛk"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ogórek.", ipa: "tɔ jɛst ɔˈɡurɛk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest ogórek.", ipa: "tɔ ɲɛ jɛst ɔˈɡurɛk", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2293"
+    target: "cebula"
+    ipa: "tsɛˈbula"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest cebula.", ipa: "tɔ jɛst tsɛˈbula", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest cebula.", ipa: "tɔ ɲɛ jɛst tsɛˈbula", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2294"
+    target: "czosnek"
+    ipa: "ˈtʂɔsnɛk"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest czosnek.", ipa: "tɔ jɛst ˈtʂɔsnɛk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest czosnek.", ipa: "tɔ ɲɛ jɛst ˈtʂɔsnɛk", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2295"
+    target: "ziemniak"
+    ipa: "ˈʑɛmɲak"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ziemniak.", ipa: "tɔ jɛst ˈʑɛmɲak", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest ziemniak.", ipa: "tɔ ɲɛ jɛst ˈʑɛmɲak", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2296"
+    target: "marchew"
+    ipa: "ˈmarxɛf"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest marchew.", ipa: "tɔ jɛst ˈmarxɛf", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest marchew.", ipa: "tɔ ɲɛ jɛst ˈmarxɛf", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2297"
+    target: "kapusta"
+    ipa: "kaˈpusta"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kapusta.", ipa: "tɔ jɛst kaˈpusta", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest kapusta.", ipa: "tɔ ɲɛ jɛst kaˈpusta", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2298"
+    target: "groszek"
+    ipa: "ˈɡrɔʂɛk"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest groszek.", ipa: "tɔ jɛst ˈɡrɔʂɛk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest groszek.", ipa: "tɔ ɲɛ jɛst ˈɡrɔʂɛk", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2299"
+    target: "fasola"
+    ipa: "faˈsɔla"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest fasola.", ipa: "tɔ jɛst faˈsɔla", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest fasola.", ipa: "tɔ ɲɛ jɛst faˈsɔla", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2300"
+    target: "jabłko"
+    ipa: "ˈjabwkɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest jabłko.", ipa: "tɔ jɛst ˈjabwkɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest jabłko.", ipa: "tɔ ɲɛ jɛst ˈjabwkɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2301"
+    target: "banan"
+    ipa: "ˈbanan"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest banan.", ipa: "tɔ jɛst ˈbanan", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest banan.", ipa: "tɔ ɲɛ jɛst ˈbanan", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2302"
+    target: "pomarańcza"
+    ipa: "pɔmaˈraɲtʂa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest pomarańcza.", ipa: "tɔ jɛst pɔmaˈraɲtʂa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest pomarańcza.", ipa: "tɔ ɲɛ jɛst pɔmaˈraɲtʂa", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2303"
+    target: "gruszka"
+    ipa: "ˈɡruʂka"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest gruszka.", ipa: "tɔ jɛst ˈɡruʂka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest gruszka.", ipa: "tɔ ɲɛ jɛst ˈɡruʂka", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2304"
+    target: "truskawka"
+    ipa: "trusˈkafka"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest truskawka.", ipa: "tɔ jɛst trusˈkafka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest truskawka.", ipa: "tɔ ɲɛ jɛst trusˈkafka", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2305"
+    target: "wiśnia"
+    ipa: "ˈvʲiɕɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest wiśnia.", ipa: "tɔ jɛst ˈvʲiɕɲa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest wiśnia.", ipa: "tɔ ɲɛ jɛst ˈvʲiɕɲa", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2306"
+    target: "śliwka"
+    ipa: "ˈɕlifka"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest śliwka.", ipa: "tɔ jɛst ˈɕlifka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest śliwka.", ipa: "tɔ ɲɛ jɛst ˈɕlifka", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2307"
+    target: "winogrono"
+    ipa: "vʲinɔˈɡrɔnɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest winogrono.", ipa: "tɔ jɛst vʲinɔˈɡrɔnɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest winogrono.", ipa: "tɔ ɲɛ jɛst vʲinɔˈɡrɔnɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2308"
+    target: "cytryna"
+    ipa: "tsɨˈtrɨna"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest cytryna.", ipa: "tɔ jɛst tsɨˈtrɨna", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest cytryna.", ipa: "tɔ ɲɛ jɛst tsɨˈtrɨna", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2309"
+    target: "owoc"
+    ipa: "ˈɔvɔts"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest owoc.", ipa: "tɔ jɛst ˈɔvɔts", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest owoc.", ipa: "tɔ ɲɛ jɛst ˈɔvɔts", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2310"
+    target: "warzywo"
+    ipa: "vaˈʐɨvɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest warzywo.", ipa: "tɔ jɛst vaˈʐɨvɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest warzywo.", ipa: "tɔ ɲɛ jɛst vaˈʐɨvɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2311"
+    target: "ryż"
+    ipa: "rɨʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ryż.", ipa: "tɔ jɛst rɨʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest ryż.", ipa: "tɔ ɲɛ jɛst rɨʂ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2312"
+    target: "makaron"
+    ipa: "maˈkarɔn"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest makaron.", ipa: "tɔ jɛst maˈkarɔn", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest makaron.", ipa: "tɔ ɲɛ jɛst maˈkarɔn", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2313"
+    target: "kasza"
+    ipa: "ˈkaʂa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kasza.", ipa: "tɔ jɛst ˈkaʂa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest kasza.", ipa: "tɔ ɲɛ jɛst ˈkaʂa", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2314"
+    target: "mąka"
+    ipa: "ˈmɔŋka"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest mąka.", ipa: "tɔ jɛst ˈmɔŋka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest mąka.", ipa: "tɔ ɲɛ jɛst ˈmɔŋka", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2315"
+    target: "cukier"
+    ipa: "ˈtsukʲɛr"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest cukier.", ipa: "tɔ jɛst ˈtsukʲɛr", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest cukier.", ipa: "tɔ ɲɛ jɛst ˈtsukʲɛr", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2316"
+    target: "sól"
+    ipa: "sul"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest sól.", ipa: "tɔ jɛst sul", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest sól.", ipa: "tɔ ɲɛ jɛst sul", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2317"
+    target: "pieprz"
+    ipa: "pjɛpʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest pieprz.", ipa: "tɔ jɛst pjɛpʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest pieprz.", ipa: "tɔ ɲɛ jɛst pjɛpʂ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2318"
+    target: "olej"
+    ipa: "ˈɔlɛj"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest olej.", ipa: "tɔ jɛst ˈɔlɛj", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest olej.", ipa: "tɔ ɲɛ jɛst ˈɔlɛj", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2319"
+    target: "miód"
+    ipa: "mjut"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest miód.", ipa: "tɔ jɛst mjut", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest miód.", ipa: "tɔ ɲɛ jɛst mjut", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2320"
+    target: "dżem"
+    ipa: "dʐɛm"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest dżem.", ipa: "tɔ jɛst dʐɛm", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest dżem.", ipa: "tɔ ɲɛ jɛst dʐɛm", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2321"
+    target: "jogurt"
+    ipa: "ˈjɔɡurt"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest jogurt.", ipa: "tɔ jɛst ˈjɔɡurt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest jogurt.", ipa: "tɔ ɲɛ jɛst ˈjɔɡurt", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2322"
+    target: "śmietana"
+    ipa: "ɕmjɛˈtana"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest śmietana.", ipa: "tɔ jɛst ɕmjɛˈtana", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest śmietana.", ipa: "tɔ ɲɛ jɛst ɕmjɛˈtana", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2323"
+    target: "herbata"
+    ipa: "xɛrˈbata"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest herbata.", ipa: "tɔ jɛst xɛrˈbata", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest herbata.", ipa: "tɔ ɲɛ jɛst xɛrˈbata", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2324"
+    target: "sok"
+    ipa: "sɔk"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest sok.", ipa: "tɔ jɛst sɔk", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest sok.", ipa: "tɔ ɲɛ jɛst sɔk", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2325"
+    target: "piwo"
+    ipa: "ˈpʲivɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest piwo.", ipa: "tɔ jɛst ˈpʲivɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest piwo.", ipa: "tɔ ɲɛ jɛst ˈpʲivɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2326"
+    target: "wino"
+    ipa: "ˈvʲinɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest wino.", ipa: "tɔ jɛst ˈvʲinɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest wino.", ipa: "tɔ ɲɛ jɛst ˈvʲinɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2327"
+    target: "ciasto"
+    ipa: "ˈtɕastɔ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest ciasto.", ipa: "tɔ jɛst ˈtɕastɔ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest ciasto.", ipa: "tɔ ɲɛ jɛst ˈtɕastɔ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2328"
+    target: "deser"
+    ipa: "ˈdɛsɛr"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest deser.", ipa: "tɔ jɛst ˈdɛsɛr", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest deser.", ipa: "tɔ ɲɛ jɛst ˈdɛsɛr", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2329"
+    target: "czekolada"
+    ipa: "tʂɛkɔˈlada"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest czekolada.", ipa: "tɔ jɛst tʂɛkɔˈlada", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest czekolada.", ipa: "tɔ ɲɛ jɛst tʂɛkɔˈlada", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2330"
+    target: "kanapka"
+    ipa: "kaˈnapka"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kanapka.", ipa: "tɔ jɛst kaˈnapka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest kanapka.", ipa: "tɔ ɲɛ jɛst kaˈnapka", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2331"
+    target: "bułka"
+    ipa: "ˈbuwka"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest bułka.", ipa: "tɔ jɛst ˈbuwka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest bułka.", ipa: "tɔ ɲɛ jɛst ˈbuwka", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2332"
+    target: "kotlet"
+    ipa: "ˈkɔtlɛt"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kotlet.", ipa: "tɔ jɛst ˈkɔtlɛt", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest kotlet.", ipa: "tɔ ɲɛ jɛst ˈkɔtlɛt", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2333"
+    target: "obiad"
+    ipa: "ˈɔbjat"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest obiad.", ipa: "tɔ jɛst ˈɔbjat", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest obiad.", ipa: "tɔ ɲɛ jɛst ˈɔbjat", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2334"
+    target: "śniadanie"
+    ipa: "ɕɲaˈdaɲɛ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest śniadanie.", ipa: "tɔ jɛst ɕɲaˈdaɲɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest śniadanie.", ipa: "tɔ ɲɛ jɛst ɕɲaˈdaɲɛ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2335"
+    target: "kolacja"
+    ipa: "kɔˈlatsja"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kolacja.", ipa: "tɔ jɛst kɔˈlatsja", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest kolacja.", ipa: "tɔ ɲɛ jɛst kɔˈlatsja", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2336"
+    target: "przekąska"
+    ipa: "pʂɛˈkɔ̃ska"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest przekąska.", ipa: "tɔ jɛst pʂɛˈkɔ̃ska", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest przekąska.", ipa: "tɔ ɲɛ jɛst pʂɛˈkɔ̃ska", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2337"
+    target: "restauracja"
+    ipa: "rɛstauˈratsja"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest restauracja.", ipa: "tɔ jɛst rɛstauˈratsja", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest restauracja.", ipa: "tɔ ɲɛ jɛst rɛstauˈratsja", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2338"
+    target: "kelner"
+    ipa: "ˈkɛlnɛr"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kelner.", ipa: "tɔ jɛst ˈkɛlnɛr", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest kelner.", ipa: "tɔ ɲɛ jɛst ˈkɛlnɛr", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2339"
+    target: "widelec"
+    ipa: "vʲiˈdɛlɛts"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest widelec.", ipa: "tɔ jɛst vʲiˈdɛlɛts", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest widelec.", ipa: "tɔ ɲɛ jɛst vʲiˈdɛlɛts", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2340"
+    target: "nóż"
+    ipa: "nuʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest nóż.", ipa: "tɔ jɛst nuʂ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest nóż.", ipa: "tɔ ɲɛ jɛst nuʂ", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2341"
+    target: "łyżka"
+    ipa: "ˈwɨʂka"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest łyżka.", ipa: "tɔ jɛst ˈwɨʂka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest łyżka.", ipa: "tɔ ɲɛ jɛst ˈwɨʂka", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2342"
+    target: "pyszny"
+    ipa: "ˈpɨʂnɨ"
+    pos: "adj"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest pyszne.", ipa: "tɔ jɛst ˈpɨʂnɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "pyszne", base: "pyszny" }] }
+      - { target: "Zupa jest pyszna.", ipa: "ˈzupa jɛst ˈpɨʂna", bases: [{ word: "Zupa", base: "zupa" }, { word: "jest", base: "być" }, { word: "pyszna", base: "pyszny" }] }
+  - id: "pl-2343"
+    target: "słony"
+    ipa: "ˈswɔnɨ"
+    pos: "adj"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest słone.", ipa: "tɔ jɛst ˈswɔnɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "słone", base: "słony" }] }
+      - { target: "Zupa jest słona.", ipa: "ˈzupa jɛst ˈswɔna", bases: [{ word: "Zupa", base: "zupa" }, { word: "jest", base: "być" }, { word: "słona", base: "słony" }] }
+  - id: "pl-2344"
+    target: "słodki"
+    ipa: "ˈswɔtkʲi"
+    pos: "adj"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest słodkie.", ipa: "tɔ jɛst ˈswɔtkʲɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "słodkie", base: "słodki" }] }
+      - { target: "Herbata jest słodka.", ipa: "xɛrˈbata jɛst ˈswɔtka", bases: [{ word: "Herbata", base: "herbata" }, { word: "jest", base: "być" }, { word: "słodka", base: "słodki" }] }
+  - id: "pl-2345"
+    target: "kwaśny"
+    ipa: "ˈkfaɕnɨ"
+    pos: "adj"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kwaśne.", ipa: "tɔ jɛst ˈkfaɕnɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "kwaśne", base: "kwaśny" }] }
+      - { target: "Cytryna jest kwaśna.", ipa: "tsɨˈtrɨna jɛst ˈkfaɕna", bases: [{ word: "Cytryna", base: "cytryna" }, { word: "jest", base: "być" }, { word: "kwaśna", base: "kwaśny" }] }
+  - id: "pl-2346"
+    target: "gorzki"
+    ipa: "ˈɡɔʂkʲi"
+    pos: "adj"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest gorzkie.", ipa: "tɔ jɛst ˈɡɔʂkʲɛ", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }, { word: "gorzkie", base: "gorzki" }] }
+      - { target: "Piwo jest gorzkie.", ipa: "ˈpʲivɔ jɛst ˈɡɔʂkʲɛ", bases: [{ word: "Piwo", base: "piwo" }, { word: "jest", base: "być" }, { word: "gorzkie", base: "gorzki" }] }
+  - id: "pl-2347"
+    target: "kiełbasa"
+    ipa: "kʲɛwˈbasa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest kiełbasa.", ipa: "tɔ jɛst kʲɛwˈbasa", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest kiełbasa.", ipa: "tɔ ɲɛ jɛst kʲɛwˈbasa", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
+  - id: "pl-2348"
+    target: "szynka"
+    ipa: "ˈʂɨŋka"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "To jest szynka.", ipa: "tɔ jɛst ˈʂɨŋka", bases: [{ word: "To", base: "to" }, { word: "jest", base: "być" }] }
+      - { target: "To nie jest szynka.", ipa: "tɔ ɲɛ jɛst ˈʂɨŋka", bases: [{ word: "To", base: "to" }, { word: "nie", ref: "pl-0002" }, { word: "jest", base: "być" }] }
