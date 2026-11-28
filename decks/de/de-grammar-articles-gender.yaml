@@ -1,0 +1,285 @@
+schema: 1
+id: "de-grammar-articles-gender"
+part: "core"
+kind: "grammar"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["def-sg", "indef-sg", "def-pl"]
+  entries:
+    - lemma: "Vater"
+      key: "vater"
+      ipa: "ˈfaːtɐ"
+      forms:
+        "def-sg": "der Vater"
+        "indef-sg": "ein Vater"
+        "def-pl": "die Väter"
+      ipas:
+        "def-sg": "deːɐ̯ ˈfaːtɐ"
+        "indef-sg": "aɪn ˈfaːtɐ"
+        "def-pl": "diː ˈfɛːtɐ"
+    - lemma: "Bruder"
+      key: "bruder"
+      ipa: "ˈbʁuːdɐ"
+      forms:
+        "def-sg": "der Bruder"
+        "indef-sg": "ein Bruder"
+        "def-pl": "die Brüder"
+      ipas:
+        "def-sg": "deːɐ̯ ˈbʁuːdɐ"
+        "indef-sg": "aɪn ˈbʁuːdɐ"
+        "def-pl": "diː ˈbʁyːdɐ"
+    - lemma: "Sohn"
+      key: "sohn"
+      ipa: "zoːn"
+      forms:
+        "def-sg": "der Sohn"
+        "indef-sg": "ein Sohn"
+        "def-pl": "die Söhne"
+      ipas:
+        "def-sg": "deːɐ̯ zoːn"
+        "indef-sg": "aɪn zoːn"
+        "def-pl": "diː ˈzøːnə"
+    - lemma: "Name"
+      key: "name"
+      ipa: "ˈnaːmə"
+      forms:
+        "def-sg": "der Name"
+        "indef-sg": "ein Name"
+        "def-pl": "die Namen"
+      ipas:
+        "def-sg": "deːɐ̯ ˈnaːmə"
+        "indef-sg": "aɪn ˈnaːmə"
+        "def-pl": "diː ˈnaːmən"
+    - lemma: "Freund"
+      key: "freund"
+      ipa: "fʁɔɪnt"
+      forms:
+        "def-sg": "der Freund"
+        "indef-sg": "ein Freund"
+        "def-pl": "die Freunde"
+      ipas:
+        "def-sg": "deːɐ̯ fʁɔɪnt"
+        "indef-sg": "aɪn fʁɔɪnt"
+        "def-pl": "diː ˈfʁɔɪndə"
+    - lemma: "Geburtstag"
+      key: "geburtstag"
+      ipa: "ɡəˈbuːɐ̯tstaːk"
+      forms:
+        "def-sg": "der Geburtstag"
+        "indef-sg": "ein Geburtstag"
+        "def-pl": "die Geburtstage"
+      ipas:
+        "def-sg": "deːɐ̯ ɡəˈbuːɐ̯tstaːk"
+        "indef-sg": "aɪn ɡəˈbuːɐ̯tstaːk"
+        "def-pl": "diː ɡəˈbʊʁtstaːɡə"
+    - lemma: "Kollege"
+      key: "kollege"
+      ipa: "ˈkɔləɡə"
+      forms:
+        "def-sg": "der Kollege"
+        "indef-sg": "ein Kollege"
+        "def-pl": "die Kollegen"
+      ipas:
+        "def-sg": "deːɐ̯ ˈkɔləɡə"
+        "indef-sg": "aɪn ˈkɔləɡə"
+        "def-pl": "diː ˈkɔləɡən"
+    - lemma: "Nachbar"
+      key: "nachbar"
+      ipa: "ˈnaxbaʁ"
+      forms:
+        "def-sg": "der Nachbar"
+        "indef-sg": "ein Nachbar"
+        "def-pl": "die Nachbarn"
+      ipas:
+        "def-sg": "deːɐ̯ ˈnaxbaʁ"
+        "indef-sg": "aɪn ˈnaxbaʁ"
+        "def-pl": "diː ˈnaxbaʁn"
+    - lemma: "Mutter"
+      key: "mutter"
+      ipa: "ˈmʊtɐ"
+      forms:
+        "def-sg": "die Mutter"
+        "indef-sg": "eine Mutter"
+        "def-pl": "die Mütter"
+      ipas:
+        "def-sg": "diː ˈmʊtɐ"
+        "indef-sg": "ˈaɪnə ˈmʊtɐ"
+        "def-pl": "diː ˈmʏtɐ"
+    - lemma: "Schwester"
+      key: "schwester"
+      ipa: "ˈʃvɛstɐ"
+      forms:
+        "def-sg": "die Schwester"
+        "indef-sg": "eine Schwester"
+        "def-pl": "die Schwestern"
+      ipas:
+        "def-sg": "diː ˈʃvɛstɐ"
+        "indef-sg": "ˈaɪnə ˈʃvɛstɐ"
+        "def-pl": "diː ˈʃvɛstɐn"
+    - lemma: "Tochter"
+      key: "tochter"
+      ipa: "ˈtɔxtɐ"
+      forms:
+        "def-sg": "die Tochter"
+        "indef-sg": "eine Tochter"
+        "def-pl": "die Töchter"
+      ipas:
+        "def-sg": "diː ˈtɔxtɐ"
+        "indef-sg": "ˈaɪnə ˈtɔxtɐ"
+        "def-pl": "diː ˈtœçtɐ"
+    - lemma: "Tante"
+      key: "tante"
+      ipa: "ˈtantə"
+      forms:
+        "def-sg": "die Tante"
+        "indef-sg": "eine Tante"
+        "def-pl": "die Tanten"
+      ipas:
+        "def-sg": "diː ˈtantə"
+        "indef-sg": "ˈaɪnə ˈtantə"
+        "def-pl": "diː ˈtantən"
+    - lemma: "Frau"
+      key: "frau"
+      ipa: "fʁaʊ"
+      forms:
+        "def-sg": "die Frau"
+        "indef-sg": "eine Frau"
+        "def-pl": "die Frauen"
+      ipas:
+        "def-sg": "diː fʁaʊ"
+        "indef-sg": "ˈaɪnə fʁaʊ"
+        "def-pl": "diː ˈfʁaʊən"
+    - lemma: "Familie"
+      key: "familie"
+      ipa: "ˈfaːmiliː"
+      forms:
+        "def-sg": "die Familie"
+        "indef-sg": "eine Familie"
+        "def-pl": "die Familien"
+      ipas:
+        "def-sg": "diː ˈfaːmiliː"
+        "indef-sg": "ˈaɪnə ˈfaːmiliː"
+        "def-pl": "diː ˈfaːmiliːn"
+    - lemma: "Stadt"
+      key: "stadt"
+      ipa: "ʃtat"
+      forms:
+        "def-sg": "die Stadt"
+        "indef-sg": "eine Stadt"
+        "def-pl": "die Städte"
+      ipas:
+        "def-sg": "diː ʃtat"
+        "indef-sg": "ˈaɪnə ʃtat"
+        "def-pl": "diː ˈʃtɛtə"
+    - lemma: "Adresse"
+      key: "adresse"
+      ipa: "ˈaːdʁəsə"
+      forms:
+        "def-sg": "die Adresse"
+        "indef-sg": "eine Adresse"
+        "def-pl": "die Adressen"
+      ipas:
+        "def-sg": "diː ˈaːdʁəsə"
+        "indef-sg": "ˈaɪnə ˈaːdʁəsə"
+        "def-pl": "diː ˈaːdʁəsən"
+    - lemma: "Sprache"
+      key: "sprache"
+      ipa: "ˈʃpʁaxə"
+      forms:
+        "def-sg": "die Sprache"
+        "indef-sg": "eine Sprache"
+        "def-pl": "die Sprachen"
+      ipas:
+        "def-sg": "diː ˈʃpʁaxə"
+        "indef-sg": "ˈaɪnə ˈʃpʁaxə"
+        "def-pl": "diː ˈʃpʁaxən"
+    - lemma: "Freundin"
+      key: "freundin"
+      ipa: "ˈfʁɔɪndɪn"
+      forms:
+        "def-sg": "die Freundin"
+        "indef-sg": "eine Freundin"
+        "def-pl": "die Freundinnen"
+      ipas:
+        "def-sg": "diː ˈfʁɔɪndɪn"
+        "indef-sg": "ˈaɪnə ˈfʁɔɪndɪn"
+        "def-pl": "diː ˈfʁɔɪndɪnən"
+    - lemma: "Kollegin"
+      key: "kollegin"
+      ipa: "ˈkɔləɡɪn"
+      forms:
+        "def-sg": "die Kollegin"
+        "indef-sg": "eine Kollegin"
+        "def-pl": "die Kolleginnen"
+      ipas:
+        "def-sg": "diː ˈkɔləɡɪn"
+        "indef-sg": "ˈaɪnə ˈkɔləɡɪn"
+        "def-pl": "diː ˈkɔləɡɪnən"
+    - lemma: "Nummer"
+      key: "nummer"
+      ipa: "ˈnʊmɐ"
+      forms:
+        "def-sg": "die Nummer"
+        "indef-sg": "eine Nummer"
+        "def-pl": "die Nummern"
+      ipas:
+        "def-sg": "diː ˈnʊmɐ"
+        "indef-sg": "ˈaɪnə ˈnʊmɐ"
+        "def-pl": "diː ˈnʊmɐn"
+    - lemma: "Kind"
+      key: "kind"
+      ipa: "kɪnt"
+      forms:
+        "def-sg": "das Kind"
+        "indef-sg": "ein Kind"
+        "def-pl": "die Kinder"
+      ipas:
+        "def-sg": "das kɪnt"
+        "indef-sg": "aɪn kɪnt"
+        "def-pl": "diː ˈkɪndɐ"
+    - lemma: "Mädchen"
+      key: "maedchen"
+      ipa: "ˈmɛːtçən"
+      forms:
+        "def-sg": "das Mädchen"
+        "indef-sg": "ein Mädchen"
+        "def-pl": "die Mädchen"
+      ipas:
+        "def-sg": "das ˈmɛːtçən"
+        "indef-sg": "aɪn ˈmɛːtçən"
+        "def-pl": "diː ˈmɛːtçən"
+    - lemma: "Land"
+      key: "land"
+      ipa: "lant"
+      forms:
+        "def-sg": "das Land"
+        "indef-sg": "ein Land"
+        "def-pl": "die Länder"
+      ipas:
+        "def-sg": "das lant"
+        "indef-sg": "aɪn lant"
+        "def-pl": "diː ˈlɛndɐ"
+    - lemma: "Dorf"
+      key: "dorf"
+      ipa: "dɔʁf"
+      forms:
+        "def-sg": "das Dorf"
+        "indef-sg": "ein Dorf"
+        "def-pl": "die Dörfer"
+      ipas:
+        "def-sg": "das dɔʁf"
+        "indef-sg": "aɪn dɔʁf"
+        "def-pl": "diː ˈdœʁfɐ"
+    - lemma: "Foto"
+      key: "foto"
+      ipa: "ˈfoːto"
+      forms:
+        "def-sg": "das Foto"
+        "indef-sg": "ein Foto"
+        "def-pl": "die Fotos"
+      ipas:
+        "def-sg": "das ˈfoːto"
+        "indef-sg": "aɪn ˈfoːto"
+        "def-pl": "diː ˈfoːtɔs"

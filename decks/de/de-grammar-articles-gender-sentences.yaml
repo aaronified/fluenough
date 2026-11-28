@@ -1,0 +1,134 @@
+schema: 1
+id: "de-grammar-articles-gender-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4050"
+    target: "Der Vater ist hier."
+    ipa: "deːɐ̯ ˈfaːtɐ ɪst hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Vater", ref: "de-1512" }, { word: "ist", base: "sein" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4051"
+    target: "Die Mutter ist hier."
+    ipa: "diː ˈmʊtɐ ɪst hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Mutter", ref: "de-1511" }, { word: "ist", base: "sein" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4052"
+    target: "Das Kind ist hier."
+    ipa: "das kɪnt ɪst hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Kind", ref: "de-1516" }, { word: "ist", base: "sein" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4053"
+    target: "Die Kinder sind hier."
+    ipa: "diː ˈkɪndɐ zɪnt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Kinder", ref: "de-1516" }, { word: "sind", base: "sein" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4054"
+    target: "Wo ist der Bruder?"
+    ipa: "voː ɪst deːɐ̯ ˈbʁuːdɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wo", ref: "de-1302" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Bruder", ref: "de-1519" }]
+  - id: "de-4055"
+    target: "Wo ist die Schwester?"
+    ipa: "voː ɪst diː ˈʃvɛstɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wo", ref: "de-1302" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Schwester", ref: "de-1520" }]
+  - id: "de-4056"
+    target: "Wo ist das Mädchen?"
+    ipa: "voː ɪst das ˈmɛːtçən"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wo", ref: "de-1302" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Mädchen", ref: "de-1377" }]
+  - id: "de-4057"
+    target: "Das ist ein Freund."
+    ipa: "das ɪst aɪn fʁɔɪnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Freund", ref: "de-1380" }]
+  - id: "de-4058"
+    target: "Das ist eine Freundin."
+    ipa: "das ɪst ˈaɪnə ˈfʁɔɪndɪn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Freundin", ref: "de-1381" }]
+  - id: "de-4059"
+    target: "Das ist ein Kind."
+    ipa: "das ɪst aɪn kɪnt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Kind", ref: "de-1516" }]
+  - id: "de-4060"
+    target: "Das ist ein Foto."
+    ipa: "das ɪst aɪn ˈfoːto"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Foto", ref: "de-1668" }]
+  - id: "de-4061"
+    target: "Das ist eine Familie."
+    ipa: "das ɪst ˈaɪnə ˈfaːmiliː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "eine", base: "ein" }, { word: "Familie", ref: "de-1510" }]
+  - id: "de-4062"
+    target: "Die Tante ist jung."
+    ipa: "diː ˈtantə ɪst jʊŋ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Tante", ref: "de-1526" }, { word: "ist", base: "sein" }, { word: "jung", ref: "de-1653" }]
+  - id: "de-4063"
+    target: "Der Nachbar ist alt."
+    ipa: "deːɐ̯ ˈnaxbaʁ ɪst alt"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Der", base: "der" }, { word: "Nachbar", ref: "de-1384" }, { word: "ist", base: "sein" }, { word: "alt", ref: "de-1652" }]
+  - id: "de-4064"
+    target: "Die Stadt ist groß."
+    ipa: "diː ʃtat ɪst ɡʁoːs"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Stadt", ref: "de-1656" }, { word: "ist", base: "sein" }, { word: "groß", ref: "de-1930" }]
+  - id: "de-4065"
+    target: "Das Dorf ist klein."
+    ipa: "das dɔʁf ɪst klaɪn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Dorf", ref: "de-1674" }, { word: "ist", base: "sein" }, { word: "klein", ref: "de-1931" }]
+  - id: "de-4066"
+    target: "Das Land ist groß."
+    ipa: "das lant ɪst ɡʁoːs"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "Land", ref: "de-1655" }, { word: "ist", base: "sein" }, { word: "groß", ref: "de-1930" }]
+  - id: "de-4067"
+    target: "Wo ist die Frau?"
+    ipa: "voː ɪst diː fʁaʊ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wo", ref: "de-1302" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Frau", ref: "de-1371" }]
