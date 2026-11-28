@@ -107,7 +107,7 @@ Facets a deck builder doubts, for an Italian reviewer. See [README](README.md). 
 | it-1531 | it-numbers-1-20 | example | composed examples: check frame and agreement | IT-101b | 2026-11-28 |
 | it-1580 | it-about-me | example | composed examples: check frame and agreement | IT-101b | 2026-11-28 |
 | it-1581 | it-about-me | example | composed examples: check frame and agreement | IT-101b | 2026-11-28 |
-| it-1582 | it-about-me | example | composed examples: check frame and agreement | IT-101b | 2026-11-28 |
+| it-1582 | it-about-me | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-1583 | it-about-me | example | composed examples: check frame and agreement | IT-101b | 2026-11-28 |
 | it-1584 | it-about-me | example | composed examples: check frame and agreement | IT-101b | 2026-11-28 |
 | it-1585 | it-about-me | example | composed examples: check frame and agreement | IT-101b | 2026-11-28 |
@@ -263,7 +263,7 @@ Facets a deck builder doubts, for an Italian reviewer. See [README](README.md). 
 | it-1902 | it-describing | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-1930 | it-time | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-1931 | it-time | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
-| it-1932 | it-time | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
+| it-1932 | it-time | example | present-tense frames only; passato prossimo is not taught at A1, check naturalness | Sonnet architect | 2026-11-28 |
 | it-1933 | it-time | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-1934 | it-time | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-1935 | it-time | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
@@ -314,7 +314,7 @@ Facets a deck builder doubts, for an Italian reviewer. See [README](README.md). 
 | it-2084 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2085 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2086 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2087 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
+| it-2087 | it-more-verbs | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-2088 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2089 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2090 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
@@ -322,17 +322,17 @@ Facets a deck builder doubts, for an Italian reviewer. See [README](README.md). 
 | it-2092 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2093 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2094 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2095 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
+| it-2095 | it-more-verbs | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-2095 | it-more-verbs | ipa | Wiktionary entries disagree on the stress | Sonnet architect | 2026-11-28 |
-| it-2096 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2097 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
+| it-2096 | it-more-verbs | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
+| it-2097 | it-more-verbs | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-2098 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2099 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2100 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
+| it-2100 | it-more-verbs | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-2101 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2102 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2103 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2104 | it-more-verbs | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
+| it-2102 | it-more-verbs | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
+| it-2103 | it-more-verbs | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
+| it-2104 | it-more-verbs | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-2140 | it-work | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2141 | it-work | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2142 | it-work | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
@@ -385,13 +385,13 @@ Facets a deck builder doubts, for an Italian reviewer. See [README](README.md). 
 | it-2294 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2295 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2296 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2297 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
+| it-2297 | it-food | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-2298 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2299 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2300 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2301 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2302 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
-| it-2303 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
+| it-2303 | it-food | example | composed examples: check frame and agreement | Sonnet architect | 2026-11-28 |
 | it-2304 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2305 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |
 | it-2306 | it-food | example | composed examples: check frame and agreement | it103b | 2026-11-28 |

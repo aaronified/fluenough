@@ -203,7 +203,7 @@ cards:
     notes: [{ id: "n1", kind: "behaviour" }]
     bases: "self"
     examples:
-      - { target: "Questa è la verdura.", ipa: "ˈkwesta ɛ la verˈdura", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "la", base: "la" }, { word: "verdura", base: "verdura" }] }
+      - { target: "La verdura è buona.", ipa: "la verˈdura ɛ ˈbwɔna", bases: [{ word: "La", base: "la" }, { word: "verdura", base: "verdura" }, { word: "è", base: "essere" }, { word: "buona", ref: "it-0008" }] }
       - { target: "Dov'è la verdura?", ipa: "doˈvɛ la verˈdura", bases: [{ word: "Dov'è", base: "dove" }, { word: "la", base: "la" }, { word: "verdura", base: "verdura" }] }
   - id: "it-2298"
     target: "mela"
@@ -269,7 +269,7 @@ cards:
     notes: [{ id: "n1", kind: "behaviour" }]
     bases: "self"
     examples:
-      - { target: "Questa è l'uva.", ipa: "ˈkwesta ɛ ˈluva", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "l'uva", base: "uva" }] }
+      - { target: "Mangio l'uva.", ipa: "ˈmandʒo ˈluva", bases: [{ word: "Mangio", ref: "it-1660" }, { word: "l'uva", base: "uva" }] }
       - { target: "Dov'è l'uva?", ipa: "doˈvɛ ˈluva", bases: [{ word: "Dov'è", base: "dove" }, { word: "l'uva", base: "uva" }] }
   - id: "it-2304"
     target: "limone"
