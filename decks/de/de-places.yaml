@@ -1,0 +1,427 @@
+schema: 1
+id: "de-places"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2700"
+    target: "Schule"
+    ipa: "ˈʃuːlə"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Schulen" }]
+    examples:
+      - { target: "Das ist die Schule.", ipa: "das ɪst diː ˈʃuːlə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Schule", base: "Schule" }] }
+      - { target: "Wo ist die Schule?", ipa: "voː ɪst diː ˈʃuːlə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Schule", base: "Schule" }] }
+  - id: "de-2701"
+    target: "Bäckerei"
+    ipa: "bɛkəˈʁaɪ"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Bäckereien" }]
+    examples:
+      - { target: "Das ist die Bäckerei.", ipa: "das ɪst diː bɛkəˈʁaɪ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Bäckerei", base: "Bäckerei" }] }
+      - { target: "Wo ist die Bäckerei?", ipa: "voː ɪst diː bɛkəˈʁaɪ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Bäckerei", base: "Bäckerei" }] }
+  - id: "de-2702"
+    target: "Apotheke"
+    ipa: "apoˈteːkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Apotheken" }]
+    examples:
+      - { target: "Das ist die Apotheke.", ipa: "das ɪst diː apoˈteːkə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Apotheke", base: "Apotheke" }] }
+      - { target: "Wo ist die Apotheke?", ipa: "voː ɪst diː apoˈteːkə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Apotheke", base: "Apotheke" }] }
+  - id: "de-2703"
+    target: "Bank"
+    ipa: "baŋk"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Banken" }]
+    examples:
+      - { target: "Das ist die Bank.", ipa: "das ɪst diː baŋk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Bank", base: "Bank" }] }
+      - { target: "Wo ist die Bank?", ipa: "voː ɪst diː baŋk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Bank", base: "Bank" }] }
+  - id: "de-2704"
+    target: "Kirche"
+    ipa: "ˈkɪʁçə"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kirchen" }]
+    examples:
+      - { target: "Das ist die Kirche.", ipa: "das ɪst diː ˈkɪʁçə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kirche", base: "Kirche" }] }
+      - { target: "Wo ist die Kirche?", ipa: "voː ɪst diː ˈkɪʁçə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kirche", base: "Kirche" }] }
+  - id: "de-2705"
+    target: "Krankenhaus"
+    ipa: "ˈkʁaŋkənhaʊs"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Krankenhäuser" }]
+    examples:
+      - { target: "Hier ist das Krankenhaus.", ipa: "hiːɐ̯ ɪst das ˈkʁaŋkənhaʊs", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Krankenhaus", base: "Krankenhaus" }] }
+      - { target: "Wo ist das Krankenhaus?", ipa: "voː ɪst das ˈkʁaŋkənhaʊs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Krankenhaus", base: "Krankenhaus" }] }
+  - id: "de-2706"
+    target: "Hotel"
+    ipa: "hoˈtɛl"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Hotels" }]
+    examples:
+      - { target: "Hier ist das Hotel.", ipa: "hiːɐ̯ ɪst das hoˈtɛl", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Hotel", base: "Hotel" }] }
+      - { target: "Wo ist das Hotel?", ipa: "voː ɪst das hoˈtɛl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Hotel", base: "Hotel" }] }
+  - id: "de-2707"
+    target: "Museum"
+    ipa: "ˈmuːzɔɪm"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Museen" }]
+    examples:
+      - { target: "Hier ist das Museum.", ipa: "hiːɐ̯ ɪst das ˈmuːzɔɪm", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Museum", base: "Museum" }] }
+      - { target: "Wo ist das Museum?", ipa: "voː ɪst das ˈmuːzɔɪm", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Museum", base: "Museum" }] }
+  - id: "de-2708"
+    target: "Bibliothek"
+    ipa: "ˈbiːbliɔtɛk"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Bibliotheken" }]
+    examples:
+      - { target: "Das ist die Bibliothek.", ipa: "das ɪst diː ˈbiːbliɔtɛk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Bibliothek", base: "Bibliothek" }] }
+      - { target: "Wo ist die Bibliothek?", ipa: "voː ɪst diː ˈbiːbliɔtɛk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Bibliothek", base: "Bibliothek" }] }
+  - id: "de-2709"
+    target: "Kino"
+    ipa: "ˈkiːnoː"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kinos" }]
+    examples:
+      - { target: "Hier ist das Kino.", ipa: "hiːɐ̯ ɪst das ˈkiːnoː", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Kino", base: "Kino" }] }
+      - { target: "Wo ist das Kino?", ipa: "voː ɪst das ˈkiːnoː", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Kino", base: "Kino" }] }
+  - id: "de-2710"
+    target: "Theater"
+    ipa: "ˈteːatɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Theater.", ipa: "hiːɐ̯ ɪst das ˈteːatɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Theater", base: "Theater" }] }
+      - { target: "Wo ist das Theater?", ipa: "voː ɪst das ˈteːatɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Theater", base: "Theater" }] }
+  - id: "de-2711"
+    target: "Post"
+    ipa: "pɔst"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist die Post.", ipa: "das ɪst diː pɔst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Post", base: "Post" }] }
+      - { target: "Wo ist die Post?", ipa: "voː ɪst diː pɔst", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Post", base: "Post" }] }
+  - id: "de-2712"
+    target: "Restaurant"
+    ipa: "ˈʁɛstaʊʁant"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Restaurants" }]
+    examples:
+      - { target: "Hier ist das Restaurant.", ipa: "hiːɐ̯ ɪst das ˈʁɛstaʊʁant", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Restaurant", base: "Restaurant" }] }
+      - { target: "Wo ist das Restaurant?", ipa: "voː ɪst das ˈʁɛstaʊʁant", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Restaurant", base: "Restaurant" }] }
+  - id: "de-2714"
+    target: "Kneipe"
+    ipa: "kˈnaɪpə"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kneipen" }]
+    examples:
+      - { target: "Das ist die Kneipe.", ipa: "das ɪst diː kˈnaɪpə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kneipe", base: "Kneipe" }] }
+      - { target: "Wo ist die Kneipe?", ipa: "voː ɪst diː kˈnaɪpə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kneipe", base: "Kneipe" }] }
+  - id: "de-2715"
+    target: "Friseur"
+    ipa: "fʁiˈzɔɪɐ̯"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Friseure" }]
+    examples:
+      - { target: "Das ist der Friseur.", ipa: "das ɪst deːɐ̯ fʁiˈzɔɪɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Friseur", base: "Friseur" }] }
+      - { target: "Wo ist der Friseur?", ipa: "voː ɪst deːɐ̯ fʁiˈzɔɪɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Friseur", base: "Friseur" }] }
+  - id: "de-2716"
+    target: "Universität"
+    ipa: "univɛʁziˈtɛːt"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Universitäten" }]
+    examples:
+      - { target: "Das ist die Universität.", ipa: "das ɪst diː univɛʁziˈtɛːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Universität", base: "Universität" }] }
+      - { target: "Wo ist die Universität?", ipa: "voː ɪst diː univɛʁziˈtɛːt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Universität", base: "Universität" }] }
+  - id: "de-2717"
+    target: "Kindergarten"
+    ipa: "ˈkɪndɐɡaʁtən"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kindergärten" }]
+    examples:
+      - { target: "Das ist der Kindergarten.", ipa: "das ɪst deːɐ̯ ˈkɪndɐɡaʁtən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kindergarten", base: "Kindergarten" }] }
+      - { target: "Wo ist der Kindergarten?", ipa: "voː ɪst deːɐ̯ ˈkɪndɐɡaʁtən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kindergarten", base: "Kindergarten" }] }
+  - id: "de-2718"
+    target: "Strand"
+    ipa: "ʃtʁant"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Strände" }]
+    examples:
+      - { target: "Das ist der Strand.", ipa: "das ɪst deːɐ̯ ʃtʁant", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Strand", base: "Strand" }] }
+      - { target: "Wo ist der Strand?", ipa: "voː ɪst deːɐ̯ ʃtʁant", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Strand", base: "Strand" }] }
+  - id: "de-2719"
+    target: "Wald"
+    ipa: "valt"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Wälder" }]
+    examples:
+      - { target: "Das ist der Wald.", ipa: "das ɪst deːɐ̯ valt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Wald", base: "Wald" }] }
+      - { target: "Wo ist der Wald?", ipa: "voː ɪst deːɐ̯ valt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Wald", base: "Wald" }] }
+  - id: "de-2720"
+    target: "Berg"
+    ipa: "bɛʁk"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Berge" }]
+    examples:
+      - { target: "Das ist der Berg.", ipa: "das ɪst deːɐ̯ bɛʁk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Berg", base: "Berg" }] }
+      - { target: "Wo ist der Berg?", ipa: "voː ɪst deːɐ̯ bɛʁk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Berg", base: "Berg" }] }
+  - id: "de-2721"
+    target: "See"
+    ipa: "zeː"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Seen" }]
+    examples:
+      - { target: "Das ist der See.", ipa: "das ɪst deːɐ̯ zeː", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "See", base: "See" }] }
+      - { target: "Wo ist der See?", ipa: "voː ɪst deːɐ̯ zeː", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "See", base: "See" }] }
+  - id: "de-2722"
+    target: "Fluss"
+    ipa: "flʊs"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Flüsse" }]
+    examples:
+      - { target: "Das ist der Fluss.", ipa: "das ɪst deːɐ̯ flʊs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Fluss", base: "Fluss" }] }
+      - { target: "Wo ist der Fluss?", ipa: "voː ɪst deːɐ̯ flʊs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Fluss", base: "Fluss" }] }
+  - id: "de-2723"
+    target: "Spielplatz"
+    ipa: "ˈʃpiːlplats"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Spielplätze" }]
+    examples:
+      - { target: "Das ist der Spielplatz.", ipa: "das ɪst deːɐ̯ ˈʃpiːlplats", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Spielplatz", base: "Spielplatz" }] }
+      - { target: "Wo ist der Spielplatz?", ipa: "voː ɪst deːɐ̯ ˈʃpiːlplats", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Spielplatz", base: "Spielplatz" }] }
+  - id: "de-2724"
+    target: "Sportplatz"
+    ipa: "ˈʃpɔʁtplats"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Sportplätze" }]
+    examples:
+      - { target: "Das ist der Sportplatz.", ipa: "das ɪst deːɐ̯ ˈʃpɔʁtplats", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Sportplatz", base: "Sportplatz" }] }
+      - { target: "Wo ist der Sportplatz?", ipa: "voː ɪst deːɐ̯ ˈʃpɔʁtplats", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Sportplatz", base: "Sportplatz" }] }
+  - id: "de-2725"
+    target: "Zoo"
+    ipa: "tsoː"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Zoos" }]
+    examples:
+      - { target: "Das ist der Zoo.", ipa: "das ɪst deːɐ̯ tsoː", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Zoo", base: "Zoo" }] }
+      - { target: "Wo ist der Zoo?", ipa: "voː ɪst deːɐ̯ tsoː", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Zoo", base: "Zoo" }] }
+  - id: "de-2726"
+    target: "Schwimmbad"
+    ipa: "ˈʃvɪmbat"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Schwimmbäder" }]
+    examples:
+      - { target: "Hier ist das Schwimmbad.", ipa: "hiːɐ̯ ɪst das ˈʃvɪmbat", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Schwimmbad", base: "Schwimmbad" }] }
+      - { target: "Wo ist das Schwimmbad?", ipa: "voː ɪst das ˈʃvɪmbat", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Schwimmbad", base: "Schwimmbad" }] }
+  - id: "de-2727"
+    target: "Tankstelle"
+    ipa: "ˈtaŋkstələ"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Tankstellen" }]
+    examples:
+      - { target: "Das ist die Tankstelle.", ipa: "das ɪst diː ˈtaŋkstələ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Tankstelle", base: "Tankstelle" }] }
+      - { target: "Wo ist die Tankstelle?", ipa: "voː ɪst diː ˈtaŋkstələ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Tankstelle", base: "Tankstelle" }] }
+  - id: "de-2728"
+    target: "Park"
+    ipa: "paʁk"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Parks" }]
+    examples:
+      - { target: "Das ist der Park.", ipa: "das ɪst deːɐ̯ paʁk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Park", base: "Park" }] }
+      - { target: "Wo ist der Park?", ipa: "voː ɪst deːɐ̯ paʁk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Park", base: "Park" }] }
+  - id: "de-2729"
+    target: "Hafen"
+    ipa: "ˈhaːfən"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Häfen" }]
+    examples:
+      - { target: "Das ist der Hafen.", ipa: "das ɪst deːɐ̯ ˈhaːfən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Hafen", base: "Hafen" }] }
+      - { target: "Wo ist der Hafen?", ipa: "voː ɪst deːɐ̯ ˈhaːfən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Hafen", base: "Hafen" }] }
+  - id: "de-2730"
+    target: "Insel"
+    ipa: "ˈɪnzəl"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Inseln" }]
+    examples:
+      - { target: "Das ist die Insel.", ipa: "das ɪst diː ˈɪnzəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Insel", base: "Insel" }] }
+      - { target: "Wo ist die Insel?", ipa: "voː ɪst diː ˈɪnzəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Insel", base: "Insel" }] }
+  - id: "de-2731"
+    target: "Stadion"
+    ipa: "ˈʃtaːdiɔn"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Stadien" }]
+    examples:
+      - { target: "Hier ist das Stadion.", ipa: "hiːɐ̯ ɪst das ˈʃtaːdiɔn", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Stadion", base: "Stadion" }] }
+      - { target: "Wo ist das Stadion?", ipa: "voː ɪst das ˈʃtaːdiɔn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Stadion", base: "Stadion" }] }
+  - id: "de-2732"
+    target: "Ufer"
+    ipa: "ˈuːfɐ"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Ufer.", ipa: "hiːɐ̯ ɪst das ˈuːfɐ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Ufer", base: "Ufer" }] }
+      - { target: "Wo ist das Ufer?", ipa: "voː ɪst das ˈuːfɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Ufer", base: "Ufer" }] }
+  - id: "de-2733"
+    target: "Hof"
+    ipa: "hoːf"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Höfe" }]
+    examples:
+      - { target: "Das ist der Hof.", ipa: "das ɪst deːɐ̯ hoːf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Hof", base: "Hof" }] }
+      - { target: "Wo ist der Hof?", ipa: "voː ɪst deːɐ̯ hoːf", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Hof", base: "Hof" }] }
+  - id: "de-2734"
+    target: "Geschäft"
+    ipa: "ɡəˈʃɛft"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Geschäfte" }]
+    examples:
+      - { target: "Hier ist das Geschäft.", ipa: "hiːɐ̯ ɪst das ɡəˈʃɛft", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Geschäft", base: "Geschäft" }] }
+      - { target: "Wo ist das Geschäft?", ipa: "voː ɪst das ɡəˈʃɛft", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Geschäft", base: "Geschäft" }] }
+  - id: "de-2735"
+    target: "Zentrum"
+    ipa: "ˈtsɛntʁʊm"
+    pos: "noun"
+    gender: "n"
+    tags: ["places"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Zentren" }]
+    examples:
+      - { target: "Hier ist das Zentrum.", ipa: "hiːɐ̯ ɪst das ˈtsɛntʁʊm", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Zentrum", base: "Zentrum" }] }
+      - { target: "Wo ist das Zentrum?", ipa: "voː ɪst das ˈtsɛntʁʊm", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Zentrum", base: "Zentrum" }] }

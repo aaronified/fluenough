@@ -1,0 +1,140 @@
+schema: 1
+id: "de-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-1440"
+    target: "er"
+    ipa: "eːɐ̯"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Er ist hier.", ipa: "eːɐ̯ ɪst hiːɐ̯", bases: [{ word: "Er", base: "er" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Wo ist er?", ipa: "voː ɪst eːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "er", base: "er" }] }
+  - id: "de-1442"
+    target: "es"
+    ipa: "ɛs"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Es ist hier.", ipa: "ɛs ɪst hiːɐ̯", bases: [{ word: "Es", base: "es" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Wo ist es?", ipa: "voː ɪst ɛs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "es", base: "es" }] }
+  - id: "de-1443"
+    target: "wir"
+    ipa: "viːɐ̯"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wir sind hier.", ipa: "viːɐ̯ zɪnt hiːɐ̯", bases: [{ word: "Wir", base: "wir" }, { word: "sind", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Wo sind wir?", ipa: "voː zɪnt viːɐ̯", bases: [{ word: "Wo", base: "wo" }, { word: "sind", base: "sein" }, { word: "wir", base: "wir" }] }
+  - id: "de-1446"
+    target: "jemand"
+    ipa: "ˈjeːmant"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ist jemand hier?", ipa: "ɪst ˈjeːmant hiːɐ̯", bases: [{ word: "Ist", base: "sein" }, { word: "jemand", base: "jemand" }, { word: "hier", base: "hier" }] }
+      - { target: "Da ist jemand.", ipa: "daː ɪst ˈjeːmant", bases: [{ word: "Da", base: "da" }, { word: "ist", base: "sein" }, { word: "jemand", base: "jemand" }] }
+  - id: "de-1447"
+    target: "niemand"
+    ipa: "ˈniːmant"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist niemand.", ipa: "hiːɐ̯ ɪst ˈniːmant", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "niemand", base: "niemand" }] }
+      - { target: "Da ist niemand.", ipa: "daː ɪst ˈniːmant", bases: [{ word: "Da", base: "da" }, { word: "ist", base: "sein" }, { word: "niemand", base: "niemand" }] }
+  - id: "de-1448"
+    target: "etwas"
+    ipa: "ˈɛtvas"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist etwas.", ipa: "das ɪst ˈɛtvas", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "etwas", base: "etwas" }] }
+      - { target: "Ich habe etwas.", ipa: "ɪç ˈhaːbə ˈɛtvas", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "etwas", base: "etwas" }] }
+  - id: "de-1449"
+    target: "nichts"
+    ipa: "nɪçts"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist nichts.", ipa: "das ɪst nɪçts", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "nichts", base: "nichts" }] }
+      - { target: "Ich habe nichts.", ipa: "ɪç ˈhaːbə nɪçts", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "nichts", base: "nichts" }] }
+  - id: "de-1450"
+    target: "alles"
+    ipa: "ˈaləs"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist alles.", ipa: "das ɪst ˈaləs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "alles", base: "alles" }] }
+      - { target: "Ich habe alles.", ipa: "ɪç ˈhaːbə ˈaləs", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "alles", base: "alles" }] }
+  - id: "de-1451"
+    target: "keiner"
+    ipa: "ˈkaɪnɐ"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Keiner ist hier.", ipa: "ˈkaɪnɐ ɪst hiːɐ̯", bases: [{ word: "Keiner", base: "keiner" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Da ist keiner.", ipa: "daː ɪst ˈkaɪnɐ", bases: [{ word: "Da", base: "da" }, { word: "ist", base: "sein" }, { word: "keiner", base: "keiner" }] }
+  - id: "de-1452"
+    target: "beide"
+    ipa: "ˈbaɪdə"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Wir beide sind hier.", ipa: "viːɐ̯ ˈbaɪdə zɪnt hiːɐ̯", bases: [{ word: "Wir", base: "wir" }, { word: "beide", base: "beide" }, { word: "sind", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Ich habe beide.", ipa: "ɪç ˈhaːbə ˈbaɪdə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "beide", base: "beide" }] }
+  - id: "de-1454"
+    target: "einer"
+    ipa: "ˈaɪnɐ"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Einer ist hier.", ipa: "ˈaɪnɐ ɪst hiːɐ̯", bases: [{ word: "Einer", base: "einer" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Ich habe einen.", ipa: "ɪç ˈhaːbə ˈaɪnən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }] }
+  - id: "de-1455"
+    target: "dieser"
+    ipa: "ˈdiːzɐ"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Dieser ist hier.", ipa: "ˈdiːzɐ ɪst hiːɐ̯", bases: [{ word: "Dieser", base: "dieser" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
+      - { target: "Wo ist dieser?", ipa: "voː ɪst ˈdiːzɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "dieser", base: "dieser" }] }
+  - id: "de-1456"
+    target: "irgendwer"
+    ipa: "ˈɪʁɡəntvɐ"
+    pos: "pronoun"
+    tags: ["pronouns"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ist irgendwer hier?", ipa: "ɪst ˈɪʁɡəntvɐ hiːɐ̯", bases: [{ word: "Ist", base: "sein" }, { word: "irgendwer", base: "irgendwer" }, { word: "hier", base: "hier" }] }
+      - { target: "Irgendwer ist hier.", ipa: "ˈɪʁɡəntvɐ ɪst hiːɐ̯", bases: [{ word: "Irgendwer", base: "irgendwer" }, { word: "ist", base: "sein" }, { word: "hier", base: "hier" }] }
