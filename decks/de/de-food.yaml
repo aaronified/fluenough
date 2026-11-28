@@ -1,0 +1,598 @@
+schema: 1
+id: "de-food"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2421"
+    target: "Mittagessen"
+    ipa: "ˈmɪtaɡəsən"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Mittagessen.", ipa: "hiːɐ̯ ɪst das ˈmɪtaɡəsən", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Mittagessen", base: "Mittagessen" }] }
+      - { target: "Ich habe ein Mittagessen.", ipa: "ɪç ˈhaːbə aɪn ˈmɪtaɡəsən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Mittagessen", base: "Mittagessen" }] }
+  - id: "de-2422"
+    target: "Abendessen"
+    ipa: "ˈaːbəndəsən"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Abendessen.", ipa: "hiːɐ̯ ɪst das ˈaːbəndəsən", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Abendessen", base: "Abendessen" }] }
+      - { target: "Ich habe ein Abendessen.", ipa: "ɪç ˈhaːbə aɪn ˈaːbəndəsən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Abendessen", base: "Abendessen" }] }
+  - id: "de-2423"
+    target: "Frühstück"
+    ipa: "ˈfʁyːstʏk"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Frühstücke" }]
+    examples:
+      - { target: "Hier ist das Frühstück.", ipa: "hiːɐ̯ ɪst das ˈfʁyːstʏk", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Frühstück", base: "Frühstück" }] }
+      - { target: "Ich habe ein Frühstück.", ipa: "ɪç ˈhaːbə aɪn ˈfʁyːstʏk", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Frühstück", base: "Frühstück" }] }
+  - id: "de-2424"
+    target: "Gericht"
+    ipa: "ɡəˈʁɪçt"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Gerichte" }]
+    examples:
+      - { target: "Hier ist das Gericht.", ipa: "hiːɐ̯ ɪst das ɡəˈʁɪçt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Gericht", base: "Gericht" }] }
+      - { target: "Wo ist das Gericht?", ipa: "voː ɪst das ɡəˈʁɪçt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Gericht", base: "Gericht" }] }
+  - id: "de-2425"
+    target: "Speise"
+    ipa: "ˈʃpaɪzə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Speisen" }]
+    examples:
+      - { target: "Das ist die Speise.", ipa: "das ɪst diː ˈʃpaɪzə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Speise", base: "Speise" }] }
+      - { target: "Wo ist die Speise?", ipa: "voː ɪst diː ˈʃpaɪzə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Speise", base: "Speise" }] }
+  - id: "de-2426"
+    target: "Suppe"
+    ipa: "ˈzʊpə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Suppen" }]
+    examples:
+      - { target: "Das ist die Suppe.", ipa: "das ɪst diː ˈzʊpə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Suppe", base: "Suppe" }] }
+      - { target: "Ich habe eine Suppe.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈzʊpə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Suppe", base: "Suppe" }] }
+  - id: "de-2427"
+    target: "Pizza"
+    ipa: "ˈpɪtsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Pizzen" }]
+    examples:
+      - { target: "Das ist die Pizza.", ipa: "das ɪst diː ˈpɪtsa", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Pizza", base: "Pizza" }] }
+      - { target: "Ich habe eine Pizza.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈpɪtsa", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Pizza", base: "Pizza" }] }
+  - id: "de-2429"
+    target: "Schnitzel"
+    ipa: "ˈʃnɪtsəl"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Schnitzel.", ipa: "hiːɐ̯ ɪst das ˈʃnɪtsəl", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Schnitzel", base: "Schnitzel" }] }
+      - { target: "Ich habe ein Schnitzel.", ipa: "ɪç ˈhaːbə aɪn ˈʃnɪtsəl", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Schnitzel", base: "Schnitzel" }] }
+  - id: "de-2430"
+    target: "Dessert"
+    ipa: "ˈdɛsɐt"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Desserts" }]
+    examples:
+      - { target: "Hier ist das Dessert.", ipa: "hiːɐ̯ ɪst das ˈdɛsɐt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Dessert", base: "Dessert" }] }
+      - { target: "Ich habe ein Dessert.", ipa: "ɪç ˈhaːbə aɪn ˈdɛsɐt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Dessert", base: "Dessert" }] }
+  - id: "de-2431"
+    target: "Vorspeise"
+    ipa: "ˈfɔʁʃpaɪzə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Vorspeisen" }]
+    examples:
+      - { target: "Das ist die Vorspeise.", ipa: "das ɪst diː ˈfɔʁʃpaɪzə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Vorspeise", base: "Vorspeise" }] }
+      - { target: "Ich habe eine Vorspeise.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈfɔʁʃpaɪzə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Vorspeise", base: "Vorspeise" }] }
+  - id: "de-2432"
+    target: "Hauptgericht"
+    ipa: "ˈhaʊptɡəʁɪçt"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Hauptgerichte" }]
+    examples:
+      - { target: "Hier ist das Hauptgericht.", ipa: "hiːɐ̯ ɪst das ˈhaʊptɡəʁɪçt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Hauptgericht", base: "Hauptgericht" }] }
+      - { target: "Ich habe ein Hauptgericht.", ipa: "ɪç ˈhaːbə aɪn ˈhaʊptɡəʁɪçt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Hauptgericht", base: "Hauptgericht" }] }
+  - id: "de-2433"
+    target: "Nachtisch"
+    ipa: "ˈnaxtɪʃ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Nachtische" }]
+    examples:
+      - { target: "Das ist der Nachtisch.", ipa: "das ɪst deːɐ̯ ˈnaxtɪʃ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Nachtisch", base: "Nachtisch" }] }
+      - { target: "Ich habe einen Nachtisch.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈnaxtɪʃ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Nachtisch", base: "Nachtisch" }] }
+  - id: "de-2434"
+    target: "Hunger"
+    ipa: "ˈhʊŋɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich habe Hunger.", ipa: "ɪç ˈhaːbə ˈhʊŋɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "Hunger", base: "Hunger" }] }
+      - { target: "Das ist Hunger.", ipa: "das ɪst ˈhʊŋɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Hunger", base: "Hunger" }] }
+  - id: "de-2435"
+    target: "Durst"
+    ipa: "dʊʁst"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich habe Durst.", ipa: "ɪç ˈhaːbə dʊʁst", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "Durst", base: "Durst" }] }
+      - { target: "Das ist Durst.", ipa: "das ɪst dʊʁst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Durst", base: "Durst" }] }
+  - id: "de-2436"
+    target: "Getränk"
+    ipa: "ɡəˈtʁɛŋk"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Getränke" }]
+    examples:
+      - { target: "Hier ist das Getränk.", ipa: "hiːɐ̯ ɪst das ɡəˈtʁɛŋk", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Getränk", base: "Getränk" }] }
+      - { target: "Ich habe ein Getränk.", ipa: "ɪç ˈhaːbə aɪn ɡəˈtʁɛŋk", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Getränk", base: "Getränk" }] }
+  - id: "de-2437"
+    target: "Bier"
+    ipa: "biːɐ̯"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Biere" }]
+    examples:
+      - { target: "Hier ist das Bier.", ipa: "hiːɐ̯ ɪst das biːɐ̯", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Bier", base: "Bier" }] }
+      - { target: "Ich habe ein Bier.", ipa: "ɪç ˈhaːbə aɪn biːɐ̯", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Bier", base: "Bier" }] }
+  - id: "de-2438"
+    target: "Limonade"
+    ipa: "ˈliːmɔnadə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Limonaden" }]
+    examples:
+      - { target: "Das ist die Limonade.", ipa: "das ɪst diː ˈliːmɔnadə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Limonade", base: "Limonade" }] }
+      - { target: "Ich habe eine Limonade.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈliːmɔnadə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Limonade", base: "Limonade" }] }
+  - id: "de-2440"
+    target: "Huhn"
+    ipa: "huːn"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Hühner" }]
+    examples:
+      - { target: "Hier ist das Huhn.", ipa: "hiːɐ̯ ɪst das huːn", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Huhn", base: "Huhn" }] }
+      - { target: "Wo ist das Huhn?", ipa: "voː ɪst das huːn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Huhn", base: "Huhn" }] }
+  - id: "de-2441"
+    target: "Fleisch"
+    ipa: "flaɪʃ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist Fleisch.", ipa: "das ɪst flaɪʃ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Fleisch", base: "Fleisch" }] }
+      - { target: "Hier ist das Fleisch.", ipa: "hiːɐ̯ ɪst das flaɪʃ", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Fleisch", base: "Fleisch" }] }
+  - id: "de-2442"
+    target: "Rind"
+    ipa: "ʁɪnt"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Rinder" }]
+    examples:
+      - { target: "Hier ist das Rind.", ipa: "hiːɐ̯ ɪst das ʁɪnt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Rind", base: "Rind" }] }
+      - { target: "Wo ist das Rind?", ipa: "voː ɪst das ʁɪnt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Rind", base: "Rind" }] }
+  - id: "de-2443"
+    target: "Schwein"
+    ipa: "ʃvaɪn"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Schweine" }]
+    examples:
+      - { target: "Hier ist das Schwein.", ipa: "hiːɐ̯ ɪst das ʃvaɪn", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Schwein", base: "Schwein" }] }
+      - { target: "Wo ist das Schwein?", ipa: "voː ɪst das ʃvaɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Schwein", base: "Schwein" }] }
+  - id: "de-2444"
+    target: "Lamm"
+    ipa: "lam"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Lämmer" }]
+    examples:
+      - { target: "Hier ist das Lamm.", ipa: "hiːɐ̯ ɪst das lam", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Lamm", base: "Lamm" }] }
+      - { target: "Wo ist das Lamm?", ipa: "voː ɪst das lam", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Lamm", base: "Lamm" }] }
+  - id: "de-2445"
+    target: "Kalb"
+    ipa: "kalp"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kälber" }]
+    examples:
+      - { target: "Hier ist das Kalb.", ipa: "hiːɐ̯ ɪst das kalp", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Kalb", base: "Kalb" }] }
+      - { target: "Wo ist das Kalb?", ipa: "voː ɪst das kalp", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Kalb", base: "Kalb" }] }
+  - id: "de-2446"
+    target: "Currywurst"
+    ipa: "ˈkʊʁʏvʊʁst"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Currywürste" }]
+    examples:
+      - { target: "Das ist die Currywurst.", ipa: "das ɪst diː ˈkʊʁʏvʊʁst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Currywurst", base: "Currywurst" }] }
+      - { target: "Ich habe eine Currywurst.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈkʊʁʏvʊʁst", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Currywurst", base: "Currywurst" }] }
+  - id: "de-2447"
+    target: "Wurst"
+    ipa: "vʊʁst"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Würste" }]
+    examples:
+      - { target: "Das ist die Wurst.", ipa: "das ɪst diː vʊʁst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Wurst", base: "Wurst" }] }
+      - { target: "Ich habe eine Wurst.", ipa: "ɪç ˈhaːbə ˈaɪnə vʊʁst", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Wurst", base: "Wurst" }] }
+  - id: "de-2448"
+    target: "Sandwich"
+    ipa: "ˈzantvɪç"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Sandwichs" }]
+    examples:
+      - { target: "Hier ist das Sandwich.", ipa: "hiːɐ̯ ɪst das ˈzantvɪç", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Sandwich", base: "Sandwich" }] }
+      - { target: "Ich habe ein Sandwich.", ipa: "ɪç ˈhaːbə aɪn ˈzantvɪç", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Sandwich", base: "Sandwich" }] }
+  - id: "de-2449"
+    target: "Burger"
+    ipa: "ˈbʊʁɡɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Burger.", ipa: "das ɪst deːɐ̯ ˈbʊʁɡɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Burger", base: "Burger" }] }
+      - { target: "Ich habe einen Burger.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈbʊʁɡɐ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Burger", base: "Burger" }] }
+  - id: "de-2450"
+    target: "Steak"
+    ipa: "ˈʃteːak"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Steaks" }]
+    examples:
+      - { target: "Hier ist das Steak.", ipa: "hiːɐ̯ ɪst das ˈʃteːak", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Steak", base: "Steak" }] }
+      - { target: "Ich habe ein Steak.", ipa: "ɪç ˈhaːbə aɪn ˈʃteːak", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Steak", base: "Steak" }] }
+  - id: "de-2451"
+    target: "Soße"
+    ipa: "ˈzoːsə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Soßen" }]
+    examples:
+      - { target: "Das ist die Soße.", ipa: "das ɪst diː ˈzoːsə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Soße", base: "Soße" }] }
+      - { target: "Ich habe eine Soße.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈzoːsə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Soße", base: "Soße" }] }
+  - id: "de-2452"
+    target: "Ketchup"
+    ipa: "ˈkɛtçʊp"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Ketchups" }]
+    examples:
+      - { target: "Das ist der Ketchup.", ipa: "das ɪst deːɐ̯ ˈkɛtçʊp", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Ketchup", base: "Ketchup" }] }
+      - { target: "Ich habe einen Ketchup.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈkɛtçʊp", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Ketchup", base: "Ketchup" }] }
+  - id: "de-2453"
+    target: "Mayonnaise"
+    ipa: "ˈmaɪɔnaɪzə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Mayonnaisen" }]
+    examples:
+      - { target: "Das ist die Mayonnaise.", ipa: "das ɪst diː ˈmaɪɔnaɪzə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Mayonnaise", base: "Mayonnaise" }] }
+      - { target: "Ich habe eine Mayonnaise.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈmaɪɔnaɪzə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Mayonnaise", base: "Mayonnaise" }] }
+  - id: "de-2454"
+    target: "Brötchen"
+    ipa: "ˈbʁøːtçən"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Brötchen.", ipa: "hiːɐ̯ ɪst das ˈbʁøːtçən", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Brötchen", base: "Brötchen" }] }
+      - { target: "Ich habe ein Brötchen.", ipa: "ɪç ˈhaːbə aɪn ˈbʁøːtçən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Brötchen", base: "Brötchen" }] }
+  - id: "de-2455"
+    target: "Pommes"
+    ipa: "ˈpɔməs"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich habe Pommes.", ipa: "ɪç ˈhaːbə ˈpɔməs", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "Pommes", base: "Pommes" }] }
+      - { target: "Das sind Pommes.", ipa: "das zɪnt ˈpɔməs", bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "Pommes", base: "Pommes" }] }
+  - id: "de-2456"
+    target: "Bratwurst"
+    ipa: "ˈbʁatvʊʁst"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Bratwürste" }]
+    examples:
+      - { target: "Das ist die Bratwurst.", ipa: "das ɪst diː ˈbʁatvʊʁst", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Bratwurst", base: "Bratwurst" }] }
+      - { target: "Ich habe eine Bratwurst.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈbʁatvʊʁst", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Bratwurst", base: "Bratwurst" }] }
+  - id: "de-2457"
+    target: "Brezel"
+    ipa: "ˈbʁeːtsəl"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Brezeln" }]
+    examples:
+      - { target: "Das ist die Brezel.", ipa: "das ɪst diː ˈbʁeːtsəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Brezel", base: "Brezel" }] }
+      - { target: "Ich habe eine Brezel.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈbʁeːtsəl", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Brezel", base: "Brezel" }] }
+  - id: "de-2458"
+    target: "Knödel"
+    ipa: "kˈnøːdəl"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Knödel.", ipa: "das ɪst deːɐ̯ kˈnøːdəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Knödel", base: "Knödel" }] }
+      - { target: "Wo ist der Knödel?", ipa: "voː ɪst deːɐ̯ kˈnøːdəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Knödel", base: "Knödel" }] }
+  - id: "de-2459"
+    target: "Eintopf"
+    ipa: "ˈaɪntɔpf"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Eintöpfe" }]
+    examples:
+      - { target: "Das ist der Eintopf.", ipa: "das ɪst deːɐ̯ ˈaɪntɔpf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Eintopf", base: "Eintopf" }] }
+      - { target: "Ich habe einen Eintopf.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈaɪntɔpf", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Eintopf", base: "Eintopf" }] }
+  - id: "de-2460"
+    target: "Kartoffelsalat"
+    ipa: "ˈkaʁtɔfəlzalat"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kartoffelsalate" }]
+    examples:
+      - { target: "Das ist der Kartoffelsalat.", ipa: "das ɪst deːɐ̯ ˈkaʁtɔfəlzalat", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kartoffelsalat", base: "Kartoffelsalat" }] }
+      - { target: "Ich habe einen Kartoffelsalat.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈkaʁtɔfəlzalat", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Kartoffelsalat", base: "Kartoffelsalat" }] }
+  - id: "de-2461"
+    target: "Pfannkuchen"
+    ipa: "ˈpfankʊxən"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Pfannkuchen.", ipa: "das ɪst deːɐ̯ ˈpfankʊxən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Pfannkuchen", base: "Pfannkuchen" }] }
+      - { target: "Ich habe einen Pfannkuchen.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈpfankʊxən", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Pfannkuchen", base: "Pfannkuchen" }] }
+  - id: "de-2462"
+    target: "Omelett"
+    ipa: "ˈoːmələt"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Omelette" }]
+    examples:
+      - { target: "Hier ist das Omelett.", ipa: "hiːɐ̯ ɪst das ˈoːmələt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Omelett", base: "Omelett" }] }
+      - { target: "Ich habe ein Omelett.", ipa: "ɪç ˈhaːbə aɪn ˈoːmələt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Omelett", base: "Omelett" }] }
+  - id: "de-2463"
+    target: "Espresso"
+    ipa: "ˈɛspʁəso"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Espressos" }]
+    examples:
+      - { target: "Das ist der Espresso.", ipa: "das ɪst deːɐ̯ ˈɛspʁəso", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Espresso", base: "Espresso" }] }
+      - { target: "Ich habe einen Espresso.", ipa: "ɪç ˈhaːbə ˈaɪnən ˈɛspʁəso", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "einen", base: "ein" }, { word: "Espresso", base: "Espresso" }] }
+  - id: "de-2464"
+    target: "Eiscreme"
+    ipa: "ˈaɪskʁəmə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Eiscremes" }]
+    examples:
+      - { target: "Das ist die Eiscreme.", ipa: "das ɪst diː ˈaɪskʁəmə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Eiscreme", base: "Eiscreme" }] }
+      - { target: "Ich habe eine Eiscreme.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈaɪskʁəmə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Eiscreme", base: "Eiscreme" }] }
+  - id: "de-2465"
+    target: "Torte"
+    ipa: "ˈtɔʁtə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Torten" }]
+    examples:
+      - { target: "Das ist die Torte.", ipa: "das ɪst diː ˈtɔʁtə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Torte", base: "Torte" }] }
+      - { target: "Ich habe eine Torte.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈtɔʁtə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Torte", base: "Torte" }] }
+  - id: "de-2466"
+    target: "Schinken"
+    ipa: "ˈʃɪŋkən"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Schinken.", ipa: "das ɪst deːɐ̯ ˈʃɪŋkən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Schinken", base: "Schinken" }] }
+      - { target: "Wo ist der Schinken?", ipa: "voː ɪst deːɐ̯ ˈʃɪŋkən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Schinken", base: "Schinken" }] }
+  - id: "de-2467"
+    target: "Speck"
+    ipa: "ʃpɛk"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Specke" }]
+    examples:
+      - { target: "Das ist der Speck.", ipa: "das ɪst deːɐ̯ ʃpɛk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Speck", base: "Speck" }] }
+      - { target: "Wo ist der Speck?", ipa: "voː ɪst deːɐ̯ ʃpɛk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Speck", base: "Speck" }] }
+  - id: "de-2468"
+    target: "Lachs"
+    ipa: "laks"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Lachse" }]
+    examples:
+      - { target: "Das ist der Lachs.", ipa: "das ɪst deːɐ̯ laks", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Lachs", base: "Lachs" }] }
+      - { target: "Wo ist der Lachs?", ipa: "voː ɪst deːɐ̯ laks", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Lachs", base: "Lachs" }] }
+  - id: "de-2469"
+    target: "Thunfisch"
+    ipa: "ˈtʊnfɪʃ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Thunfische" }]
+    examples:
+      - { target: "Das ist der Thunfisch.", ipa: "das ɪst deːɐ̯ ˈtʊnfɪʃ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Thunfisch", base: "Thunfisch" }] }
+      - { target: "Wo ist der Thunfisch?", ipa: "voː ɪst deːɐ̯ ˈtʊnfɪʃ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Thunfisch", base: "Thunfisch" }] }
+  - id: "de-2470"
+    target: "Petersilie"
+    ipa: "ˈpeːtɐziliː"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Petersilien" }]
+    examples:
+      - { target: "Das ist die Petersilie.", ipa: "das ɪst diː ˈpeːtɐziliː", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Petersilie", base: "Petersilie" }] }
+      - { target: "Wo ist die Petersilie?", ipa: "voː ɪst diː ˈpeːtɐziliː", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Petersilie", base: "Petersilie" }] }
+  - id: "de-2471"
+    target: "Basilikum"
+    ipa: "ˈbaːzilikʊm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Basiliken" }]
+    examples:
+      - { target: "Hier ist das Basilikum.", ipa: "hiːɐ̯ ɪst das ˈbaːzilikʊm", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Basilikum", base: "Basilikum" }] }
+      - { target: "Wo ist das Basilikum?", ipa: "voː ɪst das ˈbaːzilikʊm", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Basilikum", base: "Basilikum" }] }
+  - id: "de-2472"
+    target: "Mahlzeit"
+    ipa: "ˈmaːltsaɪt"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Mahlzeiten" }]
+    examples:
+      - { target: "Das ist die Mahlzeit.", ipa: "das ɪst diː ˈmaːltsaɪt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Mahlzeit", base: "Mahlzeit" }] }
+      - { target: "Ich habe eine Mahlzeit.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈmaːltsaɪt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Mahlzeit", base: "Mahlzeit" }] }

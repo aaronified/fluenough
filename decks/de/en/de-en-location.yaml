@@ -1,0 +1,281 @@
+schema: 1
+id: "de-en-location"
+kind: "layer"
+core: "de-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Location"
+description: "Where things are: above and below, inside and outside, front and back, left and right, everywhere and there, and the nouns corner, side and middle. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "de-2000":
+    native: "above"
+    notes:
+      "n1": "Oben is above or up: das ist oben, that is above."
+    examples:
+      "Das ist oben.":
+        native: "That is above."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "oben": "above"
+      "Ich bin oben.":
+        native: "I am upstairs."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "oben": "above"
+  "de-2001":
+    native: "below"
+    notes:
+      "n1": "Unten is below or down: das ist unten, that is below."
+    examples:
+      "Das ist unten.":
+        native: "That is below."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "unten": "below"
+      "Du bist unten.":
+        native: "You are downstairs."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "unten": "below"
+  "de-2002":
+    native: "within"
+    notes:
+      "n1": "Innen is within or inside. It is used with ist: das ist innen."
+    examples:
+      "Das ist innen.":
+        native: "That is within."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "innen": "within"
+      "Das ist nicht innen.":
+        native: "That is not within."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "nicht": "not"
+          "innen": "within"
+  "de-2003":
+    native: "outside"
+    notes:
+      "n1": "Außen is outside, the opposite of innen."
+    examples:
+      "Das ist außen.":
+        native: "That is outside."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "außen": "outside"
+      "Du bist außen.":
+        native: "You are outside."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "außen": "outside"
+  "de-2004":
+    native: "at the front"
+    notes:
+      "n1": "Vorne is at the front. Hinten is at the back."
+    examples:
+      "Ich bin vorne.":
+        native: "I am at the front."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "vorne": "at the front"
+      "Du bist vorne.":
+        native: "You are at the front."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "vorne": "at the front"
+  "de-2005":
+    native: "behind; in the back"
+    notes:
+      "n1": "Hinten is at the back or behind. Vorne is the opposite."
+    examples:
+      "Ich bin hinten.":
+        native: "I am at the back."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "hinten": "behind"
+      "Du bist nicht hinten.":
+        native: "You are not at the back."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "nicht": "not"
+          "hinten": "behind"
+  "de-2006":
+    native: "on the left"
+    notes:
+      "n1": "Links is on the left."
+    examples:
+      "Das ist links.":
+        native: "That is on the left."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "links": "on the left"
+      "Du bist links.":
+        native: "You are on the left."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "links": "on the left"
+  "de-2007":
+    native: "on the right"
+    notes:
+      "n1": "Rechts is on the right, the opposite of links."
+    examples:
+      "Das ist rechts.":
+        native: "That is on the right."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "rechts": "on the right"
+      "Du bist rechts.":
+        native: "You are on the right."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "rechts": "on the right"
+  "de-2008":
+    native: "outside"
+    notes:
+      "n1": "Draußen is outside, as a place: ich bin draußen."
+    examples:
+      "Ich bin draußen.":
+        native: "I am outside."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "draußen": "outside"
+      "Du bist draußen.":
+        native: "You are outside."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "draußen": "outside"
+  "de-2009":
+    native: "inside"
+    notes:
+      "n1": "Drinnen is inside. It is the opposite of draußen."
+    examples:
+      "Ich bin drinnen.":
+        native: "I am inside."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "drinnen": "inside"
+      "Du bist nicht drinnen.":
+        native: "You are not inside."
+        bases:
+          "Du": "you"
+          "bist": "are"
+          "nicht": "not"
+          "drinnen": "inside"
+  "de-2010":
+    native: "everywhere"
+    notes:
+      "n1": "Überall is everywhere."
+    examples:
+      "Das ist überall.":
+        native: "That is everywhere."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "überall": "everywhere"
+      "Ich bin nicht überall.":
+        native: "I am not everywhere."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "nicht": "not"
+          "überall": "everywhere"
+  "de-2011":
+    native: "there, yonder"
+    notes:
+      "n1": "Dort is there, over in that place. Hier is here."
+    examples:
+      "Das ist dort.":
+        native: "That is there."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "dort": "there"
+      "Ich bin dort.":
+        native: "I am there."
+        bases:
+          "Ich": "I"
+          "bin": "am"
+          "dort": "there"
+  "de-2012":
+    native: "corner, edge"
+    notes:
+      "n1": "Ecke is corner, feminine: die Ecke. Its plural is Ecken."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist die Ecke.":
+        native: "That is the corner."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Ecke": "corner"
+      "Wo ist die Ecke?":
+        native: "Where is the corner?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Ecke": "corner"
+  "de-2013":
+    native: "side"
+    notes:
+      "n1": "Seite is side, feminine: die Seite. Its plural is Seiten."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist die Seite.":
+        native: "That is the side."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Seite": "side"
+      "Wo ist die Seite?":
+        native: "Where is the side?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Seite": "side"
+  "de-2014":
+    native: "middle"
+    notes:
+      "n1": "Mitte is middle, feminine: die Mitte. Its plural is Mitten."
+    forms:
+      "pl": "plural"
+    examples:
+      "Das ist die Mitte.":
+        native: "That is the middle."
+        bases:
+          "Das": "that"
+          "ist": "is"
+          "die": "the"
+          "Mitte": "middle"
+      "Wo ist die Mitte?":
+        native: "Where is the middle?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Mitte": "middle"

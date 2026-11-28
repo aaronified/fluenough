@@ -1,0 +1,165 @@
+schema: 1
+id: "de-location"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "location"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "de-2000"
+    target: "oben"
+    ipa: "ˈoːbən"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist oben.", ipa: "das ɪst ˈoːbən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "oben", base: "oben" }] }
+      - { target: "Ich bin oben.", ipa: "ɪç bɪn ˈoːbən", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "oben", base: "oben" }] }
+  - id: "de-2001"
+    target: "unten"
+    ipa: "ˈʊntən"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist unten.", ipa: "das ɪst ˈʊntən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "unten", base: "unten" }] }
+      - { target: "Du bist unten.", ipa: "duː bɪst ˈʊntən", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "unten", base: "unten" }] }
+  - id: "de-2002"
+    target: "innen"
+    ipa: "ˈɪnən"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist innen.", ipa: "das ɪst ˈɪnən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "innen", base: "innen" }] }
+      - { target: "Das ist nicht innen.", ipa: "das ɪst nɪçt ˈɪnən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "innen", base: "innen" }] }
+  - id: "de-2003"
+    target: "außen"
+    ipa: "ˈaʊsən"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist außen.", ipa: "das ɪst ˈaʊsən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "außen", base: "außen" }] }
+      - { target: "Du bist außen.", ipa: "duː bɪst ˈaʊsən", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "außen", base: "außen" }] }
+  - id: "de-2004"
+    target: "vorne"
+    ipa: "ˈfɔʁnə"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin vorne.", ipa: "ɪç bɪn ˈfɔʁnə", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "vorne", base: "vorne" }] }
+      - { target: "Du bist vorne.", ipa: "duː bɪst ˈfɔʁnə", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "vorne", base: "vorne" }] }
+  - id: "de-2005"
+    target: "hinten"
+    ipa: "ˈhɪntən"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin hinten.", ipa: "ɪç bɪn ˈhɪntən", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "hinten", base: "hinten" }] }
+      - { target: "Du bist nicht hinten.", ipa: "duː bɪst nɪçt ˈhɪntən", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "hinten", base: "hinten" }] }
+  - id: "de-2006"
+    target: "links"
+    ipa: "lɪŋks"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist links.", ipa: "das ɪst lɪŋks", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "links", base: "links" }] }
+      - { target: "Du bist links.", ipa: "duː bɪst lɪŋks", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "links", base: "links" }] }
+  - id: "de-2007"
+    target: "rechts"
+    ipa: "ʁɛçts"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist rechts.", ipa: "das ɪst ʁɛçts", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "rechts", base: "rechts" }] }
+      - { target: "Du bist rechts.", ipa: "duː bɪst ʁɛçts", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "rechts", base: "rechts" }] }
+  - id: "de-2008"
+    target: "draußen"
+    ipa: "ˈdʁaʊsən"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin draußen.", ipa: "ɪç bɪn ˈdʁaʊsən", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "draußen", base: "draußen" }] }
+      - { target: "Du bist draußen.", ipa: "duː bɪst ˈdʁaʊsən", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "draußen", base: "draußen" }] }
+  - id: "de-2009"
+    target: "drinnen"
+    ipa: "ˈdʁɪnən"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Ich bin drinnen.", ipa: "ɪç bɪn ˈdʁɪnən", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "drinnen", base: "drinnen" }] }
+      - { target: "Du bist nicht drinnen.", ipa: "duː bɪst nɪçt ˈdʁɪnən", bases: [{ word: "Du", base: "du" }, { word: "bist", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "drinnen", base: "drinnen" }] }
+  - id: "de-2010"
+    target: "überall"
+    ipa: "ˈyːbəʁal"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist überall.", ipa: "das ɪst ˈyːbəʁal", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "überall", base: "überall" }] }
+      - { target: "Ich bin nicht überall.", ipa: "ɪç bɪn nɪçt ˈyːbəʁal", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "nicht", base: "nicht" }, { word: "überall", base: "überall" }] }
+  - id: "de-2011"
+    target: "dort"
+    ipa: "dɔʁt"
+    pos: "adverb"
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist dort.", ipa: "das ɪst dɔʁt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "dort", base: "dort" }] }
+      - { target: "Ich bin dort.", ipa: "ɪç bɪn dɔʁt", bases: [{ word: "Ich", base: "ich" }, { word: "bin", base: "sein" }, { word: "dort", base: "dort" }] }
+  - id: "de-2012"
+    target: "Ecke"
+    ipa: "ˈɛkə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Ecken", ipa: "ˈɛkən" }]
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist die Ecke.", ipa: "das ɪst diː ˈɛkə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Ecke", base: "Ecke" }] }
+      - { target: "Wo ist die Ecke?", ipa: "voː ɪst diː ˈɛkə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Ecke", base: "Ecke" }] }
+  - id: "de-2013"
+    target: "Seite"
+    ipa: "ˈzaɪtə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Seiten", ipa: "ˈzaɪtən" }]
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist die Seite.", ipa: "das ɪst diː ˈzaɪtə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Seite", base: "Seite" }] }
+      - { target: "Wo ist die Seite?", ipa: "voː ɪst diː ˈzaɪtə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Seite", base: "Seite" }] }
+  - id: "de-2014"
+    target: "Mitte"
+    ipa: "ˈmɪtə"
+    pos: "noun"
+    gender: "f"
+    forms: [{ id: "pl", kind: "plural", word: "Mitten", ipa: "ˈmɪtən" }]
+    tags: ["location"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist die Mitte.", ipa: "das ɪst diː ˈmɪtə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Mitte", base: "Mitte" }] }
+      - { target: "Wo ist die Mitte?", ipa: "voː ɪst diː ˈmɪtə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Mitte", base: "Mitte" }] }
