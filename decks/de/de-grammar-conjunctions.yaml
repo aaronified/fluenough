@@ -1,0 +1,54 @@
+schema: 1
+id: "de-grammar-conjunctions"
+part: "core"
+kind: "grammar"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["words", "clauses"]
+  entries:
+    - lemma: "und"
+      key: "und"
+      ipa: "ʊnt"
+      forms:
+        "words": "Kaffee und Kuchen"
+        "clauses": "Ich arbeite und du lernst."
+      ipas:
+        "words": "kaˈfeː ʊnt ˈkuːxən"
+        "clauses": "ɪç ˈaʁbaɪtə ʊnt duː lɛʁnst"
+    - lemma: "oder"
+      key: "oder"
+      ipa: "ˈoːdɐ"
+      forms:
+        "words": "Kaffee oder Tee"
+        "clauses": "Kommst du oder bleibst du hier?"
+      ipas:
+        "words": "kaˈfeː ˈoːdɐ teː"
+        "clauses": "kɔmst duː ˈoːdɐ blaɪpst duː hiːɐ̯"
+    - lemma: "aber"
+      key: "aber"
+      ipa: "ˈaːbɐ"
+      forms:
+        "words": "klein, aber schön"
+        "clauses": "Ich habe keinen Kaffee, aber ich habe Tee."
+      ipas:
+        "words": "klaɪn ˈaːbɐ ʃøːn"
+        "clauses": "ɪç ˈhaːbə ˈkaɪnən kaˈfeː ˈaːbɐ ɪç ˈhaːbə teː"
+    - lemma: "denn"
+      key: "denn"
+      ipa: "dɛn"
+      forms:
+        "words": null
+        "clauses": "Ich bleibe hier, denn ich bin müde."
+      ipas:
+        "clauses": "ɪç ˈblaɪbə hiːɐ̯ dɛn ɪç bɪn ˈmyːdə"
+    - lemma: "sondern"
+      key: "sondern"
+      ipa: "ˈzɔndɐn"
+      forms:
+        "words": "nicht Kaffee, sondern Tee"
+        "clauses": "Ich bin nicht müde, sondern ich bin hungrig."
+      ipas:
+        "words": "nɪçt kaˈfeː ˈzɔndɐn teː"
+        "clauses": "ɪç bɪn nɪçt ˈmyːdə ˈzɔndɐn ɪç bɪn ˈhʊŋʁɪç"

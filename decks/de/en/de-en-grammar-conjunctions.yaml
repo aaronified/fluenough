@@ -1,0 +1,21 @@
+schema: 1
+id: "de-en-grammar-conjunctions"
+kind: "layer"
+core: "de-grammar-conjunctions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Joining words and clauses: und, oder, aber, denn, sondern"
+license: "CC-BY-SA-4.0"
+description: "Five coordinating conjunctions, each with a pair of words it joins and a pair of clauses it joins, with the verb staying in second place. Not yet checked by a German speaker: please report any mistake."
+pattern:
+  name: "The coordinating conjunctions"
+  slot_name: "what it joins"
+  slots:
+    "words": "joining two words"
+    "clauses": "joining two clauses"
+  entries:
+    "und": "and"
+    "oder": "or"
+    "aber": "but; however"
+    "denn": "because; for (only joins clauses)"
+    "sondern": "but (instead), after a negative"
+  notes: "The coordinating conjunctions und, oder, aber, denn and sondern join two words or two clauses of equal rank. They stand between what they join and are not counted as the first part of the second clause, so the verb of that clause stays in second place: Ich arbeite und du lernst, with du before the verb as in any statement. Wikipedia's page on German word order says coordinating conjunctions like und and aber precede both the first position and the finite verb. Und is and, oder is or, aber is but or however, denn is because or for, and sondern is but, instead: it follows nicht or kein and says what is true instead, as Wiktionary's entries explain. Denn joins clauses only, never two single words. Wiktionary's usage notes on und say that no comma is used before und in a list; here the two clauses joined by und or oder have no comma, and those joined by aber, denn or sondern have one, as in Wiktionary's examples with aber. Sources: en.wiktionary's entries for und, oder, aber, denn and sondern, and the Wikipedia page German word order."
