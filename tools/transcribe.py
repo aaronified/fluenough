@@ -2555,7 +2555,8 @@ _DE_LETTER_NAMES = {
     "a": "aː", "b": "beː", "c": "tseː", "d": "deː", "e": "eː", "f": "ɛf",
     "g": "ɡeː", "h": "haː", "i": "iː", "j": "jɔt", "k": "kaː", "l": "ɛl",
     "m": "ɛm", "n": "ɛn", "o": "oː", "p": "peː", "q": "kuː", "r": "ɛʁ",
-    "s": "ɛs", "t": "teː", "u": "uː", "v": "faʊ",
+    "s": "ɛs", "t": "teː", "u": "uː", "v": "faʊ", "w": "veː", "x": "ɪks",
+    "y": "ʏpsilɔn", "z": "tsɛt",
 }
 # Prefixes read apart and never stressed: letters, then the phonemes.
 _DE_PREFIXES = (("miss", "mɪs"), ("emp", "ɛmp"), ("ent", "ɛnt"),
