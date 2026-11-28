@@ -1,0 +1,405 @@
+schema: 1
+id: "it-everyday-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-1650"
+    target: "fare"
+    ipa: "ˈfare"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Che cosa fai?", ipa: "ke ˈkɔza faj", bases: [{ word: "Che", base: "che" }, { word: "cosa", base: "cosa" }, { word: "fai", base: "fare" }] }
+      - { target: "Io faccio il caffè.", ipa: "ˈio ˈfattʃo il kafˈfɛ", bases: [{ word: "Io", base: "io" }, { word: "faccio", base: "fare" }, { word: "il", base: "il" }, { word: "caffè", base: "caffè" }] }
+  - id: "it-1651"
+    target: "andare"
+    ipa: "anˈdare"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io vado a casa.", ipa: "ˈio ˈvado a ˈkaza", bases: [{ word: "Io", base: "io" }, { word: "vado", base: "andare" }, { word: "a", base: "a" }, { word: "casa", base: "casa" }] }
+      - { target: "Vado in Italia.", ipa: "ˈvado in iˈtalja", bases: [{ word: "Vado", base: "andare" }, { word: "in", base: "in" }, { word: "Italia", base: "Italia" }] }
+  - id: "it-1652"
+    target: "venire"
+    ipa: "veˈnire"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io vengo da Roma.", ipa: "ˈio ˈvenɡo da ˈrɔma", bases: [{ word: "Io", base: "io" }, { word: "vengo", base: "venire" }, { word: "da", base: "da" }, { word: "Roma", base: "Roma" }] }
+      - { target: "Vieni con me?", ipa: "ˈvjɛni kon me", bases: [{ word: "Vieni", base: "venire" }, { word: "con", base: "con" }, { word: "me", base: "me" }] }
+  - id: "it-1653"
+    target: "dire"
+    ipa: "ˈdire"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io dico sì.", ipa: "ˈio ˈdiko si", bases: [{ word: "Io", base: "io" }, { word: "dico", base: "dire" }, { word: "sì", base: "sì" }] }
+      - { target: "Che cosa dici?", ipa: "ke ˈkɔza ˈditʃi", bases: [{ word: "Che", base: "che" }, { word: "cosa", base: "cosa" }, { word: "dici", base: "dire" }] }
+  - id: "it-1654"
+    target: "dare"
+    ipa: "ˈdare"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io do il libro a Marco.", ipa: "ˈio do il ˈlibro a ˈmarko", bases: [{ word: "Io", base: "io" }, { word: "do", base: "dare" }, { word: "il", base: "il" }, { word: "libro", base: "libro" }, { word: "a", base: "a" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Mi dai un caffè?", ipa: "mi daj un kafˈfɛ", bases: [{ word: "Mi", base: "mi" }, { word: "dai", base: "dare" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
+  - id: "it-1655"
+    target: "sapere"
+    ipa: "saˈpere"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io so la risposta.", ipa: "ˈio sɔ la risˈposta", bases: [{ word: "Io", base: "io" }, { word: "so", base: "sapere" }, { word: "la", base: "la" }, { word: "risposta", base: "risposta" }] }
+      - { target: "Non so.", ipa: "non sɔ", bases: [{ word: "Non", base: "non" }, { word: "so", base: "sapere" }] }
+  - id: "it-1656"
+    target: "vedere"
+    ipa: "veˈdere"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io vedo il mare.", ipa: "ˈio ˈvedo il ˈmare", bases: [{ word: "Io", base: "io" }, { word: "vedo", base: "vedere" }, { word: "il", base: "il" }, { word: "mare", base: "mare" }] }
+      - { target: "Vedo Marco.", ipa: "ˈvedo ˈmarko", bases: [{ word: "Vedo", base: "vedere" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-1657"
+    target: "guardare"
+    ipa: "ɡwarˈdare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Guardo il libro.", ipa: "ˈɡwardo il ˈlibro", bases: [{ word: "Guardo", base: "guardare" }, { word: "il", base: "il" }, { word: "libro", base: "libro" }] }
+      - { target: "Io guardo la casa.", ipa: "ˈio ˈɡwardo la ˈkaza", bases: [{ word: "Io", base: "io" }, { word: "guardo", base: "guardare" }, { word: "la", base: "la" }, { word: "casa", base: "casa" }] }
+  - id: "it-1658"
+    target: "parlare"
+    ipa: "parˈlare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io parlo italiano.", ipa: "ˈio ˈparlo itaˈljano", bases: [{ word: "Io", base: "io" }, { word: "parlo", base: "parlare" }, { word: "italiano", base: "italiano" }] }
+      - { target: "Parlo con Marco.", ipa: "ˈparlo kon ˈmarko", bases: [{ word: "Parlo", base: "parlare" }, { word: "con", base: "con" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-1659"
+    target: "capire"
+    ipa: "kaˈpire"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Non capisco.", ipa: "non kaˈpisko", bases: [{ word: "Non", base: "non" }, { word: "capisco", base: "capire" }] }
+      - { target: "Capisco la domanda.", ipa: "kaˈpisko la doˈmanda", bases: [{ word: "Capisco", base: "capire" }, { word: "la", base: "la" }, { word: "domanda", base: "domanda" }] }
+  - id: "it-1660"
+    target: "mangiare"
+    ipa: "manˈdʒare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io mangio la pizza.", ipa: "ˈio ˈmandʒo la ˈpittsa", bases: [{ word: "Io", base: "io" }, { word: "mangio", base: "mangiare" }, { word: "la", base: "la" }, { word: "pizza", base: "pizza" }] }
+      - { target: "Mangio pane.", ipa: "ˈmandʒo ˈpane", bases: [{ word: "Mangio", base: "mangiare" }, { word: "pane", base: "pane" }] }
+  - id: "it-1661"
+    target: "bere"
+    ipa: "ˈbere"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io bevo acqua.", ipa: "ˈio ˈbevo ˈakkwa", bases: [{ word: "Io", base: "io" }, { word: "bevo", base: "bere" }, { word: "acqua", base: "acqua" }] }
+      - { target: "Bevo un caffè.", ipa: "ˈbevo un kafˈfɛ", bases: [{ word: "Bevo", base: "bere" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
+  - id: "it-1662"
+    target: "prendere"
+    ipa: "ˈprɛndere"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io prendo il treno.", ipa: "ˈio ˈprendo il ˈtrɛno", bases: [{ word: "Io", base: "io" }, { word: "prendo", base: "prendere" }, { word: "il", base: "il" }, { word: "treno", base: "treno" }] }
+      - { target: "Prendo un caffè.", ipa: "ˈprendo un kafˈfɛ", bases: [{ word: "Prendo", base: "prendere" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
+  - id: "it-1663"
+    target: "aprire"
+    ipa: "aˈprire"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io apro la porta.", ipa: "ˈio ˈapro la ˈpɔrta", bases: [{ word: "Io", base: "io" }, { word: "apro", base: "aprire" }, { word: "la", base: "la" }, { word: "porta", base: "porta" }] }
+      - { target: "Apro il libro.", ipa: "ˈapro il ˈlibro", bases: [{ word: "Apro", base: "aprire" }, { word: "il", base: "il" }, { word: "libro", base: "libro" }] }
+  - id: "it-1664"
+    target: "chiudere"
+    ipa: "kjuˈdere"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io chiudo la porta.", ipa: "ˈio ˈkjudo la ˈpɔrta", bases: [{ word: "Io", base: "io" }, { word: "chiudo", base: "chiudere" }, { word: "la", base: "la" }, { word: "porta", base: "porta" }] }
+      - { target: "Chiudo la finestra.", ipa: "ˈkjudo la fiˈnɛstra", bases: [{ word: "Chiudo", base: "chiudere" }, { word: "la", base: "la" }, { word: "finestra", base: "finestra" }] }
+  - id: "it-1665"
+    target: "cercare"
+    ipa: "tʃerˈkare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io cerco le chiavi.", ipa: "ˈio ˈtʃerko le ˈkjavi", bases: [{ word: "Io", base: "io" }, { word: "cerco", base: "cercare" }, { word: "le", base: "le" }, { word: "chiavi", base: "chiave" }] }
+      - { target: "Cerco un amico.", ipa: "ˈtʃerko un aˈmiko", bases: [{ word: "Cerco", base: "cercare" }, { word: "un", base: "un" }, { word: "amico", base: "amico" }] }
+  - id: "it-1666"
+    target: "trovare"
+    ipa: "troˈvare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io trovo il bagno.", ipa: "ˈio ˈtrovo il ˈbaɲɲo", bases: [{ word: "Io", base: "io" }, { word: "trovo", base: "trovare" }, { word: "il", base: "il" }, { word: "bagno", base: "bagno" }] }
+      - { target: "Trovo la chiave.", ipa: "ˈtrovo la ˈkjave", bases: [{ word: "Trovo", base: "trovare" }, { word: "la", base: "la" }, { word: "chiave", base: "chiave" }] }
+  - id: "it-1667"
+    target: "pensare"
+    ipa: "penˈsare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io penso di sì.", ipa: "ˈio ˈpenso di si", bases: [{ word: "Io", base: "io" }, { word: "penso", base: "pensare" }, { word: "di", base: "di" }, { word: "sì", base: "sì" }] }
+      - { target: "Penso a Marco.", ipa: "ˈpenso a ˈmarko", bases: [{ word: "Penso", base: "pensare" }, { word: "a", base: "a" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-1668"
+    target: "credere"
+    ipa: "kreˈdere"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io credo a te.", ipa: "ˈio ˈkredo a te", bases: [{ word: "Io", base: "io" }, { word: "credo", base: "credere" }, { word: "a", base: "a" }, { word: "te", base: "te" }] }
+      - { target: "Credo di sì.", ipa: "ˈkredo di si", bases: [{ word: "Credo", base: "credere" }, { word: "di", base: "di" }, { word: "sì", base: "sì" }] }
+  - id: "it-1669"
+    target: "sentire"
+    ipa: "senˈtire"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sento freddo.", ipa: "ˈsento ˈfreddo", bases: [{ word: "Sento", base: "sentire" }, { word: "freddo", base: "freddo" }] }
+      - { target: "Io sento la musica.", ipa: "ˈio ˈsento la ˈmuzika", bases: [{ word: "Io", base: "io" }, { word: "sento", base: "sentire" }, { word: "la", base: "la" }, { word: "musica", base: "musica" }] }
+  - id: "it-1670"
+    target: "volere"
+    ipa: "voˈlere"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io voglio un caffè.", ipa: "ˈio ˈvoʎʎo un kafˈfɛ", bases: [{ word: "Io", base: "io" }, { word: "voglio", base: "volere" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
+      - { target: "Voglio acqua.", ipa: "ˈvoʎʎo ˈakkwa", bases: [{ word: "Voglio", base: "volere" }, { word: "acqua", base: "acqua" }] }
+  - id: "it-1671"
+    target: "potere"
+    ipa: "poˈtere"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Non posso, grazie.", ipa: "non ˈposso ˈɡrattsje", bases: [{ word: "Non", base: "non" }, { word: "posso", base: "potere" }, { word: "grazie", base: "grazie" }] }
+      - { target: "Io posso.", ipa: "ˈio ˈposso", bases: [{ word: "Io", base: "io" }, { word: "posso", base: "potere" }] }
+  - id: "it-1672"
+    target: "dovere"
+    ipa: "doˈvere"
+    pos: "verb"
+    tags: ["everyday-verbs", "irregular"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io devo tre euro.", ipa: "ˈio ˈdɛvo tre ˈewro", bases: [{ word: "Io", base: "io" }, { word: "devo", base: "dovere" }, { word: "tre", base: "tre" }, { word: "euro", base: "euro" }] }
+      - { target: "Devo molto a Marco.", ipa: "ˈdɛvo ˈmolto a ˈmarko", bases: [{ word: "Devo", base: "dovere" }, { word: "molto", base: "molto" }, { word: "a", base: "a" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-1673"
+    target: "mettere"
+    ipa: "metˈtere"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io metto il libro qui.", ipa: "ˈio ˈmetto il ˈlibro kwi", bases: [{ word: "Io", base: "io" }, { word: "metto", base: "mettere" }, { word: "il", base: "il" }, { word: "libro", base: "libro" }, { word: "qui", base: "qui" }] }
+      - { target: "Metto la chiave.", ipa: "ˈmetto la ˈkjave", bases: [{ word: "Metto", base: "mettere" }, { word: "la", base: "la" }, { word: "chiave", base: "chiave" }] }
+  - id: "it-1674"
+    target: "portare"
+    ipa: "porˈtare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io porto il pane.", ipa: "ˈio ˈporto il ˈpane", bases: [{ word: "Io", base: "io" }, { word: "porto", base: "portare" }, { word: "il", base: "il" }, { word: "pane", base: "pane" }] }
+      - { target: "Porto la borsa.", ipa: "ˈporto la ˈborsa", bases: [{ word: "Porto", base: "portare" }, { word: "la", base: "la" }, { word: "borsa", base: "borsa" }] }
+  - id: "it-1675"
+    target: "comprare"
+    ipa: "komˈprare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Compro il pane.", ipa: "ˈkompro il ˈpane", bases: [{ word: "Compro", base: "comprare" }, { word: "il", base: "il" }, { word: "pane", base: "pane" }] }
+      - { target: "Io compro acqua.", ipa: "ˈio ˈkompro ˈakkwa", bases: [{ word: "Io", base: "io" }, { word: "compro", base: "comprare" }, { word: "acqua", base: "acqua" }] }
+  - id: "it-1676"
+    target: "pagare"
+    ipa: "paˈɡare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pago io.", ipa: "ˈpaɡo ˈio", bases: [{ word: "Pago", base: "pagare" }, { word: "io", base: "io" }] }
+      - { target: "Pago il caffè.", ipa: "ˈpaɡo il kafˈfɛ", bases: [{ word: "Pago", base: "pagare" }, { word: "il", base: "il" }, { word: "caffè", base: "caffè" }] }
+  - id: "it-1677"
+    target: "lavare"
+    ipa: "laˈvare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Lavo la macchina.", ipa: "ˈlavo la ˈmakkina", bases: [{ word: "Lavo", base: "lavare" }, { word: "la", base: "la" }, { word: "macchina", base: "macchina" }] }
+      - { target: "Io lavo le mani.", ipa: "ˈio ˈlavo le ˈmani", bases: [{ word: "Io", base: "io" }, { word: "lavo", base: "lavare" }, { word: "le", base: "le" }, { word: "mani", base: "mano" }] }
+  - id: "it-1678"
+    target: "cucinare"
+    ipa: "kutʃiˈnare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cucino la pasta.", ipa: "kuˈtʃino la ˈpasta", bases: [{ word: "Cucino", base: "cucinare" }, { word: "la", base: "la" }, { word: "pasta", base: "pasta" }] }
+      - { target: "Io cucino per Marco.", ipa: "ˈio kuˈtʃino per ˈmarko", bases: [{ word: "Io", base: "io" }, { word: "cucino", base: "cucinare" }, { word: "per", base: "per" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-1679"
+    target: "dormire"
+    ipa: "dorˈmire"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dormo molto.", ipa: "ˈdormo ˈmolto", bases: [{ word: "Dormo", base: "dormire" }, { word: "molto", base: "molto" }] }
+      - { target: "Io dormo bene.", ipa: "ˈio ˈdormo ˈbɛne", bases: [{ word: "Io", base: "io" }, { word: "dormo", base: "dormire" }, { word: "bene", base: "bene" }] }
+  - id: "it-1680"
+    target: "leggere"
+    ipa: "ˈlɛddʒere"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Leggo un libro.", ipa: "ˈleɡɡo un ˈlibro", bases: [{ word: "Leggo", base: "leggere" }, { word: "un", base: "un" }, { word: "libro", base: "libro" }] }
+      - { target: "Io leggo il giornale.", ipa: "ˈio ˈleɡɡo il dʒorˈnale", bases: [{ word: "Io", base: "io" }, { word: "leggo", base: "leggere" }, { word: "il", base: "il" }, { word: "giornale", base: "giornale" }] }
+  - id: "it-1681"
+    target: "scrivere"
+    ipa: "ˈskrivere"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Scrivo una lettera.", ipa: "ˈskrivo ˈuna letˈtera", bases: [{ word: "Scrivo", base: "scrivere" }, { word: "una", base: "una" }, { word: "lettera", base: "lettera" }] }
+      - { target: "Io scrivo a Marco.", ipa: "ˈio ˈskrivo a ˈmarko", bases: [{ word: "Io", base: "io" }, { word: "scrivo", base: "scrivere" }, { word: "a", base: "a" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-1682"
+    target: "ascoltare"
+    ipa: "askolˈtare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ascolto la musica.", ipa: "asˈkolto la ˈmuzika", bases: [{ word: "Ascolto", base: "ascoltare" }, { word: "la", base: "la" }, { word: "musica", base: "musica" }] }
+      - { target: "Ascolto Marco.", ipa: "asˈkolto ˈmarko", bases: [{ word: "Ascolto", base: "ascoltare" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-1683"
+    target: "aspettare"
+    ipa: "aspetˈtare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Aspetto il treno.", ipa: "asˈpetto il ˈtrɛno", bases: [{ word: "Aspetto", base: "aspettare" }, { word: "il", base: "il" }, { word: "treno", base: "treno" }] }
+      - { target: "Aspetto Marco.", ipa: "asˈpetto ˈmarko", bases: [{ word: "Aspetto", base: "aspettare" }, { word: "Marco", base: "Marco" }] }
+  - id: "it-1684"
+    target: "chiamare"
+    ipa: "kjaˈmare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chiamo Marco.", ipa: "ˈkjamo ˈmarko", bases: [{ word: "Chiamo", base: "chiamare" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Io chiamo il dottore.", ipa: "ˈio ˈkjamo il dotˈtore", bases: [{ word: "Io", base: "io" }, { word: "chiamo", base: "chiamare" }, { word: "il", base: "il" }, { word: "dottore", base: "dottore" }] }
+  - id: "it-1685"
+    target: "aiutare"
+    ipa: "ajuˈtare"
+    pos: "verb"
+    tags: ["everyday-verbs"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Aiuto Marco.", ipa: "aˈjuto ˈmarko", bases: [{ word: "Aiuto", base: "aiutare" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Io aiuto la mamma.", ipa: "ˈio aˈjuto la ˈmamma", bases: [{ word: "Io", base: "io" }, { word: "aiuto", base: "aiutare" }, { word: "la", base: "la" }, { word: "mamma", base: "mamma" }] }
