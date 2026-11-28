@@ -1,0 +1,239 @@
+schema: 1
+id: "de-en-questions"
+kind: "layer"
+core: "de-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Question words"
+description: "The question words: who, what, where, when, how, why, which, for what, how much, and where from. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "de-1300":
+    native: "who"
+    notes:
+      "n1": "Wer is who. It asks about a person and does not change its form."
+    examples:
+      "Wer ist das?":
+        native: "Who is that?"
+        bases:
+          "Wer": "who"
+          "ist": "is"
+          "das": "that"
+      "Wer ist hier?":
+        native: "Who is here?"
+        bases:
+          "Wer": "who"
+          "ist": "is"
+          "hier": "here"
+  "de-1301":
+    native: "what"
+    notes:
+      "n1": "Was is what. It asks about a thing and does not change its form."
+    examples:
+      "Was ist das?":
+        native: "What is that?"
+        bases:
+          "Was": "what"
+          "ist": "is"
+          "das": "that"
+      "Was habe ich?":
+        native: "What do I have?"
+        bases:
+          "Was": "what"
+          "habe": "have"
+          "ich": "I"
+  "de-1302":
+    native: "where"
+    notes:
+      "n1": "Wo is where. It asks about a place, as in Wo ist die Toilette?"
+    examples:
+      "Wo ist das?":
+        native: "Where is that?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "that"
+      "Wo bist du?":
+        native: "Where are you?"
+        bases:
+          "Wo": "where"
+          "bist": "are"
+          "du": "you"
+  "de-1303":
+    native: "when"
+    notes:
+      "n1": "Wann is when. It asks about a time."
+    examples:
+      "Wann ist das?":
+        native: "When is that?"
+        bases:
+          "Wann": "when"
+          "ist": "is"
+          "das": "that"
+      "Wann bist du hier?":
+        native: "When are you here?"
+        bases:
+          "Wann": "when"
+          "bist": "are"
+          "du": "you"
+          "hier": "here"
+  "de-1304":
+    native: "how"
+    notes:
+      "n1": "Wie is how. It asks about the way something is, as in Wie heißen Sie?"
+    examples:
+      "Wie ist das?":
+        native: "How is that?"
+        bases:
+          "Wie": "how"
+          "ist": "is"
+          "das": "that"
+      "Wie bist du?":
+        native: "What are you like?"
+        bases:
+          "Wie": "how"
+          "bist": "are"
+          "du": "you"
+  "de-1305":
+    native: "why"
+    notes:
+      "n1": "Warum is why. It asks for the reason."
+    examples:
+      "Warum ist das?":
+        native: "Why is that?"
+        bases:
+          "Warum": "why"
+          "ist": "is"
+          "das": "that"
+      "Warum bist du hier?":
+        native: "Why are you here?"
+        bases:
+          "Warum": "why"
+          "bist": "are"
+          "du": "you"
+          "hier": "here"
+  "de-1307":
+    native: "where from"
+    notes:
+      "n1": "Woher is where from. It asks where someone or something comes from."
+    examples:
+      "Woher bist du?":
+        native: "Where are you from?"
+        bases:
+          "Woher": "where from"
+          "bist": "are"
+          "du": "you"
+      "Woher ist das?":
+        native: "Where is that from?"
+        bases:
+          "Woher": "where from"
+          "ist": "is"
+          "das": "that"
+  "de-1308":
+    native: "which; what"
+    notes:
+      "n1": "Welcher is which one. Its ending follows the gender of the noun it goes with: welche for feminine, welches for neuter."
+    examples:
+      "Welcher ist das?":
+        native: "Which one is that?"
+        bases:
+          "Welcher": "which one"
+          "ist": "is"
+          "das": "that"
+      "Welcher ist hier?":
+        native: "Which one is here?"
+        bases:
+          "Welcher": "which one"
+          "ist": "is"
+          "hier": "here"
+  "de-1309":
+    native: "for what"
+    notes:
+      "n1": "Wofür is for what. It asks what a thing is for."
+    examples:
+      "Wofür ist das?":
+        native: "What is that for?"
+        bases:
+          "Wofür": "what for"
+          "ist": "is"
+          "das": "that"
+      "Wofür ist das Wasser?":
+        native: "What is the water for?"
+        bases:
+          "Wofür": "what for"
+          "ist": "is"
+          "das": "the"
+          "Wasser": "water"
+  "de-1311":
+    native: "why"
+    notes:
+      "n1": "Wieso is why. It is used in everyday speech."
+    examples:
+      "Wieso ist das?":
+        native: "Why is that?"
+        bases:
+          "Wieso": "why"
+          "ist": "is"
+          "das": "that"
+      "Wieso bist du hier?":
+        native: "Why are you here?"
+        bases:
+          "Wieso": "why"
+          "bist": "are"
+          "du": "you"
+          "hier": "here"
+  "de-1312":
+    native: "why"
+    notes:
+      "n1": "Weshalb is why, in a more formal style than warum."
+    examples:
+      "Weshalb ist das?":
+        native: "Why is that?"
+        bases:
+          "Weshalb": "why"
+          "ist": "is"
+          "das": "that"
+      "Weshalb bist du hier?":
+        native: "Why are you here?"
+        bases:
+          "Weshalb": "why"
+          "bist": "are"
+          "du": "you"
+          "hier": "here"
+  "de-1313":
+    native: "how much; how many"
+    notes:
+      "n1": "Wie viel is how much, written as two words. It asks about an amount."
+    examples:
+      "Wie viel ist das?":
+        native: "How much is that?"
+        bases:
+          "Wie": "how"
+          "viel": "much"
+          "ist": "is"
+          "das": "that"
+      "Wie viel habe ich?":
+        native: "How much do I have?"
+        bases:
+          "Wie": "how"
+          "viel": "much"
+          "habe": "have"
+          "ich": "I"
+  "de-1314":
+    native: "for what reason"
+    notes:
+      "n1": "Wozu is what for. It asks about the purpose of something."
+    examples:
+      "Wozu ist das?":
+        native: "What is that for?"
+        bases:
+          "Wozu": "what for"
+          "ist": "is"
+          "das": "that"
+      "Wozu ist das gut?":
+        native: "What is that good for?"
+        bases:
+          "Wozu": "what for"
+          "ist": "is"
+          "das": "that"
+          "gut": "good"
