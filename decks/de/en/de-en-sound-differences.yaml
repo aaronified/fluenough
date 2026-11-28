@@ -1,0 +1,339 @@
+schema: 1
+id: "de-en-sound-differences"
+kind: "layer"
+core: "de-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "German sounds that differ from English"
+license: "CC-BY-SA-4.0"
+description: "19 words for the sounds German spells differently from English: the umlauts ä, ö and ü, long and short vowels, the two sounds of ch, sch, sp and st, z, w and f, final b, d and g, and ß. Taken from the words' own Wiktionary entries and Wikipedia's pages on German phonology and spelling. Not yet checked by a German speaker: please report any mistake."
+cards:
+  "de-0400":
+    native: "state; country"
+    notes:
+      "pair": "Staat (state, country) has a long vowel and is said /ʃtaːt/. Stadt (city) has a short vowel and is said /ʃtat/. Both begin with the sound sh, as every word that begins with st does. The plural is Staaten."
+    examples:
+      "Das ist ein Staat.":
+        native: "That is a state."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Staat": "state; country"
+      "Der Staat ist groß.":
+        native: "The state is big."
+        bases:
+          "Der": "the (masculine)"
+          "Staat": "state; country"
+          "ist": "to be"
+  "de-0401":
+    native: "bed (for plants)"
+    notes:
+      "pair": "Beet (garden bed) has a long vowel, ee, and is said /beːt/. Bett (bed to sleep in) has a short vowel, e, and is said /bɛt/. The plural is Beete."
+    examples:
+      "Das ist ein Beet.":
+        native: "That is a flower bed."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Beet": "bed (for plants)"
+      "Das Beet ist klein.":
+        native: "The flower bed is small."
+        bases:
+          "Das": "that; the (neuter)"
+          "Beet": "bed (for plants)"
+          "ist": "to be"
+  "de-0402":
+    native: "stove; oven"
+    notes:
+      "pair": "Ofen (stove) has a long o, said /ˈoːfən/. Offen (open) has a short o, said /ˈɔfən/. The doubled f of offen shows the short vowel. The plural is Öfen."
+    examples:
+      "Das ist ein Ofen.":
+        native: "That is a stove."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Ofen": "stove; oven"
+      "Der Ofen ist heiß.":
+        native: "The stove is hot."
+        bases:
+          "Der": "the (masculine)"
+          "Ofen": "stove; oven"
+          "ist": "to be"
+  "de-0403":
+    native: "open"
+    notes:
+      "pair": "Offen (open) has a short o, said /ˈɔfən/. Ofen (stove) has a long o, said /ˈoːfən/. A doubled consonant after the vowel marks a short vowel."
+    examples:
+      "Die Tür ist offen.":
+        native: "The door is open."
+        bases:
+          "Die": "the (feminine and plural)"
+          "ist": "to be"
+          "offen": "open"
+      "Das Fenster ist offen.":
+        native: "The window is open."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "offen": "open"
+  "de-0404":
+    native: "book"
+    notes:
+      "n1": "The ch of Buch is the ach-sound, said at the back of the mouth: /buːx/. Wikipedia gives Buch as its example of the ach-sound after a back vowel. The plural is Bücher, on the next card, where the vowel and the ch both change."
+    examples:
+      "Das ist ein Buch.":
+        native: "That is a book."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Buch": "book"
+      "Das Buch ist neu.":
+        native: "The book is new."
+        bases:
+          "Das": "that; the (neuter)"
+          "Buch": "book"
+          "ist": "to be"
+  "de-0405":
+    native: "books"
+    notes:
+      "n1": "Bücher is the plural of Buch, with an umlaut: u becomes ü, said with the lips rounded and the tongue forward. After the front vowel the ch is the ich-sound, made near the front of the mouth: /ˈbʏçɐ/. Compare Buch, /buːx/, with the ach-sound."
+    examples:
+      "Das sind die Bücher.":
+        native: "Those are the books."
+        bases:
+          "Das": "that; the (neuter)"
+          "sind": "to be"
+          "die": "the (feminine and plural)"
+          "Bücher": "book (here the plural: books)"
+      "Die Bücher sind neu.":
+        native: "The books are new."
+        bases:
+          "Die": "the (feminine and plural)"
+          "Bücher": "book (here the plural: books)"
+          "sind": "to be"
+  "de-0406":
+    native: "bag; pocket"
+    notes:
+      "n1": "Sch is one sound, like English sh: Tasche, /ˈtaʃə/. Tasse (cup, taught in the quantities unit) has a doubled s that is said as a plain s: /ˈtasə/. The plural is Taschen."
+    examples:
+      "Das ist eine Tasche.":
+        native: "That is a bag."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "eine": "a; an"
+          "Tasche": "bag; pocket"
+      "Die Tasche ist klein.":
+        native: "The bag is small."
+        bases:
+          "Die": "the (feminine and plural)"
+          "Tasche": "bag; pocket"
+          "ist": "to be"
+  "de-0407":
+    native: "fine (not coarse)"
+    notes:
+      "pair": "F is said as English f: fein, /faɪn/. W is said like English v: Wein (wine), /vaɪn/. Only the first sound differs between fein and Wein."
+    examples:
+      "Das Mehl ist fein.":
+        native: "The flour is fine."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "fein": "fine (not coarse)"
+      "Der Zucker ist fein.":
+        native: "The sugar is fine."
+        bases:
+          "Der": "the (masculine)"
+          "ist": "to be"
+          "fein": "fine (not coarse)"
+  "de-0408":
+    native: "wheel; bicycle"
+    notes:
+      "pair": "The d at the end of Rad is said as t, so Rad is said /ʁaːt/, the same as Rat (advice). Wiktionary lists the two as said alike. Wikipedia describes this as final devoicing: a voiced b, d or g at the end of a word is said as p, t or k. The plural Räder has a d that is said as d, because it is no longer at the end."
+    examples:
+      "Das ist ein Rad.":
+        native: "That is a wheel."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Rad": "wheel; bicycle"
+      "Das Rad ist neu.":
+        native: "The wheel is new."
+        bases:
+          "Das": "that; the (neuter)"
+          "Rad": "wheel; bicycle"
+          "ist": "to be"
+  "de-0409":
+    native: "advice; council"
+    notes:
+      "pair": "Rat (advice, council) is said /ʁaːt/, the same as Rad (wheel). Only the spelling and the meaning tell them apart. The plural is Räte, with a t."
+    examples:
+      "Ich brauche Rat.":
+        native: "I need advice."
+        bases:
+          "Rat": "advice; council"
+      "Der Rat ist gut.":
+        native: "The advice is good."
+        bases:
+          "Der": "the (masculine)"
+          "Rat": "advice; council"
+          "ist": "to be"
+  "de-0410":
+    native: "dog"
+    notes:
+      "n1": "The d at the end of Hund is said as t: /hʊnt/. Wikipedia gives Hund [hʊnt] as its example of final devoicing. The plural Hunde keeps a d sound: /ˈhʊndə/."
+    examples:
+      "Das ist ein Hund.":
+        native: "That is a dog."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Hund": "dog"
+      "Der Hund ist klein.":
+        native: "The dog is small."
+        bases:
+          "Der": "the (masculine)"
+          "Hund": "dog"
+          "ist": "to be"
+  "de-0411":
+    native: "greeting"
+    notes:
+      "n1": "The letter ß says s: Gruß, /ɡʁuːs/. In today's spelling ß is used only after a long vowel or a diphthong, as Wikipedia's page on German spelling says, so the u of Gruß is long. After a short vowel the spelling is ss, as in Fluss (river), /flʊs/. The plural is Grüße."
+    examples:
+      "Das ist ein Gruß.":
+        native: "That is a greeting."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Gruß": "greeting"
+      "Der Gruß ist freundlich.":
+        native: "The greeting is friendly."
+        bases:
+          "Der": "the (masculine)"
+          "Gruß": "greeting"
+          "ist": "to be"
+  "de-0412":
+    native: "train"
+    notes:
+      "n1": "Z is said ts, as in English cats, never like English z: Zug, /tsuːk/. The g at the end is said as k. The plural is Züge."
+    examples:
+      "Der Zug ist schnell.":
+        native: "The train is fast."
+        bases:
+          "Der": "the (masculine)"
+          "Zug": "train"
+          "ist": "to be"
+      "Der Zug ist da.":
+        native: "The train is here."
+        bases:
+          "Der": "the (masculine)"
+          "Zug": "train"
+          "ist": "to be"
+  "de-0413":
+    native: "stone"
+    notes:
+      "n1": "St at the start of a word is said sht: Stein, /ʃtaɪn/. Compare Fest, where the st is in the middle and is said st."
+    examples:
+      "Das ist ein Stein.":
+        native: "That is a stone."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Stein": "stone"
+      "Der Stein ist schwer.":
+        native: "The stone is heavy."
+        bases:
+          "Der": "the (masculine)"
+          "Stein": "stone"
+          "ist": "to be"
+  "de-0414":
+    native: "game"
+    notes:
+      "n1": "Sp at the start of a word is said shp: Spiel, /ʃpiːl/. The ie is a long i. The plural is Spiele."
+    examples:
+      "Das Spiel ist neu.":
+        native: "The game is new."
+        bases:
+          "Das": "that; the (neuter)"
+          "Spiel": "game"
+          "ist": "to be"
+      "Das ist ein Spiel.":
+        native: "That is a game."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Spiel": "game"
+  "de-0415":
+    native: "party; festival"
+    notes:
+      "n1": "St in the middle or at the end of a word is said st, as in English: Fest, /fɛst/. At the start of a word it would be sht, as in Stein. The plural is Feste."
+    examples:
+      "Das Fest ist heute.":
+        native: "The party is today."
+        bases:
+          "Das": "that; the (neuter)"
+          "Fest": "party; festival"
+          "ist": "to be"
+      "Das ist ein Fest.":
+        native: "That is a party."
+        bases:
+          "Das": "that; the (neuter)"
+          "ist": "to be"
+          "ein": "a; an"
+          "Fest": "party; festival"
+  "de-0416":
+    native: "mothers"
+    notes:
+      "pair": "Mütter (mothers) has the umlaut ü, said with the lips rounded and the tongue forward: /ˈmʏtɐ/. Mutter (mother) has the plain u: /ˈmʊtɐ/. The umlaut makes the plural."
+    examples:
+      "Die Mütter sind hier.":
+        native: "The mothers are here."
+        bases:
+          "Die": "the (feminine and plural)"
+          "sind": "to be"
+      "Das sind die Mütter.":
+        native: "Those are the mothers."
+        bases:
+          "Das": "that; the (neuter)"
+          "sind": "to be"
+          "die": "the (feminine and plural)"
+  "de-0417":
+    native: "fathers"
+    notes:
+      "pair": "Väter (fathers) has the umlaut ä, said like the e of English bed, but long: /ˈfɛːtɐ/. Vater (father) has a plain a: /ˈfaːtɐ/. The umlaut makes the plural."
+    examples:
+      "Die Väter sind hier.":
+        native: "The fathers are here."
+        bases:
+          "Die": "the (feminine and plural)"
+          "sind": "to be"
+      "Das sind die Väter.":
+        native: "Those are the fathers."
+        bases:
+          "Das": "that; the (neuter)"
+          "sind": "to be"
+          "die": "the (feminine and plural)"
+  "de-0418":
+    native: "sons"
+    notes:
+      "pair": "Söhne (sons) has the umlaut ö, said with the lips rounded as for o and the tongue as for e: /ˈzøːnə/. Sohn (son) has a plain o: /zoːn/. The umlaut makes the plural."
+    examples:
+      "Die Söhne sind hier.":
+        native: "The sons are here."
+        bases:
+          "Die": "the (feminine and plural)"
+          "sind": "to be"
+      "Das sind die Söhne.":
+        native: "Those are the sons."
+        bases:
+          "Das": "that; the (neuter)"
+          "sind": "to be"
+          "die": "the (feminine and plural)"
