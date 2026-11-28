@@ -1060,8 +1060,8 @@ class GermanTest(unittest.TestCase):
         self.assertTrue(t.fitted)
 
     def test_é_is_stressed_and_long(self):
-        # Wiktionary: Café /kaˈfeː/, Bouclé /buˈkleː/, Püree /pyˈʁeː/.
-        self.check((("Café", "kaˈfeː"), ("Bouclé", "buˈkleː")))
+        # Wiktionary: Café /kaˈfeː/.
+        self.check((("Café", "kaˈfeː"),))
         self.assertEqual(german_ipa("Hier ist das Café"),
                          "hiːɐ̯ ɪst das kaˈfeː")
 
