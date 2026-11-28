@@ -2548,6 +2548,7 @@ _DE_RESPELL = {
     "november": "noˈvɛmbɐ", "museum": "muˈzeːʊm", "toilette": "toaˈlɛtə",
     "job": "dʒɔp", "team": "tiːm", "sport": "ʃpɔʁt", "pizza": "ˈpɪtsa",
     "tee": "teː", "taxi": "ˈtaksi", "bus": "bʊs", "foto": "ˈfoːto",
+    "familien": "faˈmiːliən",
 }
 # The names of the letters, for a letter and a word (S-Bahn, U-Bahn): the
 # first form of each letter's entry on en.wiktionary, glottal stop left out.
@@ -2616,9 +2617,14 @@ def german_ipa(text: str, hint: str | None = None) -> str:
             continue
         if not ("a" <= c <= "z") and c not in "äöüßé":
             raise CannotRead(f"not a German letter: {c!r}")
-    if re.search(r"(?:^|\s)[a-z]-\w", text):
+    if re.search(r"(?<!\w)[a-z]-\w", text):
         # A letter and a word (S-Bahn): the letter's name, then the word.
-        return " ".join(_de_letter_compound(t) for t in text.split())
+        toks = text.split()
+        hs = hint.split() if hint else []
+        if len(hs) != len(toks):
+            hs = [""] * len(toks)
+        return " ".join(w for w in (
+            _de_letter_compound(t, h) for t, h in zip(toks, hs)) if w)
     words = [w for w in re.split(r"[\s\-–—]+", text) if w]
     plain = [w.replace("é", "e") for w in words]
     hints = _de_hint_words(plain, hint)
@@ -2631,13 +2637,19 @@ def german_ipa(text: str, hint: str | None = None) -> str:
     return " ".join(w for w in out if w)
 
 
-def _de_letter_compound(tok: str) -> str:
+def _de_letter_compound(tok: str, hint: str = "") -> str:
+    """[tok] (a word of the text, a hint word for it) with its surrounding
+    punctuation left out; a letter, a hyphen and a word is read by the
+    letter's name and then the word (hint for the word, if it fits)."""
+    strip = "".join(_DE_PUNCT - {"-"}) + "'’"
+    tok = tok.strip(strip)
     head, sep, rest = tok.partition("-")
     if not (sep and len(head) == 1 and "a" <= head <= "z" and rest):
-        return german_ipa(tok)
+        return german_ipa(tok, hint.strip(strip) or None)
     if head not in _DE_LETTER_NAMES:
         raise CannotRead(f"no letter name for: {head!r}")
-    return "ˈ" + _DE_LETTER_NAMES[head] + german_ipa(rest)
+    h = hint.strip(strip).partition("-")[2]
+    return "ˈ" + _DE_LETTER_NAMES[head] + german_ipa(rest, h or None)
 
 
 def _de_marks(hint: str) -> tuple[str, int | None, dict[int, str],
@@ -2974,8 +2986,11 @@ def _de_word(raw: str, hint: str) -> str:
     word = _de_clean(raw)
     if not word:
         return ""
-    if word in _DE_RESPELL and not hint:
-        return _DE_RESPELL[word]
+    if not hint:
+        if word in _DE_RESPELL:
+            return _DE_RESPELL[word]
+        if word.endswith("s") and word[:-1] in _DE_RESPELL:
+            return _DE_RESPELL[word[:-1]] + "s"     # Fotos, Jobs
     stress_at: int | None = None
     marks: dict[int, str] = {}
     bounds: set[int] = set()

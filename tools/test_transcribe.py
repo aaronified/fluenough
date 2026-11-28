@@ -899,33 +899,6 @@ class ItalianTest(unittest.TestCase):
         self.assertEqual(t.ipa, "ˈɡrattsje ˈmille")
         self.assertTrue(t.fitted)
 
-    def test_é_is_stressed_and_long(self):
-        # Wiktionary: Café /kaˈfeː/, Bouclé /buˈkleː/, Püree /pyˈʁeː/.
-        self.check((("Café", "kaˈfeː"), ("Bouclé", "buˈkleː")))
-        self.assertEqual(german_ipa("Hier ist das Café"),
-                         "hiːɐ̯ ɪst das kaˈfeː")
-
-    def test_a_letter_and_a_word_read_the_letter_by_its_name(self):
-        # Wiktionary: S-Bahn ˈɛsˌbaːn, U-Bahn ˈʔuːbaːn.
-        self.check((("S-Bahn", "ˈɛsbaːn"), ("U-Bahn", "ˈuːbaːn")))
-
-    def test_respelled_loan_words_and_exceptions(self):
-        # Each is the first form of the word's en.wiktionary entry.
-        self.check((
-            ("Handy", "ˈhɛndi"), ("Chef", "ʃɛf"), ("Ferien", "ˈfeːʁiən"),
-            ("China", "ˈçiːna"), ("Chance", "ˈʃãːsə"),
-            ("Computer", "kɔmˈpjuːtɐ"), ("Restaurant", "ʁɛstoˈʁãː"),
-            ("Familie", "faˈmiːliə"), ("Banane", "baˈnaːnə"),
-            ("Telefon", "teːləˈfoːn"), ("November", "noˈvɛmbɐ"),
-            ("Museum", "muˈzeːʊm"), ("Toilette", "toaˈlɛtə"),
-            ("Job", "dʒɔp"), ("Team", "tiːm"), ("Sport", "ʃpɔʁt"),
-            ("Pizza", "ˈpɪtsa"), ("Tee", "teː"), ("Taxi", "ˈtaksi"),
-            ("Bus", "bʊs"), ("Foto", "ˈfoːto"), ("Hotel", "hoˈtɛl"),
-            ("Kino", "ˈkiːnoː")))
-
-    def test_a_hint_beats_a_respelled_word(self):
-        self.assertEqual(german_ipa("Job", "Jo^b"), "jɔp")
-
     def test_other_letters_and_words_without_a_vowel_cannot_be_read(self):
         for bad in ("naïve", "a1", "ಕನ್ನಡ", "pkt"):
             with self.assertRaises(CannotRead):
@@ -1096,7 +1069,7 @@ class GermanTest(unittest.TestCase):
         # Wiktionary: S-Bahn ˈɛsˌbaːn, U-Bahn ˈʔuːbaːn.
         self.check((("S-Bahn", "ˈɛsbaːn"), ("U-Bahn", "ˈuːbaːn")))
 
-    def test_respelled_loan_words_and_exceptions(self):
+    def test_respelled_loan_words_and_exceptions_and_two_in_the_marks(self):
         # Each is the first form of the word's en.wiktionary entry.
         self.check((
             ("Handy", "ˈhɛndi"), ("Chef", "ʃɛf"), ("Ferien", "ˈfeːʁiən"),
@@ -1110,8 +1083,19 @@ class GermanTest(unittest.TestCase):
             ("Bus", "bʊs"), ("Foto", "ˈfoːto"), ("Hotel", "hoˈtɛl"),
             ("Kino", "ˈkiːnoː")))
 
+    def test_a_respelled_word_with_its_plural(self):
+        # Wiktionary: Fotos ˈfoːtos, Jobs dʒɔps, Familien faˈmiːliən.
+        self.check((("Fotos", "ˈfoːtos"), ("Jobs", "dʒɔps"),
+                    ("Familien", "faˈmiːliən")))
+
     def test_a_hint_beats_a_respelled_word(self):
         self.assertEqual(german_ipa("Job", "Jo^b"), "jɔp")
+
+    def test_a_letter_compound_in_brackets_or_with_a_hint(self):
+        self.check((("(S-Bahn)", "ˈɛsbaːn"), ("S-Bahn.", "ˈɛsbaːn")))
+        self.assertEqual(german_ipa("S-Bahn", "S-Ba:hn"), "ˈɛsbaːn")
+        self.assertEqual(german_ipa("Die U-Bahn", "Die U-Ba:hn"),
+                         "diː ˈuːbaːn")
 
     def test_other_letters_and_words_without_a_vowel_cannot_be_read(self):
         for bad in ("naïve", "a1", "ಕನ್ನಡ", "pkt"):
