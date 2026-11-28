@@ -55,7 +55,7 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Loro parlano.", ipa: "ˈloro parˈlano", bases: [{ word: "Loro", base: "loro" }, { word: "parlano", ref: "it-1658" }] }
+      - { target: "Loro parlano.", ipa: "ˈloro ˈparlano", bases: [{ word: "Loro", base: "loro" }, { word: "parlano", ref: "it-1658" }] }
       - { target: "Loro sono qui.", ipa: "ˈloro ˈsono kwi", bases: [{ word: "Loro", base: "loro" }, { word: "sono", base: "essere" }, { word: "qui", ref: "it-1725" }] }
   - id: "it-1375"
     target: "me"
@@ -76,7 +76,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Chiamo te.", ipa: "ˈkjamo te", bases: [{ word: "Chiamo", ref: "it-1684" }, { word: "te", base: "te" }] }
-      - { target: "Aspetto te.", ipa: "asˈpetto te", bases: [{ word: "Aspetto", ref: "it-1683" }, { word: "te", base: "te" }] }
+      - { target: "Aspetto te.", ipa: "asˈpɛtto te", bases: [{ word: "Aspetto", ref: "it-1683" }, { word: "te", base: "te" }] }
   - id: "it-1377"
     target: "mio"
     ipa: "ˈmio"
@@ -86,7 +86,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Questo è mio.", ipa: "ˈkwesto ɛ ˈmio", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "mio", base: "mio" }] }
-      - { target: "Quello è mio.", ipa: "ˈkwɛllo ɛ ˈmio", bases: [{ word: "Quello", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "mio", base: "mio" }] }
+      - { target: "Quello è mio.", ipa: "ˈkwello ɛ ˈmio", bases: [{ word: "Quello", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "mio", base: "mio" }] }
   - id: "it-1378"
     target: "tuo"
     ipa: "ˈtuo"
@@ -96,7 +96,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Questo è tuo.", ipa: "ˈkwesto ɛ ˈtuo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "tuo", base: "tuo" }] }
-      - { target: "Quella è tua.", ipa: "ˈkwɛlla ɛ ˈtua", bases: [{ word: "Quella", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "tua", base: "tuo" }] }
+      - { target: "Quella è tua.", ipa: "ˈkwella ɛ ˈtua", bases: [{ word: "Quella", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "tua", base: "tuo" }] }
   - id: "it-1379"
     target: "suo"
     ipa: "ˈsuo"
@@ -106,27 +106,27 @@ cards:
     bases: "self"
     examples:
       - { target: "Questo è suo.", ipa: "ˈkwesto ɛ ˈsuo", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "suo", base: "suo" }] }
-      - { target: "Quello è suo.", ipa: "ˈkwɛllo ɛ ˈsuo", bases: [{ word: "Quello", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "suo", base: "suo" }] }
+      - { target: "Quello è suo.", ipa: "ˈkwello ɛ ˈsuo", bases: [{ word: "Quello", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "suo", base: "suo" }] }
   - id: "it-1380"
     target: "nostro"
-    ipa: "ˈnostro"
+    ipa: "ˈnɔstro"
     pos: "pronoun"
     tags: ["pronouns"]
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Questa è nostra.", ipa: "ˈkwesta ɛ ˈnostra", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "nostra", base: "nostro" }] }
-      - { target: "Quelli sono nostri.", ipa: "ˈkwɛlli ˈsono ˈnostri", bases: [{ word: "Quelli", ref: "it-1383" }, { word: "sono", base: "essere" }, { word: "nostri", base: "nostro" }] }
+      - { target: "Questa è nostra.", ipa: "ˈkwesta ɛ ˈnɔstra", bases: [{ word: "Questa", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "nostra", base: "nostro" }] }
+      - { target: "Quelli sono nostri.", ipa: "ˈkwelli ˈsono ˈnɔstri", bases: [{ word: "Quelli", ref: "it-1383" }, { word: "sono", base: "essere" }, { word: "nostri", base: "nostro" }] }
   - id: "it-1381"
     target: "vostro"
-    ipa: "ˈvostro"
+    ipa: "ˈvɔstro"
     pos: "pronoun"
     tags: ["pronouns"]
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Questo è vostro.", ipa: "ˈkwesto ɛ ˈvostro", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "vostro", base: "vostro" }] }
-      - { target: "Quella è vostra.", ipa: "ˈkwɛlla ɛ ˈvostra", bases: [{ word: "Quella", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "vostra", base: "vostro" }] }
+      - { target: "Questo è vostro.", ipa: "ˈkwesto ɛ ˈvɔstro", bases: [{ word: "Questo", ref: "it-1382" }, { word: "è", base: "essere" }, { word: "vostro", base: "vostro" }] }
+      - { target: "Quella è vostra.", ipa: "ˈkwella ɛ ˈvɔstra", bases: [{ word: "Quella", ref: "it-1383" }, { word: "è", base: "essere" }, { word: "vostra", base: "vostro" }] }
   - id: "it-1382"
     target: "questo"
     ipa: "ˈkwesto"
@@ -139,14 +139,14 @@ cards:
       - { target: "Questa è acqua.", ipa: "ˈkwesta ɛ ˈakkwa", bases: [{ word: "Questa", base: "questo" }, { word: "è", base: "essere" }, { word: "acqua", ref: "it-0010" }] }
   - id: "it-1383"
     target: "quello"
-    ipa: "ˈkwɛllo"
+    ipa: "ˈkwello"
     pos: "pronoun"
     tags: ["pronouns"]
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Quello è buono.", ipa: "ˈkwɛllo ɛ ˈbwɔno", bases: [{ word: "Quello", base: "quello" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
-      - { target: "Quelli sono buoni.", ipa: "ˈkwɛlli ˈsono ˈbwɔni", bases: [{ word: "Quelli", base: "quello" }, { word: "sono", base: "essere" }, { word: "buoni", ref: "it-0008" }] }
+      - { target: "Quello è buono.", ipa: "ˈkwello ɛ ˈbwɔno", bases: [{ word: "Quello", base: "quello" }, { word: "è", base: "essere" }, { word: "buono", ref: "it-0008" }] }
+      - { target: "Quelli sono buoni.", ipa: "ˈkwelli ˈsono ˈbwɔni", bases: [{ word: "Quelli", base: "quello" }, { word: "sono", base: "essere" }, { word: "buoni", ref: "it-0008" }] }
   - id: "it-1384"
     target: "qualcuno"
     ipa: "kwalˈkuno"
@@ -175,7 +175,7 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Non voglio niente.", ipa: "non ˈvoʎʎo ˈnjɛnte", bases: [{ word: "Non", base: "non" }, { word: "voglio", ref: "it-1670" }, { word: "niente", base: "niente" }] }
+      - { target: "Non voglio niente.", ipa: "non ˈvɔʎʎo ˈnjɛnte", bases: [{ word: "Non", base: "non" }, { word: "voglio", ref: "it-1670" }, { word: "niente", base: "niente" }] }
       - { target: "Non capisco niente.", ipa: "non kaˈpisko ˈnjɛnte", bases: [{ word: "Non", base: "non" }, { word: "capisco", ref: "it-1659" }, { word: "niente", base: "niente" }] }
   - id: "it-1387"
     target: "altro"
@@ -185,18 +185,18 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Voglio altro.", ipa: "ˈvoʎʎo ˈaltro", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "altro", base: "altro" }] }
-      - { target: "Altri parlano.", ipa: "ˈaltri parˈlano", bases: [{ word: "Altri", base: "altro" }, { word: "parlano", ref: "it-1658" }] }
+      - { target: "Voglio altro.", ipa: "ˈvɔʎʎo ˈaltro", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "altro", base: "altro" }] }
+      - { target: "Altri parlano.", ipa: "ˈaltri ˈparlano", bases: [{ word: "Altri", base: "altro" }, { word: "parlano", ref: "it-1658" }] }
   - id: "it-1388"
     target: "qualcosa"
-    ipa: "kwalˈkoza"
+    ipa: "kwalˈkɔza"
     pos: "pronoun"
     tags: ["pronouns"]
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Voglio qualcosa.", ipa: "ˈvoʎʎo kwalˈkoza", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "qualcosa", base: "qualcosa" }] }
-      - { target: "Dico qualcosa.", ipa: "ˈdiko kwalˈkoza", bases: [{ word: "Dico", ref: "it-1653" }, { word: "qualcosa", base: "qualcosa" }] }
+      - { target: "Voglio qualcosa.", ipa: "ˈvɔʎʎo kwalˈkɔza", bases: [{ word: "Voglio", ref: "it-1670" }, { word: "qualcosa", base: "qualcosa" }] }
+      - { target: "Dico qualcosa.", ipa: "ˈdiko kwalˈkɔza", bases: [{ word: "Dico", ref: "it-1653" }, { word: "qualcosa", base: "qualcosa" }] }
   - id: "it-1389"
     kind: "set"
     members: [{ ref: "it-0003" }, { ref: "it-0004" }, { ref: "it-1370" }, { ref: "it-1371" }, { ref: "it-1372" }, { ref: "it-1373" }, { ref: "it-1374" }]

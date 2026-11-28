@@ -16,8 +16,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Che cosa fai?", ipa: "ke ˈkɔza faj", bases: [{ word: "Che", base: "che" }, { word: "cosa", base: "cosa" }, { word: "fai", base: "fare" }] }
-      - { target: "Io faccio il caffè.", ipa: "ˈio ˈfattʃo il kafˈfɛ", bases: [{ word: "Io", base: "io" }, { word: "faccio", base: "fare" }, { word: "il", base: "il" }, { word: "caffè", base: "caffè" }] }
+      - { target: "Che cosa fai?", ipa: "ke ˈkɔza faj", bases: [{ word: "Che", ref: "it-1301" }, { word: "cosa", ref: "it-1302" }, { word: "fai", base: "fare" }] }
+      - { target: "Io faccio il caffè.", ipa: "ˈio ˈfattʃo il kafˈfɛ", bases: [{ word: "Io", ref: "it-0003" }, { word: "faccio", base: "fare" }, { word: "il", base: "il" }, { word: "caffè", ref: "it-2321" }] }
   - id: "it-1651"
     target: "andare"
     ipa: "anˈdare"
@@ -27,8 +27,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io vado a casa.", ipa: "ˈio ˈvado a ˈkaza", bases: [{ word: "Io", base: "io" }, { word: "vado", base: "andare" }, { word: "a", base: "a" }, { word: "casa", base: "casa" }] }
-      - { target: "Vado in Italia.", ipa: "ˈvado in iˈtalja", bases: [{ word: "Vado", base: "andare" }, { word: "in", base: "in" }, { word: "Italia", base: "Italia" }] }
+      - { target: "Io vado a casa.", ipa: "ˈio ˈvado a ˈkaza", bases: [{ word: "Io", ref: "it-0003" }, { word: "vado", base: "andare" }, { word: "a", ref: "it-0417" }, { word: "casa", ref: "it-2840" }] }
+      - { target: "Vado in Italia.", ipa: "ˈvado in iˈtalja", bases: [{ word: "Vado", base: "andare" }, { word: "in", ref: "it-2000" }, { word: "Italia", base: "Italia" }] }
   - id: "it-1652"
     target: "venire"
     ipa: "veˈnire"
@@ -38,8 +38,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io vengo da Roma.", ipa: "ˈio ˈvenɡo da ˈrɔma", bases: [{ word: "Io", base: "io" }, { word: "vengo", base: "venire" }, { word: "da", base: "da" }, { word: "Roma", base: "Roma" }] }
-      - { target: "Vieni con me?", ipa: "ˈvjɛni kon me", bases: [{ word: "Vieni", base: "venire" }, { word: "con", base: "con" }, { word: "me", base: "me" }] }
+      - { target: "Io vengo da Roma.", ipa: "ˈio ˈvɛnɡo da ˈroma", bases: [{ word: "Io", ref: "it-0003" }, { word: "vengo", base: "venire" }, { word: "da", base: "da" }, { word: "Roma", base: "Roma" }] }
+      - { target: "Vieni con me?", ipa: "ˈvjɛni kon me", bases: [{ word: "Vieni", base: "venire" }, { word: "con", base: "con" }, { word: "me", ref: "it-1375" }] }
   - id: "it-1653"
     target: "dire"
     ipa: "ˈdire"
@@ -49,8 +49,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io dico sì.", ipa: "ˈio ˈdiko si", bases: [{ word: "Io", base: "io" }, { word: "dico", base: "dire" }, { word: "sì", base: "sì" }] }
-      - { target: "Che cosa dici?", ipa: "ke ˈkɔza ˈditʃi", bases: [{ word: "Che", base: "che" }, { word: "cosa", base: "cosa" }, { word: "dici", base: "dire" }] }
+      - { target: "Io dico sì.", ipa: "ˈio ˈdiko si", bases: [{ word: "Io", ref: "it-0003" }, { word: "dico", base: "dire" }, { word: "sì", ref: "it-0001" }] }
+      - { target: "Che cosa dici?", ipa: "ke ˈkɔza ˈditʃi", bases: [{ word: "Che", ref: "it-1301" }, { word: "cosa", ref: "it-1302" }, { word: "dici", base: "dire" }] }
   - id: "it-1654"
     target: "dare"
     ipa: "ˈdare"
@@ -60,8 +60,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io do il libro a Marco.", ipa: "ˈio do il ˈlibro a ˈmarko", bases: [{ word: "Io", base: "io" }, { word: "do", base: "dare" }, { word: "il", base: "il" }, { word: "libro", base: "libro" }, { word: "a", base: "a" }, { word: "Marco", base: "Marco" }] }
-      - { target: "Mi dai un caffè?", ipa: "mi daj un kafˈfɛ", bases: [{ word: "Mi", base: "mi" }, { word: "dai", base: "dare" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
+      - { target: "Io do il libro a Marco.", ipa: "ˈio dɔ il ˈlibro a ˈmarko", bases: [{ word: "Io", ref: "it-0003" }, { word: "do", base: "dare" }, { word: "il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "a", ref: "it-0417" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Mi dai un caffè?", ipa: "mi daj un kafˈfɛ", bases: [{ word: "Mi", base: "mi" }, { word: "dai", base: "dare" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }] }
   - id: "it-1655"
     target: "sapere"
     ipa: "saˈpere"
@@ -71,7 +71,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io so la risposta.", ipa: "ˈio sɔ la risˈposta", bases: [{ word: "Io", base: "io" }, { word: "so", base: "sapere" }, { word: "la", base: "la" }, { word: "risposta", base: "risposta" }] }
+      - { target: "Io so la risposta.", ipa: "ˈio sɔ la risˈposta", bases: [{ word: "Io", ref: "it-0003" }, { word: "so", base: "sapere" }, { word: "la", base: "la" }, { word: "risposta", base: "risposta" }] }
       - { target: "Non so.", ipa: "non sɔ", bases: [{ word: "Non", base: "non" }, { word: "so", base: "sapere" }] }
   - id: "it-1656"
     target: "vedere"
@@ -82,7 +82,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io vedo il mare.", ipa: "ˈio ˈvedo il ˈmare", bases: [{ word: "Io", base: "io" }, { word: "vedo", base: "vedere" }, { word: "il", base: "il" }, { word: "mare", base: "mare" }] }
+      - { target: "Io vedo il mare.", ipa: "ˈio ˈvedo il ˈmare", bases: [{ word: "Io", ref: "it-0003" }, { word: "vedo", base: "vedere" }, { word: "il", base: "il" }, { word: "mare", ref: "it-2718" }] }
       - { target: "Vedo Marco.", ipa: "ˈvedo ˈmarko", bases: [{ word: "Vedo", base: "vedere" }, { word: "Marco", base: "Marco" }] }
   - id: "it-1657"
     target: "guardare"
@@ -93,8 +93,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Guardo il libro.", ipa: "ˈɡwardo il ˈlibro", bases: [{ word: "Guardo", base: "guardare" }, { word: "il", base: "il" }, { word: "libro", base: "libro" }] }
-      - { target: "Io guardo la casa.", ipa: "ˈio ˈɡwardo la ˈkaza", bases: [{ word: "Io", base: "io" }, { word: "guardo", base: "guardare" }, { word: "la", base: "la" }, { word: "casa", base: "casa" }] }
+      - { target: "Guardo il libro.", ipa: "ˈɡwardo il ˈlibro", bases: [{ word: "Guardo", base: "guardare" }, { word: "il", base: "il" }, { word: "libro", ref: "it-2770" }] }
+      - { target: "Io guardo la casa.", ipa: "ˈio ˈɡwardo la ˈkaza", bases: [{ word: "Io", ref: "it-0003" }, { word: "guardo", base: "guardare" }, { word: "la", base: "la" }, { word: "casa", ref: "it-2840" }] }
   - id: "it-1658"
     target: "parlare"
     ipa: "parˈlare"
@@ -104,7 +104,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io parlo italiano.", ipa: "ˈio ˈparlo itaˈljano", bases: [{ word: "Io", base: "io" }, { word: "parlo", base: "parlare" }, { word: "italiano", base: "italiano" }] }
+      - { target: "Io parlo italiano.", ipa: "ˈio ˈparlo itaˈljano", bases: [{ word: "Io", ref: "it-0003" }, { word: "parlo", base: "parlare" }, { word: "italiano", ref: "it-1585" }] }
       - { target: "Parlo con Marco.", ipa: "ˈparlo kon ˈmarko", bases: [{ word: "Parlo", base: "parlare" }, { word: "con", base: "con" }, { word: "Marco", base: "Marco" }] }
   - id: "it-1659"
     target: "capire"
@@ -126,8 +126,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io mangio la pizza.", ipa: "ˈio ˈmandʒo la ˈpittsa", bases: [{ word: "Io", base: "io" }, { word: "mangio", base: "mangiare" }, { word: "la", base: "la" }, { word: "pizza", base: "pizza" }] }
-      - { target: "Mangio pane.", ipa: "ˈmandʒo ˈpane", bases: [{ word: "Mangio", base: "mangiare" }, { word: "pane", base: "pane" }] }
+      - { target: "Io mangio la pizza.", ipa: "ˈio ˈmandʒo la ˈpittsa", bases: [{ word: "Io", ref: "it-0003" }, { word: "mangio", base: "mangiare" }, { word: "la", base: "la" }, { word: "pizza", ref: "it-2312" }] }
+      - { target: "Mangio pane.", ipa: "ˈmandʒo ˈpane", bases: [{ word: "Mangio", base: "mangiare" }, { word: "pane", ref: "it-2280" }] }
   - id: "it-1661"
     target: "bere"
     ipa: "ˈbere"
@@ -137,8 +137,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io bevo acqua.", ipa: "ˈio ˈbevo ˈakkwa", bases: [{ word: "Io", base: "io" }, { word: "bevo", base: "bere" }, { word: "acqua", base: "acqua" }] }
-      - { target: "Bevo un caffè.", ipa: "ˈbevo un kafˈfɛ", bases: [{ word: "Bevo", base: "bere" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
+      - { target: "Io bevo acqua.", ipa: "ˈio ˈbevo ˈakkwa", bases: [{ word: "Io", ref: "it-0003" }, { word: "bevo", base: "bere" }, { word: "acqua", ref: "it-0010" }] }
+      - { target: "Bevo un caffè.", ipa: "ˈbevo un kafˈfɛ", bases: [{ word: "Bevo", base: "bere" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }] }
   - id: "it-1662"
     target: "prendere"
     ipa: "ˈprɛndere"
@@ -148,8 +148,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io prendo il treno.", ipa: "ˈio ˈprendo il ˈtrɛno", bases: [{ word: "Io", base: "io" }, { word: "prendo", base: "prendere" }, { word: "il", base: "il" }, { word: "treno", base: "treno" }] }
-      - { target: "Prendo un caffè.", ipa: "ˈprendo un kafˈfɛ", bases: [{ word: "Prendo", base: "prendere" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
+      - { target: "Io prendo il treno.", ipa: "ˈio ˈprɛndo il ˈtrɛno", bases: [{ word: "Io", ref: "it-0003" }, { word: "prendo", base: "prendere" }, { word: "il", base: "il" }, { word: "treno", ref: "it-2560" }] }
+      - { target: "Prendo un caffè.", ipa: "ˈprɛndo un kafˈfɛ", bases: [{ word: "Prendo", base: "prendere" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }] }
   - id: "it-1663"
     target: "aprire"
     ipa: "aˈprire"
@@ -159,19 +159,19 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io apro la porta.", ipa: "ˈio ˈapro la ˈpɔrta", bases: [{ word: "Io", base: "io" }, { word: "apro", base: "aprire" }, { word: "la", base: "la" }, { word: "porta", base: "porta" }] }
-      - { target: "Apro il libro.", ipa: "ˈapro il ˈlibro", bases: [{ word: "Apro", base: "aprire" }, { word: "il", base: "il" }, { word: "libro", base: "libro" }] }
+      - { target: "Io apro la porta.", ipa: "ˈio ˈapro la ˈpɔrta", bases: [{ word: "Io", ref: "it-0003" }, { word: "apro", base: "aprire" }, { word: "la", base: "la" }, { word: "porta", ref: "it-2851" }] }
+      - { target: "Apro il libro.", ipa: "ˈapro il ˈlibro", bases: [{ word: "Apro", base: "aprire" }, { word: "il", base: "il" }, { word: "libro", ref: "it-2770" }] }
   - id: "it-1664"
     target: "chiudere"
-    ipa: "kjuˈdere"
+    ipa: "ˈkjudere"
     pos: "verb"
     tags: ["everyday-verbs"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io chiudo la porta.", ipa: "ˈio ˈkjudo la ˈpɔrta", bases: [{ word: "Io", base: "io" }, { word: "chiudo", base: "chiudere" }, { word: "la", base: "la" }, { word: "porta", base: "porta" }] }
-      - { target: "Chiudo la finestra.", ipa: "ˈkjudo la fiˈnɛstra", bases: [{ word: "Chiudo", base: "chiudere" }, { word: "la", base: "la" }, { word: "finestra", base: "finestra" }] }
+      - { target: "Io chiudo la porta.", ipa: "ˈio ˈkjudo la ˈpɔrta", bases: [{ word: "Io", ref: "it-0003" }, { word: "chiudo", base: "chiudere" }, { word: "la", base: "la" }, { word: "porta", ref: "it-2851" }] }
+      - { target: "Chiudo la finestra.", ipa: "ˈkjudo la fiˈnɛstra", bases: [{ word: "Chiudo", base: "chiudere" }, { word: "la", base: "la" }, { word: "finestra", ref: "it-2852" }] }
   - id: "it-1665"
     target: "cercare"
     ipa: "tʃerˈkare"
@@ -181,7 +181,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io cerco le chiavi.", ipa: "ˈio ˈtʃerko le ˈkjavi", bases: [{ word: "Io", base: "io" }, { word: "cerco", base: "cercare" }, { word: "le", base: "le" }, { word: "chiavi", base: "chiave" }] }
+      - { target: "Io cerco le chiavi.", ipa: "ˈio ˈtʃerko le ˈkjavi", bases: [{ word: "Io", ref: "it-0003" }, { word: "cerco", base: "cercare" }, { word: "le", base: "le" }, { word: "chiavi", ref: "it-2860" }] }
       - { target: "Cerco un amico.", ipa: "ˈtʃerko un aˈmiko", bases: [{ word: "Cerco", base: "cercare" }, { word: "un", base: "un" }, { word: "amico", base: "amico" }] }
   - id: "it-1666"
     target: "trovare"
@@ -192,8 +192,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io trovo il bagno.", ipa: "ˈio ˈtrovo il ˈbaɲɲo", bases: [{ word: "Io", base: "io" }, { word: "trovo", base: "trovare" }, { word: "il", base: "il" }, { word: "bagno", base: "bagno" }] }
-      - { target: "Trovo la chiave.", ipa: "ˈtrovo la ˈkjave", bases: [{ word: "Trovo", base: "trovare" }, { word: "la", base: "la" }, { word: "chiave", base: "chiave" }] }
+      - { target: "Io trovo il bagno.", ipa: "ˈio ˈtrɔvo il ˈbaɲɲo", bases: [{ word: "Io", ref: "it-0003" }, { word: "trovo", base: "trovare" }, { word: "il", base: "il" }, { word: "bagno", ref: "it-2843" }] }
+      - { target: "Trovo la chiave.", ipa: "ˈtrɔvo la ˈkjave", bases: [{ word: "Trovo", base: "trovare" }, { word: "la", base: "la" }, { word: "chiave", ref: "it-2860" }] }
   - id: "it-1667"
     target: "pensare"
     ipa: "penˈsare"
@@ -203,19 +203,19 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io penso di sì.", ipa: "ˈio ˈpenso di si", bases: [{ word: "Io", base: "io" }, { word: "penso", base: "pensare" }, { word: "di", base: "di" }, { word: "sì", base: "sì" }] }
-      - { target: "Penso a Marco.", ipa: "ˈpenso a ˈmarko", bases: [{ word: "Penso", base: "pensare" }, { word: "a", base: "a" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Io penso di sì.", ipa: "ˈio ˈpɛnso di si", bases: [{ word: "Io", ref: "it-0003" }, { word: "penso", base: "pensare" }, { word: "di", base: "di" }, { word: "sì", ref: "it-0001" }] }
+      - { target: "Penso a Marco.", ipa: "ˈpɛnso a ˈmarko", bases: [{ word: "Penso", base: "pensare" }, { word: "a", ref: "it-0417" }, { word: "Marco", base: "Marco" }] }
   - id: "it-1668"
     target: "credere"
-    ipa: "kreˈdere"
+    ipa: "ˈkredere"
     pos: "verb"
     tags: ["everyday-verbs"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io credo a te.", ipa: "ˈio ˈkredo a te", bases: [{ word: "Io", base: "io" }, { word: "credo", base: "credere" }, { word: "a", base: "a" }, { word: "te", base: "te" }] }
-      - { target: "Credo di sì.", ipa: "ˈkredo di si", bases: [{ word: "Credo", base: "credere" }, { word: "di", base: "di" }, { word: "sì", base: "sì" }] }
+      - { target: "Io credo a te.", ipa: "ˈio ˈkredo a te", bases: [{ word: "Io", ref: "it-0003" }, { word: "credo", base: "credere" }, { word: "a", ref: "it-0417" }, { word: "te", ref: "it-1376" }] }
+      - { target: "Credo di sì.", ipa: "ˈkredo di si", bases: [{ word: "Credo", base: "credere" }, { word: "di", base: "di" }, { word: "sì", ref: "it-0001" }] }
   - id: "it-1669"
     target: "sentire"
     ipa: "senˈtire"
@@ -225,8 +225,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Sento freddo.", ipa: "ˈsento ˈfreddo", bases: [{ word: "Sento", base: "sentire" }, { word: "freddo", base: "freddo" }] }
-      - { target: "Io sento la musica.", ipa: "ˈio ˈsento la ˈmuzika", bases: [{ word: "Io", base: "io" }, { word: "sento", base: "sentire" }, { word: "la", base: "la" }, { word: "musica", base: "musica" }] }
+      - { target: "Sento freddo.", ipa: "ˈsɛnto ˈfreddo", bases: [{ word: "Sento", base: "sentire" }, { word: "freddo", ref: "it-1869" }] }
+      - { target: "Io sento la musica.", ipa: "ˈio ˈsɛnto la ˈmuzika", bases: [{ word: "Io", ref: "it-0003" }, { word: "sento", base: "sentire" }, { word: "la", base: "la" }, { word: "musica", base: "musica" }] }
   - id: "it-1670"
     target: "volere"
     ipa: "voˈlere"
@@ -236,8 +236,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io voglio un caffè.", ipa: "ˈio ˈvoʎʎo un kafˈfɛ", bases: [{ word: "Io", base: "io" }, { word: "voglio", base: "volere" }, { word: "un", base: "un" }, { word: "caffè", base: "caffè" }] }
-      - { target: "Voglio acqua.", ipa: "ˈvoʎʎo ˈakkwa", bases: [{ word: "Voglio", base: "volere" }, { word: "acqua", base: "acqua" }] }
+      - { target: "Io voglio un caffè.", ipa: "ˈio ˈvɔʎʎo un kafˈfɛ", bases: [{ word: "Io", ref: "it-0003" }, { word: "voglio", base: "volere" }, { word: "un", base: "un" }, { word: "caffè", ref: "it-2321" }] }
+      - { target: "Voglio acqua.", ipa: "ˈvɔʎʎo ˈakkwa", bases: [{ word: "Voglio", base: "volere" }, { word: "acqua", ref: "it-0010" }] }
   - id: "it-1671"
     target: "potere"
     ipa: "poˈtere"
@@ -247,8 +247,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Non posso, grazie.", ipa: "non ˈposso ˈɡrattsje", bases: [{ word: "Non", base: "non" }, { word: "posso", base: "potere" }, { word: "grazie", base: "grazie" }] }
-      - { target: "Io posso.", ipa: "ˈio ˈposso", bases: [{ word: "Io", base: "io" }, { word: "posso", base: "potere" }] }
+      - { target: "Non posso, grazie.", ipa: "non ˈpɔsso ˈɡrattsje", bases: [{ word: "Non", base: "non" }, { word: "posso", base: "potere" }, { word: "grazie", ref: "it-0017" }] }
+      - { target: "Io posso.", ipa: "ˈio ˈpɔsso", bases: [{ word: "Io", ref: "it-0003" }, { word: "posso", base: "potere" }] }
   - id: "it-1672"
     target: "dovere"
     ipa: "doˈvere"
@@ -258,19 +258,19 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io devo tre euro.", ipa: "ˈio ˈdɛvo tre ˈewro", bases: [{ word: "Io", base: "io" }, { word: "devo", base: "dovere" }, { word: "tre", base: "tre" }, { word: "euro", base: "euro" }] }
-      - { target: "Devo molto a Marco.", ipa: "ˈdɛvo ˈmolto a ˈmarko", bases: [{ word: "Devo", base: "dovere" }, { word: "molto", base: "molto" }, { word: "a", base: "a" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Io devo tre euro.", ipa: "ˈio ˈdɛvo tre ˈɛwro", bases: [{ word: "Io", ref: "it-0003" }, { word: "devo", base: "dovere" }, { word: "tre", ref: "it-1512" }, { word: "euro", ref: "it-2357" }] }
+      - { target: "Devo molto a Marco.", ipa: "ˈdɛvo ˈmolto a ˈmarko", bases: [{ word: "Devo", base: "dovere" }, { word: "molto", ref: "it-1790" }, { word: "a", ref: "it-0417" }, { word: "Marco", base: "Marco" }] }
   - id: "it-1673"
     target: "mettere"
-    ipa: "metˈtere"
+    ipa: "ˈmettere"
     pos: "verb"
     tags: ["everyday-verbs"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io metto il libro qui.", ipa: "ˈio ˈmetto il ˈlibro kwi", bases: [{ word: "Io", base: "io" }, { word: "metto", base: "mettere" }, { word: "il", base: "il" }, { word: "libro", base: "libro" }, { word: "qui", base: "qui" }] }
-      - { target: "Metto la chiave.", ipa: "ˈmetto la ˈkjave", bases: [{ word: "Metto", base: "mettere" }, { word: "la", base: "la" }, { word: "chiave", base: "chiave" }] }
+      - { target: "Io metto il libro qui.", ipa: "ˈio ˈmetto il ˈlibro kwi", bases: [{ word: "Io", ref: "it-0003" }, { word: "metto", base: "mettere" }, { word: "il", base: "il" }, { word: "libro", ref: "it-2770" }, { word: "qui", ref: "it-1725" }] }
+      - { target: "Metto la chiave.", ipa: "ˈmetto la ˈkjave", bases: [{ word: "Metto", base: "mettere" }, { word: "la", base: "la" }, { word: "chiave", ref: "it-2860" }] }
   - id: "it-1674"
     target: "portare"
     ipa: "porˈtare"
@@ -280,8 +280,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Io porto il pane.", ipa: "ˈio ˈporto il ˈpane", bases: [{ word: "Io", base: "io" }, { word: "porto", base: "portare" }, { word: "il", base: "il" }, { word: "pane", base: "pane" }] }
-      - { target: "Porto la borsa.", ipa: "ˈporto la ˈborsa", bases: [{ word: "Porto", base: "portare" }, { word: "la", base: "la" }, { word: "borsa", base: "borsa" }] }
+      - { target: "Io porto il pane.", ipa: "ˈio ˈporto il ˈpane", bases: [{ word: "Io", ref: "it-0003" }, { word: "porto", base: "portare" }, { word: "il", base: "il" }, { word: "pane", ref: "it-2280" }] }
+      - { target: "Porto la borsa.", ipa: "ˈporto la ˈborsa", bases: [{ word: "Porto", base: "portare" }, { word: "la", base: "la" }, { word: "borsa", ref: "it-2355" }] }
   - id: "it-1675"
     target: "comprare"
     ipa: "komˈprare"
@@ -291,8 +291,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Compro il pane.", ipa: "ˈkompro il ˈpane", bases: [{ word: "Compro", base: "comprare" }, { word: "il", base: "il" }, { word: "pane", base: "pane" }] }
-      - { target: "Io compro acqua.", ipa: "ˈio ˈkompro ˈakkwa", bases: [{ word: "Io", base: "io" }, { word: "compro", base: "comprare" }, { word: "acqua", base: "acqua" }] }
+      - { target: "Compro il pane.", ipa: "ˈkompro il ˈpane", bases: [{ word: "Compro", base: "comprare" }, { word: "il", base: "il" }, { word: "pane", ref: "it-2280" }] }
+      - { target: "Io compro acqua.", ipa: "ˈio ˈkompro ˈakkwa", bases: [{ word: "Io", ref: "it-0003" }, { word: "compro", base: "comprare" }, { word: "acqua", ref: "it-0010" }] }
   - id: "it-1676"
     target: "pagare"
     ipa: "paˈɡare"
@@ -302,8 +302,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Pago io.", ipa: "ˈpaɡo ˈio", bases: [{ word: "Pago", base: "pagare" }, { word: "io", base: "io" }] }
-      - { target: "Pago il caffè.", ipa: "ˈpaɡo il kafˈfɛ", bases: [{ word: "Pago", base: "pagare" }, { word: "il", base: "il" }, { word: "caffè", base: "caffè" }] }
+      - { target: "Pago io.", ipa: "ˈpaɡo ˈio", bases: [{ word: "Pago", base: "pagare" }, { word: "io", ref: "it-0003" }] }
+      - { target: "Pago il caffè.", ipa: "ˈpaɡo il kafˈfɛ", bases: [{ word: "Pago", base: "pagare" }, { word: "il", base: "il" }, { word: "caffè", ref: "it-2321" }] }
   - id: "it-1677"
     target: "lavare"
     ipa: "laˈvare"
@@ -314,7 +314,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Lavo la macchina.", ipa: "ˈlavo la ˈmakkina", bases: [{ word: "Lavo", base: "lavare" }, { word: "la", base: "la" }, { word: "macchina", base: "macchina" }] }
-      - { target: "Io lavo le mani.", ipa: "ˈio ˈlavo le ˈmani", bases: [{ word: "Io", base: "io" }, { word: "lavo", base: "lavare" }, { word: "le", base: "le" }, { word: "mani", base: "mano" }] }
+      - { target: "Io lavo le mani.", ipa: "ˈio ˈlavo le ˈmani", bases: [{ word: "Io", ref: "it-0003" }, { word: "lavo", base: "lavare" }, { word: "le", base: "le" }, { word: "mani", ref: "it-2640" }] }
   - id: "it-1678"
     target: "cucinare"
     ipa: "kutʃiˈnare"
@@ -324,8 +324,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Cucino la pasta.", ipa: "kuˈtʃino la ˈpasta", bases: [{ word: "Cucino", base: "cucinare" }, { word: "la", base: "la" }, { word: "pasta", base: "pasta" }] }
-      - { target: "Io cucino per Marco.", ipa: "ˈio kuˈtʃino per ˈmarko", bases: [{ word: "Io", base: "io" }, { word: "cucino", base: "cucinare" }, { word: "per", base: "per" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Cucino la pasta.", ipa: "kuˈtʃino la ˈpasta", bases: [{ word: "Cucino", base: "cucinare" }, { word: "la", base: "la" }, { word: "pasta", ref: "it-2281" }] }
+      - { target: "Io cucino per Marco.", ipa: "ˈio kuˈtʃino per ˈmarko", bases: [{ word: "Io", ref: "it-0003" }, { word: "cucino", base: "cucinare" }, { word: "per", base: "per" }, { word: "Marco", base: "Marco" }] }
   - id: "it-1679"
     target: "dormire"
     ipa: "dorˈmire"
@@ -335,8 +335,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Dormo molto.", ipa: "ˈdormo ˈmolto", bases: [{ word: "Dormo", base: "dormire" }, { word: "molto", base: "molto" }] }
-      - { target: "Io dormo bene.", ipa: "ˈio ˈdormo ˈbɛne", bases: [{ word: "Io", base: "io" }, { word: "dormo", base: "dormire" }, { word: "bene", base: "bene" }] }
+      - { target: "Dormo molto.", ipa: "ˈdɔrmo ˈmolto", bases: [{ word: "Dormo", base: "dormire" }, { word: "molto", ref: "it-1790" }] }
+      - { target: "Io dormo bene.", ipa: "ˈio ˈdɔrmo ˈbɛne", bases: [{ word: "Io", ref: "it-0003" }, { word: "dormo", base: "dormire" }, { word: "bene", ref: "it-1736" }] }
   - id: "it-1680"
     target: "leggere"
     ipa: "ˈlɛddʒere"
@@ -346,8 +346,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Leggo un libro.", ipa: "ˈleɡɡo un ˈlibro", bases: [{ word: "Leggo", base: "leggere" }, { word: "un", base: "un" }, { word: "libro", base: "libro" }] }
-      - { target: "Io leggo il giornale.", ipa: "ˈio ˈleɡɡo il dʒorˈnale", bases: [{ word: "Io", base: "io" }, { word: "leggo", base: "leggere" }, { word: "il", base: "il" }, { word: "giornale", base: "giornale" }] }
+      - { target: "Leggo un libro.", ipa: "ˈlɛɡɡo un ˈlibro", bases: [{ word: "Leggo", base: "leggere" }, { word: "un", base: "un" }, { word: "libro", ref: "it-2770" }] }
+      - { target: "Io leggo il giornale.", ipa: "ˈio ˈlɛɡɡo il dʒorˈnale", bases: [{ word: "Io", ref: "it-0003" }, { word: "leggo", base: "leggere" }, { word: "il", base: "il" }, { word: "giornale", base: "giornale" }] }
   - id: "it-1681"
     target: "scrivere"
     ipa: "ˈskrivere"
@@ -357,8 +357,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Scrivo una lettera.", ipa: "ˈskrivo ˈuna letˈtera", bases: [{ word: "Scrivo", base: "scrivere" }, { word: "una", base: "una" }, { word: "lettera", base: "lettera" }] }
-      - { target: "Io scrivo a Marco.", ipa: "ˈio ˈskrivo a ˈmarko", bases: [{ word: "Io", base: "io" }, { word: "scrivo", base: "scrivere" }, { word: "a", base: "a" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Scrivo una lettera.", ipa: "ˈskrivo ˈuna ˈlettera", bases: [{ word: "Scrivo", base: "scrivere" }, { word: "una", base: "una" }, { word: "lettera", ref: "it-2815" }] }
+      - { target: "Io scrivo a Marco.", ipa: "ˈio ˈskrivo a ˈmarko", bases: [{ word: "Io", ref: "it-0003" }, { word: "scrivo", base: "scrivere" }, { word: "a", ref: "it-0417" }, { word: "Marco", base: "Marco" }] }
   - id: "it-1682"
     target: "ascoltare"
     ipa: "askolˈtare"
@@ -379,8 +379,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Aspetto il treno.", ipa: "asˈpetto il ˈtrɛno", bases: [{ word: "Aspetto", base: "aspettare" }, { word: "il", base: "il" }, { word: "treno", base: "treno" }] }
-      - { target: "Aspetto Marco.", ipa: "asˈpetto ˈmarko", bases: [{ word: "Aspetto", base: "aspettare" }, { word: "Marco", base: "Marco" }] }
+      - { target: "Aspetto il treno.", ipa: "asˈpɛtto il ˈtrɛno", bases: [{ word: "Aspetto", base: "aspettare" }, { word: "il", base: "il" }, { word: "treno", ref: "it-2560" }] }
+      - { target: "Aspetto Marco.", ipa: "asˈpɛtto ˈmarko", bases: [{ word: "Aspetto", base: "aspettare" }, { word: "Marco", base: "Marco" }] }
   - id: "it-1684"
     target: "chiamare"
     ipa: "kjaˈmare"
@@ -391,7 +391,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Chiamo Marco.", ipa: "ˈkjamo ˈmarko", bases: [{ word: "Chiamo", base: "chiamare" }, { word: "Marco", base: "Marco" }] }
-      - { target: "Io chiamo il dottore.", ipa: "ˈio ˈkjamo il dotˈtore", bases: [{ word: "Io", base: "io" }, { word: "chiamo", base: "chiamare" }, { word: "il", base: "il" }, { word: "dottore", base: "dottore" }] }
+      - { target: "Io chiamo il dottore.", ipa: "ˈio ˈkjamo il dotˈtore", bases: [{ word: "Io", ref: "it-0003" }, { word: "chiamo", base: "chiamare" }, { word: "il", base: "il" }, { word: "dottore", ref: "it-2155" }] }
   - id: "it-1685"
     target: "aiutare"
     ipa: "ajuˈtare"
@@ -402,4 +402,4 @@ cards:
     bases: "self"
     examples:
       - { target: "Aiuto Marco.", ipa: "aˈjuto ˈmarko", bases: [{ word: "Aiuto", base: "aiutare" }, { word: "Marco", base: "Marco" }] }
-      - { target: "Io aiuto la mamma.", ipa: "ˈio aˈjuto la ˈmamma", bases: [{ word: "Io", base: "io" }, { word: "aiuto", base: "aiutare" }, { word: "la", base: "la" }, { word: "mamma", base: "mamma" }] }
+      - { target: "Io aiuto la mamma.", ipa: "ˈio aˈjuto la ˈmamma", bases: [{ word: "Io", ref: "it-0003" }, { word: "aiuto", base: "aiutare" }, { word: "la", base: "la" }, { word: "mamma", ref: "it-1442" }] }
