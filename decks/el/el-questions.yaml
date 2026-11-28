@@ -1,0 +1,117 @@
+schema: 1
+id: "el-questions"
+part: "core"
+kind: "vocab"
+language: { code: "el", iso639_3: "ell", name: "Greek (Modern)", script: "greek", tts: "el-GR", icon: "Ε" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "el-1300"
+    target: "γιατί"
+    reading: "yatí"
+    ipa: "ʝaˈti"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1301"
+    target: "τι"
+    reading: "ti"
+    ipa: "ti"
+    pos: "pron"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1302"
+    target: "πού"
+    reading: "pú"
+    ipa: "pu"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1303"
+    target: "πότε"
+    reading: "póte"
+    ipa: "ˈpote"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1304"
+    target: "πώς"
+    reading: "pós"
+    ipa: "pos"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1305"
+    target: "πόσος"
+    reading: "pósos"
+    ipa: "ˈposos"
+    pos: "pron"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1306"
+    target: "πόσο"
+    reading: "póso"
+    ipa: "ˈposo"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1307"
+    target: "ίσως"
+    reading: "ísos"
+    ipa: "ˈisos"
+    pos: "adv"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1308"
+    target: "μήπως"
+    reading: "mípos"
+    ipa: "ˈmipos"
+    pos: "conj"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1309"
+    target: "τίποτα"
+    reading: "típota"
+    ipa: "ˈtipota"
+    pos: "pron"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1310"
+    target: "κάποιος"
+    reading: "kápios"
+    ipa: "ˈkapjos"
+    pos: "pron"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "el-1311"
+    target: "τέλος"
+    reading: "télos"
+    ipa: "ˈtelos"
+    pos: "noun"
+    gender: "n"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Αυτό είναι το τέλος.", reading: "Aftó íne to télos.", ipa: "afˈto ˈine to ˈtelos", bases: [{ word: "Αυτό", base: "αυτό", reading: "aftó" }, { word: "είναι", base: "είμαι", reading: "íne" }, { word: "το", base: "το", reading: "to" }, { word: "τέλος", base: "τέλος", reading: "télos" }] }
+  - id: "el-1312"
+    target: "κανένας"
+    reading: "kanénas"
+    ipa: "kaˈnenas"
+    pos: "pron"
+    tags: ["questions"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
