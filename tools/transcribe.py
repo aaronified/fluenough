@@ -2475,7 +2475,8 @@ def _it_openness(s: str, vowel: str, idx: int, glide: str) -> str:
 #     stressed one (`Banáne`), a colon after a vowel marks it long (`Mä:dchen`,
 #     `Spra:che`) and a caret after a vowel marks it short (`Mo^nd` if a word
 #     the rules read long is short). Only the marked vowels change. A hint is
-#     used only if, with its marks removed, it is the text;
+#     used only if, with its marks removed, it is the text. A bar starts the
+#     next part of a compound (`Fahr|ra:d`): each part is read as a word;
 #  2. endings and prefixes that fix the stress: the unstressed prefixes be-
 #     ge- er- ver- zer- ent- emp- miss- (the stress goes to the stem, and the
 #     prefix is read apart, `verstehen` fɛɐ̯ˈʃteːən); -ieren verbs, -ier,
@@ -2491,13 +2492,16 @@ def _it_openness(s: str, vowel: str, idx: int, glide: str) -> str:
 #  4. otherwise the first syllable, long before a single consonant and
 #     short before two or more (a stop and l or r count as one).
 # A card whose broad `ipa` the engine misreads is given a hint.
-# Measured on 139 everyday words picked by hand and read from en.wiktionary on
-# 2026-11-28 (not a random sample): 116 are read as one of the forms the
+# Measured on 208 everyday words picked by hand and read from en.wiktionary on
+# 2026-11-28 (not a random sample): 182 are read as one of the forms the
 # entry lists, once its syllable dots, secondary stress, glottal stops and
-# non-syllabic marks are left out. The rest are the limits above: loan word
-# stress and sounds (Computer, Restaurant, Banane, Familie, November,
-# Toilette), the length of Mond, Montag, Sprache, Bücher, and of the vowel of
-# a compound's second part (Bahnhof, Telefon, Wochenende).
+# non-syllabic marks are left out (many of the 208 are in _DE_MARKS, whose
+# entries were read from the same pages). The rest are the limits above: loan
+# word stress and sounds (Computer, Restaurant, Banane, Familie, November,
+# Toilette, Chef, Handy, Ferien), the length of Mond, Sprache, Bücher and of
+# the vowel of a compound's second part not listed in _DE_MARKS (Telefon,
+# Wochenende), the ɐ̯ that Wiktionary writes after a short vowel before r
+# (Schmerzen), and ʁ against χ and ɐ in its narrow forms.
 #
 # Sources: Wikipedia "Standard German phonology"; Wiktionary "Appendix:German
 # pronunciation" and its entries' pronunciations.
@@ -2513,6 +2517,23 @@ _DE_MARKS = {
     "was": "wa^s", "ins": "i^ns", "hin": "hi^n",
     "des": "de^s", "kaffee": "kaffeé", "hallo": "halló:", "hotel": "hoté^l",
     "kino": "kíno:", "mädchen": "mä:dchen", "damit": "damí^t",
+    # Length before r and a consonant, and the long vowel of a compound's
+    # second part, which the letters do not show.
+    "arzt": "a:rzt", "urlaub": "u:rlaub", "erste": "e:rste",
+    "geburtstag": "gebú:rtstag", "fahrrad": "fahr|ra:d",
+    "montag": "mo:ntag", "nachmittag": "na:chmittag",
+    "vormittag": "vo:rmittag", "bahnhof": "bahnho:f",
+    "flughafen": "flu:gha:fen", "flugzeug": "flu:gzeug",
+    "schlafzimmer": "schla:fzimmer", "handtuch": "hand|tu:ch",
+    "erdbeere": "e:rdbeere", "erdgeschoss": "e:rdgeschoss",
+    "vielleicht": "vie^lléicht", "vierzig": "vie^rzig", "obst": "o:bst",
+    "brötchen": "brö:tchen", "nämlich": "nä:mlich",
+    # Loan words and others with lexical stress or length.
+    "natürlich": "natü\u0301:rlich", "apotheke": "apothé:ke",
+    "kartoffel": "kartóffel", "tomate": "tomáte", "salat": "salát",
+    "marmelade": "marmeláde", "gitarre": "gitárre", "minute": "minúte",
+    "januar": "ja^nua:r", "februar": "fe:brua:r", "april": "aprí^l",
+    "oktober": "október", "dezember": "dezémber",
 }
 # Prefixes read apart and never stressed: letters, then the phonemes.
 _DE_PREFIXES = (("miss", "mɪs"), ("emp", "ɛmp"), ("ent", "ɛnt"),
@@ -2537,6 +2558,8 @@ _DE_H_SAID = re.compile(r"^(?:zu|da|wo)h[aeiouäöü]")
 _DE_SEPARABLE = ("an", "ab", "auf", "aus", "ein", "mit", "vor", "zu", "nach",
                  "her", "hin", "weg", "zurück", "um", "bei")
 _DE_LONG_SAM = re.compile(r"sa(?=m(?:e|en|er|es|em)?$)")
+# -tag is long (Freitag, Mittag): the a of the second part.
+_DE_LONG_TAG = re.compile(r"(?<=..)ta(?=g(?:e|en|es|s)?$)")
 _DE_NO_FRONT = "aou"
 
 
@@ -2578,14 +2601,19 @@ def german_ipa(text: str, hint: str | None = None) -> str:
     return " ".join(w for w in out if w)
 
 
-def _de_marks(hint: str) -> tuple[str, int | None, dict[int, str]]:
-    """A hint word's letters, the index of its stressed vowel and the marks
-    of length by letter index ("L" long, "S" short)."""
+def _de_marks(hint: str) -> tuple[str, int | None, dict[int, str],
+                                  set[int]]:
+    """A hint word's letters, the index of its stressed vowel, the marks of
+    length by letter index ("L" long, "S" short) and the letter indices where
+    a compound's next part begins (a bar, `Fahr|rad`)."""
     letters: list[str] = []
     stress: int | None = None
     marks: dict[int, str] = {}
+    bounds: set[int] = set()
     for c in unicodedata.normalize("NFD", hint.lower()):
-        if c == "̈" and letters:
+        if c == "|" and letters:
+            bounds.add(len(letters))
+        elif c == "̈" and letters:
             letters[-1] = unicodedata.normalize("NFC", letters[-1] + c)
         elif c == "́" and letters:
             stress = len(letters) - 1
@@ -2595,7 +2623,7 @@ def _de_marks(hint: str) -> tuple[str, int | None, dict[int, str]]:
             continue
         else:
             letters.append(c)
-    return "".join(letters), stress, marks
+    return "".join(letters), stress, marks, bounds
 
 
 def _de_clean(word: str) -> str:
@@ -2631,6 +2659,8 @@ def _de_is_vowel(s: str, i: int) -> bool:
 def _de_prefix(word: str) -> tuple[int, str]:
     """The length and phonemes of the unstressed prefix [word] begins with,
     or (0, "")."""
+    if word == "berlin":
+        return 3, "bɛɐ̯"
     for letters, ph in _DE_PREFIXES:
         if not word.startswith(letters):
             continue
@@ -2638,12 +2668,18 @@ def _de_prefix(word: str) -> tuple[int, str]:
         nuclei = len(re.findall(r"[aeiouäöüy]+", rest))
         if not nuclei:
             continue
-        if letters in ("be", "ge") and rest[0] in "iu":
-            continue
+        if letters in ("be", "ge") and rest[0] in "iue":
+            continue            # a diphthong or ee: geil, beuge, Beere
+        if letters == "be" and rest[0] == "r" and len(rest) > 1 and \
+                rest[1] not in _DE_VOWELS:
+            continue            # Berg, Bernd
+        if letters == "er" and re.match(r"d[^aeiouäöüy]", rest):
+            continue            # Erdbeere, Erdgeschoss
         if letters == "miss" and rest[0] in _DE_VOWELS:
             continue
         # A stem that only looks like a prefix: geben, gehen, Erde, gerne.
-        if nuclei == 1 and re.fullmatch(r"[^aeiouäöüy]*e[nrlsm]?", rest):
+        if nuclei == 1 and re.fullmatch(
+                r"[^aeiouäöüy]*e(?:[nrlsm]|rn|rm|rs|ns|ls)?", rest):
             continue
         return len(letters), ph
     return 0, ""
@@ -2734,7 +2770,8 @@ def _de_tokens(s: str, base: int, initial: bool) -> list[_DeTok]:
             i += 3
         elif two == "ch":
             back = bool(toks) and toks[-1].kind == "V" and (
-                toks[-1].vowel in _DE_NO_FRONT or toks[-1].ph == "aʊ")
+                (toks[-1].vowel != "" and toks[-1].vowel in _DE_NO_FRONT)
+                or toks[-1].ph == "aʊ")
             if i == 0 and initial and not toks:
                 ph = "k" if s[i + 2:i + 3] in ("a", "o", "u", "l", "r") \
                     else "ç"
@@ -2767,6 +2804,12 @@ def _de_tokens(s: str, base: int, initial: bool) -> list[_DeTok]:
             else:
                 add("k", "C", i, i + 1)
                 i += 1
+        elif c == "n" and nx in ("g", "k") and (
+                s[:i + 1] in _DE_SEPARABLE and (
+                    nx == "k" or s[:i + 1] == "ein" or
+                    s[i + 2:i + 3] == "e")):
+            add("n", "C", i, i + 1)
+            i += 1
         elif c == "n" and nx == "g":
             add("ŋ", "C", i, i + 2, weight=2)
             i += 2
@@ -2832,11 +2875,14 @@ def _de_tokens(s: str, base: int, initial: bool) -> list[_DeTok]:
 
 def _de_joins(a: _DeTok, b: _DeTok) -> bool:
     """Whether [a] and [b], two consonants before a vowel, begin the same
-    syllable: a stop or f and then l or r, or the sch of an initial sp, st."""
+    syllable: a stop or f and then l or r, ʃ and then p t l m n v or r
+    (schlafen, sprechen, Schwester), or ts and v (zwanzig)."""
     if a.kind != "C" or b.kind != "C":
         return False
-    if a.sp:
-        return b.ph in ("p", "t")
+    if a.ph == "ʃ":
+        return b.ph in ("p", "t", "l", "m", "n", "v") or b.r
+    if a.ph == "ts":
+        return b.ph == "v"
     return a.ph in _DE_STOPS and (b.ph == "l" or b.r)
 
 
@@ -2891,16 +2937,20 @@ def _de_word(raw: str, hint: str) -> str:
         return ""
     stress_at: int | None = None
     marks: dict[int, str] = {}
+    bounds: set[int] = set()
     if hint:
-        _, stress_at, marks = _de_marks(hint)
+        _, stress_at, marks, bounds = _de_marks(hint)
     elif word in _DE_MARKS:
-        _, stress_at, marks = _de_marks(_DE_MARKS[word])
+        _, stress_at, marks, bounds = _de_marks(_DE_MARKS[word])
     n_pre, pre_ph = _de_prefix(word)
     if n_pre and stress_at is not None and stress_at < n_pre:
         n_pre, pre_ph = 0, ""       # a hint that stresses the prefix
     toks = _de_prefix_toks(pre_ph, n_pre) if n_pre else []
     k0 = len(toks)
-    toks += _de_tokens(word[n_pre:], n_pre, True)
+    edges = [n_pre] + sorted(b for b in bounds if n_pre < b < len(word)) + [
+        len(word)]
+    for a, b in zip(edges, edges[1:]):
+        toks += _de_tokens(word[a:b], a, True)
     return _de_resolve(word, toks, n_pre, k0, stress_at, marks)
 
 
@@ -2911,17 +2961,25 @@ def _de_resolve(word: str, toks: list[_DeTok], n_pre: int, k0: int,
         raise CannotRead(f"no vowel to read: {word!r}")
     stressed = _de_pick_stress(word, toks, n_pre, k0, stress_at)
     sam = {m.start() + 1 for m in _DE_LONG_SAM.finditer(word)}
+    sam |= {m.start() + 1 for m in _DE_LONG_TAG.finditer(word)}
     for k in nuclei:
         t = toks[k]
+        mark = next((marks[j] for j in range(t.start, t.end) if j in marks),
+                    None)
         if t.fixed:
+            if t.ph == "iː" and mark == "S":
+                t.ph = "ɪ" if k == stressed else "i"     # vierzig, vielleicht
             continue
         cl = _de_cluster(toks, k)
         has_next = k + 1 + len(cl) < len(toks)
         onset_only = bool(cl) and has_next and _de_onset_only(cl)
         # The consonants that close the syllable; the last one of a cluster
         # before a vowel begins the next.
-        coda = [] if onset_only or (cl and has_next and len(cl) == 1) else (
-            cl[:-1] if has_next else cl)
+        coda = [] if onset_only or (
+            len(cl) == 1 and has_next and (
+                cl[0].weight == 1 or cl[0].ph in ("ʃ", "ç", "x", "tʃ"))
+        ) else (
+            cl[:-1] if has_next and len(cl) > 1 else cl)
         if not cl:
             w = 0
         elif onset_only:
@@ -2932,7 +2990,6 @@ def _de_resolve(word: str, toks: list[_DeTok], n_pre: int, k0: int,
             w = sum(c.weight for c in cl)
         if t.vowel == "u" and len(cl) == 1 and cl[0].ch:
             w = 1               # Buch, Tuch, Kuchen
-        mark = marks.get(t.start)
         if mark == "L":
             t.long = True
         elif mark == "S":

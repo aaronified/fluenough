@@ -990,6 +990,53 @@ class GermanTest(unittest.TestCase):
                     ("Hotel", "hoˈtɛl"), ("Kino", "ˈkiːnoː"),
                     ("damit", "daˈmɪt"), ("langsam", "ˈlaŋzaːm")))
 
+    def test_sch_and_zw_stay_together_when_the_stress_is_marked(self):
+        self.check((("Schwester", "ˈʃvɛstɐ"), ("zwanzig", "ˈtsvantsɪç"),
+                    ("schlafen", "ˈʃlaːfən"), ("Schlüssel", "ˈʃlʏsəl"),
+                    ("Zwiebel", "ˈtsviːbəl"), ("schwierig", "ˈʃviːʁɪç"),
+                    ("Schlafzimmer", "ˈʃlaːftsɪmɐ"),
+                    ("schreiben", "ˈʃʁaɪbən")))
+
+    def test_ch_after_a_diphthong_or_ie_is_ç(self):
+        self.check((("leicht", "laɪçt"), ("weich", "vaɪç"),
+                    ("gleich", "ɡlaɪç"), ("Zeichen", "ˈtsaɪçən"),
+                    ("euch", "ɔɪç"), ("riechen", "ˈʁiːçən"),
+                    ("vielleicht", "fiˈlaɪçt")))
+
+    def test_stems_that_look_like_prefixed_words(self):
+        self.check((("gestern", "ˈɡɛstɐn"), ("Beere", "ˈbeːʁə"),
+                    ("Berlin", "bɛɐ̯ˈliːn"), ("Erdbeere", "ˈeːɐ̯tbeːʁə"),
+                    ("Erdgeschoss", "ˈeːɐ̯tɡəʃɔs")))
+
+    def test_n_before_k_across_a_separable_prefix_is_not_ŋ(self):
+        self.check((("einkaufen", "ˈaɪnkaʊfən"), ("ankommen", "ˈankɔmən")))
+
+    def test_the_days_and_other_long_vowels_of_a_compounds_second_part(self):
+        self.check((("Montag", "ˈmoːntaːk"), ("Sonntag", "ˈzɔntaːk"),
+                    ("Dienstag", "ˈdiːnstaːk"), ("Freitag", "ˈfʁaɪtaːk"),
+                    ("Samstag", "ˈzamstaːk"), ("Mittag", "ˈmɪtaːk"),
+                    ("Donnerstag", "ˈdɔnɐstaːk"),
+                    ("Nachmittag", "ˈnaːxmɪtaːk"),
+                    ("Vormittag", "ˈfoːɐ̯mɪtaːk"), ("Mittwoch", "ˈmɪtvɔx"),
+                    ("Bahnhof", "ˈbaːnhoːf"), ("Flughafen", "ˈfluːkhaːfən"),
+                    ("Flugzeug", "ˈfluːktsɔɪk")))
+
+    def test_a_long_vowel_before_r_and_a_consonant(self):
+        self.check((("Arzt", "aːɐ̯tst"), ("Urlaub", "ˈuːɐ̯laʊp"),
+                    ("erste", "ˈeːɐ̯stə"), ("Fahrrad", "ˈfaːɐ̯ʁaːt"),
+                    ("Geburtstag", "ɡəˈbuːɐ̯tstaːk")))
+
+    def test_loan_words_and_months_the_table_marks(self):
+        self.check((("natürlich", "naˈtyːɐ̯lɪç"),
+                    ("Apotheke", "apoˈteːkə"), ("Kartoffel", "kaʁˈtɔfəl"),
+                    ("Tomate", "toˈmaːtə"), ("Salat", "zaˈlaːt"),
+                    ("Gitarre", "ɡiˈtaʁə"), ("Minute", "miˈnuːtə"),
+                    ("Januar", "ˈjanuaːɐ̯"), ("Februar", "ˈfeːbʁuaːɐ̯"),
+                    ("April", "aˈpʁɪl"), ("Oktober", "ɔkˈtoːbɐ"),
+                    ("Dezember", "deˈtsɛmbɐ"), ("Brötchen", "ˈbʁøːtçən"),
+                    ("Obst", "oːpst"), ("vierzig", "ˈfɪʁtsɪç"),
+                    ("nämlich", "ˈnɛːmlɪç")))
+
     def test_a_hint_gives_stress_and_length(self):
         # Wiktionary: Banane baˈnaːnə, Sprache ˈʃpʁaːxə, Bücher ˈbyːçɐ,
         # Mond moːnt, Telefon (ˌ)teːləˈfoːn.
