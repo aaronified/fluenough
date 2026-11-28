@@ -25,7 +25,7 @@ State was read from `origin/decks-live` (PyYAML over `decks/ru/**` and `decks/ru
 
 ## 3. Task table
 
-Ids (never reused, ascending inside a task; highest in use `ru-0030`s range to be read from the deck): script `ru-0300..0399`, grammar units `ru-0400..0999` (60 per unit in path order), word units `ru-1300..3049` (70 per unit in path order), sentences `ru-4000..4999`.
+Ids (never reused, ascending inside a task; highest in use `ru-0031` at the start): script `ru-0300..0399`, grammar units `ru-0400..0999` (60 per unit in path order), word units `ru-1300..3049` (70 per unit in path order), sentences `ru-4000..4999`.
 
 | Id | Model | Branch | Spec |
 |---|---|---|---|
@@ -39,3 +39,13 @@ Ids (never reused, ascending inside a task; highest in use `ru-0030`s range to b
 ## 4. Progress
 
 2026-11-28: audit done, this page written; RU-110 and RU-050 launching.
+
+2026-11-28: RU-110 merged, #1764 (`russian_ipa` engine with stress hint; reading scheme of the existing cards kept; the review found no blocker, five nits fixed). RU-050 done (724 candidates, 25 themes). Shared branch `decks/ru-a1-wave1`: the Sonnet builder RU-100 wrote the 2 script and 5 grammar units; Haiku workers ru1 to ru5 wrote the 25 word units (five each). Five units were lost to stale-index pushes by concurrent workers and restored from history; the architect did the path edits and the review queue last.
+
+## 5. Final state, 2026-11-28
+
+A1 stops here by the owner's order. Merged, each with CI green and one Sonnet review: #1764 (main, engine), #1766 (main, validator: Cyrillic is a Russian core's own script, and a combining acute inside a Cyrillic word keeps the word in one run, so stress-marked words in notes with a reading pass), #1765 on decks-live (4 Cyrillic script decks, 5 grammar units with word and sentences decks, 25 word units, the path to unit 33 with `alphabet` and the A1 milestone, `docs/review-queue/ru.md`) and #1767 (decks-live, `decks/ru/ru-phonetics.yaml`, 15 rules, `phonetic` on 876 cards). 878 cards in 48 core files. The review of #1765 found wrong glosses (закрыть, платье, ручка, раковина and about 16 more), composed examples with wrong English (mass nouns, comma-joined glosses), ten nouns without gender, wrong aspect partners (сидеть, лежать, носить, класть and others), a wrong IPA in a script note and a doubled Cyrillic word; all repaired before the merge. The review of #1767 found nothing blocking.
+
+Left for the owner: Russian speaker review of `docs/review-queue/ru.md` (composed `Это <noun>` examples throughout, stress where the source gave none, glosses added by the builders, the engine's reduction and the narrow rules); main's comment in `tools/phonetic_languages.yaml` still says the rules file is not yet written (a one-line follow-up); the 30 older phrasebook and first-words cards still carry hand-written `ipa` (12 differ from the engine: стоит, здравствуйте, не, или and others; listed in #1764); sentences decks for word units; units 34 to 88 (A2 and B1) and every genre deck, out of scope. Word units are under their planned sizes in pronouns, adverbs, quantities, food, places, things and clothes where the Wiktionary extract limited them. Branches `decks/ru-a1-wave1`, `decks/ru-phonetics-wave1`, `tools/ru-transcribe` and `tools/validate-cyrillic` are left for the owner to delete.
+
+Lessons: several Haiku workers sharing one branch each committed from a stale index and deleted other workers' files; five units had to be restored from history (a worker should commit on a private index and push a one-parent commit, as two did, or the architect should check the tree after every push); the validator did not know Cyrillic as a Russian core's own script nor a combining acute in a word, so any language with stress marks needs that checked before the first wave; the candidate report's `stressed` fields had truncated or doubled forms (колено, заяц, компьютер) and some glosses were of the wrong sense (a fifth of the review's blocking findings): the builders must read the entry's learner sense; a rerun of Deck CI re-reads main's tools, so rerun after a tools PR merges.
