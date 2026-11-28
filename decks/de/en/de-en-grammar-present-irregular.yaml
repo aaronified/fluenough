@@ -1,0 +1,33 @@
+schema: 1
+id: "de-en-grammar-present-irregular"
+kind: "layer"
+core: "de-grammar-present-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present tense: verbs that change their vowel"
+license: "CC-BY-SA-4.0"
+description: "The present tense of 13 common verbs whose stem vowel changes in the du and er, sie, es forms, with wissen, which is irregular. Not yet checked by a German speaker: please report any mistake."
+pattern:
+  name: "The present of vowel-changing verbs"
+  slot_name: "person"
+  slots:
+    "ich": "I (ich)"
+    "du": "you, one person you know (du)"
+    "er-sie-es": "he, she, it (er, sie, es)"
+    "wir": "we (wir)"
+    "ihr": "you, more than one person (ihr)"
+    "sie": "they (sie); you, formal (Sie)"
+  entries:
+    "sprechen": "to speak (e becomes i: du sprichst, er spricht)"
+    "essen": "to eat (e becomes i: du isst, er isst)"
+    "treffen": "to meet (e becomes i: du triffst, er trifft)"
+    "vergessen": "to forget (e becomes i: du vergisst, er vergisst)"
+    "geben": "to give (e becomes i: du gibst, er gibt)"
+    "helfen": "to help (e becomes i: du hilfst, er hilft)"
+    "nehmen": "to take (e becomes i, and the m doubles: du nimmst, er nimmt)"
+    "sehen": "to see (e becomes ie: du siehst, er sieht)"
+    "lesen": "to read (e becomes ie: du liest, er liest)"
+    "fahren": "to drive; to travel (a becomes ä: du fährst, er fährt)"
+    "schlafen": "to sleep (a becomes ä: du schläfst, er schläft)"
+    "laufen": "to run; to walk (au becomes äu: du läufst, er läuft)"
+    "wissen": "to know a fact (irregular: ich weiß, du weißt, er weiß)"
+  notes: "Some common verbs change their stem vowel in the du form and in the er, sie, es form, and nowhere else. The change is one of four kinds: e becomes i (sprechen, du sprichst, er spricht; essen, du isst; treffen; vergessen; geben; helfen; nehmen, where the h goes and the m doubles: du nimmst), e becomes ie (sehen, du siehst; lesen, du liest), a becomes ä (fahren, du fährst; schlafen, du schläfst) and au becomes äu (laufen, du läufst). The ich, wir, ihr and sie (they) forms keep the vowel of the infinitive: ich spreche, wir sprechen, ihr sprecht. The endings are the regular ones, except that the du ending is only -t when the stem ends in s (du isst, du vergisst, du liest). Wikipedia's page on German verbs says that some strong verbs change their stem vowel in the second and third person singular of the present, with lesen as its example, and Wiktionary's conjugation table of each verb gives each form. Wissen, to know a fact, is a different kind of verb, an old past form used as a present, so ich and er have no ending: ich weiß, du weißt, er weiß, wir wissen, ihr wisst, sie wissen. The verbs here are the ones the course has taught so far; more come later. Sources: en.wiktionary's conjugation table of each verb, and the Wikipedia page German verbs."
