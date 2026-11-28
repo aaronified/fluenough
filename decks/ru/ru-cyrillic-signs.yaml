@@ -1,0 +1,24 @@
+# Unit 7 of the Russian A1 path (the letters of the alphabet). Sources read: en.wikipedia.org 'Russian alphabet' (the hard and soft vowel pairs, always-hard ж ш ц, always-soft й ч щ, ё, ъ and ь) and 'Russian phonology'.
+# The reading and IPA of a letter come from tools/transcribe.py (a consonant by its syllable with а, the а then taken off), never by hand.
+schema: 1
+id: "ru-cyrillic-signs"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "ru-0331"
+    target: "ъ"
+    pos: "letter"
+    tags: ["sign", "silent"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-soft", kind: "lookalike", ref: "ru-0332", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0332"
+    target: "ь"
+    pos: "letter"
+    tags: ["sign", "silent"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-hard", kind: "lookalike", ref: "ru-0331", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }

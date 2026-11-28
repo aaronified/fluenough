@@ -1,0 +1,51 @@
+# Unit 2 grammar topic stress. Sources read: en.wikipedia.org 'Russian phonology' (free, lexical stress; vowel reduction) and the en.wiktionary.org entries замок, мука, атлас (headword stress, senses).
+# The forms keep the acute accent of the Wiktionary headword: without it the two forms of a row would be the same text.
+schema: 1
+id: "ru-grammar-stress"
+part: "core"
+kind: "grammar"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["first", "last"]
+  entries:
+    - lemma: "за́мок"
+      key: "zamok"
+      reading: "zamok"
+      ipa: "ˈzamək"
+      forms:
+        "first": "за́мок"
+        "last": "замо́к"
+      readings:
+        "first": "zamok"
+        "last": "zamok"
+      ipas:
+        "first": "ˈzamək"
+        "last": "zɐˈmok"
+    - lemma: "му́ка"
+      key: "muka"
+      reading: "muka"
+      ipa: "ˈmukə"
+      forms:
+        "first": "му́ка"
+        "last": "мука́"
+      readings:
+        "first": "muka"
+        "last": "muka"
+      ipas:
+        "first": "ˈmukə"
+        "last": "mʊˈka"
+    - lemma: "а́тлас"
+      key: "atlas"
+      reading: "atlas"
+      ipa: "ˈatləs"
+      forms:
+        "first": "а́тлас"
+        "last": "атла́с"
+      readings:
+        "first": "atlas"
+        "last": "atlas"
+      ipas:
+        "first": "ˈatləs"
+        "last": "ɐˈtlas"

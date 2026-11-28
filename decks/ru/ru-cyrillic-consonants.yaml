@@ -1,0 +1,187 @@
+# Unit 7 of the Russian A1 path (the letters of the alphabet). Sources read: en.wikipedia.org 'Russian alphabet' (the hard and soft vowel pairs, always-hard ж ш ц, always-soft й ч щ, ё, ъ and ь) and 'Russian phonology'.
+# The reading and IPA of a letter come from tools/transcribe.py (a consonant by its syllable with а, the а then taken off), never by hand.
+schema: 1
+id: "ru-cyrillic-consonants"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "ru-0310"
+    target: "б"
+    reading: "b"
+    ipa: "b"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0311"
+    target: "в"
+    reading: "v"
+    ipa: "v"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "latin", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0312"
+    target: "г"
+    reading: "g"
+    ipa: "ɡ"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0313"
+    target: "д"
+    reading: "d"
+    ipa: "d"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0314"
+    target: "ж"
+    reading: "zh"
+    ipa: "ʐ"
+    pos: "letter"
+    tags: ["consonant", "always-hard"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0315"
+    target: "з"
+    reading: "z"
+    ipa: "z"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0316"
+    target: "й"
+    reading: "y"
+    ipa: "j"
+    pos: "letter"
+    tags: ["consonant", "always-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-i", kind: "lookalike", ref: "ru-0309", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0317"
+    target: "к"
+    reading: "k"
+    ipa: "k"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0318"
+    target: "л"
+    reading: "l"
+    ipa: "l"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0319"
+    target: "м"
+    reading: "m"
+    ipa: "m"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0320"
+    target: "н"
+    reading: "n"
+    ipa: "n"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "latin", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0321"
+    target: "п"
+    reading: "p"
+    ipa: "p"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0322"
+    target: "р"
+    reading: "r"
+    ipa: "r"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "latin", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0323"
+    target: "с"
+    reading: "s"
+    ipa: "s"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "latin", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0324"
+    target: "т"
+    reading: "t"
+    ipa: "t"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0325"
+    target: "ф"
+    reading: "f"
+    ipa: "f"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0326"
+    target: "х"
+    reading: "kh"
+    ipa: "x"
+    pos: "letter"
+    tags: ["consonant", "hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "latin", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0327"
+    target: "ц"
+    reading: "ts"
+    ipa: "ts"
+    pos: "letter"
+    tags: ["consonant", "always-hard"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-shch", kind: "lookalike", ref: "ru-0330", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0328"
+    target: "ч"
+    reading: "ch"
+    ipa: "tɕ"
+    pos: "letter"
+    tags: ["consonant", "always-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0329"
+    target: "ш"
+    reading: "sh"
+    ipa: "ʂ"
+    pos: "letter"
+    tags: ["consonant", "always-hard"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-shch", kind: "lookalike", ref: "ru-0330", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0330"
+    target: "щ"
+    reading: "shch"
+    ipa: "ɕː"
+    pos: "letter"
+    tags: ["consonant", "always-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-sh", kind: "lookalike", ref: "ru-0329", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
