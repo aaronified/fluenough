@@ -1,0 +1,22 @@
+schema: 1
+id: "ru-en-grammar-sound-differences"
+kind: "layer"
+core: "ru-grammar-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hard and soft: one letter changes the sound"
+license: "CC-BY-SA-4.0"
+description: "Five word pairs that differ only by a hard or a soft sound: a soft sign or a soft vowel letter makes the consonant before it soft. Each row gives the hard word and the soft word."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Hard and soft: one letter changes the sound"
+  slot_name: "sound"
+  slots:
+    "hard": "the hard word (plain consonant or ы (y))"
+    "soft": "the soft word (softened consonant or и (i), ю (yu), ь (soft sign))"
+  entries:
+    "brat": "brother (hard) and to take (soft)"
+    "mat": "checkmate (hard) and mother (soft)"
+    "ugol": "corner (hard) and coal (soft)"
+    "luk": "onion (hard) and hatch (soft)"
+    "byt": "to be (hard ы (y)) and to hit (soft и (i))"
+  notes: "Most Russian consonants come in a hard and a soft form, and the difference is the only thing that separates брат (brat), brother, from брать (brat'), to take. A soft consonant is said with the middle of the tongue raised towards the palate, as if a quick 'y' followed. Writing shows it in two ways. At the end of a word or before another consonant a soft sign ь (soft sign) marks it: мать (mat'). Before a vowel the vowel letter itself says it: the vowels я (ya), е (ye), ё (yo), ю (yu) and и (i) are the soft partners of а (a), э (e), о (o), у (u) and ы (y). So лук (luk) has a hard л (l) and люк (lyuk) a soft one."

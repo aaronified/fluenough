@@ -1,0 +1,129 @@
+# Unit 19 (ru-grammar-present-tense). Verbs the present-tense table needs that no earlier unit teaches. Sources read: en.wikipedia.org 'Russian grammar' (present-future endings of the first and second conjugations, чита́ть as the model verb, жить among the first-conjugation verbs, the past of сде́лать, the future of the perfective of чита́ть) and each verb's en.wiktionary.org entry.
+schema: 1
+id: "ru-grammar-present-tense-words"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ru-0520"
+    target: "знать"
+    reading: "znat'"
+    ipa: "znatʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Я знаю.", reading: "Ya znayu.", ipa: "ja ˈznajʊ", bases: [{ word: "Я", ref: "ru-0003" }, { word: "знаю", base: "знать", reading: "znat'" }] }
+      - { target: "Ты знаешь?", reading: "Ty znayesh'?", ipa: "tɨ ˈznajəʂ", bases: [{ word: "Ты", base: "ты", reading: "ty" }, { word: "знаешь", base: "знать", reading: "znat'" }] }
+  - id: "ru-0521"
+    target: "понимать"
+    reading: "ponimat'"
+    ipa: "pənʲɪˈmatʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Он понимает.", reading: "On ponimayet.", ipa: "on pənʲɪˈmajət", bases: [{ word: "Он", base: "он", reading: "on" }, { word: "понимает", base: "понимать", reading: "ponimat'" }] }
+      - { target: "Мы понимаем.", reading: "My ponimayem.", ipa: "mɨ pənʲɪˈmajəm", bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "понимаем", base: "понимать", reading: "ponimat'" }] }
+  - id: "ru-0522"
+    target: "делать"
+    reading: "delat'"
+    ipa: "ˈdʲelətʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Что ты делаешь?", reading: "Chto ty delayesh'?", ipa: "ʂto tɨ ˈdʲeləjəʂ", bases: [{ word: "Что", base: "что", reading: "chto" }, { word: "ты", base: "ты", reading: "ty" }, { word: "делаешь", base: "делать", reading: "delat'" }] }
+      - { target: "Мы делаем хлеб.", reading: "My delayem khleb.", ipa: "mɨ ˈdʲeləjəm xlʲep", bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "делаем", base: "делать", reading: "delat'" }, { word: "хлеб", ref: "ru-0419" }] }
+  - id: "ru-0523"
+    target: "работать"
+    reading: "rabotat'"
+    ipa: "rɐˈbotətʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Мы работаем здесь.", reading: "My rabotayem zdes'.", ipa: "mɨ rɐˈbotəjəm zdʲesʲ", bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "работаем", base: "работать", reading: "rabotat'" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }
+      - { target: "Он работает.", reading: "On rabotayet.", ipa: "on rɐˈbotəjət", bases: [{ word: "Он", base: "он", reading: "on" }, { word: "работает", base: "работать", reading: "rabotat'" }] }
+  - id: "ru-0524"
+    target: "читать"
+    reading: "chitat'"
+    ipa: "tɕɪˈtatʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Вы читаете?", reading: "Vy chitayete?", ipa: "vɨ tɕɪˈtajətʲɪ", bases: [{ word: "Вы", ref: "ru-0004" }, { word: "читаете", base: "читать", reading: "chitat'" }] }
+      - { target: "Я читаю.", reading: "Ya chitayu.", ipa: "ja tɕɪˈtajʊ", bases: [{ word: "Я", ref: "ru-0003" }, { word: "читаю", base: "читать", reading: "chitat'" }] }
+  - id: "ru-0525"
+    target: "говорить"
+    reading: "govorit'"
+    ipa: "ɡəvɐˈrʲitʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Они говорят.", reading: "Oni govoryat.", ipa: "ɐˈnʲi ɡəvɐˈrʲat", bases: [{ word: "Они", base: "они", reading: "oni" }, { word: "говорят", base: "говорить", reading: "govorit'" }] }
+      - { target: "Ты говоришь?", reading: "Ty govorish'?", ipa: "tɨ ɡəvɐˈrʲiʂ", bases: [{ word: "Ты", base: "ты", reading: "ty" }, { word: "говоришь", base: "говорить", reading: "govorit'" }] }
+  - id: "ru-0526"
+    target: "любить"
+    reading: "lyubit'"
+    ipa: "lʲʊˈbʲitʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Я люблю чай.", reading: "Ya lyublyu chay.", ipa: "ja lʲʊˈblʲu tɕaj", bases: [{ word: "Я", ref: "ru-0003" }, { word: "люблю", base: "любить", reading: "lyubit'" }, { word: "чай", ref: "ru-0423" }] }
+      - { target: "Мы любим хлеб.", reading: "My lyubim khleb.", ipa: "mɨ ˈlʲubʲɪm xlʲep", bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "любим", base: "любить", reading: "lyubit'" }, { word: "хлеб", ref: "ru-0419" }] }
+  - id: "ru-0527"
+    target: "хотеть"
+    reading: "khotet'"
+    ipa: "xɐˈtʲetʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Я хочу чай.", reading: "Ya khochu chay.", ipa: "ja xɐˈtɕu tɕaj", bases: [{ word: "Я", ref: "ru-0003" }, { word: "хочу", base: "хотеть", reading: "khotet'" }, { word: "чай", ref: "ru-0423" }] }
+      - { target: "Они хотят хлеб.", reading: "Oni khotyat khleb.", ipa: "ɐˈnʲi xɐˈtʲat xlʲep", bases: [{ word: "Они", base: "они", reading: "oni" }, { word: "хотят", base: "хотеть", reading: "khotet'" }, { word: "хлеб", ref: "ru-0419" }] }
+  - id: "ru-0528"
+    target: "мочь"
+    reading: "moch'"
+    ipa: "motɕ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Ты можешь читать.", reading: "Ty mozhesh' chitat'.", ipa: "tɨ ˈmoʐəʂ tɕɪˈtatʲ", bases: [{ word: "Ты", base: "ты", reading: "ty" }, { word: "можешь", base: "мочь", reading: "moch'" }, { word: "читать", ref: "ru-0524" }] }
+      - { target: "Я могу говорить.", reading: "Ya mogu govorit'.", ipa: "ja mɐˈɡu ɡəvɐˈrʲitʲ", bases: [{ word: "Я", ref: "ru-0003" }, { word: "могу", base: "мочь", reading: "moch'" }, { word: "говорить", ref: "ru-0525" }] }
+  - id: "ru-0529"
+    target: "жить"
+    reading: "zhit'"
+    ipa: "ʐɨtʲ"
+    pos: "verb"
+    tags: ["grammar", "present"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Я живу здесь.", reading: "Ya zhivu zdes'.", ipa: "ja ʐɨˈvu zdʲesʲ", bases: [{ word: "Я", ref: "ru-0003" }, { word: "живу", base: "жить", reading: "zhit'" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }
+      - { target: "Мы живём здесь.", reading: "My zhivyom zdes'.", ipa: "mɨ ʐɨˈvʲom zdʲesʲ", bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "живём", base: "жить", reading: "zhit'" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }

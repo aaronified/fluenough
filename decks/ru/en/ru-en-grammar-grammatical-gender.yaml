@@ -1,0 +1,34 @@
+schema: 1
+id: "ru-en-grammar-grammatical-gender"
+kind: "layer"
+core: "ru-grammar-grammatical-gender"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Gender: masculine, feminine and neuter"
+license: "CC-BY-SA-4.0"
+description: "16 nouns, each with this, my and your: the pronoun changes with the noun's gender. Masculine nouns take этот (etot), мой (moy) and твой (tvoy), feminine nouns take эта (eta), моя (moya) and твоя (tvoya), and neuter nouns take это (eto), моё (moyo) and твоё (tvoyo). Not yet checked by a Russian speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Gender: masculine, feminine and neuter"
+  slot_name: "form"
+  slots:
+    "this": "this (этот (etot), эта (eta), это (eto))"
+    "my": "my (мой (moy), моя (moya), моё (moyo))"
+    "your": "your, one person (твой (tvoy), твоя (tvoya), твоё (tvoyo))"
+  entries:
+    "brat": "brother (masculine, a consonant)"
+    "stol": "table (masculine, a consonant)"
+    "dom": "house (masculine, a consonant)"
+    "drug": "friend (masculine, a consonant)"
+    "den": "day (masculine, a soft sign)"
+    "papa": "dad (masculine, ends in а (a))"
+    "dyadya": "uncle (masculine, ends in я (ya))"
+    "zhena": "wife (feminine, ends in а (a))"
+    "sestra": "sister (feminine, ends in а (a))"
+    "voda": "water (feminine, ends in а (a))"
+    "semya": "family (feminine, ends in я (ya))"
+    "noch": "night (feminine, a soft sign)"
+    "mat": "mother (feminine, a soft sign)"
+    "moloko": "milk (neuter, ends in о (o))"
+    "okno": "window (neuter, ends in о (o))"
+    "more": "sea (neuter, ends in е (ye))"
+  notes: "Every Russian noun has a gender: masculine, feminine or neuter. The ending of the noun in the nominative shows it for most nouns. Masculine: a consonant (брат (brat), стол (stol)), or ь (soft sign) (день (den')). Feminine: а (a) or я (ya) (жена (zhena), семья (sem'ya)), or ь (soft sign) (ночь (noch'), мать (mat')). Neuter: о (o) or е (ye) (окно (okno), море (more)). Two groups need care. A few nouns that name men end in а (a) or я (ya) and are masculine: папа (papa) and дядя (dyadya). And a noun in ь (soft sign) can be masculine or feminine, so it is learnt with the word: день (den') is masculine and ночь (noch') is feminine. The words for this, my and your agree with the noun they go with: этот (etot) мой (moy) твой (tvoy) with a masculine noun, эта (eta) моя (moya) твоя (tvoya) with a feminine one, это (eto) моё (moyo) твоё (tvoyo) with a neuter one."

@@ -1,0 +1,61 @@
+# Unit 24 (cases 1). Nouns the case tables need that no earlier unit teaches. Sources read: en.wikipedia.org 'Russian grammar' (declension tables, locative) and each word's en.wiktionary.org entry (stress, gender).
+schema: 1
+id: "ru-grammar-cases-1-words"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ru-0580"
+    target: "книга"
+    reading: "kniga"
+    ipa: "ˈknʲiɡə"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это книга.", reading: "Eto kniga.", ipa: "ˈɛtə ˈknʲiɡə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "книга", base: "книга", reading: "kniga" }] }
+      - { target: "Я читаю книгу.", reading: "Ya chitayu knigu.", ipa: "ja tɕɪˈtajʊ ˈknʲiɡʊ", bases: [{ word: "Я", ref: "ru-0003" }, { word: "читаю", ref: "ru-0524" }, { word: "книгу", base: "книга", reading: "kniga" }] }
+  - id: "ru-0581"
+    target: "школа"
+    reading: "shkola"
+    ipa: "ˈʂkolə"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это школа.", reading: "Eto shkola.", ipa: "ˈɛtə ˈʂkolə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "школа", base: "школа", reading: "shkola" }] }
+      - { target: "Сестра в школе.", reading: "Sestra v shkole.", ipa: "sʲɪˈstra f ˈʂkolʲɪ", bases: [{ word: "Сестра", ref: "ru-0465" }, { word: "в", base: "в", reading: "v" }, { word: "школе", base: "школа", reading: "shkola" }] }
+  - id: "ru-0582"
+    target: "город"
+    reading: "gorod"
+    ipa: "ˈɡorət"
+    pos: "noun"
+    gender: "m"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это город.", reading: "Eto gorod.", ipa: "ˈɛtə ˈɡorət", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "город", base: "город", reading: "gorod" }] }
+      - { target: "Мы живём в городе.", reading: "My zhivyom v gorode.", ipa: "mɨ ʐɨˈvʲom f ˈɡorədʲɪ", bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "живём", ref: "ru-0529" }, { word: "в", base: "в", reading: "v" }, { word: "городе", base: "город", reading: "gorod" }] }
+  - id: "ru-0583"
+    target: "улица"
+    reading: "ulitsa"
+    ipa: "ˈulʲɪtsə"
+    pos: "noun"
+    gender: "f"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wikipedia.org/wiki/Russian_grammar" }
+    bases: "self"
+    examples:
+      - { target: "Это улица.", reading: "Eto ulitsa.", ipa: "ˈɛtə ˈulʲɪtsə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "улица", base: "улица", reading: "ulitsa" }] }
+      - { target: "Брат на улице.", reading: "Brat na ulitse.", ipa: "brat nə ˈulʲɪtsə", bases: [{ word: "Брат", ref: "ru-0400" }, { word: "на", base: "на", reading: "na" }, { word: "улице", base: "улица", reading: "ulitsa" }] }

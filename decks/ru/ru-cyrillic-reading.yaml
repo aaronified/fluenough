@@ -1,0 +1,209 @@
+# Unit 8 of the Russian A1 path (reading and spelling). Sources read: en.wikipedia.org 'Russian alphabet' (hard and soft vowel letters, the soft sign, й, ж ш ц always hard, ч щ й always soft, the 1708 э) and 'Russian phonology'.
+# The reading and IPA of each syllable come from tools/transcribe.py, never by hand. The spelling rules for жи ши and ча ща чу щу are the builder's, listed in docs/review-queue/ru.md for a reviewer.
+schema: 1
+id: "ru-cyrillic-reading"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "ru-0340"
+    target: "та"
+    reading: "ta"
+    ipa: "ta"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0341", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0341"
+    target: "тя"
+    reading: "tya"
+    ipa: "tʲa"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0340", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0342"
+    target: "тэ"
+    reading: "te"
+    ipa: "tɛ"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0343", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0343"
+    target: "те"
+    reading: "te"
+    ipa: "tʲe"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0342", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0344"
+    target: "то"
+    reading: "to"
+    ipa: "to"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0345", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0345"
+    target: "тё"
+    reading: "tyo"
+    ipa: "tʲo"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0344", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0346"
+    target: "ту"
+    reading: "tu"
+    ipa: "tu"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0347", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0347"
+    target: "тю"
+    reading: "tyu"
+    ipa: "tʲu"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0346", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0348"
+    target: "ты"
+    reading: "ty"
+    ipa: "tɨ"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0349", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0349"
+    target: "ти"
+    reading: "ti"
+    ipa: "tʲi"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "pair", kind: "pair", ref: "ru-0348", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0350"
+    target: "ть"
+    reading: "t'"
+    ipa: "tʲ"
+    tags: ["soft-sign"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0351"
+    target: "ль"
+    reading: "l'"
+    ipa: "lʲ"
+    tags: ["soft-sign"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0352"
+    target: "нь"
+    reading: "n'"
+    ipa: "nʲ"
+    tags: ["soft-sign"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0353"
+    target: "ай"
+    reading: "ay"
+    ipa: "aj"
+    tags: ["glide"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0354"
+    target: "ой"
+    reading: "oy"
+    ipa: "oj"
+    tags: ["glide"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0355"
+    target: "уй"
+    reading: "uy"
+    ipa: "uj"
+    tags: ["glide"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0356"
+    target: "ый"
+    reading: "y"
+    ipa: "ɨj"
+    tags: ["glide"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0357"
+    target: "ий"
+    reading: "iy"
+    ipa: "ij"
+    tags: ["glide"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0358"
+    target: "жи"
+    reading: "zhi"
+    ipa: "ʐɨ"
+    tags: ["hushing", "spelling-rule"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0359"
+    target: "ши"
+    reading: "shi"
+    ipa: "ʂɨ"
+    tags: ["hushing", "spelling-rule"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0360"
+    target: "ци"
+    reading: "tsi"
+    ipa: "tsɨ"
+    tags: ["hushing", "spelling-rule"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0361"
+    target: "ча"
+    reading: "cha"
+    ipa: "tɕa"
+    tags: ["hushing", "spelling-rule"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0362"
+    target: "ща"
+    reading: "shcha"
+    ipa: "ɕːa"
+    tags: ["hushing", "spelling-rule"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0363"
+    target: "чу"
+    reading: "chu"
+    ipa: "tɕu"
+    tags: ["hushing", "spelling-rule"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0364"
+    target: "щу"
+    reading: "shchu"
+    ipa: "ɕːu"
+    tags: ["hushing", "spelling-rule"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0365"
+    target: "же"
+    reading: "zhe"
+    ipa: "ʐɛ"
+    tags: ["hushing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0366"
+    target: "ше"
+    reading: "she"
+    ipa: "ʂɛ"
+    tags: ["hushing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }

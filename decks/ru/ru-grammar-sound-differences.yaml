@@ -1,0 +1,76 @@
+# Unit 2 grammar topic sound-differences. Sources read: en.wikipedia.org 'Russian phonology' (hard and soft consonant pairs, the vowel letters as hard and soft pairs) and the Wiktionary entries of the ten words. Rows use only words the unit teaches (ru-sound-differences).
+schema: 1
+id: "ru-grammar-sound-differences"
+part: "core"
+kind: "grammar"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["hard", "soft"]
+  entries:
+    - lemma: "брат"
+      key: "brat"
+      reading: "brat"
+      ipa: "brat"
+      forms:
+        "hard": "брат"
+        "soft": "брать"
+      readings:
+        "hard": "brat"
+        "soft": "brat'"
+      ipas:
+        "hard": "brat"
+        "soft": "bratʲ"
+    - lemma: "мат"
+      key: "mat"
+      reading: "mat"
+      ipa: "mat"
+      forms:
+        "hard": "мат"
+        "soft": "мать"
+      readings:
+        "hard": "mat"
+        "soft": "mat'"
+      ipas:
+        "hard": "mat"
+        "soft": "matʲ"
+    - lemma: "угол"
+      key: "ugol"
+      reading: "ugol"
+      ipa: "ˈuɡəl"
+      forms:
+        "hard": "угол"
+        "soft": "уголь"
+      readings:
+        "hard": "ugol"
+        "soft": "ugol'"
+      ipas:
+        "hard": "ˈuɡəl"
+        "soft": "ˈuɡəlʲ"
+    - lemma: "лук"
+      key: "luk"
+      reading: "luk"
+      ipa: "luk"
+      forms:
+        "hard": "лук"
+        "soft": "люк"
+      readings:
+        "hard": "luk"
+        "soft": "lyuk"
+      ipas:
+        "hard": "luk"
+        "soft": "lʲuk"
+    - lemma: "быть"
+      key: "byt"
+      reading: "byt'"
+      ipa: "bɨtʲ"
+      forms:
+        "hard": "быть"
+        "soft": "бить"
+      readings:
+        "hard": "byt'"
+        "soft": "bit'"
+      ipas:
+        "hard": "bɨtʲ"
+        "soft": "bʲitʲ"

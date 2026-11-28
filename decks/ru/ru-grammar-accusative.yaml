@@ -1,0 +1,167 @@
+# Unit 24 grammar topic accusative. Sources read: en.wikipedia.org 'Russian grammar' (the declension tables: accusative of feminine nouns in а or я is -у or -ю; of masculine nouns and of the plural 'N or G', that is the nominative or the genitive; of neuter nouns 'N or G'; of feminine nouns in ь the nominative) and the en.wiktionary.org entries of the nouns (stress).
+schema: 1
+id: "ru-grammar-accusative"
+part: "core"
+kind: "grammar"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["nominative", "accusative"]
+  entries:
+    - lemma: "стол"
+      key: "stol"
+      reading: "stol"
+      ipa: "stol"
+      forms:
+        "nominative": "стол"
+        "accusative": "стол"
+      readings:
+        "nominative": "stol"
+        "accusative": "stol"
+      ipas:
+        "nominative": "stol"
+        "accusative": "stol"
+    - lemma: "дом"
+      key: "dom"
+      reading: "dom"
+      ipa: "dom"
+      forms:
+        "nominative": "дом"
+        "accusative": "дом"
+      readings:
+        "nominative": "dom"
+        "accusative": "dom"
+      ipas:
+        "nominative": "dom"
+        "accusative": "dom"
+    - lemma: "брат"
+      key: "brat"
+      reading: "brat"
+      ipa: "brat"
+      forms:
+        "nominative": "брат"
+        "accusative": "брата"
+      readings:
+        "nominative": "brat"
+        "accusative": "brata"
+      ipas:
+        "nominative": "brat"
+        "accusative": "ˈbratə"
+    - lemma: "друг"
+      key: "drug"
+      reading: "drug"
+      ipa: "druk"
+      forms:
+        "nominative": "друг"
+        "accusative": "друга"
+      readings:
+        "nominative": "drug"
+        "accusative": "druga"
+      ipas:
+        "nominative": "druk"
+        "accusative": "ˈdruɡə"
+    - lemma: "книга"
+      key: "kniga"
+      reading: "kniga"
+      ipa: "ˈknʲiɡə"
+      forms:
+        "nominative": "книга"
+        "accusative": "книгу"
+      readings:
+        "nominative": "kniga"
+        "accusative": "knigu"
+      ipas:
+        "nominative": "ˈknʲiɡə"
+        "accusative": "ˈknʲiɡʊ"
+    - lemma: "вода"
+      key: "voda"
+      reading: "voda"
+      ipa: "vɐˈda"
+      forms:
+        "nominative": "вода"
+        "accusative": "воду"
+      readings:
+        "nominative": "voda"
+        "accusative": "vodu"
+      ipas:
+        "nominative": "vɐˈda"
+        "accusative": "ˈvodʊ"
+    - lemma: "жена"
+      key: "zhena"
+      reading: "zhena"
+      ipa: "ʐɨˈna"
+      forms:
+        "nominative": "жена"
+        "accusative": "жену"
+      readings:
+        "nominative": "zhena"
+        "accusative": "zhenu"
+      ipas:
+        "nominative": "ʐɨˈna"
+        "accusative": "ʐɨˈnu"
+    - lemma: "сестра"
+      key: "sestra"
+      reading: "sestra"
+      ipa: "sʲɪˈstra"
+      forms:
+        "nominative": "сестра"
+        "accusative": "сестру"
+      readings:
+        "nominative": "sestra"
+        "accusative": "sestru"
+      ipas:
+        "nominative": "sʲɪˈstra"
+        "accusative": "sʲɪˈstru"
+    - lemma: "семья"
+      key: "semya"
+      reading: "sem'ya"
+      ipa: "sʲɪˈmʲja"
+      forms:
+        "nominative": "семья"
+        "accusative": "семью"
+      readings:
+        "nominative": "sem'ya"
+        "accusative": "sem'yu"
+      ipas:
+        "nominative": "sʲɪˈmʲja"
+        "accusative": "sʲɪˈmʲju"
+    - lemma: "ночь"
+      key: "noch"
+      reading: "noch'"
+      ipa: "notɕ"
+      forms:
+        "nominative": "ночь"
+        "accusative": "ночь"
+      readings:
+        "nominative": "noch'"
+        "accusative": "noch'"
+      ipas:
+        "nominative": "notɕ"
+        "accusative": "notɕ"
+    - lemma: "окно"
+      key: "okno"
+      reading: "okno"
+      ipa: "ɐˈkno"
+      forms:
+        "nominative": "окно"
+        "accusative": "окно"
+      readings:
+        "nominative": "okno"
+        "accusative": "okno"
+      ipas:
+        "nominative": "ɐˈkno"
+        "accusative": "ɐˈkno"
+    - lemma: "молоко"
+      key: "moloko"
+      reading: "moloko"
+      ipa: "məlɐˈko"
+      forms:
+        "nominative": "молоко"
+        "accusative": "молоко"
+      readings:
+        "nominative": "moloko"
+        "accusative": "moloko"
+      ipas:
+        "nominative": "məlɐˈko"
+        "accusative": "məlɐˈko"

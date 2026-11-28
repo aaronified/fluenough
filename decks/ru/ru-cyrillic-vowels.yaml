@@ -1,0 +1,98 @@
+# Unit 7 of the Russian A1 path (the letters of the alphabet). Sources read: en.wikipedia.org 'Russian alphabet' (the hard and soft vowel pairs, always-hard ж ш ц, always-soft й ч щ, ё, ъ and ь) and 'Russian phonology'.
+# The reading and IPA of a letter come from tools/transcribe.py (a consonant by its syllable with а, the а then taken off), never by hand.
+schema: 1
+id: "ru-cyrillic-vowels"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "ru-0300"
+    target: "а"
+    reading: "a"
+    ipa: "a"
+    pos: "letter"
+    tags: ["vowel", "hard-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0301"
+    target: "я"
+    reading: "ya"
+    ipa: "ja"
+    pos: "letter"
+    tags: ["vowel", "soft-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-a", kind: "lookalike", ref: "ru-0300", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0302"
+    target: "э"
+    reading: "e"
+    ipa: "ɛ"
+    pos: "letter"
+    tags: ["vowel", "hard-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-e", kind: "lookalike", ref: "ru-0303", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0303"
+    target: "е"
+    reading: "ye"
+    ipa: "je"
+    pos: "letter"
+    tags: ["vowel", "soft-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-ye", kind: "lookalike", ref: "ru-0305", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0304"
+    target: "о"
+    reading: "o"
+    ipa: "o"
+    pos: "letter"
+    tags: ["vowel", "hard-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0305"
+    target: "ё"
+    reading: "yo"
+    ipa: "jo"
+    pos: "letter"
+    tags: ["vowel", "soft-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-e", kind: "lookalike", ref: "ru-0303", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0306"
+    target: "у"
+    reading: "u"
+    ipa: "u"
+    pos: "letter"
+    tags: ["vowel", "hard-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "latin", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0307"
+    target: "ю"
+    reading: "yu"
+    ipa: "ju"
+    pos: "letter"
+    tags: ["vowel", "soft-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-u", kind: "lookalike", ref: "ru-0306", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0308"
+    target: "ы"
+    reading: "y"
+    ipa: "ɨ"
+    pos: "letter"
+    tags: ["vowel", "hard-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-i", kind: "lookalike", ref: "ru-0309", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+  - id: "ru-0309"
+    target: "и"
+    reading: "i"
+    ipa: "i"
+    pos: "letter"
+    tags: ["vowel", "soft-vowel"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }
+      - { id: "look-y", kind: "lookalike", ref: "ru-0308", source: "https://en.wikipedia.org/wiki/Russian_alphabet" }

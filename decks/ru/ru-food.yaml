@@ -1,0 +1,635 @@
+schema: 1
+id: "ru-food"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ru-2280"
+    target: "мясо"
+    reading: "myaso"
+    ipa: "ˈmʲasə"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это мясо.", reading: "eto myaso.", ipa: "ˈɛtə ˈmʲasə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мясо", base: "мясо", reading: "myaso" }] }
+  - id: "ru-2281"
+    target: "рыба"
+    reading: "ryba"
+    ipa: "ˈrɨbə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это рыба.", reading: "eto ryba.", ipa: "ˈɛtə ˈrɨbə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "рыба", base: "рыба", reading: "ryba" }] }
+  - id: "ru-2282"
+    target: "курица"
+    reading: "kuritsa"
+    ipa: "ˈkurʲɪtsə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это курица.", reading: "eto kuritsa.", ipa: "ˈɛtə ˈkurʲɪtsə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "курица", base: "курица", reading: "kuritsa" }] }
+  - id: "ru-2283"
+    target: "яйцо"
+    reading: "yaytso"
+    ipa: "jɪjˈtso"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это яйцо.", reading: "eto yaytso.", ipa: "ˈɛtə jɪjˈtso", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "яйцо", base: "яйцо", reading: "yaytso" }] }
+  - id: "ru-2284"
+    target: "сыр"
+    reading: "syr"
+    ipa: "sɨr"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это сыр.", reading: "eto syr.", ipa: "ˈɛtə sɨr", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сыр", base: "сыр", reading: "syr" }] }
+  - id: "ru-2285"
+    target: "масло"
+    reading: "maslo"
+    ipa: "ˈmaslə"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это масло.", reading: "eto maslo.", ipa: "ˈɛtə ˈmaslə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "масло", base: "масло", reading: "maslo" }] }
+  - id: "ru-2286"
+    target: "сахар"
+    reading: "sakhar"
+    ipa: "ˈsaxər"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это сахар.", reading: "eto sakhar.", ipa: "ˈɛtə ˈsaxər", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сахар", base: "сахар", reading: "sakhar" }] }
+  - id: "ru-2287"
+    target: "соль"
+    reading: "sol'"
+    ipa: "solʲ"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это соль.", reading: "eto sol'.", ipa: "ˈɛtə solʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "соль", base: "соль", reading: "sol'" }] }
+  - id: "ru-2288"
+    target: "перец"
+    reading: "perets"
+    ipa: "ˈpʲerʲɪts"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это перец.", reading: "eto perets.", ipa: "ˈɛtə ˈpʲerʲɪts", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "перец", base: "перец", reading: "perets" }] }
+  - id: "ru-2289"
+    target: "яблоко"
+    reading: "yabloko"
+    ipa: "ˈjabləkə"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это яблоко.", reading: "eto yabloko.", ipa: "ˈɛtə ˈjabləkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "яблоко", base: "яблоко", reading: "yabloko" }] }
+  - id: "ru-2290"
+    target: "банан"
+    reading: "banan"
+    ipa: "bɐˈnan"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это банан.", reading: "eto banan.", ipa: "ˈɛtə bɐˈnan", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "банан", base: "банан", reading: "banan" }] }
+  - id: "ru-2291"
+    target: "апельсин"
+    reading: "apelsin"
+    ipa: "ɐpʲɪlʲˈsʲin"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это апельсин.", reading: "eto apelsin.", ipa: "ˈɛtə ɐpʲɪlʲˈsʲin", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "апельсин", base: "апельсин", reading: "apelsin" }] }
+  - id: "ru-2292"
+    target: "картошка"
+    reading: "kartoshka"
+    ipa: "kɐrˈtoʂkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это картошка.", reading: "eto kartoshka.", ipa: "ˈɛtə kɐrˈtoʂkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "картошка", base: "картошка", reading: "kartoshka" }] }
+  - id: "ru-2293"
+    target: "морковь"
+    reading: "morkov'"
+    ipa: "mɐrˈkofʲ"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это морковь.", reading: "eto morkov'.", ipa: "ˈɛtə mɐrˈkofʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "морковь", base: "морковь", reading: "morkov'" }] }
+  - id: "ru-2294"
+    target: "помидор"
+    reading: "pomidor"
+    ipa: "pəmʲɪˈdor"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это помидор.", reading: "eto pomidor.", ipa: "ˈɛtə pəmʲɪˈdor", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "помидор", base: "помидор", reading: "pomidor" }] }
+  - id: "ru-2295"
+    target: "огурец"
+    reading: "ogurets"
+    ipa: "ɐɡʊˈrʲets"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это огурец.", reading: "eto ogurets.", ipa: "ˈɛtə ɐɡʊˈrʲets", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "огурец", base: "огурец", reading: "ogurets" }] }
+  - id: "ru-2296"
+    target: "чеснок"
+    reading: "chesnok"
+    ipa: "tɕɪˈsnok"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это чеснок.", reading: "eto chesnok.", ipa: "ˈɛtə tɕɪˈsnok", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "чеснок", base: "чеснок", reading: "chesnok" }] }
+  - id: "ru-2297"
+    target: "капуста"
+    reading: "kapusta"
+    ipa: "kɐˈpustə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это капуста.", reading: "eto kapusta.", ipa: "ˈɛtə kɐˈpustə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "капуста", base: "капуста", reading: "kapusta" }] }
+  - id: "ru-2298"
+    target: "суп"
+    reading: "sup"
+    ipa: "sup"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это суп.", reading: "eto sup.", ipa: "ˈɛtə sup", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "суп", base: "суп", reading: "sup" }] }
+  - id: "ru-2299"
+    target: "салат"
+    reading: "salat"
+    ipa: "sɐˈlat"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это салат.", reading: "eto salat.", ipa: "ˈɛtə sɐˈlat", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "салат", base: "салат", reading: "salat" }] }
+  - id: "ru-2300"
+    target: "каша"
+    reading: "kasha"
+    ipa: "ˈkaʂə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это каша.", reading: "eto kasha.", ipa: "ˈɛtə ˈkaʂə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "каша", base: "каша", reading: "kasha" }] }
+  - id: "ru-2301"
+    target: "рис"
+    reading: "ris"
+    ipa: "rʲis"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это рис.", reading: "eto ris.", ipa: "ˈɛtə rʲis", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "рис", base: "рис", reading: "ris" }] }
+  - id: "ru-2302"
+    target: "макароны"
+    reading: "makarony"
+    ipa: "məkɐˈronɨ"
+    pos: "noun"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-2303"
+    target: "мороженое"
+    reading: "morozhenoye"
+    ipa: "mɐˈroʐənəjə"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это мороженое.", reading: "eto morozhenoye.", ipa: "ˈɛtə mɐˈroʐənəjə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мороженое", base: "мороженое", reading: "morozhenoye" }] }
+  - id: "ru-2304"
+    target: "торт"
+    reading: "tort"
+    ipa: "tort"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это торт.", reading: "eto tort.", ipa: "ˈɛtə tort", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "торт", base: "торт", reading: "tort" }] }
+  - id: "ru-2305"
+    target: "печенье"
+    reading: "pechen'ye"
+    ipa: "pʲɪˈtɕenʲjɪ"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-2306"
+    target: "шоколад"
+    reading: "shokolad"
+    ipa: "ʂəkɐˈlat"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это шоколад.", reading: "eto shokolad.", ipa: "ˈɛtə ʂəkɐˈlat", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "шоколад", base: "шоколад", reading: "shokolad" }] }
+  - id: "ru-2307"
+    target: "конфета"
+    reading: "konfeta"
+    ipa: "kɐnˈfʲetə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это конфета.", reading: "eto konfeta.", ipa: "ˈɛtə kɐnˈfʲetə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "конфета", base: "конфета", reading: "konfeta" }] }
+  - id: "ru-2308"
+    target: "кофе"
+    reading: "kofe"
+    ipa: "ˈkofʲɪ"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это кофе.", reading: "eto kofe.", ipa: "ˈɛtə ˈkofʲɪ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "кофе", base: "кофе", reading: "kofe" }] }
+  - id: "ru-2309"
+    target: "сок"
+    reading: "sok"
+    ipa: "sok"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это сок.", reading: "eto sok.", ipa: "ˈɛtə sok", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сок", base: "сок", reading: "sok" }] }
+  - id: "ru-2310"
+    target: "пиво"
+    reading: "pivo"
+    ipa: "ˈpʲivə"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это пиво.", reading: "eto pivo.", ipa: "ˈɛtə ˈpʲivə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "пиво", base: "пиво", reading: "pivo" }] }
+  - id: "ru-2311"
+    target: "вино"
+    reading: "vino"
+    ipa: "vʲɪˈno"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это вино.", reading: "eto vino.", ipa: "ˈɛtə vʲɪˈno", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "вино", base: "вино", reading: "vino" }] }
+  - id: "ru-2312"
+    target: "колбаса"
+    reading: "kolbasa"
+    ipa: "kəlbɐˈsa"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это колбаса.", reading: "eto kolbasa.", ipa: "ˈɛtə kəlbɐˈsa", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "колбаса", base: "колбаса", reading: "kolbasa" }] }
+  - id: "ru-2313"
+    target: "ветчина"
+    reading: "vetchina"
+    ipa: "vʲɪttɕɪˈna"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это ветчина.", reading: "eto vetchina.", ipa: "ˈɛtə vʲɪttɕɪˈna", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "ветчина", base: "ветчина", reading: "vetchina" }] }
+  - id: "ru-2314"
+    target: "пирог"
+    reading: "pirog"
+    ipa: "pʲɪˈrok"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это пирог.", reading: "eto pirog.", ipa: "ˈɛtə pʲɪˈrok", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "пирог", base: "пирог", reading: "pirog" }] }
+  - id: "ru-2315"
+    target: "борщ"
+    reading: "borshch"
+    ipa: "borɕː"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это борщ.", reading: "eto borshch.", ipa: "ˈɛtə borɕː", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "борщ", base: "борщ", reading: "borshch" }] }
+  - id: "ru-2316"
+    target: "пельмени"
+    reading: "pelmeni"
+    ipa: "pʲɪlʲˈmʲenʲɪ"
+    pos: "noun"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-2317"
+    target: "котлета"
+    reading: "kotleta"
+    ipa: "kɐˈtlʲetə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это котлета.", reading: "eto kotleta.", ipa: "ˈɛtə kɐˈtlʲetə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "котлета", base: "котлета", reading: "kotleta" }] }
+  - id: "ru-2318"
+    target: "бутерброд"
+    reading: "buterbrod"
+    ipa: "bʊtʲɪrˈbrot"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это бутерброд.", reading: "eto buterbrod.", ipa: "ˈɛtə bʊtʲɪrˈbrot", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "бутерброд", base: "бутерброд", reading: "buterbrod" }] }
+  - id: "ru-2319"
+    target: "йогурт"
+    reading: "yogurt"
+    ipa: "ˈjoɡʊrt"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это йогурт.", reading: "eto yogurt.", ipa: "ˈɛtə ˈjoɡʊrt", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "йогурт", base: "йогурт", reading: "yogurt" }] }
+  - id: "ru-2320"
+    target: "творог"
+    reading: "tvorog"
+    ipa: "ˈtvorək"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это творог.", reading: "eto tvorog.", ipa: "ˈɛtə ˈtvorək", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "творог", base: "творог", reading: "tvorog" }] }
+  - id: "ru-2321"
+    target: "сметана"
+    reading: "smetana"
+    ipa: "smʲɪˈtanə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это сметана.", reading: "eto smetana.", ipa: "ˈɛtə smʲɪˈtanə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сметана", base: "сметана", reading: "smetana" }] }
+  - id: "ru-2322"
+    target: "кефир"
+    reading: "kefir"
+    ipa: "kʲɪˈfʲir"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это кефир.", reading: "eto kefir.", ipa: "ˈɛtə kʲɪˈfʲir", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "кефир", base: "кефир", reading: "kefir" }] }
+  - id: "ru-2323"
+    target: "клубника"
+    reading: "klubnika"
+    ipa: "klʊˈbnʲikə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-2324"
+    target: "вишня"
+    reading: "vishnya"
+    ipa: "ˈvʲiʂnʲə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это вишня.", reading: "eto vishnya.", ipa: "ˈɛtə ˈvʲiʂnʲə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "вишня", base: "вишня", reading: "vishnya" }] }
+  - id: "ru-2325"
+    target: "груша"
+    reading: "grusha"
+    ipa: "ˈɡruʂə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это груша.", reading: "eto grusha.", ipa: "ˈɛtə ˈɡruʂə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "груша", base: "груша", reading: "grusha" }] }
+  - id: "ru-2326"
+    target: "виноград"
+    reading: "vinograd"
+    ipa: "vʲɪnɐˈɡrat"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-2327"
+    target: "арбуз"
+    reading: "arbuz"
+    ipa: "ɐrˈbus"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это арбуз.", reading: "eto arbuz.", ipa: "ˈɛtə ɐrˈbus", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "арбуз", base: "арбуз", reading: "arbuz" }] }
+  - id: "ru-2328"
+    target: "дыня"
+    reading: "dynya"
+    ipa: "ˈdɨnʲə"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это дыня.", reading: "eto dynya.", ipa: "ˈɛtə ˈdɨnʲə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "дыня", base: "дыня", reading: "dynya" }] }
+  - id: "ru-2329"
+    target: "лимон"
+    reading: "limon"
+    ipa: "lʲɪˈmon"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это лимон.", reading: "eto limon.", ipa: "ˈɛtə lʲɪˈmon", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "лимон", base: "лимон", reading: "limon" }] }
+  - id: "ru-2330"
+    target: "персик"
+    reading: "persik"
+    ipa: "ˈpʲersʲɪk"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это персик.", reading: "eto persik.", ipa: "ˈɛtə ˈpʲersʲɪk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "персик", base: "персик", reading: "persik" }] }
+  - id: "ru-2331"
+    target: "гриб"
+    reading: "grib"
+    ipa: "ɡrʲip"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это гриб.", reading: "eto grib.", ipa: "ˈɛtə ɡrʲip", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "гриб", base: "гриб", reading: "grib" }] }
+  - id: "ru-2332"
+    target: "орех"
+    reading: "orekh"
+    ipa: "ɐˈrʲex"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это орех.", reading: "eto orekh.", ipa: "ˈɛtə ɐˈrʲex", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "орех", base: "орех", reading: "orekh" }] }
+  - id: "ru-2333"
+    target: "мёд"
+    reading: "myod"
+    ipa: "mʲot"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это мёд.", reading: "eto myod.", ipa: "ˈɛtə mʲot", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мёд", base: "мёд", reading: "myod" }] }
+  - id: "ru-2334"
+    target: "завтрак"
+    reading: "zavtrak"
+    ipa: "ˈzaftrək"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это завтрак.", reading: "eto zavtrak.", ipa: "ˈɛtə ˈzaftrək", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "завтрак", base: "завтрак", reading: "zavtrak" }] }
+  - id: "ru-2335"
+    target: "обед"
+    reading: "obed"
+    ipa: "ɐˈbʲet"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это обед.", reading: "eto obed.", ipa: "ˈɛtə ɐˈbʲet", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "обед", base: "обед", reading: "obed" }] }
+  - id: "ru-2336"
+    target: "ужин"
+    reading: "uzhin"
+    ipa: "ˈuʐɨn"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это ужин.", reading: "eto uzhin.", ipa: "ˈɛtə ˈuʐɨn", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "ужин", base: "ужин", reading: "uzhin" }] }
+  - id: "ru-2337"
+    target: "блюдо"
+    reading: "blyudo"
+    ipa: "ˈblʲudə"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это блюдо.", reading: "eto blyudo.", ipa: "ˈɛtə ˈblʲudə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "блюдо", base: "блюдо", reading: "blyudo" }] }

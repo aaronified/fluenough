@@ -1,0 +1,25 @@
+schema: 1
+id: "ru-en-grammar-nominative"
+kind: "layer"
+core: "ru-grammar-nominative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The nominative: one thing and more than one"
+license: "CC-BY-SA-4.0"
+description: "Eight nouns, each in the nominative singular and in the nominative plural. The nominative is the form in the dictionary and the form of the subject."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The nominative: one thing and more than one"
+  slot_name: "number"
+  slots:
+    "singular": "one (singular)"
+    "plural": "more than one (plural)"
+  entries:
+    "stol": "table (masculine)"
+    "dom": "house (masculine, an irregular plural with the stress on the ending)"
+    "sad": "garden (masculine)"
+    "kniga": "book (feminine)"
+    "shkola": "school (feminine)"
+    "okno": "window (neuter)"
+    "drug": "friend (masculine, an irregular plural)"
+    "gorod": "city (masculine, an irregular plural with the stress on the ending)"
+  notes: "The nominative is the case of the subject, who or what does the action, and it is the form a dictionary gives. A masculine noun in a consonant adds ы (y) in the plural: стол (stol), столы (stoly). A feminine noun in а (a) changes it to ы (y) or и (i): школа (shkola), школы (shkoly); книга (kniga), книги (knigi). A neuter noun in о (o) changes it to а (a): окно (okno), окна (okna). The table of endings in Wikipedia's page on Russian grammar gives ы (y) (or и (i)) for the first two groups and а (a) (or я (ya)) for the neuter. A number of everyday nouns have irregular plurals: дом (dom) has дома (doma), город (gorod) has города (goroda), and друг (drug) has друзья (druz'ya). The stress moves in many plurals (стол (stol), столы (stoly)), so learn the plural with the word."

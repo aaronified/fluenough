@@ -1,0 +1,317 @@
+schema: 1
+id: "ru-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ru-1790"
+    target: "несколько"
+    reading: "neskolko"
+    ipa: "ˈnʲeskəlʲkə"
+    pos: "pronoun"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1791"
+    target: "половина"
+    reading: "polovina"
+    ipa: "pəlɐˈvʲinə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1792"
+    target: "пара"
+    reading: "para"
+    ipa: "ˈparə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это пара.", reading: "eto para.", ipa: "ˈɛtə ˈparə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "пара", base: "пара", reading: "para" }] }
+  - id: "ru-1793"
+    target: "сотня"
+    reading: "sotnya"
+    ipa: "ˈsotnʲə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это сотня.", reading: "eto sotnya.", ipa: "ˈɛtə ˈsotnʲə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сотня", base: "сотня", reading: "sotnya" }] }
+  - id: "ru-1794"
+    target: "тысяча"
+    reading: "tysyacha"
+    ipa: "ˈtɨsʲɪtɕə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1795"
+    target: "миллион"
+    reading: "million"
+    ipa: "mʲɪlʲːɪˈon"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1796"
+    target: "больше"
+    reading: "bolshe"
+    ipa: "ˈbolʲʂə"
+    pos: "adv"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1797"
+    target: "столько"
+    reading: "stolko"
+    ipa: "ˈstolʲkə"
+    pos: "adv"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1798"
+    target: "достаточно"
+    reading: "dostatochno"
+    ipa: "dɐˈstatətɕnə"
+    pos: "adv"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1799"
+    target: "целый"
+    reading: "tsely"
+    ipa: "ˈtsɛlɨj"
+    pos: "adj"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1800"
+    target: "полный"
+    reading: "polny"
+    ipa: "ˈpolnɨj"
+    pos: "adj"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1801"
+    target: "пустой"
+    reading: "pustoy"
+    ipa: "pʊˈstoj"
+    pos: "adj"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1802"
+    target: "десяток"
+    reading: "desyatok"
+    ipa: "dʲɪˈsʲatək"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1803"
+    target: "часть"
+    reading: "chast'"
+    ipa: "tɕastʲ"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1804"
+    target: "килограмм"
+    reading: "kilogramm"
+    ipa: "kʲɪlɐˈɡram"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это килограмм.", reading: "eto kilogramm.", ipa: "ˈɛtə kʲɪlɐˈɡram", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "килограмм", base: "килограмм", reading: "kilogramm" }] }
+  - id: "ru-1805"
+    target: "литр"
+    reading: "litr"
+    ipa: "lʲitr"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это литр.", reading: "eto litr.", ipa: "ˈɛtə lʲitr", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "литр", base: "литр", reading: "litr" }] }
+  - id: "ru-1806"
+    target: "метр"
+    reading: "metr"
+    ipa: "mʲetr"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это метр.", reading: "eto metr.", ipa: "ˈɛtə mʲetr", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "метр", base: "метр", reading: "metr" }] }
+  - id: "ru-1807"
+    target: "грамм"
+    reading: "gramm"
+    ipa: "ɡram"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это грамм.", reading: "eto gramm.", ipa: "ˈɛtə ɡram", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "грамм", base: "грамм", reading: "gramm" }] }
+  - id: "ru-1808"
+    target: "штука"
+    reading: "shtuka"
+    ipa: "ˈʂtukə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это штука.", reading: "eto shtuka.", ipa: "ˈɛtə ˈʂtukə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "штука", base: "штука", reading: "shtuka" }] }
+  - id: "ru-1809"
+    target: "пачка"
+    reading: "pachka"
+    ipa: "ˈpatɕkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это пачка.", reading: "eto pachka.", ipa: "ˈɛtə ˈpatɕkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "пачка", base: "пачка", reading: "pachka" }] }
+  - id: "ru-1810"
+    target: "кусок"
+    reading: "kusok"
+    ipa: "kʊˈsok"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это кусок.", reading: "eto kusok.", ipa: "ˈɛtə kʊˈsok", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "кусок", base: "кусок", reading: "kusok" }] }
+  - id: "ru-1811"
+    target: "ломтик"
+    reading: "lomtik"
+    ipa: "ˈlomtʲɪk"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это ломтик.", reading: "eto lomtik.", ipa: "ˈɛtə ˈlomtʲɪk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "ломтик", base: "ломтик", reading: "lomtik" }] }
+  - id: "ru-1812"
+    target: "бутылка"
+    reading: "butylka"
+    ipa: "bʊˈtɨlkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это бутылка.", reading: "eto butylka.", ipa: "ˈɛtə bʊˈtɨlkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "бутылка", base: "бутылка", reading: "butylka" }] }
+  - id: "ru-1813"
+    target: "стакан"
+    reading: "stakan"
+    ipa: "stɐˈkan"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это стакан.", reading: "eto stakan.", ipa: "ˈɛtə stɐˈkan", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "стакан", base: "стакан", reading: "stakan" }] }
+  - id: "ru-1814"
+    target: "чашка"
+    reading: "chashka"
+    ipa: "ˈtɕaʂkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это чашка.", reading: "eto chashka.", ipa: "ˈɛtə ˈtɕaʂkə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "чашка", base: "чашка", reading: "chashka" }] }
+  - id: "ru-1815"
+    target: "сумма"
+    reading: "summa"
+    ipa: "ˈsumːə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это сумма.", reading: "eto summa.", ipa: "ˈɛtə ˈsumːə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сумма", base: "сумма", reading: "summa" }] }
+  - id: "ru-1816"
+    target: "примерно"
+    reading: "primerno"
+    ipa: "prʲɪˈmʲernə"
+    pos: "adv"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+  - id: "ru-1817"
+    target: "порция"
+    reading: "portsiya"
+    ipa: "ˈportsɨjə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это порция.", reading: "eto portsiya.", ipa: "ˈɛtə ˈportsɨjə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "порция", base: "порция", reading: "portsiya" }] }
+  - id: "ru-1818"
+    target: "сантиметр"
+    reading: "santimetr"
+    ipa: "səntʲɪˈmʲetr"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это сантиметр.", reading: "eto santimetr.", ipa: "ˈɛtə səntʲɪˈmʲetr", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сантиметр", base: "сантиметр", reading: "santimetr" }] }
+  - id: "ru-1819"
+    target: "километр"
+    reading: "kilometr"
+    ipa: "kʲɪlɐˈmʲetr"
+    pos: "noun"
+    gender: "m"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это километр.", reading: "eto kilometr.", ipa: "ˈɛtə kʲɪlɐˈmʲetr", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "километр", base: "километр", reading: "kilometr" }] }
+  - id: "ru-1820"
+    target: "дюжина"
+    reading: "dyuzhina"
+    ipa: "ˈdʲuʐɨnə"
+    pos: "noun"
+    gender: "f"
+    tags: ["quantities"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Это дюжина.", reading: "eto dyuzhina.", ipa: "ˈɛtə ˈdʲuʐɨnə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "дюжина", base: "дюжина", reading: "dyuzhina" }] }

@@ -1,0 +1,20 @@
+schema: 1
+id: "ru-en-grammar-stress"
+kind: "layer"
+core: "ru-grammar-stress"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Stress changes the word"
+license: "CC-BY-SA-4.0"
+description: "Three words that are spelled the same and said with the stress on a different syllable, with a different meaning. Each row gives the word with the stress on the first syllable and with the stress on the last."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Stress changes the word"
+  slot_name: "stress"
+  slots:
+    "first": "stress on the first syllable"
+    "last": "stress on the last syllable"
+  entries:
+    "zamok": "castle (first) and lock (last)"
+    "muka": "torment (first) and flour (last)"
+    "atlas": "atlas (first) and satin (last)"
+  notes: "Russian stress is free: it can fall on any syllable and it can move when the word changes its ending, so it has to be learnt with each word. A written word does not mark it, except in dictionaries and in books for learners, which put an acute accent over the stressed vowel. Stress changes the sound of the vowels: a stressed vowel is clear, and an unstressed о (o) or а (a) is weak and said like a short 'a'. It can also change the meaning: замок (zamok) is a castle with the stress on the first syllable and a lock with the stress on the last. In this course the cards' text has no accent mark, and the stress is in the IPA of every card, with the mark ˈ before the stressed syllable. Only this table writes the accent, so that its two forms differ."

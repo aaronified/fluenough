@@ -1,0 +1,27 @@
+schema: 1
+id: "ru-en-grammar-prepositional-locative"
+kind: "layer"
+core: "ru-grammar-prepositional-locative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The prepositional: in and on a place"
+license: "CC-BY-SA-4.0"
+description: "Ten nouns after в (v), in and на (na), on, at. The prepositional case is the case after в (v) and на (na) for a place, and a few nouns have a stressed ending у (u) instead of е (ye)."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The prepositional: in and on a place"
+  slot_name: "preposition"
+  slots:
+    "v": "in, inside (в (v))"
+    "na": "on, at (на (na))"
+  entries:
+    "dom": "house"
+    "stol": "table"
+    "sad": "garden (the ending у (u) is stressed)"
+    "ugol": "corner (the ending у (u) is stressed)"
+    "shkola": "school"
+    "okno": "window"
+    "more": "sea"
+    "gorod": "city"
+    "ulitsa": "street"
+    "kniga": "book"
+  notes: "To say where something is, Russian uses в (v), in, inside or на (na), on, at with the prepositional case. Most nouns take the ending е (ye): дом (dom), в доме (v dome); школа (shkola), в школе (v shkole); окно (okno), в окне (v okne). Wikipedia's declension tables give е (ye) for masculine, feminine and neuter nouns in the singular. A few masculine nouns have a second form, the locative, with a stressed ending у (u) after в (v) and на (na): сад (sad), в саду (v sadu); угол (ugol), в углу (v uglu) and на углу (na uglu). Wikipedia explains that the locative takes the shape of the dative ending, and that the ending is necessarily stressed. Which of в (v) and на (na) a noun takes has to be learnt with the noun: в доме (v dome), на улице (na ulitse). Some nouns take both, with different meanings: в окне (v okne) is in the window frame and на окне (na okne) is on the windowsill; в море (v more) is in the sea and на море (na more) is at the seaside. A cell that is empty in this table is a form not taught here."

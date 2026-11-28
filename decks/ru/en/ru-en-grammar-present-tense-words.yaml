@@ -1,0 +1,157 @@
+schema: 1
+id: "ru-en-grammar-present-tense-words"
+kind: "layer"
+core: "ru-grammar-present-tense-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs for the present tense"
+license: "CC-BY-SA-4.0"
+description: "10 everyday verbs that show the present tense, with the first conjugation, the second conjugation and the verbs that change their stem. Taken from Wikipedia's page on Russian grammar and each verb's Wiktionary entry. Not yet checked by a Russian speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "ru-0520":
+    native: "to know"
+    notes:
+      "n1": "The first conjugation: the endings are ю (yu), ешь (yesh'), ет (yet), ем (yem), ете (yete) and ют (yut) on the stem зна (zna): я знаю (ya znayu), ты знаешь (ty znayesh'). The stress stays on the stem."
+    examples:
+      "Я знаю.":
+        native: "I know."
+        bases:
+          "знаю": "I know"
+      "Ты знаешь?":
+        native: "Do you know?"
+        bases:
+          "Ты": "you (one person)"
+          "знаешь": "you know"
+  "ru-0521":
+    native: "to understand"
+    notes:
+      "n1": "The first conjugation, with the endings ю (yu), ешь (yesh'), ет (yet), ем (yem), ете (yete) and ют (yut) on the stem понима (ponima): я понимаю (ya ponimayu). The stress stays on the а (a) before the ending."
+    examples:
+      "Он понимает.":
+        native: "He understands."
+        bases:
+          "Он": "he; it"
+          "понимает": "he understands"
+      "Мы понимаем.":
+        native: "We understand."
+        bases:
+          "Мы": "we"
+          "понимаем": "we understand"
+  "ru-0522":
+    native: "to do; to make"
+    notes:
+      "n1": "The first conjugation: я делаю (ya delayu), ты делаешь (ty delayesh'). Its perfective partner, for one finished act, is сделать (sdelat')."
+    examples:
+      "Что ты делаешь?":
+        native: "What are you doing?"
+        bases:
+          "Что": "what"
+          "ты": "you (one person)"
+          "делаешь": "you do; you make"
+      "Мы делаем хлеб.":
+        native: "We make bread."
+        bases:
+          "Мы": "we"
+          "делаем": "we make"
+  "ru-0523":
+    native: "to work"
+    notes:
+      "n1": "The first conjugation: я работаю (ya rabotayu), ты работаешь (ty rabotayesh'). The stress stays on the о (o) of the stem."
+    examples:
+      "Мы работаем здесь.":
+        native: "We work here."
+        bases:
+          "Мы": "we"
+          "работаем": "we work"
+          "здесь": "here"
+      "Он работает.":
+        native: "He works."
+        bases:
+          "Он": "he; it"
+          "работает": "he works"
+  "ru-0524":
+    native: "to read"
+    notes:
+      "n1": "The first conjugation: я читаю (ya chitayu), ты читаешь (ty chitayesh'), они читают (oni chitayut). Wikipedia gives it as its model verb. Its perfective partner is прочитать (prochitat')."
+    examples:
+      "Вы читаете?":
+        native: "Are you reading?"
+        bases:
+          "читаете": "you read; you are reading"
+      "Я читаю.":
+        native: "I am reading."
+        bases:
+          "читаю": "I read; I am reading"
+  "ru-0525":
+    native: "to speak; to say"
+    notes:
+      "n1": "The second conjugation, with the endings ю (yu), ишь (ish'), ит (it), им (im), ите (ite) and ят (yat). The stress is always on the ending: я говорю (ya govoryu), ты говоришь (ty govorish'), они говорят (oni govoryat)."
+    examples:
+      "Они говорят.":
+        native: "They speak."
+        bases:
+          "Они": "they"
+          "говорят": "they speak"
+      "Ты говоришь?":
+        native: "Do you speak?"
+        bases:
+          "Ты": "you (one person)"
+          "говоришь": "you speak"
+  "ru-0526":
+    native: "to love; to like"
+    notes:
+      "n1": "The second conjugation, with the endings ю (yu), ишь (ish'), ит (it), им (im), ите (ite) and ят (yat). The verb changes its stem: an extra л (l) comes in the я (ya) form, люблю (lyublyu), and the stress moves from the ending to the stem: ты любишь (ty lyubish')."
+    examples:
+      "Я люблю чай.":
+        native: "I like tea."
+        bases:
+          "люблю": "I love; I like"
+      "Мы любим хлеб.":
+        native: "We like bread."
+        bases:
+          "Мы": "we"
+          "любим": "we love; we like"
+  "ru-0527":
+    native: "to want"
+    notes:
+      "n1": "An irregular verb. In the singular it takes the first-conjugation endings on a changed stem: хочу́ (khochu), хо́чешь (khochesh'), хо́чет (khochet); in the plural the second: хоти́м (khotim), хоти́те (khotite), хотя́т (khotyat). In the singular the stress is on the stem, except in хочу́ (khochu), where it is on the ending; in the plural it is on the ending."
+    examples:
+      "Я хочу чай.":
+        native: "I want tea."
+        bases:
+          "хочу": "I want"
+      "Они хотят хлеб.":
+        native: "They want bread."
+        bases:
+          "Они": "they"
+          "хотят": "they want"
+  "ru-0528":
+    native: "to be able; can"
+    notes:
+      "n1": "An irregular verb. The stem changes between the я (ya) and они (oni) forms (могу (mogu), могут (mogut)) and the other forms (можешь (mozhesh'), может (mozhet)); it takes the first-conjugation endings. It is used with an infinitive: я могу читать (ya mogu chitat')."
+    examples:
+      "Ты можешь читать.":
+        native: "You can read."
+        bases:
+          "Ты": "you (one person)"
+          "можешь": "you can"
+      "Я могу говорить.":
+        native: "I can speak."
+        bases:
+          "могу": "I can"
+  "ru-0529":
+    native: "to live"
+    notes:
+      "n1": "The first conjugation. A stressed е (ye) becomes ё (yo): ты живёшь (ty zhivyosh'), он живёт (on zhivyot). Wikipedia lists жить (zhit') among the first-conjugation verbs."
+    examples:
+      "Я живу здесь.":
+        native: "I live here."
+        bases:
+          "живу": "I live"
+          "здесь": "here"
+      "Мы живём здесь.":
+        native: "We live here."
+        bases:
+          "Мы": "we"
+          "живём": "we live"
+          "здесь": "here"

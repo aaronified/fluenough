@@ -1,0 +1,267 @@
+# Unit 14 grammar topic grammatical-gender. Sources read: en.wikipedia.org 'Russian grammar' (the first, second and third declension tables: nouns in а or я of both genders, masculine nouns in a consonant or ь, neuter nouns in о or е, feminine nouns in ь; possessive pronouns мой моя моё and твой твоя твоё). Rows use the nouns of the earlier units and of ru-grammar-grammatical-gender-words.
+schema: 1
+id: "ru-grammar-grammatical-gender"
+part: "core"
+kind: "grammar"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["this", "my", "your"]
+  entries:
+    - lemma: "брат"
+      key: "brat"
+      reading: "brat"
+      ipa: "brat"
+      forms:
+        "this": "этот брат"
+        "my": "мой брат"
+        "your": "твой брат"
+      readings:
+        "this": "etot brat"
+        "my": "moy brat"
+        "your": "tvoy brat"
+      ipas:
+        "this": "ˈɛtət brat"
+        "my": "moj brat"
+        "your": "tvoj brat"
+    - lemma: "стол"
+      key: "stol"
+      reading: "stol"
+      ipa: "stol"
+      forms:
+        "this": "этот стол"
+        "my": "мой стол"
+        "your": "твой стол"
+      readings:
+        "this": "etot stol"
+        "my": "moy stol"
+        "your": "tvoy stol"
+      ipas:
+        "this": "ˈɛtət stol"
+        "my": "moj stol"
+        "your": "tvoj stol"
+    - lemma: "дом"
+      key: "dom"
+      reading: "dom"
+      ipa: "dom"
+      forms:
+        "this": "этот дом"
+        "my": "мой дом"
+        "your": "твой дом"
+      readings:
+        "this": "etot dom"
+        "my": "moy dom"
+        "your": "tvoy dom"
+      ipas:
+        "this": "ˈɛtət dom"
+        "my": "moj dom"
+        "your": "tvoj dom"
+    - lemma: "друг"
+      key: "drug"
+      reading: "drug"
+      ipa: "druk"
+      forms:
+        "this": "этот друг"
+        "my": "мой друг"
+        "your": "твой друг"
+      readings:
+        "this": "etot drug"
+        "my": "moy drug"
+        "your": "tvoy drug"
+      ipas:
+        "this": "ˈɛtət druk"
+        "my": "moj druk"
+        "your": "tvoj druk"
+    - lemma: "день"
+      key: "den"
+      reading: "den'"
+      ipa: "dʲenʲ"
+      forms:
+        "this": "этот день"
+        "my": "мой день"
+        "your": "твой день"
+      readings:
+        "this": "etot den'"
+        "my": "moy den'"
+        "your": "tvoy den'"
+      ipas:
+        "this": "ˈɛtət dʲenʲ"
+        "my": "moj dʲenʲ"
+        "your": "tvoj dʲenʲ"
+    - lemma: "папа"
+      key: "papa"
+      reading: "papa"
+      ipa: "ˈpapə"
+      forms:
+        "this": "этот папа"
+        "my": "мой папа"
+        "your": "твой папа"
+      readings:
+        "this": "etot papa"
+        "my": "moy papa"
+        "your": "tvoy papa"
+      ipas:
+        "this": "ˈɛtət ˈpapə"
+        "my": "moj ˈpapə"
+        "your": "tvoj ˈpapə"
+    - lemma: "дядя"
+      key: "dyadya"
+      reading: "dyadya"
+      ipa: "ˈdʲadʲə"
+      forms:
+        "this": "этот дядя"
+        "my": "мой дядя"
+        "your": "твой дядя"
+      readings:
+        "this": "etot dyadya"
+        "my": "moy dyadya"
+        "your": "tvoy dyadya"
+      ipas:
+        "this": "ˈɛtət ˈdʲadʲə"
+        "my": "moj ˈdʲadʲə"
+        "your": "tvoj ˈdʲadʲə"
+    - lemma: "жена"
+      key: "zhena"
+      reading: "zhena"
+      ipa: "ʐɨˈna"
+      forms:
+        "this": "эта жена"
+        "my": "моя жена"
+        "your": "твоя жена"
+      readings:
+        "this": "eta zhena"
+        "my": "moya zhena"
+        "your": "tvoya zhena"
+      ipas:
+        "this": "ˈɛtə ʐɨˈna"
+        "my": "mɐˈja ʐɨˈna"
+        "your": "tvɐˈja ʐɨˈna"
+    - lemma: "сестра"
+      key: "sestra"
+      reading: "sestra"
+      ipa: "sʲɪˈstra"
+      forms:
+        "this": "эта сестра"
+        "my": "моя сестра"
+        "your": "твоя сестра"
+      readings:
+        "this": "eta sestra"
+        "my": "moya sestra"
+        "your": "tvoya sestra"
+      ipas:
+        "this": "ˈɛtə sʲɪˈstra"
+        "my": "mɐˈja sʲɪˈstra"
+        "your": "tvɐˈja sʲɪˈstra"
+    - lemma: "вода"
+      key: "voda"
+      reading: "voda"
+      ipa: "vɐˈda"
+      forms:
+        "this": "эта вода"
+        "my": "моя вода"
+        "your": "твоя вода"
+      readings:
+        "this": "eta voda"
+        "my": "moya voda"
+        "your": "tvoya voda"
+      ipas:
+        "this": "ˈɛtə vɐˈda"
+        "my": "mɐˈja vɐˈda"
+        "your": "tvɐˈja vɐˈda"
+    - lemma: "семья"
+      key: "semya"
+      reading: "sem'ya"
+      ipa: "sʲɪˈmʲja"
+      forms:
+        "this": "эта семья"
+        "my": "моя семья"
+        "your": "твоя семья"
+      readings:
+        "this": "eta sem'ya"
+        "my": "moya sem'ya"
+        "your": "tvoya sem'ya"
+      ipas:
+        "this": "ˈɛtə sʲɪˈmʲja"
+        "my": "mɐˈja sʲɪˈmʲja"
+        "your": "tvɐˈja sʲɪˈmʲja"
+    - lemma: "ночь"
+      key: "noch"
+      reading: "noch'"
+      ipa: "notɕ"
+      forms:
+        "this": "эта ночь"
+        "my": "моя ночь"
+        "your": "твоя ночь"
+      readings:
+        "this": "eta noch'"
+        "my": "moya noch'"
+        "your": "tvoya noch'"
+      ipas:
+        "this": "ˈɛtə notɕ"
+        "my": "mɐˈja notɕ"
+        "your": "tvɐˈja notɕ"
+    - lemma: "мать"
+      key: "mat"
+      reading: "mat'"
+      ipa: "matʲ"
+      forms:
+        "this": "эта мать"
+        "my": "моя мать"
+        "your": "твоя мать"
+      readings:
+        "this": "eta mat'"
+        "my": "moya mat'"
+        "your": "tvoya mat'"
+      ipas:
+        "this": "ˈɛtə matʲ"
+        "my": "mɐˈja matʲ"
+        "your": "tvɐˈja matʲ"
+    - lemma: "молоко"
+      key: "moloko"
+      reading: "moloko"
+      ipa: "məlɐˈko"
+      forms:
+        "this": "это молоко"
+        "my": "моё молоко"
+        "your": "твоё молоко"
+      readings:
+        "this": "eto moloko"
+        "my": "moyo moloko"
+        "your": "tvoyo moloko"
+      ipas:
+        "this": "ˈɛtə məlɐˈko"
+        "my": "mɐˈjo məlɐˈko"
+        "your": "tvɐˈjo məlɐˈko"
+    - lemma: "окно"
+      key: "okno"
+      reading: "okno"
+      ipa: "ɐˈkno"
+      forms:
+        "this": "это окно"
+        "my": "моё окно"
+        "your": "твоё окно"
+      readings:
+        "this": "eto okno"
+        "my": "moyo okno"
+        "your": "tvoyo okno"
+      ipas:
+        "this": "ˈɛtə ɐˈkno"
+        "my": "mɐˈjo ɐˈkno"
+        "your": "tvɐˈjo ɐˈkno"
+    - lemma: "море"
+      key: "more"
+      reading: "more"
+      ipa: "ˈmorʲɪ"
+      forms:
+        "this": "это море"
+        "my": "моё море"
+        "your": "твоё море"
+      readings:
+        "this": "eto more"
+        "my": "moyo more"
+        "your": "tvoyo more"
+      ipas:
+        "this": "ˈɛtə ˈmorʲɪ"
+        "my": "mɐˈjo ˈmorʲɪ"
+        "your": "tvɐˈjo ˈmorʲɪ"

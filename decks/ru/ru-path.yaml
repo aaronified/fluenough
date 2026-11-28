@@ -26,168 +26,209 @@ schema: 1
 kind: "path"
 id: "ru-path"
 language: "ru"
-description: "Russian: the planned path to B1. Only the phrasebook and the first words are written."
+description: "Russian: the planned path to B1. Written to the A1 mark; later units are planned."
 genders: ["m", "f", "n"]
-alphabet: []
+alphabet:
+  - "ru-cyrillic-vowels"
+  - "ru-cyrillic-consonants"
+  - "ru-cyrillic-signs"
+  - "ru-cyrillic-reading"
 units:
   - decks: ["ru-phrasebook", "ru-first-words", "*"]
     words: 10
-  - planned: { id: "ru-sound-differences", grammar: ["sound-differences", "stress"] }
+  - decks: ["ru-sound-differences", "ru-grammar-sound-differences", "ru-grammar-stress"]
+    grammar: ["sound-differences", "stress"]
+    words: 30
     listening_passages:
       - { id: "sound-differences-heard", text: { "en": "A short spoken passage in Russian showing sound differences, stress" } }
     reading_passages:
       - { id: "sound-differences-text", text: { "en": "A short written text in Russian showing sound differences, stress" } }
-  - planned: { id: "ru-questions", theme: "questions", words: 12 }
+  - decks: ["ru-questions", "*"]
+    words: 15
     listening_passages:
       - { id: "questions-heard", text: { "en": "A short spoken passage in Russian on the theme yes, no and questions" } }
     reading_passages:
       - { id: "questions-text", text: { "en": "A short written text in Russian on the theme yes, no and questions" } }
-  - planned: { id: "ru-pronouns", theme: "pronouns", words: 36 }
+  - decks: ["ru-pronouns", "*"]
+    words: 26
     listening_passages:
       - { id: "pronouns-heard", text: { "en": "A short spoken passage in Russian on the theme pronouns and people words" } }
     reading_passages:
       - { id: "pronouns-text", text: { "en": "A short written text in Russian on the theme pronouns and people words" } }
-  - planned: { id: "ru-family", theme: "family", words: 27 }
+  - decks: ["ru-family", "*"]
+    words: 27
     listening_passages:
       - { id: "family-heard", text: { "en": "A short spoken passage in Russian on the theme family" } }
     reading_passages:
       - { id: "family-text", text: { "en": "A short written text in Russian on the theme family" } }
-  - planned: { id: "ru-numbers-1-20", theme: "numbers-1-20", words: 22 }
+  - decks: ["ru-numbers-1-20", "*"]
+    words: 23
     listening_passages:
       - { id: "numbers-1-20-heard", text: { "en": "A short spoken passage in Russian on the theme numbers 1 to 20" } }
     reading_passages:
       - { id: "numbers-1-20-text", text: { "en": "A short written text in Russian on the theme numbers 1 to 20" } }
-  - planned: { id: "ru-script-letters", grammar: ["cyrillic-letters"] }
+  - decks: ["ru-cyrillic-vowels", "ru-cyrillic-consonants", "ru-cyrillic-signs"]
+    words: 0
     listening_passages:
       - { id: "script-letters-heard", text: { "en": "A short spoken passage in Russian showing cyrillic letters" } }
     reading_passages:
       - { id: "script-letters-text", text: { "en": "A short written text in Russian showing cyrillic letters" } }
-  - planned: { id: "ru-script-reading", grammar: ["reading-and-spelling"] }
+  - decks: ["ru-cyrillic-reading"]
+    words: 0
     listening_passages:
       - { id: "script-reading-heard", text: { "en": "A short spoken passage in Russian showing reading and spelling" } }
     reading_passages:
       - { id: "script-reading-text", text: { "en": "A short written text in Russian showing reading and spelling" } }
-  - planned: { id: "ru-about-me", theme: "about-me", words: 8 }
+  - decks: ["ru-about-me", "*"]
+    words: 13
     listening_passages:
       - { id: "about-me-heard", text: { "en": "A short spoken passage in Russian on the theme talking about yourself" } }
     reading_passages:
       - { id: "about-me-text", text: { "en": "A short written text in Russian on the theme talking about yourself" } }
-  - planned: { id: "ru-everyday-verbs", theme: "everyday-verbs", words: 36 }
+  - decks: ["ru-everyday-verbs", "*"]
+    words: 27
     listening_passages:
       - { id: "everyday-verbs-heard", text: { "en": "A short spoken passage in Russian on the theme everyday verbs" } }
     reading_passages:
       - { id: "everyday-verbs-text", text: { "en": "A short written text in Russian on the theme everyday verbs" } }
-  - planned: { id: "ru-adverbs", theme: "adverbs", words: 54 }
+  - decks: ["ru-adverbs", "*"]
+    words: 46
     listening_passages:
       - { id: "adverbs-heard", text: { "en": "A short spoken passage in Russian on the theme adverbs" } }
     reading_passages:
       - { id: "adverbs-text", text: { "en": "A short written text in Russian on the theme adverbs" } }
-  - planned: { id: "ru-quantities", theme: "quantities", words: 33 }
+  - decks: ["ru-quantities", "*"]
+    words: 31
     listening_passages:
       - { id: "quantities-heard", text: { "en": "A short spoken passage in Russian on the theme quantities" } }
     reading_passages:
       - { id: "quantities-text", text: { "en": "A short written text in Russian on the theme quantities" } }
-  - planned: { id: "ru-describing", theme: "describing", words: 43 }
+  - decks: ["ru-describing", "*"]
+    words: 44
     listening_passages:
       - { id: "describing-heard", text: { "en": "A short spoken passage in Russian on the theme describing things and feelings" } }
     reading_passages:
       - { id: "describing-text", text: { "en": "A short written text in Russian on the theme describing things and feelings" } }
-  - planned: { id: "ru-grammar-gender", grammar: ["grammatical-gender"] }
+  - decks: ["ru-grammar-grammatical-gender", "ru-grammar-grammatical-gender-words", "ru-grammar-grammatical-gender-sentences"]
+    grammar: ["grammatical-gender"]
+    words: 9
     listening_passages:
       - { id: "grammar-gender-heard", text: { "en": "A short spoken passage in Russian showing grammatical gender" } }
     reading_passages:
       - { id: "grammar-gender-text", text: { "en": "A short written text in Russian showing grammatical gender" } }
-  - planned: { id: "ru-time", theme: "time", words: 19 }
+  - decks: ["ru-time", "*"]
+    words: 23
     listening_passages:
       - { id: "time-heard", text: { "en": "A short spoken passage in Russian on the theme time" } }
     reading_passages:
       - { id: "time-text", text: { "en": "A short written text in Russian on the theme time" } }
-  - planned: { id: "ru-location", theme: "location", words: 15 }
+  - decks: ["ru-location", "*"]
+    words: 16
     listening_passages:
       - { id: "location-heard", text: { "en": "A short spoken passage in Russian on the theme location" } }
     reading_passages:
       - { id: "location-text", text: { "en": "A short written text in Russian on the theme location" } }
-  - planned: { id: "ru-more-verbs", theme: "more-verbs", words: 35 }
+  - decks: ["ru-more-verbs", "*"]
+    words: 38
     listening_passages:
       - { id: "more-verbs-heard", text: { "en": "A short spoken passage in Russian on the theme more verbs" } }
     reading_passages:
       - { id: "more-verbs-text", text: { "en": "A short written text in Russian on the theme more verbs" } }
-  - planned: { id: "ru-work", theme: "work", words: 21 }
+  - decks: ["ru-work", "*"]
+    words: 23
     listening_passages:
       - { id: "work-heard", text: { "en": "A short spoken passage in Russian on the theme work" } }
     reading_passages:
       - { id: "work-text", text: { "en": "A short written text in Russian on the theme work" } }
-  - planned: { id: "ru-grammar-present", grammar: ["present-tense"] }
+  - decks: ["ru-grammar-present-tense", "ru-grammar-present-tense-words", "ru-grammar-present-tense-sentences"]
+    grammar: ["present-tense"]
+    words: 10
     listening_passages:
       - { id: "grammar-present-heard", text: { "en": "A short spoken passage in Russian showing present tense" } }
     reading_passages:
       - { id: "grammar-present-text", text: { "en": "A short written text in Russian showing present tense" } }
-  - planned: { id: "ru-numbers-big", theme: "numbers-big", words: 14 }
+  - decks: ["ru-numbers-big", "*"]
+    words: 17
     listening_passages:
       - { id: "numbers-big-heard", text: { "en": "A short spoken passage in Russian on the theme tens and big numbers" } }
     reading_passages:
       - { id: "numbers-big-text", text: { "en": "A short written text in Russian on the theme tens and big numbers" } }
-  - planned: { id: "ru-food", theme: "food", words: 69 }
+  - decks: ["ru-food", "*"]
+    words: 58
     listening_passages:
       - { id: "food-heard", text: { "en": "A short spoken passage in Russian on the theme food" } }
     reading_passages:
       - { id: "food-text", text: { "en": "A short written text in Russian on the theme food" } }
-  - planned: { id: "ru-groceries", theme: "groceries", words: 17 }
+  - decks: ["ru-groceries", "*"]
+    words: 19
     listening_passages:
       - { id: "groceries-heard", text: { "en": "A short spoken passage in Russian on the theme groceries" } }
     reading_passages:
       - { id: "groceries-text", text: { "en": "A short written text in Russian on the theme groceries" } }
-  - planned: { id: "ru-market", theme: "market", words: 8 }
+  - decks: ["ru-market", "*"]
+    words: 12
     listening_passages:
       - { id: "market-heard", text: { "en": "A short spoken passage in Russian on the theme market" } }
     reading_passages:
       - { id: "market-text", text: { "en": "A short written text in Russian on the theme market" } }
-  - planned: { id: "ru-grammar-cases-1", grammar: ["nominative", "accusative", "prepositional-locative"] }
+  - decks: ["ru-grammar-nominative", "ru-grammar-accusative", "ru-grammar-prepositional-locative", "ru-grammar-cases-1-words", "ru-grammar-cases-1-sentences"]
+    grammar: ["nominative", "accusative", "prepositional-locative"]
+    words: 4
     listening_passages:
       - { id: "grammar-cases-1-heard", text: { "en": "A short spoken passage in Russian showing nominative, accusative, prepositional locative" } }
     reading_passages:
       - { id: "grammar-cases-1-text", text: { "en": "A short written text in Russian showing nominative, accusative, prepositional locative" } }
-  - planned: { id: "ru-directions", theme: "directions", words: 13 }
+  - decks: ["ru-directions", "*"]
+    words: 16
     listening_passages:
       - { id: "directions-heard", text: { "en": "A short spoken passage in Russian on the theme directions" } }
     reading_passages:
       - { id: "directions-text", text: { "en": "A short written text in Russian on the theme directions" } }
-  - planned: { id: "ru-transport", theme: "transport", words: 9 }
+  - decks: ["ru-transport", "*"]
+    words: 21
     listening_passages:
       - { id: "transport-heard", text: { "en": "A short spoken passage in Russian on the theme transport" } }
     reading_passages:
       - { id: "transport-text", text: { "en": "A short written text in Russian on the theme transport" } }
-  - planned: { id: "ru-body", theme: "body", words: 30 }
+  - decks: ["ru-body", "*"]
+    words: 30
     listening_passages:
       - { id: "body-heard", text: { "en": "A short spoken passage in Russian on the theme body" } }
     reading_passages:
       - { id: "body-text", text: { "en": "A short written text in Russian on the theme body" } }
-  - planned: { id: "ru-places", theme: "places", words: 46 }
+  - decks: ["ru-places", "*"]
+    words: 29
     listening_passages:
       - { id: "places-heard", text: { "en": "A short spoken passage in Russian on the theme places" } }
     reading_passages:
       - { id: "places-text", text: { "en": "A short written text in Russian on the theme places" } }
-  - planned: { id: "ru-grammar-be-verb", grammar: ["be-verb"] }
+  - decks: ["ru-grammar-be-verb", "ru-grammar-be-verb-possession", "ru-grammar-be-verb-sentences"]
+    grammar: ["be-verb"]
+    words: 0
     listening_passages:
       - { id: "grammar-be-verb-heard", text: { "en": "A short spoken passage in Russian showing be verb" } }
     reading_passages:
       - { id: "grammar-be-verb-text", text: { "en": "A short written text in Russian showing be verb" } }
-  - planned: { id: "ru-things", theme: "things", words: 42 }
+  - decks: ["ru-things", "*"]
+    words: 31
     listening_passages:
       - { id: "things-heard", text: { "en": "A short spoken passage in Russian on the theme things" } }
     reading_passages:
       - { id: "things-text", text: { "en": "A short written text in Russian on the theme things" } }
-  - planned: { id: "ru-home", theme: "home", words: 21 }
+  - decks: ["ru-home", "*"]
+    words: 27
     listening_passages:
       - { id: "home-heard", text: { "en": "A short spoken passage in Russian on the theme home" } }
     reading_passages:
       - { id: "home-text", text: { "en": "A short written text in Russian on the theme home" } }
-  - planned: { id: "ru-clothes", theme: "clothes", words: 28 }
+  - decks: ["ru-clothes", "*"]
+    words: 23
     listening_passages:
       - { id: "clothes-heard", text: { "en": "A short spoken passage in Russian on the theme clothes" } }
     reading_passages:
       - { id: "clothes-text", text: { "en": "A short written text in Russian on the theme clothes" } }
-  - planned: { id: "ru-animals", theme: "animals", words: 32 }
+  - decks: ["ru-animals", "*"]
+    words: 40
     listening_passages:
       - { id: "animals-heard", text: { "en": "A short spoken passage in Russian on the theme animals" } }
     reading_passages:

@@ -1,0 +1,411 @@
+# Unit 2 of the Russian A1 path (ru-sound-differences). Sources read: en.wikipedia.org 'Russian phonology' (hard and soft consonants, vowel reduction, final devoicing, the letters ж ш ц and ч щ, ё) and each word's own en.wiktionary.org page (stress as its headword shows it, senses, gender).
+# Readings and IPA come from tools/transcribe.py (the ru engine), never by hand; stress comes from the Wiktionary headword and is not marked in `target`.
+schema: 1
+id: "ru-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+theme: "sound-differences"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ru-0400"
+    target: "брат"
+    reading: "brat"
+    ipa: "brat"
+    pos: "noun"
+    gender: "m"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+      - { id: "pair", kind: "pair", ref: "ru-0401", source: "https://en.wiktionary.org/wiki/%D0%B1%D1%80%D0%B0%D1%82" }
+    bases: "self"
+    examples:
+      - { target: "Это брат.", reading: "Eto brat.", ipa: "ˈɛtə brat", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "брат", base: "брат", reading: "brat" }] }
+      - { target: "Нет, это не брат.", reading: "Net, eto ne brat.", ipa: "nʲet ˈɛtə nʲɪ brat", bases: [{ word: "Нет", ref: "ru-0002" }, { word: "это", base: "это", reading: "eto" }, { word: "не", base: "не", reading: "ne" }, { word: "брат", base: "брат", reading: "brat" }] }
+  - id: "ru-0401"
+    target: "брать"
+    reading: "brat'"
+    ipa: "bratʲ"
+    pos: "verb"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%B1%D1%80%D0%B0%D1%82%D1%8C" }
+      - { id: "pair", kind: "pair", ref: "ru-0400", source: "https://en.wiktionary.org/wiki/%D0%B1%D1%80%D0%B0%D1%82%D1%8C" }
+    bases: "self"
+    examples:
+      - { target: "Брать или не брать?", reading: "Brat' ili ne brat'?", ipa: "bratʲ ˈilʲɪ nʲɪ bratʲ", bases: [{ word: "Брать", base: "брать", reading: "brat'" }, { word: "или", ref: "ru-0006" }, { word: "не", base: "не", reading: "ne" }] }
+      - { target: "Не брать!", reading: "Ne brat'!", ipa: "nʲɪ bratʲ", bases: [{ word: "Не", base: "не", reading: "ne" }, { word: "брать", base: "брать", reading: "brat'" }] }
+  - id: "ru-0402"
+    target: "мат"
+    reading: "mat"
+    ipa: "mat"
+    pos: "noun"
+    gender: "m"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%BC%D0%B0%D1%82" }
+      - { id: "pair", kind: "pair", ref: "ru-0403", source: "https://en.wiktionary.org/wiki/%D0%BC%D0%B0%D1%82" }
+    bases: "self"
+    examples:
+      - { target: "Шах и мат!", reading: "Shakh i mat!", ipa: "ʂax ɪ mat", bases: [{ word: "Шах", base: "шах", reading: "shakh" }, { word: "и", ref: "ru-0005" }, { word: "мат", base: "мат", reading: "mat" }] }
+      - { target: "Это мат.", reading: "Eto mat.", ipa: "ˈɛtə mat", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мат", base: "мат", reading: "mat" }] }
+  - id: "ru-0403"
+    target: "мать"
+    reading: "mat'"
+    ipa: "matʲ"
+    pos: "noun"
+    gender: "f"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wiktionary.org/wiki/%D0%BC%D0%B0%D1%82%D1%8C" }
+      - { id: "pair", kind: "pair", ref: "ru-0402", source: "https://en.wiktionary.org/wiki/%D0%BC%D0%B0%D1%82%D1%8C" }
+    bases: "self"
+    examples:
+      - { target: "Это мать.", reading: "Eto mat'.", ipa: "ˈɛtə matʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мать", base: "мать", reading: "mat'" }] }
+      - { target: "Мать и брат.", reading: "Mat' i brat.", ipa: "matʲ ɪ brat", bases: [{ word: "Мать", base: "мать", reading: "mat'" }, { word: "и", ref: "ru-0005" }, { word: "брат", ref: "ru-0400" }] }
+  - id: "ru-0404"
+    target: "угол"
+    reading: "ugol"
+    ipa: "ˈuɡəl"
+    pos: "noun"
+    gender: "m"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D1%83%D0%B3%D0%BE%D0%BB" }
+      - { id: "pair", kind: "pair", ref: "ru-0405", source: "https://en.wiktionary.org/wiki/%D1%83%D0%B3%D0%BE%D0%BB" }
+    bases: "self"
+    examples:
+      - { target: "Это угол.", reading: "Eto ugol.", ipa: "ˈɛtə ˈuɡəl", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "угол", base: "угол", reading: "ugol" }] }
+      - { target: "Вот угол.", reading: "Vot ugol.", ipa: "vot ˈuɡəl", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "угол", base: "угол", reading: "ugol" }] }
+  - id: "ru-0405"
+    target: "уголь"
+    reading: "ugol'"
+    ipa: "ˈuɡəlʲ"
+    pos: "noun"
+    gender: "m"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "behaviour", source: "https://en.wiktionary.org/wiki/%D1%83%D0%B3%D0%BE%D0%BB%D1%8C" }
+      - { id: "pair", kind: "pair", ref: "ru-0404", source: "https://en.wiktionary.org/wiki/%D1%83%D0%B3%D0%BE%D0%BB%D1%8C" }
+    bases: "self"
+    examples:
+      - { target: "Это уголь.", reading: "Eto ugol'.", ipa: "ˈɛtə ˈuɡəlʲ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "уголь", base: "уголь", reading: "ugol'" }] }
+      - { target: "Нет, это не уголь.", reading: "Net, eto ne ugol'.", ipa: "nʲet ˈɛtə nʲɪ ˈuɡəlʲ", bases: [{ word: "Нет", ref: "ru-0002" }, { word: "это", base: "это", reading: "eto" }, { word: "не", base: "не", reading: "ne" }, { word: "уголь", base: "уголь", reading: "ugol'" }] }
+  - id: "ru-0406"
+    target: "лук"
+    reading: "luk"
+    ipa: "luk"
+    pos: "noun"
+    gender: "m"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%BB%D1%83%D0%BA" }
+      - { id: "pair", kind: "pair", ref: "ru-0407", source: "https://en.wiktionary.org/wiki/%D0%BB%D1%83%D0%BA" }
+    bases: "self"
+    examples:
+      - { target: "Это лук.", reading: "Eto luk.", ipa: "ˈɛtə luk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "лук", base: "лук", reading: "luk" }] }
+      - { target: "Лук и хлеб.", reading: "Luk i khleb.", ipa: "luk ɪ xlʲep", bases: [{ word: "Лук", base: "лук", reading: "luk" }, { word: "и", ref: "ru-0005" }, { word: "хлеб", ref: "ru-0419" }] }
+  - id: "ru-0407"
+    target: "люк"
+    reading: "lyuk"
+    ipa: "lʲuk"
+    pos: "noun"
+    gender: "m"
+    tags: ["hard-soft"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%BB%D1%8E%D0%BA" }
+      - { id: "pair", kind: "pair", ref: "ru-0406", source: "https://en.wiktionary.org/wiki/%D0%BB%D1%8E%D0%BA" }
+    bases: "self"
+    examples:
+      - { target: "Это люк.", reading: "Eto lyuk.", ipa: "ˈɛtə lʲuk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "люк", base: "люк", reading: "lyuk" }] }
+      - { target: "Вот люк.", reading: "Vot lyuk.", ipa: "vot lʲuk", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "люк", base: "люк", reading: "lyuk" }] }
+  - id: "ru-0408"
+    target: "быть"
+    reading: "byt'"
+    ipa: "bɨtʲ"
+    pos: "verb"
+    tags: ["y-i"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+      - { id: "pair", kind: "pair", ref: "ru-0409", source: "https://en.wiktionary.org/wiki/%D0%B1%D1%8B%D1%82%D1%8C" }
+    bases: "self"
+    examples:
+      - { target: "Быть или не быть?", reading: "Byt' ili ne byt'?", ipa: "bɨtʲ ˈilʲɪ nʲɪ bɨtʲ", bases: [{ word: "Быть", base: "быть", reading: "byt'" }, { word: "или", ref: "ru-0006" }, { word: "не", base: "не", reading: "ne" }] }
+      - { target: "Быть здесь.", reading: "Byt' zdes'.", ipa: "bɨtʲ zdʲesʲ", bases: [{ word: "Быть", base: "быть", reading: "byt'" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }
+  - id: "ru-0409"
+    target: "бить"
+    reading: "bit'"
+    ipa: "bʲitʲ"
+    pos: "verb"
+    tags: ["y-i"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%B1%D0%B8%D1%82%D1%8C" }
+      - { id: "pair", kind: "pair", ref: "ru-0408", source: "https://en.wiktionary.org/wiki/%D0%B1%D0%B8%D1%82%D1%8C" }
+    bases: "self"
+    examples:
+      - { target: "Не бить!", reading: "Ne bit'!", ipa: "nʲɪ bʲitʲ", bases: [{ word: "Не", base: "не", reading: "ne" }, { word: "бить", base: "бить", reading: "bit'" }] }
+      - { target: "Бить или не бить?", reading: "Bit' ili ne bit'?", ipa: "bʲitʲ ˈilʲɪ nʲɪ bʲitʲ", bases: [{ word: "Бить", base: "бить", reading: "bit'" }, { word: "или", ref: "ru-0006" }, { word: "не", base: "не", reading: "ne" }] }
+  - id: "ru-0410"
+    target: "замок"
+    reading: "zamok"
+    ipa: "ˈzamək"
+    pos: "noun"
+    gender: "m"
+    tags: ["stress"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%B7%D0%B0%D0%BC%D0%BE%D0%BA" }
+      - { id: "homo", kind: "homograph", ref: "ru-0411", source: "https://en.wiktionary.org/wiki/%D0%B7%D0%B0%D0%BC%D0%BE%D0%BA" }
+    bases: "self"
+    examples:
+      - { target: "Это замок.", reading: "Eto zamok.", ipa: "ˈɛtə ˈzamək", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "замок", base: "замок", reading: "zamok" }] }
+      - { target: "Вот замок.", reading: "Vot zamok.", ipa: "vot ˈzamək", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "замок", base: "замок", reading: "zamok" }] }
+  - id: "ru-0411"
+    target: "замок"
+    reading: "zamok"
+    ipa: "zɐˈmok"
+    pos: "noun"
+    gender: "m"
+    tags: ["stress"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%B7%D0%B0%D0%BC%D0%BE%D0%BA" }
+      - { id: "homo", kind: "homograph", ref: "ru-0410", source: "https://en.wiktionary.org/wiki/%D0%B7%D0%B0%D0%BC%D0%BE%D0%BA" }
+    bases: "self"
+    examples:
+      - { target: "Это замок.", reading: "Eto zamok.", ipa: "ˈɛtə zɐˈmok", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "замок", base: "замок", reading: "zamok" }] }
+      - { target: "Вот замок.", reading: "Vot zamok.", ipa: "vot zɐˈmok", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "замок", base: "замок", reading: "zamok" }] }
+  - id: "ru-0412"
+    target: "мука"
+    reading: "muka"
+    ipa: "ˈmukə"
+    pos: "noun"
+    gender: "f"
+    tags: ["stress"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%BC%D1%83%D0%BA%D0%B0" }
+      - { id: "homo", kind: "homograph", ref: "ru-0413", source: "https://en.wiktionary.org/wiki/%D0%BC%D1%83%D0%BA%D0%B0" }
+    bases: "self"
+    examples:
+      - { target: "Это мука.", reading: "Eto muka.", ipa: "ˈɛtə ˈmukə", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мука", base: "мука", reading: "muka" }] }
+      - { target: "Вот мука.", reading: "Vot muka.", ipa: "vot ˈmukə", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "мука", base: "мука", reading: "muka" }] }
+  - id: "ru-0413"
+    target: "мука"
+    reading: "muka"
+    ipa: "mʊˈka"
+    pos: "noun"
+    gender: "f"
+    tags: ["stress"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%BC%D1%83%D0%BA%D0%B0" }
+      - { id: "homo", kind: "homograph", ref: "ru-0412", source: "https://en.wiktionary.org/wiki/%D0%BC%D1%83%D0%BA%D0%B0" }
+    bases: "self"
+    examples:
+      - { target: "Это мука.", reading: "Eto muka.", ipa: "ˈɛtə mʊˈka", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мука", base: "мука", reading: "muka" }] }
+      - { target: "Вот мука.", reading: "Vot muka.", ipa: "vot mʊˈka", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "мука", base: "мука", reading: "muka" }] }
+  - id: "ru-0414"
+    target: "все"
+    reading: "vse"
+    ipa: "fsʲe"
+    pos: "pronoun"
+    tags: ["yo"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%B2%D1%81%D0%B5" }
+      - { id: "pair", kind: "pair", ref: "ru-0415", source: "https://en.wiktionary.org/wiki/%D0%B2%D1%81%D0%B5" }
+    bases: "self"
+    examples:
+      - { target: "Все здесь.", reading: "Vse zdes'.", ipa: "fsʲe zdʲesʲ", bases: [{ word: "Все", base: "все", reading: "vse" }, { word: "здесь", base: "здесь", reading: "zdes'" }] }
+      - { target: "Да, все.", reading: "Da, vse.", ipa: "da fsʲe", bases: [{ word: "Да", ref: "ru-0001" }, { word: "все", base: "все", reading: "vse" }] }
+  - id: "ru-0415"
+    target: "всё"
+    reading: "vsyo"
+    ipa: "fsʲo"
+    pos: "pronoun"
+    tags: ["yo"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%B2%D1%81%D1%91" }
+      - { id: "pair", kind: "pair", ref: "ru-0414", source: "https://en.wiktionary.org/wiki/%D0%B2%D1%81%D1%91" }
+    bases: "self"
+    examples:
+      - { target: "Всё хорошо.", reading: "Vsyo khorosho.", ipa: "fsʲo xərɐˈʂo", bases: [{ word: "Всё", base: "всё", reading: "vsyo" }, { word: "хорошо", ref: "ru-0008" }] }
+      - { target: "Да, всё.", reading: "Da, vsyo.", ipa: "da fsʲo", bases: [{ word: "Да", ref: "ru-0001" }, { word: "всё", base: "всё", reading: "vsyo" }] }
+  - id: "ru-0416"
+    target: "молоко"
+    reading: "moloko"
+    ipa: "məlɐˈko"
+    pos: "noun"
+    gender: "n"
+    tags: ["akanye"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Это молоко.", reading: "Eto moloko.", ipa: "ˈɛtə məlɐˈko", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "молоко", base: "молоко", reading: "moloko" }] }
+      - { target: "Вот молоко.", reading: "Vot moloko.", ipa: "vot məlɐˈko", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "молоко", base: "молоко", reading: "moloko" }] }
+  - id: "ru-0417"
+    target: "голова"
+    reading: "golova"
+    ipa: "ɡəlɐˈva"
+    pos: "noun"
+    gender: "f"
+    tags: ["akanye"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Это голова.", reading: "Eto golova.", ipa: "ˈɛtə ɡəlɐˈva", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "голова", base: "голова", reading: "golova" }] }
+      - { target: "Вот голова.", reading: "Vot golova.", ipa: "vot ɡəlɐˈva", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "голова", base: "голова", reading: "golova" }] }
+  - id: "ru-0418"
+    target: "язык"
+    reading: "yazyk"
+    ipa: "jɪˈzɨk"
+    pos: "noun"
+    gender: "m"
+    tags: ["ikanye"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Это мой язык.", reading: "Eto moy yazyk.", ipa: "ˈɛtə moj jɪˈzɨk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мой", base: "мой", reading: "moy" }, { word: "язык", base: "язык", reading: "yazyk" }] }
+      - { target: "Вот язык.", reading: "Vot yazyk.", ipa: "vot jɪˈzɨk", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "язык", base: "язык", reading: "yazyk" }] }
+  - id: "ru-0419"
+    target: "хлеб"
+    reading: "khleb"
+    ipa: "xlʲep"
+    pos: "noun"
+    gender: "m"
+    tags: ["final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Хлеб и вода.", reading: "Khleb i voda.", ipa: "xlʲep ɪ vɐˈda", bases: [{ word: "Хлеб", base: "хлеб", reading: "khleb" }, { word: "и", ref: "ru-0005" }, { word: "вода", ref: "ru-0010" }] }
+      - { target: "Ещё хлеб.", reading: "Yeshchyo khleb.", ipa: "jɪˈɕːo xlʲep", bases: [{ word: "Ещё", ref: "ru-0424" }, { word: "хлеб", base: "хлеб", reading: "khleb" }] }
+  - id: "ru-0420"
+    target: "друг"
+    reading: "drug"
+    ipa: "druk"
+    pos: "noun"
+    gender: "m"
+    tags: ["final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Это мой друг.", reading: "Eto moy drug.", ipa: "ˈɛtə moj druk", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "мой", base: "мой", reading: "moy" }, { word: "друг", base: "друг", reading: "drug" }] }
+      - { target: "Нет, это не друг.", reading: "Net, eto ne drug.", ipa: "nʲet ˈɛtə nʲɪ druk", bases: [{ word: "Нет", ref: "ru-0002" }, { word: "это", base: "это", reading: "eto" }, { word: "не", base: "не", reading: "ne" }, { word: "друг", base: "друг", reading: "drug" }] }
+  - id: "ru-0421"
+    target: "сад"
+    reading: "sad"
+    ipa: "sat"
+    pos: "noun"
+    gender: "m"
+    tags: ["final-devoicing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Это сад.", reading: "Eto sad.", ipa: "ˈɛtə sat", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "сад", base: "сад", reading: "sad" }] }
+      - { target: "Вот сад.", reading: "Vot sad.", ipa: "vot sat", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "сад", base: "сад", reading: "sad" }] }
+  - id: "ru-0422"
+    target: "нож"
+    reading: "nozh"
+    ipa: "noʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["final-devoicing", "hushing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Это нож.", reading: "Eto nozh.", ipa: "ˈɛtə noʂ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "нож", base: "нож", reading: "nozh" }] }
+      - { target: "Вот нож.", reading: "Vot nozh.", ipa: "vot noʂ", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "нож", base: "нож", reading: "nozh" }] }
+  - id: "ru-0423"
+    target: "чай"
+    reading: "chay"
+    ipa: "tɕaj"
+    pos: "noun"
+    gender: "m"
+    tags: ["hushing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D1%87%D0%B0%D0%B9" }
+    bases: "self"
+    examples:
+      - { target: "Чай или кофе?", reading: "Chay ili kofe?", ipa: "tɕaj ˈilʲɪ ˈkofʲɪ", bases: [{ word: "Чай", base: "чай", reading: "chay" }, { word: "или", ref: "ru-0006" }, { word: "кофе", base: "кофе", reading: "kofe" }] }
+      - { target: "Чай и хлеб.", reading: "Chay i khleb.", ipa: "tɕaj ɪ xlʲep", bases: [{ word: "Чай", base: "чай", reading: "chay" }, { word: "и", ref: "ru-0005" }, { word: "хлеб", ref: "ru-0419" }] }
+  - id: "ru-0424"
+    target: "ещё"
+    reading: "yeshchyo"
+    ipa: "jɪˈɕːo"
+    pos: "adv"
+    tags: ["hushing", "yo"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Ещё чай.", reading: "Yeshchyo chay.", ipa: "jɪˈɕːo tɕaj", bases: [{ word: "Ещё", base: "ещё", reading: "yeshchyo" }, { word: "чай", ref: "ru-0423" }] }
+      - { target: "Ещё хлеб.", reading: "Yeshchyo khleb.", ipa: "jɪˈɕːo xlʲep", bases: [{ word: "Ещё", base: "ещё", reading: "yeshchyo" }, { word: "хлеб", ref: "ru-0419" }] }
+  - id: "ru-0425"
+    target: "жена"
+    reading: "zhena"
+    ipa: "ʐɨˈna"
+    pos: "noun"
+    gender: "f"
+    tags: ["hushing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Russian_phonology" }
+    bases: "self"
+    examples:
+      - { target: "Это жена.", reading: "Eto zhena.", ipa: "ˈɛtə ʐɨˈna", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "жена", base: "жена", reading: "zhena" }] }
+      - { target: "Вот жена.", reading: "Vot zhena.", ipa: "vot ʐɨˈna", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "жена", base: "жена", reading: "zhena" }] }
+  - id: "ru-0426"
+    target: "рука"
+    reading: "ruka"
+    ipa: "rʊˈka"
+    pos: "noun"
+    gender: "f"
+    tags: ["rolled-r"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D1%80%D1%83%D0%BA%D0%B0" }
+    bases: "self"
+    examples:
+      - { target: "Это рука.", reading: "Eto ruka.", ipa: "ˈɛtə rʊˈka", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "рука", base: "рука", reading: "ruka" }] }
+      - { target: "Вот рука.", reading: "Vot ruka.", ipa: "vot rʊˈka", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "рука", base: "рука", reading: "ruka" }] }
+  - id: "ru-0427"
+    target: "семья"
+    reading: "sem'ya"
+    ipa: "sʲɪˈmʲja"
+    pos: "noun"
+    gender: "f"
+    tags: ["soft-sign"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D1%81%D0%B5%D0%BC%D1%8C%D1%8F" }
+    bases: "self"
+    examples:
+      - { target: "Это семья.", reading: "Eto sem'ya.", ipa: "ˈɛtə sʲɪˈmʲja", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "семья", base: "семья", reading: "sem'ya" }] }
+      - { target: "Вот семья.", reading: "Vot sem'ya.", ipa: "vot sʲɪˈmʲja", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "семья", base: "семья", reading: "sem'ya" }] }
+  - id: "ru-0428"
+    target: "подъезд"
+    reading: "pod'yezd"
+    ipa: "pɐˈdjest"
+    pos: "noun"
+    gender: "m"
+    tags: ["hard-sign"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D0%BF%D0%BE%D0%B4%D1%8A%D0%B5%D0%B7%D0%B4" }
+    bases: "self"
+    examples:
+      - { target: "Это подъезд.", reading: "Eto pod'yezd.", ipa: "ˈɛtə pɐˈdjest", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "подъезд", base: "подъезд", reading: "pod'yezd" }] }
+      - { target: "Вот подъезд.", reading: "Vot pod'yezd.", ipa: "vot pɐˈdjest", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "подъезд", base: "подъезд", reading: "pod'yezd" }] }
+  - id: "ru-0429"
+    target: "ёж"
+    reading: "yozh"
+    ipa: "joʂ"
+    pos: "noun"
+    gender: "m"
+    tags: ["yo", "hushing"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%D1%91%D0%B6" }
+    bases: "self"
+    examples:
+      - { target: "Это ёж.", reading: "Eto yozh.", ipa: "ˈɛtə joʂ", bases: [{ word: "Это", base: "это", reading: "eto" }, { word: "ёж", base: "ёж", reading: "yozh" }] }
+      - { target: "Вот ёж.", reading: "Vot yozh.", ipa: "vot joʂ", bases: [{ word: "Вот", base: "вот", reading: "vot" }, { word: "ёж", base: "ёж", reading: "yozh" }] }

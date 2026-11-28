@@ -1,0 +1,115 @@
+# Unit 29 grammar topic be-verb. Sources read: en.wikipedia.org 'Russian grammar' (the present of быть is only есть; the past tense has -л -ла -ло -ли by the gender of the subject; the compound future with the future of быть and an infinitive, 'Она́ бу́дет чита́ть') and the en.wiktionary.org entry быть (past was, was (f) была́, бы́ло, бы́ли; future бу́ду бу́дешь бу́дет бу́дем бу́дете бу́дут; as read by the builder).
+schema: 1
+id: "ru-grammar-be-verb"
+part: "core"
+kind: "grammar"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["past", "future"]
+  entries:
+    - lemma: "я"
+      key: "ya"
+      reading: "ya"
+      ipa: "ja"
+      forms:
+        "past": ["я был", "я была"]
+        "future": "я буду"
+      readings:
+        "past": ["ya byl", "ya byla"]
+        "future": "ya budu"
+      ipas:
+        "past": "ja bɨl"
+        "future": "ja ˈbudʊ"
+    - lemma: "ты"
+      key: "ty"
+      reading: "ty"
+      ipa: "tɨ"
+      forms:
+        "past": ["ты был", "ты была"]
+        "future": "ты будешь"
+      readings:
+        "past": ["ty byl", "ty byla"]
+        "future": "ty budesh'"
+      ipas:
+        "past": "tɨ bɨl"
+        "future": "tɨ ˈbudʲɪʂ"
+    - lemma: "он"
+      key: "on"
+      reading: "on"
+      ipa: "on"
+      forms:
+        "past": "он был"
+        "future": "он будет"
+      readings:
+        "past": "on byl"
+        "future": "on budet"
+      ipas:
+        "past": "on bɨl"
+        "future": "on ˈbudʲɪt"
+    - lemma: "она"
+      key: "ona"
+      reading: "ona"
+      ipa: "ɐˈna"
+      forms:
+        "past": "она была"
+        "future": "она будет"
+      readings:
+        "past": "ona byla"
+        "future": "ona budet"
+      ipas:
+        "past": "ɐˈna bɨˈla"
+        "future": "ɐˈna ˈbudʲɪt"
+    - lemma: "оно"
+      key: "ono"
+      reading: "ono"
+      ipa: "ɐˈno"
+      forms:
+        "past": "оно было"
+        "future": "оно будет"
+      readings:
+        "past": "ono bylo"
+        "future": "ono budet"
+      ipas:
+        "past": "ɐˈno ˈbɨlə"
+        "future": "ɐˈno ˈbudʲɪt"
+    - lemma: "мы"
+      key: "my"
+      reading: "my"
+      ipa: "mɨ"
+      forms:
+        "past": "мы были"
+        "future": "мы будем"
+      readings:
+        "past": "my byli"
+        "future": "my budem"
+      ipas:
+        "past": "mɨ ˈbɨlʲɪ"
+        "future": "mɨ ˈbudʲɪm"
+    - lemma: "вы"
+      key: "vy"
+      reading: "vy"
+      ipa: "vɨ"
+      forms:
+        "past": "вы были"
+        "future": "вы будете"
+      readings:
+        "past": "vy byli"
+        "future": "vy budete"
+      ipas:
+        "past": "vɨ ˈbɨlʲɪ"
+        "future": "vɨ ˈbudʲɪtʲɪ"
+    - lemma: "они"
+      key: "oni"
+      reading: "oni"
+      ipa: "ɐˈnʲi"
+      forms:
+        "past": "они были"
+        "future": "они будут"
+      readings:
+        "past": "oni byli"
+        "future": "oni budut"
+      ipas:
+        "past": "ɐˈnʲi ˈbɨlʲɪ"
+        "future": "ɐˈnʲi ˈbudʊt"

@@ -1,0 +1,58 @@
+schema: 1
+id: "ru-en-cyrillic-vowels"
+kind: "layer"
+core: "ru-cyrillic-vowels"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cyrillic vowels"
+license: "CC-BY-SA-4.0"
+description: "The ten vowel letters of Russian, in hard and soft pairs: а (a) and я (ya), э (e) and е (ye), о (o) and ё (yo), у (u) and ю (yu), ы (y) and и (i). The soft one of a pair softens the consonant before it, or adds a quick 'y' at the start of a word. Taken from Wikipedia's page on the Russian alphabet. Not yet checked by a Russian speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "ru-0300":
+    native: "a, as in 'father'"
+    notes:
+      "n1": "The letter а (a) is the hard vowel 'a', said /a/ when it is stressed, as in да (da), yes. Unstressed it is weak, like a short 'a' in 'sofa'. It is the hard partner of я (ya)."
+  "ru-0301":
+    native: "ya, as in 'yard'"
+    notes:
+      "n1": "The letter я (ya) is the soft partner of а (a). After a consonant it softens that consonant and says 'a': семья (sem'ya). At the start of a word, or after a vowel, it says 'ya': я (ya), I. Unstressed it is weak, said like a short 'i'."
+      "look-a": "Not а (a): я (ya) is a backwards R. The two are the same vowel, but я (ya) adds a quick 'y' or softens the consonant before it."
+  "ru-0302":
+    native: "e, as in 'bet'"
+    notes:
+      "n1": "The letter э (e) is the hard 'e', said /ɛ/, as in это (eto), this. It is rare: it begins a few native words such as это (eto) and is used in loanwords. It is the hard partner of е (ye)."
+      "look-e": "э (e) is a reversed е (ye), open to the left. It is the hard vowel, with no 'y' and no softening. Compare е (ye), which is soft."
+  "ru-0303":
+    native: "ye, as in 'yet'"
+    notes:
+      "n1": "The letter е (ye) is the soft partner of э (e). After a consonant it softens that consonant and says 'e': нет (net), no. At the start of a word, or after a vowel, it says 'ye'. It looks like the Latin E, but it always carries the soft sound: a 'y' at the start of a word and a softened consonant before it."
+      "look-ye": "е (ye) and ё (yo) differ by two dots only. The dots mark the sound 'yo', and they are very often left out in print."
+  "ru-0304":
+    native: "o, as in 'more'"
+    notes:
+      "n1": "The letter о (o) is the hard 'o', said /o/ without the glide of English 'go', as in но (no), but. It is only clear when stressed: unstressed it is said like a short 'a', as in вода (voda), said 'va-DA'. It is the hard partner of ё (yo)."
+  "ru-0305":
+    native: "yo, as in 'yore'"
+    notes:
+      "n1": "The letter ё (yo) is the soft partner of о (o): 'yo' at the start of a word, and 'o' after a soft consonant: ещё (yeshchyo), всё (vsyo). It is always stressed. In print it is usually written without its two dots, as е (ye), so a learner needs to know the word."
+      "look-e": "ё (yo) is е (ye) with two dots, said 'yo' instead of 'ye'. Books for learners keep the dots, and most others leave them out."
+  "ru-0306":
+    native: "oo, as in 'boot'"
+    notes:
+      "n1": "The letter у (u) is the hard 'oo', said /u/, as in туалет (tualet), toilet. It looks like the Latin Y but it is a vowel, and its soft partner is ю (yu)."
+      "latin": "It looks like the Latin letter Y, but it is never a Y sound: у (u) is always the vowel 'oo'."
+  "ru-0307":
+    native: "yu, as in 'you'"
+    notes:
+      "n1": "The letter ю (yu) is the soft partner of у (u). After a consonant it softens it and says 'oo': люк (lyuk). At the start of a word, or after a vowel, it says 'yu': говорю (govoryu), I speak."
+      "look-u": "Not у (u): ю (yu) has a bar and a ring, and it is the soft vowel. ю (yu) adds a quick 'y' or softens the consonant before it."
+  "ru-0308":
+    native: "y, a back 'i'"
+    notes:
+      "n1": "The letter ы (y) is a vowel that English has no letter for: say the 'i' of 'bit' with the tongue pulled back, /ɨ/, as in вы (vy), you. It never begins a word, and it follows only hard consonants. It is the hard partner of и (i)."
+      "look-i": "Not и (i): ы (y) is a soft sign next to a stroke, and it is the back vowel after a hard consonant. и (i) is a clear 'ee' and softens the consonant before it."
+  "ru-0309":
+    native: "ee, as in 'see'"
+    notes:
+      "n1": "The letter и (i) is the soft 'ee', said /i/, as in привет (privet), hi. It softens the consonant before it. It looks like a backwards N. It is the soft partner of ы (y)."
+      "look-y": "Not ы (y): и (i) is a clear 'ee' that softens the consonant before it. After a word that ends in a hard consonant, an и (i) that starts the next word is said /ɨ/ but still written и (i), as in без и́мени (bez imeni), without a name. After a prefix the same sound is written ы (y), as in безымя́нный (bezymyanny), nameless."

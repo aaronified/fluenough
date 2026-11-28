@@ -1,0 +1,121 @@
+# Unit 19 sentences. Every verb form comes from the unit's table (ru-grammar-present-tense).
+schema: 1
+id: "ru-grammar-present-tense-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ru-4050"
+    target: "Я знаю."
+    reading: "Ya znayu."
+    ipa: "ja ˈznajʊ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Я", ref: "ru-0003" }, { word: "знаю", ref: "ru-0520" }]
+  - id: "ru-4051"
+    target: "Ты знаешь."
+    reading: "Ty znayesh'."
+    ipa: "tɨ ˈznajəʂ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ты", base: "ты", reading: "ty" }, { word: "знаешь", ref: "ru-0520" }]
+  - id: "ru-4052"
+    target: "Он понимает."
+    reading: "On ponimayet."
+    ipa: "on pənʲɪˈmajət"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Он", base: "он", reading: "on" }, { word: "понимает", ref: "ru-0521" }]
+  - id: "ru-4053"
+    target: "Мы работаем."
+    reading: "My rabotayem."
+    ipa: "mɨ rɐˈbotəjəm"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "работаем", ref: "ru-0523" }]
+  - id: "ru-4054"
+    target: "Вы читаете."
+    reading: "Vy chitayete."
+    ipa: "vɨ tɕɪˈtajətʲɪ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Вы", ref: "ru-0004" }, { word: "читаете", ref: "ru-0524" }]
+  - id: "ru-4055"
+    target: "Они говорят."
+    reading: "Oni govoryat."
+    ipa: "ɐˈnʲi ɡəvɐˈrʲat"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Они", base: "они", reading: "oni" }, { word: "говорят", ref: "ru-0525" }]
+  - id: "ru-4056"
+    target: "Я люблю чай."
+    reading: "Ya lyublyu chay."
+    ipa: "ja lʲʊˈblʲu tɕaj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Я", ref: "ru-0003" }, { word: "люблю", ref: "ru-0526" }, { word: "чай", ref: "ru-0423" }]
+  - id: "ru-4057"
+    target: "Мы любим хлеб."
+    reading: "My lyubim khleb."
+    ipa: "mɨ ˈlʲubʲɪm xlʲep"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "любим", ref: "ru-0526" }, { word: "хлеб", ref: "ru-0419" }]
+  - id: "ru-4058"
+    target: "Я хочу чай."
+    reading: "Ya khochu chay."
+    ipa: "ja xɐˈtɕu tɕaj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Я", ref: "ru-0003" }, { word: "хочу", ref: "ru-0527" }, { word: "чай", ref: "ru-0423" }]
+  - id: "ru-4059"
+    target: "Они хотят хлеб."
+    reading: "Oni khotyat khleb."
+    ipa: "ɐˈnʲi xɐˈtʲat xlʲep"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Они", base: "они", reading: "oni" }, { word: "хотят", ref: "ru-0527" }, { word: "хлеб", ref: "ru-0419" }]
+  - id: "ru-4060"
+    target: "Ты можешь читать."
+    reading: "Ty mozhesh' chitat'."
+    ipa: "tɨ ˈmoʐəʂ tɕɪˈtatʲ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ты", base: "ты", reading: "ty" }, { word: "можешь", ref: "ru-0528" }, { word: "читать", ref: "ru-0524" }]
+  - id: "ru-4061"
+    target: "Я живу здесь."
+    reading: "Ya zhivu zdes'."
+    ipa: "ja ʐɨˈvu zdʲesʲ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Я", ref: "ru-0003" }, { word: "живу", ref: "ru-0529" }, { word: "здесь", base: "здесь", reading: "zdes'" }]
+  - id: "ru-4062"
+    target: "Мы живём здесь."
+    reading: "My zhivyom zdes'."
+    ipa: "mɨ ʐɨˈvʲom zdʲesʲ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Мы", base: "мы", reading: "my" }, { word: "живём", ref: "ru-0529" }, { word: "здесь", base: "здесь", reading: "zdes'" }]
+  - id: "ru-4063"
+    target: "Что ты делаешь?"
+    reading: "Chto ty delayesh'?"
+    ipa: "ʂto tɨ ˈdʲeləjəʂ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Что", base: "что", reading: "chto" }, { word: "ты", base: "ты", reading: "ty" }, { word: "делаешь", ref: "ru-0522" }]

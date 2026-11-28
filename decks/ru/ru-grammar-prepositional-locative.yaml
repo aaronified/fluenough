@@ -1,0 +1,127 @@
+# Unit 24 grammar topic prepositional-locative. Sources read: en.wikipedia.org 'Russian grammar' (the prepositional -е of masculine, feminine and neuter nouns; the 'Additional cases' section: the locative after в and на, the stressed ending -у as in в лесу́) and the en.wiktionary.org entries of the nouns (stress, locative).
+schema: 1
+id: "ru-grammar-prepositional-locative"
+part: "core"
+kind: "grammar"
+language: { code: "ru", iso639_3: "rus", name: "Russian", script: "cyrillic", tts: "ru-RU", icon: "Ру" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["v", "na"]
+  entries:
+    - lemma: "дом"
+      key: "dom"
+      reading: "dom"
+      ipa: "dom"
+      forms:
+        "v": "в доме"
+        "na": null
+      readings:
+        "v": "v dome"
+      ipas:
+        "v": "f ˈdomʲɪ"
+    - lemma: "стол"
+      key: "stol"
+      reading: "stol"
+      ipa: "stol"
+      forms:
+        "v": null
+        "na": "на столе"
+      readings:
+        "na": "na stole"
+      ipas:
+        "na": "nə stɐˈlʲe"
+    - lemma: "сад"
+      key: "sad"
+      reading: "sad"
+      ipa: "sat"
+      forms:
+        "v": "в саду"
+        "na": null
+      readings:
+        "v": "v sadu"
+      ipas:
+        "v": "f sɐˈdu"
+    - lemma: "угол"
+      key: "ugol"
+      reading: "ugol"
+      ipa: "ˈuɡəl"
+      forms:
+        "v": "в углу"
+        "na": "на углу"
+      readings:
+        "v": "v uglu"
+        "na": "na uglu"
+      ipas:
+        "v": "f ʊˈɡlu"
+        "na": "nə ʊˈɡlu"
+    - lemma: "школа"
+      key: "shkola"
+      reading: "shkola"
+      ipa: "ˈʂkolə"
+      forms:
+        "v": "в школе"
+        "na": null
+      readings:
+        "v": "v shkole"
+      ipas:
+        "v": "f ˈʂkolʲɪ"
+    - lemma: "окно"
+      key: "okno"
+      reading: "okno"
+      ipa: "ɐˈkno"
+      forms:
+        "v": "в окне"
+        "na": "на окне"
+      readings:
+        "v": "v okne"
+        "na": "na okne"
+      ipas:
+        "v": "f ɐˈknʲe"
+        "na": "nə ɐˈknʲe"
+    - lemma: "море"
+      key: "more"
+      reading: "more"
+      ipa: "ˈmorʲɪ"
+      forms:
+        "v": "в море"
+        "na": "на море"
+      readings:
+        "v": "v more"
+        "na": "na more"
+      ipas:
+        "v": "f ˈmorʲɪ"
+        "na": "nə ˈmorʲɪ"
+    - lemma: "город"
+      key: "gorod"
+      reading: "gorod"
+      ipa: "ˈɡorət"
+      forms:
+        "v": "в городе"
+        "na": null
+      readings:
+        "v": "v gorode"
+      ipas:
+        "v": "f ˈɡorədʲɪ"
+    - lemma: "улица"
+      key: "ulitsa"
+      reading: "ulitsa"
+      ipa: "ˈulʲɪtsə"
+      forms:
+        "v": null
+        "na": "на улице"
+      readings:
+        "na": "na ulitse"
+      ipas:
+        "na": "nə ˈulʲɪtsə"
+    - lemma: "книга"
+      key: "kniga"
+      reading: "kniga"
+      ipa: "ˈknʲiɡə"
+      forms:
+        "v": "в книге"
+        "na": null
+      readings:
+        "v": "v knige"
+      ipas:
+        "v": "f ˈknʲiɡʲɪ"

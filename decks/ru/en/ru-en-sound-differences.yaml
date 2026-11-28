@@ -1,0 +1,471 @@
+schema: 1
+id: "ru-en-sound-differences"
+kind: "layer"
+core: "ru-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Russian sounds that differ from English"
+license: "CC-BY-SA-4.0"
+description: "30 words for the sounds Russian spells or says differently from English: hard and soft consonants, the vowel ы (y), stress that changes meaning, weak unstressed vowels (akanye and ikanye), final devoicing, the hushing letters ж ш ц ч щ (zh sh ts ch shch), ё (yo), the rolled р (r), and the soft and hard signs. Taken from the words' own Wiktionary entries and Wikipedia's page on Russian phonology. Not yet checked by a Russian speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "ru-0400":
+    native: "brother"
+    notes:
+      "n1": "The final т (t) of брат (brat) is hard: the tongue stays flat and the word ends on a plain t. Russian has a hard and a soft (palatalised) version of most consonants, and the soft one is said with the middle of the tongue raised towards the palate, as if a quick 'y' followed."
+      "pair": "Not брать (brat'), to take: there the soft sign ь (soft sign) makes the final т (t) soft, said /tʲ/ (as /t/ with a quick 'y'). The word for brother ends on the plain /t/."
+    examples:
+      "Это брат.":
+        native: "This is a brother."
+        bases:
+          "Это": "this; it; this is"
+          "брат": "brother"
+      "Нет, это не брат.":
+        native: "No, this is not a brother."
+        bases:
+          "это": "this; it; this is"
+          "не": "not"
+          "брат": "brother"
+  "ru-0401":
+    native: "to take"
+    notes:
+      "n1": "The soft sign ь (soft sign) after т (t) has no sound of its own: it only softens the т (t), said /tʲ/. Its perfective partner, for one finished act of taking, is a different word, взять (vzyat')."
+      "pair": "Not брат (brat), brother: there the final т (t) is hard. The soft sign is the only difference in spelling, and a tongue raised towards the palate is the only difference in sound."
+    examples:
+      "Брать или не брать?":
+        native: "To take or not to take?"
+        bases:
+          "Брать": "to take"
+          "не": "not"
+      "Не брать!":
+        native: "Do not take!"
+        bases:
+          "Не": "not"
+          "брать": "to take"
+  "ru-0402":
+    native: "checkmate; swear words"
+    notes:
+      "n1": "The final т (t) is hard. In chess мат (mat) is checkmate, and the same word is the name for strong Russian swearing."
+      "pair": "Not мать (mat'), mother: there the soft sign softens the final т (t). Both are said with a short vowel, but the consonant at the end is hard in one word and soft in the other."
+    examples:
+      "Шах и мат!":
+        native: "Check and mate!"
+        bases:
+          "Шах": "check (in chess)"
+          "мат": "checkmate; swear words"
+      "Это мат.":
+        native: "This is checkmate."
+        bases:
+          "Это": "this; it; this is"
+          "мат": "checkmate; swear words"
+  "ru-0403":
+    native: "mother"
+    notes:
+      "n1": "A noun that ends in the soft sign can be masculine or feminine, and each one has to be learnt: мать (mat') is feminine. In the other cases it uses a longer stem, матер (mater) with an ending."
+      "pair": "Not мат (mat), checkmate: there the final т (t) is hard. In мать (mat') the soft sign makes the т (t) soft, said /tʲ/."
+    examples:
+      "Это мать.":
+        native: "This is a mother."
+        bases:
+          "Это": "this; it; this is"
+          "мать": "mother"
+      "Мать и брат.":
+        native: "Mother and brother."
+        bases:
+          "Мать": "mother"
+  "ru-0404":
+    native: "corner; angle"
+    notes:
+      "n1": "The stress is on the first syllable, and the final л (l) is hard: a dark l, with the back of the tongue raised, as at the end of the English word 'ball'."
+      "pair": "Not уголь (ugol'), coal: the soft sign makes the final л (l) soft, a lighter l said with the middle of the tongue raised. Both are stressed on the first syllable."
+    examples:
+      "Это угол.":
+        native: "This is a corner."
+        bases:
+          "Это": "this; it; this is"
+          "угол": "corner; angle"
+      "Вот угол.":
+        native: "Here is a corner."
+        bases:
+          "Вот": "here is; there is"
+          "угол": "corner; angle"
+  "ru-0405":
+    native: "coal"
+    notes:
+      "n1": "уголь (ugol') ends in a soft sign, so the final л (l) is soft, /lʲ/. It is a masculine noun, and the stress stays on the first syllable."
+      "pair": "Not угол (ugol), corner: there the final л (l) is hard. Only the soft sign tells the two apart in writing."
+    examples:
+      "Это уголь.":
+        native: "This is coal."
+        bases:
+          "Это": "this; it; this is"
+          "уголь": "coal"
+      "Нет, это не уголь.":
+        native: "No, this is not coal."
+        bases:
+          "это": "this; it; this is"
+          "не": "not"
+          "уголь": "coal"
+  "ru-0406":
+    native: "onion; bow"
+    notes:
+      "n1": "The vowel у (u) after a hard л (l) is said /u/. лук (luk) means onion, and also the bow that shoots arrows."
+      "pair": "Not люк (lyuk), hatch: the letter ю (yu) softens the л (l) and adds a quick 'y', so the word is said /lʲuk/. Vowel letters in Russian come in hard and soft pairs: у (u) and ю (yu)."
+    examples:
+      "Это лук.":
+        native: "This is an onion."
+        bases:
+          "Это": "this; it; this is"
+          "лук": "onion; bow"
+      "Лук и хлеб.":
+        native: "Onion and bread."
+        bases:
+          "Лук": "onion; bow"
+  "ru-0407":
+    native: "hatch; manhole"
+    notes:
+      "n1": "The letter ю (yu) says that the л (l) before it is soft and adds the vowel: /lʲuk/. There is no separate soft letter for the consonant itself."
+      "pair": "Not лук (luk), onion: there the vowel letter у (u) leaves the л (l) hard. The pair differs only in the hardness of the first consonant, and that is shown by у (u) against ю (yu)."
+    examples:
+      "Это люк.":
+        native: "This is a hatch."
+        bases:
+          "Это": "this; it; this is"
+          "люк": "hatch; manhole"
+      "Вот люк.":
+        native: "Here is a hatch."
+        bases:
+          "Вот": "here is; there is"
+          "люк": "hatch; manhole"
+  "ru-0408":
+    native: "to be"
+    notes:
+      "n1": "The letter ы (y) is a vowel that English has no letter for: say 'ee' with the tongue pulled back, /ɨ/. It follows hard consonants, and и (i) usually follows soft ones."
+      "pair": "Not бить (bit'), to hit: there и (i) after the soft б (b) is said /i/ (a clear 'ee'), and the б (b) is softened by it. Compare the pair in this deck: быть (byt') and бить (bit')."
+    examples:
+      "Быть или не быть?":
+        native: "To be or not to be?"
+        bases:
+          "Быть": "to be"
+          "не": "not"
+      "Быть здесь.":
+        native: "To be here."
+        bases:
+          "Быть": "to be"
+          "здесь": "here"
+  "ru-0409":
+    native: "to hit; to beat"
+    notes:
+      "n1": "The letter и (i) is a clear 'ee', /i/, and it softens the consonant before it. It is the soft partner of ы (y)."
+      "pair": "Not быть (byt'), to be: there ы (y) is the back, hard vowel /ɨ/ after a hard б (b). Listen for the tongue moving back."
+    examples:
+      "Не бить!":
+        native: "Do not hit!"
+        bases:
+          "Не": "not"
+          "бить": "to hit; to beat"
+      "Бить или не бить?":
+        native: "To hit or not to hit?"
+        bases:
+          "Бить": "to hit; to beat"
+          "не": "not"
+  "ru-0410":
+    native: "castle"
+    notes:
+      "n1": "The stress, not the letters, tells this word from its twin: замок (zamok) with the stress on the first syllable is a castle. Stress in Russian is free: it can fall on any syllable and has to be learnt with the word."
+      "homo": "Spelled like замок (zamok) with the stress on the last syllable, a lock. The two are said differently: /ˈzamək/ for the castle and /zɐˈmok/ for the lock."
+    examples:
+      "Это замок.":
+        native: "This is a castle."
+        bases:
+          "Это": "this; it; this is"
+          "замок": "lock"
+      "Вот замок.":
+        native: "Here is a castle."
+        bases:
+          "Вот": "here is; there is"
+          "замок": "lock"
+  "ru-0411":
+    native: "lock"
+    notes:
+      "n1": "With the stress on the last syllable, замок (zamok) is a lock. In an unstressed syllable о (o) is said like a weak 'a', which is why the first vowel of this word is /ɐ/ and the stressed one is a clear /o/."
+      "homo": "Spelled like замок (zamok) with the stress on the first syllable, a castle. The two are said differently: /zɐˈmok/ for the lock and /ˈzamək/ for the castle."
+    examples:
+      "Это замок.":
+        native: "This is a lock."
+        bases:
+          "Это": "this; it; this is"
+          "замок": "lock"
+      "Вот замок.":
+        native: "Here is a lock."
+        bases:
+          "Вот": "here is; there is"
+          "замок": "lock"
+  "ru-0412":
+    native: "torment; suffering"
+    notes:
+      "n1": "мука (muka) with the stress on the first syllable is torment, a word of strong feeling, as in 'it is torture'. Written text does not mark stress, so a reader tells the two from the sentence."
+      "homo": "Spelled like мука (muka) with the stress on the last syllable, flour. They are said /ˈmukə/ (torment) and /mʊˈka/ (flour)."
+    examples:
+      "Это мука.":
+        native: "This is torment."
+        bases:
+          "Это": "this; it; this is"
+          "мука": "flour"
+      "Вот мука.":
+        native: "Here is torment."
+        bases:
+          "Вот": "here is; there is"
+          "мука": "flour"
+  "ru-0413":
+    native: "flour"
+    notes:
+      "n1": "мука (muka) with the stress on the last syllable is flour. The stressed а (a) is clear, and the unstressed у (u) before it is short and weak, /ʊ/."
+      "homo": "Spelled like мука (muka) with the stress on the first syllable, torment. They are said /mʊˈka/ (flour) and /ˈmukə/ (torment)."
+    examples:
+      "Это мука.":
+        native: "This is flour."
+        bases:
+          "Это": "this; it; this is"
+          "мука": "flour"
+      "Вот мука.":
+        native: "Here is flour."
+        bases:
+          "Вот": "here is; there is"
+          "мука": "flour"
+  "ru-0414":
+    native: "all; everyone"
+    notes:
+      "n1": "все (vse) with the letter е (ye) means all, everyone: /fsʲe/. The first letter is в (v), and before a voiceless с (s) it is said as /f/, so the word starts with 'fs'."
+      "pair": "Not всё (vsyo), everything: the letter ё (yo) is always stressed and said /o/, so всё (vsyo) is /fsʲo/ and все (vse) is /fsʲe/. In most books the two dots are not written, and the sentence tells them apart."
+    examples:
+      "Все здесь.":
+        native: "Everyone is here."
+        bases:
+          "Все": "all; everyone"
+          "здесь": "here"
+      "Да, все.":
+        native: "Yes, everyone."
+        bases:
+          "все": "all; everyone"
+  "ru-0415":
+    native: "everything; all"
+    notes:
+      "n1": "всё (vsyo) with ё (yo) means everything. The letter ё (yo) is always stressed, and it says /o/ after a soft consonant: /fsʲo/."
+      "pair": "Not все (vse), everyone: there е (ye) is said /e/. The two dots on ё (yo) are the only difference in writing, but books often leave them out."
+    examples:
+      "Всё хорошо.":
+        native: "Everything is fine."
+        bases:
+          "Всё": "everything; all"
+      "Да, всё.":
+        native: "Yes, everything."
+        bases:
+          "всё": "everything; all"
+  "ru-0416":
+    native: "milk"
+    notes:
+      "n1": "Only the last о (o) is stressed, so it is the only one said as /o/. The first two are weak and said like a short 'a': /məlɐˈko/. This is called akanye, аканье (akan'ye), Russian's rule that an unstressed о (o) is said like а (a)."
+    examples:
+      "Это молоко.":
+        native: "This is milk."
+        bases:
+          "Это": "this; it; this is"
+          "молоко": "milk"
+      "Вот молоко.":
+        native: "Here is milk."
+        bases:
+          "Вот": "here is; there is"
+          "молоко": "milk"
+  "ru-0417":
+    native: "head"
+    notes:
+      "n1": "The stress is on the last syllable. The first о (o) is unstressed and is said like a short 'a', so the word sounds like 'ga-la-VA'. Spelling keeps о (o) even though it sounds like а (a)."
+    examples:
+      "Это голова.":
+        native: "This is a head."
+        bases:
+          "Это": "this; it; this is"
+          "голова": "head"
+      "Вот голова.":
+        native: "Here is a head."
+        bases:
+          "Вот": "here is; there is"
+          "голова": "head"
+  "ru-0418":
+    native: "tongue; language"
+    notes:
+      "n1": "The stress is on the last syllable. The unstressed я (ya) at the start is weak and said like a short 'i', /jɪ/. This is called ikanye, иканье (ikan'ye): after a soft consonant or a 'y', an unstressed я (ya) or е (ye) sounds like и (i)."
+    examples:
+      "Это мой язык.":
+        native: "This is my tongue."
+        bases:
+          "Это": "this; it; this is"
+          "мой": "my; mine"
+          "язык": "tongue; language"
+      "Вот язык.":
+        native: "Here is a tongue."
+        bases:
+          "Вот": "here is; there is"
+          "язык": "tongue; language"
+  "ru-0419":
+    native: "bread"
+    notes:
+      "n1": "The last letter is б (b), but at the end of a word a voiced consonant is said voiceless, so хлеб (khleb) ends on /p/, said 'khlyep'. This is final devoicing, and it is not written. The б (b) comes back when an ending is added, as in a form that starts with a vowel."
+    examples:
+      "Хлеб и вода.":
+        native: "Bread and water."
+        bases:
+          "Хлеб": "bread"
+      "Ещё хлеб.":
+        native: "More bread."
+        bases:
+          "хлеб": "bread"
+  "ru-0420":
+    native: "friend"
+    notes:
+      "n1": "The last letter is г (g), said /g/ inside a word, but at the end of a word it is said /k/: 'drook'. This is final devoicing, and it is not written in the spelling."
+    examples:
+      "Это мой друг.":
+        native: "This is my friend."
+        bases:
+          "Это": "this; it; this is"
+          "мой": "my; mine"
+          "друг": "friend"
+      "Нет, это не друг.":
+        native: "No, this is not a friend."
+        bases:
+          "это": "this; it; this is"
+          "не": "not"
+          "друг": "friend"
+  "ru-0421":
+    native: "garden"
+    notes:
+      "n1": "The last letter is д (d), said /d/ inside a word, but at the end of a word it is said /t/: 'sat'. This is final devoicing: voiced consonants become voiceless at the end of a word."
+    examples:
+      "Это сад.":
+        native: "This is a garden."
+        bases:
+          "Это": "this; it; this is"
+          "сад": "garden"
+      "Вот сад.":
+        native: "Here is a garden."
+        bases:
+          "Вот": "here is; there is"
+          "сад": "garden"
+  "ru-0422":
+    native: "knife"
+    notes:
+      "n1": "The letter ж (zh) is always hard and said /ʐ/ inside a word, with the tongue curled back. At the end of a word it is devoiced to /ʂ/, the sound of ш (sh), so нож (nozh) is said like 'nosh'."
+    examples:
+      "Это нож.":
+        native: "This is a knife."
+        bases:
+          "Это": "this; it; this is"
+          "нож": "knife"
+      "Вот нож.":
+        native: "Here is a knife."
+        bases:
+          "Вот": "here is; there is"
+          "нож": "knife"
+  "ru-0423":
+    native: "tea"
+    notes:
+      "n1": "The letter ч (ch) is always soft and said /tɕ/, like the 'ch' of 'church' but lighter. The final й (y) is a quick 'y', so the word is one syllable, 'chai'."
+    examples:
+      "Чай или кофе?":
+        native: "Tea or coffee?"
+        bases:
+          "Чай": "tea"
+          "кофе": "coffee"
+      "Чай и хлеб.":
+        native: "Tea and bread."
+        bases:
+          "Чай": "tea"
+  "ru-0424":
+    native: "more; still; yet"
+    notes:
+      "n1": "The letter щ (shch) is a long, soft 'sh', /ɕː/, said a little longer than ш (sh) with the middle of the tongue raised. The letter ё (yo) is always stressed, so the stress is on the last syllable and the first vowel is weak, /jɪ/."
+    examples:
+      "Ещё чай.":
+        native: "More tea."
+        bases:
+          "Ещё": "more; still; yet"
+      "Ещё хлеб.":
+        native: "More bread."
+        bases:
+          "Ещё": "more; still; yet"
+  "ru-0425":
+    native: "wife"
+    notes:
+      "n1": "The letters ж (zh), ш (sh) and ц (ts) are always hard, so an unstressed е (ye) after them is said like the hard vowel ы (y): жена (zhena) is said /ʐɨˈna/, 'zhy-NA'. Compare ч (ch) and щ (shch), which are always soft."
+    examples:
+      "Это жена.":
+        native: "This is a wife."
+        bases:
+          "Это": "this; it; this is"
+          "жена": "wife"
+      "Вот жена.":
+        native: "Here is a wife."
+        bases:
+          "Вот": "here is; there is"
+          "жена": "wife"
+  "ru-0426":
+    native: "hand; arm"
+    notes:
+      "n1": "The letter р (r) is a rolled or tapped r, with the tip of the tongue, not the English r. Practise a quick tap, as in the American 'butter'. The stress is on the last syllable."
+    examples:
+      "Это рука.":
+        native: "This is a hand."
+        bases:
+          "Это": "this; it; this is"
+          "рука": "hand; arm"
+      "Вот рука.":
+        native: "Here is a hand."
+        bases:
+          "Вот": "here is; there is"
+          "рука": "hand; arm"
+  "ru-0427":
+    native: "family"
+    notes:
+      "n1": "The soft sign ь (soft sign) before я (ya) says that the м (m) is soft, and the я (ya) adds a quick 'y' of its own: семья (sem'ya) is said /sʲɪˈmʲja/, 'sim-YA'. The stress is on the last syllable."
+    examples:
+      "Это семья.":
+        native: "This is a family."
+        bases:
+          "Это": "this; it; this is"
+          "семья": "family"
+      "Вот семья.":
+        native: "Here is a family."
+        bases:
+          "Вот": "here is; there is"
+          "семья": "family"
+  "ru-0428":
+    native: "entrance (of an apartment block)"
+    notes:
+      "n1": "The hard sign ъ (hard sign) is rare. It stands between a prefix that ends in a consonant and a vowel letter, and it keeps the consonant hard and the 'y' of е (ye) separate: /pɐˈdjest/. The word means the entrance of a block of flats, with its stairs."
+    examples:
+      "Это подъезд.":
+        native: "This is an entrance."
+        bases:
+          "Это": "this; it; this is"
+          "подъезд": "entrance (of an apartment block)"
+      "Вот подъезд.":
+        native: "Here is an entrance."
+        bases:
+          "Вот": "here is; there is"
+          "подъезд": "entrance (of an apartment block)"
+  "ru-0429":
+    native: "hedgehog"
+    notes:
+      "n1": "The letter ё (yo) is always stressed, and at the start of a word it is said /jo/. The letter ж (zh) at the end is devoiced to /ʂ/ after the vowel, so the word is said /joʂ/, 'yosh'."
+    examples:
+      "Это ёж.":
+        native: "This is a hedgehog."
+        bases:
+          "Это": "this; it; this is"
+          "ёж": "hedgehog"
+      "Вот ёж.":
+        native: "Here is a hedgehog."
+        bases:
+          "Вот": "here is; there is"
+          "ёж": "hedgehog"
