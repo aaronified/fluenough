@@ -1,0 +1,566 @@
+schema: 1
+id: "pl-en-sound-differences"
+kind: "layer"
+core: "pl-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Polish sounds that differ from English"
+license: "CC-BY-SA-4.0"
+description: "32 words for the sounds Polish spells or says differently from English: the vowels y and i, l and the crossed ł, s and the digraph sz, voiced and voiceless z and s, rz and ż, ó and u, cz, the soft sounds dź and ń, the nasal letters ą and ę, ch, a final consonant that is said voiceless, i as a softening mark, and the few words with stress that is not on the next-to-last syllable. Taken from each word's own Wiktionary entry, Wikipedia's pages on Polish phonology and orthography and Wiktionary's Polish pronunciation appendix. Not yet checked by a Polish speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "pl-0400":
+    native: "to be"
+    notes:
+      "n1": "The letter y is a vowel of its own, said /ɨ/ in this course's IPA. Wiktionary compares it to the i of English \"mill\". It is not the same sound as the letter i. The ć at the end is a soft /tɕ/. być is imperfective; its present tense is taught in the grammar units."
+      "pair": "Not bić, to beat: there the vowel is i, said like the ee of \"eat\". The one letter, y or i, is the whole difference between the two words."
+    examples:
+      "Jestem Kamil, a to jest Marta.":
+        native: "I am Kamil, and this is Marta."
+        bases:
+          "Jestem": "am (a form of być, to be)"
+          "Kamil": "Kamil (a man's name)"
+          "a": "and; but"
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "Marta": "Marta (a woman's name)"
+      "Jutro będzie piątek.":
+        native: "Tomorrow it will be Friday."
+        bases:
+          "Jutro": "tomorrow"
+          "będzie": "will be (a form of być, to be)"
+          "piątek": "Friday"
+  "pl-0401":
+    native: "to beat; to hit"
+    notes:
+      "n1": "The letter i is said like the ee of English \"eat\" (Wiktionary's comparison), and a consonant before it is said soft: this course's IPA writes the b as bʲ. bić is imperfective."
+      "pair": "Not być, to be: there the vowel is y, said /ɨ/. Only the vowel differs."
+    examples:
+      "bić w bęben":
+        native: "to beat a drum"
+        bases:
+          "bić": "to beat; to hit"
+          "w": "in; at"
+          "bęben": "drum"
+      "bić kijem":
+        native: "to beat with a stick"
+        bases:
+          "bić": "to beat; to hit"
+          "kijem": "stick (here with a stick)"
+  "pl-0402":
+    native: "cane; walking stick"
+    notes:
+      "n1": "The letter l is a plain /l/. laska is a walking stick; Wiktionary also lists colloquial senses, so learn the walking stick first. It is feminine and the k changes in the locative: o lasce."
+      "pair": "Not łaska, grace: there the ł is said /w/, as in English \"way\". Only the first letter differs."
+    examples:
+      "To jest laska.":
+        native: "This is a walking stick."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "laska": "walking stick"
+      "Nie, to nie jest laska.":
+        native: "No, this is not a walking stick."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "laska": "walking stick"
+  "pl-0403":
+    native: "grace; mercy"
+    notes:
+      "n1": "The letter ł (a crossed l) is said /w/, as in English \"way\", so łaska sounds like \"wuska\" with an a. Wiktionary gives it the senses grace (Christianity) and mercy. It is feminine; the locative is o łasce."
+      "pair": "Not laska, walking stick: there the l is a plain /l/. Only the first letter differs."
+    examples:
+      "To jest łaska.":
+        native: "This is a grace."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "łaska": "grace; mercy"
+      "Nie, to nie jest łaska.":
+        native: "No, this is not a grace."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "łaska": "grace; mercy"
+  "pl-0404":
+    native: "cash desk; till"
+    notes:
+      "n1": "The letter s is a plain /s/. kasa is the cash desk or till in a shop, and colloquially money. It is feminine."
+      "pair": "Not kasza, groats: there the digraph sz is said /ʂ/, the sound of \"sh\" in English \"shore\" (Wiktionary)."
+    examples:
+      "To jest kasa.":
+        native: "This is a till."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kasa": "cash desk; till"
+      "Nie, to nie jest kasa.":
+        native: "No, this is not a till."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kasa": "cash desk; till"
+  "pl-0405":
+    native: "groats; porridge"
+    notes:
+      "n1": "The digraph sz is one sound, /ʂ/, which Wiktionary compares to the \"sh\" of English \"shore\". kasza is groats, or the porridge made from them. It is feminine."
+      "pair": "Not kasa, cash desk: there the s is a plain /s/. Only s against sz differs."
+    examples:
+      "To jest kasza.":
+        native: "This is groats."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kasza": "groats; porridge"
+      "Nie, to nie jest kasza.":
+        native: "No, this is not groats."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kasza": "groats; porridge"
+  "pl-0406":
+    native: "goat"
+    notes:
+      "n1": "The letter z is the voiced /z/, as in \"zebra\". koza is feminine; the genitive plural has ó: kóz."
+      "pair": "Not kosa, scythe: there the s is voiceless /s/. Voiced z against voiceless s is the whole difference."
+    examples:
+      "To jest koza.":
+        native: "This is a goat."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "koza": "goat"
+      "Nie, to nie jest koza.":
+        native: "No, this is not a goat."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "koza": "goat"
+  "pl-0407":
+    native: "scythe"
+    notes:
+      "n1": "The letter s is the voiceless /s/, as in \"sign\". kosa is a scythe (and, in a dated sense, a braid). It is feminine."
+      "pair": "Not koza, goat: there the z is voiced /z/. Voiceless s against voiced z is the whole difference."
+    examples:
+      "To jest kosa.":
+        native: "This is a scythe."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kosa": "scythe"
+      "Nie, to nie jest kosa.":
+        native: "No, this is not a scythe."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "kosa": "scythe"
+  "pl-0408":
+    native: "sea"
+    notes:
+      "n1": "The digraph rz is said /ʐ/, the same sound as the letter ż: morze sounds exactly like może. Wikipedia's page on Polish orthography says rz is kept where related words have r, as in morze and morski. morze is neuter: it ends in -e, and its genitive plural is mórz."
+    examples:
+      "To jest morze.":
+        native: "This is a sea."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "morze": "sea"
+      "Nie, to nie jest morze.":
+        native: "No, this is not a sea."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "morze": "sea"
+  "pl-0409":
+    native: "maybe; perhaps"
+    notes:
+      "n1": "The letter ż is said /ʐ/, the same sound as rz: może sounds exactly like morze, sea. Wikipedia's page on Polish orthography gives the pair może and mogę as a reason for writing ż, not rz. może is also a verb form, he or she can, from móc."
+    examples:
+      "Może pójdziemy na lody?":
+        native: "Maybe we will go out for ice cream?"
+        bases:
+          "Może": "maybe; perhaps"
+          "pójdziemy": "we will go (a form of pójść, to go)"
+          "na": "on; for; to"
+          "lody": "ice cream"
+      "Może.":
+        native: "Maybe."
+        bases:
+          "Może": "maybe; perhaps"
+  "pl-0410":
+    native: "god"
+    notes:
+      "n1": "The letter ó is said /u/, exactly like u: bóg sounds exactly like buk, beech. The final g is also devoiced and said /k/. Wiktionary gives bóg as masculine personal (a person). Other forms show the o: the genitive is boga."
+    examples:
+      "To jest bóg.":
+        native: "This is a god."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "bóg": "god"
+      "Nie, to nie jest bóg.":
+        native: "No, this is not a god."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "bóg": "god"
+  "pl-0411":
+    native: "beech"
+    notes:
+      "n1": "The letter u is said /u/, the same sound as ó, so buk sounds exactly like bóg, god. buk is a beech tree: masculine and inanimate."
+    examples:
+      "To jest buk.":
+        native: "This is a beech."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "buk": "beech (the tree)"
+      "Nie, to nie jest buk.":
+        native: "No, this is not a beech."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "buk": "beech (the tree)"
+  "pl-0412":
+    native: "ice"
+    notes:
+      "n1": "The letter ó is said /u/, and the final d is devoiced and said /t/: lód is said /lut/, which is also how the word lud, people, is said. Other forms show the o: the genitive is lodu. lód is masculine and inanimate."
+    examples:
+      "To jest lód.":
+        native: "This is ice."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "lód": "ice"
+      "kostka lodu":
+        native: "ice cube"
+        bases:
+          "kostka": "cube; small piece"
+          "lodu": "of ice (the form after kostka)"
+  "pl-0413":
+    native: "school"
+    notes:
+      "n1": "The digraph sz is one sound, /ʂ/, and the letter ł is said /w/: szkoła is said /ˈʂkɔwa/. The stress is on the next-to-last syllable, szko. szkoła is feminine; the locative is w szkole."
+    examples:
+      "To jest szkoła.":
+        native: "This is a school."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "szkoła": "school"
+      "Nie, to nie jest szkoła.":
+        native: "No, this is not a school."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "szkoła": "school"
+  "pl-0414":
+    native: "time"
+    notes:
+      "n1": "The digraph cz is one sound, /tʂ/, which Wiktionary compares to the \"ch\" of English \"child\". It is a different sound from ć (/tɕ/, \"cheer\"). czas is masculine and inanimate; it also means the tense of a verb."
+    examples:
+      "Późno już, czas mi iść do domu.":
+        native: "It is late, it is time for me to go home."
+        bases:
+          "Późno": "late"
+          "już": "already; now"
+          "czas": "time"
+          "mi": "to me (a form of ja, I)"
+          "iść": "to go (on foot)"
+          "do": "to"
+          "domu": "house (here: home)"
+      "czas Greenwich":
+        native: "Greenwich time"
+        bases:
+          "czas": "time"
+          "Greenwich": "Greenwich (the place)"
+  "pl-0415":
+    native: "river"
+    notes:
+      "n1": "The digraph rz is said /ʐ/, as the ż of żona. Wikipedia's page on Polish orthography uses rzeka as an example of rz, because the Slavic cousins of this word have r. rzeka is feminine; the locative is rzece (k becomes c)."
+    examples:
+      "To jest rzeka.":
+        native: "This is a river."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "rzeka": "river"
+      "Nie, to nie jest rzeka.":
+        native: "No, this is not a river."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "rzeka": "river"
+  "pl-0416":
+    native: "wife"
+    notes:
+      "n1": "The letter ż is said /ʐ/, the same sound as the digraph rz, the sound of the s in English \"vision\" (Wiktionary). żona is feminine; its coordinate term is mąż, husband."
+    examples:
+      "To jest żona.":
+        native: "This is a wife."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "żona": "wife"
+      "Nie, to nie jest żona.":
+        native: "No, this is not a wife."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "żona": "wife"
+  "pl-0417":
+    native: "day"
+    notes:
+      "n1": "In dzień the letters dzi are one soft sound, /dʑ/ (Wiktionary compares dź to the \"j\" of English \"jeep\"), and the i only softens it; the final ń is the soft /ɲ/. dzień is masculine and inanimate, and the e drops out of most other forms: the genitive is dnia."
+    examples:
+      "Dzień dobry.":
+        native: "Good morning; good day."
+        bases:
+          "Dzień": "day"
+      "To jest dzień.":
+        native: "This is a day."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "dzień": "day"
+  "pl-0418":
+    native: "horse"
+    notes:
+      "n1": "The letter ń (n with an acute) is the soft /ɲ/, the \"ny\" of English \"canyon\" (Wiktionary); ń is used at the end of a word or before a consonant. koń is masculine, animate; before a vowel the sound is written ni: the plural is konie."
+    examples:
+      "To jest koń.":
+        native: "This is a horse."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "koń": "horse"
+      "Nie, to nie jest koń.":
+        native: "No, this is not a horse."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "koń": "horse"
+  "pl-0419":
+    native: "hand; arm"
+    notes:
+      "n1": "The letter ę before a stop such as k is an e followed by a nasal consonant, here /ɛŋ/: ręka is said /ˈrɛŋka/ (Wikipedia, Polish orthography). ręka is feminine and means both hand and arm. Its forms change: the plural is ręce and the genitive plural is rąk (ę becomes ą)."
+    examples:
+      "To jest ręka.":
+        native: "This is a hand."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "ręka": "hand; arm"
+      "Nie, to nie jest ręka.":
+        native: "No, this is not a hand."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "ręka": "hand; arm"
+  "pl-0420":
+    native: "flour"
+    notes:
+      "n1": "The letter ą before a stop such as k is an o followed by a nasal consonant, here /ɔŋ/: mąka is said /ˈmɔŋka/. mąka is feminine. The locative changes the k to c: o mące."
+    examples:
+      "To jest mąka.":
+        native: "This is flour."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "mąka": "flour"
+      "Nie, to nie jest mąka.":
+        native: "No, this is not flour."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "mąka": "flour"
+  "pl-0421":
+    native: "snake"
+    notes:
+      "n1": "Before ż the letter ą is a nasal vowel, which Wiktionary writes /ɔw̃/, and the final ż is devoiced and said /ʂ/. wąż is masculine and animate; the vowel changes in other forms (ą becomes ę): the genitive is węża and the plural węże."
+    examples:
+      "To jest wąż.":
+        native: "This is a snake."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "wąż": "snake"
+      "jadowity wąż":
+        native: "venomous snake"
+        bases:
+          "jadowity": "venomous"
+          "wąż": "snake"
+  "pl-0422":
+    native: "mountain"
+    notes:
+      "n1": "The letter ó is said /u/: góra is said /ˈɡura/. Wikipedia's page on Polish orthography says ó is written where other forms of the word or related words have o, e or a. góra is feminine; the plural góry is the mountains."
+    examples:
+      "To jest góra.":
+        native: "This is a mountain."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "góra": "mountain"
+      "Nie, to nie jest góra.":
+        native: "No, this is not a mountain."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "góra": "mountain"
+  "pl-0423":
+    native: "knife"
+    notes:
+      "n1": "The letter ó is said /u/, and the final ż is devoiced and said /ʂ/: nóż is said /nuʂ/. Other forms show the o: the genitive is noża. nóż is masculine and inanimate."
+    examples:
+      "To jest nóż.":
+        native: "This is a knife."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "nóż": "knife"
+      "Nie, to nie jest nóż.":
+        native: "No, this is not a knife."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "nóż": "knife"
+  "pl-0424":
+    native: "bread"
+    notes:
+      "n1": "The digraph ch is said /x/, a rough h (Wiktionary compares it to the h of \"hello\"), and the final b is devoiced and said /p/: chleb is said /xlɛp/. chleb is masculine and inanimate; the genitive is chleba."
+    examples:
+      "To jest chleb.":
+        native: "This is bread."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "chleb": "bread"
+      "chleb razowy":
+        native: "wholemeal bread"
+        bases:
+          "chleb": "bread"
+          "razowy": "wholemeal"
+  "pl-0425":
+    native: "rice"
+    notes:
+      "n1": "The letter y is the vowel /ɨ/, and the final ż is devoiced and said /ʂ/: ryż is said /rɨʂ/. ryż is masculine and inanimate; the genitive is ryżu."
+    examples:
+      "To jest ryż.":
+        native: "This is rice."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "ryż": "rice"
+      "Nie, to nie jest ryż.":
+        native: "No, this is not rice."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "ryż": "rice"
+  "pl-0426":
+    native: "tooth"
+    notes:
+      "n1": "Before b or p the letter ą is an o followed by m, here /ɔm/, and the final b is devoiced and said /p/: ząb is said /zɔmp/. ząb is masculine; the vowel changes in other forms (ą becomes ę), and the plural is zęby."
+    examples:
+      "To jest ząb.":
+        native: "This is a tooth."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "ząb": "tooth"
+      "Nie, to nie jest ząb.":
+        native: "No, this is not a tooth."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "ząb": "tooth"
+  "pl-0427":
+    native: "dog"
+    notes:
+      "n1": "The letter i before another vowel is not a vowel here: it softens the p and is said /j/, so pies is said /pjɛs/. Wikipedia's page on Polish orthography uses pies as its example. pies is masculine and animate; the e drops out of other forms: the genitive is psa and the plural psy."
+    examples:
+      "To jest pies.":
+        native: "This is a dog."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "pies": "dog"
+      "Nie, to nie jest pies.":
+        native: "No, this is not a dog."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "pies": "dog"
+  "pl-0428":
+    native: "city; town"
+    notes:
+      "n1": "The letter i before a vowel softens the m and is said /j/: miasto is said /ˈmjastɔ/. miasto is neuter. The a becomes e and the t becomes ć in the locative: w mieście."
+    examples:
+      "To jest miasto.":
+        native: "This is a city."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "miasto": "city; town"
+      "Nie, to nie jest miasto.":
+        native: "No, this is not a city."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "miasto": "city; town"
+  "pl-0429":
+    native: "physics"
+    notes:
+      "n1": "Polish stress is usually on the next-to-last syllable, but Wikipedia's page on Polish phonology gives fizyka as an exception: the stress is on the first syllable, FI-zy-ka. Wiktionary adds that in colloquial speech the stress is often on the next-to-last syllable, fi-ZY-ka. fizyka is feminine."
+    examples:
+      "Madlen studiuje fizykę na Uniwersytecie Wiedeńskim.":
+        native: "Madlen studies physics at the University of Vienna."
+        bases:
+          "Madlen": "Madlen (a woman's name)"
+          "studiuje": "studies (a form of studiować, to study)"
+          "fizykę": "physics"
+          "na": "at; on"
+          "Uniwersytecie": "university (here: at the university)"
+          "Wiedeńskim": "of Vienna"
+      "To jest fizyka.":
+        native: "This is physics."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "fizyka": "physics"
+  "pl-0430":
+    native: "music"
+    notes:
+      "n1": "Polish stress is usually on the next-to-last syllable, but like fizyka this word is stressed on the first syllable when it is said carefully: MU-zy-ka. Wiktionary adds that colloquially it is mu-ZY-ka. Wikipedia notes that this second stress also belongs to another word, the genitive of muzyk, musician. muzyka is feminine."
+    examples:
+      "To jest muzyka.":
+        native: "This is music."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "muzyka": "music"
+      "Nie, to nie jest muzyka.":
+        native: "No, this is not music."
+        bases:
+          "to": "this; it"
+          "jest": "is (a form of być, to be)"
+          "muzyka": "music"
+  "pl-0431":
+    native: "university"
+    notes:
+      "n1": "Polish stress is usually on the next-to-last syllable, but Wikipedia's page on Polish phonology gives uniwersytet as an exception, stressed on the third syllable from the end: u-ni-WER-sy-tet. Wiktionary adds that colloquially it is uniwer-SY-tet. Once an ending is added the stress becomes regular: uniwersytetu is stressed on te. uniwersytet is masculine and inanimate."
+    examples:
+      "To jest uniwersytet.":
+        native: "This is a university."
+        bases:
+          "To": "this; it"
+          "jest": "is (a form of być, to be)"
+          "uniwersytet": "university"
+      "Madlen studiuje fizykę na Uniwersytecie Wiedeńskim.":
+        native: "Madlen studies physics at the University of Vienna."
+        bases:
+          "Madlen": "Madlen (a woman's name)"
+          "studiuje": "studies (a form of studiować, to study)"
+          "na": "at; on"
+          "Uniwersytecie": "university (here: at the university)"
+          "Wiedeńskim": "of Vienna"

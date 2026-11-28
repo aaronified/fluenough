@@ -1,0 +1,47 @@
+# Unit 2 grammar topic sound-differences. Sources read: en.wiktionary.org 'Appendix:Polish pronunciation' (y /ɘ/ and i, l and ł, s and sz, z and s) and the en.wiktionary.org entries of the eight words. Rows use only words the unit teaches (pl-sound-differences).
+schema: 1
+id: "pl-grammar-sound-differences"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["one", "other"]
+  entries:
+    - lemma: "być"
+      key: "byc"
+      ipa: "bɨtɕ"
+      forms:
+        "one": "być"
+        "other": "bić"
+      ipas:
+        "one": "bɨtɕ"
+        "other": "bʲitɕ"
+    - lemma: "laska"
+      key: "laska"
+      ipa: "ˈlaska"
+      forms:
+        "one": "laska"
+        "other": "łaska"
+      ipas:
+        "one": "ˈlaska"
+        "other": "ˈwaska"
+    - lemma: "kasa"
+      key: "kasa"
+      ipa: "ˈkasa"
+      forms:
+        "one": "kasa"
+        "other": "kasza"
+      ipas:
+        "one": "ˈkasa"
+        "other": "ˈkaʂa"
+    - lemma: "koza"
+      key: "koza"
+      ipa: "ˈkɔza"
+      forms:
+        "one": "koza"
+        "other": "kosa"
+      ipas:
+        "one": "ˈkɔza"
+        "other": "ˈkɔsa"

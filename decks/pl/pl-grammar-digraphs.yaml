@@ -1,0 +1,38 @@
+# Unit 2 grammar topic digraphs. Sources read: en.wikipedia.org 'Polish orthography' (the section on homophonic spellings: rz and ż, ó and u; the table of soft consonants: ń at the end of a word, ni before a vowel) and the en.wiktionary.org entries of the words (homophones, declension). Rows use only words the unit teaches, and konie, the plural of koń.
+schema: 1
+id: "pl-grammar-digraphs"
+part: "core"
+kind: "grammar"
+language: { code: "pl", iso639_3: "pol", name: "Polish", script: "latin", tts: "pl-PL", icon: "P" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["first", "second"]
+  entries:
+    - lemma: "morze"
+      key: "morze"
+      ipa: "ˈmɔʐɛ"
+      forms:
+        "first": "morze"
+        "second": "może"
+      ipas:
+        "first": "ˈmɔʐɛ"
+        "second": "ˈmɔʐɛ"
+    - lemma: "bóg"
+      key: "bog"
+      ipa: "buk"
+      forms:
+        "first": "bóg"
+        "second": "buk"
+      ipas:
+        "first": "buk"
+        "second": "buk"
+    - lemma: "koń"
+      key: "kon"
+      ipa: "kɔɲ"
+      forms:
+        "first": "koń"
+        "second": "konie"
+      ipas:
+        "first": "kɔɲ"
+        "second": "ˈkɔɲɛ"
