@@ -381,8 +381,21 @@ cards:
     notes:
       "n1": "Gehören is to belong to: ich gehöre, du gehörst."
     examples:
-      "Das Buch gehört mir.": "The book belongs to me."
-      "Ihm gehört das ganze Land.": "The whole country belongs to him."
+      "Das Buch gehört mir.":
+        native: "The book belongs to me."
+        bases:
+          "Das": "the"
+          "Buch": "book"
+          "gehört": "belongs to"
+          "mir": "me; to me"
+      "Ihm gehört das ganze Land.":
+        native: "The whole country belongs to him."
+        bases:
+          "Ihm": "him; to him"
+          "gehört": "belongs to"
+          "das": "the"
+          "ganze": "whole"
+          "Land": "country"
   "de-2094":
     native: "to last, to continue, to persist"
     notes:

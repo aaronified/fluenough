@@ -225,8 +225,8 @@ cards:
     notes: [{ id: "n1", kind: "note" }]
     bases: "self"
     examples:
-      - { target: "Das Buch gehört mir.", ipa: "das buːx ɡəˈhøːɐ̯t miːɐ̯", source: "Wiktionary" }
-      - { target: "Ihm gehört das ganze Land.", ipa: "iːm ɡəˈhøːɐ̯t das ˈɡantsə lant", source: "Wiktionary" }
+      - { target: "Das Buch gehört mir.", ipa: "das buːx ɡəˈhøːɐ̯t miːɐ̯", source: "Wiktionary", bases: [{ word: "Das", base: "der" }, { word: "Buch", base: "Buch" }, { word: "gehört", base: "gehören" }, { word: "mir", base: "ich" }] }
+      - { target: "Ihm gehört das ganze Land.", ipa: "iːm ɡəˈhøːɐ̯t das ˈɡantsə lant", source: "Wiktionary", bases: [{ word: "Ihm", base: "er" }, { word: "gehört", base: "gehören" }, { word: "das", base: "der" }, { word: "ganze", base: "ganz" }, { word: "Land", base: "Land" }] }
   - id: "de-2094"
     target: "dauern"
     ipa: "ˈdaʊɐn"
