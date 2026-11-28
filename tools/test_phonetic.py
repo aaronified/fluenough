@@ -474,6 +474,13 @@ class Registry(Tree):
         self.assertEqual((de.notes, de.tags, de.untagged, de.normalise),
                          (frozenset(), frozenset(), False, ()))
 
+    def test_russian_is_registered_but_takes_no_wiktionary_form(self) -> None:
+        # Rules only, as German: the narrow form comes from the rules file.
+        self.assertEqual(ip.DUMP_NAMES["ru"], "Russian")
+        ru = ip.VARIETIES["ru"]
+        self.assertEqual((ru.notes, ru.tags, ru.untagged, ru.normalise),
+                         (frozenset(), frozenset(), False, ()))
+
     def test_marathi_is_registered_but_takes_no_wiktionary_form(self) -> None:
         # #1476: the kaikki.org dump covers about 9% of the course and uses
         # another convention, so the narrow form comes from the rules file.

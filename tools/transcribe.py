@@ -823,6 +823,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return _italian(text, hint)
     if lang == "de":
         return _german(text, hint)
+    if lang == "ru":
+        return _russian(text, hint)
     if lang == "ja":
         return japanese(text)
     if lang == "ko":
@@ -3126,6 +3128,425 @@ def _de_join(toks: list[_DeTok], stressed: int, n_nuclei: int) -> str:
         pos = 0             # the whole initial cluster is the onset: Kneipe
     out.insert(pos, "ˈ")
     return "".join(out)
+
+
+# --- Russian -----------------------------------------------------------------
+
+# Standard Russian (the Moscow norm), broad, as the decks write it: ˈ before
+# the stressed syllable of a word of two syllables or more (none on a word of
+# one), ʲ after a palatalised consonant, ɨ for ы, ʂ ʐ for ш ж, tɕ for ч, ɕː for
+# щ, ts for ц, x for х, ɡ for г, j for й and for the glide before е ё ю я at
+# the start of a word or after a vowel or a sign, and the reduced vowels of
+# unstressed syllables: ɐ for о and а just before the stress or at the start
+# of a word, ə for them elsewhere, ɪ for и, е and я (and for а after ч щ),
+# ʊ for у and ю. The reading is the decks' transliteration, not a standard:
+# BGN/PCGN's letters (ё yo, ж zh, х kh, ц ts, ч ch, ш sh, щ shch, ы y, э e,
+# й y, ю yu, я ya) with these choices, each read off the cards already in
+# decks/ru and kept: a soft or hard sign is written ' at the end of a word
+# and before a vowel and left out before a consonant (ochen', bolshoye,
+# skolko); е is ye at the start of a word and after а о у ы э ю я ё й or a
+# sign but e after a consonant, и or е (dobroye, svidanie, medlennee); -ый is
+# y (dobry); capitals stay capitals; the stress mark is never written.
+#
+# Sources: Wikipedia, "Russian phonology" (vowel reduction by position and
+# by the consonant before; palatalisation; final devoicing and voicing
+# assimilation, в excepted; the silent consonants of стн, вств, лнц, рдц; сч
+# and зч as ɕː; long consonants; the -ся after т or ть as hard) and
+# Wiktionary, "Appendix:Russian pronunciation" (the vowels, ж ш as hard,
+# ч щ й as soft, the ɐ of an unstressed word-initial а or о). The broad
+# symbols follow Wiktionary's phonemic forms and the first cards (ɐ ə ɪ ʊ, not
+# ʌ). Not stated on those pages, and so the engine's own rules (several read
+# off the first cards): -тся and -ться as tsə, the ɐ of the first pretonic
+# syllable, ɪ for an unstressed э, the values of a final unstressed е and я,
+# г as x before к and ч, the glide after a vowel, and the doubled-consonant
+# rule below.
+#
+# Stress is in the lexicon, not the letters. The engine takes it from:
+#  1. the text itself: a combining acute U+0301 after the stressed vowel
+#     (`приве́т`) or an ё (always stressed);
+#  2. a *hint*: the same words with their stress marked as in (1); used only
+#     if, with its marks removed and ё read as е, it is the text;
+#  3. a word of one vowel (stressed, no mark written), and a proclitic
+#     (a preposition, conjunction or particle of one syllable such as в на не
+#     и, in a text of two words or more), which is unstressed;
+#  else a *guess*: the second-last syllable, which Russian does not make
+#  safe. A guessed word is named in the Transcription's `notes`.
+# Known limits: the guess; loan words whose е is hard (тест) or whose о is not
+# reduced (радио); ё written е; the word-final г of бог; г as v in -ого -его
+# is applied to every such word but a short list (много, строго, дорого ...);
+# the stems of вств (чувство, здравствуй) are listed, so баловство keeps its
+# в; стн, здн and стл drop their т or д everywhere, though some words keep
+# it (костный); ч is ш only in что чтобы конечно скучно нарочно; no
+# assimilation of softness (стʲ before a soft consonant) and no voicing
+# across a word boundary; doubled soft consonants (Россия) are not checked;
+# тч дц тс are not simplified; a prefix before с or з and ч (без часов) is
+# read as щ; the proclitics are the listed words only; the й of пожалуйста
+# is dropped (as the first cards write it), and no other word with a silent
+# letter is known.
+
+_RU_VOWELS = "аеёиоуыэюя"
+_RU_CONS = "бвгджзклмнпрстфхцчшщй"
+_RU_PUNCT = set(".,?!;:\"“”«»()…-–—")
+_RU_CLITICS = {"в", "во", "к", "ко", "с", "со", "у", "о", "об", "обо",
+               "от", "до", "за", "на", "по", "над", "под", "при", "про",
+               "без", "из", "для", "не", "ни", "и", "а", "но", "же", "ли",
+               "бы", "то", "ль"}
+_RU_BASE = {"б": "b", "в": "v", "г": "ɡ", "д": "d", "ж": "ʐ", "з": "z",
+            "к": "k", "л": "l", "м": "m", "н": "n", "п": "p", "р": "r",
+            "с": "s", "т": "t", "ф": "f", "х": "x", "ц": "ts", "ч": "tɕ",
+            "ш": "ʂ", "щ": "ɕː", "й": "j"}
+_RU_DEVOICE = {"b": "p", "v": "f", "ɡ": "k", "d": "t", "ʐ": "ʂ", "z": "s"}
+_RU_VOICE = {v: k for k, v in _RU_DEVOICE.items()}
+_RU_VOICELESS = {"p", "f", "k", "t", "ʂ", "s", "ts", "tɕ", "ɕː", "x"}
+_RU_VOICED_OBS = {"b", "d", "ɡ", "z", "ʐ"}
+_RU_NO_V = {"ого", "много", "немного", "строго", "нестрого", "убого",
+            "дорого", "недорого", "лого", "бого"}
+_RU_CH_SH = {"что", "чтобы", "конечно", "скучно", "нарочно"}
+_RU_VSTV = ("здравств", "чувств", "безмолвств")
+_RU_ROMAN = {
+    "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "ж": "zh", "з": "z",
+    "и": "i", "й": "y", "к": "k", "л": "l", "м": "m", "н": "n", "о": "o",
+    "п": "p", "р": "r", "с": "s", "т": "t", "у": "u", "ф": "f", "х": "kh",
+    "ц": "ts", "ч": "ch", "ш": "sh", "щ": "shch", "ы": "y", "э": "e",
+    "ю": "yu", "я": "ya", "ё": "yo"}
+_RU_ACUTE = "́"
+_RU_OBSTRUENT = {"p", "b", "t", "d", "k", "ɡ", "f", "v", "x", "s", "z", "ʂ",
+                 "ʐ", "ts", "tɕ"}
+_RU_SIBILANT = {"s", "z", "ʂ", "ʐ", "ɕ"}
+
+
+def _ru_check(text: str) -> None:
+    for c in text.lower():
+        if (c.isspace() or c in _RU_PUNCT or c == _RU_ACUTE
+                or c in _RU_VOWELS or c in _RU_CONS or c in "ьъ"):
+            continue
+        raise CannotRead(f"not a Russian letter: {c!r}")
+
+
+def _ru_words(text: str) -> list[str]:
+    return "".join(" " if c in _RU_PUNCT else c for c in text).split()
+
+
+def _ru_parse(word: str) -> tuple[str, int | None]:
+    """A word's letters and the index of its marked vowel, if any."""
+    letters: list[str] = []
+    stress: int | None = None
+    for c in word:
+        if c == _RU_ACUTE:
+            if letters:
+                stress = len(letters) - 1
+            continue
+        if c == "ё":
+            stress = len(letters)
+        letters.append(c)
+    return "".join(letters), stress
+
+
+def _ru_fold(word: str) -> str:
+    return _ru_parse(word)[0].replace("ё", "е")
+
+
+def _ru_hint_words(words: list[str], hint: str | None) -> list[str]:
+    """The hint's words if they are the text's words with stress marks, else
+    none."""
+    if not hint:
+        return []
+    hints = _ru_words(unicodedata.normalize("NFC", hint).lower())
+    if len(hints) != len(words) or any(
+            _ru_fold(h) != _ru_fold(w) for h, w in zip(hints, words)):
+        return []
+    return hints
+
+
+def russian_ipa(text: str, hint: str | None = None) -> str:
+    """Standard Russian, broad. [hint] is the text with its words' stress
+    marked (an acute U+0301 after the stressed vowel); it is used only if,
+    with its marks removed, it is the text. The limits and the stress rules
+    are the section header's. Raises CannotRead for a letter Russian
+    spelling does not use."""
+    return _ru_ipa(text, hint)[0]
+
+
+def _ru_ipa(text: str, hint: str | None) -> tuple[str, list[str]]:
+    text = unicodedata.normalize("NFC", text).lower()
+    _ru_check(text)
+    words = _ru_words(text)
+    hints = _ru_hint_words(words, hint)
+    out: list[str] = []
+    notes: list[str] = []
+    for k, raw in enumerate(words):
+        letters, stress = _ru_parse(raw)
+        if stress is None and hints:
+            stress = _ru_parse(hints[k])[1]
+        clitic = (len(words) > 1 and stress is None
+                  and letters in _RU_CLITICS)
+        ipa, guess = _ru_word(letters, stress, clitic)
+        if guess:
+            notes.append(f"{letters}: stress guessed (second-last "
+                         f"syllable); mark it with an acute or give a hint")
+        out.append(ipa)
+    return " ".join(w for w in out if w), notes
+
+
+def _russian(text: str, hint: str | None) -> Transcription:
+    ipa, notes = _ru_ipa(text, hint)
+    words = _ru_words(unicodedata.normalize("NFC", text).lower())
+    fitted = not hint or bool(_ru_hint_words(words, hint))
+    return Transcription(russian_reading(text), ipa, fitted, notes)
+
+
+def russian_reading(text: str) -> str:
+    """[text] in the decks' transliteration (see the section header). Raises
+    CannotRead for a letter Russian spelling does not use."""
+    text = unicodedata.normalize("NFC", text).replace(_RU_ACUTE, "")
+    _ru_check(text)
+    out: list[str] = []
+    for m in re.finditer(r"[^\W\d_]+|[\W\d_]", text):
+        w = m.group()
+        if not w.isalpha():
+            out.append(w)
+            continue
+        low = w.lower()
+        parts: list[str] = []
+        for i, c in enumerate(low):
+            prev = low[i - 1] if i else ""
+            nxt = low[i + 1] if i + 1 < len(low) else ""
+            if c in "ьъ":
+                before_vowel = bool(nxt) and nxt in _RU_VOWELS
+                parts.append("'" if before_vowel or (not nxt and c == "ь")
+                             else "")
+            elif c == "е":
+                ye = not prev or prev in "аоуыэюяёйьъ"
+                parts.append("ye" if ye else "e")
+            elif c == "й" and not nxt and prev == "ы":
+                parts.append("")        # -ый is y
+            else:
+                parts.append(_RU_ROMAN[c])
+        r = "".join(parts)
+        if len(w) > 1 and w.isupper():
+            r = r.upper()
+        elif w[0].isupper():
+            r = r[0].upper() + r[1:]
+        out.append(r)
+    return "".join(out)
+
+
+@dataclass
+class _RuUnit:
+    kind: str                   # "C" or "V"
+    letter: str
+    stressed: bool = False
+    base: str = ""
+    soft: bool = False
+    long: bool = False
+    ctx: str = ""               # for a vowel: init, vowel, sign, soft, hard, hzs
+
+
+def _ru_prepare(letters: str, stress: int | None) -> list[list]:
+    """The word's letters, as [letter, stressed] pairs, with the spelling
+    rules that drop or change a letter applied."""
+    toks = [[c, i == stress] for i, c in enumerate(letters)]
+
+    def word() -> str:
+        return "".join(t[0] for t in toks)
+
+    s = word()
+    if s in _RU_CH_SH:
+        toks[s.index("ч")][0] = "ш"
+    if s == "сегодня":
+        toks[2][0] = "в"
+    if len(s) >= 3 and s.endswith(("ого", "его")) and s not in _RU_NO_V:
+        toks[-2][0] = "в"
+    if s == "пожалуйста":
+        del toks[s.index("й")]          # the й is not said
+    if any(st in s for st in _RU_VSTV):
+        del toks[s.index("вств")]
+    for pat, drop in (("стн", 1), ("здн", 1), ("стл", 1), ("лнц", 0),
+                      ("рдц", 1)):
+        while pat in word():
+            del toks[word().index(pat) + drop]
+    for tail in ("ться", "тся"):
+        if word().endswith(tail) and not any(t[1] for t in toks[-len(tail):]):
+            del toks[-len(tail):]
+            toks.extend([["ц", False], ["а", False]])
+            break
+    for pair in ("сч", "зч"):
+        while pair in word():
+            i = word().index(pair)
+            toks[i:i + 2] = [["щ", toks[i][1] or toks[i + 1][1]]]
+    return toks
+
+
+def _ru_units(toks: list[list]) -> list[_RuUnit]:
+    units: list[_RuUnit] = []
+    pending_sign = False
+    for ch, st in toks:
+        if ch in _RU_CONS:
+            units.append(_RuUnit("C", ch, False, _RU_BASE[ch]))
+            pending_sign = False
+        elif ch in "ьъ":
+            if units and units[-1].kind == "C":
+                if ch == "ь" and units[-1].letter not in "жшцчщй":
+                    units[-1].soft = True
+            pending_sign = True
+        else:
+            if pending_sign:
+                ctx = "sign"
+            elif not units:
+                ctx = "init"
+            elif units[-1].kind == "V":
+                ctx = "vowel"
+            else:
+                last = units[-1]
+                if last.letter in "жшц":
+                    ctx = "hzs"
+                elif last.letter in "чщй":
+                    ctx = "soft"
+                elif ch in "еёиюя":
+                    last.soft = True
+                    ctx = "soft"
+                else:
+                    ctx = "hard"
+            units.append(_RuUnit("V", ch, st, ctx=ctx))
+            pending_sign = False
+    merged: list[_RuUnit] = []
+    for i, u in enumerate(units):
+        if (u.kind == "C" and merged and merged[-1].kind == "C"
+                and merged[-1].letter == u.letter):
+            if i + 1 < len(units) and units[i + 1].kind == "V":
+                merged[-1].long = True
+            merged[-1].soft = merged[-1].soft or u.soft
+            continue
+        merged.append(u)
+    return merged
+
+
+def _ru_voicing(units: list[_RuUnit]) -> None:
+    """Final devoicing and voicing assimilation, within the word."""
+    n = len(units)
+    for j in range(n - 1, -1, -1):
+        u = units[j]
+        if u.kind != "C":
+            continue
+        nxt = units[j + 1] if j + 1 < n else None
+        if nxt is None:
+            if u.base in _RU_DEVOICE:
+                u.base = _RU_DEVOICE[u.base]
+        elif nxt.kind == "C":
+            if u.base == "ɡ" and nxt.base in ("k", "tɕ"):
+                u.base = "x"            # мягкий, легко
+            elif nxt.base in _RU_VOICELESS and u.base in _RU_DEVOICE:
+                u.base = _RU_DEVOICE[u.base]
+            elif nxt.base in _RU_VOICED_OBS and u.base in _RU_VOICE:
+                u.base = _RU_VOICE[u.base]
+
+
+def _ru_vowel(u: _RuUnit, rel: str, last: bool, prev_v: str) -> str:
+    """One vowel's IPA, with the glide before it. [rel] is its place against
+    the stress: stress, pre1 (just before it), pre or post."""
+    letter, ctx = u.letter, u.ctx
+    j = "j" if ctx in ("init", "vowel", "sign") and letter in "еёюя" else ""
+    if rel == "stress":
+        p = {"а": "a", "о": "o", "у": "u", "э": "ɛ", "ы": "ɨ", "е": "e",
+             "ё": "o", "ю": "u", "я": "a", "и": "i"}[letter]
+        if ctx == "hzs":
+            p = {"е": "ɛ", "и": "ɨ"}.get(letter, p)
+        return j + p
+    if letter in "ао":
+        if ctx == "soft" and not (last and rel == "post"):
+            return "ɪ"
+        return "ɐ" if rel == "pre1" or ctx == "init" else "ə"
+    if letter in "ую":
+        return j + "ʊ"
+    if letter == "ы":
+        return "ɨ"
+    if letter == "и":
+        return "ɨ" if ctx == "hzs" else "ɪ"
+    if letter == "э":
+        return "ɪ"
+    if letter == "е":
+        if ctx == "hzs":
+            return "ɨ" if rel == "pre1" else "ə"
+        if ctx == "vowel" and rel == "post" and prev_v not in ("ɪ", "i"):
+            return j + "ə"
+        return j + "ɪ"
+    # я
+    if ctx == "hzs":
+        return "ɨ"
+    return j + ("ə" if last and rel == "post" else "ɪ")
+
+
+def _ru_legal(cl: list[str]) -> bool:
+    """Whether the consonants can begin a syllable together."""
+    if len(cl) == 1:
+        return True
+    if len(cl) == 2:
+        a, b = cl
+        return ((a in _RU_OBSTRUENT and b in {"l", "r", "v", "n", "m"})
+                or (a in _RU_SIBILANT and b in _RU_OBSTRUENT | {
+                    "m", "n", "l", "v"}))
+    if len(cl) == 3:
+        return cl[0] in _RU_SIBILANT and _ru_legal(cl[1:])
+    return False
+
+
+def _ru_word(letters: str, stress: int | None, clitic: bool
+             ) -> tuple[str, bool]:
+    """The IPA of one word, and whether its stress was guessed."""
+    units = _ru_units(_ru_prepare(letters, stress))
+    _ru_voicing(units)
+    vowels = [i for i, u in enumerate(units) if u.kind == "V"]
+    guessed = False
+    s: int | None = None
+    marked = [k for k, i in enumerate(vowels) if units[i].stressed]
+    if marked:
+        s = marked[0]
+    elif len(vowels) == 1 and not clitic:
+        s = 0
+    elif len(vowels) >= 2 and not clitic:
+        s = len(vowels) - 2
+        guessed = True
+    atoms: list[tuple[str, str]] = []       # (kind, text)
+    stress_at = -1
+    prev_v = ""
+    for i, u in enumerate(units):
+        if u.kind == "C":
+            t = u.base + ("ʲ" if u.soft and u.letter not in "жшцчщй" else "")
+            if u.long and not t.endswith("ː"):
+                t += "ː"
+            atoms.append(("C", t))
+            continue
+        k = vowels.index(i)
+        if s is None:
+            rel = "pre"
+        elif k == s:
+            rel = "stress"
+        elif k == s - 1:
+            rel = "pre1"
+        elif k < s:
+            rel = "pre"
+        else:
+            rel = "post"
+        p = _ru_vowel(u, rel, k == len(vowels) - 1, prev_v)
+        prev_v = p[-1]
+        if rel == "stress":
+            stress_at = len(atoms)
+        atoms.append(("V", p))
+    if stress_at >= 0 and len(vowels) >= 2:
+        start = stress_at
+        while start > 0 and atoms[start - 1][0] == "C":
+            start -= 1
+        run = [a[1].rstrip("ʲː") for a in atoms[start:stress_at]]
+        pos = stress_at
+        if start == 0:
+            pos = 0                 # the whole initial cluster: мно́го
+            run = []
+        for b in range(len(run)):
+            if _ru_legal(run[b:]):
+                pos = start + b
+                break
+        atoms.insert(pos, ("M", "ˈ"))
+    return "".join(a[1] for a in atoms), guessed
 
 
 # --- Japanese, Korean, Mandarin and Toki Pona (#612) -------------------------
