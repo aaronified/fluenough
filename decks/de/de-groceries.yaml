@@ -1,0 +1,481 @@
+schema: 1
+id: "de-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "groceries"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2350"
+    target: "Lebensmittel"
+    ipa: "ˈleːbənsmɪtəl"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Lebensmittel.", ipa: "das ɪst aɪn ˈleːbənsmɪtəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Lebensmittel", base: "Lebensmittel" }] }
+      - { target: "Wo ist das Lebensmittel?", ipa: "voː ɪst das ˈleːbənsmɪtəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Lebensmittel", base: "Lebensmittel" }] }
+  - id: "de-2351"
+    target: "Supermarkt"
+    ipa: "ˈzuːpɐmaʁkt"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Supermärkte" }]
+    examples:
+      - { target: "Das ist der Supermarkt.", ipa: "das ɪst deːɐ̯ ˈzuːpɐmaʁkt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Supermarkt", base: "Supermarkt" }] }
+      - { target: "Wo ist der Supermarkt?", ipa: "voː ɪst deːɐ̯ ˈzuːpɐmaʁkt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Supermarkt", base: "Supermarkt" }] }
+  - id: "de-2352"
+    target: "Joghurt"
+    ipa: "ˈjɔkhʊʁt"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Joghurts" }]
+    examples:
+      - { target: "Das ist der Joghurt.", ipa: "das ɪst deːɐ̯ ˈjɔkhʊʁt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Joghurt", base: "Joghurt" }] }
+      - { target: "Wo ist der Joghurt?", ipa: "voː ɪst deːɐ̯ ˈjɔkhʊʁt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Joghurt", base: "Joghurt" }] }
+  - id: "de-2353"
+    target: "Reis"
+    ipa: "ʁaɪs"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Reise" }]
+    examples:
+      - { target: "Das ist der Reis.", ipa: "das ɪst deːɐ̯ ʁaɪs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Reis", base: "Reis" }] }
+      - { target: "Wo ist der Reis?", ipa: "voː ɪst deːɐ̯ ʁaɪs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Reis", base: "Reis" }] }
+  - id: "de-2354"
+    target: "Nudel"
+    ipa: "ˈnuːdəl"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Nudeln" }]
+    examples:
+      - { target: "Das ist die Nudel.", ipa: "das ɪst diː ˈnuːdəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Nudel", base: "Nudel" }] }
+      - { target: "Wo ist die Nudel?", ipa: "voː ɪst diː ˈnuːdəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Nudel", base: "Nudel" }] }
+  - id: "de-2355"
+    target: "Zucker"
+    ipa: "ˈtsʊkɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Zucker.", ipa: "das ɪst deːɐ̯ ˈtsʊkɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Zucker", base: "Zucker" }] }
+      - { target: "Wo ist der Zucker?", ipa: "voː ɪst deːɐ̯ ˈtsʊkɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Zucker", base: "Zucker" }] }
+  - id: "de-2356"
+    target: "Salz"
+    ipa: "zalts"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Salze" }]
+    examples:
+      - { target: "Das ist Salz.", ipa: "das ɪst zalts", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Salz", base: "Salz" }] }
+      - { target: "Wo ist das Salz?", ipa: "voː ɪst das zalts", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Salz", base: "Salz" }] }
+  - id: "de-2357"
+    target: "Pfeffer"
+    ipa: "ˈpfɛfɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Pfeffer.", ipa: "das ɪst deːɐ̯ ˈpfɛfɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Pfeffer", base: "Pfeffer" }] }
+      - { target: "Wo ist der Pfeffer?", ipa: "voː ɪst deːɐ̯ ˈpfɛfɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Pfeffer", base: "Pfeffer" }] }
+  - id: "de-2358"
+    target: "Öl"
+    ipa: "øːl"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Öle" }]
+    examples:
+      - { target: "Das ist Öl.", ipa: "das ɪst øːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Öl", base: "Öl" }] }
+      - { target: "Wo ist das Öl?", ipa: "voː ɪst das øːl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Öl", base: "Öl" }] }
+  - id: "de-2359"
+    target: "Mehl"
+    ipa: "meːl"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Mehle" }]
+    examples:
+      - { target: "Das ist Mehl.", ipa: "das ɪst meːl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Mehl", base: "Mehl" }] }
+      - { target: "Wo ist das Mehl?", ipa: "voː ɪst das meːl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Mehl", base: "Mehl" }] }
+  - id: "de-2360"
+    target: "Kaffee"
+    ipa: "kaˈfeː"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kaffees" }]
+    examples:
+      - { target: "Das ist der Kaffee.", ipa: "das ɪst deːɐ̯ kaˈfeː", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kaffee", base: "Kaffee" }] }
+      - { target: "Wo ist der Kaffee?", ipa: "voː ɪst deːɐ̯ kaˈfeː", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kaffee", base: "Kaffee" }] }
+  - id: "de-2361"
+    target: "Tee"
+    ipa: "teː"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Tee.", ipa: "das ɪst deːɐ̯ teː", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Tee", base: "Tee" }] }
+      - { target: "Wo ist der Tee?", ipa: "voː ɪst deːɐ̯ teː", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Tee", base: "Tee" }] }
+  - id: "de-2362"
+    target: "Saft"
+    ipa: "zaft"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Säfte" }]
+    examples:
+      - { target: "Das ist der Saft.", ipa: "das ɪst deːɐ̯ zaft", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Saft", base: "Saft" }] }
+      - { target: "Wo ist der Saft?", ipa: "voː ɪst deːɐ̯ zaft", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Saft", base: "Saft" }] }
+  - id: "de-2363"
+    target: "Wein"
+    ipa: "vaɪn"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Weine" }]
+    examples:
+      - { target: "Das ist der Wein.", ipa: "das ɪst deːɐ̯ vaɪn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Wein", base: "Wein" }] }
+      - { target: "Wo ist der Wein?", ipa: "voː ɪst deːɐ̯ vaɪn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Wein", base: "Wein" }] }
+  - id: "de-2364"
+    target: "Marmelade"
+    ipa: "maʁməˈlaːdə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Marmeladen" }]
+    examples:
+      - { target: "Das ist die Marmelade.", ipa: "das ɪst diː maʁməˈlaːdə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Marmelade", base: "Marmelade" }] }
+      - { target: "Wo ist die Marmelade?", ipa: "voː ɪst diː maʁməˈlaːdə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Marmelade", base: "Marmelade" }] }
+  - id: "de-2365"
+    target: "Schokolade"
+    ipa: "ˈʃoːkɔladə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Schokoladen" }]
+    examples:
+      - { target: "Das ist die Schokolade.", ipa: "das ɪst diː ˈʃoːkɔladə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Schokolade", base: "Schokolade" }] }
+      - { target: "Wo ist die Schokolade?", ipa: "voː ɪst diː ˈʃoːkɔladə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Schokolade", base: "Schokolade" }] }
+  - id: "de-2366"
+    target: "Kuchen"
+    ipa: "ˈkuːxən"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Kuchen.", ipa: "das ɪst deːɐ̯ ˈkuːxən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kuchen", base: "Kuchen" }] }
+      - { target: "Wo ist der Kuchen?", ipa: "voː ɪst deːɐ̯ ˈkuːxən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kuchen", base: "Kuchen" }] }
+  - id: "de-2367"
+    target: "Keks"
+    ipa: "kɛks"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kekse" }]
+    examples:
+      - { target: "Das ist der Keks.", ipa: "das ɪst deːɐ̯ kɛks", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Keks", base: "Keks" }] }
+      - { target: "Wo ist der Keks?", ipa: "voː ɪst deːɐ̯ kɛks", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Keks", base: "Keks" }] }
+  - id: "de-2368"
+    target: "Müsli"
+    ipa: "ˈmʏsli"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist ein Müsli.", ipa: "das ɪst aɪn ˈmʏsli", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Müsli", base: "Müsli" }] }
+      - { target: "Wo ist das Müsli?", ipa: "voː ɪst das ˈmʏsli", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Müsli", base: "Müsli" }] }
+  - id: "de-2369"
+    target: "Butter"
+    ipa: "ˈbʊtɐ"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist Butter.", ipa: "das ɪst ˈbʊtɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Butter", base: "Butter" }] }
+      - { target: "Wo ist die Butter?", ipa: "voː ɪst diː ˈbʊtɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Butter", base: "Butter" }] }
+  - id: "de-2370"
+    target: "Milch"
+    ipa: "mɪlç"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Milchen" }]
+    examples:
+      - { target: "Das ist die Milch.", ipa: "das ɪst diː mɪlç", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Milch", base: "Milch" }] }
+      - { target: "Wo ist die Milch?", ipa: "voː ɪst diː mɪlç", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Milch", base: "Milch" }] }
+  - id: "de-2371"
+    target: "Käse"
+    ipa: "ˈkɛːzə"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Käse.", ipa: "das ɪst deːɐ̯ ˈkɛːzə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Käse", base: "Käse" }] }
+      - { target: "Wo ist der Käse?", ipa: "voː ɪst deːɐ̯ ˈkɛːzə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Käse", base: "Käse" }] }
+  - id: "de-2372"
+    target: "Brot"
+    ipa: "bʁoːt"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Brote" }]
+    examples:
+      - { target: "Das ist ein Brot.", ipa: "das ɪst aɪn bʁoːt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Brot", base: "Brot" }] }
+      - { target: "Wo ist das Brot?", ipa: "voː ɪst das bʁoːt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Brot", base: "Brot" }] }
+  - id: "de-2373"
+    target: "Tüte"
+    ipa: "ˈtyːtə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Tüten" }]
+    examples:
+      - { target: "Das ist die Tüte.", ipa: "das ɪst diː ˈtyːtə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Tüte", base: "Tüte" }] }
+      - { target: "Wo ist die Tüte?", ipa: "voː ɪst diː ˈtyːtə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Tüte", base: "Tüte" }] }
+  - id: "de-2374"
+    target: "Dose"
+    ipa: "ˈdoːzə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Dosen" }]
+    examples:
+      - { target: "Das ist die Dose.", ipa: "das ɪst diː ˈdoːzə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Dose", base: "Dose" }] }
+      - { target: "Wo ist die Dose?", ipa: "voː ɪst diː ˈdoːzə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Dose", base: "Dose" }] }
+  - id: "de-2375"
+    target: "Kasse"
+    ipa: "ˈkasə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kassen" }]
+    examples:
+      - { target: "Das ist die Kasse.", ipa: "das ɪst diː ˈkasə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kasse", base: "Kasse" }] }
+      - { target: "Wo ist die Kasse?", ipa: "voː ɪst diː ˈkasə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Kasse", base: "Kasse" }] }
+  - id: "de-2376"
+    target: "Korb"
+    ipa: "kɔʁp"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Körbe" }]
+    examples:
+      - { target: "Das ist der Korb.", ipa: "das ɪst deːɐ̯ kɔʁp", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Korb", base: "Korb" }] }
+      - { target: "Wo ist der Korb?", ipa: "voː ɪst deːɐ̯ kɔʁp", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Korb", base: "Korb" }] }
+  - id: "de-2377"
+    target: "Einkauf"
+    ipa: "ˈaɪnkaʊf"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Einkäufe" }]
+    examples:
+      - { target: "Das ist der Einkauf.", ipa: "das ɪst deːɐ̯ ˈaɪnkaʊf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Einkauf", base: "Einkauf" }] }
+      - { target: "Wo ist der Einkauf?", ipa: "voː ɪst deːɐ̯ ˈaɪnkaʊf", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Einkauf", base: "Einkauf" }] }
+  - id: "de-2378"
+    target: "Einkaufsliste"
+    ipa: "ˈaɪnkaʊfslɪstə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Einkaufslisten" }]
+    examples:
+      - { target: "Das ist die Einkaufsliste.", ipa: "das ɪst diː ˈaɪnkaʊfslɪstə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Einkaufsliste", base: "Einkaufsliste" }] }
+      - { target: "Wo ist die Einkaufsliste?", ipa: "voː ɪst diː ˈaɪnkaʊfslɪstə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Einkaufsliste", base: "Einkaufsliste" }] }
+  - id: "de-2379"
+    target: "Einkaufswagen"
+    ipa: "ˈaɪnkaʊfsvaɡən"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Einkaufswagen.", ipa: "das ɪst deːɐ̯ ˈaɪnkaʊfsvaɡən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Einkaufswagen", base: "Einkaufswagen" }] }
+      - { target: "Wo ist der Einkaufswagen?", ipa: "voː ɪst deːɐ̯ ˈaɪnkaʊfsvaɡən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Einkaufswagen", base: "Einkaufswagen" }] }
+  - id: "de-2380"
+    target: "Honig"
+    ipa: "ˈhoːnɪç"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Honige" }]
+    examples:
+      - { target: "Das ist der Honig.", ipa: "das ɪst deːɐ̯ ˈhoːnɪç", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Honig", base: "Honig" }] }
+      - { target: "Wo ist der Honig?", ipa: "voː ɪst deːɐ̯ ˈhoːnɪç", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Honig", base: "Honig" }] }
+  - id: "de-2381"
+    target: "Essig"
+    ipa: "ˈɛsɪç"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Essige" }]
+    examples:
+      - { target: "Das ist der Essig.", ipa: "das ɪst deːɐ̯ ˈɛsɪç", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Essig", base: "Essig" }] }
+      - { target: "Wo ist der Essig?", ipa: "voː ɪst deːɐ̯ ˈɛsɪç", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Essig", base: "Essig" }] }
+  - id: "de-2382"
+    target: "Senf"
+    ipa: "zɛnf"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Senfe" }]
+    examples:
+      - { target: "Das ist der Senf.", ipa: "das ɪst deːɐ̯ zɛnf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Senf", base: "Senf" }] }
+      - { target: "Wo ist der Senf?", ipa: "voː ɪst deːɐ̯ zɛnf", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Senf", base: "Senf" }] }
+  - id: "de-2383"
+    target: "Kakao"
+    ipa: "ˈkaːkao"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Kakaos" }]
+    examples:
+      - { target: "Das ist der Kakao.", ipa: "das ɪst deːɐ̯ ˈkaːkao", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kakao", base: "Kakao" }] }
+      - { target: "Wo ist der Kakao?", ipa: "voː ɪst deːɐ̯ ˈkaːkao", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Kakao", base: "Kakao" }] }
+  - id: "de-2384"
+    target: "Rosine"
+    ipa: "ˈʁoːzinə"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Rosinen" }]
+    examples:
+      - { target: "Das ist die Rosine.", ipa: "das ɪst diː ˈʁoːzinə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Rosine", base: "Rosine" }] }
+      - { target: "Wo ist die Rosine?", ipa: "voː ɪst diː ˈʁoːzinə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Rosine", base: "Rosine" }] }
+  - id: "de-2385"
+    target: "Mandel"
+    ipa: "ˈmandəl"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Mandeln" }]
+    examples:
+      - { target: "Das ist die Mandel.", ipa: "das ɪst diː ˈmandəl", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Mandel", base: "Mandel" }] }
+      - { target: "Wo ist die Mandel?", ipa: "voː ɪst diː ˈmandəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Mandel", base: "Mandel" }] }
+  - id: "de-2386"
+    target: "Nuss"
+    ipa: "nʊs"
+    pos: "noun"
+    gender: "f"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Nüsse" }]
+    examples:
+      - { target: "Das ist die Nuss.", ipa: "das ɪst diː nʊs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Nuss", base: "Nuss" }] }
+      - { target: "Wo ist die Nuss?", ipa: "voː ɪst diː nʊs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "die" }, { word: "Nuss", base: "Nuss" }] }
+  - id: "de-2387"
+    target: "Zimt"
+    ipa: "tsɪmt"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Zimte" }]
+    examples:
+      - { target: "Das ist der Zimt.", ipa: "das ɪst deːɐ̯ tsɪmt", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Zimt", base: "Zimt" }] }
+      - { target: "Wo ist der Zimt?", ipa: "voː ɪst deːɐ̯ tsɪmt", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Zimt", base: "Zimt" }] }
+  - id: "de-2388"
+    target: "Gewürz"
+    ipa: "ɡəˈvʏʁts"
+    pos: "noun"
+    gender: "n"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Gewürze" }]
+    examples:
+      - { target: "Das ist ein Gewürz.", ipa: "das ɪst aɪn ɡəˈvʏʁts", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "ein", base: "ein" }, { word: "Gewürz", base: "Gewürz" }] }
+      - { target: "Wo ist das Gewürz?", ipa: "voː ɪst das ɡəˈvʏʁts", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "das" }, { word: "Gewürz", base: "Gewürz" }] }
+  - id: "de-2389"
+    target: "Teig"
+    ipa: "taɪk"
+    pos: "noun"
+    gender: "m"
+    tags: ["groceries"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Teige" }]
+    examples:
+      - { target: "Das ist der Teig.", ipa: "das ɪst deːɐ̯ taɪk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Teig", base: "Teig" }] }
+      - { target: "Wo ist der Teig?", ipa: "voː ɪst deːɐ̯ taɪk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Teig", base: "Teig" }] }
