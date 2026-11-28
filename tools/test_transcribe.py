@@ -9,7 +9,7 @@ from pathlib import Path
 import transcribe_decks
 import validate_decks
 from transcribe import (BLOCKS, CannotRead, french_ipa, german_ipa,
-                        italian_ipa, russian_ipa, spanish_ipa, swahili_ipa,
+                        greek_ipa, italian_ipa, russian_ipa, spanish_ipa, swahili_ipa,
                         transcribe)
 
 
@@ -2299,6 +2299,102 @@ class RussianTest(unittest.TestCase):
         for bad in ("hello", "привет1", "іa"):
             with self.subTest(bad=bad), self.assertRaises(CannotRead):
                 russian_ipa(bad)
+
+class GreekTest(unittest.TestCase):
+    """Modern Greek (el), broad. The expected forms are the engine's own
+    rules (see the section header in transcribe.py), checked by hand against
+    the hand-written cards of decks/el and Wiktionary's "Appendix:Greek
+    pronunciation", not against single entries."""
+
+    def check(self, pairs):
+        for text, ipa in pairs:
+            with self.subTest(text=text):
+                self.assertEqual(greek_ipa(text), ipa)
+
+    def test_the_stress_is_the_written_tonos(self):
+        self.check((("ευχαριστώ", "efxaɾiˈsto"), ("όχι", "ˈoxi"),
+                    ("εγώ", "eˈɣo"), ("καλημέρα", "kaliˈmeɾa"),
+                    ("καταλαβαίνω", "katalaˈveno")))
+
+    def test_a_word_of_one_syllable_is_unstressed(self):
+        self.check((("ναι", "ne"), ("δεν", "ðen"), ("που", "pu"),
+                    ("πού", "pu"), ("μου", "mu")))
+
+    def test_vowel_letters_and_digraphs(self):
+        self.check((("ήλιος", "ˈiljos"), ("ώμος", "ˈomos"), ("πυρ", "piɾ"),
+                    ("είναι", "ˈine"), ("οι", "i"), ("ουρά", "uˈɾa"),
+                    ("παιδί", "peˈði")))
+
+    def test_ai_and_ei_are_one_vowel_unless_the_tonos_or_a_diaeresis_parts_them(self):
+        self.check((("μάιος", "ˈmaios"), ("ρολόι", "ɾoˈloi"),
+                    ("παϊδάκια", "paiˈðakja")))
+
+    def test_av_ev_are_voiced_before_a_vowel_or_a_voiced_consonant(self):
+        self.check((("αυτό", "afˈto"), ("ευχαριστώ", "efxaɾiˈsto"),
+                    ("ευγενικός", "evʝeniˈkos"), ("αύριο", "ˈavɾjo"),
+                    ("ευρώ", "evˈɾo")))
+
+    def test_gamma_is_palatal_before_a_front_vowel(self):
+        self.check((("γεια", "ʝa"), ("για", "ʝa"), ("γιατί", "ʝaˈti"),
+                    ("γη", "ʝi"), ("γάλα", "ˈɣala"), ("γκρι", "ɡɾi"),
+                    ("εγώ", "eˈɣo")))
+
+    def test_nasal_and_stop_groups(self):
+        self.check((("μπαμπάς", "bamˈbas"), ("έμπορος", "ˈemboɾos"),
+                    ("ντομάτα", "doˈmata"), ("αντίο", "anˈdio"),
+                    ("άγγελος", "ˈaŋɡelos"), ("αγγλικά", "aŋɡliˈka"),
+                    ("συγγνώμη", "siŋˈɣnomi"), ("εγκατάσταση", "eŋɡaˈtastasi"),
+                    ("συγχωρώ", "siŋxoˈɾo")))
+
+    def test_ts_tz_and_the_double_letters(self):
+        self.check((("κάτσε", "ˈkatse"), ("τζάμι", "ˈdzami"),
+                    ("ελληνικά", "eliniˈka"), ("Άννα", "ˈana"),
+                    ("ξέρω", "ˈkseɾo"), ("ψάρι", "ˈpsaɾi")))
+
+    def test_sigma_is_z_before_a_voiced_consonant_inside_a_word(self):
+        self.check((("σημαίνει", "siˈmeni"), ("άσμα", "ˈazma"),
+                    ("λογαριασμός", "loɣaɾjazˈmos"),
+                    ("στάση", "ˈstasi"), ("Ισλανδία", "izlanˈðia")))
+
+    def test_an_unstressed_i_before_a_vowel_is_the_glide_j(self):
+        self.check((("μια", "mja"), ("πιο", "pjo"), ("βοήθεια", "voˈiθja"),
+                    ("ιατρός", "jaˈtɾos"), ("ιδιαίτερα", "iˈðjeteɾa"),
+                    ("κρύο", "ˈkɾio")))
+
+    def test_a_cluster_is_split_at_the_longest_onset(self):
+        self.check((("ταξίδι", "taˈksiði"), ("σταθμός", "staθˈmos"),
+                    ("αργά", "aɾˈɣa"), ("εντάξει", "enˈdaksi"),
+                    ("κουρασμένος", "kuɾazˈmenos")))
+
+    def test_a_phrase_stresses_each_polysyllable(self):
+        self.check((("Δεν καταλαβαίνω.", "ðen katalaˈveno"),
+                    ("Ευχαριστώ πολύ.", "efxaɾiˈsto poˈli"),
+                    ("Γεια σου, τι κάνεις;", "ʝa su ti ˈkanis"),
+                    ("Καλή όρεξη!", "kaˈli ˈoɾeksi")))
+
+    def test_capitals_and_a_final_sigma_are_read_as_lower_case(self):
+        self.check((("ΕΛΛΆΔΑ", "eˈlaða"), ("Ελλάδα", "eˈlaða"),
+                    ("καλός", "kaˈlos")))
+
+    def test_a_polysyllable_without_a_tonos_is_refused_not_guessed(self):
+        for bad in ("ευχαριστω", "ελλαδα", "καλημερα"):
+            with self.subTest(bad=bad), self.assertRaises(CannotRead):
+                greek_ipa(bad)
+
+    def test_two_tonos_marks_are_refused(self):
+        with self.assertRaises(CannotRead):
+            greek_ipa("άνθρωπός")
+
+    def test_a_letter_greek_does_not_use_is_refused(self):
+        for bad in ("hello", "καλά1", "привет", "ἀγαθός"):
+            with self.subTest(bad=bad), self.assertRaises(CannotRead):
+                greek_ipa(bad)
+
+    def test_the_el_dispatch_echoes_the_stored_reading(self):
+        t = transcribe("ευχαριστώ", "el", "efcharistó")
+        self.assertEqual((t.reading, t.ipa, t.fitted, t.notes),
+                         ("efcharistó", "efxaɾiˈsto", True, []))
+        self.assertEqual(transcribe("ναι", "el").ipa, "ne")
 
 
 if __name__ == "__main__":
