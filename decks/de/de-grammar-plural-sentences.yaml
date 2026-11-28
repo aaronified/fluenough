@@ -1,0 +1,120 @@
+schema: 1
+id: "de-grammar-plural-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "de-4100"
+    target: "Das sind die Kinder."
+    ipa: "das zɪnt diː ˈkɪndɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Kinder", ref: "de-1516" }]
+  - id: "de-4101"
+    target: "Wo sind die Kinder?"
+    ipa: "voː zɪnt diː ˈkɪndɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Wo", ref: "de-1302" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Kinder", ref: "de-1516" }]
+  - id: "de-4102"
+    target: "Das sind die Brüder."
+    ipa: "das zɪnt diː ˈbʁyːdɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "die", base: "die" }, { word: "Brüder", ref: "de-1519" }]
+  - id: "de-4103"
+    target: "Die Mütter sind hier."
+    ipa: "diː ˈmʏtɐ zɪnt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Mütter", ref: "de-1511" }, { word: "sind", base: "sein" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4104"
+    target: "Die Väter sind da."
+    ipa: "diː ˈfɛːtɐ zɪnt daː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Väter", ref: "de-1512" }, { word: "sind", base: "sein" }, { word: "da", ref: "de-1811" }]
+  - id: "de-4105"
+    target: "Ich habe zwei Schwestern."
+    ipa: "ɪç ˈhaːbə tsvaɪ ˈʃvɛstɐn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", base: "haben" }, { word: "zwei", ref: "de-0008" }, { word: "Schwestern", ref: "de-1520" }]
+  - id: "de-4106"
+    target: "Ich habe drei Kinder."
+    ipa: "ɪç ˈhaːbə dʁaɪ ˈkɪndɐ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Ich", ref: "de-0003" }, { word: "habe", base: "haben" }, { word: "drei", ref: "de-1581" }, { word: "Kinder", ref: "de-1516" }]
+  - id: "de-4107"
+    target: "Das sind zwei Fotos."
+    ipa: "das zɪnt tsvaɪ ˈfoːtɔs"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Das", base: "das" }, { word: "sind", base: "sein" }, { word: "zwei", ref: "de-0008" }, { word: "Fotos", ref: "de-1668" }]
+  - id: "de-4108"
+    target: "Die Städte sind groß."
+    ipa: "diː ˈʃtɛtə zɪnt ɡʁoːs"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Städte", ref: "de-1656" }, { word: "sind", base: "sein" }, { word: "groß", ref: "de-1930" }]
+  - id: "de-4109"
+    target: "Die Dörfer sind klein."
+    ipa: "diː ˈdœʁfɐ zɪnt klaɪn"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Dörfer", ref: "de-1674" }, { word: "sind", base: "sein" }, { word: "klein", ref: "de-1931" }]
+  - id: "de-4110"
+    target: "Die Länder sind groß."
+    ipa: "diː ˈlɛndɐ zɪnt ɡʁoːs"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Länder", ref: "de-1655" }, { word: "sind", base: "sein" }, { word: "groß", ref: "de-1930" }]
+  - id: "de-4111"
+    target: "Die Freunde sind hier."
+    ipa: "diː ˈfʁɔɪndə zɪnt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Freunde", ref: "de-1380" }, { word: "sind", base: "sein" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4112"
+    target: "Die Frauen sind da."
+    ipa: "diː ˈfʁaʊən zɪnt daː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Frauen", ref: "de-1371" }, { word: "sind", base: "sein" }, { word: "da", ref: "de-1811" }]
+  - id: "de-4113"
+    target: "Die Familien sind hier."
+    ipa: "diː ˈfaːmiliːn zɪnt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Familien", ref: "de-1510" }, { word: "sind", base: "sein" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4114"
+    target: "Die Söhne sind hier."
+    ipa: "diː ˈzøːnə zɪnt hiːɐ̯"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Söhne", ref: "de-1517" }, { word: "sind", base: "sein" }, { word: "hier", ref: "de-0009" }]
+  - id: "de-4115"
+    target: "Die Töchter sind da."
+    ipa: "diː ˈtœçtɐ zɪnt daː"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "Die", base: "die" }, { word: "Töchter", ref: "de-1518" }, { word: "sind", base: "sein" }, { word: "da", ref: "de-1811" }]
