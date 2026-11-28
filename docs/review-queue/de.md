@@ -21,7 +21,6 @@ Facets a deck builder doubts, for a German reviewer. See [README](README.md). Ro
 | de-2865 | time | example | Wo ist der Vormittag is unnatural for mid-morning | DE-100 | 2026-11-28 |
 | de-2866 | time | example | Wo ist der Nachmittag is unnatural for afternoon | DE-100 | 2026-11-28 |
 | de-2800 | home | example | Wo ist die Miete reads oddly; rent is not a place to be found | DE-100 | 2026-11-28 |
-| de-2928 | help | example | Wo ist der Rat reads oddly; advice is not a place to be found | DE-100 | 2026-11-28 |
 | de-1452 | pronouns | example | Ich habe beide is a short composed sentence; check it reads naturally | DE-100 | 2026-11-28 |
 | de-1527 | family | unit | A2 in many lists; built in the A1 family unit | DE-100 | 2026-11-28 |
 | de-1528 | family | unit | A2 in many lists; built in the A1 family unit | DE-100 | 2026-11-28 |
@@ -32,9 +31,6 @@ Facets a deck builder doubts, for a German reviewer. See [README](README.md). Ro
 | de-1538 | family | unit | A2 in many lists; built in the A1 family unit | DE-100 | 2026-11-28 |
 | de-1539 | family | unit | A2 in many lists; built in the A1 family unit | DE-100 | 2026-11-28 |
 | de-2441 | food | meaning | Built as meat, the learner sense; the dump's first sense is flesh | DE-100 | 2026-11-28 |
-| de-2442 | food | meaning | Built as beef, the learner sense; the dump's first sense is cow, bull | DE-100 | 2026-11-28 |
-| de-2443 | food | meaning | Built as pork, the learner sense; the dump's first sense is pig | DE-100 | 2026-11-28 |
-| de-2445 | food | meaning | Built as veal, the learner sense; the dump's first sense is calf | DE-100 | 2026-11-28 |
 | de-2448 | food | word | plural Sandwichs is the dump's form; check whether Sandwiches is usual | DE-100 | 2026-11-28 |
 | de-2452 | food | word | gender m used where the dump gives m or n; check the usual gender | DE-100 | 2026-11-28 |
 | de-2455 | food | unit | not marked plural-only in the candidate list; note and frame follow usual use | DE-100 | 2026-11-28 |
@@ -52,8 +48,6 @@ Facets a deck builder doubts, for a German reviewer. See [README](README.md). Ro
 | de-1881 | quantities | meaning | only the masculine sense of Teil is built | DE-100 | 2026-11-28 |
 | de-1865 | quantities | example | Jeder is used as a pronoun in both examples; the list gives a determiner | DE-100 | 2026-11-28 |
 | de-2073 | more-verbs | example | Das passiert hier is third person, not the Ich or Du frame | DE-100 | 2026-11-28 |
-| de-2080 | more-verbs | example | Das kostet nicht is third person, not the Ich or Du frame | DE-100 | 2026-11-28 |
-| de-2094 | more-verbs | example | Das dauert nicht is third person, not the Ich or Du frame | DE-100 | 2026-11-28 |
 | de-2149 | work | meaning | candidate gloss says date; the card glosses appointment | DE-100 | 2026-11-28 |
 | de-2165 | work | meaning | candidate gloss is a gerund of unternehmen; the card glosses company | DE-100 | 2026-11-28 |
 | de-2168 | work | meaning | candidate gloss is plant; the card glosses factory | DE-100 | 2026-11-28 |
