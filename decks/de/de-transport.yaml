@@ -1,0 +1,392 @@
+schema: 1
+id: "de-transport"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-2490"
+    target: "Bus"
+    ipa: "buːs"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Busse" }]
+    examples:
+      - { target: "Das ist der Bus.", ipa: "das ɪst deːɐ̯ buːs", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Bus", base: "Bus" }] }
+      - { target: "Wo ist der Bus?", ipa: "voː ɪst deːɐ̯ buːs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Bus", base: "Bus" }] }
+  - id: "de-2491"
+    target: "Straßenbahn"
+    ipa: "ˈʃtʁaːsənbaːn"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Straßenbahnen" }]
+    examples:
+      - { target: "Das ist die Straßenbahn.", ipa: "das ɪst diː ˈʃtʁaːsənbaːn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Straßenbahn", base: "Straßenbahn" }] }
+      - { target: "Wo ist die Straßenbahn?", ipa: "voː ɪst diː ˈʃtʁaːsənbaːn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Straßenbahn", base: "Straßenbahn" }] }
+  - id: "de-2492"
+    target: "U-Bahn"
+    ipa: "uː baːn"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "U-Bahnen" }]
+    examples:
+      - { target: "Das ist die U-Bahn.", ipa: "das ɪst diː uː baːn", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "U-Bahn", base: "U-Bahn" }] }
+      - { target: "Wo ist die U-Bahn?", ipa: "voː ɪst diː uː baːn", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "U-Bahn", base: "U-Bahn" }] }
+  - id: "de-2494"
+    target: "Auto"
+    ipa: "ˈaʊto"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Autos" }]
+    examples:
+      - { target: "Hier ist das Auto.", ipa: "hiːɐ̯ ɪst das ˈaʊto", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Auto", base: "Auto" }] }
+      - { target: "Ich habe ein Auto.", ipa: "ɪç ˈhaːbə aɪn ˈaʊto", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Auto", base: "Auto" }] }
+  - id: "de-2495"
+    target: "Fahrrad"
+    ipa: "ˈfaːɐ̯ʁaːt"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Fahrräder" }]
+    examples:
+      - { target: "Hier ist das Fahrrad.", ipa: "hiːɐ̯ ɪst das ˈfaːɐ̯ʁaːt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Fahrrad", base: "Fahrrad" }] }
+      - { target: "Ich habe ein Fahrrad.", ipa: "ɪç ˈhaːbə aɪn ˈfaːɐ̯ʁaːt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Fahrrad", base: "Fahrrad" }] }
+  - id: "de-2496"
+    target: "Taxi"
+    ipa: "ˈtaksi"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Taxis" }]
+    examples:
+      - { target: "Hier ist das Taxi.", ipa: "hiːɐ̯ ɪst das ˈtaksi", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Taxi", base: "Taxi" }] }
+      - { target: "Ich habe ein Taxi.", ipa: "ɪç ˈhaːbə aɪn ˈtaksi", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Taxi", base: "Taxi" }] }
+  - id: "de-2497"
+    target: "Flugzeug"
+    ipa: "ˈfluːktsɔɪk"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Flugzeuge" }]
+    examples:
+      - { target: "Hier ist das Flugzeug.", ipa: "hiːɐ̯ ɪst das ˈfluːktsɔɪk", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Flugzeug", base: "Flugzeug" }] }
+      - { target: "Ich habe ein Flugzeug.", ipa: "ɪç ˈhaːbə aɪn ˈfluːktsɔɪk", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Flugzeug", base: "Flugzeug" }] }
+  - id: "de-2498"
+    target: "Schiff"
+    ipa: "ʃɪf"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Schiffe" }]
+    examples:
+      - { target: "Hier ist das Schiff.", ipa: "hiːɐ̯ ɪst das ʃɪf", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Schiff", base: "Schiff" }] }
+      - { target: "Wo ist das Schiff?", ipa: "voː ɪst das ʃɪf", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Schiff", base: "Schiff" }] }
+  - id: "de-2499"
+    target: "Flug"
+    ipa: "fluːk"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Flüge" }]
+    examples:
+      - { target: "Das ist der Flug.", ipa: "das ɪst deːɐ̯ fluːk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Flug", base: "Flug" }] }
+      - { target: "Wo ist der Flug?", ipa: "voː ɪst deːɐ̯ fluːk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Flug", base: "Flug" }] }
+  - id: "de-2500"
+    target: "Bahnhof"
+    ipa: "ˈbaːnhoːf"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Bahnhöfe" }]
+    examples:
+      - { target: "Das ist der Bahnhof.", ipa: "das ɪst deːɐ̯ ˈbaːnhoːf", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Bahnhof", base: "Bahnhof" }] }
+      - { target: "Wo ist der Bahnhof?", ipa: "voː ɪst deːɐ̯ ˈbaːnhoːf", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Bahnhof", base: "Bahnhof" }] }
+  - id: "de-2501"
+    target: "Haltestelle"
+    ipa: "ˈhaltəstələ"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Haltestellen" }]
+    examples:
+      - { target: "Das ist die Haltestelle.", ipa: "das ɪst diː ˈhaltəstələ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Haltestelle", base: "Haltestelle" }] }
+      - { target: "Wo ist die Haltestelle?", ipa: "voː ɪst diː ˈhaltəstələ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Haltestelle", base: "Haltestelle" }] }
+  - id: "de-2502"
+    target: "Fahrkarte"
+    ipa: "ˈfaːɐ̯kaʁtə"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Fahrkarten" }]
+    examples:
+      - { target: "Das ist die Fahrkarte.", ipa: "das ɪst diː ˈfaːɐ̯kaʁtə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Fahrkarte", base: "Fahrkarte" }] }
+      - { target: "Ich habe eine Fahrkarte.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈfaːɐ̯kaʁtə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Fahrkarte", base: "Fahrkarte" }] }
+  - id: "de-2503"
+    target: "Ticket"
+    ipa: "ˈtɪkət"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Tickets" }]
+    examples:
+      - { target: "Hier ist das Ticket.", ipa: "hiːɐ̯ ɪst das ˈtɪkət", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Ticket", base: "Ticket" }] }
+      - { target: "Ich habe ein Ticket.", ipa: "ɪç ˈhaːbə aɪn ˈtɪkət", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Ticket", base: "Ticket" }] }
+  - id: "de-2504"
+    target: "Fahrplan"
+    ipa: "ˈfaːɐ̯plan"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Fahrpläne" }]
+    examples:
+      - { target: "Das ist der Fahrplan.", ipa: "das ɪst deːɐ̯ ˈfaːɐ̯plan", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Fahrplan", base: "Fahrplan" }] }
+      - { target: "Wo ist der Fahrplan?", ipa: "voː ɪst deːɐ̯ ˈfaːɐ̯plan", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Fahrplan", base: "Fahrplan" }] }
+  - id: "de-2505"
+    target: "Flughafen"
+    ipa: "ˈfluːkhaːfən"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Flughäfen" }]
+    examples:
+      - { target: "Das ist der Flughafen.", ipa: "das ɪst deːɐ̯ ˈfluːkhaːfən", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Flughafen", base: "Flughafen" }] }
+      - { target: "Wo ist der Flughafen?", ipa: "voː ɪst deːɐ̯ ˈfluːkhaːfən", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Flughafen", base: "Flughafen" }] }
+  - id: "de-2506"
+    target: "Verkehr"
+    ipa: "fɛɐ̯ˈkeːɐ̯"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Verkehre" }]
+    examples:
+      - { target: "Das ist Verkehr.", ipa: "das ɪst fɛɐ̯ˈkeːɐ̯", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "Verkehr", base: "Verkehr" }] }
+      - { target: "Hier ist der Verkehr.", ipa: "hiːɐ̯ ɪst deːɐ̯ fɛɐ̯ˈkeːɐ̯", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Verkehr", base: "Verkehr" }] }
+  - id: "de-2507"
+    target: "Stau"
+    ipa: "ʃtaʊ"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Staus" }]
+    examples:
+      - { target: "Das ist der Stau.", ipa: "das ɪst deːɐ̯ ʃtaʊ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Stau", base: "Stau" }] }
+      - { target: "Wo ist der Stau?", ipa: "voː ɪst deːɐ̯ ʃtaʊ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Stau", base: "Stau" }] }
+  - id: "de-2508"
+    target: "Strecke"
+    ipa: "ˈʃtʁɛkə"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Strecken" }]
+    examples:
+      - { target: "Das ist die Strecke.", ipa: "das ɪst diː ˈʃtʁɛkə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Strecke", base: "Strecke" }] }
+      - { target: "Wo ist die Strecke?", ipa: "voː ɪst diː ˈʃtʁɛkə", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Strecke", base: "Strecke" }] }
+  - id: "de-2509"
+    target: "Reise"
+    ipa: "ˈʁaɪzə"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Reisen" }]
+    examples:
+      - { target: "Das ist die Reise.", ipa: "das ɪst diː ˈʁaɪzə", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Reise", base: "Reise" }] }
+      - { target: "Ich habe eine Reise.", ipa: "ɪç ˈhaːbə ˈaɪnə ˈʁaɪzə", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Reise", base: "Reise" }] }
+  - id: "de-2510"
+    target: "Fahrt"
+    ipa: "faːɐ̯t"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Fahrten" }]
+    examples:
+      - { target: "Das ist die Fahrt.", ipa: "das ɪst diː faːɐ̯t", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Fahrt", base: "Fahrt" }] }
+      - { target: "Ich habe eine Fahrt.", ipa: "ɪç ˈhaːbə ˈaɪnə faːɐ̯t", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Fahrt", base: "Fahrt" }] }
+  - id: "de-2511"
+    target: "Motorrad"
+    ipa: "ˈmoːtɔʁat"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Motorräder" }]
+    examples:
+      - { target: "Hier ist das Motorrad.", ipa: "hiːɐ̯ ɪst das ˈmoːtɔʁat", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Motorrad", base: "Motorrad" }] }
+      - { target: "Ich habe ein Motorrad.", ipa: "ɪç ˈhaːbə aɪn ˈmoːtɔʁat", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Motorrad", base: "Motorrad" }] }
+  - id: "de-2512"
+    target: "Bushaltestelle"
+    ipa: "ˈbʊshaltəstələ"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Bushaltestellen" }]
+    examples:
+      - { target: "Das ist die Bushaltestelle.", ipa: "das ɪst diː ˈbʊshaltəstələ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Bushaltestelle", base: "Bushaltestelle" }] }
+      - { target: "Wo ist die Bushaltestelle?", ipa: "voː ɪst diː ˈbʊshaltəstələ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Bushaltestelle", base: "Bushaltestelle" }] }
+  - id: "de-2513"
+    target: "Gleis"
+    ipa: "ɡlaɪs"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Gleise" }]
+    examples:
+      - { target: "Hier ist das Gleis.", ipa: "hiːɐ̯ ɪst das ɡlaɪs", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Gleis", base: "Gleis" }] }
+      - { target: "Wo ist das Gleis?", ipa: "voː ɪst das ɡlaɪs", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Gleis", base: "Gleis" }] }
+  - id: "de-2514"
+    target: "Bahnsteig"
+    ipa: "ˈbaːnstaɪk"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Bahnsteige" }]
+    examples:
+      - { target: "Das ist der Bahnsteig.", ipa: "das ɪst deːɐ̯ ˈbaːnstaɪk", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Bahnsteig", base: "Bahnsteig" }] }
+      - { target: "Wo ist der Bahnsteig?", ipa: "voː ɪst deːɐ̯ ˈbaːnstaɪk", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Bahnsteig", base: "Bahnsteig" }] }
+  - id: "de-2515"
+    target: "Hubschrauber"
+    ipa: "ˈhʊpʃʁaʊbɐ"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Das ist der Hubschrauber.", ipa: "das ɪst deːɐ̯ ˈhʊpʃʁaʊbɐ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Hubschrauber", base: "Hubschrauber" }] }
+      - { target: "Wo ist der Hubschrauber?", ipa: "voː ɪst deːɐ̯ ˈhʊpʃʁaʊbɐ", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Hubschrauber", base: "Hubschrauber" }] }
+  - id: "de-2516"
+    target: "Boot"
+    ipa: "boːt"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Boote" }]
+    examples:
+      - { target: "Hier ist das Boot.", ipa: "hiːɐ̯ ɪst das boːt", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Boot", base: "Boot" }] }
+      - { target: "Ich habe ein Boot.", ipa: "ɪç ˈhaːbə aɪn boːt", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Boot", base: "Boot" }] }
+  - id: "de-2517"
+    target: "Tram"
+    ipa: "tʁaːm"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Trams" }]
+    examples:
+      - { target: "Das ist die Tram.", ipa: "das ɪst diː tʁaːm", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Tram", base: "Tram" }] }
+      - { target: "Wo ist die Tram?", ipa: "voː ɪst diː tʁaːm", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Tram", base: "Tram" }] }
+  - id: "de-2518"
+    target: "Metro"
+    ipa: "ˈmeːtʁo"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Metros" }]
+    examples:
+      - { target: "Das ist die Metro.", ipa: "das ɪst diː ˈmeːtʁo", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Metro", base: "Metro" }] }
+      - { target: "Wo ist die Metro?", ipa: "voː ɪst diː ˈmeːtʁo", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Metro", base: "Metro" }] }
+  - id: "de-2519"
+    target: "Fahrzeug"
+    ipa: "ˈfaːɐ̯tsɔɪk"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Fahrzeuge" }]
+    examples:
+      - { target: "Hier ist das Fahrzeug.", ipa: "hiːɐ̯ ɪst das ˈfaːɐ̯tsɔɪk", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Fahrzeug", base: "Fahrzeug" }] }
+      - { target: "Ich habe ein Fahrzeug.", ipa: "ɪç ˈhaːbə aɪn ˈfaːɐ̯tsɔɪk", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "ein", base: "ein" }, { word: "Fahrzeug", base: "Fahrzeug" }] }
+  - id: "de-2520"
+    target: "Verspätung"
+    ipa: "fɛɐ̯ˈʃpɛːtʊŋ"
+    pos: "noun"
+    gender: "f"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Verspätungen" }]
+    examples:
+      - { target: "Das ist die Verspätung.", ipa: "das ɪst diː fɛɐ̯ˈʃpɛːtʊŋ", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "die", base: "der" }, { word: "Verspätung", base: "Verspätung" }] }
+      - { target: "Ich habe eine Verspätung.", ipa: "ɪç ˈhaːbə ˈaɪnə fɛɐ̯ˈʃpɛːtʊŋ", bases: [{ word: "Ich", base: "ich" }, { word: "habe", base: "haben" }, { word: "eine", base: "ein" }, { word: "Verspätung", base: "Verspätung" }] }
+  - id: "de-2521"
+    target: "Verkehrsmittel"
+    ipa: "fɛɐ̯ˈkeːɐ̯smɪtəl"
+    pos: "noun"
+    gender: "n"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hier ist das Verkehrsmittel.", ipa: "hiːɐ̯ ɪst das fɛɐ̯ˈkeːɐ̯smɪtəl", bases: [{ word: "Hier", base: "hier" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Verkehrsmittel", base: "Verkehrsmittel" }] }
+      - { target: "Wo ist das Verkehrsmittel?", ipa: "voː ɪst das fɛɐ̯ˈkeːɐ̯smɪtəl", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "das", base: "der" }, { word: "Verkehrsmittel", base: "Verkehrsmittel" }] }
+  - id: "de-2522"
+    target: "Sitzplatz"
+    ipa: "ˈzɪtsplats"
+    pos: "noun"
+    gender: "m"
+    tags: ["transport"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    forms: [{ id: "pl", kind: "plural", word: "Sitzplätze" }]
+    examples:
+      - { target: "Das ist der Sitzplatz.", ipa: "das ɪst deːɐ̯ ˈzɪtsplats", bases: [{ word: "Das", base: "das" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Sitzplatz", base: "Sitzplatz" }] }
+      - { target: "Wo ist der Sitzplatz?", ipa: "voː ɪst deːɐ̯ ˈzɪtsplats", bases: [{ word: "Wo", base: "wo" }, { word: "ist", base: "sein" }, { word: "der", base: "der" }, { word: "Sitzplatz", base: "Sitzplatz" }] }

@@ -1,0 +1,648 @@
+schema: 1
+id: "de-en-transport"
+kind: "layer"
+core: "de-transport"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Transport"
+description: "Getting around: buses, trains, cars and planes, tickets and timetables. Not yet checked by a German speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "de-2490":
+    native: "bus"
+    notes:
+      "n1": "Bus is bus: der Bus. Its plural is Busse."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Bus.":
+        native: "This is the bus."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Bus": "bus"
+      "Wo ist der Bus?":
+        native: "Where is the bus?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Bus": "bus"
+  "de-2491":
+    native: "streetcar, tramway"
+    notes:
+      "n1": "Straßenbahn is streetcar: die Straßenbahn. Its plural is Straßenbahnen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Straßenbahn.":
+        native: "This is the streetcar."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Straßenbahn": "streetcar"
+      "Wo ist die Straßenbahn?":
+        native: "Where is the streetcar?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Straßenbahn": "streetcar"
+  "de-2492":
+    native: "underground railway; subway"
+    notes:
+      "n1": "U-Bahn is underground railway: die U-Bahn. Its plural is U-Bahnen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die U-Bahn.":
+        native: "This is the underground railway."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "U-Bahn": "underground railway"
+      "Wo ist die U-Bahn?":
+        native: "Where is the underground railway?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "U-Bahn": "underground railway"
+  "de-2494":
+    native: "car"
+    notes:
+      "n1": "Auto is car: das Auto. Its plural is Autos."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Auto.":
+        native: "Here is the car."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Auto": "car"
+      "Ich habe ein Auto.":
+        native: "I have a car."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Auto": "car"
+  "de-2495":
+    native: "bicycle"
+    notes:
+      "n1": "Fahrrad is bicycle: das Fahrrad. Its plural is Fahrräder."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Fahrrad.":
+        native: "Here is the bicycle."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Fahrrad": "bicycle"
+      "Ich habe ein Fahrrad.":
+        native: "I have a bicycle."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Fahrrad": "bicycle"
+  "de-2496":
+    native: "taxi, cab"
+    notes:
+      "n1": "Taxi is taxi: das Taxi. Its plural is Taxis."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Taxi.":
+        native: "Here is the taxi."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Taxi": "taxi"
+      "Ich habe ein Taxi.":
+        native: "I have a taxi."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Taxi": "taxi"
+  "de-2497":
+    native: "aeroplane"
+    notes:
+      "n1": "Flugzeug is aeroplane: das Flugzeug. Its plural is Flugzeuge."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Flugzeug.":
+        native: "Here is the aeroplane."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Flugzeug": "aeroplane"
+      "Ich habe ein Flugzeug.":
+        native: "I have an aeroplane."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Flugzeug": "aeroplane"
+  "de-2498":
+    native: "ship"
+    notes:
+      "n1": "Schiff is ship: das Schiff. Its plural is Schiffe."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Schiff.":
+        native: "Here is the ship."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Schiff": "ship"
+      "Wo ist das Schiff?":
+        native: "Where is the ship?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Schiff": "ship"
+  "de-2499":
+    native: "flight"
+    notes:
+      "n1": "Flug is flight: der Flug. Its plural is Flüge."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Flug.":
+        native: "This is the flight."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Flug": "flight"
+      "Wo ist der Flug?":
+        native: "Where is the flight?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Flug": "flight"
+  "de-2500":
+    native: "railway station, train station"
+    notes:
+      "n1": "Bahnhof is railway station: der Bahnhof. Its plural is Bahnhöfe."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Bahnhof.":
+        native: "This is the railway station."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Bahnhof": "railway station"
+      "Wo ist der Bahnhof?":
+        native: "Where is the railway station?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Bahnhof": "railway station"
+  "de-2501":
+    native: "stop"
+    notes:
+      "n1": "Haltestelle is stop: die Haltestelle. Its plural is Haltestellen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Haltestelle.":
+        native: "This is the stop."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Haltestelle": "stop"
+      "Wo ist die Haltestelle?":
+        native: "Where is the stop?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Haltestelle": "stop"
+  "de-2502":
+    native: "fare ticket"
+    notes:
+      "n1": "Fahrkarte is fare ticket: die Fahrkarte. Its plural is Fahrkarten."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Fahrkarte.":
+        native: "This is the fare ticket."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Fahrkarte": "fare ticket"
+      "Ich habe eine Fahrkarte.":
+        native: "I have a fare ticket."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Fahrkarte": "fare ticket"
+  "de-2503":
+    native: "ticket"
+    notes:
+      "n1": "Ticket is ticket: das Ticket. Its plural is Tickets."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Ticket.":
+        native: "Here is the ticket."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Ticket": "ticket"
+      "Ich habe ein Ticket.":
+        native: "I have a ticket."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Ticket": "ticket"
+  "de-2504":
+    native: "timetable"
+    notes:
+      "n1": "Fahrplan is timetable: der Fahrplan. Its plural is Fahrpläne."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Fahrplan.":
+        native: "This is the timetable."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Fahrplan": "timetable"
+      "Wo ist der Fahrplan?":
+        native: "Where is the timetable?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Fahrplan": "timetable"
+  "de-2505":
+    native: "airport"
+    notes:
+      "n1": "Flughafen is airport: der Flughafen. Its plural is Flughäfen, with an umlaut."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Flughafen.":
+        native: "This is the airport."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Flughafen": "airport"
+      "Wo ist der Flughafen?":
+        native: "Where is the airport?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Flughafen": "airport"
+  "de-2506":
+    native: "traffic"
+    notes:
+      "n1": "Verkehr is traffic: der Verkehr. Its plural is Verkehre."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist Verkehr.":
+        native: "This is traffic."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "Verkehr": "traffic"
+      "Hier ist der Verkehr.":
+        native: "Here is the traffic."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "der": "the"
+          "Verkehr": "traffic"
+  "de-2507":
+    native: "congestion"
+    notes:
+      "n1": "Stau is congestion: der Stau. Its plural is Staus."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Stau.":
+        native: "This is the congestion."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Stau": "congestion"
+      "Wo ist der Stau?":
+        native: "Where is the congestion?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Stau": "congestion"
+  "de-2508":
+    native: "route"
+    notes:
+      "n1": "Strecke is route: die Strecke. Its plural is Strecken."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Strecke.":
+        native: "This is the route."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Strecke": "route"
+      "Wo ist die Strecke?":
+        native: "Where is the route?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Strecke": "route"
+  "de-2509":
+    native: "journey, travel"
+    notes:
+      "n1": "Reise is journey: die Reise. Its plural is Reisen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Reise.":
+        native: "This is the journey."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Reise": "journey"
+      "Ich habe eine Reise.":
+        native: "I have a journey."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Reise": "journey"
+  "de-2510":
+    native: "drive"
+    notes:
+      "n1": "Fahrt is drive: die Fahrt. Its plural is Fahrten."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Fahrt.":
+        native: "This is the drive."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Fahrt": "drive"
+      "Ich habe eine Fahrt.":
+        native: "I have a drive."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Fahrt": "drive"
+  "de-2511":
+    native: "motorcycle"
+    notes:
+      "n1": "Motorrad is motorcycle: das Motorrad. Its plural is Motorräder."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Motorrad.":
+        native: "Here is the motorcycle."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Motorrad": "motorcycle"
+      "Ich habe ein Motorrad.":
+        native: "I have a motorcycle."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Motorrad": "motorcycle"
+  "de-2512":
+    native: "bus stop"
+    notes:
+      "n1": "Bushaltestelle is bus stop: die Bushaltestelle. Its plural is Bushaltestellen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Bushaltestelle.":
+        native: "This is the bus stop."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Bushaltestelle": "bus stop"
+      "Wo ist die Bushaltestelle?":
+        native: "Where is the bus stop?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Bushaltestelle": "bus stop"
+  "de-2513":
+    native: "railway"
+    notes:
+      "n1": "Gleis is railway: das Gleis. Its plural is Gleise."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Gleis.":
+        native: "Here is the railway."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Gleis": "railway"
+      "Wo ist das Gleis?":
+        native: "Where is the railway?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Gleis": "railway"
+  "de-2514":
+    native: "train platform"
+    notes:
+      "n1": "Bahnsteig is train platform: der Bahnsteig. Its plural is Bahnsteige."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Bahnsteig.":
+        native: "This is the train platform."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Bahnsteig": "train platform"
+      "Wo ist der Bahnsteig?":
+        native: "Where is the train platform?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Bahnsteig": "train platform"
+  "de-2515":
+    native: "helicopter"
+    notes:
+      "n1": "Hubschrauber is helicopter: der Hubschrauber. Its plural is also Hubschrauber."
+    examples:
+      "Das ist der Hubschrauber.":
+        native: "This is the helicopter."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Hubschrauber": "helicopter"
+      "Wo ist der Hubschrauber?":
+        native: "Where is the helicopter?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Hubschrauber": "helicopter"
+  "de-2516":
+    native: "boat"
+    notes:
+      "n1": "Boot is boat: das Boot. Its plural is Boote."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Boot.":
+        native: "Here is the boat."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Boot": "boat"
+      "Ich habe ein Boot.":
+        native: "I have a boat."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Boot": "boat"
+  "de-2517":
+    native: "tram"
+    notes:
+      "n1": "Tram is tram: die Tram. Its plural is Trams."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Tram.":
+        native: "This is the tram."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Tram": "tram"
+      "Wo ist die Tram?":
+        native: "Where is the tram?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Tram": "tram"
+  "de-2518":
+    native: "metro"
+    notes:
+      "n1": "Metro is metro: die Metro. Its plural is Metros."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Metro.":
+        native: "This is the metro."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Metro": "metro"
+      "Wo ist die Metro?":
+        native: "Where is the metro?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "die": "the"
+          "Metro": "metro"
+  "de-2519":
+    native: "vehicle"
+    notes:
+      "n1": "Fahrzeug is vehicle: das Fahrzeug. Its plural is Fahrzeuge."
+    forms: { "pl": "plural" }
+    examples:
+      "Hier ist das Fahrzeug.":
+        native: "Here is the vehicle."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Fahrzeug": "vehicle"
+      "Ich habe ein Fahrzeug.":
+        native: "I have a vehicle."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "ein": "a"
+          "Fahrzeug": "vehicle"
+  "de-2520":
+    native: "delay, lateness, late arrival"
+    notes:
+      "n1": "Verspätung is delay: die Verspätung. Its plural is Verspätungen."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist die Verspätung.":
+        native: "This is the delay."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "die": "the"
+          "Verspätung": "delay"
+      "Ich habe eine Verspätung.":
+        native: "I have a delay."
+        bases:
+          "Ich": "I"
+          "habe": "have"
+          "eine": "a"
+          "Verspätung": "delay"
+  "de-2521":
+    native: "transport"
+    notes:
+      "n1": "Verkehrsmittel is transport: das Verkehrsmittel. Its plural is also Verkehrsmittel."
+    examples:
+      "Hier ist das Verkehrsmittel.":
+        native: "Here is the transport."
+        bases:
+          "Hier": "here"
+          "ist": "is"
+          "das": "the"
+          "Verkehrsmittel": "transport"
+      "Wo ist das Verkehrsmittel?":
+        native: "Where is the transport?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "das": "the"
+          "Verkehrsmittel": "transport"
+  "de-2522":
+    native: "seat"
+    notes:
+      "n1": "Sitzplatz is seat: der Sitzplatz. Its plural is Sitzplätze."
+    forms: { "pl": "plural" }
+    examples:
+      "Das ist der Sitzplatz.":
+        native: "This is the seat."
+        bases:
+          "Das": "This"
+          "ist": "is"
+          "der": "the"
+          "Sitzplatz": "seat"
+      "Wo ist der Sitzplatz?":
+        native: "Where is the seat?"
+        bases:
+          "Wo": "where"
+          "ist": "is"
+          "der": "the"
+          "Sitzplatz": "seat"
